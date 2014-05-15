@@ -19,6 +19,7 @@ public class AdminRightsDB extends DataBase
             Flag=activityList.remove(activity);           
                        
         }
+        
             return Flag;
         
         
