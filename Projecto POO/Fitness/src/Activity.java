@@ -26,6 +26,7 @@ public abstract class Activity {
 		this.timeSpent = (GregorianCalendar) timeSpent.clone();
 		this.calories = calories;
 		this.weather = weather;
+		this.activityRecords = new TreeSet<Statistics>();
 	}
 	
 	public Activity(Activity a){
@@ -120,7 +121,10 @@ public abstract class Activity {
 		this.activityRecords = activityRecords;
 	}
 	
-	public abstract boolean equals(Activity a);
+	public abstract void setRecords();
+	
+	@Override
+	public abstract boolean equals(Object a);
 	
 	@Override
 	public abstract String toString();

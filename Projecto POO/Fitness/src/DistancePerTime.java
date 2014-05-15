@@ -1,6 +1,8 @@
 
-public class DistancePerTime extends Statistics
-{
-    
-   
+public class DistancePerTime extends Statistics {
+	
+	private float recordDistance;
+	
+	
+	
 }
