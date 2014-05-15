@@ -13,12 +13,13 @@ public abstract class Activity {
 	private TreeSet<Statistics> activityRecords;
 
 	public Activity() {
+		this.sportName = "";
 		this.name = "";
 		this.date = new GregorianCalendar();
 		this.timeSpent = new GregorianCalendar();
 		this.calories = 0;
 		this.weather = "";
-		this.activityRecords = new TreeSet<Statistics>();
+		this.activityRecords = new TreeSet<>();
 	}
 
 	public Activity(String sportName, String name, GregorianCalendar date, GregorianCalendar timeSpent, int calories, String weather) {
@@ -118,7 +119,7 @@ public abstract class Activity {
 	 * @return the activityRecords
 	 */
 	public TreeSet<Statistics> getActivityRecords() {
-		TreeSet<Statistics> aux = new TreeSet<Statistics>();
+		TreeSet<Statistics> aux = new TreeSet<>();
 		for (Statistics stat : this.activityRecords) {
 			aux.add(stat.clone());
 		}
