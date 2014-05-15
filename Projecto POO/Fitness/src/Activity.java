@@ -4,9 +4,8 @@ import java.util.TreeSet;
 
 public abstract class Activity {
 
-<<<<<<< HEAD
-public abstract class Activity
-{
+
+
    private String name;                         // corrida ao leu
    private GregorianCalendar date;
    private GregorianCalendar timeSpent;
@@ -17,13 +16,7 @@ public abstract class Activity
    
    
    public abstract float setCalories();
-=======
-	private String name;
-	private GregorianCalendar date;
-	private GregorianCalendar timeSpent;
-	private int calories;
-	private String weather;
-	private TreeSet<Statistics> activityRecords;
+
 
 	public Activity(){
 		this.name = "";

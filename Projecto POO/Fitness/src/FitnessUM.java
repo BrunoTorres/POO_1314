@@ -3,68 +3,6 @@ import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.TreeSet;
 
-public class FitnessUM {
-
-	private DataBase db;
-	private Person person;
-
-	public boolean isAdmin(String email) {                   // Procurar por email ou Admin admin?!
-		TreeSet<Person> userList = (TreeSet) db.getEventList();
-		boolean flag = false;
-		boolean found = false;
-
-		Iterator<Person> it = userList.iterator();
-		Person p = it.next();                              //DUVIDAS SE FUNCIONA POIS TENHO QUE ACEDER DUAS VEZES AO it.next()!!!!!
-		while (it.hasNext() && !found) {
-			if ((p.getEmail().equals(email)) && (p instanceof Admin)) {
-				found = true;
-				flag = true;
-			}
-		}
-
-		return flag;
-
-	}
-
-	public boolean addUser(String email, String pass, String name, char gender, GregorianCalendar date,
-			int height, float weight, String favoriteActivity) {
-		boolean flag = false;
-		User u = new User(email, pass, name, gender, date, height, weight, favoriteActivity);
-		flag = db.getUserListAdmin().add(u);
-
-		return flag;
-
-	}
-
-	public boolean removeUser(String email) {
-		TreeSet<Person> userList = (TreeSet) db.getUserListAdmin();
-		boolean Flag = false;
-		for (Person u : userList) {
-			if (email.equals(u.getEmail())) {
-				Flag = userList.remove(u);
-			}
-		}
-		return Flag;
-	}
-
-	public boolean removeActivity(Activity activity) {
-		boolean Flag = false;
-		TreeSet<Person> userList = (TreeSet<Person>) db.getUserListAdmin();
-
-		for (Person p : userList) {
-			if (p instanceof User) {
-				User u = (User) p;
-				TreeSet<ActivityList> userActivities = (TreeSet) u.getUserActivitiesAdmin();
-				TreeSet<Activity> activityList = userActivities.getActivityListAdmin();
-
-				Flag = activityList.remove(activity);
-			}
-		}
-		return Flag;
-
-	}
-
-<<<<<<< HEAD
 public class FitnessUM
 {
     private DataBase db;
@@ -119,7 +57,7 @@ public class FitnessUM
     
     /////////////////////////////////////////////////Propriedade dos Utilizadores//////////////////////////////////////
     
-    public boolean addFriendInUserList(User u,String email){
+    public boolean addFriendInUserList(User u,String email){      //CLASSE MENSAGENS? UM 
         boolean found=false;
         
         User u2=new User();
@@ -162,6 +100,31 @@ public class FitnessUM
     }
         return flag;
     }
+    /// POR PARTES OK?SIM
+    public String seeFriend(User u){
+       TreeSet<Person> dbUsers=(TreeSet)db.getUserList();
+       TreeSet<String> userActivities = (TreeSet)u.getFriendsList();
+       TreeSet<User> users=new TreeSet<User>();
+       
+       for(String s:u.getFriendsList())
+       {
+           boolean found=false;
+           Iterator<Person> it=dbUsers.iterator();
+           Person p = it.next();
+        
+           while(it.hasNext() && !found)
+               if(p.getName().equals(s))
+                   users.add((User)p);
+           else
+                   p=it.next();
+               
+               
+       }
+       
+       // 
+       
+       
+    }
     
    
     //////////////////////////////////// Propriedade dos Administradores//////////////////////////////////////////
@@ -193,14 +156,23 @@ public class FitnessUM
         return flag;
         
     }
-    public boolean removeActivityList(String name){
+    public void removeActivityList(String name){
         
         for(Person p:db.getUserListAdmin())
             if(p instanceof User)
             {
+                boolean found=false;
                 User u=(User) p;
+                Iterator<ActivityList> it= u.getUserActivities().iterator();
+                ActivityList aux=it.next();
                 
-                u.getUserActivitiesAdmin().remove()
+                while(it.hasNext() && !found)                    
+                    if(aux.getName().equals(name))                        
+                        found = true;
+                    else
+                        aux=it.next();
+                u.getUserActivitiesAdmin().remove(aux);                  
+               
             }
         
     }
@@ -219,7 +191,7 @@ public class FitnessUM
        }
        db.getSportsTypeAdmin().remove(aux);
        if(found)
-       found=removeActivityList(name);
+        removeActivityList(name);
     
        return found;
        
@@ -237,7 +209,5 @@ public class FitnessUM
         
     }
     
-    
-=======
->>>>>>> 7b042306a5189d28ab40ae0f04d92272b66ab59f
+
 }
