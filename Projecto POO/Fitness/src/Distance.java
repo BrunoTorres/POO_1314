@@ -42,7 +42,8 @@ public class Distance extends Activity {
 		if(a == null || this.getClass() != a.getClass())
 			return false;
 		
-		Activity act = (Activity) a;
+		Distance act = (Distance) a;		
+		
 		return (act.getName().equals(this.getName()) &&
 			    act.getCalories() == this.getCalories() &&
 			    act.getDate().equals(this.getDate()) &&
