@@ -77,10 +77,19 @@ public class User extends Person
         this.favoriteActivity=favorite;
     }
  
- // METODOS add,remove das activty list?!
+ // 
     
+    //Metodos Para admin
+    public Set<ActivityList> getUserActivitiesAdmin(){
+        return this.userActivities;
+    }
     
+    public Set<String> getFriendsListAdmin(){
+        
+        return this.friendsList; 
+    }
     
+   
 
     
     //Equals,toString e Clone
@@ -106,7 +115,7 @@ public class User extends Person
     @Override
     public String toString(){
         StringBuilder sb=new StringBuilder();
-        //sb.append("Nome: ");sb.append(this.name).append("\n");
+        
         sb.append(super.toString());
         sb.append("Height: ");sb.append(this.height).append("\n");
         sb.append("Weight: ");sb.append(this.weight).append("\n");
