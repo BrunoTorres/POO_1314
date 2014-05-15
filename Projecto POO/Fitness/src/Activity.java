@@ -5,7 +5,7 @@ import java.util.TreeSet;
 
 public abstract class Activity
 {
-   private String name;
+   private String name;                         // corrida ao leu
    private GregorianCalendar date;
    private GregorianCalendar timeSpent;
    private int calories;

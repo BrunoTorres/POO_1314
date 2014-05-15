@@ -1,4 +1,5 @@
 import java.util.GregorianCalendar;
+import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -84,8 +85,31 @@ public class User extends Person
     public void setFavoriteActivity(String favorite){
         this.favoriteActivity=favorite;
     }
- 
+    
+    public ActivityList getActivityList(String name){
+        try {
+            
+        }
+        catch(NullPointerException e){
+           System.out.println( e.getMessage());
+        }
+    }
  // 
+
+    public void addActivityList(String name){
+        ActivityList nova= new ActivityList(name);
+        this.userActivities.add(nova);        
+    }
+    
+    
+    
+     public boolean addFriend(User u){              //Adiciona amigos a lista
+       boolean flag=false,found=false;     
+       flag=this.friendsList.add(u.getName());             
+       
+       return flag;     
+    }
+    
     
     //Metodos Para admin
     public Set<ActivityList> getUserActivitiesAdmin(){

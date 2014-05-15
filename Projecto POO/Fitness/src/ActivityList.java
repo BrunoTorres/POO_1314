@@ -4,7 +4,7 @@ import java.util.TreeSet;
 
 public class ActivityList
 {
-   private String name;
+   private String name;                             //Corrida/futebol(que esta em sport) || Corrida/andebol(que tem que existir em sport)
    private int totalCalories;
    private GregorianCalendar totalTime;
    private GregorianCalendar firstActivity;

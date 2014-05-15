@@ -9,7 +9,7 @@ public class FitnessUM
     private DataBase db;
    
     
-    // Gerenciamento da aplicação
+    //////////////////////////                Gerenciamento da aplicação /////////////////////////////////////////////////
     
     public boolean isAdmin(String email){                               // Procurar por email ou Admin admin?!
         TreeSet<Person> userList = (TreeSet)db.getEventList();
@@ -17,14 +17,15 @@ public class FitnessUM
         boolean found=false;
     
        Iterator<Person> it=userList.iterator();
-       Person p = it.next();                                             //DUVIDAS SE FUNCIONA POIS TENHO QUE ACEDER DUAS VEZES AO it.next()!!!!!
+       Person p = it.next();                                            
        while(it.hasNext() && !found)
        {
            if((p.getEmail().equals(email)) && (p instanceof Admin))
            {
                found=true;
                flag=true;                   
-           }      
+           }
+           p = it.next();
        }       
        
        return flag;
@@ -37,7 +38,7 @@ public class FitnessUM
         boolean flag = false;
         User u=new User(email,pass,name,gender,date,height,weight,favoriteActivity);
         flag=db.getUserListAdmin().add(u);
-        
+                
         return flag;
         
     }
@@ -52,51 +53,57 @@ public class FitnessUM
         
     }
     
-    /*
-    
-    ISTO È PARA O GIT
     
     
     
+    /////////////////////////////////////////////////Propriedade dos Utilizadores//////////////////////////////////////
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    */
-    
-    //Propriedade dos Users
-    
-    public boolean addFriend(User u,String email){              //Adiciona amigos pelo email 
-       boolean flag=false,found=false;
-       Person friend=new User();
-        Iterator<Person> it=db.getUserList().iterator();
-       Person p = it.next();                                             //DUVIDAS SE FUNCIONA POIS TENHO QUE ACEDER DUAS VEZES AO it.next()!!!!!
-       while(it.hasNext() && !found)
+    public boolean addFriendInUserList(User u,String email){
+        boolean found=false;
+        
+        User u2=new User();
+        TreeSet<Person> userList=(TreeSet)db.getUserList();
+        
+        Iterator<Person> it=userList.iterator();
+        Person p = it.next();
+        while(it.hasNext() && !found)
        {
-           if((p.getEmail().equals(email)) && (p instanceof Admin))
-           {   friend=p;
-               found=true;             
-           }      
+           if((p.getEmail().equals(email)) && (p instanceof User)){
+               u2=(User)p;
+               found=true;
+           }
+           else
+           p = it.next();
        }
-       u.getFriendsListAdmin().add(p.getName());
-       User u2=(User)friend;
-       flag=u2.getFriendsListAdmin().add(u.getName());              //Adiciona automaticamente um amigo ao outro 
-       
-       return flag;     
+        if(found){
+            
+        u.addFriend(u2);
+        u2.addFriend(u);
+        }
+        
+        return found;
+    }
+    public boolean ExistSport(name){
+        boolean found=false;
+        Iterator<Sport> it=db.getSportsType().iterator();
+        while(it.hasNext() && !found)
+            if(it.next().getName().equals(name))
+                found=true;
+        return found;       
+            
+        
+    }
+    public boolean addActivityList(String name,User u){
+        boolean flag=false;
+        if (ExistSport(name)){
+            flag=true;
+            u.addActivityList(name);                   
+    }
+        return flag;
     }
     
-    
-    // Propriedade dos Administradores
+   
+    //////////////////////////////////// Propriedade dos Administradores//////////////////////////////////////////
     
     public boolean removeUser(String email){                               
         TreeSet<Person> userList = (TreeSet)db.getUserListAdmin();
@@ -110,7 +117,7 @@ public class FitnessUM
     
     
     public boolean removeActivity(Activity activity){                       
-        boolean Flag=false;
+        boolean flag=false;
         TreeSet<Person> userList=(TreeSet<Person>)db.getUserListAdmin();
         
         for(Person p:userList){
@@ -119,10 +126,53 @@ public class FitnessUM
             TreeSet<ActivityList> userActivities= (TreeSet)u.getUserActivitiesAdmin();         
             TreeSet<Activity> activityList=userActivities.getActivityListAdmin();
             
-            Flag=activityList.remove(activity);         
+            flag=activityList.remove(activity);         
         }   
         }
-        return Flag;
+        return flag;
+        
+    }
+    public boolean removeActivityList(String name){
+        
+        for(Person p:db.getUserListAdmin())
+            if(p instanceof User)
+            {
+                User u=(User) p;
+                
+                u.getUserActivitiesAdmin().remove()
+            }
+        
+    }
+    
+    public boolean removeSport(String name){
+       boolean found=false;
+        
+       Iterator<Sport>it=db.getSportsType().iterator();
+       Sport aux=it.next();
+       
+       while(it.hasNext() && !found){
+          if(aux.getName().equals(name))
+              found=true;
+          else
+              aux=it.next();
+       }
+       db.getSportsTypeAdmin().remove(aux);
+       if(found)
+       found=removeActivityList(name);
+    
+       return found;
+       
+        
+        
+    }
+    
+  
+    
+    public boolean addSport(String type,String name,int caloriesPerHour,float avgIntensity,TreeSet<String> recordList){
+        boolean flag=false;
+        Sport aux = new Sport(type,name,caloriesPerHour,avgIntensity,recordList);
+        flag=db.getSportsTypeAdmin().add(aux);
+        return flag;
         
     }
     
