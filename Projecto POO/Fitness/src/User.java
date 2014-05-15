@@ -77,23 +77,15 @@ public class User extends Person
         this.favoriteActivity=favorite;
     }
  
- 
+ // METODOS add,remove das activty list?!
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     //Equals,toString e Clone
     
+    @Override
     public boolean equals(Object o){
         if(this==o)
             return true;
@@ -101,13 +93,38 @@ public class User extends Person
             return false;
         else{
             User u = (User) o;
-            if( super.equals(u) && this.height==u.getHeight() && this.weight==u.getWeight()
+            return( super.equals(u) 
+                    && this.height==u.getHeight() 
+                    && this.weight==u.getWeight()
                     && this.favoriteActivity.equals(u.getFavoriteActivity()) 
                     && this.friendsList.equals(u.getFriendsList())
-                    && )
-            
+                    && this.userActivities.equals(u.getUserActivities()) );                   
         }
         
+    }
+    
+    @Override
+    public String toString(){
+        StringBuilder sb=new StringBuilder();
+        //sb.append("Nome: ");sb.append(this.name).append("\n");
+        sb.append(super.toString());
+        sb.append("Height: ");sb.append(this.height).append("\n");
+        sb.append("Weight: ");sb.append(this.weight).append("\n");
+        sb.append("Favorite Activity: ");sb.append(this.favoriteActivity).append("\n");
+        sb.append("Friends List: ").append("\n");
+        for(String s :this.getFriendsList())
+            sb.append(s).append("\n");
+        for(ActivityList act: this.userActivities)
+            sb.append(act.toString());
+               
+        return sb.toString();      
+        
+        
+    }
+    
+    @Override
+    public User clone(){
+        return new User(this);
     }
 }
 
