@@ -4,28 +4,15 @@ import java.util.TreeSet;
 
 public abstract class Activity {
 
-<<<<<<< HEAD
-public abstract class Activity
-{
-   private String name;                         // corrida ao leu
-   private GregorianCalendar date;
-   private GregorianCalendar timeSpent;
-   private int calories;
-   private String weather;
-   private TreeSet<Statistics> activityRecords;
-   
-   
-   
-   public abstract float setCalories();
-=======
-	private String name;
+	private String sportName;
+	private String name;                         // corrida ao leu
 	private GregorianCalendar date;
 	private GregorianCalendar timeSpent;
 	private int calories;
 	private String weather;
 	private TreeSet<Statistics> activityRecords;
 
-	public Activity(){
+	public Activity() {
 		this.name = "";
 		this.date = new GregorianCalendar();
 		this.timeSpent = new GregorianCalendar();
@@ -33,17 +20,19 @@ public abstract class Activity
 		this.weather = "";
 		this.activityRecords = new TreeSet<Statistics>();
 	}
-	
-	public Activity(String name, GregorianCalendar date, GregorianCalendar timeSpent, int calories, String weather){
+
+	public Activity(String sportName, String name, GregorianCalendar date, GregorianCalendar timeSpent, int calories, String weather) {
+		this.sportName = sportName;
 		this.name = name;
 		this.date = (GregorianCalendar) date.clone();
 		this.timeSpent = (GregorianCalendar) timeSpent.clone();
 		this.calories = calories;
 		this.weather = weather;
-		this.activityRecords = new TreeSet<Statistics>();
+		this.activityRecords = new TreeSet<>();
 	}
-	
-	public Activity(Activity a){
+
+	public Activity(Activity a) {
+		this.sportName = a.getSportName();
 		this.name = a.getName();
 		this.date = a.getDate();
 		this.timeSpent = a.getTimeSpent();
@@ -52,6 +41,14 @@ public abstract class Activity
 		this.activityRecords = a.getActivityRecords();
 	}
 
+	public String getSportName(){
+		return this.sportName;
+	}
+	
+	public void setSportName(String sportName){
+		this.sportName = sportName;
+	}
+	
 	/**
 	 * @return the name
 	 */
@@ -122,9 +119,10 @@ public abstract class Activity
 	 */
 	public TreeSet<Statistics> getActivityRecords() {
 		TreeSet<Statistics> aux = new TreeSet<Statistics>();
-		for(Statistics stat: this.activityRecords)
+		for (Statistics stat : this.activityRecords) {
 			aux.add(stat.clone());
-		
+		}
+
 		return aux;
 	}
 
@@ -134,16 +132,17 @@ public abstract class Activity
 	public void setActivityRecords(TreeSet<Statistics> activityRecords) {
 		this.activityRecords = activityRecords;
 	}
-	
+
 	public abstract void setRecords();
-	
+
 	@Override
 	public abstract boolean equals(Object a);
-	
+
 	@Override
 	public abstract String toString();
-	
+
 	@Override
 	public abstract Object clone();
->>>>>>> 7b042306a5189d28ab40ae0f04d92272b66ab59f
+
 }
+
