@@ -58,6 +58,10 @@ public void setEmail(String email){
 public void setPassword(String pass){
     this.password=pass;
 }
+
+
+
+
 //Equals,toString & Clone
     @Override
     public boolean equals(Object person){
@@ -74,17 +78,7 @@ public void setPassword(String pass){
                 && this.dateOfBirth.equals(p.getDate()) );               
     }
 }
-//HASCODE AUTOMATICO 
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 59 * hash + Objects.hashCode(this.email);
-        hash = 59 * hash + Objects.hashCode(this.password);
-        hash = 59 * hash + Objects.hashCode(this.name);
-        hash = 59 * hash + this.gender;
-        hash = 59 * hash + Objects.hashCode(this.dateOfBirth);
-        return hash;
-    }
+    
 
     @Override
     public String toString(){
@@ -102,5 +96,18 @@ public void setPassword(String pass){
     @Override
     public Person clone(){
         return new Person(this) {};  // {} ??
+    }
+    
+        
+//HASCODE AUTOMATICO 
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 59 * hash + Objects.hashCode(this.email);
+        hash = 59 * hash + Objects.hashCode(this.password);
+        hash = 59 * hash + Objects.hashCode(this.name);
+        hash = 59 * hash + this.gender;
+        hash = 59 * hash + Objects.hashCode(this.dateOfBirth);
+        return hash;
     }
 }

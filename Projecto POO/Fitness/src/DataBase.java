@@ -13,6 +13,7 @@ public class DataBase
         this.userList= new TreeSet<Person>();
         this.eventList= new TreeSet<Event>();
     }
+    
     public DataBase(TreeSet<Sport> sports,TreeSet<Person> user,TreeSet<Event> eventList){        
         for(Sport s:sports)
             this.sportsType.add(s.clone());
@@ -20,8 +21,6 @@ public class DataBase
             this.userList.add(p.clone());
         for(Event e :eventList)
             this.eventList.add(e.clone());         
-               
-            
     }
     
     
@@ -30,6 +29,7 @@ public class DataBase
         this.userList=(TreeSet<Person>)db.getUserList();
         this.eventList=(TreeSet<Event>)db.getEventList();
     }
+    
     
     public Set<Sport> getSportsType(){
         TreeSet<Sport> aux=new TreeSet<Sport>();
