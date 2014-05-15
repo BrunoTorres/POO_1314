@@ -30,11 +30,19 @@ public class User extends Person
         this.height=height;
         this.weight=weight;
         this.favoriteActivity=favoriteActivity;
-        
         for(ActivityList act:userActivities)
         this.userActivities.add((ActivityList) act.clone());
-   
         this.friendsList=(TreeSet<String>)friendsList.clone(); 
+    }
+        public User(String email,String pass,String name,char gender,GregorianCalendar date,
+            int height,float weight,String favoriteActivity)
+    {
+        super(email,pass,name,gender,date);
+        this.height=height;
+        this.weight=weight;
+        this.favoriteActivity=favoriteActivity;
+        this.userActivities=new TreeSet<ActivityList>();
+        this.friendsList=new TreeSet<String>(); 
     }
        
     public User(User u){

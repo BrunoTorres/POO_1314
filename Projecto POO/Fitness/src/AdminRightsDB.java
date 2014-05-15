@@ -1,29 +1,24 @@
 
+// ESTA CLASSE FAZ SENTIDO?? 
+
 import java.util.TreeSet;
 
 
 public class AdminRightsDB extends DataBase
 {
     
-    
-    
-    public boolean removeActivity(Activity activity){
-        boolean Flag=true;
-        TreeSet<Person> userList=(TreeSet<Person>)super.getUserListAdmin();
-        
-        for(Person p:userList){
-            User u= (User)p;
-            TreeSet<ActivityList> userActivities= (TreeSet)u.getUserActivitiesAdmin();         
-            TreeSet<Activity> activityList=userActivities.getActivityListAdmin();
-            
-            Flag=activityList.remove(activity);           
-                       
-        }
-        
-            return Flag;
-        
-        
-       // return super.activitiesList.remove(activity);
-
+    public AdminRightsDB(){
+        super();
     }
+    public AdminRightsDB(TreeSet<Sport> sports,TreeSet<Person> user,TreeSet<Event> eventList){
+        super(sports,user,eventList);
+    }
+    
+    public AdminRightsDB(AdminRightsDB adminRights){
+        super((TreeSet<Sport>)adminRights.getSportsType(),(TreeSet<Person>)adminRights.getUserList(),(TreeSet<Event>)adminRights.getEventList());
+        
+    }
+    
+    
+    
 }
