@@ -14,11 +14,20 @@ public class FitnessUM
     public FitnessUM(DataBase db){
         this.db=db;
     }
+   //IMPLEMENTAR METODOS DE PESQUISA
+    //pesquisa1 -> -RECEBER UM NOME/EMAIL e retornar um User    Feito em DataBase
+    //Pesquisa2 -> REceber Uma string e um user e retornar uma activityList
+  
+    
+    
+    
     
     
     //////////////////////////                Gerenciamento da aplicação /////////////////////////////////////////////////
     
-    public boolean isAdmin(String email){                               // Procurar por email ou Admin admin?!
+    
+    
+    public boolean isAdmin(String email){                                                           // Procurar por email ou Admin admin?!
         TreeSet<Person> userList = (TreeSet)db.getUserList();
         boolean flag=false;
         boolean found=false;
@@ -108,11 +117,21 @@ public class FitnessUM
     }
         return flag;
     }
-    
-    
-    
-    //                                                                                          / POR PARTES OK?SIM
-    public String seeFriend(User u){
+    /////// VE TODAS AS ACTIVIDADES DE TODOS OS AMIGOS ///////////////////////////
+    public String FriendToString(TreeSet<User> users){
+        StringBuilder sb=new StringBuilder();
+        
+        for(User friend:users){
+        sb.append("Name Friend: ");sb.append(friend.getName()).append("\n");
+        sb.append("Favorite Activity: ");sb.append(friend.getFavoriteActivity()).append("\n");
+        sb.append("Activities").append("\n");
+        sb.append(friend.getUserActivities().toString());                                           //toSring() METODO IMPLENTADO NA ACTIVITYLIST!!!!
+        
+        } 
+            return sb.toString();
+    }
+                                                                                                         
+    public String seeAllFriend(User u){
        TreeSet<Person> dbUsers=(TreeSet)db.getUserList();
        TreeSet<String> userActivities = (TreeSet)u.getFriendsList();
        TreeSet<User> users=new TreeSet<User>();
@@ -132,9 +151,30 @@ public class FitnessUM
                
        }
        
-       // 
-       
-       
+       return (FriendToString(users));
+        
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+
+    //Ver Actividade de um dado amigo //
+    
+    //Lista amigos,escolhe amigo        --
+    public String listAllFriends(User u){
+        TreeSet<String> s=(TreeSet)u.getFriendsList();
+        
+       return s.toString();
+    }
+    //Lista ActivityList do amigo 
+    public String allActivitiesFriend(User u){
+       return u.getUserActivities().toString();
+    }
+    
+    //
+    // Recebe nome da activityList e User Friend procura essa activitylist e lista 
+    public String seeOneActivityList(User u,String activityList){
+        return u.getOneActivityList(activityList).toString();                           //toString ACTIVITYLIST  
+        
     }
     
    

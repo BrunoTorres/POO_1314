@@ -1,3 +1,4 @@
+import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -52,6 +53,25 @@ public class DataBase
             aux.add(e.clone());
     }
     
+    public User getUser(String nome){
+        boolean found=false;
+        User u=new User();
+        Iterator<Person> it=this.userList.iterator();
+         Person p = it.next();                                            
+       while(it.hasNext() && !found)
+       {
+           if((p.getName().equals(name)) && (p instanceof User))
+           {
+               u=(User)p;
+               found=true;
+               
+               
+           }
+           p = it.next();
+       }       
+       return u;
+       
+    }
     
     // to AdminRights
     

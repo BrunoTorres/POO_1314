@@ -86,15 +86,25 @@ public class User extends Person
         this.favoriteActivity=favorite;
     }
     
-    public ActivityList getActivityList(String name){
+    public ActivityList getOneActivityList(String name){
         try {
-            
+             ActivityList act;
+             boolean found=false;
+             Iterator<ActivityList> it=this.userActivities.iterator();
+             act=it.next();
+             while(it.hasNext() && !found)
+                if(act.getNome.equals(name))
+                    found=true;
+                 else
+                    act=it.next();
+             return act;              
+
         }
         catch(NullPointerException e){
            System.out.println( e.getMessage());
         }
     }
- // 
+
 
     public void addActivityList(String name){
         ActivityList nova= new ActivityList(name);
