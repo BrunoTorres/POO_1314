@@ -1,5 +1,6 @@
 
 import java.util.GregorianCalendar;
+import java.util.Objects;
 import java.util.TreeSet;
 
 public abstract class Activity {
@@ -133,13 +134,55 @@ public abstract class Activity {
 	public abstract void setRecords();
 
 	@Override
-	public abstract boolean equals(Object a);
+	public boolean equals(Object a){
+		if(this == a)
+			return true;
+		if(a == null || this.getClass() != a.getClass())
+			return false;
+		
+		Activity act = (Activity) a;
+		
+		return (this.sportName.equals(act.getSportName()) &&
+				this.name.equals(act.getName()) &&
+				this.date.equals(act.getDate()) &&
+				this.timeSpent.equals(act.getTimeSpent()) &&
+				this.calories == act.getCalories() &&
+				this.weather.equals(act.getWeather()) &&
+				this.performance.equals(act.getPerformance()));
+	}
 
 	@Override
-	public abstract String toString();
+	public int hashCode() {
+		int hash = 7;
+		hash = 43 * hash + Objects.hashCode(this.sportName);
+		hash = 43 * hash + Objects.hashCode(this.name);
+		hash = 43 * hash + Objects.hashCode(this.date);
+		hash = 43 * hash + Objects.hashCode(this.timeSpent);
+		hash = 43 * hash + this.calories;
+		hash = 43 * hash + Objects.hashCode(this.weather);
+		hash = 43 * hash + Objects.hashCode(this.performance);
+		return hash;
+	}
 
 	@Override
-	public abstract Object clone();
+	public String toString(){
+		StringBuilder sb = new StringBuilder();
+		sb.append("Desporto: ");
+		sb.append(this.getSportName()).append("\n");
+		sb.append("Descrição: ");
+		sb.append(this.getName()).append("\n");
+		sb.append("Data: ");
+		sb.append(this.getDate().toString()).append("\n");
+		sb.append("Duração: ");
+		sb.append(this.getTimeSpent().toString()).append("\n");
+		sb.append("Meteorologia: ");
+		sb.append(this.getWeather()).append("\n");
+		
+		return sb.toString();
+	}
+
+	@Override
+	public abstract Activity clone();
 
 }
 
