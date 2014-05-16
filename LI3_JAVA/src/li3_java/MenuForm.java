@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package li3_java;
 
 import java.io.File;
+import java.util.TreeSet;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -49,6 +49,7 @@ public class MenuForm extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         textResultados = new javax.swing.JTextArea();
@@ -129,6 +130,11 @@ public class MenuForm extends javax.swing.JFrame {
         but9.setMaximumSize(new java.awt.Dimension(30, 24));
         but9.setMinimumSize(new java.awt.Dimension(30, 24));
         but9.setPreferredSize(new java.awt.Dimension(30, 24));
+        but9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                but9ActionPerformed(evt);
+            }
+        });
 
         but10.setText("10");
         but10.setMargin(new java.awt.Insets(2, 2, 2, 2));
@@ -158,6 +164,8 @@ public class MenuForm extends javax.swing.JFrame {
 
         jLabel5.setText("Tabela com o número total de publicações registadas em cada ano");
 
+        jLabel6.setText("Lista dos nomes dos autores começados por uma dada letra de A a Z");
+
         javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
         menuPanel.setLayout(menuPanelLayout);
         menuPanelLayout.setHorizontalGroup(
@@ -181,14 +189,20 @@ public class MenuForm extends javax.swing.JFrame {
                             .addComponent(jLabel5))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(but6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(but10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(but9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(but8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(but7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 226, Short.MAX_VALUE)
-                .addComponent(but11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(151, 151, 151))
+                    .addGroup(menuPanelLayout.createSequentialGroup()
+                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(but6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(but10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(but8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(but7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(but11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(151, 151, 151))
+                    .addGroup(menuPanelLayout.createSequentialGroup()
+                        .addComponent(but9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel6)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         menuPanelLayout.setVerticalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -211,7 +225,9 @@ public class MenuForm extends javax.swing.JFrame {
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(but9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(but9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel6))
                     .addComponent(but4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -286,81 +302,93 @@ public class MenuForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void butGravarEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butGravarEstadoActionPerformed
-        // TODO add your handling code here:
+		// TODO add your handling code here:
     }//GEN-LAST:event_butGravarEstadoActionPerformed
 
     private void butSairBarraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butSairBarraActionPerformed
-         ConfirmSair sair = new ConfirmSair();
-	sair.pack();
-	sair.setLocationRelativeTo(this);
-	sair.setVisible(true);
-	
-	
+		ConfirmSair sair = new ConfirmSair();
+		sair.pack();
+		sair.setLocationRelativeTo(this);
+		sair.setVisible(true);
+
+
     }//GEN-LAST:event_butSairBarraActionPerformed
 
     private void but1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but1ActionPerformed
-	this.gest = new GestAutores();
-	this.redeGlobal = new RedeGlobalAutores();
-	//String pathText;
-	JFileChooser fChoose = new JFileChooser();
-	File f;
-	String path;
-	int res;
-	this.setEnabled(false);
-	fChoose.setCurrentDirectory(new java.io.File("/home/jmano/NetBeansProjects/LI3_JAVA"));
-	res = fChoose.showDialog(null, "Abrir...");
-	this.setEnabled(true);
-	if(res == JFileChooser.APPROVE_OPTION){
-		
-		f = fChoose.getSelectedFile();
-		path = f.getAbsolutePath();
-		gest.lerFicheiro(path, redeGlobal);
-		this.textResultados.setText(".......... ESTATÍSTICAS ..........\n\n");
-		this.textResultados.append(redeGlobal.statsString());
+		this.gest = new GestAutores();
+		this.redeGlobal = new RedeGlobalAutores();
+		//String pathText;
+		JFileChooser fChoose = new JFileChooser();
+		File f;
+		String path;
+		int res;
+		this.setEnabled(false);
+		fChoose.setCurrentDirectory(new java.io.File("/home/jmano/NetBeansProjects/LI3_JAVA"));
+		res = fChoose.showDialog(null, "Abrir...");
+		this.setEnabled(true);
+		if (res == JFileChooser.APPROVE_OPTION) {
+
+			f = fChoose.getSelectedFile();
+			path = f.getAbsolutePath();
+			gest.lerFicheiro(path, redeGlobal);
+			this.textResultados.setText(".......... ESTATÍSTICAS ..........\n\n");
+			this.textResultados.append(redeGlobal.statsString());
 		//this.textResultados.append("\n\n");
-		//this.textResultados.append(redeGlobal.consulta21a(2009, 2009, 3).toString());
-		//this.textResultados.append("\n\n");
-		//this.textResultados.append(redeGlobal.consulta21b(1, 2013, 2014).toString());
-		this.textResultados.append("\n\n");
-	}
-	
+			//this.textResultados.append(redeGlobal.consulta21a(2009, 2009, 3).toString());
+			//this.textResultados.append("\n\n");
+			//this.textResultados.append(redeGlobal.consulta21b(1, 2013, 2014).toString());
+			this.textResultados.append("\n\n");
+		}
+
     }//GEN-LAST:event_but1ActionPerformed
 
     private void but2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but2ActionPerformed
-	char c;
-	int res = 0;
-	Object[] letras = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
-	c = (char) JOptionPane.showInputDialog(this, "Introduza a letra que deseja pesquisar", "Letra", JOptionPane.PLAIN_MESSAGE, null, letras, letras[0]);
-	
-	for(int i = 0; i < letras.length && res == 0; i++)
-		if((char)letras[i] == c){
-			this.textResultados.append("\n" + this.redeGlobal.consulta22b(c).toString());
-			res = 1;
-		}
-		
+
     }//GEN-LAST:event_but2ActionPerformed
 
     private void but10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but10ActionPerformed
-	JTextField nomeAutor = new JTextField();
-	JTextField textAno = new JTextField();
-	JLabel labelNome = new JLabel("Nome:");
-	JLabel labelAno = new JLabel("Ano");
-	Object[] dialog = {labelNome, nomeAutor, labelAno, textAno};
-	int ano;
-	String autor;
-	int res = JOptionPane.showConfirmDialog(this, dialog, "Introduza os dados", JOptionPane.OK_CANCEL_OPTION);
-	if(res == JOptionPane.OK_OPTION)
-		this.textResultados.append(this.redeGlobal.consulta22c(nomeAutor.getText(), Integer.valueOf(textAno.getText())));
-	
+		JTextField nomeAutor = new JTextField();
+		JTextField textAno = new JTextField();
+		JLabel labelNome = new JLabel("Nome:");
+		JLabel labelAno = new JLabel("Ano");
+		Object[] dialog = {labelNome, nomeAutor, labelAno, textAno};
+		int ano;
+		String autor;
+		int res = JOptionPane.showConfirmDialog(this, dialog, "Introduza os dados", JOptionPane.OK_CANCEL_OPTION);
+		if (res == JOptionPane.OK_OPTION) {
+			this.textResultados.append(this.redeGlobal.consulta22c(nomeAutor.getText(), Integer.valueOf(textAno.getText())));
+		}
+
     }//GEN-LAST:event_but10ActionPerformed
 
     private void but11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but11ActionPerformed
-        String autor = JOptionPane.showInputDialog("Introduza o nome do autor");
-	if(autor.length() != 0)
-		this.textResultados.append("\n\n" + this.redeGlobal.consulta22d(autor).toString());
-	else
-		this.textResultados.append("\n\nAutor não encontrado...\n\n");
+		String autor = JOptionPane.showInputDialog("Introduza o nome do autor");
+		if (autor.length() != 0) {
+			this.textResultados.append("\n\n" + this.redeGlobal.consulta22d(autor).toString());
+		} else {
+			this.textResultados.append("\n\nAutor não encontrado...\n\n");
+		}
     }//GEN-LAST:event_but11ActionPerformed
+
+    private void but9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but9ActionPerformed
+		char c;
+		int res = 0;
+		Object[] letras = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+		c = (char) JOptionPane.showInputDialog(this, "Introduza a letra que deseja pesquisar", "Letra", JOptionPane.PLAIN_MESSAGE, null, letras, letras[0]);
+
+		for (int i = 0; i < letras.length && res == 0; i++) {
+			if ((char) letras[i] == c) {
+				TreeSet<String> autores = (TreeSet<String>) this.redeGlobal.consulta22b(c);
+				for(String s: autores){
+					this.textResultados.append(s + "\n");
+				}
+				res = 1;
+				this.textResultados.append(("Total: " + autores.size()));
+			}
+		}
+		
+
+    }//GEN-LAST:event_but9ActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -371,8 +399,8 @@ public class MenuForm extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
 		 * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
 		 */
-		
-        //</editor-fold>
+
+		//</editor-fold>
 
 		/* Create and display the form */
 		java.awt.EventQueue.invokeLater(new Runnable() {
@@ -380,8 +408,7 @@ public class MenuForm extends javax.swing.JFrame {
 				new MenuForm().setVisible(true);
 			}
 		});
-		
-		
+
 	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -403,6 +430,7 @@ public class MenuForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -411,5 +439,5 @@ public class MenuForm extends javax.swing.JFrame {
     private javax.swing.JTextArea textResultados;
     // End of variables declaration//GEN-END:variables
    private GestAutores gest;// = new GestAutores();
-   private RedeGlobalAutores redeGlobal;// = new RedeGlobalAutores();
+	private RedeGlobalAutores redeGlobal;// = new RedeGlobalAutores();
 }
