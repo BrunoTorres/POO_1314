@@ -53,14 +53,14 @@ public class DataBase
             aux.add(e.clone());
     }
     
-    public User getUser(String nome){
+    public User getUser(String email){           
         boolean found=false;
         User u=new User();
         Iterator<Person> it=this.userList.iterator();
          Person p = it.next();                                            
        while(it.hasNext() && !found)
        {
-           if((p.getName().equals(name)) && (p instanceof User))
+           if((p.getEmail().equals(email)) && (p instanceof User))
            {
                u=(User)p;
                found=true;

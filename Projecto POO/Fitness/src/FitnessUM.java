@@ -18,14 +18,32 @@ public class FitnessUM
     //pesquisa1 -> -RECEBER UM NOME/EMAIL e retornar um User    Feito em DataBase
     //Pesquisa2 -> REceber Uma string e um user e retornar uma activityList
   
-    
+  
     
     
     
     
     //////////////////////////                Gerenciamento da aplicação /////////////////////////////////////////////////
-    
-    
+  
+    public User getUserByEmail(String email){
+        User u;
+        u=db.getUser(email);
+        return u;
+        
+    }
+      public boolean existPassAndUser(String email,String pass){                               //////////////////////////////////////////////            
+        TreeSet<Person> userList = (TreeSet)db.getUserList();
+        boolean found =false;
+        
+        Iterator<Person> it = userList.iterator();
+        Person p=it.next();
+        while(it.hasNext() && !found){
+            if(email.equals(p.getEmail()) && pass.equals(p.getPassword()))
+                found= true;
+        }
+        return found;
+    }
+   
     
     public boolean isAdmin(String email){                                                           // Procurar por email ou Admin admin?!
         TreeSet<Person> userList = (TreeSet)db.getUserList();
@@ -99,7 +117,7 @@ public class FitnessUM
         
         return found;
     }
-    public boolean ExistSport(name){
+    public boolean ExistSport(String name){
         boolean found=false;
         Iterator<Sport> it=db.getSportsType().iterator();
         while(it.hasNext() && !found)
@@ -183,7 +201,7 @@ public class FitnessUM
     public boolean removeUser(String email){                               
         TreeSet<Person> userList = (TreeSet)db.getUserListAdmin();
         boolean Flag = false;
-        for(Person u:userList){
+        for(Person u:userList){                                                             //melhorar RETIRAR FOR para Iterator!!!
             if(email.equals(u.getEmail()))
           Flag= userList.remove(u);                
         }
