@@ -10,7 +10,7 @@ public abstract class Activity {
 	private GregorianCalendar timeSpent;
 	private int calories;
 	private String weather;
-	private TreeSet<Statistics> activityRecords;
+	private Statistics performance;
 
 	public Activity() {
 		this.sportName = "";
@@ -19,7 +19,7 @@ public abstract class Activity {
 		this.timeSpent = new GregorianCalendar();
 		this.calories = 0;
 		this.weather = "";
-		this.activityRecords = new TreeSet<>();
+		this.performance = new Statistics();
 	}
 
 	public Activity(String sportName, String name, GregorianCalendar date, GregorianCalendar timeSpent, int calories, String weather) {
@@ -29,7 +29,7 @@ public abstract class Activity {
 		this.timeSpent = (GregorianCalendar) timeSpent.clone();
 		this.calories = calories;
 		this.weather = weather;
-		this.activityRecords = new TreeSet<>();
+		this.performance = new Statistics();
 	}
 
 	public Activity(Activity a) {
@@ -39,7 +39,7 @@ public abstract class Activity {
 		this.timeSpent = a.getTimeSpent();
 		this.calories = a.getCalories();
 		this.weather = a.getWeather();
-		this.activityRecords = a.getActivityRecords();
+		this.performance = a.getPerformance();
 	}
 
 	public String getSportName(){
@@ -118,20 +118,16 @@ public abstract class Activity {
 	/**
 	 * @return the activityRecords
 	 */
-	public TreeSet<Statistics> getActivityRecords() {
-		TreeSet<Statistics> aux = new TreeSet<>();
-		for (Statistics stat : this.activityRecords) {
-			aux.add(stat.clone());
-		}
-
+	public Statistics getPerformance() {
+		Statistics aux = this.performance.clone();
 		return aux;
 	}
 
 	/**
-	 * @param activityRecords the activityRecords to set
+	 * @param perf
 	 */
-	public void setActivityRecords(TreeSet<Statistics> activityRecords) {
-		this.activityRecords = activityRecords;
+	public void setPerformance (float perf) {
+		this.performance.setRecord(perf);
 	}
 
 	public abstract void setRecords();
