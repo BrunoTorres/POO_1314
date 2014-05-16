@@ -4,13 +4,13 @@ import java.util.TreeSet;
 public class DataBase
 {
     private TreeSet<Sport> sportsType;
-    private TreeSet<Person> userList;  // admin && users
+    private TreeSet<Person>userList;  // admin && users
     private TreeSet<Event> eventList;
     
     
     public DataBase(){
         this.sportsType= new TreeSet<Sport>();
-        this.userList= new TreeSet<Person>();
+        this.userList= new TreeSet<Person>(new ComparePerson());
         this.eventList= new TreeSet<Event>();
     }
     
@@ -31,6 +31,7 @@ public class DataBase
     }
     
     
+    
     public Set<Sport> getSportsType(){
         TreeSet<Sport> aux=new TreeSet<Sport>();
         for(Sport s:this.sportsType)
@@ -39,7 +40,7 @@ public class DataBase
     }
     
     public Set<Person> getUserList(){
-        TreeSet<Person> aux = new TreeSet<Person>();
+        TreeSet<Person> aux = new TreeSet<Person>(new ComparePerson());
         for(Person p : this.userList)
             aux.add(p.clone());
         return aux;
@@ -66,6 +67,10 @@ public class DataBase
        return this.eventList;
    }
     
+   public void addPerson(TreeSet<Person> persons){
+       for(Person p:persons)
+       this.userList.add(p);
+   }
    
    
    
@@ -106,8 +111,16 @@ public class DataBase
            sb.append(s.toString());
        sb.append("User List ").append("\n");
        for(Person p : this.userList){
+           if(p instanceof User){
            User u=(User)p;
+           sb.append("User: ");
            sb.append(u.toString());
+           }
+           else if(p instanceof Admin){
+               Admin a=(Admin)p;
+               sb.append("Admin: ");
+               sb.append(a.toString());
+           }
        }
        return sb.toString();
            

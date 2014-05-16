@@ -7,11 +7,19 @@ public class FitnessUM
 {
     private DataBase db;
    
+    public FitnessUM(){
+        this.db=new DataBase();
+    }
+    
+    public FitnessUM(DataBase db){
+        this.db=db;
+    }
+    
     
     //////////////////////////                Gerenciamento da aplicação /////////////////////////////////////////////////
     
     public boolean isAdmin(String email){                               // Procurar por email ou Admin admin?!
-        TreeSet<Person> userList = (TreeSet)db.getEventList();
+        TreeSet<Person> userList = (TreeSet)db.getUserList();
         boolean flag=false;
         boolean found=false;
     
@@ -100,7 +108,10 @@ public class FitnessUM
     }
         return flag;
     }
-    /// POR PARTES OK?SIM
+    
+    
+    
+    //                                                                                          / POR PARTES OK?SIM
     public String seeFriend(User u){
        TreeSet<Person> dbUsers=(TreeSet)db.getUserList();
        TreeSet<String> userActivities = (TreeSet)u.getFriendsList();
