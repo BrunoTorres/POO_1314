@@ -49,7 +49,7 @@ public class Distance extends Activity {
 			    act.getDate().equals(this.getDate()) &&
 			    act.getTimeSpent().equals(this.getTimeSpent()) &&
 			    act.getWeather().equals(this.getWeather()) &&
-			    act.getActivityRecords().equals(this.getActivityRecords()));
+			    act.getPerformance().equals(this.getPerformance()));
 	}
 
 	@Override
