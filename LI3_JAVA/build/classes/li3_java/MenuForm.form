@@ -132,15 +132,24 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="but6" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="but10" min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="but9" min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="but8" min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="but7" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="but6" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="but10" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="but8" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="but7" min="-2" pref="30" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="but11" min="-2" pref="30" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="but9" min="-2" pref="30" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="226" max="32767" attributes="0"/>
-                  <Component id="but11" min="-2" pref="30" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -168,7 +177,10 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="but9" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="but9" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <Component id="but4" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -340,6 +352,9 @@
               <Dimension value="[30, 24]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="but9ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="but10">
           <Properties>
@@ -394,6 +409,11 @@
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="text" type="java.lang.String" value="Tabela com o n&#xfa;mero total de publica&#xe7;&#xf5;es registadas em cada ano"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel6">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Lista dos nomes dos autores come&#xe7;ados por uma dada letra de A a Z"/>
           </Properties>
         </Component>
       </SubComponents>

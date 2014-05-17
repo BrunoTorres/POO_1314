@@ -8,7 +8,7 @@ public class User extends Person
     private int height; // centímetros
     private float weight; // kilogramas
     private String favoriteActivity;
-    private TreeSet<ActivityList> userActivities; // cada atividade tem uma lista de eventos
+    private TreeSet<Activity> userActivities; // cada atividade tem uma lista de eventos
     private TreeSet<String> friendsList;
 
     
@@ -18,21 +18,21 @@ public class User extends Person
         this.height=0;
         this.weight=0;
         this.favoriteActivity="";
-        this.userActivities=new TreeSet<ActivityList>();
+        this.userActivities=new TreeSet<Activity>();
         this.friendsList=new TreeSet<String>(); 
         
     }
     
     public User(String email,String pass,String name,char gender,GregorianCalendar date,
             int height,float weight,String favoriteActivity,
-            TreeSet<ActivityList> userActivities,TreeSet<String> friendsList)
+            TreeSet<Activity> userActivities,TreeSet<String> friendsList)
     {
         super(email,pass,name,gender,date);
         this.height=height;
         this.weight=weight;
         this.favoriteActivity=favoriteActivity;
-        for(ActivityList act:userActivities)
-        this.userActivities.add((ActivityList) act.clone());
+        for(Activity act:userActivities)
+        this.userActivities.add((Activity) act.clone());
         this.friendsList=(TreeSet<String>)friendsList.clone(); 
     }
         public User(String email,String pass,String name,char gender,GregorianCalendar date,
@@ -42,7 +42,7 @@ public class User extends Person
         this.height=height;
         this.weight=weight;
         this.favoriteActivity=favoriteActivity;
-        this.userActivities=new TreeSet<ActivityList>();
+        this.userActivities=new TreeSet<Activity>();
         this.friendsList=new TreeSet<String>(); 
     }
        
@@ -51,7 +51,7 @@ public class User extends Person
         this.height=u.getHeight();
         this.weight=u.getWeight();
         this.favoriteActivity=u.getFavoriteActivity();
-        this.userActivities=(TreeSet<ActivityList>)u.getUserActivities();
+        this.userActivities=(TreeSet<Activity>)u.getUserActivities();
         this.friendsList=(TreeSet<String>)u.getFriendsList();
         
     }
@@ -65,9 +65,9 @@ public class User extends Person
     public String getFavoriteActivity(){
         return this.favoriteActivity;
     }
-    public Set<ActivityList> getUserActivities(){
-        TreeSet<ActivityList> res= new TreeSet<ActivityList>();
-        for(ActivityList act : this.userActivities)
+    public Set<Activity> getUserActivities(){
+        TreeSet<Activity> res= new TreeSet<Activity>();
+        for(Activity act : this.userActivities)
             res.add(act.clone());
     return res;
     }
@@ -86,32 +86,41 @@ public class User extends Person
         this.favoriteActivity=favorite;
     }
     
-    public ActivityList getOneActivityList(String name){
-        try {
-             ActivityList act;
+    public Activity getOneActivity(String name){
+   
+             Activity act;
              boolean found=false;
-             Iterator<ActivityList> it=this.userActivities.iterator();
+             Iterator<Activity> it=this.userActivities.iterator();
              act=it.next();
              while(it.hasNext() && !found)
-                if(act.getNome.equals(name))
+                if(act.getName().equals(name))
                     found=true;
                  else
                     act=it.next();
-             return act;              
-
+                          
+              
+             return act;      //PODE RETURNAR NULL||||
         }
-        catch(NullPointerException e){
-           System.out.println( e.getMessage());
+            
+    
+
+/*
+    public void addActivity(String name,String tipoActivity){                      /// TEm que escolher o tipo de actividade e depois addicionar
+        switch(tipoActivity){
+         case "TwoDistances":
+              Activity nova= new TwoDistances(name);  
+              break;
+         case "Group":
+              Activity nova= new Group(name);
+              break;
+         case "IndorFihting":
+             Activity nova= new IndorFihting(name);
+   
+        this.userActivities.add(nova);     
         }
     }
-
-
-    public void addActivityList(String name){
-        ActivityList nova= new ActivityList(name);
-        this.userActivities.add(nova);        
-    }
     
-    
+   */
     
      public boolean addFriend(User u){              //Adiciona amigos a lista
        boolean flag=false,found=false;     
@@ -120,9 +129,25 @@ public class User extends Person
        return flag;     
     }
     
+    public boolean removeActivity(String activityName){
+        boolean found=false;
+        boolean flag = false;
+        Iterator<Activity> it=this.userActivities.iterator();
+        Activity act=it.next();
+        while(it.hasNext() && !found)
+            if(act.getName().equals(activityName))
+            {
+                flag=this.userActivities.remove(act);
+                found=true;
+            }
+        return flag;
+        
+    }
+    
+    
     
     //Metodos Para admin
-    public Set<ActivityList> getUserActivitiesAdmin(){
+    public Set<Activity> getUserActivitiesAdmin(){
         return this.userActivities;
     }
     
@@ -167,7 +192,7 @@ public class User extends Person
         sb.append("Friends List: ").append("\n");
         for(String s :this.getFriendsList())
             sb.append(s).append("\n");
-        for(ActivityList act: this.userActivities)
+        for(Activity act: this.userActivities)
             sb.append(act.toString());
                
         return sb.toString();      

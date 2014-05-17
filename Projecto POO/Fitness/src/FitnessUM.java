@@ -127,15 +127,18 @@ public class FitnessUM
             
         
     }
-    public boolean addActivityList(String name,User u){
+    /*
+    public boolean addActivity(String name,User u){
         boolean flag=false;
-        if (ExistSport(name)){
+        if (ExistSport(name)){                                                      VER COMO ADD ACTIVITY
             flag=true;
-            u.addActivityList(name);                   
+            u.addActivity(name);                   
     }
         return flag;
     }
-    /////// VE TODAS AS ACTIVIDADES DE TODOS OS AMIGOS ///////////////////////////
+          */                 
+    
+            /////// VE TODAS AS ACTIVIDADES DE TODOS OS AMIGOS ///////////////////////////
     public String FriendToString(TreeSet<User> users){
         StringBuilder sb=new StringBuilder();
         
@@ -190,12 +193,14 @@ public class FitnessUM
     
     //
     // Recebe nome da activityList e User Friend procura essa activitylist e lista 
-    public String seeOneActivityList(User u,String activityList){
-        return u.getOneActivityList(activityList).toString();                           //toString ACTIVITYLIST  
+    public String seeOneActivityList(User u,String activity){
+        return u.getOneActivity(activity).toString();                           //toString ACTIVITYLIST  
         
     }
     
    
+    
+    
     //////////////////////////////////// Propriedade dos Administradores//////////////////////////////////////////
     
     public boolean removeUser(String email){                               
@@ -209,6 +214,8 @@ public class FitnessUM
     }
     
     
+    
+    
     public boolean removeActivity(Activity activity){                       
         boolean flag=false;
         TreeSet<Person> userList=(TreeSet<Person>)db.getUserListAdmin();
@@ -216,30 +223,29 @@ public class FitnessUM
         for(Person p:userList){
             if(p instanceof User){
             User u= (User)p;
-            TreeSet<ActivityList> userActivities= (TreeSet)u.getUserActivitiesAdmin();         
-            TreeSet<Activity> activityList=userActivities.getActivityListAdmin();
-            
-            flag=activityList.remove(activity);         
+           flag= u.getUserActivitiesAdmin().remove(activity);         
+              
         }   
         }
         return flag;
         
     }
-    public void removeActivityList(String name){
+    public void removeActivities(String name){
         
         for(Person p:db.getUserListAdmin())
             if(p instanceof User)
             {
                 boolean found=false;
                 User u=(User) p;
-                Iterator<ActivityList> it= u.getUserActivities().iterator();
-                ActivityList aux=it.next();
+                Iterator<Activity> it= u.getUserActivities().iterator();
+                Activity aux=it.next();
                 
                 while(it.hasNext() && !found)                    
                     if(aux.getName().equals(name))                        
                         found = true;
                     else
                         aux=it.next();
+                
                 u.getUserActivitiesAdmin().remove(aux);                  
                
             }
