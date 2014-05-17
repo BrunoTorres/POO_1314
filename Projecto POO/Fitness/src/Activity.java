@@ -100,7 +100,7 @@ public abstract class Activity {
 		return calories;
 	}
 
-	public abstract void setCalories();
+	public abstract void setCalories();         
 
 	/**
 	 * @return the weather

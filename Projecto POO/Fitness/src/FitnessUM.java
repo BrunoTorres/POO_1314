@@ -131,7 +131,7 @@ public class FitnessUM
     public boolean addActivity(String name,User u){
         boolean flag=false;
         if (ExistSport(name)){                                                      VER COMO ADD ACTIVITY
-            flag=true;
+            flag=true;                                                  Só pode fazer add se o sportType estiver no treeSeet<Sport>
             u.addActivity(name);                   
     }
         return flag;
