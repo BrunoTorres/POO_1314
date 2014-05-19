@@ -1,6 +1,17 @@
 
 public class IndoorSolo extends Activity
 {
+    public IndoorSolo(){
+        super();
+    }
+
+    public IndoorSolo(String sportName, String name, GregorianCalendar date, GregorianCalendar timeSpent, String weather){
+        super(sportName, name, date, timeSpent, weather)
+    }
+
+    public Other(Other o){
+        super(o.getSportName(), o.getName(), o.getDate(), o.getTimeSpent(), o.getWeather());
+    }
 
     /**
      *
@@ -18,8 +29,29 @@ public class IndoorSolo extends Activity
     }
 
     @Override
-    public Activity clone() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean equals(Object a){
+        if(this == a)
+            return true;
+        if(a == null || this.getClass() != a.getClass())
+            return false;
+
+        IndoorSolo act = (IndoorSolo) a;
+
+        return  ( super.equals(act) );
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder sb=new StringBuilder();
+   
+        sb.append(super.toString());
+            
+        return sb.toString();      
+    }
+
+    @Override
+    public IndoorSolo clone() {
+        return new IndoorSolo(this);
     }
     
 }
