@@ -11,7 +11,9 @@ public class TwoDistances extends Distance {
 		this.secondDistance = 0;
 	}
 	
-	public TwoDistances(String sportName, String name, GregorianCalendar date, GregorianCalendar timeSpent, int calories, String weather, float distance, float secondDistance){
+	public TwoDistances(String sportName, String name, GregorianCalendar date, double timeSpent,
+            int calories, String weather, float distance, float secondDistance){
+        
 		super(sportName, name, date, timeSpent, calories, weather, distance);
 		this.secondDistance = secondDistance;
 	}

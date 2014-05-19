@@ -11,7 +11,7 @@ public class Distance extends Activity {
 		this.distance =  0;
 	}
 	
-	public Distance(String sportName, String name, GregorianCalendar date, GregorianCalendar timeSpent, int calories, String weather, float distance){
+	public Distance(String sportName, String name, GregorianCalendar date, double timeSpent, int calories, String weather, float distance){
 		super(sportName, name, date, timeSpent, calories, weather);
 		this.distance = distance;
 	}
@@ -30,7 +30,6 @@ public class Distance extends Activity {
 		
 	}
 	
-	@Override
 	public void setRecords() {
 		
 	}
@@ -47,7 +46,7 @@ public class Distance extends Activity {
 		return (act.getName().equals(this.getName()) &&
 			    act.getCalories() == this.getCalories() &&
 			    act.getDate().equals(this.getDate()) &&
-			    act.getTimeSpent().equals(this.getTimeSpent()) &&
+			    act.getTimeSpent()==this.getTimeSpent() &&
 			    act.getWeather().equals(this.getWeather()) &&
 			    act.getPerformance().equals(this.getPerformance()));
 	}
@@ -68,6 +67,11 @@ public class Distance extends Activity {
 		hash = 97 * hash + Float.floatToIntBits(this.distance);
 		return hash;
 	}
+
+    @Override
+    public void setPerfomance() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 
 	
