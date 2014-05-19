@@ -23,6 +23,7 @@ public abstract class Activity {
 		this.performance = new Statistics();
 	}
 
+
 	public Activity(String sportName, String name, GregorianCalendar date, double timeSpent, int calories, String weather) {
 		this.sportName = sportName;
 		this.name = name;
@@ -30,7 +31,7 @@ public abstract class Activity {
 		this.timeSpent = timeSpent;
 		this.calories = calories;
 		this.weather = weather;
-		this.performance = new Statistics();
+		// this.performance = perfomance;                               isto é o que?
 	}
 
 	public Activity(Activity a) {
@@ -47,41 +48,27 @@ public abstract class Activity {
 		return this.sportName;
 	}
 	
-	public void setSportName(String sportName){
-		this.sportName = sportName;
-	}
 	
 	/**
 	 * @return the name
 	 */
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
-	/**
-	 * @param name the name to set
-	 */
-	public void setName(String name) {
-		this.name = name;
-	}
 
 	/**
 	 * @return the date
 	 */
 	public GregorianCalendar getDate() {
-		return (GregorianCalendar) date.clone();
+		return (GregorianCalendar) this.date.clone();
 	}
 
-	/**
-	 * @param date the date to set
-	 */
-	public void setDate(GregorianCalendar date) {
-		this.date = date;
-	}
 
 	/**
 	 * @return the timeSpent
 	 */
+
 	public double getTimeSpent() {
 		return  this.timeSpent;
 	}
@@ -93,28 +80,22 @@ public abstract class Activity {
 		this.timeSpent = timeSpent;
 	}
 
+
 	/**
 	 * @return the calories
 	 */
 	public int getCalories() {
-		return calories;
+		return this.calories;
 	}
 
-	public abstract void setCalories();         
 
 	/**
 	 * @return the weather
 	 */
 	public String getWeather() {
-		return weather;
+		return this.weather;
 	}
 
-	/**
-	 * @param weather the weather to set
-	 */
-	public void setWeather(String weather) {
-		this.weather = weather;
-	}
 
 	/**
 	 * @return the activityRecords
@@ -124,14 +105,19 @@ public abstract class Activity {
 		return aux;
 	}
 
+
 	/**
-	 * @param perf
+	 * @param name the name to set
 	 */
-	public void setPerformance (float perf) {
-		this.performance.setRecord(perf);
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public abstract void setRecords();
+	public abstract void setCalories();
+
+
+	public abstract void setPerfomance();
+
 
 	@Override
 	public boolean equals(Object a){
@@ -180,6 +166,7 @@ public abstract class Activity {
 		
 		return sb.toString();
 	}
+
 
 	@Override
 	public abstract Activity clone();
