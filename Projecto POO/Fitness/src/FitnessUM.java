@@ -120,7 +120,192 @@ public class FitnessUM
         return found;
     }
     
-    public boolean ExistSport(String name){
+ 
+  //////////////////////////////////////////////////CRIAR ACTIVITIES/////////////////////////////////////  
+    public TwoDistances TypeToTwoDistance(String nameSport){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Nome da actividade:");
+        String name = input.nextLine();
+        System.out.println("Dia:");
+        int dia=input.nextInt();
+        System.out.println("Mes:");
+        int mes=input.nextInt();
+        System.out.println("Ano:");
+        int ano=input.nextInt();
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);
+        System.out.println("Clima:");
+        String weather=input.nextLine();
+        System.out.println("Tempo despendido:");
+        int timeSpent=input.nextInt();
+        System.out.println("Distancia percorrida1(horizontal):");
+        int distance=input.nextInt();
+        System.out.println("Distancia percorrida2(vertical):");
+        int secondDistance=input.nextInt();
+      
+        int calories=0;                                                                                      //defenir calorias
+        TwoDistances aux=new TwoDistances(nameSport,name,date,timeSpent,calories,weather,distance,secondDistance);
+        
+        return aux;
+    
+    }
+    
+    public Distance TypeToDistance(String nameSport){
+        
+        Scanner input = new Scanner(System.in);
+        System.out.println("Nome da actividade:");
+        String name = input.nextLine();
+        System.out.println("Dia:");
+        int dia=input.nextInt();
+        System.out.println("Mes:");
+        int mes=input.nextInt();
+        System.out.println("Ano:");
+        int ano=input.nextInt();
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);
+        System.out.println("Clima:");
+        String weather=input.nextLine();
+        System.out.println("Tempo despendido:");
+        int timeSpent=input.nextInt();
+        System.out.println("Distancia percorrida1(horizontal):");
+        int distance=input.nextInt();
+             
+        int calories=0;                                                                                      //defenir calorias
+        Distance aux=new Distance(nameSport,name,date,timeSpent,calories,weather,distance);
+        
+        return aux;
+    }
+    
+    
+    public Group TypeToGroup(String nameSport){
+        
+        Scanner input = new Scanner(System.in);
+        System.out.println("Nome da actividade:");
+        String name = input.nextLine();
+        System.out.println("Dia:");
+        int dia=input.nextInt();
+        System.out.println("Mes:");
+        int mes=input.nextInt();
+        System.out.println("Ano:");
+        int ano=input.nextInt();
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);
+        System.out.println("Clima:");
+        String weather=input.nextLine();
+        System.out.println("Tempo despendido:");
+        int timeSpent=input.nextInt();
+        System.out.println("Distancia percorrida1(horizontal):");
+        int distance=input.nextInt();
+        System.out.println("Pontuação da equipa");
+        int myScore=input.nextInt();
+        System.out.println("Pontuação do adeversario");
+        int opScore=input.nextInt();
+        
+             
+        int calories=0;                                                                                      //defenir calorias
+        Group aux=new Group(nameSport,name,date,timeSpent,calories,weather,distance,myScore,opScore);
+        
+        return aux;
+    }
+     public Group TypeToIndoorSolo(String nameSport){
+        
+        Scanner input = new Scanner(System.in);
+        System.out.println("Nome da actividade:");
+        String name = input.nextLine();
+        System.out.println("Dia:");
+        int dia=input.nextInt();
+        System.out.println("Mes:");
+        int mes=input.nextInt();
+        System.out.println("Ano:");
+        int ano=input.nextInt();
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);
+        System.out.println("Clima:");
+        String weather=input.nextLine();
+        System.out.println("Tempo despendido:");
+        int timeSpent=input.nextInt();
+        System.out.println("Distancia percorrida1(horizontal):");
+        int distance=input.nextInt();
+       
+             
+        int calories=0;                                                                                      //defenir calorias
+        IndoorSolo aux=new IndoorSolo(nameSport,name,date,timeSpent,calories,weather,distance);
+        
+        return aux;
+    }
+   public Group TypeToIndoorFighting(String nameSport){
+        
+        Scanner input = new Scanner(System.in);
+        System.out.println("Nome da actividade:");
+        String name = input.nextLine();
+        System.out.println("Dia:");
+        int dia=input.nextInt();
+        System.out.println("Mes:");
+        int mes=input.nextInt();
+        System.out.println("Ano:");
+        int ano=input.nextInt();
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);
+        System.out.println("Clima:");
+        String weather=input.nextLine();
+        System.out.println("Tempo despendido:");
+        int timeSpent=input.nextInt();
+        System.out.println("Distancia percorrida1(horizontal):");
+        int distance=input.nextInt();
+       
+             
+        int calories=0;                                                                                      //defenir calorias
+        IndoorFighting aux=new IndoorFighting(nameSport,name,date,timeSpent,calories,weather,distance);
+        
+        return aux;
+    }
+    public Extreme TypeToExtreme(String nameSport){
+        
+        Scanner input = new Scanner(System.in);
+        System.out.println("Nome da actividade:");
+        String name = input.nextLine();
+        System.out.println("Dia:");
+        int dia=input.nextInt();
+        System.out.println("Mes:");
+        int mes=input.nextInt();
+        System.out.println("Ano:");
+        int ano=input.nextInt();
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);
+        System.out.println("Clima:");
+        String weather=input.nextLine();
+        System.out.println("Tempo despendido:");
+        int timeSpent=input.nextInt();
+        System.out.println("Distancia percorrida1(horizontal):");
+        int distance=input.nextInt();
+       
+            
+        int calories=0;                                                                                      //defenir calorias
+        Extreme aux=new Extreme(nameSport,name,date,timeSpent,calories,weather);
+        
+        return aux;
+    }
+       public Other TypeToOther(String nameSport){
+        
+        Scanner input = new Scanner(System.in);
+        System.out.println("Nome da actividade:");
+        String name = input.nextLine();
+        System.out.println("Dia:");
+        int dia=input.nextInt();
+        System.out.println("Mes:");
+        int mes=input.nextInt();
+        System.out.println("Ano:");
+        int ano=input.nextInt();
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);
+        System.out.println("Clima:");
+        String weather=input.nextLine();
+        System.out.println("Tempo despendido:");
+        int timeSpent=input.nextInt();
+        System.out.println("Distancia percorrida1(horizontal):");
+        int distance=input.nextInt();
+       
+        int calories=0;                                                                                      //defenir calorias
+        Other aux=new Other(nameSport,name,date,timeSpent,calories,weather);
+        
+        return aux;
+    }
+       
+       ////////////////////////////////////////////////////////////////////////////////////////////
+          public boolean ExistSport(String name){
         boolean found=false;
         Iterator<Sport> it=db.getSportsType().iterator();
         while(it.hasNext() && !found)
@@ -151,50 +336,32 @@ public class FitnessUM
         }
         return sport.getType();
     }
+       
     
-    public Activity TypeToTwoDistance(String nameSport){
-        Scanner input = new Scanner(System.in);
-        System.out.println("Nome da actividade:");
-        String Name = input.nextLine();
-        System.out.println("Dia:");
-        int dia=input.nextInt();
-        System.out.println("Mes:");
-        int mes=input.nextInt();
-        System.out.println("Ano:");
-        int ano=input.nextInt();
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);
-        System.out.println("Clima:");
-        String weather=input.nextLine();
-        System.out.println("Tempo despendido:");
-        String weather=input.nextLine();
-        
-    }
-   
-    public Activity getActivityByTypeSport(String type,String nameSport){
+    public Activity createActivityByTypeSport(String type,String nameSport){
         Activity nova;       
         
         switch(type){            
             case "TwoDistances":
-                nova=TypeToTwoDistance(String nameSport);
-               
+                nova=TypeToTwoDistance(nameSport);               
                 break;
             case "Distance":
-                nova= new Distance();
+                nova= TypeToDistance(nameSport);
                 break;
             case "Group":
-                nova= new Group();
+                nova= TypeToGroup(nameSport);
                 break;
             case "IndoorSolo":
-                nova=new IndoorSolo();
+                nova=TypeToIndoorSolo(nameSport);
                 break;
             case "IndoorFighting":
-                nova=new IndoorFighting();
+                nova=TypeToIndoorFighting(nameSport);
                 break;
             case "Extreme":
-                nova=new Extreme();
+                nova=TypeToExtreme(nameSport);
                 break;
             default:
-                nova=new Other();
+                nova=TypeToOther(nameSport);
                 break;
         }       
         return nova;       

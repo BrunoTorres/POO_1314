@@ -1,4 +1,7 @@
 
+import java.util.GregorianCalendar;
+
+
 public class Other extends Activity
 {
 
@@ -6,12 +9,12 @@ public class Other extends Activity
         super();
     }
 
-    public Other(String sportName, String name, GregorianCalendar date, GregorianCalendar timeSpent, String weather){
-        super(sportName, name, date, timeSpent, weather)
+    public Other(String sportName, String name, GregorianCalendar date, double timeSpent,int calories, String weather){
+        super(sportName, name, date, timeSpent, calories,weather);
     }
 
     public Other(Other o){
-        super(o.getSportName(), o.getName(), o.getDate(), o.getTimeSpent(), o.getWeather());
+        super(o.getSportName(), o.getName(), o.getDate(), o.getTimeSpent(),o.getCalories(), o.getWeather());
     }
 
 
@@ -20,7 +23,6 @@ public class Other extends Activity
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
     public void setRecords() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -32,6 +34,11 @@ public class Other extends Activity
 
    
    // apenas redefine cálculo das calorias queimadas
+
+    @Override
+    public void setPerfomance() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     
 }

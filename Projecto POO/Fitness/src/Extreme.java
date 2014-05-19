@@ -1,4 +1,7 @@
 
+import java.util.GregorianCalendar;
+
+
 public class Extreme extends Activity
 {
 
@@ -6,12 +9,12 @@ public class Extreme extends Activity
         super();
     }
 
-    public Extreme(String sportName, String name, GregorianCalendar date, GregorianCalendar timeSpent, String weather){
-        super(sportName, name, date, timeSpent, weather)
+    public Extreme(String sportName, String name, GregorianCalendar date, double timeSpent,int calories, String weather){
+        super(sportName, name, date, timeSpent,calories, weather);
     }
 
     public Extreme(Extreme e){
-        super(e.getSportName(), e.getName(), e.getDate(), e.getTimeSpent(), e.getWeather());
+        super(e.getSportName(), e.getName(), e.getDate(), e.getTimeSpent(),e.getCalories(), e.getWeather());
     }
     // apenas redefine cálculo das calorias queimadas
 
@@ -20,7 +23,6 @@ public class Extreme extends Activity
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
     public void setRecords() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -42,5 +44,10 @@ public class Extreme extends Activity
     @Override
     public Extreme clone() {
         return new Extreme(this);
+    }
+
+    @Override
+    public void setPerfomance() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
