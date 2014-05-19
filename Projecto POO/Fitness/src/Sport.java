@@ -28,6 +28,14 @@ public class Sport
         this.recordList=new TreeSet();
     }
     
+    public Sport(String type,String name,int caloriesPerHour,float avgIntensity,TreeSet<String>recordList){
+        this.type=type;
+        this.name=name;
+        this.caloriesPerHour=caloriesPerHour;
+        this.avgIntensity=avgIntensity;
+        this.recordList=recordList;
+    }
+    
     public Sport(Sport s){
         
         this.type=s.getType();

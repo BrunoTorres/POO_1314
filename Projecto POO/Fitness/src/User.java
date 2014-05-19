@@ -86,6 +86,9 @@ public class User extends Person
         this.favoriteActivity=favorite;
     }
     
+    
+    
+    
     public Activity getOneActivity(String name){
    
              Activity act;
