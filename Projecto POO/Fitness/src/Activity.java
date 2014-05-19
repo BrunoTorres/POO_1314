@@ -28,9 +28,9 @@ public abstract class Activity {
 		this.name = name;
 		this.date = (GregorianCalendar) date.clone();
 		this.timeSpent = (GregorianCalendar) timeSpent.clone();
-		this.calories = setCalories();
+		this.setCalories();
 		this.weather = weather;
-		this.performance = setPerfomance();
+		this.setPerformance();
 	}
 
 	public Activity(Activity a) {
@@ -107,7 +107,7 @@ public abstract class Activity {
 	public abstract void setCalories();
 
 
-	public abstract void setPerfomance();
+	public abstract void setPerformance();
 
 
 	@Override

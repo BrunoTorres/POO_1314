@@ -11,8 +11,8 @@ public class Distance extends Activity {
 		this.distance =  0;
 	}
 	
-	public Distance(String sportName, String name, GregorianCalendar date, GregorianCalendar timeSpent, int calories, String weather, float distance){
-		super(sportName, name, date, timeSpent, calories, weather);
+	public Distance(String sportName, String name, GregorianCalendar date, GregorianCalendar timeSpent, String weather, float distance){
+		super(sportName, name, date, timeSpent, weather);
 		this.distance = distance;
 	}
 	
@@ -31,7 +31,7 @@ public class Distance extends Activity {
 	}
 	
 	@Override
-	public void setRecords() {
+	public void setPerformance() {
 		
 	}
 
@@ -43,18 +43,18 @@ public class Distance extends Activity {
 			return false;
 		
 		Distance act = (Distance) a;		
-		
-		return (act.getName().equals(this.getName()) &&
-			    act.getCalories() == this.getCalories() &&
-			    act.getDate().equals(this.getDate()) &&
-			    act.getTimeSpent().equals(this.getTimeSpent()) &&
-			    act.getWeather().equals(this.getWeather()) &&
-			    act.getPerformance().equals(this.getPerformance()));
+                
+                return (super.equals(act) && this.distance == act.getDistance());
 	}
 
 	@Override
 	public String toString() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("Distância percorrida: "); 
+		sb.append(this.getDistance()).append("\n");
+		
+		return sb.toString();
 	}
 
 	@Override

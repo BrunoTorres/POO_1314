@@ -1,4 +1,7 @@
 
+import java.util.GregorianCalendar;
+
+
 public class IndoorSolo extends Activity
 {
     public IndoorSolo(){
@@ -6,11 +9,11 @@ public class IndoorSolo extends Activity
     }
 
     public IndoorSolo(String sportName, String name, GregorianCalendar date, GregorianCalendar timeSpent, String weather){
-        super(sportName, name, date, timeSpent, weather)
+        super(sportName, name, date, timeSpent, weather);
     }
 
-    public Other(Other o){
-        super(o.getSportName(), o.getName(), o.getDate(), o.getTimeSpent(), o.getWeather());
+    public IndoorSolo(IndoorSolo o){
+        super(o);
     }
 
     /**
@@ -24,7 +27,7 @@ public class IndoorSolo extends Activity
     // redefine cálculo das calorias queimadas
 
     @Override
-    public void setRecords() {
+    public void setPerformance() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -43,9 +46,7 @@ public class IndoorSolo extends Activity
     @Override
     public String toString(){
         StringBuilder sb=new StringBuilder();
-   
         sb.append(super.toString());
-            
         return sb.toString();      
     }
 

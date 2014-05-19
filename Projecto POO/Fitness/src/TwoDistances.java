@@ -11,8 +11,8 @@ public class TwoDistances extends Distance {
 		this.secondDistance = 0;
 	}
 	
-	public TwoDistances(String sportName, String name, GregorianCalendar date, GregorianCalendar timeSpent, int calories, String weather, float distance, float secondDistance){
-		super(sportName, name, date, timeSpent, calories, weather, distance);
+	public TwoDistances(String sportName, String name, GregorianCalendar date, GregorianCalendar timeSpent, String weather, float distance, float secondDistance){
+		super(sportName, name, date, timeSpent, weather, distance);
 		this.secondDistance = secondDistance;
 	}
 	
@@ -35,7 +35,7 @@ public class TwoDistances extends Distance {
 	}
 	
 	@Override
-	public void setRecords() {
+	public void setPerformance() {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
@@ -68,7 +68,7 @@ public class TwoDistances extends Distance {
 	public String toString(){
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString());
-		sb.append("Altitude: "); // Não sei bem o que escrever aqui xD
+		sb.append("Distância vertical: "); // Aqui acho que pode ficar assim, porque todos os desportos que tem duas distancias, esta é distancia vertical
 		sb.append(this.getSecondDistance()).append("\n");
 		
 		return sb.toString();
