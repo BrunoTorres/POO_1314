@@ -1,6 +1,8 @@
 
 import java.util.GregorianCalendar;
 import java.util.Iterator;
+import java.util.Scanner;
+import java.util.Set;
 import java.util.TreeSet;
 
 public class FitnessUM
@@ -16,7 +18,7 @@ public class FitnessUM
     }
    //IMPLEMENTAR METODOS DE PESQUISA
     //pesquisa1 -> -RECEBER UM NOME/EMAIL e retornar um User    Feito em DataBase
-    //Pesquisa2 -> REceber Uma string e um user e retornar uma activityList
+    //Pesquisa2 -> REceber Uma string e um user e retornar uma activiy
   
   
     
@@ -117,6 +119,7 @@ public class FitnessUM
         
         return found;
     }
+    
     public boolean ExistSport(String name){
         boolean found=false;
         Iterator<Sport> it=db.getSportsType().iterator();
@@ -125,18 +128,96 @@ public class FitnessUM
                 found=true;
         return found;       
             
+    }
+    
+    
+    public String listSports(){
+        StringBuilder sb= new StringBuilder();
+        sb.append("Tipo de desporto a escolher").append("\n");
+        for(Sport s:this.db.getSportsType())
+            sb.append(s.getName()).append("\n");
+        
+        return sb.toString();
+    }
+    
+    public String getSportTypeByName(String name){
+        boolean found=false;
+        
+        Iterator<Sport> it=db.getSportsType().iterator();
+        Sport sport=it.next();
+        while(it.hasNext() && !found){
+            if(sport.getName().equals(name))
+                found=true;
+        }
+        return sport.getType();
+    }
+    
+    public Activity TypeToTwoDistance(String nameSport){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Nome da actividade:");
+        String Name = input.nextLine();
+        System.out.println("Dia:");
+        int dia=input.nextInt();
+        System.out.println("Mes:");
+        int mes=input.nextInt();
+        System.out.println("Ano:");
+        int ano=input.nextInt();
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);
+        System.out.println("Clima:");
+        String weather=input.nextLine();
+        System.out.println("Tempo despendido:");
+        String weather=input.nextLine();
         
     }
-    /*
-    public boolean addActivity(String name,User u){
+   
+    public Activity getActivityByTypeSport(String type,String nameSport){
+        Activity nova;       
+        
+        switch(type){            
+            case "TwoDistances":
+                nova=TypeToTwoDistance(String nameSport);
+               
+                break;
+            case "Distance":
+                nova= new Distance();
+                break;
+            case "Group":
+                nova= new Group();
+                break;
+            case "IndoorSolo":
+                nova=new IndoorSolo();
+                break;
+            case "IndoorFighting":
+                nova=new IndoorFighting();
+                break;
+            case "Extreme":
+                nova=new Extreme();
+                break;
+            default:
+                nova=new Other();
+                break;
+        }       
+        return nova;       
+                   
+    }
+    
+ 
+    
+    
+    public boolean addActivity(Activity act,User u){
         boolean flag=false;
-        if (ExistSport(name)){                                                      VER COMO ADD ACTIVITY
-            flag=true;                                                  Só pode fazer add se o sportType estiver no treeSeet<Sport>
-            u.addActivity(name);                   
+        if (ExistSport(act.getSportName())){                                                    
     }
         return flag;
     }
-          */                 
+           
+    public Set<Activity>getLast10Activities(User u){
+        TreeSet<Activity> aux= new TreeSet();
+        Iterator<Activity>it = u.getUserActivities().iterator();
+        for(int i=0;i<10&&it.hasNext();i++)
+            aux.add(it.next());
+        return aux;       
+    }                  
     
             /////// VE TODAS AS ACTIVIDADES DE TODOS OS AMIGOS ///////////////////////////
     public String FriendToString(TreeSet<User> users){
@@ -175,10 +256,13 @@ public class FitnessUM
        return (FriendToString(users));
         
     }
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
+    
+ 
+ 
 
     //Ver Actividade de um dado amigo //
+    
     
     //Lista amigos,escolhe amigo        --
     public String listAllFriends(User u){

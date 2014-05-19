@@ -8,7 +8,7 @@ public class User extends Person
     private int height; // centímetros
     private float weight; // kilogramas
     private String favoriteActivity;
-    private TreeSet<Activity> userActivities; // cada atividade tem uma lista de eventos
+    private TreeSet<Activity> userActivities; 
     private TreeSet<String> friendsList;
 
     
@@ -104,23 +104,12 @@ public class User extends Person
             
     
 
-/*
-    public void addActivity(String name,String tipoActivity){                      /// TEm que escolher o tipo de actividade e depois addicionar
-        switch(tipoActivity){
-         case "TwoDistances":
-              Activity nova= new TwoDistances(name);  
-              break;
-         case "Group":
-              Activity nova= new Group(name);
-              break;
-         case "IndorFihting":
-             Activity nova= new IndorFihting(name);
-   
-        this.userActivities.add(nova);     
-        }
+
+    public boolean addActivity(Activity act){ /// TEm que escolher o tipo de actividade e depois addicionar
+       return this.userActivities.add(act);
     }
     
-   */
+ 
     
      public boolean addFriend(User u){              //Adiciona amigos a lista
        boolean flag=false,found=false;     
