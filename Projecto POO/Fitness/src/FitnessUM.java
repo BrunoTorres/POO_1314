@@ -1,8 +1,11 @@
 
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class FitnessUM
@@ -99,6 +102,38 @@ public class FitnessUM
     
     /////////////////////////////////////////////////Propriedade dos Utilizadores//////////////////////////////////////
     
+    //Aceder as estatisticas(mensais anuais) STATISTICS by distancia tempo e\calorias
+    
+    public String searchStatisticsMONTH(User u,String tipo,int mes,int ano){
+       TreeMap<GregorianCalendar,Statistics>aux =(TreeMap)u.getStats();
+       
+       GregorianCalendar data= new GregorianCalendar(ano,mes,0);
+       Statistics stats=aux.get(data);
+       String s;
+       
+       switch(tipo){
+            case "distância":
+                s=stats.toStringDistance();
+                break;
+            case "tempo":
+                s=stats.toStringTimeSpend();
+                break;
+            default:
+                s=stats.toStringCalories();
+                break;         
+       }
+       return s;
+        
+    }
+    
+    public String searchStatisticsYear(User u,String tipo,int ano){
+        TreeMap<GregorianCalendar,Statistics>aux =(TreeMap)u.getStats();
+        
+        
+    }
+
+   
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     public boolean addFriendInUserList(User u,String email){                                                         //CLASSE MENSAGENS? UM 
         boolean found=false;
         

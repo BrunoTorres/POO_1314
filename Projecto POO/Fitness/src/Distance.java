@@ -4,7 +4,7 @@ import java.util.GregorianCalendar;
 
 public class Distance extends Activity {
 
-	private float distance; // kilómetros
+	private double distance; // kilómetros
 	
 	public Distance(){
 		super();
