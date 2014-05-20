@@ -18,7 +18,7 @@ public class User extends Person
         this.height=0;
         this.weight=0;
         this.favoriteActivity="";
-        this.userActivities=new TreeSet<Activity>();
+        this.userActivities=new TreeSet<Activity>(new CompareActivity());
         this.friendsList=new TreeSet<String>(); 
         
     }
@@ -42,7 +42,7 @@ public class User extends Person
         this.height=height;
         this.weight=weight;
         this.favoriteActivity=favoriteActivity;
-        this.userActivities=new TreeSet<Activity>();
+        this.userActivities=new TreeSet<Activity>(new CompareActivity());
         this.friendsList=new TreeSet<String>(); 
     }
        
@@ -66,7 +66,7 @@ public class User extends Person
         return this.favoriteActivity;
     }
     public Set<Activity> getUserActivities(){
-        TreeSet<Activity> res= new TreeSet<Activity>();
+        TreeSet<Activity> res= new TreeSet<Activity>(new CompareActivity());
         for(Activity act : this.userActivities)
             res.add(act.clone());
     return res;

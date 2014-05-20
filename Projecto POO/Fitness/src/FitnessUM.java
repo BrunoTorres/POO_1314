@@ -133,8 +133,8 @@ public class FitnessUM
         System.out.println("Ano:");
         int ano=input.nextInt();
         GregorianCalendar date=new GregorianCalendar(ano,mes,dia);
-        System.out.println("Clima:");
-        String weather=input.nextLine();
+       // System.out.println("Clima:");
+        //String weather=input.nextLine();
         System.out.println("Tempo despendido:");
         int timeSpent=input.nextInt();
         System.out.println("Distancia percorrida1(horizontal):");
@@ -143,7 +143,7 @@ public class FitnessUM
         int secondDistance=input.nextInt();
       
         int calories=0;                                                                                      //defenir calorias
-        TwoDistances aux=new TwoDistances(nameSport,name,date,timeSpent,calories,weather,distance,secondDistance);
+        TwoDistances aux=new TwoDistances(nameSport,name,date,timeSpent,calories,"frio",distance,secondDistance);
         
         return aux;
     
@@ -160,7 +160,6 @@ public class FitnessUM
         int mes=input.nextInt();
         System.out.println("Ano:");
         int ano=input.nextInt();
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);
         System.out.println("Clima:");
         String weather=input.nextLine();
         System.out.println("Tempo despendido:");
@@ -169,6 +168,7 @@ public class FitnessUM
         int distance=input.nextInt();
              
         int calories=0;                                                                                      //defenir calorias
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);
         Distance aux=new Distance(nameSport,name,date,timeSpent,calories,weather,distance);
         
         return aux;
