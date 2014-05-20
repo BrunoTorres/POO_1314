@@ -38,7 +38,7 @@ public class RedeGlobalAutores implements Serializable {
 	//private int numAutoresNoSolo;
 
 	public RedeGlobalAutores() {
-		this.redeGlobalAutores = new TreeMap<Integer, RedeAnualAutores>();
+		this.redeGlobalAutores = new TreeMap<>();
 		this.ficheiroLido = "";
 		this.artigosLidos = 0;
 		this.nomesLidos = 0;
@@ -57,27 +57,25 @@ public class RedeGlobalAutores implements Serializable {
 		this.maiorAno = rede.getMaiorAno();
 	}
 
-	public void leFicheiro(String fileName) {
+	public void leFicheiro(String fileName) throws IOException, ClassNotFoundException {
 		String endName = fileName.substring(fileName.length() - 4);
 		switch (endName) {
 			case ".obj":
 				this.leFicheiroObj(fileName);
-
 				break;
 			case ".txt":
 				this.leFicheiroTxt(fileName);
 				break;
 
 			default:
-				System.out.println("ERROR default");
-				break;
+				throw new IOException("File error...");
 
 		}
 	}
 	// Getters
 
 	public Map<Integer, RedeAnualAutores> getRedeGlobalAutores() {
-		TreeMap<Integer, RedeAnualAutores> aux = new TreeMap<Integer, RedeAnualAutores>();
+		TreeMap<Integer, RedeAnualAutores> aux = new TreeMap<>();
 		for (RedeAnualAutores redeAnual : this.redeGlobalAutores.values()) {
 			aux.put(redeAnual.getAno(), redeAnual.clone());
 		}
@@ -111,24 +109,21 @@ public class RedeGlobalAutores implements Serializable {
 	public int getNumPubsUmAutor() {
 		return this.numPubsUmAutor;
 	}
-
-	/*public int getNumAutoresSolo(){
-	 return this.numAutoresSolo;
-	 }
 	
-	 public int getNumAutoresNoSolo(){
-	 return this.numAutoresNoSolo;
-	 }*/
-	public void leFicheiroObj(String fileName) {
-		try {
-			ObjectInputStream objInput = new ObjectInputStream(new FileInputStream(fileName));
-			redeGlobalAutores = (TreeMap<Integer, RedeAnualAutores>) objInput.readObject();
-		} catch (IOException | ClassNotFoundException e) {
-			System.out.println(e.getMessage());
-		}
+	public void leFicheiroObj(String fileName) throws IOException, ClassNotFoundException, ClassCastException {
+		ObjectInputStream objInput = new ObjectInputStream(new FileInputStream(fileName));
+		RedeGlobalAutores redeGlobal = new RedeGlobalAutores((RedeGlobalAutores) objInput.readObject());
+		this.redeGlobalAutores = (TreeMap<Integer, RedeAnualAutores>) redeGlobal.getRedeGlobalAutores();
+		this.ficheiroLido = redeGlobal.getFIcheiroLido();
+		this.artigosLidos = redeGlobal.getArtigosLidos();
+		this.maiorAno = redeGlobal.getMaiorAno();
+		this.menorAno = redeGlobal.getMenorAno();
+		this.nomesDistintos = redeGlobal.getNomesDistintos();
+		this.nomesLidos = redeGlobal.getNomesLidos();
+		this.numPubsUmAutor = redeGlobal.getNumPubsUmAutor();
 	}
 
-	public void leFicheiroTxt(String fileName) {
+	public void leFicheiroTxt(String fileName) throws FileNotFoundException {
 		String linha;
 		ArrayList<String> linhaTok = new ArrayList<>();
 		int ano;
@@ -137,61 +132,54 @@ public class RedeGlobalAutores implements Serializable {
 		HashSet<String> autDist = new HashSet<>();
 		this.ficheiroLido = fileName;
 
-		try {
-			fichScan = new Scanner(new FileReader(fileName));
-			fichScan.useDelimiter(System.getProperty("line.separator"));
+		fichScan = new Scanner(new FileReader(fileName));
+		fichScan.useDelimiter(System.getProperty("line.separator"));
 
-			while (fichScan.hasNext()) {
-				linha = fichScan.next();
-				sTok = new StringTokenizer(linha, ",");
+		while (fichScan.hasNext()) {
+			linha = fichScan.next();
+			sTok = new StringTokenizer(linha, ",");
 
-				while (sTok.hasMoreTokens()) {
-					linhaTok.add(sTok.nextToken().trim());
-				}
-
-				if (linhaTok.size() > 1) {
-					this.artigosLidos++;
-				}
-
-				if (linhaTok.size() == 2) {
-					this.numPubsUmAutor++;
-				}
-
-				ano = Integer.valueOf(linhaTok.get(linhaTok.size() - 1));
-				if (ano < this.menorAno) {
-					this.menorAno = ano;
-				}
-
-				if (ano > this.maiorAno) {
-					this.maiorAno = ano;
-				}
-
-				linhaTok.remove(linhaTok.size() - 1);
-
-				autDist.addAll(linhaTok);
-				this.nomesLidos += linhaTok.size();
-				this.adicionaPublicacao(ano, linhaTok);
-
-				linhaTok.clear();
+			while (sTok.hasMoreTokens()) {
+				linhaTok.add(sTok.nextToken().trim());
 			}
-		} catch (FileNotFoundException e) {
-			System.out.println(e.getMessage());
+
+			if (linhaTok.size() > 1) {
+				this.artigosLidos++;
+			}
+
+			if (linhaTok.size() == 2) {
+				this.numPubsUmAutor++;
+			}
+
+			ano = Integer.valueOf(linhaTok.get(linhaTok.size() - 1));
+			if (ano < this.menorAno) {
+				this.menorAno = ano;
+			}
+
+			if (ano > this.maiorAno) {
+				this.maiorAno = ano;
+			}
+
+			linhaTok.remove(linhaTok.size() - 1);
+
+			autDist.addAll(linhaTok);
+			this.nomesLidos += linhaTok.size();
+			this.adicionaPublicacao(ano, linhaTok);
+
+			linhaTok.clear();
+
 		}
 		this.nomesDistintos = autDist.size();
 	}
 
-	public void guardaDados() {
+	public void guardaDados(String fileName) throws SecurityException, IOException {
 
-		try {
-			FileOutputStream out = new FileOutputStream("RedeGlobalAutores.obj");
-			ObjectOutputStream oout = new ObjectOutputStream(out);
+		FileOutputStream out = new FileOutputStream(fileName + ".obj");
+		ObjectOutputStream oout = new ObjectOutputStream(out);
 
-			oout.writeObject(this.redeGlobalAutores);
-			oout.flush();
+		oout.writeObject(this);
+		oout.flush();
 
-		} catch (SecurityException | IOException e) {
-			System.out.println(e.getMessage());
-		}
 	}
 
 	public void adicionaPublicacao(int ano, List<String> autores) {
@@ -203,19 +191,20 @@ public class RedeGlobalAutores implements Serializable {
 		}
 	}
 
-	public RedeAnualAutores getPubsAno(int ano) {
-		if (this.redeGlobalAutores.containsKey(ano)) {
-			return this.redeGlobalAutores.get(ano).clone();
-		}
-		return null; // NADA DE NULL!!!!
+	public RedeAnualAutores getPubsAno(int ano) throws RedeAnualNotFoundException{
+		if (!this.redeGlobalAutores.containsKey(ano))
+			throw new RedeAnualNotFoundException("Ano não existente. Ano: " + ano);
+		
+		return this.redeGlobalAutores.get(ano).clone();
 	}
 
 	public String statsString() {
-		StringBuilder s = new StringBuilder("Rede de Autores: " + this.getFIcheiroLido());
+		StringBuilder s = new StringBuilder(".......... ESTATÍSTICAS ..........\n\n");
+		s.append("Rede de Autores: ").append(this.getFIcheiroLido());
 		s.append("\nAnos: [").append(this.getMenorAno()).append(", ").append(this.getMaiorAno()).append("]");
 		s.append("\nPublicações: ").append(this.getArtigosLidos());
 		s.append("\nAutores lidos: ").append(this.getNomesLidos());
-		s.append("\nAutores distintos: ").append(this.getNomesDistintos());
+		s.append("\nAutores distintos: ").append(this.getNomesDistintos()).append("\n\n");
 		//for (RedeAnualAutores ano : this.redeGlobalAutores.values()) {
 		//	s.append("\n\t").append(ano.toString()).append("\n");
 		//}
@@ -280,26 +269,38 @@ public class RedeGlobalAutores implements Serializable {
 		return noSolo.size();
 	}
 
-	public Set<String> consulta21a(int anoInicial, int anoFinal, int topX) {
+	public List<String> consulta21a(int anoInicial, int anoFinal, int topX) throws AnosForaDoIntervaloException, AnoInicialMaiorQueAnoFinalException, AnoInvalidoException{
 		TreeSet<Autor> maxPubsAutores = new TreeSet<>(new CompareAutorPubs());
 		//TreeSet<String> res = new TreeSet<String>();
 		Iterator<Autor> it;
-		Autor autAux;
+		Autor autAux, autAux2;
 		boolean sair = false;
+		boolean add = true;
+		
+		if(anoInicial < 0 || anoFinal < 0)
+			throw new AnoInvalidoException("Ano inválido. [" + anoInicial + ", " + anoFinal +"]");
+		if(anoInicial > anoFinal)
+			throw new AnoInicialMaiorQueAnoFinalException("Ano inicial maior que ano final. [" + anoInicial + ", " + anoFinal +"]");
+		if((anoInicial < this.menorAno && anoFinal < this.menorAno) || (anoInicial > this.maiorAno))
+			throw new AnosForaDoIntervaloException("Anos fora do intervalo do ficheiro. [" + anoInicial + ", " + anoFinal +"]");
 
 		for (int i = anoInicial; i <= anoFinal; i++) {
-			for (Autor aut : this.redeGlobalAutores.get(i).getRedeAnualAutores().values()) {
-				it = maxPubsAutores.iterator();
-				if (maxPubsAutores.contains(aut)) {
+			if (this.redeGlobalAutores.containsKey(i)) {
+				for (Autor aut : this.redeGlobalAutores.get(i).getRedeAnualAutores().values()) {
+					it = maxPubsAutores.iterator();
 					while (it.hasNext() && !sair) {
 						autAux = it.next();
 						if (autAux.getNome().equals(aut.getNome())) {
+							maxPubsAutores.remove(autAux);
 							autAux.incrementaPubs(aut.getNumeroPubsSolo(), aut.getNumeroPubsCoAutores());
+							maxPubsAutores.add(autAux);
 							sair = true;
+							add = false;
 						}
 					}
-				} else {
-					maxPubsAutores.add(aut.clone());
+					if (add) {
+						maxPubsAutores.add(aut.clone());
+					}
 				}
 			}
 		}
@@ -307,16 +308,22 @@ public class RedeGlobalAutores implements Serializable {
 		return this.consulta21aAux(maxPubsAutores, topX);
 	}
 
-	private Set<String> consulta21aAux(TreeSet<Autor> auts, int topX) {
-		TreeSet<String> res = new TreeSet<>();
-		for (int i = 0; i < auts.size() || i < topX; i++) {
-			res.add(auts.pollFirst().getNome());
+	private List<String> consulta21aAux(TreeSet<Autor> auts, int topX) {
+		ArrayList<String> res = new ArrayList<>();
+		if (auts.size() < topX) {
+			for (int i = 0; i < auts.size(); i++) {
+				res.add(auts.pollFirst().getNome());
+			}
+		} else {
+			for (int i = 0; i < topX; i++) {
+				res.add(auts.pollFirst().getNome());
+			}
 		}
 
 		return res;
 	}
 
-	public List<String> consulta21b(int topX, int anoInicial, int anoFinal) {
+	public List<String> consulta21b(int topX, int anoInicial, int anoFinal) throws AnosForaDoIntervaloException, AnoInicialMaiorQueAnoFinalException, AnoInvalidoException{
 		TreeSet<ParCoAutores> paresAutores = new TreeSet<>(new CompareParCoAutores());
 		Iterator<ParCoAutores> it;
 		ParCoAutores par, parAux;
@@ -358,7 +365,6 @@ public class RedeGlobalAutores implements Serializable {
 	public List<String> consulta21bAux(TreeSet<ParCoAutores> pares, int topX) {
 		ArrayList<String> res = new ArrayList<>();
 
-		JOptionPane.showMessageDialog(null, pares.size());
 		if (pares.size() >= topX) {
 			for (int i = 0; i < topX; i++) {
 				res.add(pares.pollFirst().toString());
@@ -372,7 +378,7 @@ public class RedeGlobalAutores implements Serializable {
 		return res;
 	}
 
-	public Set<String> consulta21c(int anoInicial, int anoFinal, ArrayList<String> listaAutores) {
+	public Set<String> consulta21c(int anoInicial, int anoFinal, ArrayList<String> listaAutores) throws AnosForaDoIntervaloException, AnoInicialMaiorQueAnoFinalException, AnoInvalidoException{
 
 		TreeSet<String> res = new TreeSet<>();
 
@@ -423,7 +429,7 @@ public class RedeGlobalAutores implements Serializable {
 		return res;
 	}
 
-	public Set<String> consulta21d(int anoInicial, int anoFinal) {
+	public Set<String> consulta21d(int anoInicial, int anoFinal) throws AnosForaDoIntervaloException, AnoInicialMaiorQueAnoFinalException, AnoInvalidoException{
 		TreeSet<String> autores = new TreeSet<>();
 		boolean add = true;
 
@@ -500,7 +506,7 @@ public class RedeGlobalAutores implements Serializable {
 	}
 
 	public Set<String> consulta22d(String autor) {
-		TreeSet<String> coAutores = new TreeSet<String>();
+		TreeSet<String> coAutores = new TreeSet<>();
 		for (RedeAnualAutores redeAnual : this.getRedeGlobalAutores().values()) {
 			if (redeAnual.getRedeAnualAutores().containsKey(autor)) {
 				for (CoAutor coAut : redeAnual.getRedeAnualAutores().get(autor).getCoAutores().values()) {

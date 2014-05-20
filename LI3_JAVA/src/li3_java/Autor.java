@@ -23,21 +23,21 @@ public class Autor implements Serializable {
 	private int numeroPubsSolo;
 	private int numeroPubsCoAutores;
 	private TreeMap<String, CoAutor> coAutores;
-    //private long start;
+	//private long start;
 	//private long end;
 
 	public Autor() {
 		this.nome = "";
 		this.numeroPubsSolo = 0;
 		this.numeroPubsCoAutores = 0;
-		this.coAutores = new TreeMap<String, CoAutor>();
+		this.coAutores = new TreeMap<>();
 	}
 
 	public Autor(String nome) {
 		this.nome = nome;
 		this.numeroPubsSolo = 1;
 		this.numeroPubsCoAutores = 0;
-		this.coAutores = new TreeMap<String, CoAutor>();
+		this.coAutores = new TreeMap<>();
 	}
 
 	public Autor(String nome, List<String> auts) {
@@ -50,7 +50,7 @@ public class Autor implements Serializable {
 			this.numeroPubsCoAutores = 0;
 		}
 
-		this.coAutores = new TreeMap<String, CoAutor>();
+		this.coAutores = new TreeMap<>();
 		for (String s : auts) {
 			if (!s.equals(nome)) {
 				CoAutor coAut = new CoAutor(s);
@@ -64,7 +64,7 @@ public class Autor implements Serializable {
 		this.nome = aut.getNome();
 		this.numeroPubsSolo = aut.getNumeroPubsSolo();
 		this.numeroPubsCoAutores = aut.getNumeroPubsCoAutores();
-		this.coAutores = new TreeMap<String, CoAutor>();
+		this.coAutores = new TreeMap<>();
 
 		for (CoAutor coAut : aut.getCoAutores().values()) {
 			this.coAutores.put(coAut.getNome(), coAut.clone());
@@ -84,7 +84,7 @@ public class Autor implements Serializable {
 	}
 
 	public Map<String, CoAutor> getCoAutores() {
-		TreeMap<String, CoAutor> aux = new TreeMap<String, CoAutor>();
+		TreeMap<String, CoAutor> aux = new TreeMap<>();
 
 		for (CoAutor coAut : this.coAutores.values()) {
 			aux.put(coAut.getNome(), coAut.clone());
@@ -121,20 +121,22 @@ public class Autor implements Serializable {
 		this.numeroPubsSolo += nPubsSolo;
 		this.numeroPubsCoAutores += nPubsCoAutor;
 	}
-	
+
 	@Override
-	public boolean equals(Object a){
-		if(this == a)
+	public boolean equals(Object a) {
+		if (this == a) {
 			return true;
-		
-		if(a == null || this.getClass() != a.getClass())
+		}
+
+		if (a == null || this.getClass() != a.getClass()) {
 			return false;
-		
+		}
+
 		Autor aut = (Autor) a;
 		return this.getNome().equals(aut.getNome());
 	}
 
-	/*@Override
+	@Override
 	public int hashCode() {
 		int hash = 7;
 		hash = 97 * hash + Objects.hashCode(this.nome);
@@ -142,7 +144,7 @@ public class Autor implements Serializable {
 		//hash = 97 * hash + this.numeroPubsCoAutores;
 		//hash = 97 * hash + Objects.hashCode(this.coAutores);
 		return hash;
-	}*/
+	}
 
 	@Override
 	public String toString() {
@@ -161,6 +163,7 @@ public class Autor implements Serializable {
 		return s.toString();
 	}
 
+	@Override
 	public Autor clone() {
 		return new Autor(this);
 	}
