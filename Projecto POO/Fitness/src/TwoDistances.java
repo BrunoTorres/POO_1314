@@ -31,14 +31,16 @@ public class TwoDistances extends Distance {
 	
 	@Override
 	public void setCalories() {
-		throw new UnsupportedOperationException("Not supported yet.");
+		int formula=((int)super.getDistance()+(int)this.secondDistance)*(int)super.getTimeSpent();
+        super.setCaloriesSuper(formula);
+        
 	}
-	
+	/*
 	@Override
 	public void setPerformance() {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
-
+*/
 	@Override
 	public boolean equals(Object a) {
 		if(this == a)

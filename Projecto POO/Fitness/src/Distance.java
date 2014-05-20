@@ -21,18 +21,22 @@ public class Distance extends Activity {
 		this.distance = dist.getDistance();
 	}
 	
-	private float getDistance() {
+	public float getDistance() {
 		return this.distance;
 	}
 
 	@Override
 	public void setCalories() {
+        int formula=(int)super.getTimeSpent()*(int)this.getDistance();              //INVENTADO
+    super.setCaloriesSuper(formula);
+        
+        
 	}
-	
+	/*
 	@Override
 	public void setPerformance() {
 	}
-
+*/
 	@Override
 	public boolean equals(Object a) {
 		if(this == a)

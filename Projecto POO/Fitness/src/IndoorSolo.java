@@ -25,12 +25,12 @@ public class IndoorSolo extends Activity
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     // redefine cálculo das calorias queimadas
-
+/*
     @Override
     public void setPerformance() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+*/
     @Override
     public boolean equals(Object a){
         if(this == a)

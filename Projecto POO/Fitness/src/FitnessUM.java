@@ -133,7 +133,7 @@ public class FitnessUM
         System.out.println("Ano:");
         int ano=input.nextInt();
         GregorianCalendar date=new GregorianCalendar(ano,mes,dia);
-       // System.out.println("Clima:");
+       // System.out.println("Clima:");                                                     //ERRO!!!
         //String weather=input.nextLine();
         System.out.println("Tempo despendido:");
         int timeSpent=input.nextInt();
@@ -143,7 +143,7 @@ public class FitnessUM
         int secondDistance=input.nextInt();
       
         int calories=0;                                                                                      //defenir calorias
-        TwoDistances aux=new TwoDistances(nameSport,name,date,timeSpent,calories,"frio",distance,secondDistance);
+        TwoDistances aux=new TwoDistances(nameSport,name,date,timeSpent,"frio",distance,secondDistance);
         
         return aux;
     
@@ -378,6 +378,7 @@ public class FitnessUM
     }
         return flag;
     }
+    
            
     public Set<Activity>getLast10Activities(User u){
         TreeSet<Activity> aux= new TreeSet();

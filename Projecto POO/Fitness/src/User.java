@@ -1,6 +1,8 @@
 import java.util.GregorianCalendar;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class User extends Person
@@ -10,8 +12,8 @@ public class User extends Person
     private String favoriteActivity;
     private TreeSet<Activity> userActivities; 
     private TreeSet<String> friendsList;
-
-    
+    private TreeMap<GregorianCalendar,Statistics> stats;
+        
     
     public User(){
         super();
@@ -20,6 +22,7 @@ public class User extends Person
         this.favoriteActivity="";
         this.userActivities=new TreeSet<Activity>(new CompareActivity());
         this.friendsList=new TreeSet<String>(); 
+        this.stats=new TreeMap<GregorianCalendar,Statistics> (new CompareStatsPerYearAndMonth());
         
     }
     
@@ -34,6 +37,7 @@ public class User extends Person
         for(Activity act:userActivities)
         this.userActivities.add((Activity) act.clone());
         this.friendsList=(TreeSet<String>)friendsList.clone(); 
+        this.stats=new TreeMap<GregorianCalendar,Statistics> (new CompareStatsPerYearAndMonth());
     }
         public User(String email,String pass,String name,char gender,GregorianCalendar date,
             int height,float weight,String favoriteActivity)
@@ -43,7 +47,8 @@ public class User extends Person
         this.weight=weight;
         this.favoriteActivity=favoriteActivity;
         this.userActivities=new TreeSet<Activity>(new CompareActivity());
-        this.friendsList=new TreeSet<String>(); 
+        this.friendsList=new TreeSet<String>();
+        this.stats=new TreeMap<GregorianCalendar,Statistics> (new CompareStatsPerYearAndMonth());
     }
        
     public User(User u){
@@ -53,6 +58,8 @@ public class User extends Person
         this.favoriteActivity=u.getFavoriteActivity();
         this.userActivities=(TreeSet<Activity>)u.getUserActivities();
         this.friendsList=(TreeSet<String>)u.getFriendsList();
+        this.stats=(TreeMap)u.getStats();
+              
         
     }
     
@@ -74,6 +81,17 @@ public class User extends Person
     
     public Set<String> getFriendsList(){
         return (TreeSet<String>)this.friendsList.clone();
+    }
+    
+    
+    public Map<GregorianCalendar,Statistics>getStats(){
+         TreeMap<GregorianCalendar,Statistics>aux =new TreeMap<GregorianCalendar,Statistics> (new CompareStatsPerYearAndMonth());
+         
+         for(GregorianCalendar key : this.stats.keySet())                                                                       //FUNCIONA??!!!
+             aux.put(key,this.stats.get(key));
+         
+         return aux;
+     
     }
     
     public void setHeight(int height){
@@ -106,9 +124,30 @@ public class User extends Person
         }
             
     
-
-
-    public boolean addActivity(Activity act){ /// TEm que escolher o tipo de actividade e depois addicionar
+//////////////////////////////TO STATS 
+    private void updateStat(Activity actt){
+        Distance act=(Distance)actt;
+        this.stats.get(act.getDate()).incrementsTimeDistanceCalories(act.getTimeSpent(),act.getDistance(),act.getCalories());
+    }
+    
+    private void createStat(Activity actt){
+        Distance act=(Distance)actt;
+        Statistics stat=new Statistics(act.getTimeSpent(),act.getCalories(),act.getDistance());
+        this.stats.put(act.getDate(), stat);
+        
+    }
+    private void setStats(Activity act){
+        if(this.stats.containsKey(act.getDate()))
+            updateStat(act);
+        else
+            createStat(act);
+            
+        
+    }
+    /////////////////////////////////////
+    public boolean addActivity(Activity act){
+        if((act instanceof Distance) || (act instanceof TwoDistances) || (act instanceof Group))
+            setStats(act);
        return this.userActivities.add(act);
     }
     

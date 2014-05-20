@@ -31,7 +31,7 @@ public abstract class Activity {
 		this.timeSpent = timeSpent;
 		this.setCalories();
 		this.weather = weather;
-		this.setPerformance();
+		//this.setPerformance();
 	}
 
 	public Activity(Activity a) {
@@ -41,7 +41,7 @@ public abstract class Activity {
 		this.timeSpent = a.getTimeSpent();
 		this.calories = a.getCalories();
 		this.weather = a.getWeather();
-		this.performance = a.getPerformance();
+		//this.performance = a.getPerformance();
 	}
 
 	public String getSportName(){
@@ -74,14 +74,6 @@ public abstract class Activity {
 	}
 
 	/**
-	 * @param timeSpent the timeSpent to set
-         * Precisamos deste método?
-	 */
-	public void setTimeSpent(double timeSpent) {
-		this.timeSpent = timeSpent;
-	}
-
-	/**
 	 * @return the calories
 	 */
 	public int getCalories() {
@@ -99,11 +91,13 @@ public abstract class Activity {
 
 	/**
 	 * @return the activityRecords
-	 */
+	
 	public Statistics getPerformance() {
 		Statistics aux = this.performance.clone();
 		return aux;
 	}
+     */
+    
 
 
 	/**
@@ -112,11 +106,15 @@ public abstract class Activity {
 	public void setName(String name) {
 		this.name = name;
 	}
+    
+    public void setCaloriesSuper(int calories){
+        this.calories=calories;
+    }
 
 	public abstract void setCalories();
 
 
-	public abstract void setPerformance();
+//	public abstract void setPerformance();
 
 
 	@Override
@@ -133,8 +131,8 @@ public abstract class Activity {
 				this.date.equals(act.getDate()) &&
 				this.timeSpent==act.getTimeSpent() &&
 				this.calories == act.getCalories() &&
-				this.weather.equals(act.getWeather()) &&
-				this.performance.equals(act.getPerformance()));
+				this.weather.equals(act.getWeather())); /*&&
+				this.performance.equals(act.getPerformance()));*/
 	}
 
 	@Override

@@ -11,7 +11,7 @@ public class Group extends Distance
         super();
     }
     
-    public Group(String sportName, String name, GregorianCalendar date, GregorianCalendar timeSpent, String weather, float distance, int myScore, int opScore){
+    public Group(String sportName, String name, GregorianCalendar date, double timeSpent, String weather, float distance, int myScore, int opScore){
         super(sportName, name, date, timeSpent, weather, distance);
         this.myScore = myScore;
         this.opScore = opScore;

@@ -13,7 +13,7 @@ public class IndoorAdversarial extends IndoorSolo
         this.opScore = 0;
     }
     
-    public IndoorAdversarial(String sportName, String name, GregorianCalendar date, GregorianCalendar timeSpent, String weather, int myScore, int opScore){
+    public IndoorAdversarial(String sportName, String name, GregorianCalendar date, double timeSpent, String weather, int myScore, int opScore){
         super(sportName, name, date, timeSpent, weather);
         this.myScore = myScore;
         this.opScore = opScore;
@@ -38,12 +38,12 @@ public class IndoorAdversarial extends IndoorSolo
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     // redefine cálculo das calorias queimadas
-
+/*
     @Override
     public void setPerformance() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+*/
     @Override
     public boolean equals(Object a){
         if(this == a)
