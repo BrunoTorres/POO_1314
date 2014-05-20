@@ -8,7 +8,7 @@ public abstract class Activity {
 	private String sportName;                     //Nome do desporto :Corrida
 	private String name;                         //Nome pode ser corrida com os amigos
 	private GregorianCalendar date;
-	private GregorianCalendar timeSpent;
+	private double timeSpent;
 	private int calories;
 	private String weather;
 	private Statistics performance;
@@ -17,17 +17,18 @@ public abstract class Activity {
 		this.sportName = "";
 		this.name = "";
 		this.date = new GregorianCalendar();
-		this.timeSpent = new GregorianCalendar();
+		this.timeSpent = 0.0;
 		this.calories = 0;
 		this.weather = "";
 		this.performance = new Statistics();
 	}
 
-	public Activity(String sportName, String name, GregorianCalendar date, GregorianCalendar timeSpent, String weather) {
+
+	public Activity(String sportName, String name, GregorianCalendar date, double timeSpent, String weather) {
 		this.sportName = sportName;
 		this.name = name;
 		this.date = (GregorianCalendar) date.clone();
-		this.timeSpent = (GregorianCalendar) timeSpent.clone();
+		this.timeSpent = timeSpent;
 		this.setCalories();
 		this.weather = weather;
 		this.setPerformance();
@@ -67,10 +68,18 @@ public abstract class Activity {
 	/**
 	 * @return the timeSpent
 	 */
-	public GregorianCalendar getTimeSpent() {
-		return (GregorianCalendar) this.timeSpent.clone();
+
+	public double getTimeSpent() {
+		return  this.timeSpent;
 	}
 
+	/**
+	 * @param timeSpent the timeSpent to set
+         * Precisamos deste método?
+	 */
+	public void setTimeSpent(double timeSpent) {
+		this.timeSpent = timeSpent;
+	}
 
 	/**
 	 * @return the calories
@@ -122,7 +131,7 @@ public abstract class Activity {
 		return (this.sportName.equals(act.getSportName()) &&
 				this.name.equals(act.getName()) &&
 				this.date.equals(act.getDate()) &&
-				this.timeSpent.equals(act.getTimeSpent()) &&
+				this.timeSpent==act.getTimeSpent() &&
 				this.calories == act.getCalories() &&
 				this.weather.equals(act.getWeather()) &&
 				this.performance.equals(act.getPerformance()));
@@ -151,7 +160,7 @@ public abstract class Activity {
 		sb.append("Data: ");
 		sb.append(this.getDate().toString()).append("\n");
 		sb.append("Duração: ");
-		sb.append(this.getTimeSpent().toString()).append("\n");
+		sb.append(this.getTimeSpent()).append("\n");
 		sb.append("Meteorologia: ");
 		sb.append(this.getWeather()).append("\n");
 		

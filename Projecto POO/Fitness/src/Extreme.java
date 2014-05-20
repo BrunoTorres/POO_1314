@@ -9,7 +9,7 @@ public class Extreme extends Activity
         super();
     }
 
-    public Extreme(String sportName, String name, GregorianCalendar date, GregorianCalendar timeSpent, String weather){
+    public Extreme(String sportName, String name, GregorianCalendar date, double timeSpent, String weather){
         super(sportName, name, date, timeSpent, weather);
     }
 

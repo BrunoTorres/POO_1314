@@ -8,7 +8,7 @@ public class IndoorSolo extends Activity
         super();
     }
 
-    public IndoorSolo(String sportName, String name, GregorianCalendar date, GregorianCalendar timeSpent, String weather){
+    public IndoorSolo(String sportName, String name, GregorianCalendar date, double timeSpent, String weather){
         super(sportName, name, date, timeSpent, weather);
     }
 

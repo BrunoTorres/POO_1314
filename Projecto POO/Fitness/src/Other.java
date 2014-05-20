@@ -9,7 +9,7 @@ public class Other extends Activity
         super();
     }
 
-    public Other(String sportName, String name, GregorianCalendar date, GregorianCalendar timeSpent, String weather){
+    public Other(String sportName, String name, GregorianCalendar date, double timeSpent, String weather){
         super(sportName, name, date, timeSpent, weather);
     }
 

@@ -11,7 +11,7 @@ public class Distance extends Activity {
 		this.distance =  0;
 	}
 	
-	public Distance(String sportName, String name, GregorianCalendar date, GregorianCalendar timeSpent, String weather, float distance){
+	public Distance(String sportName, String name, GregorianCalendar date, double timeSpent, String weather, float distance){
 		super(sportName, name, date, timeSpent, weather);
 		this.distance = distance;
 	}
