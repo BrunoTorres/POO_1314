@@ -1,7 +1,7 @@
 
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.Objects;
-import java.util.TreeSet;
 
 public abstract class Activity {
 
@@ -11,7 +11,7 @@ public abstract class Activity {
 	private double timeSpent;
 	private int calories;
 	private String weather;
-	private Statistics performance;
+	private ArrayList <Records> performance;				//NAO DEVIA SER UMA LISTA??
 
 	public Activity() {
 		this.sportName = "";
@@ -20,7 +20,7 @@ public abstract class Activity {
 		this.timeSpent = 0.0;
 		this.calories = 0;
 		this.weather = "";
-		this.performance = new Statistics();
+		this.performance = new ArrayList <Records>();
 	}
 
 
@@ -92,14 +92,15 @@ public abstract class Activity {
 	/**
 	 * @return the activityRecords
 	*/
-	public Statistics getPerformanceClone() {
-		Statistics aux = this.performance.clone();
+	public ArrayList <Records> getPerformance() {
+		ArrayList<Records> aux = new ArrayList();
+	    for (Records rec : this.performance) 
+			aux.add(rec.clone());
 		return aux;
 	}
     
-    public Statistics getPerformance() {
+    public ArrayList <Records> getPerformanceAdmin() {
 		return this.performance;
-		
 	}
 
 
@@ -164,7 +165,11 @@ public abstract class Activity {
 		sb.append(this.getTimeSpent()).append("\n");
 		sb.append("Meteorologia: ");
 		sb.append(this.getWeather()).append("\n");
-		
+		sb.append("Recordes:\n");
+		for (Records rec : this.performance)
+			if (!rec.isEmpty())
+				sb.append(rec.toString()).append("\n");			
+				
 		return sb.toString();
 	}
 

@@ -4,14 +4,14 @@ import java.util.GregorianCalendar;
 
 public class TwoDistances extends Distance {
 
-	private float secondDistance; // distancia vertical (Kilómetros)
+	private double secondDistance; // distancia vertical (Kilómetros)
 	
 	public TwoDistances(){
 		super();
 		this.secondDistance = 0;
 	}
 	
-	public TwoDistances(String sportName, String name, GregorianCalendar date, double timeSpent, String weather, float distance, float secondDistance){
+	public TwoDistances(String sportName, String name, GregorianCalendar date, double timeSpent, String weather, double distance, double secondDistance){
 		super(sportName, name, date, timeSpent, weather, distance);
 		this.secondDistance = secondDistance;
 	}
@@ -21,11 +21,11 @@ public class TwoDistances extends Distance {
 		this.secondDistance = twoDist.getSecondDistance();
 	}
 
-	public float getSecondDistance() {
+	public double getSecondDistance() {
 		return this.secondDistance;
 	}
 	
-	public void setSecondDistance(float secondDistance){
+	public void setSecondDistance(double secondDistance){
 		this.secondDistance = secondDistance;
 	}
 	
@@ -50,13 +50,6 @@ public class TwoDistances extends Distance {
 		TwoDistances twoDist = (TwoDistances) a;
 		return (super.equals(twoDist) &&
 			    this.secondDistance == twoDist.getSecondDistance());
-	}
-
-	@Override
-	public int hashCode() {
-		int hash = 7;
-		hash = 41 * hash + Float.floatToIntBits(this.secondDistance);
-		return hash;
 	}
 	
 	@Override
