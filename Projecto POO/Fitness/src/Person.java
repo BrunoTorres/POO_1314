@@ -11,53 +11,53 @@ public abstract class Person
     private GregorianCalendar dateOfBirth;
 
 
-public Person(){
-    this.email="";
-    this.password="";
-    this.name="";
-    this.gender='N';
-    this.dateOfBirth=new GregorianCalendar();
-      
-    
-}
-//Construtores
-public Person(String email,String pass,String name,char gender,GregorianCalendar date){
-    this.email=email;
-    this.password=pass;
-    this.name=name;
-    this.gender=gender;
-    this.dateOfBirth=(GregorianCalendar)date.clone();
-}
+    public Person(){
+        this.email="";
+        this.password="";
+        this.name="";
+        this.gender='N';
+        this.dateOfBirth=new GregorianCalendar();
+          
+        
+    }
+    //Construtores
+    public Person(String email,String pass,String name,char gender,GregorianCalendar date){
+        this.email=email;
+        this.password=pass;
+        this.name=name;
+        this.gender=gender;
+        this.dateOfBirth=(GregorianCalendar)date.clone();
+    }
 
-public Person(Person p){
-    this.email=p.getEmail();
-    this.password=p.getPassword();
-    this.name=p.getName();
-    this.gender=p.getGender();
-    this.dateOfBirth=p.getDate();
-}
+    public Person(Person p){
+        this.email=p.getEmail();
+        this.password=p.getPassword();
+        this.name=p.getName();
+        this.gender=p.getGender();
+        this.dateOfBirth=p.getDate();
+    }
 
-public String getEmail(){
-    return this.email;
-}
-public String getPassword(){
-    return this.password;
-}
-public String getName(){
-    return this.name;
-}
-public char getGender(){
-    return this.gender;
-}
-public GregorianCalendar getDate(){
-    return (GregorianCalendar)this.dateOfBirth.clone();
-}
-public void setEmail(String email){
-    this.email=email;
-}
-public void setPassword(String pass){
-    this.password=pass;
-}
+    public String getEmail(){
+        return this.email;
+    }
+    public String getPassword(){
+        return this.password;
+    }
+    public String getName(){
+        return this.name;
+    }
+    public char getGender(){
+        return this.gender;
+    }
+    public GregorianCalendar getDate(){
+        return (GregorianCalendar)this.dateOfBirth.clone();
+    }
+    public void setEmail(String email){
+        this.email=email;
+    }
+    public void setPassword(String pass){
+        this.password=pass;
+    }
 
 
 
