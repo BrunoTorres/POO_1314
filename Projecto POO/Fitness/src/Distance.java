@@ -32,11 +32,14 @@ public class Distance extends Activity {
         
         
 	}
-	/*
-	@Override
+	
 	public void setPerformance() {
+        Statistics sta=new DistancePerTime();
+        
+        
+        
 	}
-*/
+
 	@Override
 	public boolean equals(Object a) {
 		if(this == a)

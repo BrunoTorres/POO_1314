@@ -29,7 +29,7 @@ public abstract class Activity {
 		this.name = name;
 		this.date = (GregorianCalendar) date.clone();
 		this.timeSpent = timeSpent;
-		this.setCalories();
+		this.calories=0;                                              // VER AQUI
 		this.weather = weather;
 		//this.setPerformance();
 	}
@@ -91,13 +91,16 @@ public abstract class Activity {
 
 	/**
 	 * @return the activityRecords
-	
-	public Statistics getPerformance() {
+	*/
+	public Statistics getPerformanceClone() {
 		Statistics aux = this.performance.clone();
 		return aux;
 	}
-     */
     
+    public Statistics getPerformance() {
+		return this.performance;
+		
+	}
 
 
 	/**
