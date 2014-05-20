@@ -1,6 +1,8 @@
 
 import java.util.GregorianCalendar;
 import java.util.Iterator;
+import java.util.Scanner;
+import java.util.Set;
 import java.util.TreeSet;
 
 public class FitnessUM
@@ -16,7 +18,7 @@ public class FitnessUM
     }
    //IMPLEMENTAR METODOS DE PESQUISA
     //pesquisa1 -> -RECEBER UM NOME/EMAIL e retornar um User    Feito em DataBase
-    //Pesquisa2 -> REceber Uma string e um user e retornar uma activityList
+    //Pesquisa2 -> REceber Uma string e um user e retornar uma activiy
   
   
     
@@ -27,17 +29,18 @@ public class FitnessUM
   
     public User getUserByEmail(String email){
         User u;
-        u=db.getUser(email);
+        u=this.db.getUser(email);
         return u;
         
     }
       public boolean existPassAndUser(String email,String pass){                               //////////////////////////////////////////////            
-        TreeSet<Person> userList = (TreeSet)db.getUserList();
-        boolean found =false;
+        TreeSet<Person> userList = (TreeSet)this.db.getUserList();
         
+        boolean found =false;        
         Iterator<Person> it = userList.iterator();
-        Person p=it.next();
+       
         while(it.hasNext() && !found){
+             Person p=it.next();
             if(email.equals(p.getEmail()) && pass.equals(p.getPassword()))
                 found= true;
         }
@@ -46,20 +49,20 @@ public class FitnessUM
    
     
     public boolean isAdmin(String email){                                                           // Procurar por email ou Admin admin?!
-        TreeSet<Person> userList = (TreeSet)db.getUserList();
+        TreeSet<Person> userList = (TreeSet)this.db.getUserList();
         boolean flag=false;
         boolean found=false;
     
        Iterator<Person> it=userList.iterator();
-       Person p = it.next();                                            
+                                                  
        while(it.hasNext() && !found)
        {
+           Person p = it.next(); 
            if((p.getEmail().equals(email)) && (p instanceof Admin))
            {
                found=true;
                flag=true;                   
            }
-           p = it.next();
        }       
        
        return flag;
@@ -81,7 +84,7 @@ public class FitnessUM
     public boolean addAdmin(String email,String pass,String name,char gender,GregorianCalendar date){
         boolean flag= false;
         Admin admin= new Admin(email,pass,name,gender,date);
-        flag=db.getUserListAdmin().add(admin);
+        flag=this.db.getUserListAdmin().add(admin);
         
         return flag;
         
@@ -96,18 +99,17 @@ public class FitnessUM
         boolean found=false;
         
         User u2=new User();
-        TreeSet<Person> userList=(TreeSet)db.getUserList();
+        TreeSet<Person> userList=(TreeSet)this.db.getUserList();
         
         Iterator<Person> it=userList.iterator();
-        Person p = it.next();
+        
         while(it.hasNext() && !found)
-       {
+       {    Person p = it.next();
            if((p.getEmail().equals(email)) && (p instanceof User)){
                u2=(User)p;
                found=true;
            }
-           else
-           p = it.next();
+ 
        }
         if(found){
             
@@ -117,26 +119,273 @@ public class FitnessUM
         
         return found;
     }
-    public boolean ExistSport(String name){
+    
+ 
+  //////////////////////////////////////////////////CRIAR ACTIVITIES/////////////////////////////////////  
+    public TwoDistances TypeToTwoDistance(String nameSport){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Nome da actividade:");
+        String name = input.nextLine();
+        System.out.println("Dia:");
+        int dia=input.nextInt();
+        System.out.println("Mes:");
+        int mes=input.nextInt();
+        System.out.println("Ano:");
+        int ano=input.nextInt();
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);
+        System.out.println("Clima:");
+        String weather=input.nextLine();
+        System.out.println("Tempo despendido:");
+        int timeSpent=input.nextInt();
+        System.out.println("Distancia percorrida1(horizontal):");
+        int distance=input.nextInt();
+        System.out.println("Distancia percorrida2(vertical):");
+        int secondDistance=input.nextInt();
+      
+        int calories=0;                                                                                      //defenir calorias
+        TwoDistances aux=new TwoDistances(nameSport,name,date,timeSpent,calories,weather,distance,secondDistance);
+        
+        return aux;
+    
+    }
+    
+    public Distance TypeToDistance(String nameSport){
+        
+        Scanner input = new Scanner(System.in);
+        System.out.println("Nome da actividade:");
+        String name = input.nextLine();
+        System.out.println("Dia:");
+        int dia=input.nextInt();
+        System.out.println("Mes:");
+        int mes=input.nextInt();
+        System.out.println("Ano:");
+        int ano=input.nextInt();
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);
+        System.out.println("Clima:");
+        String weather=input.nextLine();
+        System.out.println("Tempo despendido:");
+        int timeSpent=input.nextInt();
+        System.out.println("Distancia percorrida1(horizontal):");
+        int distance=input.nextInt();
+             
+        int calories=0;                                                                                      //defenir calorias
+        Distance aux=new Distance(nameSport,name,date,timeSpent,calories,weather,distance);
+        
+        return aux;
+    }
+    
+    
+    public Group TypeToGroup(String nameSport){
+        
+        Scanner input = new Scanner(System.in);
+        System.out.println("Nome da actividade:");
+        String name = input.nextLine();
+        System.out.println("Dia:");
+        int dia=input.nextInt();
+        System.out.println("Mes:");
+        int mes=input.nextInt();
+        System.out.println("Ano:");
+        int ano=input.nextInt();
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);
+        System.out.println("Clima:");
+        String weather=input.nextLine();
+        System.out.println("Tempo despendido:");
+        int timeSpent=input.nextInt();
+        System.out.println("Distancia percorrida1(horizontal):");
+        int distance=input.nextInt();
+        System.out.println("Pontuação da equipa");
+        int myScore=input.nextInt();
+        System.out.println("Pontuação do adeversario");
+        int opScore=input.nextInt();
+        
+             
+        int calories=0;                                                                                      //defenir calorias
+        Group aux=new Group(nameSport,name,date,timeSpent,calories,weather,distance,myScore,opScore);
+        
+        return aux;
+    }
+     public Group TypeToIndoorSolo(String nameSport){
+        
+        Scanner input = new Scanner(System.in);
+        System.out.println("Nome da actividade:");
+        String name = input.nextLine();
+        System.out.println("Dia:");
+        int dia=input.nextInt();
+        System.out.println("Mes:");
+        int mes=input.nextInt();
+        System.out.println("Ano:");
+        int ano=input.nextInt();
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);
+        System.out.println("Clima:");
+        String weather=input.nextLine();
+        System.out.println("Tempo despendido:");
+        int timeSpent=input.nextInt();
+        System.out.println("Distancia percorrida1(horizontal):");
+        int distance=input.nextInt();
+       
+             
+        int calories=0;                                                                                      //defenir calorias
+        IndoorSolo aux=new IndoorSolo(nameSport,name,date,timeSpent,calories,weather,distance);
+        
+        return aux;
+    }
+   public Group TypeToIndoorFighting(String nameSport){
+        
+        Scanner input = new Scanner(System.in);
+        System.out.println("Nome da actividade:");
+        String name = input.nextLine();
+        System.out.println("Dia:");
+        int dia=input.nextInt();
+        System.out.println("Mes:");
+        int mes=input.nextInt();
+        System.out.println("Ano:");
+        int ano=input.nextInt();
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);
+        System.out.println("Clima:");
+        String weather=input.nextLine();
+        System.out.println("Tempo despendido:");
+        int timeSpent=input.nextInt();
+        System.out.println("Distancia percorrida1(horizontal):");
+        int distance=input.nextInt();
+       
+             
+        int calories=0;                                                                                      //defenir calorias
+        IndoorFighting aux=new IndoorFighting(nameSport,name,date,timeSpent,calories,weather,distance);
+        
+        return aux;
+    }
+    public Extreme TypeToExtreme(String nameSport){
+        
+        Scanner input = new Scanner(System.in);
+        System.out.println("Nome da actividade:");
+        String name = input.nextLine();
+        System.out.println("Dia:");
+        int dia=input.nextInt();
+        System.out.println("Mes:");
+        int mes=input.nextInt();
+        System.out.println("Ano:");
+        int ano=input.nextInt();
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);
+        System.out.println("Clima:");
+        String weather=input.nextLine();
+        System.out.println("Tempo despendido:");
+        int timeSpent=input.nextInt();
+        System.out.println("Distancia percorrida1(horizontal):");
+        int distance=input.nextInt();
+       
+            
+        int calories=0;                                                                                      //defenir calorias
+        Extreme aux=new Extreme(nameSport,name,date,timeSpent,calories,weather);
+        
+        return aux;
+    }
+       public Other TypeToOther(String nameSport){
+        
+        Scanner input = new Scanner(System.in);
+        System.out.println("Nome da actividade:");
+        String name = input.nextLine();
+        System.out.println("Dia:");
+        int dia=input.nextInt();
+        System.out.println("Mes:");
+        int mes=input.nextInt();
+        System.out.println("Ano:");
+        int ano=input.nextInt();
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);
+        System.out.println("Clima:");
+        String weather=input.nextLine();                    //ERRO
+        System.out.println("Tempo despendido:");
+        int timeSpent=input.nextInt();
+        System.out.println("Distancia percorrida1(horizontal):");
+        int distance=input.nextInt();
+       
+        int calories=0;                                                                                      //defenir calorias
+        Other aux=new Other(nameSport,name,date,timeSpent,calories,weather);
+        
+        return aux;
+    }
+       
+       ////////////////////////////////////////////////////////////////////////////////////////////
+          public boolean ExistSport(String name){
         boolean found=false;
-        Iterator<Sport> it=db.getSportsType().iterator();
+        Iterator<Sport> it=this.db.getSportsType().iterator();
         while(it.hasNext() && !found)
             if(it.next().getName().equals(name))
                 found=true;
         return found;       
             
-        
     }
-    /*
-    public boolean addActivity(String name,User u){
+    
+    
+    public String listSports(){
+        StringBuilder sb= new StringBuilder();
+        sb.append("Tipo de desporto a escolher").append("\n");
+        for(Sport s:this.db.getSportsType())
+            sb.append(s.getName()).append("\n");
+        
+        return sb.toString();
+    }
+    
+    public String getSportTypeByName(String name){
+        boolean found=false;
+        
+        Iterator<Sport> it=this.db.getSportsType().iterator();
+        Sport sport=new Sport();
+        while(it.hasNext() && !found){
+            sport=it.next();
+            if(sport.getName().equals(name))
+                found=true;
+        }
+        return sport.getType();
+    }
+       
+    
+    public Activity createActivityByTypeSport(String type,String nameSport){
+        Activity nova;       
+        
+        switch(type){            
+            case "TwoDistances":
+                nova=TypeToTwoDistance(nameSport);               
+                break;
+            case "Distance":
+                nova= TypeToDistance(nameSport);
+                break;
+            case "Group":
+                nova= TypeToGroup(nameSport);
+                break;
+            case "IndoorSolo":
+                nova=TypeToIndoorSolo(nameSport);
+                break;
+            case "IndoorFighting":
+                nova=TypeToIndoorFighting(nameSport);
+                break;
+            case "Extreme":
+                nova=TypeToExtreme(nameSport);
+                break;
+            default:
+                nova=TypeToOther(nameSport);
+                break;
+        }       
+        return nova;       
+                   
+    }
+    
+ 
+    
+    
+    public boolean addActivity(Activity act,User u){
         boolean flag=false;
-        if (ExistSport(name)){                                                      VER COMO ADD ACTIVITY
-            flag=true;                                                  Só pode fazer add se o sportType estiver no treeSeet<Sport>
-            u.addActivity(name);                   
+        if (ExistSport(act.getSportName())){                                                    
     }
         return flag;
     }
-          */                 
+           
+    public Set<Activity>getLast10Activities(User u){
+        TreeSet<Activity> aux= new TreeSet();
+        Iterator<Activity>it = u.getUserActivities().iterator();
+        for(int i=0;i<10&&it.hasNext();i++)
+            aux.add(it.next());
+        return aux;       
+    }                  
     
             /////// VE TODAS AS ACTIVIDADES DE TODOS OS AMIGOS ///////////////////////////
     public String FriendToString(TreeSet<User> users){
@@ -153,32 +402,32 @@ public class FitnessUM
     }
                                                                                                          
     public String seeAllFriend(User u){
-       TreeSet<Person> dbUsers=(TreeSet)db.getUserList();
+       TreeSet<Person> dbUsers=(TreeSet)this.db.getUserList();
        TreeSet<String> userActivities = (TreeSet)u.getFriendsList();
        TreeSet<User> users=new TreeSet<User>();
        
        for(String s:u.getFriendsList())
        {
            boolean found=false;
-           Iterator<Person> it=dbUsers.iterator();
-           Person p = it.next();
-        
-           while(it.hasNext() && !found)
+           Iterator<Person> it=dbUsers.iterator();        
+           while(it.hasNext() && !found){
+               Person p = it.next();
                if(p.getName().equals(s))
                    users.add((User)p);
-           else
-                   p=it.next();
-               
+           } 
                
        }
        
        return (FriendToString(users));
         
     }
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
+    
+ 
+ 
 
     //Ver Actividade de um dado amigo //
+    
     
     //Lista amigos,escolhe amigo        --
     public String listAllFriends(User u){
@@ -194,7 +443,7 @@ public class FitnessUM
     //
     // Recebe nome da activityList e User Friend procura essa activitylist e lista 
     public String seeOneActivityList(User u,String activity){
-        return u.getOneActivity(activity).toString();                           //toString ACTIVITYLIST  
+        return u.getOneActivity(activity).toString();                                          //toString ACTIVITYLIST  
         
     }
     
@@ -204,7 +453,7 @@ public class FitnessUM
     //////////////////////////////////// Propriedade dos Administradores//////////////////////////////////////////
     
     public boolean removeUser(String email){                               
-        TreeSet<Person> userList = (TreeSet)db.getUserListAdmin();
+        TreeSet<Person> userList = (TreeSet)this.db.getUserListAdmin();
         boolean Flag = false;
         for(Person u:userList){                                                             //melhorar RETIRAR FOR para Iterator!!!
             if(email.equals(u.getEmail()))
@@ -218,7 +467,7 @@ public class FitnessUM
     
     public boolean removeActivity(Activity activity){                       
         boolean flag=false;
-        TreeSet<Person> userList=(TreeSet<Person>)db.getUserListAdmin();
+        TreeSet<Person> userList=(TreeSet<Person>)this.db.getUserListAdmin();
         
         for(Person p:userList){
             if(p instanceof User){
@@ -230,21 +479,21 @@ public class FitnessUM
         return flag;
         
     }
-    public void removeActivities(String name){
+    public void removeActivityFromUser(String name){
         
-        for(Person p:db.getUserListAdmin())
+        for(Person p:this.db.getUserListAdmin())
             if(p instanceof User)
             {
                 boolean found=false;
                 User u=(User) p;
                 Iterator<Activity> it= u.getUserActivities().iterator();
-                Activity aux=it.next();
                 
-                while(it.hasNext() && !found)                    
+                
+                while(it.hasNext() && !found){
+                    Activity aux=it.next();                       
                     if(aux.getName().equals(name))                        
                         found = true;
-                    else
-                        aux=it.next();
+                }
                 
                 u.getUserActivitiesAdmin().remove(aux);                  
                
@@ -255,18 +504,18 @@ public class FitnessUM
     public boolean removeSport(String name){
        boolean found=false;
         
-       Iterator<Sport>it=db.getSportsType().iterator();
-       Sport aux=it.next();
+       Iterator<Sport>it=this.db.getSportsType().iterator();
+       
        
        while(it.hasNext() && !found){
+           Sport aux=it.next();
           if(aux.getName().equals(name))
               found=true;
-          else
-              aux=it.next();
+         
        }
-       db.getSportsTypeAdmin().remove(aux);
+       this.db.getSportsTypeAdmin().remove(aux);
        if(found)
-        removeActivityList(name);
+        removeActivityFromUser(name);                           // VER AQUI NOME DO SPORT E NOME DA ACTIVITY!!!!!!!
     
        return found;
        
@@ -279,7 +528,7 @@ public class FitnessUM
     public boolean addSport(String type,String name,int caloriesPerHour,float avgIntensity,TreeSet<String> recordList){
         boolean flag=false;
         Sport aux = new Sport(type,name,caloriesPerHour,avgIntensity,recordList);
-        flag=db.getSportsTypeAdmin().add(aux);
+        flag=this.db.getSportsTypeAdmin().add(aux);
         return flag;
         
     }

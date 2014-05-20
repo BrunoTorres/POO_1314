@@ -37,9 +37,7 @@ public class IndoorSolo extends Activity
             return true;
         if(a == null || this.getClass() != a.getClass())
             return false;
-
         IndoorSolo act = (IndoorSolo) a;
-
         return  ( super.equals(act) );
     }
 

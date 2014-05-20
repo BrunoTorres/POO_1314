@@ -49,10 +49,5 @@ public class Other extends Activity
     @Override
     public Other clone() {
         return new Other(this);
-    }
-
-   
-   // apenas redefine cálculo das calorias queimadas
-
-    
+    }  
 }

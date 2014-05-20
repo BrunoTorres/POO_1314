@@ -16,8 +16,7 @@ public class Extreme extends Activity
     public Extreme(Extreme e){
         super(e);
     }
-    // apenas redefine cálculo das calorias queimadas
-
+    
     @Override
     public void setCalories() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

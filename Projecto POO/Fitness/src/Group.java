@@ -50,7 +50,7 @@ public class Group extends Distance
 	sb.append(super.toString());
         sb.append("Resultado: ");
         sb.append(this.getMyScore());
-	sb.append(" - "); // Aqui acho que pode ficar assim, porque todos os desportos que tem duas distancias, esta é distancia vertical
+	sb.append(" - "); 
 	sb.append(this.getOpScore()).append("\n");
         
         return sb.toString();

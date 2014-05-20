@@ -27,12 +27,10 @@ public class Distance extends Activity {
 
 	@Override
 	public void setCalories() {
-		
 	}
 	
 	@Override
 	public void setPerformance() {
-		
 	}
 
 	@Override
@@ -41,9 +39,7 @@ public class Distance extends Activity {
 			return true;
 		if(a == null || this.getClass() != a.getClass())
 			return false;
-		
-		Distance act = (Distance) a;		
-                
+		Distance act = (Distance) a;
                 return (super.equals(act) && this.distance == act.getDistance());
 	}
 
@@ -53,7 +49,6 @@ public class Distance extends Activity {
 		sb.append(super.toString());
 		sb.append("Distância percorrida: "); 
 		sb.append(this.getDistance()).append("\n");
-		
 		return sb.toString();
 	}
 
@@ -67,8 +62,5 @@ public class Distance extends Activity {
 		int hash = 7;
 		hash = 97 * hash + Float.floatToIntBits(this.distance);
 		return hash;
-	}
-
-
-	
+        }
 }
