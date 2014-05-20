@@ -28,6 +28,7 @@ public class Other extends Activity
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 */
+    @Override
     public boolean equals(Object a){
         if(this == a)
             return true;
@@ -39,6 +40,7 @@ public class Other extends Activity
         return  ( super.equals(act) );
     }
     
+    @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
         sb.append(super.toString());
