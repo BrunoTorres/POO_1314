@@ -120,11 +120,11 @@ public class User extends Person
                     act=it.next();
                           
               
-             return act;      //PODE RETURNAR NULL||||
+             return act;      //PODE RETORNAR NULL||||
         }
             
     
-//////////////////////////////TO STATS 
+//////////////////////////////TO STATS                              compor NAO esta POR MES!!!!!||||||||||||||||||||||||||||||||||||\\
     private void updateStat(Activity actt){
         Distance act=(Distance)actt;
         this.stats.get(act.getDate()).incrementsTimeDistanceCalories(act.getTimeSpent(),act.getDistance(),act.getCalories());
@@ -137,6 +137,7 @@ public class User extends Person
         
     }
     private void setStats(Activity act){
+        
         if(this.stats.containsKey(act.getDate()))
             updateStat(act);
         else
@@ -144,7 +145,7 @@ public class User extends Person
             
         
     }
-    /////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public boolean addActivity(Activity act){
         if((act instanceof Distance) || (act instanceof TwoDistances) || (act instanceof Group))
             setStats(act);

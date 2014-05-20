@@ -23,15 +23,36 @@ public class Statistics {
         this.timeSpend=timeSpend;
         
     }
+    
+    public Statistics(String name,float record){
+        this.name = name;
+		this.record = record;
+        this.timeSpend=0;
+        this.calories=0;
+        this.distance=0;
+    }
 
 	public Statistics(Statistics stat) {
 		this.name = stat.getName();
 		this.record = stat.getRecord();
-        
-        //FALTA CALORIES::::::
+        this.timeSpend=stat.getTimeSpend();
+        this.calories=stat.getCalories();
+        this.distance=stat.getDistance();
+       
         
 	}
     
+    public double getTimeSpend(){
+        return this.timeSpend;
+    }
+    
+    public int getCalories(){
+        return this.calories;
+    }
+    
+    public float getDistance(){
+        return this.distance;
+    }
  	/**
 	 * @return the name
 	 */
@@ -66,6 +87,9 @@ public class Statistics {
         this.distance+=distance;
         this.timeSpend+=time;
     }
+    
+    
+    
 	@Override
 	public Statistics clone(){
 		return new Statistics(this);

@@ -169,7 +169,7 @@ public class FitnessUM
              
         int calories=0;                                                                                      //defenir calorias
         GregorianCalendar date=new GregorianCalendar(ano,mes,dia);
-        Distance aux=new Distance(nameSport,name,date,timeSpent,calories,weather,distance);
+        Distance aux=new Distance(nameSport,name,date,timeSpent,weather,distance);
         
         return aux;
     }
@@ -200,11 +200,11 @@ public class FitnessUM
         
              
         int calories=0;                                                                                      //defenir calorias
-        Group aux=new Group(nameSport,name,date,timeSpent,calories,weather,distance,myScore,opScore);
+        Group aux=new Group(nameSport,name,date,timeSpent,weather,distance,myScore,opScore);
         
         return aux;
     }
-     public Group TypeToIndoorSolo(String nameSport){
+     public IndoorSolo TypeToIndoorSolo(String nameSport){
         
         Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
@@ -220,16 +220,15 @@ public class FitnessUM
         String weather=input.nextLine();
         System.out.println("Tempo despendido:");
         int timeSpent=input.nextInt();
-        System.out.println("Distancia percorrida1(horizontal):");
-        int distance=input.nextInt();
-       
+    
+      
              
-        int calories=0;                                                                                      //defenir calorias
-        IndoorSolo aux=new IndoorSolo(nameSport,name,date,timeSpent,calories,weather,distance);
+        int calories=0;                                                                                     
+        IndoorSolo aux=new IndoorSolo(nameSport,name,date,timeSpent,weather);
         
         return aux;
     }
-   public Group TypeToIndoorFighting(String nameSport){
+   public IndoorAdversarial TypeToIndoorAdversarial(String nameSport){
         
         Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
@@ -245,12 +244,14 @@ public class FitnessUM
         String weather=input.nextLine();
         System.out.println("Tempo despendido:");
         int timeSpent=input.nextInt();
-        System.out.println("Distancia percorrida1(horizontal):");
-        int distance=input.nextInt();
-       
+         System.out.println("Pontuação propria");
+        int myScore=input.nextInt();
+        System.out.println("Pontuação do adeversario");
+        int opScore=input.nextInt();
+       //(String sportName, String name, GregorianCalendar date, double timeSpent, String weather, int myScore, int opScore){
              
         int calories=0;                                                                                      //defenir calorias
-        IndoorFighting aux=new IndoorFighting(nameSport,name,date,timeSpent,calories,weather,distance);
+        IndoorAdversarial aux=new IndoorAdversarial(nameSport,name,date,timeSpent,weather,myScore,opScore);
         
         return aux;
     }
@@ -275,7 +276,7 @@ public class FitnessUM
        
             
         int calories=0;                                                                                      //defenir calorias
-        Extreme aux=new Extreme(nameSport,name,date,timeSpent,calories,weather);
+        Extreme aux=new Extreme(nameSport,name,date,timeSpent,weather);
         
         return aux;
     }
@@ -299,7 +300,7 @@ public class FitnessUM
         int distance=input.nextInt();
        
         int calories=0;                                                                                      //defenir calorias
-        Other aux=new Other(nameSport,name,date,timeSpent,calories,weather);
+        Other aux=new Other(nameSport,name,date,timeSpent,weather);
         
         return aux;
     }
@@ -356,7 +357,7 @@ public class FitnessUM
                 nova=TypeToIndoorSolo(nameSport);
                 break;
             case "IndoorFighting":
-                nova=TypeToIndoorFighting(nameSport);
+                nova=TypeToIndoorAdversarial(nameSport);
                 break;
             case "Extreme":
                 nova=TypeToExtreme(nameSport);
@@ -492,11 +493,13 @@ public class FitnessUM
                 
                 while(it.hasNext() && !found){
                     Activity aux=it.next();                       
-                    if(aux.getName().equals(name))                        
-                        found = true;
+                    if(aux.getName().equals(name)){
+                           found = true;
+                            u.getUserActivitiesAdmin().remove(aux); 
+                        
+                    }                        
+                     
                 }
-                
-                u.getUserActivitiesAdmin().remove(aux);                  
                
             }
         
@@ -506,18 +509,19 @@ public class FitnessUM
        boolean found=false;
         
        Iterator<Sport>it=this.db.getSportsType().iterator();
-       
+       Sport aux=new Sport();
        
        while(it.hasNext() && !found){
-           Sport aux=it.next();
+            aux=it.next();
           if(aux.getName().equals(name))
               found=true;
          
        }
-       this.db.getSportsTypeAdmin().remove(aux);
-       if(found)
+             //ver SE PODE REMOVER!!!!!!!!
+       if(found){
+        this.db.getSportsTypeAdmin().remove(aux); 
         removeActivityFromUser(name);                           // VER AQUI NOME DO SPORT E NOME DA ACTIVITY!!!!!!!
-    
+    }
        return found;
        
         
