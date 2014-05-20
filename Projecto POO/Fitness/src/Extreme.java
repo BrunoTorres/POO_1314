@@ -9,21 +9,21 @@ public class Extreme extends Activity
         super();
     }
 
-    public Extreme(String sportName, String name, GregorianCalendar date, double timeSpent,int calories, String weather){
-        super(sportName, name, date, timeSpent,calories, weather);
+    public Extreme(String sportName, String name, GregorianCalendar date, double timeSpent, String weather){
+        super(sportName, name, date, timeSpent, weather);
     }
 
     public Extreme(Extreme e){
-        super(e.getSportName(), e.getName(), e.getDate(), e.getTimeSpent(),e.getCalories(), e.getWeather());
+        super(e);
     }
-    // apenas redefine cálculo das calorias queimadas
-
+    
     @Override
     public void setCalories() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void setRecords() {
+    @Override
+    public void setPerformance() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -39,15 +39,14 @@ public class Extreme extends Activity
         return  ( super.equals(act) );
     }
 
-
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.toString());
+        return sb.toString();
+    }
 
     @Override
     public Extreme clone() {
         return new Extreme(this);
-    }
-
-    @Override
-    public void setPerfomance() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

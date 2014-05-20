@@ -24,14 +24,14 @@ public abstract class Activity {
 	}
 
 
-	public Activity(String sportName, String name, GregorianCalendar date, double timeSpent, int calories, String weather) {
+	public Activity(String sportName, String name, GregorianCalendar date, double timeSpent, String weather) {
 		this.sportName = sportName;
 		this.name = name;
 		this.date = (GregorianCalendar) date.clone();
 		this.timeSpent = timeSpent;
-		this.calories = calories;
+		this.setCalories();
 		this.weather = weather;
-		// this.performance = perfomance;                               isto é o que?
+		this.setPerformance();
 	}
 
 	public Activity(Activity a) {
@@ -75,11 +75,11 @@ public abstract class Activity {
 
 	/**
 	 * @param timeSpent the timeSpent to set
+         * Precisamos deste método?
 	 */
 	public void setTimeSpent(double timeSpent) {
 		this.timeSpent = timeSpent;
 	}
-
 
 	/**
 	 * @return the calories
@@ -116,7 +116,7 @@ public abstract class Activity {
 	public abstract void setCalories();
 
 
-	public abstract void setPerfomance();
+	public abstract void setPerformance();
 
 
 	@Override

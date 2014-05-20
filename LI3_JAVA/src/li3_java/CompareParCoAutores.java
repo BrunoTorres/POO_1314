@@ -14,14 +14,12 @@ public class CompareParCoAutores implements Comparator<ParCoAutores>, Serializab
 
 	@Override
 	public int compare(ParCoAutores a1, ParCoAutores a2){
-		if((a2.getNumPubs() > (a1.getNumPubs())))
+		if((a1.getNumPubs() > (a2.getNumPubs())))
 			return -1;
-		else if((a1.getNumPubs() > (a2.getNumPubs())))
+		
+		if((a2.getNumPubs() > (a1.getNumPubs())))
 			return 1;
-			else 
-				if ( a2.getNome1().compareTo(a1.getNome1()) == 0)
-					return a2.getNome2().compareTo(a1.getNome2());
-				else 
-					return a2.getNome1().compareTo(a1.getNome1());
+		
+		return a1.getNome1().compareTo(a2.getNome1());
 	}
 }

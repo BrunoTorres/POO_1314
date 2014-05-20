@@ -22,6 +22,7 @@ import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.TreeMap;
 import java.util.TreeSet;
+import javax.swing.JOptionPane;
 
 public class RedeGlobalAutores implements Serializable {
 
@@ -32,6 +33,9 @@ public class RedeGlobalAutores implements Serializable {
 	private int nomesDistintos;
 	private int menorAno;
 	private int maiorAno;
+	private int numPubsUmAutor;
+	//private int numAutoresSolo;
+	//private int numAutoresNoSolo;
 
 	public RedeGlobalAutores() {
 		this.redeGlobalAutores = new TreeMap<Integer, RedeAnualAutores>();
@@ -42,9 +46,9 @@ public class RedeGlobalAutores implements Serializable {
 		this.menorAno = 20000;
 		this.maiorAno = 0;
 	}
-	
-	public RedeGlobalAutores(RedeGlobalAutores rede){
-		this.redeGlobalAutores = (TreeMap<Integer, RedeAnualAutores>)  rede.getRedeGlobalAutores();
+
+	public RedeGlobalAutores(RedeGlobalAutores rede) {
+		this.redeGlobalAutores = (TreeMap<Integer, RedeAnualAutores>) rede.getRedeGlobalAutores();
 		this.ficheiroLido = rede.getFIcheiroLido();
 		this.artigosLidos = rede.getArtigosLidos();
 		this.nomesLidos = rede.getNomesLidos();
@@ -52,7 +56,7 @@ public class RedeGlobalAutores implements Serializable {
 		this.menorAno = rede.getMenorAno();
 		this.maiorAno = rede.getMaiorAno();
 	}
-	
+
 	public void leFicheiro(String fileName) {
 		String endName = fileName.substring(fileName.length() - 4);
 		switch (endName) {
@@ -71,10 +75,10 @@ public class RedeGlobalAutores implements Serializable {
 		}
 	}
 	// Getters
-	
-	private Map<Integer, RedeAnualAutores> getRedeGlobalAutores() {
+
+	public Map<Integer, RedeAnualAutores> getRedeGlobalAutores() {
 		TreeMap<Integer, RedeAnualAutores> aux = new TreeMap<Integer, RedeAnualAutores>();
-		for(RedeAnualAutores redeAnual : this.redeGlobalAutores.values()){
+		for (RedeAnualAutores redeAnual : this.redeGlobalAutores.values()) {
 			aux.put(redeAnual.getAno(), redeAnual.clone());
 		}
 		return aux;
@@ -104,6 +108,17 @@ public class RedeGlobalAutores implements Serializable {
 		return this.maiorAno;
 	}
 
+	public int getNumPubsUmAutor() {
+		return this.numPubsUmAutor;
+	}
+
+	/*public int getNumAutoresSolo(){
+	 return this.numAutoresSolo;
+	 }
+	
+	 public int getNumAutoresNoSolo(){
+	 return this.numAutoresNoSolo;
+	 }*/
 	public void leFicheiroObj(String fileName) {
 		try {
 			ObjectInputStream objInput = new ObjectInputStream(new FileInputStream(fileName));
@@ -115,11 +130,11 @@ public class RedeGlobalAutores implements Serializable {
 
 	public void leFicheiroTxt(String fileName) {
 		String linha;
-		ArrayList<String> linhaTok = new ArrayList<String>();
+		ArrayList<String> linhaTok = new ArrayList<>();
 		int ano;
 		Scanner fichScan;
 		StringTokenizer sTok;
-		HashSet<String> autDist = new HashSet<String>();
+		HashSet<String> autDist = new HashSet<>();
 		this.ficheiroLido = fileName;
 
 		try {
@@ -133,19 +148,26 @@ public class RedeGlobalAutores implements Serializable {
 				while (sTok.hasMoreTokens()) {
 					linhaTok.add(sTok.nextToken().trim());
 				}
-				
-				if(linhaTok.size() > 1){
+
+				if (linhaTok.size() > 1) {
 					this.artigosLidos++;
 				}
 
+				if (linhaTok.size() == 2) {
+					this.numPubsUmAutor++;
+				}
+
 				ano = Integer.valueOf(linhaTok.get(linhaTok.size() - 1));
-				if(ano < this.menorAno)
+				if (ano < this.menorAno) {
 					this.menorAno = ano;
-				if(ano > this.maiorAno)
+				}
+
+				if (ano > this.maiorAno) {
 					this.maiorAno = ano;
-				
+				}
+
 				linhaTok.remove(linhaTok.size() - 1);
-				
+
 				autDist.addAll(linhaTok);
 				this.nomesLidos += linhaTok.size();
 				this.adicionaPublicacao(ano, linhaTok);
@@ -187,8 +209,8 @@ public class RedeGlobalAutores implements Serializable {
 		}
 		return null; // NADA DE NULL!!!!
 	}
-	
-	public String statsString(){
+
+	public String statsString() {
 		StringBuilder s = new StringBuilder("Rede de Autores: " + this.getFIcheiroLido());
 		s.append("\nAnos: [").append(this.getMenorAno()).append(", ").append(this.getMaiorAno()).append("]");
 		s.append("\nPublicações: ").append(this.getArtigosLidos());
@@ -199,151 +221,297 @@ public class RedeGlobalAutores implements Serializable {
 		//}
 		return s.toString();
 	}
-	
-	public int getNumPubsAutorAnos(String nome, int anoInicial, int anoFinal){
+
+	public String consulta12() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("Nº de autores: ").append(this.getNomesDistintos()).append("\n");
+		sb.append("Nº de artigos com apenas um autor: ").append(this.getNumPubsUmAutor()).append("\n");
+		sb.append("Nº de autores que apenas publicaram a solo: ").append(this.getNumAutoresSolo()).append("\n");
+		sb.append("Nº de autores que nunca publicaram a solo: ").append(this.getNumAutoresNoSolo()).append("\n");
+
+		return sb.toString();
+	}
+
+	public int getNumPubsAutorAnos(String nome, int anoInicial, int anoFinal) {
 		int count = 0;
 		RedeAnualAutores redeAux;
-		for(int i = anoInicial; i <= anoFinal; i++){
-			if(this.redeGlobalAutores.containsKey(i)){
+		for (int i = anoInicial; i <= anoFinal; i++) {
+			if (this.redeGlobalAutores.containsKey(i)) {
 				redeAux = this.redeGlobalAutores.get(i).clone();
 				count += redeAux.numPubsAutor(nome);
 			}
 		}
 		return count;
 	}
-	
-	public Set<String> consulta21a (int anoInicial, int anoFinal, int topX){
-		TreeSet<Autor> maxPubsAutores = new TreeSet<Autor>(new CompareAutorPubs());
+
+	public int getNumAutoresSolo() {
+		HashSet<String> verificados = new HashSet<>();
+		HashSet<String> solo = new HashSet<>();
+
+		for (RedeAnualAutores redeAnual : this.redeGlobalAutores.values()) {
+			for (Autor aut : redeAnual.getRedeAnualAutores().values()) {
+				if (aut.getNumeroPubsCoAutores() == 0 && aut.getNumeroPubsSolo() != 0 && !verificados.contains(aut.getNome())) {
+					solo.add(aut.getNome());
+				} else {
+					solo.remove(aut.getNome());
+				}
+
+				verificados.add(aut.getNome());
+			}
+		}
+		return solo.size();
+	}
+
+	public int getNumAutoresNoSolo() {
+		HashSet<String> verificados = new HashSet<>();
+		HashSet<String> noSolo = new HashSet<>();
+
+		for (RedeAnualAutores redeAnual : this.redeGlobalAutores.values()) {
+			for (Autor aut : redeAnual.getRedeAnualAutores().values()) {
+				if (aut.getNumeroPubsSolo() == 0 && aut.getNumeroPubsCoAutores() != 0 && !verificados.contains(aut.getNome())) {
+					noSolo.add(aut.getNome());
+				} else {
+					noSolo.remove(aut.getNome());
+				}
+
+				verificados.add(aut.getNome());
+			}
+		}
+		return noSolo.size();
+	}
+
+	public Set<String> consulta21a(int anoInicial, int anoFinal, int topX) {
+		TreeSet<Autor> maxPubsAutores = new TreeSet<>(new CompareAutorPubs());
 		//TreeSet<String> res = new TreeSet<String>();
 		Iterator<Autor> it;
 		Autor autAux;
 		boolean sair = false;
-		
-		for(int i = anoInicial; i <= anoFinal; i++){
-			for(Autor aut: this.redeGlobalAutores.get(i).getRedeAnualAutores().values()){
+
+		for (int i = anoInicial; i <= anoFinal; i++) {
+			for (Autor aut : this.redeGlobalAutores.get(i).getRedeAnualAutores().values()) {
 				it = maxPubsAutores.iterator();
-				if(maxPubsAutores.contains(aut))
-					while(it.hasNext() && !sair){
+				if (maxPubsAutores.contains(aut)) {
+					while (it.hasNext() && !sair) {
 						autAux = it.next();
-						if(autAux.getNome().equals(aut.getNome())){
+						if (autAux.getNome().equals(aut.getNome())) {
 							autAux.incrementaPubs(aut.getNumeroPubsSolo(), aut.getNumeroPubsCoAutores());
 							sair = true;
 						}
 					}
-				else
+				} else {
 					maxPubsAutores.add(aut.clone());
-			}
-		}
-		
-		return this.consulta21aAux(maxPubsAutores, topX);
-	}
-	
-	private Set<String> consulta21aAux(TreeSet<Autor> auts, int topX){
-		TreeSet<String> res = new TreeSet<String>();
-		for(int i = 0; i < topX; i++){
-			res.add(auts.pollFirst().getNome());
-		}
-		
-		return res;
-	}
-	
-	public int getLinhasDuplicado(){
-		HashSet<String> linhas = new HashSet<String>();
-		int numLinhas = 0;
-		Scanner fichScan;
-		
-		try {
-			fichScan = new Scanner(new FileReader(this.ficheiroLido));
-			fichScan.useDelimiter(System.getProperty("line.separator"));
-			while(fichScan.hasNext()){
-				linhas.add(fichScan.next());
-				numLinhas++;
-			}
-		}
-		catch(FileNotFoundException e){
-			System.out.println(e.getMessage());
-		}
-		
-		return numLinhas - linhas.size();			
-	}
-	
-	public Set<String> consulta21b(int topX, int anoInicial, int anoFinal){
-		TreeSet<ParCoAutores> paresAutores = new TreeSet<ParCoAutores>(new CompareParCoAutores());
-		Iterator<ParCoAutores> it;
-		ParCoAutores par, parAux;
-		boolean sair;
-
-		for(int i = anoInicial; i < anoFinal; i++){
-			for (Autor aut: this.redeGlobalAutores.get(i).getRedeAnualAutores().values()) {
-				for (CoAutor coaut : aut.getCoAutores().values()) {
-					par = new ParCoAutores(aut.getNome(), coaut.getNome(), coaut.getNumeroPubsComAutor());
-					it = paresAutores.iterator();
-					if (paresAutores.contains(par)){
-						sair = false;
-						while(it.hasNext() && !sair){
-							parAux = it.next();
-							if(par.equals(parAux)){
-								parAux.addPubs(coaut.getNumeroPubsComAutor());
-								sair = true;
-							}
-						}
-					} else paresAutores.add(par);
 				}
 			}
 		}
-		return consulta21bAux(paresAutores, topX);
+
+		return this.consulta21aAux(maxPubsAutores, topX);
 	}
-	
-	public Set<String> consulta21bAux(TreeSet<ParCoAutores> pares, int topX){
-		TreeSet<String> res = new TreeSet<String>();
-		for(int i = 0; i < topX; i++){
-			res.add(pares.pollFirst().toString());
+
+	private Set<String> consulta21aAux(TreeSet<Autor> auts, int topX) {
+		TreeSet<String> res = new TreeSet<>();
+		for (int i = 0; i < auts.size() || i < topX; i++) {
+			res.add(auts.pollFirst().getNome());
 		}
-		
+
 		return res;
 	}
-	
-	public Set<String> consulta22b(char c) {
-		TreeSet<String> autoresLetra = new TreeSet<String>();
-		for(RedeAnualAutores redeAnual: this.redeGlobalAutores.values())
-			for(String nome: redeAnual.getRedeAnualAutores().keySet())
-				if(nome.startsWith(""+ c))
-					autoresLetra.add(nome);
-		
-		return autoresLetra;					
+
+	public List<String> consulta21b(int topX, int anoInicial, int anoFinal) {
+		TreeSet<ParCoAutores> paresAutores = new TreeSet<>(new CompareParCoAutores());
+		Iterator<ParCoAutores> it;
+		ParCoAutores par, parAux;
+		boolean sair = false;
+		boolean add = true;
+
+		for (int i = anoInicial; i <= anoFinal; i++) {
+			if (this.redeGlobalAutores.containsKey(i)) {
+				for (Autor aut : this.redeGlobalAutores.get(i).getRedeAnualAutores().values()) {
+					for (CoAutor coAut : aut.getCoAutores().values()) {
+						sair = false;
+						add = true;
+						par = new ParCoAutores(aut.getNome(), coAut.getNome(), coAut.getNumeroPubsComAutor(), i);
+						it = paresAutores.iterator();
+						while (it.hasNext() && !sair) {
+							parAux = it.next().clone();
+							if (parAux.equals(par)) {
+								sair = true;
+								add = false;
+								if (parAux.getUltimoAno() != i) {
+									it.remove();
+									parAux.addPubs(par.getNumPubs());
+									parAux.setUltimoAno(i);
+									paresAutores.add(parAux);
+								}
+							}
+						}
+						if (add) {
+							paresAutores.add(par);
+						}
+					}
+				}
+			}
+		}
+
+		return consulta21bAux(paresAutores, topX);
 	}
-	
-	public String consulta22c(String autor, int ano){
+
+	public List<String> consulta21bAux(TreeSet<ParCoAutores> pares, int topX) {
+		ArrayList<String> res = new ArrayList<>();
+
+		JOptionPane.showMessageDialog(null, pares.size());
+		if (pares.size() >= topX) {
+			for (int i = 0; i < topX; i++) {
+				res.add(pares.pollFirst().toString());
+			}
+		} else {
+			for (int i = 0; i < pares.size(); i++) {
+				res.add(pares.pollFirst().toString());
+			}
+		}
+
+		return res;
+	}
+
+	public Set<String> consulta21c(int anoInicial, int anoFinal, ArrayList<String> listaAutores) {
+
+		TreeSet<String> res = new TreeSet<>();
+
+		Autor aut;
+		TreeMap<String, Autor> mapAutores = new TreeMap<>();
+
+		for (int i = anoInicial; i <= anoFinal; i++) {
+			ArrayList<Autor> autoresLista = new ArrayList<>();
+			for (String nomeAutor : listaAutores) {
+
+				Autor aux;
+
+				if (this.redeGlobalAutores.get(i).getRedeAnualAutores().containsKey(nomeAutor)) {
+					aut = this.redeGlobalAutores.get(i).getRedeAnualAutores().get(nomeAutor);
+
+					ArrayList<String> coautores = new ArrayList();
+
+					for (CoAutor coAut : aut.getCoAutores().values()) {
+						coautores.add(coAut.getNome());
+					}
+
+					aux = new Autor(nomeAutor);
+					aux.adicionaCoAutores(coautores, i);
+
+					autoresLista.add(aux);
+
+				}
+			}
+			Iterator<Autor> it = autoresLista.iterator();
+			Autor autIt = it.next();
+
+			for (CoAutor coAut : autIt.getCoAutores().values()) {
+				boolean flag = true;
+
+				for (Autor autorAux : autoresLista) {
+					if (!autorAux.getCoAutores().containsKey(coAut.getNome())) {
+						flag = false;
+					}
+				}
+
+				if (flag == true) {
+					res.add(coAut.getNome());
+				}
+			}
+
+		}
+
+		return res;
+	}
+
+	public Set<String> consulta21d(int anoInicial, int anoFinal) {
+		TreeSet<String> autores = new TreeSet<>();
+		boolean add = true;
+
+		if (this.redeGlobalAutores.containsKey(anoInicial)) {
+
+			for (Autor aut : this.redeGlobalAutores.get(anoInicial).getRedeAnualAutores().values()) {
+				for (int i = anoInicial + 1; i <= anoFinal && add; i++) {
+					if (!this.redeGlobalAutores.containsKey(i) || !this.redeGlobalAutores.get(i).getRedeAnualAutores().containsKey(aut.getNome())) {
+						add = false;
+					}
+				}
+				if (add) {
+					autores.add(aut.getNome());
+				} else {
+					add = true;
+				}
+			}
+		}
+
+		return autores;
+	}
+
+	public int getLinhasDuplicado() {
+		HashSet<String> linhas = new HashSet<>();
+		int numLinhas = 0;
+		Scanner fichScan;
+
+		try {
+			fichScan = new Scanner(new FileReader(this.ficheiroLido));
+			fichScan.useDelimiter(System.getProperty("line.separator"));
+			while (fichScan.hasNext()) {
+				linhas.add(fichScan.next());
+				numLinhas++;
+			}
+		} catch (FileNotFoundException e) {
+			System.out.println(e.getMessage());
+		}
+
+		return numLinhas - linhas.size();
+	}
+
+	public Set<String> consulta22b(char c) {
+		TreeSet<String> autoresLetra = new TreeSet<>();
+		for (RedeAnualAutores redeAnual : this.redeGlobalAutores.values()) {
+			for (String nome : redeAnual.getRedeAnualAutores().keySet()) {
+				if (nome.startsWith("" + c)) {
+					autoresLetra.add(nome);
+				}
+			}
+		}
+
+		return autoresLetra;
+	}
+
+	public String consulta22c(String autor, int ano) {
 		RedeAnualAutores redeAnual;
 		Autor aut;
 		StringBuilder sb = new StringBuilder();
-		if(this.redeGlobalAutores.containsKey(ano)){
+		if (this.redeGlobalAutores.containsKey(ano)) {
 			redeAnual = this.redeGlobalAutores.get(ano).clone();
-			if(redeAnual.getRedeAnualAutores().containsKey(autor)){
+			if (redeAnual.getRedeAnualAutores().containsKey(autor)) {
 				aut = redeAnual.getRedeAnualAutores().get(autor).clone();
 				sb.append("Número de publicações com co-autores: ");
 				sb.append(aut.getNumeroPubsCoAutores());
 				sb.append("\n");
-				for(CoAutor coAut: aut.getCoAutores().values())
+				for (CoAutor coAut : aut.getCoAutores().values()) {
 					sb.append(coAut.getNome()).append(("\n"));
+				}
 			}
-		}
-		else{
+		} else {
 			sb.append("Ano não existente no ficheiro...\n\n");
 		}
 		return sb.toString();
 	}
-	
-	public Set<String> consulta22d(String autor){
+
+	public Set<String> consulta22d(String autor) {
 		TreeSet<String> coAutores = new TreeSet<String>();
-		for(RedeAnualAutores redeAnual: this.getRedeGlobalAutores().values())
-			if(redeAnual.getRedeAnualAutores().containsKey(autor))
-				for(CoAutor coAut: redeAnual.getRedeAnualAutores().get(autor).getCoAutores().values())
+		for (RedeAnualAutores redeAnual : this.getRedeGlobalAutores().values()) {
+			if (redeAnual.getRedeAnualAutores().containsKey(autor)) {
+				for (CoAutor coAut : redeAnual.getRedeAnualAutores().get(autor).getCoAutores().values()) {
 					coAutores.add(coAut.getNome());
-		
+				}
+			}
+		}
+
 		return coAutores;
 	}
-	
+
 	@Override
 	public String toString() {
 		StringBuilder s = new StringBuilder("Rede de Autores: " + this.getFIcheiroLido());
@@ -357,5 +525,4 @@ public class RedeGlobalAutores implements Serializable {
 		return s.toString();
 	}
 
-	
 }

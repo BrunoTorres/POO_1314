@@ -8,12 +8,12 @@ public class IndoorSolo extends Activity
         super();
     }
 
-    public IndoorSolo(String sportName, String name, GregorianCalendar date, double timeSpent,int calories, String weather){
-        super(sportName, name, date, timeSpent,calories, weather);
+    public IndoorSolo(String sportName, String name, GregorianCalendar date, double timeSpent, String weather){
+        super(sportName, name, date, timeSpent, weather);
     }
 
     public IndoorSolo(IndoorSolo o){
-        super(o.getSportName(), o.getName(), o.getDate(), o.getTimeSpent(),o.getCalories(), o.getWeather());
+        super(o);
     }
 
     /**
@@ -26,7 +26,8 @@ public class IndoorSolo extends Activity
     }
     // redefine cálculo das calorias queimadas
 
-    public void setRecords() {
+    @Override
+    public void setPerformance() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -36,29 +37,20 @@ public class IndoorSolo extends Activity
             return true;
         if(a == null || this.getClass() != a.getClass())
             return false;
-
         IndoorSolo act = (IndoorSolo) a;
-
         return  ( super.equals(act) );
     }
 
     @Override
     public String toString(){
         StringBuilder sb=new StringBuilder();
-   
         sb.append(super.toString());
-            
         return sb.toString();      
     }
 
     @Override
     public IndoorSolo clone() {
         return new IndoorSolo(this);
-    }
-
-    @Override
-    public void setPerfomance() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
