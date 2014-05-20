@@ -11,7 +11,7 @@ public class Distance extends Activity {
 		this.distance =  0;
 	}
 	
-	public Distance(String sportName, String name, GregorianCalendar date, double timeSpent, String weather, float distance){
+	public Distance(String sportName, String name, GregorianCalendar date, double timeSpent, String weather, double distance){
 		super(sportName, name, date, timeSpent, weather);
 		this.distance = distance;
 	}
@@ -34,7 +34,7 @@ public class Distance extends Activity {
 	}
 	
 	public void setPerformance() {
-        Statistics sta=new DistancePerTime();
+        
         
         
         
@@ -66,10 +66,5 @@ public class Distance extends Activity {
 	}
 
 	
-	@Override
-	public int hashCode() {
-		int hash = 7;
-		hash = 97 * hash + Float.floatToIntBits(this.distance);
-		return hash;
-        }
+	
 }
