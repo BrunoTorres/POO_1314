@@ -47,7 +47,13 @@ public class Distance extends Activity {
                 return (super.equals(act) && this.distance == act.getDistance());
 	}
 
+	
 	@Override
+	public Distance clone() {
+		return new Distance(this);
+	}
+    
+    @Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString());
@@ -56,10 +62,6 @@ public class Distance extends Activity {
 		return sb.toString();
 	}
 
-	@Override
-	public Distance clone() {
-		return new Distance(this);
-	}
 	
 	@Override
 	public int hashCode() {

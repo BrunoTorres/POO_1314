@@ -88,7 +88,26 @@ public class Statistics {
         this.timeSpend+=time;
     }
     
+    @Override
+    public String toString(){
+        StringBuilder sb=new StringBuilder();
+        
+        sb.append("Name: ");sb.append(this.name).append("\n");
+        sb.append("Record: ");sb.append(this.record).append("\n");
+                     
+        return sb.toString();      
+         
+    }
     
+    public String toStringYearAndMonth(){
+        StringBuilder sb=new StringBuilder();
+        
+        sb.append("Time Spend: ");sb.append(this.timeSpend).append("\n");
+        sb.append("Calories: ");sb.append(this.calories).append("\n");
+        sb.append("Distance: ");sb.append(this.distance).append("\n");
+        
+        return sb.toString();
+    }
     
 	@Override
 	public Statistics clone(){

@@ -22,12 +22,12 @@ public class Other extends Activity
     public void setCalories() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+/*
     @Override
     public void setPerformance() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+*/
     public boolean equals(Object a){
         if(this == a)
             return true;
