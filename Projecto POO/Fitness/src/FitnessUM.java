@@ -127,6 +127,7 @@ public class FitnessUM
     public String searchStatisticsYear(User u,String tipo,int ano){
         TreeMap<GregorianCalendar,Statistics>aux =(TreeMap)u.getStats();
         
+        
                                                                                                 ///////////////////////////////////
         
     }
