@@ -21,7 +21,7 @@ public class Distance extends Activity {
 		this.distance = dist.getDistance();
 	}
 	
-	public float getDistance() {
+	public double getDistance() {
 		return this.distance;
 	}
 

@@ -1,6 +1,4 @@
 
-import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.Scanner;
@@ -129,6 +127,7 @@ public class FitnessUM
     public String searchStatisticsYear(User u,String tipo,int ano){
         TreeMap<GregorianCalendar,Statistics>aux =(TreeMap)u.getStats();
         
+                                                                                                ///////////////////////////////////
         
     }
 
@@ -206,7 +205,7 @@ public class FitnessUM
         System.out.println("Distancia percorrida1(horizontal):");
         int distance=input.nextInt();
              
-        int calories=0;                                                                                      //defenir calorias
+                                                                                          //defenir calorias
         GregorianCalendar date=new GregorianCalendar(ano,mes,dia);
         Distance aux=new Distance(nameSport,name,date,timeSpent,weather,distance);
         
@@ -238,7 +237,7 @@ public class FitnessUM
         int opScore=input.nextInt();
         
              
-        int calories=0;                                                                                      //defenir calorias
+                                                                                           //defenir calorias
         Group aux=new Group(nameSport,name,date,timeSpent,weather,distance,myScore,opScore);
         
         return aux;
@@ -262,7 +261,7 @@ public class FitnessUM
     
       
              
-        int calories=0;                                                                                     
+                                                                                          
         IndoorSolo aux=new IndoorSolo(nameSport,name,date,timeSpent,weather);
         
         return aux;
@@ -287,9 +286,7 @@ public class FitnessUM
         int myScore=input.nextInt();
         System.out.println("Pontuação do adeversario");
         int opScore=input.nextInt();
-       //(String sportName, String name, GregorianCalendar date, double timeSpent, String weather, int myScore, int opScore){
-             
-        int calories=0;                                                                                      //defenir calorias
+       
         IndoorAdversarial aux=new IndoorAdversarial(nameSport,name,date,timeSpent,weather,myScore,opScore);
         
         return aux;
@@ -310,12 +307,11 @@ public class FitnessUM
         String weather=input.nextLine();
         System.out.println("Tempo despendido:");
         int timeSpent=input.nextInt();
-        System.out.println("Distancia percorrida1(horizontal):");
-        int distance=input.nextInt();
+        System.out.println("Pontos:");
+        double pontos=input.nextDouble();
        
-            
-        int calories=0;                                                                                      //defenir calorias
-        Extreme aux=new Extreme(nameSport,name,date,timeSpent,weather);
+                                                                                             //defenir calorias
+        Extreme aux=new Extreme(nameSport,name,date,timeSpent,weather,pontos);
         
         return aux;
     }
@@ -338,7 +334,7 @@ public class FitnessUM
         System.out.println("Distancia percorrida1(horizontal):");
         int distance=input.nextInt();
        
-        int calories=0;                                                                                      //defenir calorias
+                                                                                           //defenir calorias
         Other aux=new Other(nameSport,name,date,timeSpent,weather);
         
         return aux;

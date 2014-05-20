@@ -19,7 +19,7 @@ public class Statistics {
         
     }
     
-    public Statistics(double timeSpend,int calories,float distance){
+    public Statistics(double timeSpend,int calories,double distance){
     
         this.distance=distance;
         this.calories=calories;
