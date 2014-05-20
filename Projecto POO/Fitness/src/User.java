@@ -1,3 +1,4 @@
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.Map;
@@ -35,7 +36,7 @@ public class User extends Person
         this.weight=weight;
         this.favoriteActivity=favoriteActivity;
         for(Activity act:userActivities)
-        this.userActivities.add((Activity) act.clone());
+            this.userActivities.add((Activity) act.clone());
         this.friendsList=(TreeSet<String>)friendsList.clone(); 
         this.stats=new TreeMap<GregorianCalendar,Statistics> (new CompareStatsPerYearAndMonth());
     }
@@ -126,14 +127,37 @@ public class User extends Person
     
 //////////////////////////////TO STATS                              compor NAO esta POR MES!!!!!||||||||||||||||||||||||||||||||||||\\
     private void updateStat(Activity actt){
-        Distance act=(Distance)actt;
-        this.stats.get(act.getDate()).incrementsTimeDistanceCalories(act.getTimeSpent(),act.getDistance(),act.getCalories());
+        GregorianCalendar date=new GregorianCalendar(actt.getDate().get(Calendar.YEAR),actt.getDate().get(Calendar.MONTH),0);
+         
+        if(actt instanceof Distance){
+        Distance act=(Distance)actt;       
+        if(this.stats.get(date) instanceof StatisticsDistance)
+         ((StatisticsDistance)this.stats.get(date)).incrementsDistance(act.getTimeSpent(),act.getCalories(),act.getDistance());
+        else createStat(actt);
+        }
+         else{
+              if(this.stats.get(date) instanceof Statistics)
+           ((Statistics)this.stats.get(date)).incrementsTimeCalories(actt.getTimeSpent(),actt.getCalories());
+              else{
+                  createStat(actt);
+              }
+         }
+       
     }
     
     private void createStat(Activity actt){
-        Distance act=(Distance)actt;
-        Statistics stat=new Statistics(act.getTimeSpent(),act.getCalories(),act.getDistance());
-        this.stats.put(act.getDate(), stat);
+        GregorianCalendar date=new GregorianCalendar(actt.getDate().get(Calendar.YEAR),actt.getDate().get(Calendar.MONTH),0);
+        
+        if(actt instanceof Distance){
+            Distance act = (Distance)actt;
+        Statistics stat=new StatisticsDistance(act.getTimeSpent(),act.getCalories(),act.getDistance());
+        this.stats.put(date, stat);
+        
+    }
+        else{
+            Statistics stat = new Statistics(actt.getTimeSpent(),actt.getCalories());
+            this.stats.put(actt.getDate(), stat);
+        }
         
     }
     private void setStats(Activity act){

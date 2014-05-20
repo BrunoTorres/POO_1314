@@ -16,6 +16,10 @@ public class FitnessUM
     public FitnessUM(DataBase db){
         this.db=db;
     }
+    
+    public void addPerson(TreeSet<Person> persons){
+        db.addPerson(persons);
+    }
    //IMPLEMENTAR METODOS DE PESQUISA
     //pesquisa1 -> -RECEBER UM NOME/EMAIL e retornar um User    Feito em DataBase
     //Pesquisa2 -> REceber Uma string e um user e retornar uma activiy
@@ -95,7 +99,7 @@ public class FitnessUM
     
     /////////////////////////////////////////////////Propriedade dos Utilizadores//////////////////////////////////////
     
-    public boolean addFriendInUserList(User u,String email){      //CLASSE MENSAGENS? UM 
+    public boolean addFriendInUserList(User u,String email){                                                         //CLASSE MENSAGENS? UM 
         boolean found=false;
         
         User u2=new User();
@@ -132,7 +136,6 @@ public class FitnessUM
         int mes=input.nextInt();
         System.out.println("Ano:");
         int ano=input.nextInt();
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);
        // System.out.println("Clima:");                                                     //ERRO!!!
         //String weather=input.nextLine();
         System.out.println("Tempo despendido:");
@@ -142,7 +145,8 @@ public class FitnessUM
         System.out.println("Distancia percorrida2(vertical):");
         int secondDistance=input.nextInt();
       
-        int calories=0;                                                                                      //defenir calorias
+        int calories=0;  
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);//defenir calorias
         TwoDistances aux=new TwoDistances(nameSport,name,date,timeSpent,"frio",distance,secondDistance);
         
         return aux;
