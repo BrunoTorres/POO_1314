@@ -206,7 +206,7 @@ public class MenuForm extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        jLabel2.setText("Dados referentes ao último ficheiro de texto lido");
+        jLabel2.setText("Ler novo ficheiro e mostrar dados referentes ao ficheiro lido");
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jLabel4.setText("Números gerais respeitantes aos dados actuais na estrutura");
@@ -481,8 +481,8 @@ public class MenuForm extends javax.swing.JFrame {
 
     private void but2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but2ActionPerformed
 		this.textResultados.setText(this.redeGlobal.statsString());
+		this.textResultados.append("--- Estatística 1.2 ---\n");
 		this.textResultados.append(this.redeGlobal.consulta12());
-		//this.textResultados.append(this.redeGlobal.consulta12());
     }//GEN-LAST:event_but2ActionPerformed
 
     private void but10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but10ActionPerformed
@@ -574,8 +574,9 @@ public class MenuForm extends javax.swing.JFrame {
 			for (String s : autoresRep) {
 				sb.append(s).append(", ");
 			}
-
-			JOptionPane.showMessageDialog(this, "Autor(es) repetido(s): " + sb.toString() + "\nA pesquisa será feita sem repetições...", "ERRO", JOptionPane.WARNING_MESSAGE);
+			
+			if(autoresRep.size() > 0)
+				JOptionPane.showMessageDialog(this, "Autor(es) repetido(s): " + sb.toString() + "\nA pesquisa será feita sem repetições...", "ERRO", JOptionPane.WARNING_MESSAGE);
 
 			try {
 				this.textResultados.append(this.redeGlobal.consulta21c(anoIni, anoFim, autores).toString());
@@ -649,6 +650,7 @@ public class MenuForm extends javax.swing.JFrame {
 		JLabel labelTopX = new JLabel("N Max:");
 		Object[] dialog = {labelAnoInicial, anoInicial, labelAnoFinal, anoFinal, labelTopX, topX};
 		int anoIni, anoFim, x;
+		ArrayList<String> listaAutores;
 		this.textResultados.setText(this.redeGlobal.statsString());
 		
 		int res = JOptionPane.showConfirmDialog(this, dialog, "Introduza os dados", JOptionPane.OK_CANCEL_OPTION);
@@ -657,7 +659,9 @@ public class MenuForm extends javax.swing.JFrame {
 			anoIni = Integer.valueOf(anoInicial.getText());
 			anoFim = Integer.valueOf(anoFinal.getText());
 			try {
-				this.textResultados.append(this.redeGlobal.consulta21a(anoIni, anoFim, x).toString());
+				listaAutores = (ArrayList<String>) this.redeGlobal.consulta21a(anoIni, anoFim, x);
+				for(String s: listaAutores)
+					this.textResultados.append(s + "\n");
 			} catch (AnosForaDoIntervaloException | AnoInicialMaiorQueAnoFinalException | AnoInvalidoException e) {
 				JOptionPane.showMessageDialog(this, e.getMessage(), "ERRO", JOptionPane.WARNING_MESSAGE);
 			}
