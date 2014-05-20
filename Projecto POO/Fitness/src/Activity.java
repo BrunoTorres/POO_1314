@@ -1,7 +1,7 @@
 
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.Objects;
-import java.util.TreeSet;
 
 public abstract class Activity {
 
@@ -11,7 +11,7 @@ public abstract class Activity {
 	private double timeSpent;
 	private int calories;
 	private String weather;
-	private Statistics performance;
+	private ArrayList <Records> performance;				//NAO DEVIA SER UMA LISTA??
 
 	public Activity() {
 		this.sportName = "";
@@ -20,18 +20,18 @@ public abstract class Activity {
 		this.timeSpent = 0.0;
 		this.calories = 0;
 		this.weather = "";
-		this.performance = new Statistics();
+		this.performance = new ArrayList <Records>();
 	}
 
 
-	public Activity(String sportName, String name, GregorianCalendar date, double timeSpent, int calories, String weather) {
+	public Activity(String sportName, String name, GregorianCalendar date, double timeSpent, String weather) {
 		this.sportName = sportName;
 		this.name = name;
 		this.date = (GregorianCalendar) date.clone();
 		this.timeSpent = timeSpent;
-		this.calories = calories;
+		this.calories=0;                                              // VER AQUI
 		this.weather = weather;
-		// this.performance = perfomance;                               isto é o que?
+		//this.setPerformance();
 	}
 
 	public Activity(Activity a) {
@@ -41,7 +41,7 @@ public abstract class Activity {
 		this.timeSpent = a.getTimeSpent();
 		this.calories = a.getCalories();
 		this.weather = a.getWeather();
-		this.performance = a.getPerformance();
+		//this.performance = a.getPerformance();
 	}
 
 	public String getSportName(){
@@ -74,14 +74,6 @@ public abstract class Activity {
 	}
 
 	/**
-	 * @param timeSpent the timeSpent to set
-	 */
-	public void setTimeSpent(double timeSpent) {
-		this.timeSpent = timeSpent;
-	}
-
-
-	/**
 	 * @return the calories
 	 */
 	public int getCalories() {
@@ -99,10 +91,16 @@ public abstract class Activity {
 
 	/**
 	 * @return the activityRecords
-	 */
-	public Statistics getPerformance() {
-		Statistics aux = this.performance.clone();
+	*/
+	public ArrayList <Records> getPerformance() {
+		ArrayList<Records> aux = new ArrayList();
+	    for (Records rec : this.performance) 
+			aux.add(rec.clone());
 		return aux;
+	}
+    
+    public ArrayList <Records> getPerformanceAdmin() {
+		return this.performance;
 	}
 
 
@@ -112,11 +110,15 @@ public abstract class Activity {
 	public void setName(String name) {
 		this.name = name;
 	}
+    
+    public void setCaloriesSuper(int calories){
+        this.calories=calories;
+    }
 
 	public abstract void setCalories();
 
 
-	public abstract void setPerfomance();
+//	public abstract void setPerformance();
 
 
 	@Override
@@ -133,8 +135,8 @@ public abstract class Activity {
 				this.date.equals(act.getDate()) &&
 				this.timeSpent==act.getTimeSpent() &&
 				this.calories == act.getCalories() &&
-				this.weather.equals(act.getWeather()) &&
-				this.performance.equals(act.getPerformance()));
+				this.weather.equals(act.getWeather())); /*&&
+				this.performance.equals(act.getPerformance()));*/
 	}
 
 	@Override
@@ -163,7 +165,11 @@ public abstract class Activity {
 		sb.append(this.getTimeSpent()).append("\n");
 		sb.append("Meteorologia: ");
 		sb.append(this.getWeather()).append("\n");
-		
+		sb.append("Recordes:\n");
+		for (Records rec : this.performance)
+			if (!rec.isEmpty())
+				sb.append(rec.toString()).append("\n");			
+				
 		return sb.toString();
 	}
 

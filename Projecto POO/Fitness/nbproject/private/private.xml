@@ -2,6 +2,16 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group/>
+=======
+        <group>
+            <file>file:/home/miguel/Documents/GIT/Li3/Li3/Projecto%20POO/Fitness/src/Extreme.java</file>
+            <file>file:/home/miguel/Documents/GIT/Li3/Li3/Projecto%20POO/Fitness/src/Sport.java</file>
+            <file>file:/home/miguel/Documents/GIT/Li3/Li3/Projecto%20POO/Fitness/src/Activity.java</file>
+            <file>file:/home/miguel/Documents/GIT/Li3/Li3/Projecto%20POO/Fitness/src/DistancePerTime.java</file>
+            <file>file:/home/miguel/Documents/GIT/Li3/Li3/Projecto%20POO/Fitness/src/Records.java</file>
+        </group>
+>>>>>>> 330159e5be0ba2d6883657b7a7a2ef3e84fdb594
     </open-files>
 </project-private>

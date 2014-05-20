@@ -4,15 +4,15 @@ import java.util.GregorianCalendar;
 
 public class Distance extends Activity {
 
-	private float distance; // kilómetros
+	private double distance; // kilómetros
 	
 	public Distance(){
 		super();
 		this.distance =  0;
 	}
 	
-	public Distance(String sportName, String name, GregorianCalendar date, double timeSpent, int calories, String weather, float distance){
-		super(sportName, name, date, timeSpent, calories, weather);
+	public Distance(String sportName, String name, GregorianCalendar date, double timeSpent, String weather, double distance){
+		super(sportName, name, date, timeSpent, weather);
 		this.distance = distance;
 	}
 	
@@ -21,17 +21,23 @@ public class Distance extends Activity {
 		this.distance = dist.getDistance();
 	}
 	
-	private float getDistance() {
+	public double getDistance() {
 		return this.distance;
 	}
 
 	@Override
 	public void setCalories() {
-		
+        int formula=(int)super.getTimeSpent()*(int)this.getDistance();              //INVENTADO
+    super.setCaloriesSuper(formula);
+        
+        
 	}
 	
-	public void setRecords() {
-		
+	public void setPerformance() {
+        
+        
+        
+        
 	}
 
 	@Override
@@ -40,39 +46,25 @@ public class Distance extends Activity {
 			return true;
 		if(a == null || this.getClass() != a.getClass())
 			return false;
-		
-		Distance act = (Distance) a;		
-		
-		return (act.getName().equals(this.getName()) &&
-			    act.getCalories() == this.getCalories() &&
-			    act.getDate().equals(this.getDate()) &&
-			    act.getTimeSpent()==this.getTimeSpent() &&
-			    act.getWeather().equals(this.getWeather()) &&
-			    act.getPerformance().equals(this.getPerformance()));
+		Distance act = (Distance) a;
+                return (super.equals(act) && this.distance == act.getDistance());
 	}
 
-	@Override
-	public String toString() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-	}
-
+	
 	@Override
 	public Distance clone() {
 		return new Distance(this);
 	}
-	
-	@Override
-	public int hashCode() {
-		int hash = 7;
-		hash = 97 * hash + Float.floatToIntBits(this.distance);
-		return hash;
+    
+    @Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("Distância percorrida: "); 
+		sb.append(this.getDistance()).append("\n");
+		return sb.toString();
 	}
 
-    @Override
-    public void setPerfomance() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-
+	
 	
 }

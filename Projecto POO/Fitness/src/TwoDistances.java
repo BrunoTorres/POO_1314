@@ -4,17 +4,15 @@ import java.util.GregorianCalendar;
 
 public class TwoDistances extends Distance {
 
-	private float secondDistance; // distancia vertical (Kilómetros)
+	private double secondDistance; // distancia vertical (Kilómetros)
 	
 	public TwoDistances(){
 		super();
 		this.secondDistance = 0;
 	}
 	
-	public TwoDistances(String sportName, String name, GregorianCalendar date, double timeSpent,
-            int calories, String weather, float distance, float secondDistance){
-        
-		super(sportName, name, date, timeSpent, calories, weather, distance);
+	public TwoDistances(String sportName, String name, GregorianCalendar date, double timeSpent, String weather, double distance, double secondDistance){
+		super(sportName, name, date, timeSpent, weather, distance);
 		this.secondDistance = secondDistance;
 	}
 	
@@ -23,42 +21,35 @@ public class TwoDistances extends Distance {
 		this.secondDistance = twoDist.getSecondDistance();
 	}
 
-	public float getSecondDistance() {
+	public double getSecondDistance() {
 		return this.secondDistance;
 	}
 	
-	public void setSecondDistance(float secondDistance){
+	public void setSecondDistance(double secondDistance){
 		this.secondDistance = secondDistance;
 	}
 	
 	@Override
 	public void setCalories() {
-		throw new UnsupportedOperationException("Not supported yet.");
+		int formula=((int)super.getDistance()+(int)this.secondDistance)*(int)super.getTimeSpent();
+        super.setCaloriesSuper(formula);
+        
 	}
-	
+	/*
 	@Override
-	public void setRecords() {
+	public void setPerformance() {
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
-
+*/
 	@Override
 	public boolean equals(Object a) {
 		if(this == a)
 			return true;
 		if(a == null || this.getClass() != a.getClass())
 			return false;
-		
-		TwoDistances twoDist = (TwoDistances) a;		
-		
+		TwoDistances twoDist = (TwoDistances) a;
 		return (super.equals(twoDist) &&
 			    this.secondDistance == twoDist.getSecondDistance());
-	}
-
-	@Override
-	public int hashCode() {
-		int hash = 7;
-		hash = 41 * hash + Float.floatToIntBits(this.secondDistance);
-		return hash;
 	}
 	
 	@Override
@@ -70,10 +61,8 @@ public class TwoDistances extends Distance {
 	public String toString(){
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString());
-		sb.append("Altitude: "); // Não sei bem o que escrever aqui xD
+		sb.append("Distância vertical: "); // Aqui acho que pode ficar assim, porque todos os desportos que tem duas distancias, esta é distancia vertical
 		sb.append(this.getSecondDistance()).append("\n");
-		
 		return sb.toString();
 	}
-
 }

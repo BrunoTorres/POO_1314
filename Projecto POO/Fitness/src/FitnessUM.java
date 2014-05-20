@@ -3,6 +3,7 @@ import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class FitnessUM
@@ -15,6 +16,10 @@ public class FitnessUM
     
     public FitnessUM(DataBase db){
         this.db=db;
+    }
+    
+    public void addPerson(TreeSet<Person> persons){
+        db.addPerson(persons);
     }
    //IMPLEMENTAR METODOS DE PESQUISA
     //pesquisa1 -> -RECEBER UM NOME/EMAIL e retornar um User    Feito em DataBase
@@ -95,7 +100,41 @@ public class FitnessUM
     
     /////////////////////////////////////////////////Propriedade dos Utilizadores//////////////////////////////////////
     
-    public boolean addFriendInUserList(User u,String email){      //CLASSE MENSAGENS? UM 
+    //Aceder as estatisticas(mensais anuais) STATISTICS by distancia tempo e\calorias
+    
+    public String searchStatisticsMONTH(User u,String tipo,int mes,int ano){
+       TreeMap<GregorianCalendar,Statistics>aux =(TreeMap)u.getStats();
+       
+       GregorianCalendar data= new GregorianCalendar(ano,mes,0);
+       Statistics stats=aux.get(data);
+       String s;
+       
+       switch(tipo){
+            case "distância":
+                s=stats.toStringDistance();
+                break;
+            case "tempo":
+                s=stats.toStringTimeSpend();
+                break;
+            default:
+                s=stats.toStringCalories();
+                break;         
+       }
+       return s;
+        
+    }
+    
+    public String searchStatisticsYear(User u,String tipo,int ano){
+        TreeMap<GregorianCalendar,Statistics>aux =(TreeMap)u.getStats();
+        
+        
+                                                                                                ///////////////////////////////////
+        
+    }
+
+   
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public boolean addFriendInUserList(User u,String email){                                                         //CLASSE MENSAGENS? UM 
         boolean found=false;
         
         User u2=new User();
@@ -132,9 +171,8 @@ public class FitnessUM
         int mes=input.nextInt();
         System.out.println("Ano:");
         int ano=input.nextInt();
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);
-        System.out.println("Clima:");
-        String weather=input.nextLine();
+       // System.out.println("Clima:");                                                     //ERRO!!!
+        //String weather=input.nextLine();
         System.out.println("Tempo despendido:");
         int timeSpent=input.nextInt();
         System.out.println("Distancia percorrida1(horizontal):");
@@ -142,8 +180,9 @@ public class FitnessUM
         System.out.println("Distancia percorrida2(vertical):");
         int secondDistance=input.nextInt();
       
-        int calories=0;                                                                                      //defenir calorias
-        TwoDistances aux=new TwoDistances(nameSport,name,date,timeSpent,calories,weather,distance,secondDistance);
+        int calories=0;  
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);//defenir calorias
+        TwoDistances aux=new TwoDistances(nameSport,name,date,timeSpent,"frio",distance,secondDistance);
         
         return aux;
     
@@ -160,7 +199,6 @@ public class FitnessUM
         int mes=input.nextInt();
         System.out.println("Ano:");
         int ano=input.nextInt();
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);
         System.out.println("Clima:");
         String weather=input.nextLine();
         System.out.println("Tempo despendido:");
@@ -168,8 +206,9 @@ public class FitnessUM
         System.out.println("Distancia percorrida1(horizontal):");
         int distance=input.nextInt();
              
-        int calories=0;                                                                                      //defenir calorias
-        Distance aux=new Distance(nameSport,name,date,timeSpent,calories,weather,distance);
+                                                                                          //defenir calorias
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);
+        Distance aux=new Distance(nameSport,name,date,timeSpent,weather,distance);
         
         return aux;
     }
@@ -199,12 +238,12 @@ public class FitnessUM
         int opScore=input.nextInt();
         
              
-        int calories=0;                                                                                      //defenir calorias
-        Group aux=new Group(nameSport,name,date,timeSpent,calories,weather,distance,myScore,opScore);
+                                                                                           //defenir calorias
+        Group aux=new Group(nameSport,name,date,timeSpent,weather,distance,myScore,opScore);
         
         return aux;
     }
-     public Group TypeToIndoorSolo(String nameSport){
+     public IndoorSolo TypeToIndoorSolo(String nameSport){
         
         Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
@@ -220,16 +259,15 @@ public class FitnessUM
         String weather=input.nextLine();
         System.out.println("Tempo despendido:");
         int timeSpent=input.nextInt();
-        System.out.println("Distancia percorrida1(horizontal):");
-        int distance=input.nextInt();
-       
+    
+      
              
-        int calories=0;                                                                                      //defenir calorias
-        IndoorSolo aux=new IndoorSolo(nameSport,name,date,timeSpent,calories,weather,distance);
+                                                                                          
+        IndoorSolo aux=new IndoorSolo(nameSport,name,date,timeSpent,weather);
         
         return aux;
     }
-   public Group TypeToIndoorFighting(String nameSport){
+   public IndoorAdversarial TypeToIndoorAdversarial(String nameSport){
         
         Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
@@ -245,12 +283,12 @@ public class FitnessUM
         String weather=input.nextLine();
         System.out.println("Tempo despendido:");
         int timeSpent=input.nextInt();
-        System.out.println("Distancia percorrida1(horizontal):");
-        int distance=input.nextInt();
+         System.out.println("Pontuação propria");
+        int myScore=input.nextInt();
+        System.out.println("Pontuação do adeversario");
+        int opScore=input.nextInt();
        
-             
-        int calories=0;                                                                                      //defenir calorias
-        IndoorFighting aux=new IndoorFighting(nameSport,name,date,timeSpent,calories,weather,distance);
+        IndoorAdversarial aux=new IndoorAdversarial(nameSport,name,date,timeSpent,weather,myScore,opScore);
         
         return aux;
     }
@@ -270,12 +308,11 @@ public class FitnessUM
         String weather=input.nextLine();
         System.out.println("Tempo despendido:");
         int timeSpent=input.nextInt();
-        System.out.println("Distancia percorrida1(horizontal):");
-        int distance=input.nextInt();
+        System.out.println("Pontos:");
+        double pontos=input.nextDouble();
        
-            
-        int calories=0;                                                                                      //defenir calorias
-        Extreme aux=new Extreme(nameSport,name,date,timeSpent,calories,weather);
+                                                                                             //defenir calorias
+        Extreme aux=new Extreme(nameSport,name,date,timeSpent,weather,pontos);
         
         return aux;
     }
@@ -298,8 +335,8 @@ public class FitnessUM
         System.out.println("Distancia percorrida1(horizontal):");
         int distance=input.nextInt();
        
-        int calories=0;                                                                                      //defenir calorias
-        Other aux=new Other(nameSport,name,date,timeSpent,calories,weather);
+                                                                                           //defenir calorias
+        Other aux=new Other(nameSport,name,date,timeSpent,weather);
         
         return aux;
     }
@@ -356,7 +393,7 @@ public class FitnessUM
                 nova=TypeToIndoorSolo(nameSport);
                 break;
             case "IndoorFighting":
-                nova=TypeToIndoorFighting(nameSport);
+                nova=TypeToIndoorAdversarial(nameSport);
                 break;
             case "Extreme":
                 nova=TypeToExtreme(nameSport);
@@ -378,6 +415,7 @@ public class FitnessUM
     }
         return flag;
     }
+    
            
     public Set<Activity>getLast10Activities(User u){
         TreeSet<Activity> aux= new TreeSet();
@@ -491,11 +529,13 @@ public class FitnessUM
                 
                 while(it.hasNext() && !found){
                     Activity aux=it.next();                       
-                    if(aux.getName().equals(name))                        
-                        found = true;
+                    if(aux.getName().equals(name)){
+                           found = true;
+                            u.getUserActivitiesAdmin().remove(aux); 
+                        
+                    }                        
+                     
                 }
-                
-                u.getUserActivitiesAdmin().remove(aux);                  
                
             }
         
@@ -505,18 +545,19 @@ public class FitnessUM
        boolean found=false;
         
        Iterator<Sport>it=this.db.getSportsType().iterator();
-       
+       Sport aux=new Sport();
        
        while(it.hasNext() && !found){
-           Sport aux=it.next();
+            aux=it.next();
           if(aux.getName().equals(name))
               found=true;
          
        }
-       this.db.getSportsTypeAdmin().remove(aux);
-       if(found)
+             //ver SE PODE REMOVER!!!!!!!!
+       if(found){
+        this.db.getSportsTypeAdmin().remove(aux); 
         removeActivityFromUser(name);                           // VER AQUI NOME DO SPORT E NOME DA ACTIVITY!!!!!!!
-    
+    }
        return found;
        
         
