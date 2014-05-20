@@ -6,6 +6,7 @@
 package li3_java;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.TreeSet;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
@@ -50,6 +51,13 @@ public class MenuForm extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         textResultados = new javax.swing.JTextArea();
@@ -94,36 +102,66 @@ public class MenuForm extends javax.swing.JFrame {
         but3.setMaximumSize(new java.awt.Dimension(30, 24));
         but3.setMinimumSize(new java.awt.Dimension(30, 24));
         but3.setPreferredSize(new java.awt.Dimension(30, 24));
+        but3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                but3ActionPerformed(evt);
+            }
+        });
 
         but4.setText("4");
         but4.setMargin(new java.awt.Insets(2, 2, 2, 2));
         but4.setMaximumSize(new java.awt.Dimension(30, 24));
         but4.setMinimumSize(new java.awt.Dimension(30, 24));
         but4.setPreferredSize(new java.awt.Dimension(30, 24));
+        but4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                but4ActionPerformed(evt);
+            }
+        });
 
         but5.setText("5");
         but5.setMargin(new java.awt.Insets(2, 2, 2, 2));
         but5.setMaximumSize(new java.awt.Dimension(30, 24));
         but5.setMinimumSize(new java.awt.Dimension(30, 24));
         but5.setPreferredSize(new java.awt.Dimension(30, 24));
+        but5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                but5ActionPerformed(evt);
+            }
+        });
 
         but6.setText("6");
         but6.setMargin(new java.awt.Insets(2, 2, 2, 2));
         but6.setMaximumSize(new java.awt.Dimension(30, 24));
         but6.setMinimumSize(new java.awt.Dimension(30, 24));
         but6.setPreferredSize(new java.awt.Dimension(30, 24));
+        but6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                but6ActionPerformed(evt);
+            }
+        });
 
         but7.setText("7");
         but7.setMargin(new java.awt.Insets(2, 2, 2, 2));
         but7.setMaximumSize(new java.awt.Dimension(30, 24));
         but7.setMinimumSize(new java.awt.Dimension(30, 24));
         but7.setPreferredSize(new java.awt.Dimension(30, 24));
+        but7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                but7ActionPerformed(evt);
+            }
+        });
 
         but8.setText("8");
         but8.setMargin(new java.awt.Insets(2, 2, 2, 2));
         but8.setMaximumSize(new java.awt.Dimension(30, 24));
         but8.setMinimumSize(new java.awt.Dimension(30, 24));
         but8.setPreferredSize(new java.awt.Dimension(30, 24));
+        but8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                but8ActionPerformed(evt);
+            }
+        });
 
         but9.setText("9");
         but9.setMargin(new java.awt.Insets(2, 2, 2, 2));
@@ -158,13 +196,38 @@ public class MenuForm extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jLabel2.setText("Dados referentes ao último ficheiro de texto lido");
 
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jLabel4.setText("Números gerais respeitantes aos dados actuais na estrutura");
 
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jLabel5.setText("Tabela com o número total de publicações registadas em cada ano");
 
+        jLabel6.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jLabel6.setText("Lista dos nomes dos autores começados por uma dada letra de A a Z");
+
+        jLabel7.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jLabel7.setText("Os X pares de autores com mais artigos publicados em co-autoria");
+
+        jLabel8.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jLabel8.setText("Todos os co-autores comuns aos autores de uma dada lista de nomes");
+
+        jLabel9.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jLabel9.setText("Listagem dos autores que publicaram artigos em todos os anos de um intervalo");
+
+        jLabel10.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jLabel10.setText("Os nomes dos X autores que mais artigos publicaram");
+
+        jLabel11.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jLabel11.setText("Contar o número de linhas em duplicado no ficheiro lido");
+
+        jLabel12.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jLabel12.setText("Determinar todos os co-autores e o somatório dos artigos publicados de um autor");
+
+        jLabel13.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jLabel13.setText("Determinar o conjunto dos nomes de todos os co-autores de um dado autor");
 
         javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
         menuPanel.setLayout(menuPanelLayout);
@@ -173,36 +236,54 @@ public class MenuForm extends javax.swing.JFrame {
             .addGroup(menuPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(but5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(menuPanelLayout.createSequentialGroup()
                         .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(but2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(but1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(but3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(but4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(menuPanelLayout.createSequentialGroup()
+                                .addComponent(but5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel7))
+                            .addGroup(menuPanelLayout.createSequentialGroup()
+                                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(but2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(but1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(but3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(but4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel10))))
+                        .addGap(44, 44, 44)
+                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(menuPanelLayout.createSequentialGroup()
+                                .addComponent(but10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel12))
+                            .addGroup(menuPanelLayout.createSequentialGroup()
+                                .addComponent(but8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel11))
+                            .addGroup(menuPanelLayout.createSequentialGroup()
+                                .addComponent(but9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel6))
+                            .addGroup(menuPanelLayout.createSequentialGroup()
+                                .addComponent(but11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel13))
+                            .addGroup(menuPanelLayout.createSequentialGroup()
+                                .addComponent(but7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel9)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(menuPanelLayout.createSequentialGroup()
+                        .addComponent(but6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(menuPanelLayout.createSequentialGroup()
-                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(but6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(but10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(but8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(but7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(but11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(151, 151, 151))
-                    .addGroup(menuPanelLayout.createSequentialGroup()
-                        .addComponent(but9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel6)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(jLabel8)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         menuPanelLayout.setVerticalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -210,34 +291,54 @@ public class MenuForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(but1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(but6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(but11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(but2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(but7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(but3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(but8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
                     .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(but9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel6))
-                    .addComponent(but4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(but7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel9)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(but5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(but10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(menuPanelLayout.createSequentialGroup()
+                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(but2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(but3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(but4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(but5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7)))
+                    .addGroup(menuPanelLayout.createSequentialGroup()
+                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(but8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(but9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(but10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(but11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(but6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel1.setText("Escolha uma opção:");
 
+        textResultados.setEditable(false);
         textResultados.setColumns(20);
         textResultados.setRows(5);
         jScrollPane1.setViewportView(textResultados);
@@ -276,12 +377,11 @@ public class MenuForm extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jScrollPane1)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(menuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jLabel3))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel3)
+                    .addComponent(menuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -291,10 +391,10 @@ public class MenuForm extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(menuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -323,7 +423,7 @@ public class MenuForm extends javax.swing.JFrame {
 		String path;
 		int res;
 		this.setEnabled(false);
-		fChoose.setCurrentDirectory(new java.io.File("/home/jmano/NetBeansProjects/LI3_JAVA"));
+		fChoose.setCurrentDirectory(new java.io.File("/home/jmano/Documentos/Git/Li3/LI3_JAVA"));
 		res = fChoose.showDialog(null, "Abrir...");
 		this.setEnabled(true);
 		if (res == JFileChooser.APPROVE_OPTION) {
@@ -333,17 +433,19 @@ public class MenuForm extends javax.swing.JFrame {
 			gest.lerFicheiro(path, redeGlobal);
 			this.textResultados.setText(".......... ESTATÍSTICAS ..........\n\n");
 			this.textResultados.append(redeGlobal.statsString());
-		//this.textResultados.append("\n\n");
+			//this.textResultados.append("\n\n");
 			//this.textResultados.append(redeGlobal.consulta21a(2009, 2009, 3).toString());
 			//this.textResultados.append("\n\n");
 			//this.textResultados.append(redeGlobal.consulta21b(1, 2013, 2014).toString());
 			this.textResultados.append("\n\n");
-		}
+			//this.textResultados.append(this.redeGlobal.toString() + "\n\n");
 
+		}
     }//GEN-LAST:event_but1ActionPerformed
 
     private void but2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but2ActionPerformed
-
+		this.textResultados.append(this.redeGlobal.consulta12());
+		//this.textResultados.append(this.redeGlobal.consulta12());
     }//GEN-LAST:event_but2ActionPerformed
 
     private void but10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but10ActionPerformed
@@ -379,16 +481,112 @@ public class MenuForm extends javax.swing.JFrame {
 		for (int i = 0; i < letras.length && res == 0; i++) {
 			if ((char) letras[i] == c) {
 				TreeSet<String> autores = (TreeSet<String>) this.redeGlobal.consulta22b(c);
-				for(String s: autores){
+				for (String s : autores) {
 					this.textResultados.append(s + "\n");
 				}
 				res = 1;
-				this.textResultados.append(("Total: " + autores.size()));
+				this.textResultados.append(("Total: " + autores.size()) + "\n\n");
 			}
 		}
-		
+
 
     }//GEN-LAST:event_but9ActionPerformed
+
+    private void but6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but6ActionPerformed
+		JTextField anoInicial = new JTextField();
+		JTextField anoFinal = new JTextField();
+		JTextField autor1 = new JTextField();
+		JTextField autor2 = new JTextField();
+		JTextField autor3 = new JTextField();
+		JLabel labelAnoInicial = new JLabel("Ano Inicial:");
+		JLabel labelAnoFinal = new JLabel("Ano Final:");
+		JLabel labelAutor1 = new JLabel("Autor: ");
+		JLabel labelAutor2 = new JLabel("Autor: ");
+		JLabel labelAutor3 = new JLabel("Autor: ");
+		Object[] dialog = {labelAnoInicial, anoInicial, labelAnoFinal, anoFinal, labelAutor1, autor1, labelAutor2, autor2, labelAutor3, autor3};
+		int anoIni, anoFim;
+		ArrayList<String> autores = new ArrayList<>();
+
+		int res = JOptionPane.showConfirmDialog(this, dialog, "Introduza os autores (3 no máximo)", JOptionPane.OK_CANCEL_OPTION);
+		if (res == JOptionPane.OK_OPTION) {
+			anoIni = Integer.valueOf(anoInicial.getText());
+			anoFim = Integer.valueOf(anoFinal.getText());
+			autores.add(autor1.getText());
+			autores.add(autor2.getText());
+			autores.add(autor3.getText());
+			//if(a1.length() != 0 && a2.length() != 0 && a3.length() != 0)
+			this.textResultados.append(this.redeGlobal.consulta21c(anoIni, anoFim, autores).toString());
+		}
+    }//GEN-LAST:event_but6ActionPerformed
+
+    private void but5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but5ActionPerformed
+		JTextField anoInicial = new JTextField();
+		JTextField anoFinal = new JTextField();
+		JTextField topX = new JTextField();
+		JLabel labelAnoInicial = new JLabel("Ano Inicial:");
+		JLabel labelAnoFinal = new JLabel("Ano Final:");
+		JLabel labelTopX = new JLabel("N Max:");
+		Object[] dialog = {labelAnoInicial, anoInicial, labelAnoFinal, anoFinal, labelTopX, topX};
+		int anoIni, anoFim, x;
+
+		int res = JOptionPane.showConfirmDialog(this, dialog, "Introduza os dados", JOptionPane.OK_CANCEL_OPTION);
+		if (res == JOptionPane.OK_OPTION) {
+			x = Integer.valueOf(topX.getText());
+			anoIni = Integer.valueOf(anoInicial.getText());
+			anoFim = Integer.valueOf(anoFinal.getText());
+			this.textResultados.append(this.redeGlobal.consulta21b(x, anoIni, anoFim).toString());
+		}
+    }//GEN-LAST:event_but5ActionPerformed
+
+    private void but7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but7ActionPerformed
+		JTextField anoInicial = new JTextField();
+		JTextField anoFinal = new JTextField();
+		JLabel labelAnoInicial = new JLabel("Ano Inicial:");
+		JLabel labelAnoFinal = new JLabel("Ano Final:");
+		Object[] dialog = {labelAnoInicial, anoInicial, labelAnoFinal, anoFinal};
+		int anoIni, anoFim, x;
+
+		int res = JOptionPane.showConfirmDialog(this, dialog, "Introduza os dados", JOptionPane.OK_CANCEL_OPTION);
+		if (res == JOptionPane.OK_OPTION) {
+			anoIni = Integer.valueOf(anoInicial.getText());
+			anoFim = Integer.valueOf(anoFinal.getText());
+			if (anoIni < anoFim) {
+				this.textResultados.append(this.redeGlobal.consulta21d(anoIni, anoFim).toString());
+			}
+		}
+    }//GEN-LAST:event_but7ActionPerformed
+
+    private void but3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but3ActionPerformed
+		StringBuilder sb = new StringBuilder();
+		for (RedeAnualAutores redeAnual : this.redeGlobal.getRedeGlobalAutores().values()) {
+			sb.append(redeAnual.getAno()).append("\t").append(redeAnual.getNumPubs()).append(" publicações\n");
+		}
+
+		this.textResultados.append(sb.toString());
+    }//GEN-LAST:event_but3ActionPerformed
+
+    private void but4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but4ActionPerformed
+		JTextField anoInicial = new JTextField();
+		JTextField anoFinal = new JTextField();
+		JTextField topX = new JTextField();
+		JLabel labelAnoInicial = new JLabel("Ano Inicial:");
+		JLabel labelAnoFinal = new JLabel("Ano Final:");
+		JLabel labelTopX = new JLabel("N Max:");
+		Object[] dialog = {labelAnoInicial, anoInicial, labelAnoFinal, anoFinal, labelTopX, topX};
+		int anoIni, anoFim, x;
+
+		int res = JOptionPane.showConfirmDialog(this, dialog, "Introduza os dados", JOptionPane.OK_CANCEL_OPTION);
+		if (res == JOptionPane.OK_OPTION) {
+			x = Integer.valueOf(topX.getText());
+			anoIni = Integer.valueOf(anoInicial.getText());
+			anoFim = Integer.valueOf(anoFinal.getText());
+			this.textResultados.append(this.redeGlobal.consulta21a(x, anoIni, anoFim).toString());
+		}
+    }//GEN-LAST:event_but4ActionPerformed
+
+    private void but8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but8ActionPerformed
+		this.textResultados.append(("Linhas Duplicadas: " + this.redeGlobal.getLinhasDuplicado()) + "\n\n");
+    }//GEN-LAST:event_but8ActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -426,11 +624,18 @@ public class MenuForm extends javax.swing.JFrame {
     private javax.swing.JMenuItem butGravarEstado;
     private javax.swing.JMenuItem butSairBarra;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
