@@ -29,7 +29,128 @@ public class FitnessUM
     //pesquisa1 -> -RECEBER UM NOME/EMAIL e retornar um User    Feito em DataBase
     //Pesquisa2 -> REceber Uma string e um user e retornar uma activiy
   
-  
+  ////////////////////////////////////////////////
+    
+    public  int menuUser(){
+         Scanner input = new Scanner(System.in);
+         int i;
+         System.out.println("1-Visualizar a informaçao da últimas 10 actividades");
+         System.out.println("2-Registar uma actividade");
+         System.out.println("3-Consultar ou remover actividades");
+         System.out.println("4-Aceder às estatíticas(mensais ou anuais)");
+         i=input.nextInt();
+         
+        return i;
+    }
+     public  int registarActividade(){
+         Scanner input = new Scanner(System.in);
+         System.out.println("Escolha uma actividade:");
+         System.out.println("1 Yoga");
+         System.out.println("2 Aerobics");
+         System.out.println("3 Swimming");
+         System.out.println("4 IndoorCycling");
+         System.out.println("5 Handball");
+         System.out.println("6 Basketball");
+         System.out.println("7 TableTennis");
+         System.out.println("8 Boxing");
+         System.out.println("9 Badminton");
+         System.out.println("10 VolleyBallIndoor");
+         System.out.println("11 Football");
+         System.out.println("12 VolleyBallBeach");
+         System.out.println("13 Running");
+         System.out.println("14 Skating");
+         System.out.println("15 Saling");
+         System.out.println("16 Walking");
+         System.out.println("17 Tennis");
+         System.out.println("18 Skiing");
+         System.out.println("19 Cycling");
+         System.out.println("20 MountainBiking");
+         System.out.println("21 Orienteering");
+         System.out.println("22 Snowbording");
+         System.out.println("23 Polo");
+       
+         int i=input.nextInt();       
+         
+         return i;         
+     }
+     
+    
+       public  Activity criaActividade(int i){
+           Activity act;
+         switch(i){
+             case 1:
+                 act=createActivity("Yoga");
+                 break;
+             case 2:
+                 act=createActivity("Aerobics");
+                 break;
+             case 3:
+                 act=createActivity("Swimming");
+                 break;
+             case 4:
+                 act=createActivity("IndoorCycling");
+                 break;
+             case 5:
+                 act=createActivity("Handball");
+                 break;
+             case 6:
+                 act=createActivity("Basketball");
+                 break;
+             case 7:
+                 act=createActivity("TableTennis");
+                 break;
+             case 8:
+                 act=createActivity("Boxing");
+                 break;
+             case 9:
+                 act=createActivity("Badminton");
+                 break;
+             case 10:
+                 act=createActivity("VolleyBallIndoor");
+                 break;
+             case 11:
+                 act=createActivity("Football");
+                 break;
+             case 12:
+                 act=createActivity("VolleyBallBeach");
+                 break;
+             case 13:
+                 act=createActivity("Running");
+                 break;
+             case 14:
+                 act=createActivity("Skating");
+                 break;
+             case 15:
+                 act=createActivity("Saling");
+                 break;
+             case 16:
+                 act=createActivity("Walking");
+                 break;
+             case 17:
+                 act=createActivity("Tennis");
+                 break;
+             case 18:
+                 act=createActivity("Skiing");
+                 break;
+             case 19:
+                 act=createActivity("Cycling");
+                 break;
+             case 20:
+                 act=createActivity("MountainBiking");
+                 break;
+             case 21:
+                 act=createActivity("Orienteering");
+                 break;
+             case 22:
+                 act=createActivity("Snowbording");
+                 break;
+             default:
+                 act=createActivity("Polo");
+                 break;
+         }
+         return act;  
+         
+     }
     
   
     
