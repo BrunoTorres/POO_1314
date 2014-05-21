@@ -9,7 +9,7 @@ public abstract class Activity {
 	                   
 	private String name;                         //Nome pode ser corrida com os amigos
 	private GregorianCalendar date;
-	private double timeSpent;
+	private double timeSpent;                   //tempo em minutos
 	private double calories;
 
 	private ArrayList <Records> performance;				//NAO DEVIA SER UMA LISTA??
@@ -80,7 +80,7 @@ public abstract class Activity {
     public void setActivityCalories(double calories){
         this.calories=calories;
     }
-    public abstract void setCalories();
+
 
 
 
@@ -100,12 +100,12 @@ public abstract class Activity {
 	}
 
 
-	/**
-	 * @param name the name to set
-	 */
+
 	public void setName(String name) {
 		this.name = name;
 	}
+    
+    public abstract void setCalories(int peso);
    
 
 

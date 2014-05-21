@@ -3,23 +3,27 @@ package Fitness;
 import java.util.GregorianCalendar;
 
 
-
-public class Boxing extends Indoor implements UserVs
+/**
+ * Write a description of class Basketball here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class Basketball extends Indoor implements UserVs
 {
-     
     private int myScore;
     private int opScore;
     
     
-    public Boxing(){
+    public Basketball(){
         super();
     }
-    public Boxing(String name, GregorianCalendar date, double timeSpent,int myScore,int opScore){
+    public Basketball(String name, GregorianCalendar date, double timeSpent,int myScore,int opScore){
         super(name,date,timeSpent);
         this.myScore=myScore;
         this.opScore=opScore;
     }
-    public Boxing(Boxing tb){
+    public Basketball(Basketball tb){
         super(tb);
         this.myScore=tb.getMyScore();
         this.opScore=tb.getOpScore();
@@ -33,12 +37,12 @@ public class Boxing extends Indoor implements UserVs
     public int getOpScore() {
         return this.opScore;
     }
+    
     @Override
-    public void setCalories(int peso) {   //METS=12
-      double mets=12;
+    public void setCalories(int peso) {//MET=6
+      double mets=6;
       double calories=mets*peso*this.getTimeSpent();
-      this.setActivityCalories(calories);
-       
+      this.setActivityCalories(calories);    
     }
     
     ////////////toString equals clone
@@ -62,17 +66,15 @@ public class Boxing extends Indoor implements UserVs
             return true;
         if(a == null || this.getClass() != a.getClass())
             return false;
-        Boxing act = (Boxing) a;
+        Basketball act = (Basketball) a;
         return  ( super.equals(act)
                 && this.myScore==act.getMyScore()
                 && this.opScore==act.getOpScore());
         
     }
 
-     @Override
-    public Boxing clone(){
-        return new Boxing(this);
+    @Override
+     public Basketball clone(){
+        return new Basketball(this);
     }
-    
-    
 }

@@ -32,6 +32,13 @@ public class Badminton extends Indoor implements UserVs
         return this.opScore;
     }
     
+    @Override
+    public void setCalories(int peso) { //Met=4.5
+        double mets=4.5;
+      double calories=mets*peso*this.getTimeSpent();
+      this.setActivityCalories(calories);
+    }
+    
     ////////////toString equals clone
     
     
@@ -65,9 +72,9 @@ public class Badminton extends Indoor implements UserVs
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public void setCalories() {
-     
-    }
+   
+ 
+
+    
     
 }

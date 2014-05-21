@@ -52,10 +52,7 @@ public abstract class Indoor extends Activity
         return sb.toString();      
     }
 
-   
-    public abstract Indoor clone();
-
-    
+     
     
     
     

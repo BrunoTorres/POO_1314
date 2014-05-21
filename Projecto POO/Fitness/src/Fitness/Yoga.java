@@ -4,29 +4,32 @@ import java.util.GregorianCalendar;
 
 
 /**
- * Write a description of class Aerobics here.
+ * Write a description of class Yoga here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Aerobics extends Indoor
+public class Yoga extends Indoor 
 {
-    public Aerobics(){
+    
+    
+    
+    public Yoga(){
         super();
     }
-    public Aerobics(String name, GregorianCalendar date, double timeSpent){
+    public Yoga(String name, GregorianCalendar date, double timeSpent){
         super(name,date,timeSpent);
         
     }
-    public Aerobics(Aerobics tb){
+    public Yoga(Yoga tb){
         super(tb);
         
     }
     
     
     @Override
-    public void setCalories(int peso) {
-      double mets=6.5;
+    public void setCalories(int peso) {//MET=2.5
+      double mets=2.5;
       double calories=mets*peso*this.getTimeSpent();
       this.setActivityCalories(calories);    
     }
@@ -48,13 +51,13 @@ public class Aerobics extends Indoor
             return true;
         if(a == null || this.getClass() != a.getClass())
             return false;
-        Aerobics act = (Aerobics) a;
+        Yoga act = (Yoga) a;
         return  ( super.equals(act));
         
     }
 
     @Override
-     public Aerobics clone(){
-        return new Aerobics(this);
+     public Yoga clone(){
+        return new Yoga(this);
     } 
 }

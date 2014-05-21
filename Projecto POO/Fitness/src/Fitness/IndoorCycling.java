@@ -4,24 +4,24 @@ import java.util.GregorianCalendar;
 
 
 /**
- * Write a description of class Swimming here.
+ * Write a description of class IndoorCycling here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Swimming extends Indoor implements Distance
+public class IndoorCycling extends Indoor implements Distance
 {
     private double distance;
 
-    public Swimming(){
+    public IndoorCycling(){
         super();
     }
-    public Swimming(String name, GregorianCalendar date, double timeSpent,double distance){
+    public IndoorCycling(String name, GregorianCalendar date, double timeSpent,double distance){
         super(name,date,timeSpent);
         this.distance=distance;
         
     }
-    public Swimming(Swimming tb){
+    public IndoorCycling(IndoorCycling tb){
         super(tb);
         this.distance=tb.getDistance();
         
@@ -37,7 +37,7 @@ public class Swimming extends Indoor implements Distance
     }
     @Override
    public void setCalories(int peso) {
-    double mets=8;
+    double mets=7;
       double calories=mets*peso*this.getTimeSpent();
       this.setActivityCalories(calories);    
     }
@@ -63,14 +63,15 @@ public class Swimming extends Indoor implements Distance
             return true;
         if(a == null || this.getClass() != a.getClass())
             return false;
-        Swimming act = (Swimming) a;
+        IndoorCycling act = (IndoorCycling) a;
         return  ( super.equals(act)
                 && this.distance==act.getDistance());
         
     }
 
     @Override
-     public Swimming clone(){
-        return new Swimming(this);
+     public IndoorCycling clone(){
+        return new IndoorCycling(this);
     }
+   
 }
