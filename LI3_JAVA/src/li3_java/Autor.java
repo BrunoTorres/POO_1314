@@ -93,7 +93,7 @@ public class Autor implements Serializable {
 		return aux;
 	}
 
-	public void adicionaCoAutores(List<String> autores, int ano) {
+	public void adicionaCoAutores(List<String> autores) {
 		this.adicionaPub(autores);
 
 		for (String s : autores) {

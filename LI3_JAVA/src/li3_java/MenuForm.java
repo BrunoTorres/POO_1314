@@ -421,11 +421,14 @@ public class MenuForm extends javax.swing.JFrame {
 		JTextField fileName = new JTextField();
 		JLabel labelNome = new JLabel("Nome do ficheiro: ");
 		Object[] dialog = {labelNome, fileName};
+
 		try {
 			int res = JOptionPane.showConfirmDialog(this, dialog, "Nome do ficheiro", JOptionPane.OK_CANCEL_OPTION);
 			if (res == JOptionPane.OK_OPTION) {
+				Crono.start();
 				this.redeGlobal.guardaDados(fileName.getText());
-				JOptionPane.showMessageDialog(this, "Dados guardados com sucesso");
+				String tempo = Crono.print();
+				JOptionPane.showMessageDialog(this, "Dados guardados com sucesso.\nTempo: " + tempo + " segs");
 			}
 		} catch (SecurityException | IOException e) {
 			JOptionPane.showMessageDialog(this, e.getMessage());
@@ -460,8 +463,11 @@ public class MenuForm extends javax.swing.JFrame {
 			try {
 				f = fChoose.getSelectedFile();
 				path = f.getAbsolutePath();
+				Crono.start();
 				redeGlobal.leFicheiro(path);
+				String tempo = Crono.print();
 				this.textResultados.setText(redeGlobal.statsString());
+				this.textResultados.append("Tempo gasto: " + tempo + " segs");
 				this.butGravarEstado.setEnabled(true);
 				this.but2.setEnabled(true);
 				this.but3.setEnabled(true);
@@ -482,7 +488,11 @@ public class MenuForm extends javax.swing.JFrame {
     private void but2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but2ActionPerformed
 		this.textResultados.setText(this.redeGlobal.statsString());
 		this.textResultados.append("--- Estatística 1.2 ---\n");
-		this.textResultados.append(this.redeGlobal.consulta12());
+		Crono.start();
+		String res = this.redeGlobal.consulta12();
+		String tempo = Crono.print();
+		this.textResultados.append(res);
+		this.textResultados.append("Tempo gasto: " + tempo + " segs");
     }//GEN-LAST:event_but2ActionPerformed
 
     private void but10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but10ActionPerformed
@@ -499,13 +509,15 @@ public class MenuForm extends javax.swing.JFrame {
 					this.textResultados.setText(this.redeGlobal.statsString());
 					this.textResultados.append("--- Consulta 2.2.c ---\n");
 					this.textResultados.append("Nº total de publicações com co-autores de " + nomeAutor.getText() + " em " + textAno.getText() + " e lista dos mesmos: \n\n");
-			
-					this.textResultados.append(this.redeGlobal.consulta22c(nomeAutor.getText(), Integer.valueOf(textAno.getText())));
+					Crono.start();
+					String consulta = this.redeGlobal.consulta22c(nomeAutor.getText(), Integer.valueOf(textAno.getText()));
+					String tempo = Crono.print();
+					this.textResultados.append(consulta);
+					this.textResultados.append("Tempo gasto: " + tempo + " segs");
 				} else {
 					JOptionPane.showMessageDialog(this, "Parâmetros inseridos incorretamente...\nA pesquisa não será efetuada.", "ERRO", JOptionPane.INFORMATION_MESSAGE);
 				}
-			}
-			catch(AutorNotFoundException | AnoInvalidoException e){
+			} catch (AutorNotFoundException | AnoInvalidoException e) {
 				JOptionPane.showMessageDialog(this, e.getMessage(), "ERRO", JOptionPane.INFORMATION_MESSAGE);
 			}
 		}
@@ -519,11 +531,15 @@ public class MenuForm extends javax.swing.JFrame {
 				String autor = JOptionPane.showInputDialog(this, "Introduza o nome do autor");
 				if (!autor.isEmpty()) {
 					this.textResultados.setText(this.redeGlobal.statsString());
+					Crono.start();
 					listaCoAutores = (TreeSet<String>) this.redeGlobal.consulta22d(autor);
+					String tempo = Crono.print();
 					this.textResultados.append("--- Consulta 2.2.d ---\n");
 					this.textResultados.append("Lista de todos os co-autores de " + autor + ":\n");
-					for(String s: listaCoAutores)
+					for (String s : listaCoAutores) {
 						this.textResultados.append("\t" + s + "\n");
+					}
+					this.textResultados.append("Tempo gasto: " + tempo + " segs");
 				} else {
 					JOptionPane.showMessageDialog(this, "Parâmetros inseridos incorretamente...\nA pesquisa não será efetuada.", "ERRO", JOptionPane.INFORMATION_MESSAGE);
 				}
@@ -545,14 +561,17 @@ public class MenuForm extends javax.swing.JFrame {
 			c = (char) JOptionPane.showInputDialog(this, "Introduza a letra que deseja pesquisar", "Letra", JOptionPane.PLAIN_MESSAGE, null, letras, letras[0]);
 			for (int i = 0; i < letras.length && res == 0; i++) {
 				if ((char) letras[i] == c) {
+					Crono.start();
 					TreeSet<String> autores = (TreeSet<String>) this.redeGlobal.consulta22b(c);
+					String tempo = Crono.print();
 					this.textResultados.append("--- Consulta 2.2.b ---\n");
-					this.textResultados.append("Autores começados por " + c +":\n");
+					this.textResultados.append("Autores começados por " + c + ":\n");
 					for (String s : autores) {
 						this.textResultados.append(s + "\n");
 					}
 					res = 1;
-					this.textResultados.append(("\nTotal: " + autores.size()) + "\n\n");
+					this.textResultados.append(("\nTotal: " + autores.size()) + "\n");
+					this.textResultados.append("Tempo gasto: " + tempo + " segs");
 				}
 			}
 		} catch (NullPointerException e) {
@@ -577,7 +596,6 @@ public class MenuForm extends javax.swing.JFrame {
 		ArrayList<String> autores = new ArrayList<>();
 		ArrayList<String> autoresRep = new ArrayList<>();
 		TreeSet<String> listaCoAutores;
-		boolean paramsOK = false;
 
 		this.textResultados.setText(this.redeGlobal.statsString());
 
@@ -611,20 +629,27 @@ public class MenuForm extends javax.swing.JFrame {
 				anoIni = Integer.valueOf(anoInicial.getText());
 				anoFim = Integer.valueOf(anoFinal.getText());
 
-				try {
-					listaCoAutores = (TreeSet<String>) this.redeGlobal.consulta21c(anoIni, anoFim, autores);
-					this.textResultados.append("--- Consulta 2.1.c ---\n");
-					this.textResultados.append("Todos os co-autores comuns a ");
-					for (String s : autores) {
-						this.textResultados.append(s + ", ");
-					}
-					this.textResultados.append("no intervalo [" + anoIni + ", " + anoFim + "]\n");
+				if (autores.size() > 1) {
+					try {
+						Crono.start();
+						listaCoAutores = (TreeSet<String>) this.redeGlobal.consulta21c(anoIni, anoFim, autores);
+						String tempo = Crono.print();
+						this.textResultados.append("--- Consulta 2.1.c ---\n");
+						this.textResultados.append("Todos os co-autores comuns a ");
+						for (String s : autores) {
+							this.textResultados.append(s + ", ");
+						}
+						this.textResultados.append("no intervalo [" + anoIni + ", " + anoFim + "]\n");
 
-					for (String s : listaCoAutores) {
-						this.textResultados.append(s + "\n");
+						for (String s : listaCoAutores) {
+							this.textResultados.append(s + "\n");
+						}
+						this.textResultados.append("Tempo gasto: " + tempo + " segs");
+					} catch (AnosForaDoIntervaloException | AnoInicialMaiorQueAnoFinalException | AnoInvalidoException | NumberFormatException e) {
+						JOptionPane.showMessageDialog(this, e.getMessage(), "ERRO", JOptionPane.WARNING_MESSAGE);
 					}
-				} catch (AnosForaDoIntervaloException | AnoInicialMaiorQueAnoFinalException | AnoInvalidoException | NumberFormatException e) {
-					JOptionPane.showMessageDialog(this, e.getMessage(), "ERRO", JOptionPane.WARNING_MESSAGE);
+				} else {
+					JOptionPane.showMessageDialog(this, "Autores insuficientes...\nA pesquisa não será efetuada.", "ERRO", JOptionPane.INFORMATION_MESSAGE);
 				}
 			} else {
 				JOptionPane.showMessageDialog(this, "Parâmetros inseridos incorretamente...\nA pesquisa não será efetuada.", "ERRO", JOptionPane.INFORMATION_MESSAGE);
@@ -652,12 +677,15 @@ public class MenuForm extends javax.swing.JFrame {
 				anoIni = Integer.valueOf(anoInicial.getText());
 				anoFim = Integer.valueOf(anoFinal.getText());
 				try {
+					Crono.start();
 					listaAutores = (ArrayList<String>) this.redeGlobal.consulta21b(x, anoIni, anoFim);
+					String tempo = Crono.print();
 					this.textResultados.append("--- Consulta 2.1.b ---\n");
 					this.textResultados.append("Os " + x + " pares de autores com mais artigos publicados em co-autoria no intervalo [" + anoIni + ", " + anoFim + "]\n");
 					for (String s : listaAutores) {
 						this.textResultados.append(s + "\n");
 					}
+					this.textResultados.append("Tempo gasto: " + tempo + " segs");
 				} catch (AnosForaDoIntervaloException | AnoInicialMaiorQueAnoFinalException | AnoInvalidoException e) {
 					JOptionPane.showMessageDialog(this, e.getMessage(), "ERRO", JOptionPane.WARNING_MESSAGE);
 				}
@@ -683,11 +711,15 @@ public class MenuForm extends javax.swing.JFrame {
 				anoIni = Integer.valueOf(anoInicial.getText());
 				anoFim = Integer.valueOf(anoFinal.getText());
 				try {
+					Crono.start();
 					listaAutores = (TreeSet<String>) this.redeGlobal.consulta21d(anoIni, anoFim);
+					String tempo = Crono.print();
 					this.textResultados.append("--- Consulta 2.1.d ---\n");
 					this.textResultados.append("Autores que publicaram artigos em todos os anos de [" + anoIni + ", " + anoFim + "]\n");
-					for(String s: listaAutores)
+					for (String s : listaAutores) {
 						this.textResultados.append("\t" + s + "\n");
+					}
+					this.textResultados.append("Tempo gasto: " + tempo + " segs");
 				} catch (AnosForaDoIntervaloException | AnoInicialMaiorQueAnoFinalException | AnoInvalidoException e) {
 					JOptionPane.showMessageDialog(this, e.getMessage(), "ERRO", JOptionPane.WARNING_MESSAGE);
 				}
@@ -699,13 +731,16 @@ public class MenuForm extends javax.swing.JFrame {
 
     private void but3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but3ActionPerformed
 		StringBuilder sb = new StringBuilder();
+		Crono.start();
 		for (RedeAnualAutores redeAnual : this.redeGlobal.getRedeGlobalAutores().values()) {
 			sb.append(redeAnual.getAno()).append("\t").append(redeAnual.getNumPubs()).append(" publicações\n");
 		}
+		String tempo = Crono.print();
 		this.textResultados.setText(this.redeGlobal.statsString());
 
 		this.textResultados.append("--- Estatística 1.3 ---\n");
 		this.textResultados.append(sb.toString());
+		this.textResultados.append("Tempo gasto: " + tempo + " segs");
     }//GEN-LAST:event_but3ActionPerformed
 
     private void but4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but4ActionPerformed
@@ -728,12 +763,15 @@ public class MenuForm extends javax.swing.JFrame {
 				anoIni = Integer.valueOf(anoInicial.getText());
 				anoFim = Integer.valueOf(anoFinal.getText());
 				try {
+					Crono.start();
 					listaAutores = (ArrayList<String>) this.redeGlobal.consulta21a(anoIni, anoFim, x);
+					String tempo = Crono.print();
 					this.textResultados.append("--- Consulta 2.1.a ---\n");
 					this.textResultados.append("Os nomes dos " + x + " autores que mais artigos publicaram no intervalo [" + anoIni + ", " + anoFim + "]\n");
 					for (String s : listaAutores) {
 						this.textResultados.append(s + "\n");
 					}
+					this.textResultados.append("Tempo gasto: " + tempo + " segs");
 				} catch (AnosForaDoIntervaloException | AnoInicialMaiorQueAnoFinalException | AnoInvalidoException e) {
 					JOptionPane.showMessageDialog(this, e.getMessage(), "ERRO", JOptionPane.WARNING_MESSAGE);
 				}
@@ -745,8 +783,12 @@ public class MenuForm extends javax.swing.JFrame {
 
     private void but8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but8ActionPerformed
 		this.textResultados.setText(this.redeGlobal.statsString());
+		Crono.start();
+		int linhasDuplicadas = this.redeGlobal.getLinhasDuplicado();
+		String tempo = Crono.print();
 		this.textResultados.append("--- Consulta 2.2.a ---\n");
-		this.textResultados.append(("Linhas Duplicadas: " + this.redeGlobal.getLinhasDuplicado()) + "\n\n");
+		this.textResultados.append("Linhas Duplicadas: " + linhasDuplicadas + "\n");
+		this.textResultados.append("Tempo gasto: " + tempo + " segs");
     }//GEN-LAST:event_but8ActionPerformed
 
     private void butLerEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butLerEstadoActionPerformed

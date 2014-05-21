@@ -22,6 +22,7 @@ import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.TreeMap;
 import java.util.TreeSet;
+import javax.swing.JOptionPane;
 
 public class RedeGlobalAutores implements Serializable {
 
@@ -106,7 +107,7 @@ public class RedeGlobalAutores implements Serializable {
 	public int getNumPubsUmAutor() {
 		return this.numPubsUmAutor;
 	}
-	
+
 	public void leFicheiroObj(String fileName) throws IOException, ClassNotFoundException, ClassCastException {
 		ObjectInputStream objInput = new ObjectInputStream(new FileInputStream(fileName));
 		RedeGlobalAutores redeGlobal = new RedeGlobalAutores((RedeGlobalAutores) objInput.readObject());
@@ -188,10 +189,11 @@ public class RedeGlobalAutores implements Serializable {
 		}
 	}
 
-	public RedeAnualAutores getPubsAno(int ano) throws RedeAnualNotFoundException{
-		if (!this.redeGlobalAutores.containsKey(ano))
+	public RedeAnualAutores getPubsAno(int ano) throws RedeAnualNotFoundException {
+		if (!this.redeGlobalAutores.containsKey(ano)) {
 			throw new RedeAnualNotFoundException("Ano não existente. Ano: " + ano);
-		
+		}
+
 		return this.redeGlobalAutores.get(ano).clone();
 	}
 
@@ -266,20 +268,23 @@ public class RedeGlobalAutores implements Serializable {
 		return noSolo.size();
 	}
 
-	public List<String> consulta21a(int anoInicial, int anoFinal, int topX) throws AnosForaDoIntervaloException, AnoInicialMaiorQueAnoFinalException, AnoInvalidoException{
+	public List<String> consulta21a(int anoInicial, int anoFinal, int topX) throws AnosForaDoIntervaloException, AnoInicialMaiorQueAnoFinalException, AnoInvalidoException {
 		TreeSet<Autor> maxPubsAutores = new TreeSet<>(new CompareAutorPubs());
 		//TreeSet<String> res = new TreeSet<String>();
 		Iterator<Autor> it;
 		Autor autAux, autAux2;
 		boolean sair = false;
 		boolean add = true;
-		
-		if(anoInicial < 0 || anoFinal < 0)
-			throw new AnoInvalidoException("Ano inválido. [" + anoInicial + ", " + anoFinal +"]");
-		if(anoInicial > anoFinal)
-			throw new AnoInicialMaiorQueAnoFinalException("Ano inicial maior que ano final. [" + anoInicial + ", " + anoFinal +"]");
-		if((anoInicial < this.menorAno && anoFinal < this.menorAno) || (anoInicial > this.maiorAno))
-			throw new AnosForaDoIntervaloException("Anos fora do intervalo do ficheiro. [" + anoInicial + ", " + anoFinal +"]");
+
+		if (anoInicial < 0 || anoFinal < 0) {
+			throw new AnoInvalidoException("Ano inválido. [" + anoInicial + ", " + anoFinal + "]");
+		}
+		if (anoInicial > anoFinal) {
+			throw new AnoInicialMaiorQueAnoFinalException("Ano inicial maior que ano final. [" + anoInicial + ", " + anoFinal + "]");
+		}
+		if ((anoInicial < this.menorAno && anoFinal < this.menorAno) || (anoInicial > this.maiorAno)) {
+			throw new AnosForaDoIntervaloException("Anos fora do intervalo do ficheiro. [" + anoInicial + ", " + anoFinal + "]");
+		}
 
 		for (int i = anoInicial; i <= anoFinal; i++) {
 			if (this.redeGlobalAutores.containsKey(i)) {
@@ -320,50 +325,68 @@ public class RedeGlobalAutores implements Serializable {
 		return res;
 	}
 
-	public List<String> consulta21b(int topX, int anoInicial, int anoFinal) throws AnosForaDoIntervaloException, AnoInicialMaiorQueAnoFinalException, AnoInvalidoException{
-		TreeSet<ParCoAutores> paresAutores = new TreeSet<>(new CompareParCoAutores());
+	public List<String> consulta21b(int topX, int anoInicial, int anoFinal) throws AnosForaDoIntervaloException, AnoInicialMaiorQueAnoFinalException, AnoInvalidoException {
+		//TreeSet<ParCoAutores> paresAutores = new TreeSet<>(new CompareParCoAutores());
+		TreeMap<ParCoAutores, ParCoAutores> paresAutores = new TreeMap<>(new CompareParCoAutores());
+		//TreeMap<ParCoAutores, Integer> paresAutores = new TreeMap<>(new CompareParCoAutores());
 		Iterator<ParCoAutores> it;
 		ParCoAutores par, parAux;
 		boolean sair = false;
 		boolean add = true;
-		
-		if(anoInicial < 0 || anoFinal < 0)
-			throw new AnoInvalidoException("Ano inválido. [" + anoInicial + ", " + anoFinal +"]");
-		if(anoInicial > anoFinal)
-			throw new AnoInicialMaiorQueAnoFinalException("Ano inicial maior que ano final. [" + anoInicial + ", " + anoFinal +"]");
-		if((anoInicial < this.menorAno && anoFinal < this.menorAno) || (anoInicial > this.maiorAno))
-			throw new AnosForaDoIntervaloException("Anos fora do intervalo do ficheiro. [" + anoInicial + ", " + anoFinal +"]");
+		double tempoAddPares = 0;
+		double tempoCicloEquals = 0;
+
+		if (anoInicial < 0 || anoFinal < 0) {
+			throw new AnoInvalidoException("Ano inválido. [" + anoInicial + ", " + anoFinal + "]");
+		}
+		if (anoInicial > anoFinal) {
+			throw new AnoInicialMaiorQueAnoFinalException("Ano inicial maior que ano final. [" + anoInicial + ", " + anoFinal + "]");
+		}
+		if ((anoInicial < this.menorAno && anoFinal < this.menorAno) || (anoInicial > this.maiorAno)) {
+			throw new AnosForaDoIntervaloException("Anos fora do intervalo do ficheiro. [" + anoInicial + ", " + anoFinal + "]");
+		}
 
 		for (int i = anoInicial; i <= anoFinal; i++) {
 			if (this.redeGlobalAutores.containsKey(i)) {
 				for (Autor aut : this.redeGlobalAutores.get(i).getRedeAnualAutores().values()) {
 					for (CoAutor coAut : aut.getCoAutores().values()) {
-						sair = false;
+						//sair = false;
 						add = true;
 						par = new ParCoAutores(aut.getNome(), coAut.getNome(), coAut.getNumeroPubsComAutor(), i);
-						it = paresAutores.iterator();
-						while (it.hasNext() && !sair) {
-							parAux = it.next().clone();
-							if (parAux.equals(par)) {
-								sair = true;
-								add = false;
-								if (parAux.getUltimoAno() != i) {
-									it.remove();
-									parAux.addPubs(par.getNumPubs());
-									parAux.setUltimoAno(i);
-									paresAutores.add(parAux);
-								}
-							}
+						Crono.start();
+						if (paresAutores.containsKey(par) && paresAutores.get(par).getUltimoAno() != i) {
+							//JOptionPane.showMessageDialog(null, "CONTEM: " + par.toString());
+							paresAutores.get(par).setUltimoAno(i);
+							paresAutores.get(par).addPubs(par.getNumPubs());
+							//int pubs = paresAutores.get(par);
+							//pubs += par.getNumPubs();
+							//paresAutores.put(par, par);
+							
+							add = false;
 						}
+						tempoCicloEquals += Crono.stop();
 						if (add) {
-							paresAutores.add(par);
+							Crono.start();
+							//paresAutores.put(par, par.getNumPubs());
+							paresAutores.put(par, par);
+							tempoAddPares += Crono.stop();
 						}
 					}
 				}
+
 			}
 		}
 
-		return consulta21bAux(paresAutores, topX);
+		TreeSet<ParCoAutores> novoPares = new TreeSet<>(new CompareParCoAutores());
+		//it = paresAutores.keySet().iterator();
+		it = paresAutores.values().iterator();
+		Crono.start();
+		while (it.hasNext()) {
+			novoPares.add(it.next());
+		}
+		String tempo = Crono.print();
+		JOptionPane.showMessageDialog(null, "ADD: " + tempoAddPares + "\nEQUALS: " + tempoCicloEquals + "\nSORT: " + tempo);
+		return consulta21bAux(novoPares, topX);
 	}
 
 	public List<String> consulta21bAux(TreeSet<ParCoAutores> pares, int topX) {
@@ -381,75 +404,79 @@ public class RedeGlobalAutores implements Serializable {
 
 		return res;
 	}
+	
+	public Set<String> consulta21c(int anoInicial, int anoFinal, ArrayList<String> listaAutores) throws AnosForaDoIntervaloException, AnoInicialMaiorQueAnoFinalException, AnoInvalidoException {
+		ArrayList<String> autor1 = new ArrayList<>();
+		ArrayList<String> autor2 = new ArrayList<>();
+		TreeSet<String> autores = new TreeSet<>();
 
-	public Set<String> consulta21c(int anoInicial, int anoFinal, ArrayList<String> listaAutores) throws AnosForaDoIntervaloException, AnoInicialMaiorQueAnoFinalException, AnoInvalidoException{
-
-		TreeSet<String> res = new TreeSet<>();
-
+		if (anoInicial < 0 || anoFinal < 0) {
+			throw new AnoInvalidoException("Ano inválido. [" + anoInicial + ", " + anoFinal + "]");
+		}
+		if (anoInicial > anoFinal) {
+			throw new AnoInicialMaiorQueAnoFinalException("Ano inicial maior que ano final. [" + anoInicial + ", " + anoFinal + "]");
+		}
+		if ((anoInicial < this.menorAno && anoFinal < this.menorAno) || (anoInicial > this.maiorAno)) {
+			throw new AnosForaDoIntervaloException("Anos fora do intervalo do ficheiro. [" + anoInicial + ", " + anoFinal + "]");
+		}
 		Autor aut;
-		TreeMap<String, Autor> mapAutores = new TreeMap<>();
-		
-		if(anoInicial < 0 || anoFinal < 0)
-			throw new AnoInvalidoException("Ano inválido. [" + anoInicial + ", " + anoFinal +"]");
-		if(anoInicial > anoFinal)
-			throw new AnoInicialMaiorQueAnoFinalException("Ano inicial maior que ano final. [" + anoInicial + ", " + anoFinal +"]");
-		if((anoInicial < this.menorAno && anoFinal < this.menorAno) || (anoInicial > this.maiorAno))
-			throw new AnosForaDoIntervaloException("Anos fora do intervalo do ficheiro. [" + anoInicial + ", " + anoFinal +"]");
 
 		for (int i = anoInicial; i <= anoFinal; i++) {
-			ArrayList<Autor> autoresLista = new ArrayList<>();
-			for (String nomeAutor : listaAutores) {
-
-				Autor aux;
-
-				if (this.redeGlobalAutores.get(i).getRedeAnualAutores().containsKey(nomeAutor)) {
-					aut = this.redeGlobalAutores.get(i).getRedeAnualAutores().get(nomeAutor);
-
-					ArrayList<String> coautores = new ArrayList();
-
-					for (CoAutor coAut : aut.getCoAutores().values()) {
-						coautores.add(coAut.getNome());
-					}
-
-					aux = new Autor(nomeAutor);
-					aux.adicionaCoAutores(coautores, i);
-
-					autoresLista.add(aux);
-
-				}
-			}
-			Iterator<Autor> it = autoresLista.iterator();
-			Autor autIt = it.next();
-
-			for (CoAutor coAut : autIt.getCoAutores().values()) {
-				boolean flag = true;
-
-				for (Autor autorAux : autoresLista) {
-					if (!autorAux.getCoAutores().containsKey(coAut.getNome())) {
-						flag = false;
+			if (this.redeGlobalAutores.containsKey(i)) {
+				if (this.redeGlobalAutores.get(i).getRedeAnualAutores().containsKey(listaAutores.get(0))) {
+					aut = this.redeGlobalAutores.get(i).getRedeAnualAutores().get(listaAutores.get(0));
+					for (CoAutor coaut : aut.getCoAutores().values()) {
+						autor1.add(coaut.getNome());
 					}
 				}
-
-				if (flag == true) {
-					res.add(coAut.getNome());
+				if (this.redeGlobalAutores.get(i).getRedeAnualAutores().containsKey(listaAutores.get(1))) {
+					aut = this.redeGlobalAutores.get(i).getRedeAnualAutores().get(listaAutores.get(1));
+					for (CoAutor coaut : aut.getCoAutores().values()) {
+						autor2.add(coaut.getNome());
+					}
 				}
 			}
-
 		}
 
-		return res;
+		for (String s : autor1) {
+			if (autor2.contains(s)) {
+				autores.add(s);
+			}
+		}
+		
+		if (listaAutores.size() == 3) {
+			autor2.clear();
+			for (int i = anoInicial; i <= anoFinal; i++) {
+				if (this.redeGlobalAutores.get(i).getRedeAnualAutores().containsKey(listaAutores.get(2))) {
+					aut = this.redeGlobalAutores.get(i).getRedeAnualAutores().get(listaAutores.get(2));
+					for (CoAutor coaut : aut.getCoAutores().values()) {
+						autor2.add(coaut.getNome());
+					}
+				}
+			}
+		}
+		
+		for (String s : autor2) {
+			if (!autores.contains(s)) {
+				autores.remove(s);
+			}
+		}
+		return autores;
 	}
-
-	public Set<String> consulta21d(int anoInicial, int anoFinal) throws AnosForaDoIntervaloException, AnoInicialMaiorQueAnoFinalException, AnoInvalidoException{
+	
+	public Set<String> consulta21d(int anoInicial, int anoFinal) throws AnosForaDoIntervaloException, AnoInicialMaiorQueAnoFinalException, AnoInvalidoException {
 		TreeSet<String> autores = new TreeSet<>();
 		boolean add = true;
-		
-		if(anoInicial < 0 || anoFinal < 0)
-			throw new AnoInvalidoException("Ano inválido. [" + anoInicial + ", " + anoFinal +"]");
-		if(anoInicial > anoFinal)
-			throw new AnoInicialMaiorQueAnoFinalException("Ano inicial maior que ano final. [" + anoInicial + ", " + anoFinal +"]");
-		if((anoInicial < this.menorAno && anoFinal < this.menorAno) || (anoInicial > this.maiorAno))
-			throw new AnosForaDoIntervaloException("Anos fora do intervalo do ficheiro. [" + anoInicial + ", " + anoFinal +"]");
+
+		if (anoInicial < 0 || anoFinal < 0) {
+			throw new AnoInvalidoException("Ano inválido. [" + anoInicial + ", " + anoFinal + "]");
+		}
+		if (anoInicial > anoFinal) {
+			throw new AnoInicialMaiorQueAnoFinalException("Ano inicial maior que ano final. [" + anoInicial + ", " + anoFinal + "]");
+		}
+		if ((anoInicial < this.menorAno && anoFinal < this.menorAno) || (anoInicial > this.maiorAno)) {
+			throw new AnosForaDoIntervaloException("Anos fora do intervalo do ficheiro. [" + anoInicial + ", " + anoFinal + "]");
+		}
 
 		if (this.redeGlobalAutores.containsKey(anoInicial)) {
 
@@ -502,7 +529,7 @@ public class RedeGlobalAutores implements Serializable {
 		return autoresLetra;
 	}
 
-	public String consulta22c(String autor, int ano) throws AutorNotFoundException, AnoInvalidoException{
+	public String consulta22c(String autor, int ano) throws AutorNotFoundException, AnoInvalidoException {
 		RedeAnualAutores redeAnual;
 		Autor aut;
 		StringBuilder sb = new StringBuilder();
@@ -516,25 +543,26 @@ public class RedeGlobalAutores implements Serializable {
 				for (CoAutor coAut : aut.getCoAutores().values()) {
 					sb.append(coAut.getNome()).append(("\n"));
 				}
-			}
-			else
+			} else {
 				throw new AutorNotFoundException("Autor não existente...");
-		} else 
+			}
+		} else {
 			throw new AnoInvalidoException("Ano não existente no ficheiro...");
-		
+		}
+
 		return sb.toString();
 	}
 
-	public Set<String> consulta22d(String autor) throws AutorNotFoundException{
+	public Set<String> consulta22d(String autor) throws AutorNotFoundException {
 		TreeSet<String> coAutores = new TreeSet<>();
 		for (RedeAnualAutores redeAnual : this.getRedeGlobalAutores().values()) {
 			if (redeAnual.getRedeAnualAutores().containsKey(autor)) {
 				for (CoAutor coAut : redeAnual.getRedeAnualAutores().get(autor).getCoAutores().values()) {
 					coAutores.add(coAut.getNome());
 				}
-			}
-			else
+			} else {
 				throw new AutorNotFoundException("Autor não encontrado...");
+			}
 		}
 
 		return coAutores;

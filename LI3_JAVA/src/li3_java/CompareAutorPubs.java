@@ -19,7 +19,7 @@ public class CompareAutorPubs implements Comparator<Autor>, Serializable
 	if((a1.getNumeroPubsSolo()+a1.getNumeroPubsCoAutores()) > (a2.getNumeroPubsSolo() + a2.getNumeroPubsCoAutores()))
 		return -1;
 	
-	return a2.getNome().compareTo(a1.getNome());
+	return 0;
 	//return (a2.getNumeroPubsCoAutores() + a2.getNumeroPubsSolo()) - (a1.getNumeroPubsCoAutores() + a1.getNumeroPubsSolo());
    }
 }
