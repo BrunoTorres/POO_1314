@@ -209,7 +209,7 @@ public class FitnessUM
         
         return aux;
     }  
-    public MoutainBiking TypeToMoutainBiking(){
+    public MountainBiking TypeToMountainBiking(){
        Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
         String name = input.nextLine();
@@ -228,29 +228,11 @@ public class FitnessUM
         System.out.println("Distancia vertical:");
         double verticaldistance=input.nextInt();
         GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               //defenir calorias
-        MoutainBiking aux=new MoutainBiking(name,date,timeSpent,distance,verticaldistance,weather);
+        MountainBiking aux=new MountainBiking(name,date,timeSpent,distance,verticaldistance,weather);
         
         return aux;
     }  
-    public Golfing TypeToGolfing(){
-       Scanner input = new Scanner(System.in);
-        System.out.println("Nome da actividade:");
-        String name = input.nextLine();
-        System.out.println("Dia:");
-        int dia=input.nextInt();
-        System.out.println("Mes:");
-        int mes=input.nextInt();
-        System.out.println("Ano:");
-        int ano=input.nextInt();
-        System.out.println("Tempo despendido:");
-        int timeSpent=input.nextInt();
-        System.out.println("Tempo exterior:");
-        String weather= input.nextLine();
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               //defenir calorias
-        Golfing aux=new Golfing(name,date,timeSpent,weather);
-        
-        return aux;
-    } 
+    
     public Cycling TypeToCycling(){
        Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
@@ -609,7 +591,7 @@ public class FitnessUM
         
         return aux;
     }
-     public Swimming TypeToSwimming(){
+    public Swimming TypeToSwimming(){
        Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
         String name = input.nextLine();
@@ -630,8 +612,8 @@ public class FitnessUM
         
         return aux;
     }
-   public Cycling TypeToIndoorCycling(){
-        /*
+    public Cycling TypeToIndoorCycling(){
+        
         Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
         String name = input.nextLine();
@@ -646,15 +628,14 @@ public class FitnessUM
         String weather=input.nextLine();
         System.out.println("Tempo despendido:");
         int timeSpent=input.nextInt();
-         System.out.println("Pontuação propria");
-        int myScore=input.nextInt();
-        System.out.println("Pontuação do adeversario");
-        int opScore=input.nextInt();
+        System.out.println("Distancia:");
+        double distance=input.nextInt();
+      
        
-        IndoorAdversarial aux=new IndoorAdversarial(nameSport,name,date,timeSpent,weather,myScore,opScore);
+        Cycling aux=new Cycling(name,date,timeSpent,distance,weather);
         
         return aux;
-                */
+         
     }
     public Aerobics TypeToAerobics(){
         
@@ -676,7 +657,7 @@ public class FitnessUM
         
         return aux;
     }
-       public Yoga TypeToYoga(){
+    public Yoga TypeToYoga(){
         
         Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
@@ -764,12 +745,9 @@ public class FitnessUM
                 break;
             case "Cycling":
                 nova=TypeToCycling();
-                break;
-            case "Golfing":
-                nova=TypeToGolfing();
-                break;
-            case "MoutainBiking":
-                nova=TypeToMoutainBiking();
+                break;            
+            case "MountainBiking":
+                nova=TypeToMountainBiking();
                 break;
             case "Orienteering":
                 nova=TypeToOrienteering();

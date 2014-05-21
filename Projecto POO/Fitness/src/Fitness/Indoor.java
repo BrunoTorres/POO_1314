@@ -54,6 +54,9 @@ public abstract class Indoor extends Activity
 
      
     
+    @Override
+    public abstract Indoor clone();
+    
     
     
 }

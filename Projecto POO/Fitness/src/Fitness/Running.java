@@ -1,5 +1,7 @@
 package Fitness;
 
+import java.util.GregorianCalendar;
+
 
 /**
  * Write a description of class Running here.
@@ -7,29 +9,67 @@ package Fitness;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Running extends Outdoor
+public class Running extends Outdoor implements Distance
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private double distance;
 
-    /**
-     * Constructor for objects of class Running
-     */
-    public Running()
-    {
-        // initialise instance variables
-        x = 0;
+    public Running(){
+        super();
+    }
+    public Running(String name, GregorianCalendar date, double timeSpent,double distance,String weather){
+        super(name,date,timeSpent,weather);
+        this.distance=distance;
+        
+    }
+    public Running(Running tb){
+        super(tb);
+        this.distance=tb.getDistance();
+        
+    }
+     @Override
+    public double getDistance() {
+       return this.distance;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    @Override
+    public void setDistance(double distance) {
+       this.distance=distance;
+    }
+    @Override
+   public void setCalories(double peso) {
+    double mets=7;
+      double calories=mets*peso*this.getTimeSpent();
+      this.setActivityCalories(calories);    
+    }
+   
+   
+   
+   
+     ////////////toString equals clone
+    
+    
+     public String toString(){
+        StringBuilder sb=new StringBuilder();
+        sb.append(super.toString());
+        sb.append("Distance").append("\n");
+        sb.append(this.distance).append("\n");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object a){
+        if(this == a)
+            return true;
+        if(a == null || this.getClass() != a.getClass())
+            return false;
+        Running act = (Running) a;
+        return  ( super.equals(act)
+                && this.distance==act.getDistance());
+        
+    }
+
+    @Override
+     public Running clone(){
+        return new Running(this);
     }
 }

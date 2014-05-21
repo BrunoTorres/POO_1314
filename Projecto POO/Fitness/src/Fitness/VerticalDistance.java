@@ -4,6 +4,6 @@ package Fitness;
 public interface VerticalDistance
 {
   
-    double verticalDistance();
-    double setverticalDistance(double verticalDistance);
+    double getVerticalDistance();
+    void setVerticalDistance(double verticaldistance);
 }

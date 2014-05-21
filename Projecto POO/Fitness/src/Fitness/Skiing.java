@@ -1,5 +1,7 @@
 package Fitness;
 
+import java.util.GregorianCalendar;
+
 
 /**
  * Write a description of class Skiing here.
@@ -7,29 +9,86 @@ package Fitness;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Skiing extends Outdoor
+public class Skiing extends Outdoor implements Distance,VerticalDistance
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private double distance;
+    private double verticaldistance;
 
-    /**
-     * Constructor for objects of class Skiing
-     */
-    public Skiing()
-    {
-        // initialise instance variables
-        x = 0;
+    public Skiing(){
+        super();
+    }
+    public Skiing(String name, GregorianCalendar date, double timeSpent,double distance,
+            double verticaldistance,String weather){
+        super(name,date,timeSpent,weather);
+        this.distance=distance;
+        this.verticaldistance=verticaldistance;
+        
+        
+    }
+    public Skiing(Skiing tb){
+        super(tb);
+        this.distance=tb.getDistance();
+        this.verticaldistance=tb.getVerticalDistance();
+    }
+     @Override
+    public double getDistance() {
+       return this.distance;
+    }
+     @Override
+    public double getVerticalDistance() {
+        return this.verticaldistance;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+
+    @Override
+    public void setDistance(double distance) {
+       this.distance=distance;
     }
+    @Override
+    public void setVerticalDistance(double verticaldistance) {
+        this.verticaldistance=verticaldistance;
+    }
+    
+    @Override
+   public void setCalories(double peso) {
+    double mets=8.5;
+      double calories=mets*peso*this.getTimeSpent();
+      this.setActivityCalories(calories);    
+    }
+   
+   
+   
+   
+     ////////////toString equals clone
+    
+    
+     public String toString(){
+        StringBuilder sb=new StringBuilder();
+        sb.append(super.toString());
+        sb.append("Distance horizontal").append("\n");
+        sb.append(this.distance).append("\n");
+        sb.append("Distance vertical").append("\n");
+        sb.append(this.verticaldistance).append("\n");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object a){
+        if(this == a)
+            return true;
+        if(a == null || this.getClass() != a.getClass())
+            return false;
+        Skiing act = (Skiing) a;
+        return  ( super.equals(act)
+                && this.distance==act.getDistance()
+                && this.verticaldistance==act.getVerticalDistance());
+        
+    }
+
+    @Override
+     public Skiing clone(){
+        return new Skiing(this);
+    }
+
+   
 }

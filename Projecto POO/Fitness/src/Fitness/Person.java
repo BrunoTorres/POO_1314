@@ -96,9 +96,7 @@ public abstract class Person
 }
     
     @Override
-    public Person clone(){
-        return new Person(this) {};  // {} ??
-    }
+    public abstract Person clone();
     
         
 //HASCODE AUTOMATICO 
