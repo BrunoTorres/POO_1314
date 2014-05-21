@@ -59,7 +59,7 @@ public class User extends Person
         this.height=u.getHeight();
         this.weight=u.getWeight();
         this.favoriteActivity=u.getFavoriteActivity();
-        this.userActivities=(TreeSet<Activity>)u.getUserActivities();
+        this.userActivities=(TreeSet<Activity>)u.getActivities();
         this.friendsList=(TreeSet<String>)u.getFriendsList();
         this.stats=(TreeMap)u.getStats();
               
@@ -232,7 +232,7 @@ public class User extends Person
                     && this.weight==u.getWeight()
                     && this.favoriteActivity.equals(u.getFavoriteActivity()) 
                     && this.friendsList.equals(u.getFriendsList())
-                    && this.userActivities.equals(u.getUserActivities()) );                   
+                    && this.userActivities.equals(u.getActivities()) );                   
         }
         
     }
