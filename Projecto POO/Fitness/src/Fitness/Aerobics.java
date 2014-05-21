@@ -25,7 +25,7 @@ public class Aerobics extends Indoor
     
     
     @Override
-    public void setCalories(int peso) {
+    public void setCalories(double peso) {
       double mets=6.5;
       double calories=mets*peso*this.getTimeSpent();
       this.setActivityCalories(calories);    

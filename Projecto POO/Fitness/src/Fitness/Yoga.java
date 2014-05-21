@@ -20,6 +20,7 @@ public class Yoga extends Indoor
     public Yoga(String name, GregorianCalendar date, double timeSpent){
         super(name,date,timeSpent);
         
+        
     }
     public Yoga(Yoga tb){
         super(tb);
@@ -28,7 +29,7 @@ public class Yoga extends Indoor
     
     
     @Override
-    public void setCalories(int peso) {//MET=2.5
+    public void setCalories(double peso) {//MET=2.5
       double mets=2.5;
       double calories=mets*peso*this.getTimeSpent();
       this.setActivityCalories(calories);    

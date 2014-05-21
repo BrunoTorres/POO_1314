@@ -34,7 +34,7 @@ public class Boxing extends Indoor implements UserVs
         return this.opScore;
     }
     @Override
-    public void setCalories(int peso) {   //METS=12
+    public void setCalories(double peso) {   //METS=12
       double mets=12;
       double calories=mets*peso*this.getTimeSpent();
       this.setActivityCalories(calories);

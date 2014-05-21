@@ -11,7 +11,7 @@ import java.util.TreeSet;
 public class User extends Person
 {
     private int height; // centímetros
-    private float weight; // kilogramas
+    private double weight; // kilogramas
     private String favoriteActivity;
     private TreeSet<Activity> userActivities; 
     private TreeSet<String> friendsList;
@@ -30,7 +30,7 @@ public class User extends Person
     }
     
     public User(String email,String pass,String name,char gender,GregorianCalendar date,
-            int height,float weight,String favoriteActivity,
+            int height,double weight,String favoriteActivity,
             TreeSet<Activity> userActivities,TreeSet<String> friendsList)
     {
         super(email,pass,name,gender,date);
@@ -43,7 +43,7 @@ public class User extends Person
         this.stats=new TreeMap<GregorianCalendar,Statistics> (new CompareStatsPerYearAndMonth());
     }
         public User(String email,String pass,String name,char gender,GregorianCalendar date,
-            int height,float weight,String favoriteActivity)
+            int height,double weight,String favoriteActivity)
     {
         super(email,pass,name,gender,date);
         this.height=height;
@@ -69,7 +69,7 @@ public class User extends Person
     public int getHeight(){
         return this.height;
     }
-    public float getWeight(){
+    public double getWeight(){
         return this.weight;
     }
     public String getFavoriteActivity(){
@@ -133,9 +133,9 @@ public class User extends Person
         
         GregorianCalendar date=new GregorianCalendar(actt.getDate().get(Calendar.YEAR),actt.getDate().get(Calendar.MONTH),0);
          
-          if((actt instanceof Distance) || (actt instanceof TwoDistances) || (actt instanceof UserVs)){
-              Distance act=(Distance)actt;
-              ((Statistics)this.stats.get(date)).incrementsTimeDistanceCalories(act.getTimeSpent(),act.getDistance(), act.getCalories());
+          if(actt instanceof Distance) {
+               Distance act = (Distance)actt;
+              ((Statistics)this.stats.get(date)).incrementsTimeDistanceCalories(actt.getTimeSpent(),act.getDistance(), actt.getCalories());
           }
          else{
               
@@ -148,15 +148,14 @@ public class User extends Person
     private void createStat(Activity actt){
         GregorianCalendar date=new GregorianCalendar(actt.getDate().get(Calendar.YEAR),actt.getDate().get(Calendar.MONTH),0);
        
-        if((actt instanceof Distance) || (actt instanceof TwoDistances) || (actt instanceof UserVs)){
+        if(actt instanceof Distance) {
             Distance act = (Distance)actt;
-            Statistics stat=new Statistics (act.getTimeSpent(),act.getCalories(),act.getDistance());
+            Statistics stat=new Statistics (actt.getTimeSpent(),actt.getCalories(),act.getDistance());
             this.stats.put(date, stat);
-        }
-   
+        }   
         else{
             Statistics stat = new Statistics(actt.getTimeSpent(),actt.getCalories());
-            this.stats.put(actt.getDate(), stat);
+            this.stats.put(date, stat);
         }
         
     }
@@ -173,6 +172,7 @@ public class User extends Person
     public boolean addActivity(Activity act){
         //if((act instanceof Distance) || (act instanceof TwoDistances) || (act instanceof UserVs))
             setStats(act);
+        act.setCalories(this.weight);
        return this.userActivities.add(act);
     }
     

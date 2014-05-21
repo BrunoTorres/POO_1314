@@ -39,7 +39,7 @@ public class Basketball extends Indoor implements UserVs
     }
     
     @Override
-    public void setCalories(int peso) {//MET=6
+    public void setCalories(double peso) {//MET=6
       double mets=6;
       double calories=mets*peso*this.getTimeSpent();
       this.setActivityCalories(calories);    

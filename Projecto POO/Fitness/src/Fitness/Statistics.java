@@ -4,7 +4,7 @@ package Fitness;
 public class Statistics {
      
     private double timeSpend;   
-    private int calories;
+    private double calories;
     private double distance;
 	
 	public Statistics(){
@@ -13,7 +13,7 @@ public class Statistics {
         this.calories=0;
         this.distance=0;
 	}
-    public Statistics(double timeSpend,int calories){
+    public Statistics(double timeSpend,double calories){
     
         this.distance=0;
         this.calories=calories;
@@ -21,7 +21,7 @@ public class Statistics {
         
     }
     
-    public Statistics(double timeSpend,int calories,double distance){
+    public Statistics(double timeSpend,double calories,double distance){
     
         this.distance=distance;
         this.calories=calories;
@@ -43,7 +43,7 @@ public class Statistics {
         return this.timeSpend;
     }
     
-    public int getCalories(){
+    public double getCalories(){
         return this.calories;
     }
     
@@ -52,7 +52,7 @@ public class Statistics {
     }
  	
     
-    public void incrementsTimeDistanceCalories(double time,double distance,int calories){
+    public void incrementsTimeDistanceCalories(double time,double distance,double calories){
         this.calories+=calories;
         this.distance+=distance;
         this.timeSpend+=time;

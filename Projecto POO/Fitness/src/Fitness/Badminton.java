@@ -33,7 +33,7 @@ public class Badminton extends Indoor implements UserVs
     }
     
     @Override
-    public void setCalories(int peso) { //Met=4.5
+    public void setCalories(double peso) { //Met=4.5
         double mets=4.5;
       double calories=mets*peso*this.getTimeSpent();
       this.setActivityCalories(calories);

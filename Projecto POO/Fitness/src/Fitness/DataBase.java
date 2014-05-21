@@ -6,20 +6,20 @@ import java.util.TreeSet;
 
 public class DataBase
 {
-    private TreeSet<Sport> sportsType;
+   // private TreeSet<Sport> sportsType;
     private TreeSet<Person>userList;  // admin && users
     private TreeSet<Event> eventList;
     
     
     public DataBase(){
-        this.sportsType= new TreeSet<Sport>();
+       // this.sportsType= new TreeSet<Sport>();
         this.userList= new TreeSet<Person>(new ComparePerson());
         this.eventList= new TreeSet<Event>();
     }
     
-    public DataBase(TreeSet<Sport> sports,TreeSet<Person> user,TreeSet<Event> eventList){        
-        for(Sport s:sports)
-            this.sportsType.add(s.clone());
+    public DataBase( sports,TreeSet<Person> user,TreeSet<Event> eventList){        
+       // for(Sport s:sports)
+       //     this.sportsType.add(s.clone());
         for(Person p:user)
             this.userList.add(p.clone());
         for(Event e :eventList)
@@ -28,19 +28,20 @@ public class DataBase
     
     
     public DataBase(DataBase db){
-        this.sportsType=(TreeSet<Sport>)db.getSportsType();
+        //this.sportsType=(TreeSet<Sport>)db.getSportsType();
         this.userList=(TreeSet<Person>)db.getUserList();
         this.eventList=(TreeSet<Event>)db.getEventList();
     }
     
     
-    
+    /*
     public Set<Sport> getSportsType(){
         TreeSet<Sport> aux=new TreeSet<Sport>();
         for(Sport s:this.sportsType)
             aux.add(s.clone());
         return aux;
     }
+    */
     
     public Set<Person> getUserList(){
         TreeSet<Person> aux = new TreeSet<Person>(new ComparePerson());
@@ -74,11 +75,11 @@ public class DataBase
     }
     
     // to AdminRights
-    
+  /*  
     public Set<Sport> getSportsTypeAdmin(){
         return this.sportsType;
     }
-    
+    */
    public Set<Person> getUserListAdmin(){
        return this.userList;
    }
@@ -109,7 +110,7 @@ public class DataBase
        {
            DataBase db=(DataBase)o;
            return(this.eventList.equals(db.getEventList())
-                   && this.sportsType.equals(db.sportsType)
+                   //&& this.sportsType.equals(db.sportsType)
                    && this.userList.equals(db.getUserList()));
                   
        }
@@ -127,8 +128,8 @@ public class DataBase
        for(Event e: this.eventList)
            sb.append(e.toString());
        sb.append("Sports Type ").append("\n");
-       for(Sport s: this.getSportsType())
-           sb.append(s.toString());
+       //for(Sport s: this.getSportsType())
+           //sb.append(s.toString());
        sb.append("User List ").append("\n");
        for(Person p : this.userList){
            if(p instanceof User){

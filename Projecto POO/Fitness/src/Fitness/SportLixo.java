@@ -1,5 +1,72 @@
 package Fitness;
+/*   public boolean ExistSport(String name){
+        boolean found=false;
+        Iterator<Sport> it=this.db.getSportsType().iterator();
+        while(it.hasNext() && !found)
+            if(it.next().getName().equals(name))
+                found=true;
+        return found;       
+            
+    }
+    
+    
+    public String listSports(){
+        StringBuilder sb= new StringBuilder();
+        sb.append("Tipo de desporto a escolher").append("\n");
+        for(Sport s:this.db.getSportsType())
+            sb.append(s.getName()).append("\n");
+        
+        return sb.toString();
+    }
+    
+    public String getSportTypeByName(String name){
+        boolean found=false;
+        
+        Iterator<Sport> it=this.db.getSportsType().iterator();
+        Sport sport=new Sport();
+        while(it.hasNext() && !found){
+            sport=it.next();
+            if(sport.getName().equals(name))
+                found=true;
+        }
+        return sport.getType();
+    }
 
+
+    public boolean removeSport(String name){
+       boolean found=false;
+        
+       Iterator<Sport>it=this.db.getSportsType().iterator();
+       Sport aux=new Sport();
+       
+       while(it.hasNext() && !found){
+            aux=it.next();
+          if(aux.getName().equals(name))
+              found=true;
+         
+       }
+             //ver SE PODE REMOVER!!!!!!!!
+       if(found){
+        this.db.getSportsTypeAdmin().remove(aux); 
+        removeActivityFromUser(name);                           // VER AQUI NOME DO SPORT E NOME DA ACTIVITY!!!!!!!
+    }
+       return found;
+       
+        
+        
+    }
+    
+  
+    
+    public boolean addSport(String type,String name,int caloriesPerHour,float avgIntensity,TreeSet<String> recordList){
+        boolean flag=false;
+        Sport aux = new Sport(type,name,caloriesPerHour,avgIntensity,recordList);
+        flag=this.db.getSportsTypeAdmin().add(aux);
+        return flag;
+        
+    }
+
+*/
 import java.util.ArrayList;
 
 

@@ -36,7 +36,7 @@ public class IndoorCycling extends Indoor implements Distance
        this.distance=distance;
     }
     @Override
-   public void setCalories(int peso) {
+   public void setCalories(double peso) {
     double mets=7;
       double calories=mets*peso*this.getTimeSpent();
       this.setActivityCalories(calories);    

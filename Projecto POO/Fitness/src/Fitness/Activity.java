@@ -77,15 +77,8 @@ public abstract class Activity {
 	public double getCalories() {
 		return this.calories;
 	}
-    public void setActivityCalories(double calories){
-        this.calories=calories;
-    }
-
-
-
-
-
-	/**
+    
+    /**
 	 * @return the activityRecords
 	*/
 	public ArrayList <Records> getPerformance() {
@@ -105,8 +98,12 @@ public abstract class Activity {
 		this.name = name;
 	}
     
-    public abstract void setCalories(int peso);
+    public abstract void setCalories(double peso);
    
+    public void setActivityCalories(double calories){
+        this.calories=calories;
+    }
+
 
 
 
