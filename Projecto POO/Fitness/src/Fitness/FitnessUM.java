@@ -212,7 +212,7 @@ public class FitnessUM
         System.out.println("Distancia:");
         double distance=input.nextInt();
         
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               //defenir calorias
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                      
         Orienteering aux=new Orienteering(name,date,timeSpent,distance,weather);
         
         return aux;
@@ -235,7 +235,7 @@ public class FitnessUM
         double distance=input.nextInt();
         System.out.println("Distancia vertical:");
         double verticaldistance=input.nextInt();
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               //defenir calorias
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                      
         MountainBiking aux=new MountainBiking(name,date,timeSpent,distance,verticaldistance,weather);
         
         return aux;
@@ -257,7 +257,7 @@ public class FitnessUM
         String weather = input.nextLine();
         System.out.println("Distancia:");
         double distance=input.nextInt();
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               //defenir calorias
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                             
         Cycling aux=new Cycling(name,date,timeSpent,distance,weather);
         
         return aux;
@@ -281,7 +281,7 @@ public class FitnessUM
         double distance=input.nextInt();
         System.out.println("Distancia: vertical");
         double verticaldistance=input.nextInt();
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               //defenir calorias
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                              
         Skiing aux=new Skiing(name,date,timeSpent,distance,verticaldistance,weather);
         
         return aux;
@@ -306,7 +306,7 @@ public class FitnessUM
         int opScore=input.nextInt();
         System.out.println("Tempo exterior:");
         String weather = input.nextLine();
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               //defenir calorias
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               
         Tennis aux=new Tennis(name,date,timeSpent,myScore,opScore,weather);
         
         return aux;
@@ -328,7 +328,7 @@ public class FitnessUM
         String weather = input.nextLine();
         System.out.println("Distancia:");
         double distance=input.nextInt();
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               //defenir calorias
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                              
         Walking aux=new Walking(name,date,timeSpent,distance,weather);
         
         return aux;
@@ -350,7 +350,7 @@ public class FitnessUM
         String weather = input.nextLine();
          System.out.println("Distancia:");
         double distance=input.nextInt();
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               //defenir calorias
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               
         Sailing aux=new Sailing(name,date,timeSpent,distance,weather);
         
         return aux;
@@ -372,7 +372,7 @@ public class FitnessUM
         String weather = input.nextLine();
          System.out.println("Distancia:");
         double distance=input.nextInt();
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               //defenir calorias
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                              
         Skating aux=new Skating(name,date,timeSpent,distance,weather);
         
         return aux;
@@ -393,7 +393,7 @@ public class FitnessUM
         String weather = input.nextLine();
           System.out.println("Distancia:");
         double distance=input.nextInt();
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               //defenir calorias
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               
         Running aux=new Running(name,date,timeSpent,distance,weather);
         
         return aux;
@@ -417,7 +417,7 @@ public class FitnessUM
         int opScore=input.nextInt();
         System.out.println("Tempo exterior:");
         String weather = input.nextLine();
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               //defenir calorias
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               
         VolleyBallBeach aux=new VolleyBallBeach(name,date,timeSpent,myScore,opScore,weather);
         
         return aux;
@@ -441,7 +441,7 @@ public class FitnessUM
         int opScore=input.nextInt();
         System.out.println("Tempo exterior:");
         String weather = input.nextLine();
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               //defenir calorias
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               
         Polo aux=new Polo(name,date,timeSpent,myScore,opScore,weather);
         
         return aux;
@@ -465,7 +465,7 @@ public class FitnessUM
         int opScore=input.nextInt();
         System.out.println("Tempo exterior:");
         String weather = input.nextLine();
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               //defenir calorias
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                              
         Football aux=new Football(name,date,timeSpent,myScore,opScore,weather);
         
         return aux;
@@ -487,7 +487,7 @@ public class FitnessUM
         int myScore=input.nextInt();       
         System.out.println("Score do adeversario:");
         int opScore=input.nextInt();
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               //defenir calorias
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               
         VolleyBallIndoor aux=new VolleyBallIndoor(name,date,timeSpent,myScore,opScore);
         
         return aux;
@@ -508,7 +508,7 @@ public class FitnessUM
         int myScore=input.nextInt();       
         System.out.println("Score do adeversario:");
         int opScore=input.nextInt();
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               //defenir calorias
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               
         Badminton aux=new Badminton(name,date,timeSpent,myScore,opScore);
         
         return aux;
@@ -529,7 +529,7 @@ public class FitnessUM
         int myScore=input.nextInt();       
         System.out.println("Score do adeversario:");
         int opScore=input.nextInt();
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               //defenir calorias
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               
         Boxing aux=new Boxing(name,date,timeSpent,myScore,opScore);
         
         return aux;
@@ -551,7 +551,7 @@ public class FitnessUM
         int myScore=input.nextInt();       
         System.out.println("Score do adeversario:");
         int opScore=input.nextInt();
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               //defenir calorias
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               
         TableTennis aux=new TableTennis(name,date,timeSpent,myScore,opScore);
         
         return aux;
@@ -573,7 +573,7 @@ public class FitnessUM
         int myScore=input.nextInt();       
         System.out.println("Score do adeversario:");
         int opScore=input.nextInt();
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               //defenir calorias
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                              
         Basketball aux=new Basketball(name,date,timeSpent,myScore,opScore);
         
         return aux;
@@ -594,7 +594,7 @@ public class FitnessUM
         int myScore=input.nextInt();       
         System.out.println("Score do adeversario:");
         int opScore=input.nextInt();
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               //defenir calorias
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               
         Handball aux=new Handball(name,date,timeSpent,myScore,opScore);
         
         return aux;
@@ -615,7 +615,7 @@ public class FitnessUM
         double distance=input.nextInt();
         
        
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               //defenir calorias
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                              
         Swimming aux=new Swimming(name,date,timeSpent,distance);
         
         return aux;
@@ -660,7 +660,7 @@ public class FitnessUM
         int timeSpent=input.nextInt();
         
        
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               //defenir calorias
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               
         Aerobics aux=new Aerobics(name,date,timeSpent);
         
         return aux;
@@ -680,7 +680,7 @@ public class FitnessUM
         int timeSpent=input.nextInt();
         
        
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               //defenir calorias
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               
         Yoga aux=new Yoga(name,date,timeSpent);
         
         return aux;
