@@ -2,6 +2,7 @@ package Fitness;
 
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public abstract class Activity {
@@ -134,15 +135,17 @@ public abstract class Activity {
 		
 	
 		sb.append("Descrição: ");
-		sb.append(this.getName()).append("\n");
+		sb.append(this.name).append("\n");
 		sb.append("Data: ");
-		sb.append(this.getDate().toString()).append("\n");
+        sb.append(this.date.get(Calendar.DAY_OF_MONTH)).append(" / ");;
+        sb.append(this.date.get(Calendar.MONTH)).append(" / ");
+        sb.append(this.date.get(Calendar.YEAR)).append("\n");      
 		sb.append("Duração: ");
-		sb.append(this.getTimeSpent()).append("\n");
-		sb.append("Recordes:\n");
-		for (Records rec : this.performance)
-			if (!rec.isEmpty())
-				sb.append(rec.toString()).append("\n");			
+		sb.append(this.timeSpent).append(" minutos \n");
+		//sb.append("Recordes:\n");
+		//for (Records rec : this.performance)
+		//	if (!rec.isEmpty())
+		//		sb.append(rec.toString()).append("\n");			
 				
 		return sb.toString();
 	}

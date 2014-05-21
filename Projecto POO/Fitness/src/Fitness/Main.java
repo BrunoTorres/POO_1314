@@ -78,12 +78,12 @@ public class Main {
         System.out.println(db.toString());
         */
        User u=um.getUserByEmail("cois@gmail.com");
-       Activity act=um.createActivityByTypeSport("TwoDistances","correr");
+       Activity act=um.createActivity("Cycling");
        
       um.getUserByEmail("cois@gmail.com").addActivity(act);
       
-       System.out.println(um.getUserByEmail("cois@gmail.com").toString());
-       
+       //System.out.println(um.getUserByEmail("cois@gmail.com").toString());
+      System.out.println( act.toString());
     }
     
 }

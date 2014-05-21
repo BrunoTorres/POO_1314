@@ -51,8 +51,8 @@ public class Cycling extends Outdoor implements Distance
      public String toString(){
         StringBuilder sb=new StringBuilder();
         sb.append(super.toString());
-        sb.append("Distance").append("\n");
-        sb.append(this.distance).append("\n");
+        sb.append("Distancia: ").append("\n");
+        sb.append(this.distance).append(" (km)\n");
         return sb.toString();
     }
 

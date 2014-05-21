@@ -1,6 +1,7 @@
 package Fitness;
 
 
+import java.io.Console;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.Scanner;
@@ -175,7 +176,7 @@ public class FitnessUM
         
         Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
-        String name = input.nextLine();
+        String name = input.next();
         System.out.println("Dia:");
         int dia=input.nextInt();
         System.out.println("Mes:");
@@ -185,7 +186,7 @@ public class FitnessUM
         System.out.println("Tempo despendido:");
         int timeSpent=input.nextInt();
         System.out.println("Tempo exterior:");
-        String weather = input.nextLine();
+        String weather = input.next();
         System.out.println("Distancia horizontal:");
         double distance=input.nextInt();
         System.out.println("Distancia vertical:");
@@ -200,7 +201,7 @@ public class FitnessUM
     public Orienteering TypeToOrienteering(){
        Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
-        String name = input.nextLine();
+        String name = input.next();
         System.out.println("Dia:");
         int dia=input.nextInt();
         System.out.println("Mes:");
@@ -210,7 +211,7 @@ public class FitnessUM
         System.out.println("Tempo despendido:");
         int timeSpent=input.nextInt();
         System.out.println("Tempo exterior:");
-        String weather = input.nextLine();
+        String weather = input.next();
         System.out.println("Distancia:");
         double distance=input.nextInt();
         
@@ -222,7 +223,7 @@ public class FitnessUM
     public MountainBiking TypeToMountainBiking(){
        Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
-        String name = input.nextLine();
+        String name = input.next();
         System.out.println("Dia:");
         int dia=input.nextInt();
         System.out.println("Mes:");
@@ -232,7 +233,7 @@ public class FitnessUM
         System.out.println("Tempo despendido:");
         int timeSpent=input.nextInt();
         System.out.println("Tempo exterior:");
-        String weather = input.nextLine();
+        String weather = input.next();
         System.out.println("Distancia horizontal:");
         double distance=input.nextInt();
         System.out.println("Distancia vertical:");
@@ -244,9 +245,10 @@ public class FitnessUM
     }  
     
     public Cycling TypeToCycling(){
-       Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
+                  
         System.out.println("Nome da actividade:");
-        String name = input.nextLine();
+        String name = input.next();
         System.out.println("Dia:");
         int dia=input.nextInt();
         System.out.println("Mes:");
@@ -256,7 +258,7 @@ public class FitnessUM
         System.out.println("Tempo despendido:");
         int timeSpent=input.nextInt();
         System.out.println("Tempo exterior:");
-        String weather = input.nextLine();
+        String weather = input.next();
         System.out.println("Distancia:");
         double distance=input.nextInt();
         GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                             
@@ -265,10 +267,11 @@ public class FitnessUM
         return aux;
     } 
     
+    
     public Skiing TypeToSkiing(){
        Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
-        String name = input.nextLine();
+        String name = input.next();
         System.out.println("Dia:");
         int dia=input.nextInt();
         System.out.println("Mes:");
@@ -278,7 +281,7 @@ public class FitnessUM
         System.out.println("Tempo despendido:");
         int timeSpent=input.nextInt();
         System.out.println("Tempo exterior:");
-        String weather = input.nextLine();
+        String weather = input.next();
         System.out.println("Distancia horizontal:");
         double distance=input.nextInt();
         System.out.println("Distancia: vertical");
@@ -293,7 +296,7 @@ public class FitnessUM
     public Tennis TypeToTennis(){
        Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
-        String name = input.nextLine();
+        String name = input.next();
         System.out.println("Dia:");
         int dia=input.nextInt();
         System.out.println("Mes:");
@@ -307,7 +310,7 @@ public class FitnessUM
         System.out.println("Score do adeversario:");
         int opScore=input.nextInt();
         System.out.println("Tempo exterior:");
-        String weather = input.nextLine();
+        String weather = input.next();
         GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               
         Tennis aux=new Tennis(name,date,timeSpent,myScore,opScore,weather);
         
@@ -317,7 +320,7 @@ public class FitnessUM
     public Walking TypeToWalking(){
        Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
-        String name = input.nextLine();
+        String name = input.next();
         System.out.println("Dia:");
         int dia=input.nextInt();
         System.out.println("Mes:");
@@ -327,7 +330,7 @@ public class FitnessUM
         System.out.println("Tempo despendido:");
         int timeSpent=input.nextInt();
         System.out.println("Tempo exterior:");
-        String weather = input.nextLine();
+        String weather = input.next();
         System.out.println("Distancia:");
         double distance=input.nextInt();
         GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                              
@@ -339,7 +342,7 @@ public class FitnessUM
     public Sailing TypeToSailing(){
        Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
-        String name = input.nextLine();
+        String name = input.next();
         System.out.println("Dia:");
         int dia=input.nextInt();
         System.out.println("Mes:");
@@ -349,7 +352,7 @@ public class FitnessUM
         System.out.println("Tempo despendido:");
         int timeSpent=input.nextInt();
         System.out.println("Tempo exterior:");
-        String weather = input.nextLine();
+        String weather = input.next();
          System.out.println("Distancia:");
         double distance=input.nextInt();
         GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               
@@ -362,7 +365,7 @@ public class FitnessUM
     public Skating TypeToSkating(){
        Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
-        String name = input.nextLine();
+        String name = input.next();
         System.out.println("Dia:");
         int dia=input.nextInt();
         System.out.println("Mes:");
@@ -372,7 +375,7 @@ public class FitnessUM
         System.out.println("Tempo despendido:");
         int timeSpent=input.nextInt();
         System.out.println("Tempo exterior:");
-        String weather = input.nextLine();
+        String weather = input.next();
          System.out.println("Distancia:");
         double distance=input.nextInt();
         GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                              
@@ -383,7 +386,7 @@ public class FitnessUM
     public Running TypeToRunning(){
        Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
-        String name = input.nextLine();
+        String name = input.next();
         System.out.println("Dia:");
         int dia=input.nextInt();
         System.out.println("Mes:");
@@ -393,7 +396,7 @@ public class FitnessUM
         System.out.println("Tempo despendido:");
         int timeSpent=input.nextInt();
         System.out.println("Tempo exterior:");
-        String weather = input.nextLine();
+        String weather = input.next();
           System.out.println("Distancia:");
         double distance=input.nextInt();
         GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               
@@ -405,7 +408,7 @@ public class FitnessUM
     public VolleyBallBeach TypeToVolleyBallBeach(){
        Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
-        String name = input.nextLine();
+        String name = input.next();
         System.out.println("Dia:");
         int dia=input.nextInt();
         System.out.println("Mes:");
@@ -419,7 +422,7 @@ public class FitnessUM
         System.out.println("Score do adeversario:");
         int opScore=input.nextInt();
         System.out.println("Tempo exterior:");
-        String weather = input.nextLine();
+        String weather = input.next();
         GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               
         VolleyBallBeach aux=new VolleyBallBeach(name,date,timeSpent,myScore,opScore,weather);
         
@@ -429,7 +432,7 @@ public class FitnessUM
     public Polo TypeToPolo(){
        Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
-        String name = input.nextLine();
+        String name = input.next();
         System.out.println("Dia:");
         int dia=input.nextInt();
         System.out.println("Mes:");
@@ -443,7 +446,7 @@ public class FitnessUM
         System.out.println("Score do adeversario:");
         int opScore=input.nextInt();
         System.out.println("Tempo exterior:");
-        String weather = input.nextLine();
+        String weather = input.next();
         GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               
         Polo aux=new Polo(name,date,timeSpent,myScore,opScore,weather);
         
@@ -453,7 +456,7 @@ public class FitnessUM
     public Football TypeToFootball(){
        Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
-        String name = input.nextLine();
+        String name = input.next();
         System.out.println("Dia:");
         int dia=input.nextInt();
         System.out.println("Mes:");
@@ -467,7 +470,7 @@ public class FitnessUM
         System.out.println("Score do adeversario:");
         int opScore=input.nextInt();
         System.out.println("Tempo exterior:");
-        String weather = input.nextLine();
+        String weather = input.next();
         GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                              
         Football aux=new Football(name,date,timeSpent,myScore,opScore,weather);
         
@@ -477,7 +480,7 @@ public class FitnessUM
     public VolleyBallIndoor TypeToVolleyBallIndoor(){
        Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
-        String name = input.nextLine();
+        String name = input.next();
         System.out.println("Dia:");
         int dia=input.nextInt();
         System.out.println("Mes:");
@@ -498,7 +501,7 @@ public class FitnessUM
     public Badminton TypeToBadminton(){
        Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
-        String name = input.nextLine();
+        String name = input.next();
         System.out.println("Dia:");
         int dia=input.nextInt();
         System.out.println("Mes:");
@@ -519,7 +522,7 @@ public class FitnessUM
      public Boxing TypeToBoxing(){
        Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
-        String name = input.nextLine();
+        String name = input.next();
         System.out.println("Dia:");
         int dia=input.nextInt();
         System.out.println("Mes:");
@@ -541,7 +544,7 @@ public class FitnessUM
     public TableTennis TypeToTableTennis(){
        Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
-        String name = input.nextLine();
+        String name = input.next();
         System.out.println("Dia:");
         int dia=input.nextInt();
         System.out.println("Mes:");
@@ -563,7 +566,7 @@ public class FitnessUM
     public Basketball TypeToBasketball(){
        Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
-        String name = input.nextLine();
+        String name = input.next();
         System.out.println("Dia:");
         int dia=input.nextInt();
         System.out.println("Mes:");
@@ -584,7 +587,7 @@ public class FitnessUM
     public Handball TypeToHandball(){
        Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
-        String name = input.nextLine();
+        String name = input.next();
         System.out.println("Dia:");
         int dia=input.nextInt();
         System.out.println("Mes:");
@@ -605,7 +608,7 @@ public class FitnessUM
     public Swimming TypeToSwimming(){
        Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
-        String name = input.nextLine();
+        String name = input.next();
         System.out.println("Dia:");
         int dia=input.nextInt();
         System.out.println("Mes:");
@@ -623,27 +626,25 @@ public class FitnessUM
         
         return aux;
     }
-    public Cycling TypeToIndoorCycling(){
-        
+    public IndoorCycling TypeToIndoorCycling(){
         Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
-        String name = input.nextLine();
+        String name = input.next();
         System.out.println("Dia:");
         int dia=input.nextInt();
         System.out.println("Mes:");
         int mes=input.nextInt();
         System.out.println("Ano:");
         int ano=input.nextInt();
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);
-        System.out.println("Clima:");
-        String weather=input.nextLine();
+     
         System.out.println("Tempo despendido:");
         int timeSpent=input.nextInt();
         System.out.println("Distancia:");
         double distance=input.nextInt();
-      
+          
        
-        Cycling aux=new Cycling(name,date,timeSpent,distance,weather);
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);
+        IndoorCycling aux=new IndoorCycling(name,date,timeSpent,distance);
         
         return aux;
          
@@ -652,7 +653,7 @@ public class FitnessUM
         
        Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
-        String name = input.nextLine();
+        String name = input.next();
         System.out.println("Dia:");
         int dia=input.nextInt();
         System.out.println("Mes:");
@@ -672,7 +673,7 @@ public class FitnessUM
         
         Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
-        String name = input.nextLine();
+        String name = input.next();
         System.out.println("Dia:");
         int dia=input.nextInt();
         System.out.println("Mes:");
