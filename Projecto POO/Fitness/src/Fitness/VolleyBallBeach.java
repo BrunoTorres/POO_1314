@@ -7,29 +7,22 @@ package Fitness;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class VolleyBallBeach extends Outdoor
+public class VolleyBallBeach extends Outdoor implements Group
 {
-    // instance variables - replace the example below with your own
-    private int x;
 
-    /**
-     * Constructor for objects of class VolleyBallBeach
-     */
-    public VolleyBallBeach()
-    {
-        // initialise instance variables
-        x = 0;
+    @Override
+    public Activity clone() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    @Override
+    public int getMyScore() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public int getOpScore() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+   
 }

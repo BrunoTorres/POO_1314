@@ -1,10 +1,8 @@
 package Fitness;
 
 
-import Fitness.Records;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
-import java.util.Objects;
 
 public abstract class Activity {
 

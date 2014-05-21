@@ -4,35 +4,35 @@ package Fitness;
 import java.util.GregorianCalendar;
 
 
-public class Indoor extends Activity
+public abstract class Indoor extends Activity
 {
+    
     public Indoor(){
         super();
     }
 
-    public Indoor(String sportName, String name, GregorianCalendar date, double timeSpent, String weather){
-        super(sportName, name, date, timeSpent, weather);
+    public Indoor(String name, GregorianCalendar date, double timeSpent){
+        super(name, date, timeSpent);
     }
 
     public Indoor(Indoor o){
         super(o);
     }
 
-    /**
-     *
-     * @return
-     */
-    @Override
-    public void  setCalories() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    // redefine cálculo das calorias queimadas
+    
 /*
     @Override
     public void setPerformance() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 */
+
+    /**
+     *
+     * @param a
+     * @return
+     */
+    
     @Override
     public boolean equals(Object a){
         if(this == a)
@@ -43,6 +43,8 @@ public class Indoor extends Activity
         return  ( super.equals(act) );
     }
 
+    
+    
     @Override
     public String toString(){
         StringBuilder sb=new StringBuilder();
@@ -50,9 +52,11 @@ public class Indoor extends Activity
         return sb.toString();      
     }
 
-    @Override
-    public Indoor clone() {
-        return new Indoor(this);
-    }
+   
+    public abstract Indoor clone();
+
+    
+    
+    
     
 }
