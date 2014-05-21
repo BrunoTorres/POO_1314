@@ -75,7 +75,7 @@ public class User extends Person
     public String getFavoriteActivity(){
         return this.favoriteActivity;
     }
-    public Set<Activity> getUserActivities(){
+    public Set<Activity> getActivities(){
         TreeSet<Activity> res= new TreeSet<Activity>(new CompareActivity());
         for(Activity act : this.userActivities)
             res.add(act.clone());

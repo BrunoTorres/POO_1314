@@ -1,6 +1,7 @@
 package Fitness;
 
 
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.Scanner;
@@ -129,14 +130,21 @@ public class FitnessUM
     
     public String searchStatisticsYear(User u,String tipo,int ano){
         TreeMap<GregorianCalendar,Statistics>aux =(TreeMap)u.getStats();
-        
-        
-                                                                                                ///////////////////////////////////
+        Statistics nova=new Statistics();
+       for(int i=1;i<=12;i++)
+       {
+           GregorianCalendar date=new GregorianCalendar(ano,i,0);
+           if(aux.containsKey(date))
+               nova.incrementsTimeDistanceCalories(aux.get(date).getTimeSpend(), aux.get(date).getDistance(), aux.get(date).getCalories());
+               
+       }
+       return nova.toString();                                                                                                //T
         
     }
 
    
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
     public boolean addFriendInUserList(User u,String email){                                                         //CLASSE MENSAGENS? UM 
         boolean found=false;
         
@@ -343,7 +351,7 @@ public class FitnessUM
          System.out.println("Distancia:");
         double distance=input.nextInt();
         GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               //defenir calorias
-        Skating aux=new Skating(name,date,timeSpent,distance,weather);
+        Sailing aux=new Sailing(name,date,timeSpent,distance,weather);
         
         return aux;
     }
@@ -763,24 +771,27 @@ public class FitnessUM
     
  
     
-    
+    /*
     public boolean addActivity(Activity act,User u){
         boolean flag=false;
         if (ExistSport(act.getSportName())){                                                    
     }
         return flag;
     }
-    
+    */
            
     public Set<Activity>getLast10Activities(User u){
         TreeSet<Activity> aux= new TreeSet();
-        Iterator<Activity>it = u.getUserActivities().iterator();
+        Iterator<Activity>it = u.getActivities().iterator();
         for(int i=0;i<10&&it.hasNext();i++)
             aux.add(it.next());
         return aux;       
     }                  
     
+    
+    
             /////// VE TODAS AS ACTIVIDADES DE TODOS OS AMIGOS ///////////////////////////
+    
     public String FriendToString(TreeSet<User> users){
         StringBuilder sb=new StringBuilder();
         
@@ -788,7 +799,7 @@ public class FitnessUM
         sb.append("Name Friend: ");sb.append(friend.getName()).append("\n");
         sb.append("Favorite Activity: ");sb.append(friend.getFavoriteActivity()).append("\n");
         sb.append("Activities").append("\n");
-        sb.append(friend.getUserActivities().toString());                                           //toSring() METODO IMPLENTADO NA ACTIVITYLIST!!!!
+        sb.append(friend.getActivities().toString());                                           //toSring() METODO IMPLENTADO NA ACTIVITYLIST!!!!
         
         } 
             return sb.toString();
@@ -817,8 +828,6 @@ public class FitnessUM
     
     
  
- 
-
     //Ver Actividade de um dado amigo //
     
     
@@ -828,15 +837,20 @@ public class FitnessUM
         
        return s.toString();
     }
-    //Lista ActivityList do amigo 
+    //Lista Activity do amigo 
     public String allActivitiesFriend(User u){
-       return u.getUserActivities().toString();
+        StringBuilder sb=new StringBuilder();
+        for(Activity act:u.getActivities())
+            sb.append(act.toString());
+       
+       return sb.toString();
+               
     }
     
     //
-    // Recebe nome da activityList e User Friend procura essa activitylist e lista 
+    // Recebe nome da activityList e User Friend procura essa activity e lista 
     public String seeOneActivityList(User u,String activity){
-        return u.getOneActivity(activity).toString();                                          //toString ACTIVITYLIST  
+        return u.getOneActivity(activity).toString();                                          //toString ACTIVITY  
         
     }
     
@@ -881,7 +895,7 @@ public class FitnessUM
             {
                 boolean found=false;
                 User u=(User) p;
-                Iterator<Activity> it= u.getUserActivities().iterator();
+                Iterator<Activity> it= u.getActivities().iterator();
                 
                 
                 while(it.hasNext() && !found){
