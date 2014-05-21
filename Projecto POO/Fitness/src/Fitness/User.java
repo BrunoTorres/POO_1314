@@ -133,7 +133,7 @@ public class User extends Person
         
         GregorianCalendar date=new GregorianCalendar(actt.getDate().get(Calendar.YEAR),actt.getDate().get(Calendar.MONTH),0);
          
-          if((actt instanceof Distance) || (actt instanceof TwoDistances) || (actt instanceof Group)){
+          if((actt instanceof Distance) || (actt instanceof TwoDistances) || (actt instanceof UserVs)){
               Distance act=(Distance)actt;
               ((Statistics)this.stats.get(date)).incrementsTimeDistanceCalories(act.getTimeSpent(),act.getDistance(), act.getCalories());
           }
@@ -148,7 +148,7 @@ public class User extends Person
     private void createStat(Activity actt){
         GregorianCalendar date=new GregorianCalendar(actt.getDate().get(Calendar.YEAR),actt.getDate().get(Calendar.MONTH),0);
        
-        if((actt instanceof Distance) || (actt instanceof TwoDistances) || (actt instanceof Group)){
+        if((actt instanceof Distance) || (actt instanceof TwoDistances) || (actt instanceof UserVs)){
             Distance act = (Distance)actt;
             Statistics stat=new Statistics (act.getTimeSpent(),act.getCalories(),act.getDistance());
             this.stats.put(date, stat);
@@ -171,7 +171,7 @@ public class User extends Person
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public boolean addActivity(Activity act){
-        //if((act instanceof Distance) || (act instanceof TwoDistances) || (act instanceof Group))
+        //if((act instanceof Distance) || (act instanceof TwoDistances) || (act instanceof UserVs))
             setStats(act);
        return this.userActivities.add(act);
     }

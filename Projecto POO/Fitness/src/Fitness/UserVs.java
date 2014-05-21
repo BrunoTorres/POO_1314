@@ -2,7 +2,7 @@ package Fitness;
 
 
 
-public interface Group
+public interface UserVs
 {
      int getMyScore(); 
     

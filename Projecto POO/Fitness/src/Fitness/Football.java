@@ -1,7 +1,7 @@
 package Fitness;
 
 
-public class Football extends Outdoor implements Group
+public class Football extends Outdoor implements UserVs
 {
 
     @Override

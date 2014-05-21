@@ -1,35 +1,73 @@
 package Fitness;
 
+import java.util.GregorianCalendar;
 
-/**
- * Write a description of class Badminton here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class Badminton extends Indoor
+
+public class Badminton extends Indoor implements UserVs
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Badminton
-     */
-    public Badminton()
-    {
-        // initialise instance variables
-        x = 0;
+    private int myScore;
+    private int opScore;
+    
+    
+    public Badminton(){
+        super();
+    }
+    public Badminton(String name, GregorianCalendar date, double timeSpent,int myScore,int opScore){
+        super(name,date,timeSpent);
+        this.myScore=myScore;
+        this.opScore=opScore;
+    }
+    public Badminton(Badminton tb){
+        super(tb);
+        this.myScore=tb.getMyScore();
+        this.opScore=tb.getOpScore();
+    }
+    @Override
+    public int getMyScore() {
+      return this.myScore;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    @Override
+    public int getOpScore() {
+        return this.opScore;
     }
+    
+    ////////////toString equals clone
+    
+    
+     public String toString(){
+        StringBuilder sb=new StringBuilder();
+        sb.append(super.toString());
+        sb.append("My Score").append("\n");
+        sb.append(this.myScore).append("\n");
+        sb.append("Opponent Score").append("\n");
+        sb.append(this.opScore).append("\n");
+        return sb.toString();      
+    }
+    
+    
+    
+    @Override
+    public boolean equals(Object a){
+        if(this == a)
+            return true;
+        if(a == null || this.getClass() != a.getClass())
+            return false;
+        Badminton act = (Badminton) a;
+        return  ( super.equals(act)
+                && this.myScore==act.getMyScore()
+                && this.opScore==act.getOpScore());
+        
+    }
+
+    @Override
+    public Indoor clone() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void setCalories() {
+     
+    }
+    
 }

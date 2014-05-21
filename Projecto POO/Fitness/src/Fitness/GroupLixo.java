@@ -19,7 +19,7 @@ public class GroupLixo
         this.opScore = opScore;
     }
     
-    public Group(Group a){
+    public Group(UserVs a){
         super(a);
         this.myScore = a.getMyScore();
         this.opScore = a.getOpScore();
@@ -42,7 +42,7 @@ public class GroupLixo
 			return true;
 		if(a == null || this.getClass() != a.getClass())
 			return false;
-        Group act = (Group) a;
+        UserVs act = (UserVs) a;
         
         return ( (super.equals(act)) && (this.myScore == act.getMyScore()) && (this.opScore == act.getOpScore()) );
     }
@@ -58,7 +58,7 @@ public class GroupLixo
         return sb.toString();
     }
     
-    public Group clone(){
-        return new Group(this);
+    public UserVs clone(){
+        return new UserVs(this);
     }
 }

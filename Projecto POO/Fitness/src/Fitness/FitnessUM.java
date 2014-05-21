@@ -216,7 +216,7 @@ public class FitnessUM
     }
     
     
-    public Group TypeToGroup(String nameSport){
+    public UserVs TypeToGroup(String nameSport){
         
         Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
@@ -241,7 +241,7 @@ public class FitnessUM
         
              
                                                                                            //defenir calorias
-        Group aux=new Group(nameSport,name,date,timeSpent,weather,distance,myScore,opScore);
+        UserVs aux=new UserVs(nameSport,name,date,timeSpent,weather,distance,myScore,opScore);
         
         return aux;
     }

@@ -7,7 +7,7 @@ package Fitness;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class VolleyBallBeach extends Outdoor implements Group
+public class VolleyBallBeach extends Outdoor implements UserVs
 {
 
     @Override

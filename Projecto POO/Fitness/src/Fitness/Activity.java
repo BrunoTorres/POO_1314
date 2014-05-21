@@ -6,11 +6,11 @@ import java.util.GregorianCalendar;
 
 public abstract class Activity {
 
-	                    
+	                   
 	private String name;                         //Nome pode ser corrida com os amigos
 	private GregorianCalendar date;
 	private double timeSpent;
-	private int calories;
+	private double calories;
 
 	private ArrayList <Records> performance;				//NAO DEVIA SER UMA LISTA??
 
@@ -74,10 +74,13 @@ public abstract class Activity {
 	/**
 	 * @return the calories
 	 */
-	public int getCalories() {
+	public double getCalories() {
 		return this.calories;
 	}
-
+    public void setActivityCalories(double calories){
+        this.calories=calories;
+    }
+    public abstract void setCalories();
 
 
 
