@@ -30,7 +30,7 @@ public class FitnessUM
   
   
     
-    
+  
     
     
     //////////////////////////                Gerenciamento da aplicação /////////////////////////////////////////////////
@@ -100,7 +100,6 @@ public class FitnessUM
     
     
     
-    
     /////////////////////////////////////////////////Propriedade dos Utilizadores//////////////////////////////////////
     
     //Aceder as estatisticas(mensais anuais) STATISTICS by distancia tempo e\calorias
@@ -129,7 +128,7 @@ public class FitnessUM
     
     public String searchStatisticsYear(User u,String tipo,int ano){
         TreeMap<GregorianCalendar,Statistics>aux =(TreeMap)u.getStats();
-        
+        EROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
         
                                                                                                 ///////////////////////////////////
         
@@ -165,7 +164,8 @@ public class FitnessUM
  
   //////////////////////////////////////////////////CRIAR ACTIVITIES////////////////////////////////////////////////////// 
      public Snowbording TypeToSnowbording(){
-       Scanner input = new Scanner(System.in);
+        
+        Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
         String name = input.nextLine();
         System.out.println("Dia:");
@@ -182,7 +182,9 @@ public class FitnessUM
         double distance=input.nextInt();
         System.out.println("Distancia vertical:");
         double verticaldistance=input.nextInt();
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               //defenir calorias
+        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);
+        
+        
         Snowbording aux=new Snowbording(name,date,timeSpent,distance,verticaldistance,weather);
         
         return aux;
@@ -343,7 +345,7 @@ public class FitnessUM
          System.out.println("Distancia:");
         double distance=input.nextInt();
         GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               //defenir calorias
-        Skating aux=new Skating(name,date,timeSpent,distance,weather);
+        Sailing aux=new Sailing(name,date,timeSpent,distance,weather);
         
         return aux;
     }

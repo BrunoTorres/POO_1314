@@ -3,24 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/Polo.java</file>
-            <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/Orienteering.java</file>
-            <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/UserVs.java</file>
-            <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/SportLixo.java</file>
-            <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/MountainBiking.java</file>
-            <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/Football.java</file>
-            <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/Snowbording.java</file>
-            <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/Skiing.java</file>
-            <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/Sailing.java</file>
-            <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/Running.java</file>
+            <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/DataBase.java</file>
             <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/FitnessUM.java</file>
-            <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/Skating.java</file>
-            <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/User.java</file>
-            <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/Statistics.java</file>
-            <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/Distance.java</file>
-            <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/Outdoor.java</file>
-            <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/Cycling.java</file>
-            <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/Walking.java</file>
+            <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/CompareStatsPerYearAndMonth.java</file>
         </group>
     </open-files>
 </project-private>
