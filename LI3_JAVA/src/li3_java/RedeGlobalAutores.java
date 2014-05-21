@@ -22,7 +22,6 @@ import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.TreeMap;
 import java.util.TreeSet;
-import javax.swing.JOptionPane;
 
 public class RedeGlobalAutores implements Serializable {
 
@@ -34,8 +33,6 @@ public class RedeGlobalAutores implements Serializable {
 	private int menorAno;
 	private int maiorAno;
 	private int numPubsUmAutor;
-	//private int numAutoresSolo;
-	//private int numAutoresNoSolo;
 
 	public RedeGlobalAutores() {
 		this.redeGlobalAutores = new TreeMap<>();
@@ -329,6 +326,13 @@ public class RedeGlobalAutores implements Serializable {
 		ParCoAutores par, parAux;
 		boolean sair = false;
 		boolean add = true;
+		
+		if(anoInicial < 0 || anoFinal < 0)
+			throw new AnoInvalidoException("Ano inválido. [" + anoInicial + ", " + anoFinal +"]");
+		if(anoInicial > anoFinal)
+			throw new AnoInicialMaiorQueAnoFinalException("Ano inicial maior que ano final. [" + anoInicial + ", " + anoFinal +"]");
+		if((anoInicial < this.menorAno && anoFinal < this.menorAno) || (anoInicial > this.maiorAno))
+			throw new AnosForaDoIntervaloException("Anos fora do intervalo do ficheiro. [" + anoInicial + ", " + anoFinal +"]");
 
 		for (int i = anoInicial; i <= anoFinal; i++) {
 			if (this.redeGlobalAutores.containsKey(i)) {
@@ -384,6 +388,13 @@ public class RedeGlobalAutores implements Serializable {
 
 		Autor aut;
 		TreeMap<String, Autor> mapAutores = new TreeMap<>();
+		
+		if(anoInicial < 0 || anoFinal < 0)
+			throw new AnoInvalidoException("Ano inválido. [" + anoInicial + ", " + anoFinal +"]");
+		if(anoInicial > anoFinal)
+			throw new AnoInicialMaiorQueAnoFinalException("Ano inicial maior que ano final. [" + anoInicial + ", " + anoFinal +"]");
+		if((anoInicial < this.menorAno && anoFinal < this.menorAno) || (anoInicial > this.maiorAno))
+			throw new AnosForaDoIntervaloException("Anos fora do intervalo do ficheiro. [" + anoInicial + ", " + anoFinal +"]");
 
 		for (int i = anoInicial; i <= anoFinal; i++) {
 			ArrayList<Autor> autoresLista = new ArrayList<>();
@@ -432,6 +443,13 @@ public class RedeGlobalAutores implements Serializable {
 	public Set<String> consulta21d(int anoInicial, int anoFinal) throws AnosForaDoIntervaloException, AnoInicialMaiorQueAnoFinalException, AnoInvalidoException{
 		TreeSet<String> autores = new TreeSet<>();
 		boolean add = true;
+		
+		if(anoInicial < 0 || anoFinal < 0)
+			throw new AnoInvalidoException("Ano inválido. [" + anoInicial + ", " + anoFinal +"]");
+		if(anoInicial > anoFinal)
+			throw new AnoInicialMaiorQueAnoFinalException("Ano inicial maior que ano final. [" + anoInicial + ", " + anoFinal +"]");
+		if((anoInicial < this.menorAno && anoFinal < this.menorAno) || (anoInicial > this.maiorAno))
+			throw new AnosForaDoIntervaloException("Anos fora do intervalo do ficheiro. [" + anoInicial + ", " + anoFinal +"]");
 
 		if (this.redeGlobalAutores.containsKey(anoInicial)) {
 
@@ -484,7 +502,7 @@ public class RedeGlobalAutores implements Serializable {
 		return autoresLetra;
 	}
 
-	public String consulta22c(String autor, int ano) {
+	public String consulta22c(String autor, int ano) throws AutorNotFoundException, AnoInvalidoException{
 		RedeAnualAutores redeAnual;
 		Autor aut;
 		StringBuilder sb = new StringBuilder();
@@ -499,13 +517,15 @@ public class RedeGlobalAutores implements Serializable {
 					sb.append(coAut.getNome()).append(("\n"));
 				}
 			}
-		} else {
-			sb.append("Ano não existente no ficheiro...\n\n");
-		}
+			else
+				throw new AutorNotFoundException("Autor não existente...");
+		} else 
+			throw new AnoInvalidoException("Ano não existente no ficheiro...");
+		
 		return sb.toString();
 	}
 
-	public Set<String> consulta22d(String autor) {
+	public Set<String> consulta22d(String autor) throws AutorNotFoundException{
 		TreeSet<String> coAutores = new TreeSet<>();
 		for (RedeAnualAutores redeAnual : this.getRedeGlobalAutores().values()) {
 			if (redeAnual.getRedeAnualAutores().containsKey(autor)) {
@@ -513,6 +533,8 @@ public class RedeGlobalAutores implements Serializable {
 					coAutores.add(coAut.getNome());
 				}
 			}
+			else
+				throw new AutorNotFoundException("Autor não encontrado...");
 		}
 
 		return coAutores;
