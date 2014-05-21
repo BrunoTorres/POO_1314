@@ -128,11 +128,6 @@ public class FitnessUM
     
     public String searchStatisticsYear(User u,String tipo,int ano){
         TreeMap<GregorianCalendar,Statistics>aux =(TreeMap)u.getStats();
-<<<<<<< HEAD
-        EROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-        
-                                                                                                ///////////////////////////////////
-=======
         Statistics nova=new Statistics();
        for(int i=1;i<=12;i++)
        {
@@ -142,7 +137,7 @@ public class FitnessUM
                
        }
        return nova.toString();                                                                                                //T
->>>>>>> 787ffa0b35d4817aa292f182795d04d5f426477f
+
         
     }
 
@@ -357,11 +352,8 @@ public class FitnessUM
         String weather = input.nextLine();
          System.out.println("Distancia:");
         double distance=input.nextInt();
-<<<<<<< HEAD
-        GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               //defenir calorias
-=======
         GregorianCalendar date=new GregorianCalendar(ano,mes,dia);                                                                               
->>>>>>> 787ffa0b35d4817aa292f182795d04d5f426477f
+
         Sailing aux=new Sailing(name,date,timeSpent,distance,weather);
         
         return aux;

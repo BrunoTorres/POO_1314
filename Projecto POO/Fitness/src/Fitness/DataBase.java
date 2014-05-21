@@ -17,7 +17,7 @@ public class DataBase
         this.eventList= new TreeSet<Event>();
     }
     
-    public DataBase( sports,TreeSet<Person> user,TreeSet<Event> eventList){        
+    public DataBase(TreeSet<Person> user,TreeSet<Event> eventList){        
        // for(Sport s:sports)
        //     this.sportsType.add(s.clone());
         for(Person p:user)
