@@ -491,43 +491,71 @@ public class MenuForm extends javax.swing.JFrame {
 		JLabel labelNome = new JLabel("Nome:");
 		JLabel labelAno = new JLabel("Ano");
 		Object[] dialog = {labelNome, nomeAutor, labelAno, textAno};
-		int ano;
-		String autor;
+
 		int res = JOptionPane.showConfirmDialog(this, dialog, "Introduza os dados", JOptionPane.OK_CANCEL_OPTION);
 		if (res == JOptionPane.OK_OPTION) {
-			this.textResultados.setText(this.redeGlobal.statsString());
-			this.textResultados.append(this.redeGlobal.consulta22c(nomeAutor.getText(), Integer.valueOf(textAno.getText())));
+			try {
+				if (!nomeAutor.getText().isEmpty() && !textAno.getText().isEmpty()) {
+					this.textResultados.setText(this.redeGlobal.statsString());
+					this.textResultados.append("--- Consulta 2.2.c ---\n");
+					this.textResultados.append("Nº total de publicações com co-autores de " + nomeAutor.getText() + " em " + textAno.getText() + " e lista dos mesmos: \n\n");
+			
+					this.textResultados.append(this.redeGlobal.consulta22c(nomeAutor.getText(), Integer.valueOf(textAno.getText())));
+				} else {
+					JOptionPane.showMessageDialog(this, "Parâmetros inseridos incorretamente...\nA pesquisa não será efetuada.", "ERRO", JOptionPane.INFORMATION_MESSAGE);
+				}
+			}
+			catch(AutorNotFoundException | AnoInvalidoException e){
+				JOptionPane.showMessageDialog(this, e.getMessage(), "ERRO", JOptionPane.INFORMATION_MESSAGE);
+			}
 		}
 
     }//GEN-LAST:event_but10ActionPerformed
 
     private void but11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but11ActionPerformed
-		String autor = JOptionPane.showInputDialog(this, "Introduza o nome do autor");
-		if (autor.length() != 0) {
-			this.textResultados.setText(this.redeGlobal.statsString());
-			this.textResultados.append("\n\n" + this.redeGlobal.consulta22d(autor).toString());
-		} else {
-			this.textResultados.setText(this.redeGlobal.statsString());
-			this.textResultados.append("\n\nAutor não encontrado...\n\n");
+		TreeSet<String> listaCoAutores;
+		try {
+			try {
+				String autor = JOptionPane.showInputDialog(this, "Introduza o nome do autor");
+				if (!autor.isEmpty()) {
+					this.textResultados.setText(this.redeGlobal.statsString());
+					listaCoAutores = (TreeSet<String>) this.redeGlobal.consulta22d(autor);
+					this.textResultados.append("--- Consulta 2.2.d ---\n");
+					this.textResultados.append("Lista de todos os co-autores de " + autor + ":\n");
+					for(String s: listaCoAutores)
+						this.textResultados.append("\t" + s + "\n");
+				} else {
+					JOptionPane.showMessageDialog(this, "Parâmetros inseridos incorretamente...\nA pesquisa não será efetuada.", "ERRO", JOptionPane.INFORMATION_MESSAGE);
+				}
+			} catch (NullPointerException e) {
+			}
+		} catch (AutorNotFoundException e) {
+			JOptionPane.showMessageDialog(this, e.getMessage());
 		}
+
     }//GEN-LAST:event_but11ActionPerformed
 
     private void but9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but9ActionPerformed
 		char c;
 		int res = 0;
-		Object[] letras = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
-		c = (char) JOptionPane.showInputDialog(this, "Introduza a letra que deseja pesquisar", "Letra", JOptionPane.PLAIN_MESSAGE, null, letras, letras[0]);
 		this.textResultados.setText(this.redeGlobal.statsString());
-		
-		for (int i = 0; i < letras.length && res == 0; i++) {
-			if ((char) letras[i] == c) {
-				TreeSet<String> autores = (TreeSet<String>) this.redeGlobal.consulta22b(c);
-				for (String s : autores) {
-					this.textResultados.append(s + "\n");
+
+		try {
+			Object[] letras = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+			c = (char) JOptionPane.showInputDialog(this, "Introduza a letra que deseja pesquisar", "Letra", JOptionPane.PLAIN_MESSAGE, null, letras, letras[0]);
+			for (int i = 0; i < letras.length && res == 0; i++) {
+				if ((char) letras[i] == c) {
+					TreeSet<String> autores = (TreeSet<String>) this.redeGlobal.consulta22b(c);
+					this.textResultados.append("--- Consulta 2.2.b ---\n");
+					this.textResultados.append("Autores começados por " + c +":\n");
+					for (String s : autores) {
+						this.textResultados.append(s + "\n");
+					}
+					res = 1;
+					this.textResultados.append(("\nTotal: " + autores.size()) + "\n\n");
 				}
-				res = 1;
-				this.textResultados.append(("Total: " + autores.size()) + "\n\n");
 			}
+		} catch (NullPointerException e) {
 		}
 
 
@@ -548,40 +576,58 @@ public class MenuForm extends javax.swing.JFrame {
 		int anoIni, anoFim;
 		ArrayList<String> autores = new ArrayList<>();
 		ArrayList<String> autoresRep = new ArrayList<>();
+		TreeSet<String> listaCoAutores;
+		boolean paramsOK = false;
+
 		this.textResultados.setText(this.redeGlobal.statsString());
-		
-		int res = JOptionPane.showConfirmDialog(this, dialog, "Introduza os autores (3 no máximo)", JOptionPane.OK_CANCEL_OPTION);
+
+		int res = JOptionPane.showConfirmDialog(this, dialog, "Introduza os parâmetros (apenas é necessário um autor)", JOptionPane.OK_CANCEL_OPTION);
 		if (res == JOptionPane.OK_OPTION) {
-			anoIni = Integer.valueOf(anoInicial.getText());
-			anoFim = Integer.valueOf(anoFinal.getText());
+			if (!anoInicial.getText().isEmpty() && !anoFinal.getText().isEmpty() && (!autor1.getText().isEmpty() || !autor2.getText().isEmpty() || !autor3.getText().isEmpty())) {
+				if (!autores.contains(autor1.getText()) && !autor1.getText().isEmpty()) {
+					autores.add(autor1.getText());
+				} else if (!autor1.getText().isEmpty()) {
+					autoresRep.add(autor1.getText());
+				}
+				if (!autores.contains(autor2.getText()) && !autor2.getText().isEmpty()) {
+					autores.add(autor2.getText());
+				} else if (!autor2.getText().isEmpty()) {
+					autoresRep.add(autor2.getText());
+				}
+				if (!autores.contains(autor3.getText()) && !autor3.getText().isEmpty()) {
+					autores.add(autor3.getText());
+				} else if (!autor3.getText().isEmpty()) {
+					autoresRep.add(autor3.getText());
+				}
+				StringBuilder sb = new StringBuilder();
+				for (String s : autoresRep) {
+					sb.append(s).append(", ");
+				}
 
-			if (!autores.contains(autor1.getText())) {
-				autores.add(autor1.getText());
-			} else {
-				autoresRep.add(autor1.getText());
-			}
-			if (!autores.contains(autor2.getText())) {
-				autores.add(autor2.getText());
-			} else {
-				autoresRep.add(autor2.getText());
-			}
-			if (!autores.contains(autor3.getText())) {
-				autores.add(autor3.getText());
-			} else {
-				autoresRep.add(autor3.getText());
-			}
-			StringBuilder sb = new StringBuilder();
-			for (String s : autoresRep) {
-				sb.append(s).append(", ");
-			}
-			
-			if(autoresRep.size() > 0)
-				JOptionPane.showMessageDialog(this, "Autor(es) repetido(s): " + sb.toString() + "\nA pesquisa será feita sem repetições...", "ERRO", JOptionPane.WARNING_MESSAGE);
+				if (autoresRep.size() > 0) {
+					JOptionPane.showMessageDialog(this, "Autor(es) repetido(s): " + sb.toString() + "\nA pesquisa será feita sem repetições...", "ERRO", JOptionPane.WARNING_MESSAGE);
+				}
 
-			try {
-				this.textResultados.append(this.redeGlobal.consulta21c(anoIni, anoFim, autores).toString());
-			} catch (AnosForaDoIntervaloException | AnoInicialMaiorQueAnoFinalException | AnoInvalidoException e) {
-				JOptionPane.showMessageDialog(this, e.getMessage(), "ERRO", JOptionPane.WARNING_MESSAGE);
+				anoIni = Integer.valueOf(anoInicial.getText());
+				anoFim = Integer.valueOf(anoFinal.getText());
+
+				try {
+					listaCoAutores = (TreeSet<String>) this.redeGlobal.consulta21c(anoIni, anoFim, autores);
+					this.textResultados.append("--- Consulta 2.1.c ---\n");
+					this.textResultados.append("Todos os co-autores comuns a ");
+					for (String s : autores) {
+						this.textResultados.append(s + ", ");
+					}
+					this.textResultados.append("no intervalo [" + anoIni + ", " + anoFim + "]\n");
+
+					for (String s : listaCoAutores) {
+						this.textResultados.append(s + "\n");
+					}
+				} catch (AnosForaDoIntervaloException | AnoInicialMaiorQueAnoFinalException | AnoInvalidoException | NumberFormatException e) {
+					JOptionPane.showMessageDialog(this, e.getMessage(), "ERRO", JOptionPane.WARNING_MESSAGE);
+				}
+			} else {
+				JOptionPane.showMessageDialog(this, "Parâmetros inseridos incorretamente...\nA pesquisa não será efetuada.", "ERRO", JOptionPane.INFORMATION_MESSAGE);
 			}
 		}
     }//GEN-LAST:event_but6ActionPerformed
@@ -595,17 +641,28 @@ public class MenuForm extends javax.swing.JFrame {
 		JLabel labelTopX = new JLabel("N Max:");
 		Object[] dialog = {labelAnoInicial, anoInicial, labelAnoFinal, anoFinal, labelTopX, topX};
 		int anoIni, anoFim, x;
+		ArrayList<String> listaAutores;
+
 		this.textResultados.setText(this.redeGlobal.statsString());
-		
+
 		int res = JOptionPane.showConfirmDialog(this, dialog, "Introduza os dados", JOptionPane.OK_CANCEL_OPTION);
 		if (res == JOptionPane.OK_OPTION) {
-			x = Integer.valueOf(topX.getText());
-			anoIni = Integer.valueOf(anoInicial.getText());
-			anoFim = Integer.valueOf(anoFinal.getText());
-			try {
-				this.textResultados.append(this.redeGlobal.consulta21b(x, anoIni, anoFim).toString());
-			} catch (AnosForaDoIntervaloException | AnoInicialMaiorQueAnoFinalException | AnoInvalidoException e) {
-				JOptionPane.showMessageDialog(this, e.getMessage(), "ERRO", JOptionPane.WARNING_MESSAGE);
+			if (!anoInicial.getText().isEmpty() && !anoFinal.getText().isEmpty() && !topX.getText().isEmpty()) {
+				x = Integer.valueOf(topX.getText());
+				anoIni = Integer.valueOf(anoInicial.getText());
+				anoFim = Integer.valueOf(anoFinal.getText());
+				try {
+					listaAutores = (ArrayList<String>) this.redeGlobal.consulta21b(x, anoIni, anoFim);
+					this.textResultados.append("--- Consulta 2.1.b ---\n");
+					this.textResultados.append("Os " + x + " pares de autores com mais artigos publicados em co-autoria no intervalo [" + anoIni + ", " + anoFim + "]\n");
+					for (String s : listaAutores) {
+						this.textResultados.append(s + "\n");
+					}
+				} catch (AnosForaDoIntervaloException | AnoInicialMaiorQueAnoFinalException | AnoInvalidoException e) {
+					JOptionPane.showMessageDialog(this, e.getMessage(), "ERRO", JOptionPane.WARNING_MESSAGE);
+				}
+			} else {
+				JOptionPane.showMessageDialog(this, "Parâmetros inseridos incorretamente...\nA pesquisa não será efetuada.", "ERRO", JOptionPane.INFORMATION_MESSAGE);
 			}
 		}
     }//GEN-LAST:event_but5ActionPerformed
@@ -616,17 +673,26 @@ public class MenuForm extends javax.swing.JFrame {
 		JLabel labelAnoInicial = new JLabel("Ano Inicial:");
 		JLabel labelAnoFinal = new JLabel("Ano Final:");
 		Object[] dialog = {labelAnoInicial, anoInicial, labelAnoFinal, anoFinal};
-		int anoIni, anoFim, x;
+		int anoIni, anoFim;
+		TreeSet<String> listaAutores;
 		this.textResultados.setText(this.redeGlobal.statsString());
-		
+
 		int res = JOptionPane.showConfirmDialog(this, dialog, "Introduza os dados", JOptionPane.OK_CANCEL_OPTION);
 		if (res == JOptionPane.OK_OPTION) {
-			anoIni = Integer.valueOf(anoInicial.getText());
-			anoFim = Integer.valueOf(anoFinal.getText());
-			try{
-				this.textResultados.append(this.redeGlobal.consulta21d(anoIni, anoFim).toString());
-			} catch (AnosForaDoIntervaloException | AnoInicialMaiorQueAnoFinalException | AnoInvalidoException e) {
-				JOptionPane.showMessageDialog(this, e.getMessage(), "ERRO", JOptionPane.WARNING_MESSAGE);
+			if (!anoInicial.getText().isEmpty() && !anoFinal.getText().isEmpty()) {
+				anoIni = Integer.valueOf(anoInicial.getText());
+				anoFim = Integer.valueOf(anoFinal.getText());
+				try {
+					listaAutores = (TreeSet<String>) this.redeGlobal.consulta21d(anoIni, anoFim);
+					this.textResultados.append("--- Consulta 2.1.d ---\n");
+					this.textResultados.append("Autores que publicaram artigos em todos os anos de [" + anoIni + ", " + anoFim + "]\n");
+					for(String s: listaAutores)
+						this.textResultados.append("\t" + s + "\n");
+				} catch (AnosForaDoIntervaloException | AnoInicialMaiorQueAnoFinalException | AnoInvalidoException e) {
+					JOptionPane.showMessageDialog(this, e.getMessage(), "ERRO", JOptionPane.WARNING_MESSAGE);
+				}
+			} else {
+				JOptionPane.showMessageDialog(this, "Parâmetros inseridos incorretamente...\nA pesquisa não será efetuada.", "ERRO", JOptionPane.INFORMATION_MESSAGE);
 			}
 		}
     }//GEN-LAST:event_but7ActionPerformed
@@ -637,7 +703,8 @@ public class MenuForm extends javax.swing.JFrame {
 			sb.append(redeAnual.getAno()).append("\t").append(redeAnual.getNumPubs()).append(" publicações\n");
 		}
 		this.textResultados.setText(this.redeGlobal.statsString());
-		
+
+		this.textResultados.append("--- Estatística 1.3 ---\n");
 		this.textResultados.append(sb.toString());
     }//GEN-LAST:event_but3ActionPerformed
 
@@ -651,26 +718,34 @@ public class MenuForm extends javax.swing.JFrame {
 		Object[] dialog = {labelAnoInicial, anoInicial, labelAnoFinal, anoFinal, labelTopX, topX};
 		int anoIni, anoFim, x;
 		ArrayList<String> listaAutores;
+
 		this.textResultados.setText(this.redeGlobal.statsString());
-		
+
 		int res = JOptionPane.showConfirmDialog(this, dialog, "Introduza os dados", JOptionPane.OK_CANCEL_OPTION);
 		if (res == JOptionPane.OK_OPTION) {
-			x = Integer.valueOf(topX.getText());
-			anoIni = Integer.valueOf(anoInicial.getText());
-			anoFim = Integer.valueOf(anoFinal.getText());
-			try {
-				listaAutores = (ArrayList<String>) this.redeGlobal.consulta21a(anoIni, anoFim, x);
-				for(String s: listaAutores)
-					this.textResultados.append(s + "\n");
-			} catch (AnosForaDoIntervaloException | AnoInicialMaiorQueAnoFinalException | AnoInvalidoException e) {
-				JOptionPane.showMessageDialog(this, e.getMessage(), "ERRO", JOptionPane.WARNING_MESSAGE);
+			if (!anoInicial.getText().isEmpty() && !anoFinal.getText().isEmpty() && !topX.getText().isEmpty()) {
+				x = Integer.valueOf(topX.getText());
+				anoIni = Integer.valueOf(anoInicial.getText());
+				anoFim = Integer.valueOf(anoFinal.getText());
+				try {
+					listaAutores = (ArrayList<String>) this.redeGlobal.consulta21a(anoIni, anoFim, x);
+					this.textResultados.append("--- Consulta 2.1.a ---\n");
+					this.textResultados.append("Os nomes dos " + x + " autores que mais artigos publicaram no intervalo [" + anoIni + ", " + anoFim + "]\n");
+					for (String s : listaAutores) {
+						this.textResultados.append(s + "\n");
+					}
+				} catch (AnosForaDoIntervaloException | AnoInicialMaiorQueAnoFinalException | AnoInvalidoException e) {
+					JOptionPane.showMessageDialog(this, e.getMessage(), "ERRO", JOptionPane.WARNING_MESSAGE);
+				}
+			} else {
+				JOptionPane.showMessageDialog(this, "Parâmetros inseridos incorretamente...\nA pesquisa não será efetuada.", "ERRO", JOptionPane.INFORMATION_MESSAGE);
 			}
 		}
     }//GEN-LAST:event_but4ActionPerformed
 
     private void but8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but8ActionPerformed
 		this.textResultados.setText(this.redeGlobal.statsString());
-		
+		this.textResultados.append("--- Consulta 2.2.a ---\n");
 		this.textResultados.append(("Linhas Duplicadas: " + this.redeGlobal.getLinhasDuplicado()) + "\n\n");
     }//GEN-LAST:event_but8ActionPerformed
 
