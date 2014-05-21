@@ -72,7 +72,7 @@ public class RedeAnualAutores implements Serializable {
 				this.redeAnualAutores.put(s, aut);
 				//this.redeAnualAutores.get(s).adicionaCoAutores(autores, this.ano);
 			} else {
-				this.redeAnualAutores.get(s).adicionaCoAutores(autores, this.ano);
+				this.redeAnualAutores.get(s).adicionaCoAutores(autores);
 			}
 
 		}
