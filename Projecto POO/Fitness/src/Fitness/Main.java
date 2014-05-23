@@ -71,7 +71,7 @@ public class Main {
          
          Activity act=um.criaActividade(actividade);
          
-         um.getUserByEmail("cois@gmail.com").addActivity(act);
+         //um.getUserByEmail("cois@gmail.com").addActivity(act);
          System.out.println(um.getUserByEmail("cois@gmail.com").toString());
       
     }

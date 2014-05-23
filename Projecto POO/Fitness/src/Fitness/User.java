@@ -171,13 +171,10 @@ public class User extends Person
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public boolean addActivity(Activity act,String tipoActividade){
-        //if((act instanceof Distance) || (act instanceof TwoDistances) || (act instanceof UserVs))
             setStats(act);
-            ///IF TO RECORDS
             if((act instanceof Running) || (act instanceof Walking) ||(act instanceof Running)
                     || (act instanceof Cycling) || (act instanceof MountainBiking) || (act instanceof Swimming))
-                updateRecords(tipoActividade,act);
-            
+                updateRecords(tipoActividade,act);            
             act.setCalories(this.weight);
        return this.userActivities.add(act);
     }
@@ -205,8 +202,25 @@ public class User extends Person
         return flag;
         
     }
+    
     //////////////////Records///////////////
+    
+    public boolean addRecord(String tipoActividade, Activity act){
+        RecordsActivity a;        
+        if(act instanceof RecordsActivity){
+            a=(RecordsActivity)act;
+        this.records.put(tipoActividade,a.getListRecords());
+                }
+        return true;
+        
+    }
     public boolean updateRecords(String tipoActividade,Activity act){
+        
+        if(!this.records.containsKey(tipoActividade))
+            return addRecord(tipoActividade,act);
+        
+        else{
+            
         ListRecords recUser=this.records.get(tipoActividade);
         ListRecords recAct;
         boolean flag =false;
@@ -218,8 +232,9 @@ public class User extends Person
             flag=true;        
            
        }
+        
        return flag;        
-    
+        }
         
     }
     
