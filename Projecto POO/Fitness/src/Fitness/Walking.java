@@ -9,7 +9,7 @@ import java.util.GregorianCalendar;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Walking extends Outdoor implements Distance, RecordsList, RecordsActivity
+public class Walking extends Outdoor implements Distance, RecordsActivity
 {
    
     private double distance;
