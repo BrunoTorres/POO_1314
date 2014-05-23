@@ -11,8 +11,7 @@ import java.util.TreeSet;
 public class FitnessUM {
 
 	private DataBase db;
-	private Admin admin;
-	private User user;
+	private Person p;
 
 	public FitnessUM() {
 		this.db = new DataBase();
@@ -69,7 +68,7 @@ public class FitnessUM {
 		input.close();
 		if (existPassAndUser(email, password)) {
 			if (!isAdmin(email)) {
-				this.user = getUserByEmail(email);
+				this.p = getUserByEmail(email);
 				while (menuUser() != 0);
 			}
 		} else {
@@ -135,7 +134,7 @@ public class FitnessUM {
 		input.close();
 		switch (i) {
 			case 1:
-				TreeSet<Activity> act = (TreeSet<Activity>) getLast10Activities(this.user);
+				TreeSet<Activity> act = (TreeSet<Activity>) getLast10Activities((User) this.p);
 				for (Activity a : act) {
 					System.out.println(a.toString());
 				}
@@ -231,7 +230,7 @@ public class FitnessUM {
 		System.out.println("Ano: ");
 		ano = input.nextInt();
 		input.close();
-		searchStatisticsMONTH(this.user, tipo, mes, ano);
+		searchStatisticsMONTH((User) this.p, tipo, mes, ano);
 	}
 
 	public void menuPedeAno(int tipo) {
@@ -240,7 +239,7 @@ public class FitnessUM {
 		System.out.println("Ano: ");
 		ano = input.nextInt();
 		input.close();
-		searchStatisticsYear(this.user, tipo, ano);
+		searchStatisticsYear((User) this.p, tipo, ano);
 	}
 
 	public int registarActividade() {
@@ -354,6 +353,13 @@ public class FitnessUM {
 		}
 		return act;
 
+	}
+	
+	public void setFitnessPerson(Person p){
+		if(p instanceof User)
+			this.p = (User) p;
+		else
+			this.p = (Admin) p;
 	}
 
 	//////////////////////////                Gerenciamento da aplicação /////////////////////////////////////////////////
