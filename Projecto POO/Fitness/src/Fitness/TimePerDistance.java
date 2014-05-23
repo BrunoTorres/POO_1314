@@ -14,8 +14,9 @@ public class TimePerDistance extends Records
 		this.recordTime = 0.0;
 		this.distance = 0.0;
 	}
+
 	
-	public TimePerDistance(String name, double recordTime){
+	public TimePerDistance(String name, double recordTime,){
 		super(name);
 		this.recordTime = recordTime;
 	}
