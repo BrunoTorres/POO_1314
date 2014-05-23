@@ -1,6 +1,6 @@
 package Fitness;
 
-import java.io.Console;
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.Scanner;
@@ -12,22 +12,97 @@ public class FitnessUM {
 
 	private DataBase db;
 	private Person p;
+        private ArrayList<Event> events;
 
 	public FitnessUM() {
 		this.db = new DataBase();
+                this.events=new ArrayList();
 	}
 
 	public FitnessUM(DataBase db) {
 		this.db = db;
+                this.events=new ArrayList();
 	}
+        
 
 	public void addPerson(TreeSet<Person> persons) {
 		db.addPerson(persons);
 	}
 
-	//IMPLEMENTAR METODOS DE PESQUISA
-	//pesquisa1 -> -RECEBER UM NOME/EMAIL e retornar um User    Feito em DataBase
-	//Pesquisa2 -> REceber Uma string e um user e retornar uma activiy
+        
+        /////////Eventos///////////////////// 
+        /*
+        tempo define a classificação
+        weather=0.1...ate 0.qq coisa quanto maior = pior tempo logo pior tempo por km;
+        
+        tempo por km = tempo medio -(calorias por minuto_ do utilizador na activide/1000)-
+                        (1*weather)+(numero de actividades feitas deste tipo/100)
+        
+        probabilidade de desistir:
+        top de maratora homem=25 anos
+        top de maratona melher=27 anos
+        
+        depois dos 35 anos a resistencia cai 10% por ano!
+        logo aos 25 anos p=95% de acabar a prova para homem 
+        
+        */
+        
+        
+        public Event getEventByName(String name){       // VER MELHOR!! SE NAO HOUVER O EVENTO RETORNAR O QUE?!
+            Event event=new Trail();
+            for(Event e :this.events)
+                if(e.getName().equals(name))
+                    return e;
+        
+              return event;         
+        }
+        
+        public boolean findRunning(User u){
+            boolean flag,found;
+            flag=found=false;
+            
+            Iterator<Activity>it=u.getActivities().iterator();
+            while(it.hasNext() && !found)           
+               if(it.next() instanceof Running){
+                   flag=true;
+                   found=true;
+               }
+            return flag;
+        }
+        public boolean findMountainBiking(User u){
+            boolean flag,found;
+            flag=found=false;
+            
+            Iterator<Activity>it=u.getActivities().iterator();
+            while(it.hasNext() && !found)           
+               if(it.next() instanceof MountainBiking){
+                   flag=true;
+                   found=true;
+               }
+            return flag;
+        }
+        public boolean userRegisterEvent(User u, Event e){
+            String tipo=e.getTipoActivity();
+            boolean flag=false;
+            switch(tipo){
+                case "Running":
+                    flag=findRunning(u);
+                    break;
+                case "MountainBiking":
+                    flag=findMountainBiking(u);
+                    break;
+                default:
+                    return false;
+            }
+            return flag;
+        }
+        
+        
+        
+        
+        
+        
+        
 	////////////////////////////////////////////////
 	public void menuInicial() {
 		Scanner input = new Scanner(System.in);

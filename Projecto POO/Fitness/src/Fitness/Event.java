@@ -89,35 +89,35 @@ public abstract class Event {
 
     }
 
-    private String getName() {
+    public String getName() {
         return this.name;
     }
 
-    private String getTipoActivity() {
+    public String getTipoActivity() {
         return this.tipoActivity;
     }
 
-    private String getLocation() {
+    public String getLocation() {
         return this.location;
     }
 
-    private int getMaxParticipants() {
+    public int getMaxParticipants() {
         return this.maxParticipants;
     }
 
-    private int getParticipants() {
+    public int getParticipants() {
         return this.participants;
     }
 
-    private GregorianCalendar getDeadline() {
+    public GregorianCalendar getDeadline() {
         return this.deadline;
     }
 
-    private GregorianCalendar getDuration() {
+    public GregorianCalendar getDuration() {
         return this.duration;
     }
 
-    private TreeSet<User> getParticipantsList() {
+    public TreeSet<User> getParticipantsList() {
         TreeSet<User> aux = new TreeSet();
         for (User u : this.participantsList) {
             aux.add(u.clone());
@@ -125,7 +125,7 @@ public abstract class Event {
         return aux;
     }
 
-    private TreeSet<Ranking> getRanking() {
+    public TreeSet<Ranking> getRanking() {
         TreeSet<Ranking> aux = new TreeSet();
         for (Ranking r : this.ranking) {
             aux.add(r.clone());
