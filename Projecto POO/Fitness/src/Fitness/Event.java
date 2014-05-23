@@ -45,6 +45,36 @@ public abstract class Event {
 
     }
 
+    public Event(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date,
+            GregorianCalendar duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking) {
+
+        this.name = name;
+        this.tipoActivity = tipoActivity;
+        this.location = location;
+        this.maxParticipants = maxParticipants;
+        this.deadline = deadline;
+        this.duration = duration;
+        this.participantsList = participantsList;
+        this.ranking = ranking;
+        this.participants = participantsList.size();
+
+    }
+
+    public Event(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date,
+            GregorianCalendar duration) {
+
+        this.name = name;
+        this.tipoActivity = tipoActivity;
+        this.location = location;
+        this.maxParticipants = maxParticipants;
+        this.participants = 0;
+        this.deadline = deadline;
+        this.duration = duration;
+        this.participantsList = new TreeSet();
+        this.ranking = new TreeSet();
+
+    }
+
     public Event(Event e) {
 
         this.name = e.getName();
@@ -104,6 +134,30 @@ public abstract class Event {
 
     }
 
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public void setDeadline(GregorianCalendar deadline) {
+        this.deadline = deadline;
+    }
+
+    public void setDate(GregorianCalendar date) {
+        this.date = date;
+    }
+
+    public void setDuration(GregorianCalendar duration) {
+        this.duration = duration;
+    }
+
+    public void addUser(User u) {
+        this.participantsList.add(u);
+    }
+
+    public void setMaxParticipants(int max) {
+        this.maxParticipants = max;
+    }
+
     //toString ,equals,clone
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -159,7 +213,6 @@ public abstract class Event {
 
     }
 
-    @Override
-    public abstract Event clone();
+   
 
 }
