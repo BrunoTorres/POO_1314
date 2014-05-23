@@ -1,61 +1,75 @@
 package Fitness;
 
 
-public class DistancePerTime extends Records {
-	
-	private double recordDistance;
-	private double time;
-	
-	public DistancePerTime(){
+public final class DistancePerTime extends Records
+{
+   private double recordTime;
+   private double distance;
+   
+   public DistancePerTime(){
 		super();
-		this.recordDistance = 0.0;
-		this.time = 0.0;
+		this.recordTime = 0.0;
+		this.distance = 0.0;
 	}
+
 	
-	public DistancePerTime(String name, double recordDistance, double myDistance,  double myTime){
+	public DistancePerTime(String name, double recordTime,double distance,double time){
 		super(name);
-		this.recordDistance = recordDistance;
-		this.setStatistic(myDistance, myTime);
+		this.recordTime = recordTime;
+        this.setStatistic(time, distance);     
+        
+        
+        
 	}
 
 	public DistancePerTime(DistancePerTime stat){
 		super(stat);
-		this.recordDistance = stat.getRecordDistance();
-		this.time = stat.getTime();
+		this.recordTime = stat.getRecordTime();
+		this.distance = stat.getDistance();
 	}
 
-	public double getTime(){
-		return this.time;
+	public double getDistance(){
+		return this.distance;
 	}
 
-	public double getRecordDistance(){
-		return this.recordDistance;
+	public double getRecordTime(){
+		return this.recordTime;
 	}
 
 	@Override
 	public boolean isEmpty(){
-		return (this.time != 0.0);
+		return (this.distance != 0.0);
 	}
 
-	public void setStatistic(double distance, double time) {
+    public void update(Records act){
+        DistancePerTime a=(DistancePerTime)act;
+        if (this.distance > a.distance)
+            this.distance=a.getDistance();
+        
+        
+            
+    }
+	public void setStatistic(double time, double distance){
 		double div;
-		if(!(distance < this.recordDistance)) {
-			div = this.recordDistance / distance;
-			this.time = div * time;
+		if(!(time < this.recordTime)) {
+			div = this.recordTime / time;
+			this.distance = div * distance;
 		}
 	}
-
+	
 	@Override
-   	 public String toString(){
-	        StringBuilder sb = new StringBuilder();
-	        sb.append(super.toString());
-	        sb.append("Distancia: ");sb.append(this.recordDistance).append("\n");
-	        sb.append("Tempo registado: ");sb.append(this.time).append("\n");
-	        return sb.toString();      
-	}
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.toString());
+        sb.append("Tempo: ");sb.append(this.recordTime).append("\n");
+        sb.append("Distancia registada: ");sb.append(this.distance).append("\n");
+        return sb.toString();      
+    }
     
 	@Override
 	public DistancePerTime clone(){
 		return new DistancePerTime(this);
 	}
+   
+    
 }

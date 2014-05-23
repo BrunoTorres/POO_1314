@@ -1,19 +1,21 @@
 
 package Fitness;
 
+import java.util.ArrayList;
 import java.util.TreeSet;
 
 public class ListRecords {
+    
     private final String name;            // nome do tipo (Cycling...)
-    private TreeSet<Records> recs;
+    private ArrayList<Records> recs;
     
 public ListRecords(){
     this.name="";
-    this.recs=new TreeSet();
+    this.recs=new ArrayList();
 }
 public ListRecords(String name){
     this.name=name;
-    this.recs=new TreeSet();
+    this.recs=new ArrayList();
 }
 
 public ListRecords(String name, TreeSet<Records> recs){
@@ -26,26 +28,48 @@ public ListRecords(ListRecords list){
     this.recs=list.getList();
 }
 
-    private TreeSet<Records> getList() {
-        TreeSet<Records> aux=new TreeSet();
+  public ArrayList<Records> getList() {
+        ArrayList<Records> aux=new ArrayList();
         for(Records r:this.recs)
             aux.add(r);
         return aux;
    
     }
+  public void updateList(ListRecords list){
+      ArrayList<Records>array=list.getList();
+      int i=0;
+      for(Records r :this.recs){
+          r.update(array.get(i));
+          i++;
+      }
+  }
+    
+    
 
-    private String getName() {
+    public String getName() {
         return this.name;        
     }
     
+    public void addRecord(Records rec){
+        
+        this.recs.add(rec);
+    }
     
     
+       
     
     
-    
-    
-    
-    
+      public void setRecords(ListRecords list){
+          int i=0;
+          for(Records c : this.recs){
+              c.update(list.getList().get(i));
+              i++;
+          }
+              
+              
+      }
+      
+      
     //toString,equals,clone
     
     public String toString(){

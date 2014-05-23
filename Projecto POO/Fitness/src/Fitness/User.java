@@ -16,7 +16,7 @@ public class User extends Person
     private TreeSet<Activity> userActivities; 
     private TreeSet<String> friendsList;
     private TreeMap<GregorianCalendar,Statistics> stats;
-    private TreeMap<String,Records> records;
+    private TreeMap<String,ListRecords> records;
         
     
     public User(){
@@ -170,10 +170,15 @@ public class User extends Person
         
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public boolean addActivity(Activity act){
+    public boolean addActivity(Activity act,String tipoActividade){
         //if((act instanceof Distance) || (act instanceof TwoDistances) || (act instanceof UserVs))
             setStats(act);
-        act.setCalories(this.weight);
+            ///IF TO RECORDS
+            if((act instanceof Running) || (act instanceof Walking) ||(act instanceof Running)
+                    || (act instanceof Cycling) || (act instanceof MountainBiking) || (act instanceof Swimming))
+                updateRecords(tipoActividade,act);
+            
+            act.setCalories(this.weight);
        return this.userActivities.add(act);
     }
     
@@ -201,14 +206,20 @@ public class User extends Person
         
     }
     //////////////////Records///////////////
-    public boolean updateRecords(String tipoActividade){
-        Records rec=this.records.get(tipoActividade);
-        
-        
-        
-       
-        
-        
+    public boolean updateRecords(String tipoActividade,Activity act){
+        ListRecords recUser=this.records.get(tipoActividade);
+        ListRecords recAct;
+        boolean flag =false;
+        RecordsActivity a;
+       if(act instanceof RecordsActivity){
+            a=(RecordsActivity)act;
+            recAct=a.getListRecords();
+            recUser.updateList(recAct);
+            flag=true;        
+           
+       }
+       return flag;        
+    
         
     }
     

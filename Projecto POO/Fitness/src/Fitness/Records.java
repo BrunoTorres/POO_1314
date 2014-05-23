@@ -27,6 +27,8 @@ public abstract class Records {
 
 	public abstract boolean isEmpty();
 
+    public abstract void update(Records act);
+     
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
@@ -36,4 +38,8 @@ public abstract class Records {
     
 	@Override
 	public abstract Records clone();
+    
+    
 }
+
+   
