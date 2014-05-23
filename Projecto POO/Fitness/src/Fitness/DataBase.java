@@ -87,6 +87,10 @@ public class DataBase
    public Set<Event> getEventListAdmin(){
        return this.eventList;
    }
+   
+   public void addPerson(Person person){
+       this.userList.add(person);
+   }
     
    public void addPerson(TreeSet<Person> persons){
        for(Person p:persons)
