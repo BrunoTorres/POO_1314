@@ -7,7 +7,7 @@ import java.util.TreeSet;
 public abstract class Event {
 
     private String name;
-    private String tipoActivity;                //running ....
+    private String tipoActivity;                //running ....  passar os tipos "Running" em trail e assim?!
     private String location;
     private int maxParticipants;
     private int participants;
