@@ -48,7 +48,7 @@ public class Running extends Outdoor implements Distance
    
    private ListRecords createRecord() {
         ListRecords list=new ListRecords("Running");
-        Records recCooper=new DistancePerTime("Cooper",12,)
+        Records recCooper=new DistancePerTime("Cooper",12,this.distance,this.getTimeSpent());
         Records recCooper=new TimePerDistance("")
         
     }

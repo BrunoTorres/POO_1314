@@ -1,10 +1,7 @@
 package Fitness;
 
 
-import java.util.GregorianCalendar;
-
-
-public class TimePerDistance extends Records
+public final class TimePerDistance extends Records
 {
    private double recordTime;
    private double distance;
@@ -16,9 +13,13 @@ public class TimePerDistance extends Records
 	}
 
 	
-	public TimePerDistance(String name, double recordTime,){
+	public TimePerDistance(String name, double recordTime,double distance,double time){
 		super(name);
 		this.recordTime = recordTime;
+        this.setStatistic(time, distance);     
+        
+        
+        
 	}
 
 	public TimePerDistance(TimePerDistance stat){
