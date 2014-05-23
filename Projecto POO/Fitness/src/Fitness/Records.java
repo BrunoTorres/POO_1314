@@ -27,7 +27,7 @@ public abstract class Records {
 
 	public abstract boolean isEmpty();
 
-     public abstract void update(Records act);
+    public abstract void update(Records act);
      
     @Override
     public String toString(){

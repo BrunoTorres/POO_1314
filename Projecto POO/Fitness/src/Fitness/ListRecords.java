@@ -35,6 +35,14 @@ public ListRecords(ListRecords list){
         return aux;
    
     }
+  public void updateList(ListRecords list){
+      ArrayList<Records>array=list.getList();
+      int i=0;
+      for(Records r :this.recs){
+          r.update(array.get(i));
+          i++;
+      }
+  }
     
     
 
