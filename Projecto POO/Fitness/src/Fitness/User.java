@@ -16,7 +16,7 @@ public class User extends Person
     private TreeSet<Activity> userActivities; 
     private TreeSet<String> friendsList;
     private TreeMap<GregorianCalendar,Statistics> stats;
-    private TreeMap<String,Records> records;
+    private TreeMap<String,ListRecords> records;
         
     
     public User(){
@@ -173,7 +173,9 @@ public class User extends Person
     public boolean addActivity(Activity act){
         //if((act instanceof Distance) || (act instanceof TwoDistances) || (act instanceof UserVs))
             setStats(act);
-        act.setCalories(this.weight);
+            ///IF TO RECORDS
+            
+            act.setCalories(this.weight);
        return this.userActivities.add(act);
     }
     
@@ -201,8 +203,10 @@ public class User extends Person
         
     }
     //////////////////Records///////////////
-    public boolean updateRecords(String tipoActividade){
+    public boolean updateRecords(String tipoActividade,Activity act){
         Records rec=this.records.get(tipoActividade);
+        
+        
         
         
         

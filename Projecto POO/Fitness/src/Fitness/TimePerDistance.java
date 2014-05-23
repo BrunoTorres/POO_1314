@@ -44,6 +44,15 @@ public final class TimePerDistance extends Records {
 			this.time = div * time;
 		}
 	}
+    
+    public void update(Records act){
+        TimePerDistance a=(TimePerDistance)act;
+        if (this.time < a.getTime())
+            this.time=a.getTime();
+        
+        
+            
+    }
 
 	@Override
    	 public String toString(){
@@ -58,4 +67,7 @@ public final class TimePerDistance extends Records {
 	public TimePerDistance clone(){
 		return new TimePerDistance(this);
 	}
+
+    
+   
 }

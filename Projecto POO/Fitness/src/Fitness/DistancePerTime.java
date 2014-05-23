@@ -41,13 +41,11 @@ public final class DistancePerTime extends Records
 		return (this.distance != 0.0);
 	}
 
-    public int compareBest(Records act){
+    public void update(Records act){
         DistancePerTime a=(DistancePerTime)act;
         if (this.distance > a.distance)
-            return 1;
-        if (this.distance < a.distance)
-            return -1;
-        return 0;
+            this.distance=a.getDistance();
+        
         
             
     }
