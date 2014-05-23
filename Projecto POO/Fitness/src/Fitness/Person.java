@@ -1,6 +1,7 @@
 package Fitness;
 
 
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Objects;
 
@@ -90,7 +91,10 @@ public abstract class Person
     sb.append("Email: ");sb.append(this.email).append("\n");
     sb.append("Password: ");sb.append(this.password).append("\n");
     sb.append("Gender: ");sb.append(this.gender).append("\n");
-    sb.append("Date of Birth: ");sb.append(this.dateOfBirth.toString()).append("\n");
+    sb.append("Date of Birth: ");
+    sb.append(this.dateOfBirth.get(Calendar.DAY_OF_MONTH)).append(" / ");;
+    sb.append(this.dateOfBirth.get(Calendar.MONTH)).append(" / ");
+    sb.append(this.dateOfBirth.get(Calendar.YEAR)).append("\n"); 
     
     return sb.toString(); 
 }
