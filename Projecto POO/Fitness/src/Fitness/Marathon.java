@@ -17,7 +17,7 @@ public class Marathon extends Event{
     
     
     double distance;
-    private double getDistance;
+  
 
     public Marathon() {
         super();
