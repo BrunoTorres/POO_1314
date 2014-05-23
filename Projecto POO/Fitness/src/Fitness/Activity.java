@@ -13,7 +13,6 @@ public abstract class Activity {
 	private double timeSpent;                   //tempo em minutos
 	private double calories;
 
-	private ArrayList <Records> performance;				//NAO DEVIA SER UMA LISTA??
 
 	public Activity() {
 	
@@ -22,7 +21,6 @@ public abstract class Activity {
 		this.timeSpent = 0.0;
 		this.calories = 0;
 
-		this.performance = new ArrayList <Records>();
 	}
 
 
@@ -33,7 +31,7 @@ public abstract class Activity {
 		this.timeSpent = timeSpent;
 		this.calories=0;                                              // VER AQUI
 		
-		//this.setPerformance();
+		
 	}
 
 	public Activity(Activity a) {
@@ -43,7 +41,7 @@ public abstract class Activity {
 		this.timeSpent = a.getTimeSpent();
 		this.calories = a.getCalories();
 
-		//this.performance = a.getPerformance();
+		
 	}
 
 
@@ -81,7 +79,7 @@ public abstract class Activity {
     
     /**
 	 * @return the activityRecords
-	*/
+	
 	public ArrayList <Records> getPerformance() {
 		ArrayList<Records> aux = new ArrayList();
 	    for (Records rec : this.performance) 
@@ -92,7 +90,7 @@ public abstract class Activity {
     public ArrayList <Records> getPerformanceAdmin() {
 		return this.performance;
 	}
-
+*/
 
 
 	public void setName(String name) {
@@ -108,7 +106,7 @@ public abstract class Activity {
 
 
 
-//	public abstract void setPerformance();
+
 
 
 	@Override
@@ -142,10 +140,7 @@ public abstract class Activity {
         sb.append(this.date.get(Calendar.YEAR)).append("\n");      
 		sb.append("Duração: ");
 		sb.append(this.timeSpent).append(" minutos \n");
-		//sb.append("Recordes:\n");
-		//for (Records rec : this.performance)
-		//	if (!rec.isEmpty())
-		//		sb.append(rec.toString()).append("\n");			
+			
 				
 		return sb.toString();
 	}
