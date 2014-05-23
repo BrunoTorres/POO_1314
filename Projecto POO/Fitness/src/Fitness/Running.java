@@ -37,6 +37,7 @@ public class Running extends Outdoor implements Distance, RecordsActivity {
         return this.distance;
     }
 
+    @Override
     public ListRecords getListRecords() {
         return this.recs.clone();
     }
@@ -83,23 +84,23 @@ public class Running extends Outdoor implements Distance, RecordsActivity {
         return sb.toString();
     }
 
-    @Override
-    public boolean equals(Object a) {
-        if (this == a) {
-            return true;
-        }
-        if (a == null || this.getClass() != a.getClass()) {
-            return false;
-        }
-        Running act = (Running) a;
-        return (super.equals(act)
-                && this.distance == act.getDistance());
 
-    }
 
-    @Override
-    public Running clone() {
-        return new Running(this);
+        @Override
+        public boolean equals(Object a){
+            if(this == a)
+                return true;
+            if(a == null || this.getClass() != a.getClass())
+                return false;
+            Running act = (Running) a;
+            return  ( super.equals(act)
+                    && this.distance==act.getDistance());
+            
+        }
+        
+        @Override
+        public Running clone() {
+            return new Running(this);
     }
 
 }

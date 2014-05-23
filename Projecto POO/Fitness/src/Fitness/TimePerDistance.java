@@ -1,6 +1,8 @@
 package Fitness;
 
+
 public final class TimePerDistance extends Records {
+
 
     private double recordDistance;
     private double time;

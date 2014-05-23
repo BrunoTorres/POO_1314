@@ -12,6 +12,7 @@ import java.util.GregorianCalendar;
 public class Swimming extends Indoor implements Distance, RecordsActivity
 {
     private double distance;
+    private ListRecords recs;
 
     public Swimming(){
         super();
@@ -19,6 +20,7 @@ public class Swimming extends Indoor implements Distance, RecordsActivity
     public Swimming(String name, GregorianCalendar date, double timeSpent,double distance){
         super(name,date,timeSpent);
         this.distance=distance;
+        this.recs = createRecord();
         
     }
     public Swimming(Swimming tb){
@@ -54,7 +56,7 @@ public class Swimming extends Indoor implements Distance, RecordsActivity
             list.addRecord(rec50m);
             list.addRecord(rec100m);
             list.addRecord(rec200m);
-            list.addRecord(rec400m;
+            list.addRecord(rec400m);
             list.addRecord(rec1500m);
 
             return list;       
@@ -87,4 +89,10 @@ public class Swimming extends Indoor implements Distance, RecordsActivity
      public Swimming clone(){
         return new Swimming(this);
     }
+
+     @Override
+    public ListRecords getListRecords() {
+        return this.recs.clone();
+    }
+    
 }
