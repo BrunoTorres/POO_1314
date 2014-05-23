@@ -12,9 +12,10 @@ public class DistancePerTime extends Records {
 		this.time = 0.0;
 	}
 	
-	public DistancePerTime(String name, double recordDistance){
+	public DistancePerTime(String name, double recordDistance, double myDistance,  double myTime){
 		super(name);
 		this.recordDistance = recordDistance;
+		this.setStatistic(myDistance, myTime);
 	}
 
 	public DistancePerTime(DistancePerTime stat){
@@ -45,17 +46,16 @@ public class DistancePerTime extends Records {
 	}
 
 	@Override
-    public String toString(){
-        StringBuilder sb = new StringBuilder();
-        sb.append(super.toString());
-        sb.append("Distancia: ");sb.append(this.recordDistance).append("\n");
-        sb.append("Tempo registado: ");sb.append(this.time).append("\n");
-        return sb.toString();      
-    }
+   	 public String toString(){
+	        StringBuilder sb = new StringBuilder();
+	        sb.append(super.toString());
+	        sb.append("Distancia: ");sb.append(this.recordDistance).append("\n");
+	        sb.append("Tempo registado: ");sb.append(this.time).append("\n");
+	        return sb.toString();      
+	}
     
 	@Override
 	public DistancePerTime clone(){
 		return new DistancePerTime(this);
 	}
-	
 }
