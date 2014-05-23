@@ -354,6 +354,11 @@ public class FitnessUM {
 		return act;
 
 	}
+
+	//////////////////////////                Gerenciamento da aplicação /////////////////////////////////////////////////
+	public Person getActivePerson(){
+		return this.p;
+	}
 	
 	public void setFitnessPerson(Person p){
 		if(p instanceof User)
@@ -361,8 +366,7 @@ public class FitnessUM {
 		else
 			this.p = (Admin) p;
 	}
-
-	//////////////////////////                Gerenciamento da aplicação /////////////////////////////////////////////////
+	
 	public User getUserByEmail(String email) {
 		User u;
 		u = this.db.getUser(email);

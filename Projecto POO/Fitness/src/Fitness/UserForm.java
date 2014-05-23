@@ -6,6 +6,10 @@
 
 package Fitness;
 
+import java.util.ArrayList;
+import java.util.TreeSet;
+import javax.swing.JFrame;
+
 /**
  *
  * @author jmano
@@ -14,11 +18,25 @@ public class UserForm extends javax.swing.JFrame {
 
 	/**
 	 * Creates new form UserForm
+	 * @param parent
 	 * @param fit
 	 */
-	public UserForm(FitnessUM fit) {
+	public UserForm(JFrame parent, FitnessUM fit) {
 		initComponents();
 		this.fit = fit;
+		this.setTitle(fit.getActivePerson().getName() + " - Utilizador");
+		//this.jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(fit.getActivePerson().getName()));
+		//this.jTabbedPane1.addT
+		this.acts = this.fit.getLast10Activities((User) this.fit.getActivePerson()).toArray();
+		this.currAct = 0;
+		//Object[] array = acts.toArray();
+		this.text10Act.setText(((Activity) this.acts[this.currAct]).toString());
+	}
+	
+	public void changeShownActivity(){
+		this.currAct = this.currAct + 1;
+		this.textNAct.setText(this.currAct + "/10");
+		
 	}
 
 	/**
@@ -28,24 +46,150 @@ public class UserForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        panelVer10Stats = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        text10Act = new javax.swing.JTextArea();
+        butFirst = new javax.swing.JButton();
+        butPrev = new javax.swing.JButton();
+        butNext = new javax.swing.JButton();
+        butLast = new javax.swing.JButton();
+        textNAct = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+
+        jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        text10Act.setColumns(20);
+        text10Act.setRows(5);
+        jScrollPane1.setViewportView(text10Act);
+
+        butFirst.setText("<<");
+        butFirst.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butFirstActionPerformed(evt);
+            }
+        });
+
+        butPrev.setText("<");
+        butPrev.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butPrevActionPerformed(evt);
+            }
+        });
+
+        butNext.setText(">");
+        butNext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butNextActionPerformed(evt);
+            }
+        });
+
+        butLast.setText(">>");
+        butLast.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butLastActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Ver actividades de um amigo");
+
+        javax.swing.GroupLayout panelVer10StatsLayout = new javax.swing.GroupLayout(panelVer10Stats);
+        panelVer10Stats.setLayout(panelVer10StatsLayout);
+        panelVer10StatsLayout.setHorizontalGroup(
+            panelVer10StatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelVer10StatsLayout.createSequentialGroup()
+                .addGroup(panelVer10StatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelVer10StatsLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1))
+                    .addGroup(panelVer10StatsLayout.createSequentialGroup()
+                        .addGap(119, 119, 119)
+                        .addComponent(butFirst)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(butPrev)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textNAct, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(butNext)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(butLast)
+                        .addGap(0, 124, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(panelVer10StatsLayout.createSequentialGroup()
+                .addGap(154, 154, 154)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panelVer10StatsLayout.setVerticalGroup(
+            panelVer10StatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelVer10StatsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelVer10StatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(butFirst)
+                    .addComponent(butPrev)
+                    .addComponent(butNext)
+                    .addComponent(butLast)
+                    .addComponent(textNAct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Ver 10 últimas atividades", panelVer10Stats);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void butNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNextActionPerformed
+        this.currAct++;
+		this.text10Act.setText(((Activity) this.acts[this.currAct]).toString());
+    }//GEN-LAST:event_butNextActionPerformed
+
+    private void butPrevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butPrevActionPerformed
+        this.currAct--;
+		this.text10Act.setText(((Activity) this.acts[this.currAct]).toString());
+    }//GEN-LAST:event_butPrevActionPerformed
+
+    private void butFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butFirstActionPerformed
+        this.currAct = 0;
+		this.text10Act.setText(((Activity) this.acts[this.currAct]).toString());
+    }//GEN-LAST:event_butFirstActionPerformed
+
+    private void butLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butLastActionPerformed
+        this.currAct = 9;
+		this.text10Act.setText(((Activity) this.acts[this.currAct]).toString());
+    }//GEN-LAST:event_butLastActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton butFirst;
+    private javax.swing.JButton butLast;
+    private javax.swing.JButton butNext;
+    private javax.swing.JButton butPrev;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JPanel panelVer10Stats;
+    private javax.swing.JTextArea text10Act;
+    private javax.swing.JTextField textNAct;
     // End of variables declaration//GEN-END:variables
 	FitnessUM fit;
+	int currAct = 0;
+	Object[] acts;
 }
