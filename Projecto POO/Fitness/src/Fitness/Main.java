@@ -70,6 +70,7 @@ public class Main {
        */
          
          
+
         /*
         System.out.println("Pesquisar user");
         System.out.println(um.getUserByEmail("cois@gmail.com").toString());
@@ -80,7 +81,7 @@ public class Main {
        User u=um.getUserByEmail("cois@gmail.com");
        Activity act=um.createActivity("Cycling");
        
-      um.getUserByEmail("cois@gmail.com").addActivity(act, "tipo");
+
       
        //System.out.println(um.getUserByEmail("cois@gmail.com").toString());
       System.out.println( act.toString());
