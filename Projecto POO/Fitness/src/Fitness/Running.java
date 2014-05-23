@@ -34,6 +34,10 @@ public class Running extends Outdoor implements Distance
     public double getDistance() {
        return this.distance;
     }
+     
+    public ListRecords getListRecords() {
+       return this.recs.clone();
+    }
 
     @Override
     public void setDistance(double distance) {
@@ -48,13 +52,25 @@ public class Running extends Outdoor implements Distance
    
    private ListRecords createRecord() {
         ListRecords list=new ListRecords("Running");
-        Records recCooper=new DistancePerTime("Cooper",12,this.distance,this.getTimeSpent());
-        Records recCooper=new TimePerDistance("")
         
+        Records recCooper=new TimePerDistance("Cooper",12,this.distance,this.getTimeSpent());
+        Records rec1km=new DistancePerTime("1 km",1,this.distance,this.getTimeSpent());
+        Records rec1mile=new DistancePerTime("1 mile",1.609344,this.distance,this.getTimeSpent());
+        Records rec3km=new DistancePerTime("3 km",3,this.distance,this.getTimeSpent());
+        Records rec10km=new DistancePerTime("10 km",10,this.distance,this.getTimeSpent());
+        Records rechalfMarathon=new DistancePerTime("Half Marathon km",21.097494,this.distance,this.getTimeSpent());
+        
+        list.addRecord(recCooper);
+        list.addRecord(rec1km);
+        list.addRecord(rec1mile);
+        list.addRecord(rec3km);
+        list.addRecord(rec10km);
+        list.addRecord(rechalfMarathon);
+        
+        return list;
+   
     }
-   
-   
-   
+ 
      ////////////toString equals clone
     
     

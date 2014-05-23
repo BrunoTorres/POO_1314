@@ -13,7 +13,8 @@ public class MountainBiking extends Outdoor implements Distance,VerticalDistance
 {
     private double distance;
     private double verticaldistance;
-
+    private ListRecords recs;
+    
     public MountainBiking(){
         super();
     }
@@ -22,7 +23,7 @@ public class MountainBiking extends Outdoor implements Distance,VerticalDistance
         super(name,date,timeSpent,weather);
         this.distance=distance;
         this.verticaldistance=verticaldistance;
-        
+        this.recs=createRecord();
         
     }
     public MountainBiking(MountainBiking tb){
@@ -56,7 +57,29 @@ public class MountainBiking extends Outdoor implements Distance,VerticalDistance
       this.setActivityCalories(calories);    
     }
    
+   public ListRecords getListRecords() {
+       return this.recs.clone();
+    }
    
+   private ListRecords createRecord() {
+        ListRecords list=new ListRecords("Running");
+        
+        Records recCooper=new TimePerDistance("One hour (km)",60,this.distance,this.getTimeSpent());
+        Records rec10miles=new DistancePerTime("10 miles",16.09344,this.distance,this.getTimeSpent());
+        Records rec3km=new DistancePerTime("20 km",20,this.distance,this.getTimeSpent());
+        Records rec10km=new DistancePerTime("50 km",50,this.distance,this.getTimeSpent());
+        Records rec50miles=new DistancePerTime("50 miles",80.4672,this.distance,this.getTimeSpent());
+       
+        list.addRecord(recCooper);
+        list.addRecord(rec10miles);
+        list.addRecord(rec3km);
+        list.addRecord(rec10km);
+        list.addRecord(rec50miles);
+        
+        return list;
+   
+    }
+ 
    
    
      ////////////toString equals clone

@@ -13,7 +13,8 @@ public class Skiing extends Outdoor implements Distance,VerticalDistance
 {
     private double distance;
     private double verticaldistance;
-
+    private ListRecords recs;
+    
     public Skiing(){
         super();
     }
@@ -22,7 +23,7 @@ public class Skiing extends Outdoor implements Distance,VerticalDistance
         super(name,date,timeSpent,weather);
         this.distance=distance;
         this.verticaldistance=verticaldistance;
-        
+        this.recs=createRecord();
         
     }
     public Skiing(Skiing tb){
@@ -56,7 +57,26 @@ public class Skiing extends Outdoor implements Distance,VerticalDistance
       this.setActivityCalories(calories);    
     }
    
+   private ListRecords createRecord() {
+        ListRecords list=new ListRecords("Walking");
+        
+        Records recCooper=new TimePerDistance("Cooper",12,this.distance,this.getTimeSpent());
+        Records rec1km=new DistancePerTime("1 km",1,this.distance,this.getTimeSpent());
+        Records rec1mile=new DistancePerTime("1 mile",1.609344,this.distance,this.getTimeSpent());
+        Records rec3km=new DistancePerTime("3 km",3,this.distance,this.getTimeSpent());
+        Records rec10km=new DistancePerTime("10 km",10,this.distance,this.getTimeSpent());
+        Records rechalfMarathon=new DistancePerTime("Half Marathon km",21.097494,this.distance,this.getTimeSpent());
+        
+        list.addRecord(recCooper);
+        list.addRecord(rec1km);
+        list.addRecord(rec1mile);
+        list.addRecord(rec3km);
+        list.addRecord(rec10km);
+        list.addRecord(rechalfMarathon);
+        
+        return list;
    
+    }
    
    
      ////////////toString equals clone

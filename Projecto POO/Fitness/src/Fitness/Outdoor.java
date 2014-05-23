@@ -6,6 +6,7 @@ public abstract class Outdoor extends Activity
 {
     private String weather;
 
+
     public Outdoor(){
         super();
         this.weather = "";

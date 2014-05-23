@@ -4,6 +4,7 @@ package Fitness;
 import java.util.TreeSet;
 
 public class ListRecords {
+    
     private final String name;            // nome do tipo (Cycling...)
     private TreeSet<Records> recs;
     
@@ -26,26 +27,30 @@ public ListRecords(ListRecords list){
     this.recs=list.getList();
 }
 
-    private TreeSet<Records> getList() {
+  public TreeSet<Records> getList() {
         TreeSet<Records> aux=new TreeSet();
         for(Records r:this.recs)
             aux.add(r);
         return aux;
    
     }
+    
+    
 
-    private String getName() {
+    public String getName() {
         return this.name;        
     }
     
+    public void addRecord(Records rec){
+        
+        this.recs.add(rec);
+    }
     
     
+       
     
     
-    
-    
-    
-    
+      public void setRecords();
     //toString,equals,clone
     
     public String toString(){
