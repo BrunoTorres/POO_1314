@@ -48,8 +48,8 @@ public class Running extends Outdoor implements Distance
    
    private ListRecords createRecord() {
         ListRecords list=new ListRecords("Running");
-        Records recCooper=new DistancePerTime()
-        Records recCooper=new TimePerDistance()
+        Records recCooper=new DistancePerTime("Cooper",12,)
+        Records recCooper=new TimePerDistance("")
         
     }
    
