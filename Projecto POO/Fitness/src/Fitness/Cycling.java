@@ -9,7 +9,7 @@ import java.util.GregorianCalendar;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Cycling extends Outdoor implements Distance
+public class Cycling extends Outdoor implements Distance, RecordsActivity
 {
     private double distance;
     private ListRecords recs;
@@ -42,15 +42,19 @@ public class Cycling extends Outdoor implements Distance
       double calories=mets*peso*this.getTimeSpent();
       this.setActivityCalories(calories);    
     }
+
+    public ListRecords getListRecords() {
+       return this.recs.clone();
+    }
    
     private ListRecords createRecord() {
         ListRecords list=new ListRecords("Running");
         
-        Records recCooper=new TimePerDistance("One hour (km)",60,this.distance,this.getTimeSpent());
-        Records rec10miles=new DistancePerTime("10 miles",16.09344,this.distance,this.getTimeSpent());
-        Records rec3km=new DistancePerTime("20 km",20,this.distance,this.getTimeSpent());
-        Records rec10km=new DistancePerTime("50 km",50,this.distance,this.getTimeSpent());
-        Records rec50miles=new DistancePerTime("50 miles",80.4672,this.distance,this.getTimeSpent());
+        Records recCooper=new DistancePerTime("One hour (km)",60,this.distance,this.getTimeSpent());
+        Records rec10miles=new TimePerDistance("10 miles",16.09344,this.distance,this.getTimeSpent());
+        Records rec3km=new TimePerDistance("20 km",20,this.distance,this.getTimeSpent());
+        Records rec10km=new TimePerDistance("50 km",50,this.distance,this.getTimeSpent());
+        Records rec50miles=new TimePerDistance("50 miles",80.4672,this.distance,this.getTimeSpent());
        
         list.addRecord(recCooper);
         list.addRecord(rec10miles);

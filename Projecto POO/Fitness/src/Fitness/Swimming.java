@@ -9,7 +9,7 @@ import java.util.GregorianCalendar;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Swimming extends Indoor implements Distance
+public class Swimming extends Indoor implements Distance, RecordsActivity
 {
     private double distance;
 
@@ -42,9 +42,23 @@ public class Swimming extends Indoor implements Distance
       this.setActivityCalories(calories);    
     }
    
-   
-   
-   
+    private ListRecords createRecord() {
+            ListRecords list=new ListRecords("Running");
+            
+            Records rec50m = new TimePerDistance("50 m",50,this.distance,this.getTimeSpent());
+            Records rec100m = new TimePerDistance("100 m",100,this.distance,this.getTimeSpent());
+            Records rec200m = new TimePerDistance("200 m",200,this.distance,this.getTimeSpent());
+            Records rec400m = new TimePerDistance("400 m",400,this.distance,this.getTimeSpent());
+            Records rec1500m = new TimePerDistance("1500 m",1500,this.distance,this.getTimeSpent());
+            
+            list.addRecord(rec50m);
+            list.addRecord(rec100m);
+            list.addRecord(rec200m);
+            list.addRecord(rec400m;
+            list.addRecord(rec1500m);
+
+            return list;       
+    }
    
      ////////////toString equals clone
     

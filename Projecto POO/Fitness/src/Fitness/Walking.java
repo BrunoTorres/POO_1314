@@ -9,7 +9,7 @@ import java.util.GregorianCalendar;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Walking extends Outdoor implements Distance
+public class Walking extends Outdoor implements Distance, RecordsList, RecordsActivity
 {
    
     private double distance;
@@ -54,12 +54,12 @@ public class Walking extends Outdoor implements Distance
    private ListRecords createRecord() {
         ListRecords list=new ListRecords("Walking");
         
-        Records recCooper=new TimePerDistance("Cooper",12,this.distance,this.getTimeSpent());
-        Records rec1km=new DistancePerTime("1 km",1,this.distance,this.getTimeSpent());
-        Records rec1mile=new DistancePerTime("1 mile",1.609344,this.distance,this.getTimeSpent());
-        Records rec3km=new DistancePerTime("3 km",3,this.distance,this.getTimeSpent());
-        Records rec10km=new DistancePerTime("10 km",10,this.distance,this.getTimeSpent());
-        Records rechalfMarathon=new DistancePerTime("Half Marathon km",21.097494,this.distance,this.getTimeSpent());
+        Records recCooper=new DistancePerTime("Cooper",12,this.distance,this.getTimeSpent());
+        Records rec1km=new TimePerDistance("1 km",1,this.distance,this.getTimeSpent());
+        Records rec1mile=new TimePerDistance("1 mile",1.609344,this.distance,this.getTimeSpent());
+        Records rec3km=new TimePerDistance("3 km",3,this.distance,this.getTimeSpent());
+        Records rec10km=new TimePerDistance("10 km",10,this.distance,this.getTimeSpent());
+        Records rechalfMarathon=new TimePerDistance("Half Marathon km",21.097494,this.distance,this.getTimeSpent());
         
         list.addRecord(recCooper);
         list.addRecord(rec1km);
