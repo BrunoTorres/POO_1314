@@ -12,13 +12,17 @@ import java.util.GregorianCalendar;
 public class Running extends Outdoor implements Distance
 {
     private double distance;
+    private ListRecords recs;
 
     public Running(){
         super();
+        this.distance=0;
+        this.recs=new ListRecords();
     }
     public Running(String name, GregorianCalendar date, double timeSpent,double distance,String weather){
         super(name,date,timeSpent,weather);
         this.distance=distance;
+        this.recs=createRecord();
         
     }
     public Running(Running tb){
@@ -42,6 +46,12 @@ public class Running extends Outdoor implements Distance
       this.setActivityCalories(calories);    
     }
    
+   private ListRecords createRecord() {
+        ListRecords list=new ListRecords("Running");
+        Records recCooper=new DistancePerTime()
+        Records recCooper=new TimePerDistance()
+        
+    }
    
    
    
@@ -72,4 +82,6 @@ public class Running extends Outdoor implements Distance
      public Running clone(){
         return new Running(this);
     }
+
+    
 }

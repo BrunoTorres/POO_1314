@@ -16,6 +16,7 @@ public class User extends Person
     private TreeSet<Activity> userActivities; 
     private TreeSet<String> friendsList;
     private TreeMap<GregorianCalendar,Statistics> stats;
+    private TreeMap<String,Records> records;
         
     
     public User(){
@@ -197,6 +198,17 @@ public class User extends Person
                 found=true;
             }
         return flag;
+        
+    }
+    //////////////////Records///////////////
+    public boolean updateRecords(String tipoActividade){
+        Records rec=this.records.get(tipoActividade);
+        
+        
+        
+       
+        
+        
         
     }
     

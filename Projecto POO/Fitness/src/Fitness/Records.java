@@ -3,8 +3,8 @@ package Fitness;
 
 public abstract class Records {
 
-	private String name;
-
+	private String name; //10 km|| Maratona...
+    
 	
 	public Records(){
 		this.name = "";
