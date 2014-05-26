@@ -213,6 +213,7 @@ public abstract class Event {
 
     }
 
+    @Override
+   public abstract Event clone();
    
-
 }
