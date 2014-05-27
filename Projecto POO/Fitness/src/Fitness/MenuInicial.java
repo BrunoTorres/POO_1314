@@ -12,6 +12,7 @@ import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Map;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
@@ -32,6 +33,10 @@ public class MenuInicial extends javax.swing.JFrame {
 	public MenuInicial() {
 		initComponents();
 		fitness = new FitnessUM();
+		fitness.addUser("ola@gmail.com", "pass", "user1", 'M', new GregorianCalendar(), 170, 70.0, "Futebol");
+		fitness.addUser("ola2@gmail.com", "pass", "user2", 'M', new GregorianCalendar(), 160, 70.0, "Running");
+		fitness.getUserByEmail("ola@gmail.com").addActivity(new Yoga("YOGA com os amigos", new GregorianCalendar(), 120), "Yoga");
+		fitness.getUserByEmail("ola@gmail.com").addActivity(new Yoga("YOGA2222 com os amigos", new GregorianCalendar(), 110), "Yoga");
 	}
 
 	/**
@@ -206,7 +211,7 @@ public class MenuInicial extends javax.swing.JFrame {
 		if (fitness.existPassAndUser(email, pw)) {
 			if (!fitness.isAdmin(email)) {
 				fitness.setFitnessPerson(fitness.getUserByEmail(email));
-				UserForm userForm = new UserForm(this.fitness);
+				UserForm userForm = new UserForm(this, this.fitness);
 				this.setVisible(false);
 				userForm.setVisible(true);
 			}

@@ -7,7 +7,7 @@ import java.util.TreeSet;
 public abstract class Event {
 
     private String name;
-    private String tipoActivity;                //running ....
+    private String tipoActivity;                //running ....  passar os tipos "Running" em trail e assim?!
     private String location;
     private int maxParticipants;
     private int participants;
@@ -45,6 +45,36 @@ public abstract class Event {
 
     }
 
+    public Event(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date,
+            GregorianCalendar duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking) {
+
+        this.name = name;
+        this.tipoActivity = tipoActivity;
+        this.location = location;
+        this.maxParticipants = maxParticipants;
+        this.deadline = deadline;
+        this.duration = duration;
+        this.participantsList = participantsList;
+        this.ranking = ranking;
+        this.participants = participantsList.size();
+
+    }
+
+    public Event(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date,
+            GregorianCalendar duration) {
+
+        this.name = name;
+        this.tipoActivity = tipoActivity;
+        this.location = location;
+        this.maxParticipants = maxParticipants;
+        this.participants = 0;
+        this.deadline = deadline;
+        this.duration = duration;
+        this.participantsList = new TreeSet();
+        this.ranking = new TreeSet();
+
+    }
+
     public Event(Event e) {
 
         this.name = e.getName();
@@ -59,35 +89,35 @@ public abstract class Event {
 
     }
 
-    private String getName() {
+    public String getName() {
         return this.name;
     }
 
-    private String getTipoActivity() {
+    public String getTipoActivity() {
         return this.tipoActivity;
     }
 
-    private String getLocation() {
+    public String getLocation() {
         return this.location;
     }
 
-    private int getMaxParticipants() {
+    public int getMaxParticipants() {
         return this.maxParticipants;
     }
 
-    private int getParticipants() {
+    public int getParticipants() {
         return this.participants;
     }
 
-    private GregorianCalendar getDeadline() {
+    public GregorianCalendar getDeadline() {
         return this.deadline;
     }
 
-    private GregorianCalendar getDuration() {
+    public GregorianCalendar getDuration() {
         return this.duration;
     }
 
-    private TreeSet<User> getParticipantsList() {
+    public TreeSet<User> getParticipantsList() {
         TreeSet<User> aux = new TreeSet();
         for (User u : this.participantsList) {
             aux.add(u.clone());
@@ -95,13 +125,37 @@ public abstract class Event {
         return aux;
     }
 
-    private TreeSet<Ranking> getRanking() {
+    public TreeSet<Ranking> getRanking() {
         TreeSet<Ranking> aux = new TreeSet();
         for (Ranking r : this.ranking) {
             aux.add(r.clone());
         }
         return aux;
 
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public void setDeadline(GregorianCalendar deadline) {
+        this.deadline = deadline;
+    }
+
+    public void setDate(GregorianCalendar date) {
+        this.date = date;
+    }
+
+    public void setDuration(GregorianCalendar duration) {
+        this.duration = duration;
+    }
+
+    public void addUser(User u) {
+        this.participantsList.add(u);
+    }
+
+    public void setMaxParticipants(int max) {
+        this.maxParticipants = max;
     }
 
     //toString ,equals,clone
@@ -160,6 +214,6 @@ public abstract class Event {
     }
 
     @Override
-    public abstract Event clone();
-
+   public abstract Event clone();
+   
 }

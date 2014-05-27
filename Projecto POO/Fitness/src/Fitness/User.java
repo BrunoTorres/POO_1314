@@ -1,8 +1,10 @@
 package Fitness;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
@@ -17,6 +19,7 @@ public class User extends Person
     private TreeSet<String> friendsList;
     private TreeMap<GregorianCalendar,Statistics> stats;
     private TreeMap<String,ListRecords> records;
+    private ArrayList<String> messageFrind;
         
     
     public User(){
@@ -27,7 +30,7 @@ public class User extends Person
         this.userActivities=new TreeSet<Activity>(new CompareActivity());
         this.friendsList=new TreeSet<String>(); 
         this.stats=new TreeMap<GregorianCalendar,Statistics> (new CompareStatsPerYearAndMonth());
-        
+        this.messageFrind=new ArrayList();
     }
     
     public User(String email,String pass,String name,char gender,GregorianCalendar date,
@@ -42,9 +45,10 @@ public class User extends Person
             this.userActivities.add((Activity) act.clone());
         this.friendsList=(TreeSet<String>)friendsList.clone(); 
         this.stats=new TreeMap<GregorianCalendar,Statistics> (new CompareStatsPerYearAndMonth());
+        this.messageFrind=new ArrayList();
     }
-        public User(String email,String pass,String name,char gender,GregorianCalendar date,
-            int height,double weight,String favoriteActivity)
+     public User(String email,String pass,String name,char gender,GregorianCalendar date,
+             int height,double weight,String favoriteActivity)
     {
         super(email,pass,name,gender,date);
         this.height=height;
@@ -53,6 +57,7 @@ public class User extends Person
         this.userActivities=new TreeSet<Activity>(new CompareActivity());
         this.friendsList=new TreeSet<String>();
         this.stats=new TreeMap<GregorianCalendar,Statistics> (new CompareStatsPerYearAndMonth());
+        this.messageFrind=new ArrayList();
     }
        
     public User(User u){
@@ -63,7 +68,7 @@ public class User extends Person
         this.userActivities=(TreeSet<Activity>)u.getActivities();
         this.friendsList=(TreeSet<String>)u.getFriendsList();
         this.stats=(TreeMap)u.getStats();
-              
+        this.messageFrind=(ArrayList)u.getMessage();     
         
     }
     
@@ -96,6 +101,17 @@ public class User extends Person
          
          return aux;
      
+    }
+    public List<String> getMessage(){
+        return this.messageFrind;
+    }
+    
+    public void addFrindToMessage(String email){
+        this.messageFrind.add(email);
+    }
+    
+    public void removeFrindFromMessage(String email){
+        this.messageFrind.remove(email);
     }
     
     public void setHeight(int height){

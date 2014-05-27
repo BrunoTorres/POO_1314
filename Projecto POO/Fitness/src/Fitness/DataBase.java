@@ -1,6 +1,8 @@
 package Fitness;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -8,41 +10,29 @@ public class DataBase
 {
    // private TreeSet<Sport> sportsType;
     private TreeSet<Person>userList;  // admin && users
-    private TreeSet<Event> eventList;
-    
+    private ArrayList<Event> events;
     
     public DataBase(){
        // this.sportsType= new TreeSet<Sport>();
         this.userList= new TreeSet<Person>(new ComparePerson());
-        this.eventList= new TreeSet<Event>();
-    }
-    
-    public DataBase(TreeSet<Person> user,TreeSet<Event> eventList){        
-       // for(Sport s:sports)
-       //     this.sportsType.add(s.clone());
-        for(Person p:user)
-            this.userList.add(p.clone());
-        for(Event e :eventList)
-            this.eventList.add(e.clone());         
+        this.events=new ArrayList();
     }
     
     
     public DataBase(DataBase db){
         //this.sportsType=(TreeSet<Sport>)db.getSportsType();
         this.userList=(TreeSet<Person>)db.getUserList();
-        this.eventList=(TreeSet<Event>)db.getEventList();
+        this.events=new ArrayList();
     }
     
-    
-    /*
-    public Set<Sport> getSportsType(){
-        TreeSet<Sport> aux=new TreeSet<Sport>();
-        for(Sport s:this.sportsType)
-            aux.add(s.clone());
-        return aux;
+  
+    public List<Event> getEvents(){
+        ArrayList<Event> aux=new ArrayList();
+        for(Event e:this.events){
+            aux.add(e.clone());
+        }
+        return aux;        
     }
-    */
-    
     public Set<Person> getUserList(){
         TreeSet<Person> aux = new TreeSet<Person>(new ComparePerson());
         for(Person p : this.userList)
@@ -50,11 +40,6 @@ public class DataBase
         return aux;
     }
     
-    public Set<Event> getEventList(){
-        TreeSet<Event> aux = new TreeSet<Event>();
-        for(Event e: this.eventList)
-            aux.add(e.clone());
-    }
     
     public User getUser(String email){           
         boolean found=false;
@@ -75,17 +60,13 @@ public class DataBase
     }
     
     // to AdminRights
-  /*  
-    public Set<Sport> getSportsTypeAdmin(){
-        return this.sportsType;
-    }
-    */
+  
    public Set<Person> getUserListAdmin(){
        return this.userList;
    }
    
-   public Set<Event> getEventListAdmin(){
-       return this.eventList;
+   public List<Event> getEventListAdmin(){
+       return this.events;
    }
    
    public void addPerson(Person person){
@@ -113,7 +94,7 @@ public class DataBase
        else
        {
            DataBase db=(DataBase)o;
-           return(this.eventList.equals(db.getEventList())
+           return(this.events.equals(db.events)
                    //&& this.sportsType.equals(db.sportsType)
                    && this.userList.equals(db.getUserList()));
                   
@@ -129,7 +110,7 @@ public class DataBase
    public String toString(){
        StringBuilder sb=new StringBuilder();
        sb.append("Event List: ").append("\n");
-       for(Event e: this.eventList)
+       for(Event e: this.events)
            sb.append(e.toString());
        sb.append("Sports Type ").append("\n");
        //for(Sport s: this.getSportsType())

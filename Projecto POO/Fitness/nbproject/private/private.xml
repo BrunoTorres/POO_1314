@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/Person.java</file>
             <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/MenuInicial.java</file>
             <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/SportLixo.java</file>
@@ -21,6 +22,17 @@
             <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/TimePerDistance.java</file>
             <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/Activity.java</file>
             <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/Walking.java</file>
+=======
+            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/FitnessUM.java</file>
+            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/MarathonBTT.java</file>
+            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/Event.java</file>
+            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/User.java</file>
+            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/Halfmarathon.java</file>
+            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/Trail.java</file>
+            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/MenuInicial.java</file>
+            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/Marathon.java</file>
+            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/MountainBiking.java</file>
+>>>>>>> 3a69f0745803ee56f42ba3b7f0f37e2cd77942c8
         </group>
     </open-files>
 </project-private>
