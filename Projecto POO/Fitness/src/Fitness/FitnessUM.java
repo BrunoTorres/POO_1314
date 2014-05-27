@@ -14,7 +14,7 @@ public class FitnessUM {
     private Person p;
     private String actName;
     private GregorianCalendar actDate;
-    private int actTimeSpent;
+    private double actTimeSpent;
 
 
 
@@ -1001,7 +1001,7 @@ public class FitnessUM {
      return flag;
      }
      */
-    public Set<Activity> getLast10Activities(User u) {
+    public Set<Activity> getLast10ActivitiesByActivity(User u) {
         TreeSet<Activity> aux = new TreeSet(new CompareActivity());
         Iterator<Activity> it = u.getActivities().iterator();
         for (int i = 0; i < 10 && it.hasNext(); i++) {
@@ -1009,6 +1009,16 @@ public class FitnessUM {
         }
         return aux;
     }
+    
+      public Set<String> getLast10Activities(User u) {
+        TreeSet<String> aux = new TreeSet();
+        Iterator<Activity> it = u.getActivities().iterator();
+        for (int i = 0; i < 10 && it.hasNext(); i++) {
+            aux.add(it.next().getName());
+        }
+        return aux;
+    }
+    
 
     /////// VE TODAS AS ACTIVIDADES DE TODOS OS AMIGOS ///////////////////////////
     public String FriendToString(TreeSet<User> users) {
