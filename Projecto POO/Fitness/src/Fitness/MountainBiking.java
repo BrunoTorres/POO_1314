@@ -17,6 +17,9 @@ public class MountainBiking extends Outdoor implements Distance, VerticalDistanc
     
     public MountainBiking(){
         super();
+        this.distance=0;
+        this.verticaldistance=0;
+        this.recs= new ListRecords();
     }
 
     public MountainBiking(String name, GregorianCalendar date, double timeSpent,double distance,
@@ -31,6 +34,7 @@ public class MountainBiking extends Outdoor implements Distance, VerticalDistanc
         super(tb);
         this.distance=tb.getDistance();
         this.verticaldistance=tb.getVerticalDistance();
+        this.recs=tb.getListRecords();
     }
 
      @Override
@@ -65,13 +69,13 @@ public class MountainBiking extends Outdoor implements Distance, VerticalDistanc
     }
    
    private ListRecords createRecord() {
-        ListRecords list=new ListRecords("Running");
+        ListRecords list=new ListRecords("Mountain Biking");
         
-        Records recCooper=new DistancePerTime("One hour (km)",60,this.distance,this.getTimeSpent());
-        Records rec10miles=new TimePerDistance("10 miles",16.09344,this.distance,this.getTimeSpent());
-        Records rec3km=new TimePerDistance("20 km",20,this.distance,this.getTimeSpent());
-        Records rec10km=new TimePerDistance("50 km",50,this.distance,this.getTimeSpent());
-        Records rec50miles=new TimePerDistance("50 miles",80.4672,this.distance,this.getTimeSpent());
+        Record recCooper=new DistancePerTime("One hour (km)",60,this.distance,this.getTimeSpent());
+        Record rec10miles=new TimePerDistance("10 miles",16.09344,this.distance,this.getTimeSpent());
+        Record rec3km=new TimePerDistance("20 km",20,this.distance,this.getTimeSpent());
+        Record rec10km=new TimePerDistance("50 km",50,this.distance,this.getTimeSpent());
+        Record rec50miles=new TimePerDistance("50 miles",80.4672,this.distance,this.getTimeSpent());
        
         list.addRecord(recCooper);
         list.addRecord(rec10miles);

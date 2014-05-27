@@ -3,3 +3,5 @@
 *.obj
 *.xml
 *.form
+/Projecto POO/Fitness/nbproject/private/
+/Projecto POO/Fitness/build/

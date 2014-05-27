@@ -14,7 +14,7 @@ public class DataBase
     
     public DataBase(){
        // this.sportsType= new TreeSet<Sport>();
-        this.userList= new TreeSet<Person>(new ComparePerson());
+        this.userList= new TreeSet<Person>(new ComparePersonByName());
         this.events=new ArrayList();
     }
     
@@ -34,7 +34,7 @@ public class DataBase
         return aux;        
     }
     public Set<Person> getUserList(){
-        TreeSet<Person> aux = new TreeSet<Person>(new ComparePerson());
+        TreeSet<Person> aux = new TreeSet<Person>(new ComparePersonByName());
         for(Person p : this.userList)
             aux.add(p.clone());
         return aux;

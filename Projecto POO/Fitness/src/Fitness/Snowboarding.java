@@ -4,20 +4,20 @@ import java.util.GregorianCalendar;
 
 
 /**
- * Write a description of class Snowbording here.
+ * Write a description of class Snowboarding here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Snowbording extends Outdoor  implements Distance,VerticalDistance
+public class Snowboarding extends Outdoor  implements Distance,VerticalDistance
 {
     private double distance;
     private double verticaldistance;
 
-    public Snowbording(){
+    public Snowboarding(){
         super();
     }
-    public Snowbording(String name, GregorianCalendar date, double timeSpent,double distance,
+    public Snowboarding(String name, GregorianCalendar date, double timeSpent,double distance,
             double verticaldistance,String weather){
         super(name,date,timeSpent,weather);
         this.distance=distance;
@@ -25,7 +25,7 @@ public class Snowbording extends Outdoor  implements Distance,VerticalDistance
         
         
     }
-    public Snowbording(Snowbording tb){
+    public Snowboarding(Snowboarding tb){
         super(tb);
         this.distance=tb.getDistance();
         this.verticaldistance=tb.getVerticalDistance();
@@ -78,7 +78,7 @@ public class Snowbording extends Outdoor  implements Distance,VerticalDistance
             return true;
         if(a == null || this.getClass() != a.getClass())
             return false;
-        Snowbording act = (Snowbording) a;
+        Snowboarding act = (Snowboarding) a;
         return  ( super.equals(act)
                 && this.distance==act.getDistance()
                 && this.verticaldistance==act.getVerticalDistance());
@@ -86,8 +86,8 @@ public class Snowbording extends Outdoor  implements Distance,VerticalDistance
     }
 
     @Override
-     public Snowbording clone(){
-        return new Snowbording(this);
+     public Snowboarding clone(){
+        return new Snowboarding(this);
     }
 
 }

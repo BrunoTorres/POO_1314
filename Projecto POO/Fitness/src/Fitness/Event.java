@@ -15,7 +15,7 @@ public abstract class Event {
     private GregorianCalendar date;
     private GregorianCalendar duration;
     private TreeSet<User> participantsList;
-    private TreeSet<Ranking> ranking;
+    private TreeSet<Activity> ranking;
 
     public Event() {
         this.name = "";
@@ -30,24 +30,20 @@ public abstract class Event {
 
     }
 
-    public Event(String name, String tipoActivity, String location, int maxParticipants, int participants, GregorianCalendar deadline, GregorianCalendar date,
-            GregorianCalendar duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking) {
-
+    public Event(String name, String tipoActivity, String location, int maxParticipants, int participants, GregorianCalendar deadline, GregorianCalendar date, GregorianCalendar duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking) {
         this.name = name;
         this.tipoActivity = tipoActivity;
         this.location = location;
         this.maxParticipants = maxParticipants;
         this.participants = participants;
-        this.deadline = deadline;
-        this.duration = duration;
-        this.participantsList = participantsList;
-        this.ranking = ranking;
+        this.deadline = deadline.clone();
+        this.duration = duration.clone();
+        this.participantsList = new TreeSet<User>(new ComparePersonByName()); this.participantsList.addAll(participantsList);
+        this.ranking = new TreeSet<Activity>(new CompareactivityByTime()); this.ranking.addAll(ranking);
 
     }
 
-    public Event(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date,
-            GregorianCalendar duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking) {
-
+    public Event(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date, GregorianCalendar duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking) {
         this.name = name;
         this.tipoActivity = tipoActivity;
         this.location = location;
@@ -55,14 +51,12 @@ public abstract class Event {
         this.deadline = deadline;
         this.duration = duration;
         this.participantsList = participantsList;
-        this.ranking = ranking;
-        this.participants = participantsList.size();
-
+        this.participantsList = new TreeSet<User>(new ComparePersonByName()); this.participantsList.addAll(participantsList);
+        this.ranking = new TreeSet<Activity>(new CompareactivityByTime()); this.ranking.addAll(ranking);
     }
 
     public Event(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date,
             GregorianCalendar duration) {
-
         this.name = name;
         this.tipoActivity = tipoActivity;
         this.location = location;
@@ -76,7 +70,6 @@ public abstract class Event {
     }
 
     public Event(Event e) {
-
         this.name = e.getName();
         this.tipoActivity = e.getTipoActivity();
         this.location = e.getLocation();
@@ -86,7 +79,6 @@ public abstract class Event {
         this.duration = e.getDuration();
         this.participantsList = e.getParticipantsList();
         this.ranking = e.getRanking();
-
     }
 
     public String getName() {
@@ -161,7 +153,6 @@ public abstract class Event {
     //toString ,equals,clone
     public String toString() {
         StringBuilder sb = new StringBuilder();
-
         sb.append("Nome do evento : ").append(this.name).append("\n");
         sb.append("Tipo do evendo : ").append(this.tipoActivity).append("\n");
         sb.append("Localização do evendo : ").append(this.location).append("\n");
@@ -179,16 +170,13 @@ public abstract class Event {
         sb.append(this.duration.get(Calendar.HOUR)).append(" / ");;
         sb.append(this.duration.get(Calendar.MINUTE)).append(" / ");
         sb.append(this.duration.get(Calendar.SECOND)).append("\n");
-
         for (User u : this.participantsList) {
             sb.append(u.getName()).append("\n");
         }
         for (Ranking r : this.ranking) {
             sb.append(r.toString());
         }
-
         return sb.toString();
-
     }
 
     public boolean equals(Object o) {
@@ -208,12 +196,10 @@ public abstract class Event {
                     && this.duration.equals(e.getDuration())
                     && this.participantsList.equals(e.getParticipantsList())
                     && this.ranking.equals(this.getRanking()));
-
         }
-
     }
 
     @Override
-   public abstract Event clone();
+    public abstract Event clone();
    
 }

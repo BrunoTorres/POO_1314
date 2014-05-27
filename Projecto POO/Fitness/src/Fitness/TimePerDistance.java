@@ -1,7 +1,7 @@
 package Fitness;
 
 
-public final class TimePerDistance extends Records {
+public final class TimePerDistance extends Record {
 
 
     private double recordDistance;
@@ -46,7 +46,7 @@ public final class TimePerDistance extends Records {
         }
     }
 
-    public void update(Records act) {
+    public void update(Record act) {
         TimePerDistance a = (TimePerDistance) act;
         if (this.time < a.getTime()) {
             this.time = a.getTime();
@@ -58,10 +58,8 @@ public final class TimePerDistance extends Records {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(super.toString());
-        sb.append("Distancia: ");
-        sb.append(this.recordDistance).append("\n");
         sb.append("Tempo registado: ");
-        sb.append(this.time).append("\n");
+        sb.append(this.time).append(" minutos\n");
         return sb.toString();
     }
 

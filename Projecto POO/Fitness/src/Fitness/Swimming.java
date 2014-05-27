@@ -16,6 +16,8 @@ public class Swimming extends Indoor implements Distance, RecordsActivity
 
     public Swimming(){
         super();
+        this.distance=0;
+        this.recs=new ListRecords();
     }
     public Swimming(String name, GregorianCalendar date, double timeSpent,double distance){
         super(name,date,timeSpent);
@@ -26,6 +28,7 @@ public class Swimming extends Indoor implements Distance, RecordsActivity
     public Swimming(Swimming tb){
         super(tb);
         this.distance=tb.getDistance();
+        this.recs=tb.getListRecords();
         
     }
      @Override
@@ -47,11 +50,11 @@ public class Swimming extends Indoor implements Distance, RecordsActivity
     private ListRecords createRecord() {
             ListRecords list=new ListRecords("Running");
             
-            Records rec50m = new TimePerDistance("50 m",50,this.distance,this.getTimeSpent());
-            Records rec100m = new TimePerDistance("100 m",100,this.distance,this.getTimeSpent());
-            Records rec200m = new TimePerDistance("200 m",200,this.distance,this.getTimeSpent());
-            Records rec400m = new TimePerDistance("400 m",400,this.distance,this.getTimeSpent());
-            Records rec1500m = new TimePerDistance("1500 m",1500,this.distance,this.getTimeSpent());
+            Record rec50m = new TimePerDistance("50 m",50,this.distance,this.getTimeSpent());
+            Record rec100m = new TimePerDistance("100 m",100,this.distance,this.getTimeSpent());
+            Record rec200m = new TimePerDistance("200 m",200,this.distance,this.getTimeSpent());
+            Record rec400m = new TimePerDistance("400 m",400,this.distance,this.getTimeSpent());
+            Record rec1500m = new TimePerDistance("1500 m",1500,this.distance,this.getTimeSpent());
             
             list.addRecord(rec50m);
             list.addRecord(rec100m);

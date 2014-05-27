@@ -13,18 +13,25 @@ public class Cycling extends Outdoor implements Distance, RecordsActivity
 {
     private double distance;
     private ListRecords recs;
+    
+    
     public Cycling(){
         super();
+        this.distance=0;
+        this.recs=new ListRecords();
     }
     public Cycling(String name, GregorianCalendar date, double timeSpent,double distance,String weather){
         super(name,date,timeSpent,weather);
         this.distance=distance;
         this.createRecord();
+        this.recs = createRecord();
+        
         
     }
     public Cycling(Cycling tb){
         super(tb);
         this.distance=tb.getDistance();
+        this.recs=tb.getListRecords();
         
     }
      @Override
@@ -48,13 +55,13 @@ public class Cycling extends Outdoor implements Distance, RecordsActivity
     }
    
     private ListRecords createRecord() {
-        ListRecords list=new ListRecords("Running");
+        ListRecords list=new ListRecords("Cycling");
         
-        Records recCooper=new DistancePerTime("One hour (km)",60,this.distance,this.getTimeSpent());
-        Records rec10miles=new TimePerDistance("10 miles",16.09344,this.distance,this.getTimeSpent());
-        Records rec3km=new TimePerDistance("20 km",20,this.distance,this.getTimeSpent());
-        Records rec10km=new TimePerDistance("50 km",50,this.distance,this.getTimeSpent());
-        Records rec50miles=new TimePerDistance("50 miles",80.4672,this.distance,this.getTimeSpent());
+        Record recCooper=new DistancePerTime("One hour (km)",60,this.distance,this.getTimeSpent());
+        Record rec10miles=new TimePerDistance("10 miles",16.09344,this.distance,this.getTimeSpent());
+        Record rec3km=new TimePerDistance("20 km",20,this.distance,this.getTimeSpent());
+        Record rec10km=new TimePerDistance("50 km",50,this.distance,this.getTimeSpent());
+        Record rec50miles=new TimePerDistance("50 miles",80.4672,this.distance,this.getTimeSpent());
        
         list.addRecord(recCooper);
         list.addRecord(rec10miles);
