@@ -72,24 +72,47 @@ public class Main {
         um.addUser("novo@gmail.com","1111","Novo",'M',date,12,14,"fugir");
         System.out.println(db.toString());
         */
-       User u=um.getUserByEmail("user1@gmail.com");
-       Activity act=um.createActivity("Cycling");
-       Activity act2=um.createActivity("Running");
        
+       //ADICIONAR ACTIVITIES A UM USER
+       User u=um.getUserByEmail("user1@gmail.com");
+      // Activity act=um.createActivity("Cycling");
+       //Activity act2=um.createActivity("Running");
+       GregorianCalendar date1=new GregorianCalendar(2000,11,2);
+       GregorianCalendar date2= new GregorianCalendar(2001,9,3);
+       GregorianCalendar date3= new GregorianCalendar(2002,10,4);
+       
+        Activity act = new MountainBiking("bike", date1, 155, 20, 5, "chuva");
+        Activity act1 = new Cycling("cy", date2, 155, 20, "chuva");
+        Activity act2 = new Running("run", date3, 155, 20, "chuva");
        
        //Activity act3=um.createActivity("Swimming");       
-       u.addActivity(act, "Cycling");
+       u.addActivity(act, "MountainBiking");
+       u.addActivity(act1, "Cycling");
        u.addActivity(act2, "Running");
-      // u.addActivity(act3, "Swimming");
        
-       User amigo=um.getUserByEmail("user2@gmail.com");
        
-       TreeSet activi=(TreeSet)um.getLast10Activities(u);///////////////MAL!!!!
-       System.out.println(activi.toString()); 
-       //u.addFrindToMessage(null);
+      // TreeSet activi=(TreeSet)um.getLast10Activities(u);
+      //System.out.println(activi.toString()); 
+      
+       /////////////////////////////////////////////
+       //AMIGOS//
+       User amigo=um.getUserByEmail("user3@gmail.com");
+       //System.out.println(amigo.toString());
+       um.sendFriendRequest(u,amigo);
+       if(um.existsFriendToAdd(u)){
+          // System.out.println("sim existe \n");
+           um.acceptFriend(u,"user3@gmail.com");
+       }
+       //System.out.println(u.getFriendsList().toString());
+       
+       //Para ver actividades do amigo= list amigos getUserbyEmail depois getLast10activity do user e print
+       
+       System.out.println(um.getLast10Activities(u).toString());
+
+       
       
        //System.out.println(um.getUserByEmail("cois@gmail.com").toString());
-      System.out.println( act.toString());
+      //System.out.println( act.toString());
     }
     
 }
