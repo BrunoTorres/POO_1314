@@ -38,8 +38,10 @@ public abstract class Event {
         this.participants = participants;
         this.deadline = deadline.clone();
         this.duration = duration.clone();
-        this.participantsList = new TreeSet<User>(new ComparePersonByName()); this.participantsList.addAll(participantsList);
-        this.ranking = new TreeSet<Activity>(new CompareactivityByTime()); this.ranking.addAll(ranking);
+        this.participantsList = new TreeSet<User>(new ComparePersonByName()); 
+        this.participantsList.addAll(participantsList);
+        this.ranking = new TreeSet<Activity>(new CompareactivityByTime()); 
+        this.ranking.addAll(ranking);
 
     }
 
@@ -51,8 +53,10 @@ public abstract class Event {
         this.deadline = deadline;
         this.duration = duration;
         this.participantsList = participantsList;
-        this.participantsList = new TreeSet<User>(new ComparePersonByName()); this.participantsList.addAll(participantsList);
-        this.ranking = new TreeSet<Activity>(new CompareactivityByTime()); this.ranking.addAll(ranking);
+        this.participantsList = new TreeSet<User>(new ComparePersonByName()); 
+        this.participantsList.addAll(participantsList);
+        this.ranking = new TreeSet<Activity>(new CompareactivityByTime());
+        this.ranking.addAll(ranking);
     }
 
     public Event(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date,

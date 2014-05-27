@@ -93,7 +93,7 @@ public class Main {
        u.addActivity(act, "Running");
        u.addActivity(act1, "Running");
        u.addActivity(act2, "Running");
-	   u.addActivity(actcy, "Cycling");
+      u.addActivity(actcy, "Cycling");
        
        
       // TreeSet activi=(TreeSet)um.getLast10Activities(u);

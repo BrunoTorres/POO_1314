@@ -52,7 +52,6 @@ public final class DistancePerTime extends Record{
             div = this.recordTime / time;
             div = div * distance;
         }
-		System.out.println("DIV: " + div + "\n");
         return div;
     }
 

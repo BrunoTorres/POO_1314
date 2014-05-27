@@ -13,7 +13,7 @@ public class Halfmarathon extends Event {
 
     public Halfmarathon() {
         super();
-        this.distance = 0;
+        //this.distance = 0;
     }
 
     public Halfmarathon(String name, String tipoActivity, String location, int maxParticipants, int participants, GregorianCalendar deadline, GregorianCalendar date, GregorianCalendar duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking) {

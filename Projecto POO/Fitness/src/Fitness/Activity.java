@@ -69,7 +69,7 @@ public abstract class Activity {
 
     /**
     * @return the activityRecords
-    */
+
     public ArrayList <Record> getPerformance() {
         ArrayList<Record> aux = new ArrayList();
         for (Record rec : this.performance)
@@ -81,7 +81,7 @@ public abstract class Activity {
         return this.performance;
     }
 
-
+*/
     public void setName(String name) {
         this.name = name;
     }

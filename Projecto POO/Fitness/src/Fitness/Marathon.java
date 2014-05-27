@@ -16,7 +16,7 @@ import java.util.TreeSet;
 public class Marathon extends Event{
 
     private final double distance = 42.195;
-    private A
+   
   
     public Marathon() {
         super();
