@@ -40,7 +40,7 @@ public final class DistancePerTime extends Records{
 
     public void update(Records act){
         DistancePerTime a=(DistancePerTime)act;
-        if (this.distance > a.distance)
+        if (this.distance < a.distance)
             this.distance=a.getDistance();
 
         
@@ -52,6 +52,7 @@ public final class DistancePerTime extends Records{
             div = this.recordTime / time;
             div = div * distance;
         }
+		System.out.println("DIV: " + div + "\n");
         return div;
     }
 

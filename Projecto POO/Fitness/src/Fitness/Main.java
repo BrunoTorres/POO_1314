@@ -86,7 +86,7 @@ public class Main {
         Activity act2 = new Running("run", date3, 155, 20, "chuva");
        */
         Activity act = new Running("run", date3, 100, 100, "chuva");
-        Activity act1 = new Running("run", date3, 10, 50, "chuva");
+        Activity act1 = new Running("run", date3, 11, 50, "chuva");
         Activity act2 = new Running("run", date3, 155, 20, "chuva");
        //Activity act3=um.createActivity("Swimming");       
        u.addActivity(act, "Running");
