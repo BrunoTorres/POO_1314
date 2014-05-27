@@ -117,9 +117,16 @@ public class Main {
        
        //Para ver actividades do amigo= list amigos getUserbyEmail depois getLast10activity do user e print
        
-       System.out.println(um.getLast10Activities(u).toString());
-      System.out.println(u.getOneActivity("bike").toString());
+      // System.out.println(um.getLast10Activities(u).toString());
+      //System.out.println(u.getOneActivity("bike").toString());
       
+      
+      for(Statistics s :u.getStats().values()){
+         System.out.println(s.toStringDistance());
+         System.out.println(s.toStringCalories());
+         System.out.println(s.toStringTimeSpend()); 
+         
+      }
        //System.out.println(um.getUserByEmail("cois@gmail.com").toString());
       //System.out.println( act.toString());
     }

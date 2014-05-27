@@ -49,10 +49,11 @@ public class Running extends Outdoor implements Distance, RecordsActivity {
     }
 
     @Override
-    public void setCalories(double peso) {
+    public void setCalories(double peso) {        
         double mets = 7;
         double calories = mets * peso * this.getTimeSpent();
         this.setActivityCalories(calories);
+       
     }
 
     private ListRecords createRecord() {
