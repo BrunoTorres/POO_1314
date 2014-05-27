@@ -67,11 +67,12 @@ public class Main {
 
         /*
         System.out.println("Pesquisar user");
-        System.out.println(um.getUserByEmail("cois@gmail.com").toString());
-        
+       System.out.println(um.getUserByEmail("cois@gmail.com").toString());
+         */
         um.addUser("novo@gmail.com","1111","Novo",'M',date,12,14,"fugir");
-        System.out.println(db.toString());
-        */
+       System.out.println(um.getUserByEmail("user1@gmail.com").toString());
+        //System.out.println(db.toString());
+       
        
        //ADICIONAR ACTIVITIES A UM USER
        User u=um.getUserByEmail("user1@gmail.com");
@@ -98,7 +99,7 @@ public class Main {
       u.addActivity(actcy, "Cycling");
       u.addActivity(actc, "Cycling");
        
-       
+      
       // TreeSet activi=(TreeSet)um.getLast10Activities(u);
       //System.out.println(activi.toString()); 
       
