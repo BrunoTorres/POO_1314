@@ -38,9 +38,7 @@ public class Main {
        um.addUser("user3@gmail.com","1122","Manel",'F',date,11,15,"FAzer nada");
        um.addUser("user4@gmail.com","3322","Raul",'M',date,10,13,"Fazer NADa");
        um.addAdmin("user4222@gmail.com","3322","Joselinaa",'M',date);
-  
-         
-     
+
         /*
         if(um.isAdmin("cois1@gmail.com"))
           System.out.println("E SIM"); 

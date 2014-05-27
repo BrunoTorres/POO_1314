@@ -563,7 +563,7 @@ public class FitnessUM {
 
     public boolean addUser(String email, String pass, String name, char gender, GregorianCalendar date,
             int height, double weight, String favoriteActivity) {
-        boolean flag = false;
+        boolean flag;
         User u = new User(email, pass, name, gender, date, height, weight, favoriteActivity);
         flag = this.userList.add(u);
 
@@ -572,7 +572,7 @@ public class FitnessUM {
     }
 
     public boolean addAdmin(String email, String pass, String name, char gender, GregorianCalendar date) {
-        boolean flag = false;
+        boolean flag;
         Admin admin = new Admin(email, pass, name, gender, date);
         flag = this.userList.add(admin);
 
@@ -1097,9 +1097,9 @@ public class FitnessUM {
             boolean found = false;
             Iterator<Person> it = dbUsers.iterator();
             while (it.hasNext() && !found) {
-                Person p = it.next();
-                if (p.getName().equals(s)) {
-                    users.add((User) p);
+                Person per = it.next();
+                if (per.getName().equals(s)) {
+                    users.add((User) per);
                 }
             }
 
