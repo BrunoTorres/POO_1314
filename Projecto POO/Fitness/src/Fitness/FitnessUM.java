@@ -214,10 +214,9 @@ public class FitnessUM {
         input.close();
         switch (i) {
             case 1:
-                TreeSet<Activity> act = (TreeSet<Activity>) getLast10Activities((User) this.p);
-                for (Activity a : act) {
-                    System.out.println(a.toString());
-                }
+                TreeSet<String> act = (TreeSet<String>) getLast10Activities((User) this.p);               
+                    System.out.println(act.toString());
+                
                 break;
             case 2:
                 criaActividade(registarActividade());
@@ -683,7 +682,7 @@ public class FitnessUM {
         String weather = input.next();
         System.out.println("Distancia:");
         double distance = input.nextInt();
-        Cycling aux = new Cycling(this.actName, this.actDate, this,actTimeSpent, distance, weather);
+        Cycling aux = new Cycling(this.actName, this.actDate, this.actTimeSpent, distance, weather);
 
         return aux;
     }
@@ -747,7 +746,6 @@ public class FitnessUM {
         String weather = input.next();
         System.out.println("Distancia:");
         double distance = input.nextInt();
-        GregorianCalendar date = new GregorianCalendar(ano, mes, dia);
         Skating aux = new Skating(this.actName, this.actDate, this.actTimeSpent, distance, weather);
 
         return aux;
