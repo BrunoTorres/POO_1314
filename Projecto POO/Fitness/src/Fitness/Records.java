@@ -32,7 +32,7 @@ public abstract class Records {
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
-        sb.append("Name: ");sb.append(this.name).append("\n");
+        sb.append("Nome: ");sb.append(this.name).append("\n");
         return sb.toString();      
     }
     

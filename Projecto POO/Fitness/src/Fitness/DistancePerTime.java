@@ -16,7 +16,7 @@ public final class DistancePerTime extends Records
 	public DistancePerTime(String name, double recordTime,double distance,double time){
 		super(name);
 		this.recordTime = recordTime;
-        this.setStatistic(time, distance);     
+        this.distance=this.setStatistic(time, distance);     
         
         
         
@@ -49,20 +49,20 @@ public final class DistancePerTime extends Records
         
             
     }
-	public void setStatistic(double time, double distance){
-		double div;
+	public double setStatistic(double time, double distance){
+		double div=0;
 		if(!(time < this.recordTime)) {
 			div = this.recordTime / time;
-			this.distance = div * distance;
+			div= div * distance;
 		}
+        return div;
 	}
 	
 	@Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
         sb.append(super.toString());
-        sb.append("Tempo: ");sb.append(this.recordTime).append("\n");
-        sb.append("Distancia registada: ");sb.append(this.distance).append("\n");
+        sb.append("Distancia registada: ");sb.append(this.distance).append(" metros \n");
         return sb.toString();      
     }
     

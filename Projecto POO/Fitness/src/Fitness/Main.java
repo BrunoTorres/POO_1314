@@ -80,14 +80,17 @@ public class Main {
        GregorianCalendar date1=new GregorianCalendar(2000,11,2);
        GregorianCalendar date2= new GregorianCalendar(2001,9,3);
        GregorianCalendar date3= new GregorianCalendar(2002,10,4);
-       
+       /*
         Activity act = new MountainBiking("bike", date1, 155, 20, 5, "chuva");
         Activity act1 = new Cycling("cy", date2, 155, 20, "chuva");
         Activity act2 = new Running("run", date3, 155, 20, "chuva");
-       
+       */
+        Activity act = new Running("run", date3, 100, 100000, "chuva");
+        Activity act1 = new Running("run", date3, 10, 50000, "chuva");
+        Activity act2 = new Running("run", date3, 155, 20000, "chuva");
        //Activity act3=um.createActivity("Swimming");       
-       u.addActivity(act, "MountainBiking");
-       u.addActivity(act1, "Cycling");
+       u.addActivity(act, "Running");
+       u.addActivity(act1, "Running");
        u.addActivity(act2, "Running");
        
        
@@ -103,6 +106,8 @@ public class Main {
           // System.out.println("sim existe \n");
            um.acceptFriend(u,"user3@gmail.com");
        }
+       for(String s :u.getRecords().keySet())
+       System.out.println(u.getRecords().get(s).toString());
        //System.out.println(u.getFriendsList().toString());
        
        //Para ver actividades do amigo= list amigos getUserbyEmail depois getLast10activity do user e print
@@ -110,15 +115,21 @@ public class Main {
       // System.out.println(um.getLast10Activities(u).toString());
       //System.out.println(u.getOneActivity("bike").toString());
       
-      
+      /*
       for(Statistics s :u.getStats().values()){
          System.out.println(s.toStringDistance());
          System.out.println(s.toStringCalories());
          System.out.println(s.toStringTimeSpend()); 
          
       }
+              */
        //System.out.println(um.getUserByEmail("cois@gmail.com").toString());
       //System.out.println( act.toString());
+      
+      //  um.searchStatisticsMONTH(u, 1, 11, 2000);
+        
     }
     
+    
+  
 }

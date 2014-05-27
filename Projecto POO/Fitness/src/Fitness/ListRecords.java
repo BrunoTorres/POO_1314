@@ -74,7 +74,7 @@ public ListRecords(ListRecords list){
     
     public String toString(){
         StringBuilder sb=new StringBuilder();
-        sb.append("Nome: ").append(this.name).append("\n");
+        sb.append("Nome do tipo da actividade: ").append(this.name).append("\n");
         for(Records r:this.recs)
             sb.append((r.toString()));
         

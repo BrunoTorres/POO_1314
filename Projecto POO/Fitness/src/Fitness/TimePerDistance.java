@@ -58,10 +58,8 @@ public final class TimePerDistance extends Records {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(super.toString());
-        sb.append("Distancia: ");
-        sb.append(this.recordDistance).append("\n");
         sb.append("Tempo registado: ");
-        sb.append(this.time).append("\n");
+        sb.append(this.time).append(" minutos\n");
         return sb.toString();
     }
 
