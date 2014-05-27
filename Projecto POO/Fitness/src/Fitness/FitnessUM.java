@@ -627,9 +627,9 @@ public class FitnessUM {
         mes--;
         System.out.println("Ano:");
         int ano = input.nextInt();
-        GregorianCalendar this.actDate = new GregorianCalendar(ano, mes, dia);
+        this.actDate = new GregorianCalendar(ano, mes, dia);
         System.out.println("Tempo despendido:");
-        int this.actTimeSpent = input.nextInt();
+        this.actTimeSpent = input.nextInt();
     }
 
     public Snowbording TypeToSnowbording() {
@@ -1116,14 +1116,9 @@ public class FitnessUM {
                     if (aux.getName().equals(name)) {
                         found = true;
                         u.getUserActivitiesAdmin().remove(aux);
-
                     }
-
                 }
-
             }
         }
-
     }
-
 }
