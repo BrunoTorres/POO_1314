@@ -50,7 +50,7 @@ public final class DistancePerTime extends Records{
         double div=0;
         if(!(time < this.recordTime)) {
             div = this.recordTime / time;
-            div= div * distance;
+            div = div * distance;
         }
         return div;
     }
@@ -59,7 +59,7 @@ public final class DistancePerTime extends Records{
     public String toString(){
         StringBuilder sb = new StringBuilder();
         sb.append(super.toString());
-        sb.append("Distancia registada: ");sb.append(this.distance).append(" metros \n");
+        sb.append("Distancia registada: ");sb.append(this.distance).append(" km \n");
         return sb.toString();      
     }
 
