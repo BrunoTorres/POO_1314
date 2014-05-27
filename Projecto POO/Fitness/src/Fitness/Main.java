@@ -91,7 +91,7 @@ public class Main {
         Activity act2 = new Running("run", date3, 155, 20, "chuva");
        //Activity act3=um.createActivity("Swimming");   
         Activity actcy = new Cycling("cy", date2, 120, 20, "chuva");
-        Activity actc = new Cycling("cyy", date2, 50,100, "chuva");  //RECORD ESTA MAL onde hour km
+        Activity actc = new Cycling("cyy", date2, 60,100, "chuva"); 
        u.addActivity(act, "Running");
        u.addActivity(act1, "Running");
        u.addActivity(act2, "Running");
