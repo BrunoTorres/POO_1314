@@ -36,12 +36,12 @@ public abstract class Event {
         this.location = location;
         this.maxParticipants = maxParticipants;
         this.participants = participants;
-        this.deadline = deadline.clone();
-        this.duration = duration.clone();
+        this.deadline = (GregorianCalendar)deadline.clone();
+        this.duration = (GregorianCalendar)duration.clone();
         this.participantsList = new TreeSet<User>(new ComparePersonByName()); 
         this.participantsList.addAll(participantsList);
-        this.ranking = new TreeSet<Activity>(new CompareactivityByTime()); 
-        this.ranking.addAll(ranking);
+       // this.ranking = new TreeSet<Activity>(new CompareactivityByTime()); 
+      //  this.ranking.addAll(ranking);
 
     }
 
@@ -55,8 +55,8 @@ public abstract class Event {
         this.participantsList = participantsList;
         this.participantsList = new TreeSet<User>(new ComparePersonByName()); 
         this.participantsList.addAll(participantsList);
-        this.ranking = new TreeSet<Activity>(new CompareactivityByTime());
-        this.ranking.addAll(ranking);
+       // this.ranking = new TreeSet<Activity>(new CompareactivityByTime());
+       // this.ranking.addAll(ranking);
     }
 
     public Event(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date,
@@ -82,7 +82,7 @@ public abstract class Event {
         this.deadline = e.getDeadline();
         this.duration = e.getDuration();
         this.participantsList = e.getParticipantsList();
-        this.ranking = e.getRanking();
+        //this.ranking = e.getRanking();
     }
 
     public String getName() {
@@ -120,7 +120,7 @@ public abstract class Event {
         }
         return aux;
     }
-
+/*
     public TreeSet<Ranking> getRanking() {
         TreeSet<Ranking> aux = new TreeSet();
         for (Ranking r : this.ranking) {
@@ -129,7 +129,7 @@ public abstract class Event {
         return aux;
 
     }
-
+*/
     public void setLocation(String location) {
         this.location = location;
     }
@@ -177,9 +177,9 @@ public abstract class Event {
         for (User u : this.participantsList) {
             sb.append(u.getName()).append("\n");
         }
-        for (Ranking r : this.ranking) {
-            sb.append(r.toString());
-        }
+       // for (Ranking r : this.ranking) {
+       //     sb.append(r.toString());
+       // }
         return sb.toString();
     }
 
@@ -199,7 +199,7 @@ public abstract class Event {
                     && this.deadline.equals(e.getDeadline())
                     && this.duration.equals(e.getDuration())
                     && this.participantsList.equals(e.getParticipantsList())
-                    && this.ranking.equals(this.getRanking()));
+                   /* && this.ranking.equals(this.getRanking())*/);
         }
     }
 
