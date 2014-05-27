@@ -31,6 +31,7 @@ public class User extends Person
         this.friendsList=new TreeSet<String>(); 
         this.stats=new TreeMap<GregorianCalendar,Statistics> (new CompareStatsPerYearAndMonth());
         this.messageFrind=new ArrayList();
+        this.records=new TreeMap();
     }
     
     public User(String email,String pass,String name,char gender,GregorianCalendar date,
@@ -46,6 +47,7 @@ public class User extends Person
         this.friendsList=(TreeSet<String>)friendsList.clone(); 
         this.stats=new TreeMap<GregorianCalendar,Statistics> (new CompareStatsPerYearAndMonth());
         this.messageFrind=new ArrayList();
+        this.records=new TreeMap();
     }
      public User(String email,String pass,String name,char gender,GregorianCalendar date,
              int height,double weight,String favoriteActivity)
@@ -58,6 +60,7 @@ public class User extends Person
         this.friendsList=new TreeSet<String>();
         this.stats=new TreeMap<GregorianCalendar,Statistics> (new CompareStatsPerYearAndMonth());
         this.messageFrind=new ArrayList();
+        this.records=new TreeMap();
     }
        
     public User(User u){
@@ -68,9 +71,18 @@ public class User extends Person
         this.userActivities=(TreeSet<Activity>)u.getActivities();
         this.friendsList=(TreeSet<String>)u.getFriendsList();
         this.stats=(TreeMap)u.getStats();
-        this.messageFrind=(ArrayList)u.getMessage();     
+        this.messageFrind=(ArrayList)u.getMessage();  
+        this.records=(TreeMap)u.getRecords();
         
     }
+    public Map<String,ListRecords> getRecords(){
+        TreeMap<String,ListRecords> aux=new TreeMap();
+        
+        for(String s : this.records.keySet())
+            aux.put(s, this.records.get(s));
+        return aux;
+    }
+    
     
     public int getHeight(){
         return this.height;
@@ -188,8 +200,8 @@ public class User extends Person
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public boolean addActivity(Activity act,String tipoActividade){
             setStats(act);
-            if((act instanceof Running) || (act instanceof Walking) ||(act instanceof Running)
-                    || (act instanceof Cycling) || (act instanceof MountainBiking) || (act instanceof Swimming))
+            if((act instanceof Running) || (act instanceof Walking) ||
+                    (act instanceof Cycling) || (act instanceof MountainBiking) || (act instanceof Swimming))
                 updateRecords(tipoActividade,act);            
             act.setCalories(this.weight);
        return this.userActivities.add(act);

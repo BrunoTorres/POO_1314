@@ -29,6 +29,7 @@ public class Walking extends Outdoor implements Distance, RecordsActivity
     public Walking(Walking tb){
         super(tb);
         this.distance=tb.getDistance();
+        this.recs=tb.getListRecords();
         
     }
      @Override

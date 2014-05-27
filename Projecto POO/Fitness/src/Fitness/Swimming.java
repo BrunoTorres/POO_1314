@@ -16,6 +16,8 @@ public class Swimming extends Indoor implements Distance, RecordsActivity
 
     public Swimming(){
         super();
+        this.distance=0;
+        this.recs=new ListRecords();
     }
     public Swimming(String name, GregorianCalendar date, double timeSpent,double distance){
         super(name,date,timeSpent);
@@ -26,6 +28,7 @@ public class Swimming extends Indoor implements Distance, RecordsActivity
     public Swimming(Swimming tb){
         super(tb);
         this.distance=tb.getDistance();
+        this.recs=tb.getListRecords();
         
     }
      @Override

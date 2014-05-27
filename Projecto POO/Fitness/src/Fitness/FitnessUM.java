@@ -44,6 +44,10 @@ public class FitnessUM {
         
      */
     //////////EVENTS////////////////////////////////////////////
+    /*
+    public void addEvent(){
+        Systeam.out.println("Qual o tipo")
+    }*/
     public Event getEventByName(String name) {       // VER MELHOR!! SE NAO HOUVER O EVENTO RETORNAR O QUE?!
         Event event = new Trail();
         for (Event e : this.db.getEvents()) {
@@ -696,6 +700,7 @@ public class FitnessUM {
         String weather = input.next();
         System.out.println("Distancia:");
         double distance = input.nextInt();
+        mes-=1;
         GregorianCalendar date = new GregorianCalendar(ano, mes, dia);
         Cycling aux = new Cycling(name, date, timeSpent, distance, weather);
 
@@ -833,6 +838,7 @@ public class FitnessUM {
         String weather = input.next();
         System.out.println("Distancia:");
         double distance = input.nextInt();
+        mes-=1;
         GregorianCalendar date = new GregorianCalendar(ano, mes, dia);
         Running aux = new Running(name, date, timeSpent, distance, weather);
 
@@ -1120,7 +1126,7 @@ public class FitnessUM {
         int ano = input.nextInt();
         System.out.println("Tempo despendido:");
         int timeSpent = input.nextInt();
-
+         mes-=1;
         GregorianCalendar date = new GregorianCalendar(ano, mes, dia);
         Yoga aux = new Yoga(name, date, timeSpent);
 

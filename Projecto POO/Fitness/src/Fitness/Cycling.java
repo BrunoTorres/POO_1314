@@ -13,18 +13,25 @@ public class Cycling extends Outdoor implements Distance, RecordsActivity
 {
     private double distance;
     private ListRecords recs;
+    
+    
     public Cycling(){
         super();
+        this.distance=0;
+        this.recs=new ListRecords();
     }
     public Cycling(String name, GregorianCalendar date, double timeSpent,double distance,String weather){
         super(name,date,timeSpent,weather);
         this.distance=distance;
         this.createRecord();
+        this.recs = createRecord();
+        
         
     }
     public Cycling(Cycling tb){
         super(tb);
         this.distance=tb.getDistance();
+        this.recs=tb.getListRecords();
         
     }
      @Override

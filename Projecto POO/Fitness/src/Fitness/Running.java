@@ -29,6 +29,7 @@ public class Running extends Outdoor implements Distance, RecordsActivity {
     public Running(Running tb) {
         super(tb);
         this.distance = tb.getDistance();
+        this.recs=tb.getListRecords();
 
     }
 

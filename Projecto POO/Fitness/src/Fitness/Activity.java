@@ -136,7 +136,7 @@ public abstract class Activity {
 		sb.append(this.name).append("\n");
 		sb.append("Data: ");
         sb.append(this.date.get(Calendar.DAY_OF_MONTH)).append(" / ");;
-        sb.append(this.date.get(Calendar.MONTH)).append(" / ");
+        sb.append((this.date.get(Calendar.MONTH))+1).append(" / ");
         sb.append(this.date.get(Calendar.YEAR)).append("\n");      
 		sb.append("Duração: ");
 		sb.append(this.timeSpent).append(" minutos \n");

@@ -20,10 +20,10 @@ public class CompareActivity implements Comparator<Activity>,Serializable
     @Override
     public int compare(Activity o1, Activity o2) {
         if(o1.getDate().after(o2.getDate()))
-            return -1;
-        if(o1.getDate().before(o2.getDate()))
             return 1;
-        return 0;
+        if(o1.getDate().before(o2.getDate()))
+            return -1;
+        return(o1.getName().compareTo(o2.getName()));
           
            
            

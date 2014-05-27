@@ -17,6 +17,9 @@ public class MountainBiking extends Outdoor implements Distance, VerticalDistanc
     
     public MountainBiking(){
         super();
+        this.distance=0;
+        this.verticaldistance=0;
+        this.recs= new ListRecords();
     }
 
     public MountainBiking(String name, GregorianCalendar date, double timeSpent,double distance,
@@ -31,6 +34,7 @@ public class MountainBiking extends Outdoor implements Distance, VerticalDistanc
         super(tb);
         this.distance=tb.getDistance();
         this.verticaldistance=tb.getVerticalDistance();
+        this.recs=tb.getListRecords();
     }
 
      @Override

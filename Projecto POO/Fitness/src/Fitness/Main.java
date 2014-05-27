@@ -26,7 +26,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
         
         GregorianCalendar date;
-        date =new GregorianCalendar();
+        date =new GregorianCalendar(2014,2,12);
         User u1,u2,u3;
         Admin a1;
         //DataBase db=new DataBase();
@@ -34,17 +34,11 @@ public class Main {
         TreeSet<Person> person= new TreeSet(new ComparePerson());
        
       
-        u1=new User("cois@gmail.com","2211","jose",'M',date,12,14,"correr");                    //VER GregorianCALENDAR!!!!
-        u2=new User("cois1@gmail.com","1122","Manel",'F',date,11,15,"FAzer nada");
-        u3=new User("cois2@gmail.com","3322","Raul",'M',date,10,13,"Fazer NADa");
-        a1 =new Admin("cois222@gmail.com","3322","Joselinaa",'M',date);
-        
-         person.add(u1);
-         person.add(u2);
-         person.add(u3);
-         person.add(a1);
-         
-         um.addPerson(person);
+       um.addUser("user1@gmail.com","2211","jose",'M',date,12,14,"correr");                    //VER GregorianCALENDAR!!!!
+       um.addUser("user3@gmail.com","1122","Manel",'F',date,11,15,"FAzer nada");
+       um.addUser("user4@gmail.com","3322","Raul",'M',date,10,13,"Fazer NADa");
+       um.addAdmin("user4222@gmail.com","3322","Joselinaa",'M',date);
+  
          
      
         /*
@@ -78,10 +72,21 @@ public class Main {
         um.addUser("novo@gmail.com","1111","Novo",'M',date,12,14,"fugir");
         System.out.println(db.toString());
         */
-       User u=um.getUserByEmail("cois@gmail.com");
+       User u=um.getUserByEmail("user1@gmail.com");
        Activity act=um.createActivity("Cycling");
+       Activity act2=um.createActivity("Running");
        
-
+       
+       //Activity act3=um.createActivity("Swimming");       
+       u.addActivity(act, "Cycling");
+       u.addActivity(act2, "Running");
+      // u.addActivity(act3, "Swimming");
+       
+       User amigo=um.getUserByEmail("user2@gmail.com");
+       
+       TreeSet activi=(TreeSet)um.getLast10Activities(u);///////////////MAL!!!!
+       System.out.println(activi.toString()); 
+       //u.addFrindToMessage(null);
       
        //System.out.println(um.getUserByEmail("cois@gmail.com").toString());
       System.out.println( act.toString());
