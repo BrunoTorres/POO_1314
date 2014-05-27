@@ -1,20 +1,20 @@
 package Fitness;
 
 
-public abstract class Records {
+public abstract class Record {
 
 	private String name; //10 km|| Maratona...
     
 	
-	public Records(){
+	public Record(){
 		this.name = "";
 	}
     
-    public Records(String name){
+    public Record(String name){
         this.name = name;
     }
 
-	public Records(Records stat) {
+	public Record(Record stat) {
 		this.name = stat.getName();
 	}
     
@@ -27,7 +27,7 @@ public abstract class Records {
 
 	public abstract boolean isEmpty();
 
-    public abstract void update(Records act);
+    public abstract void update(Record act);
      
     @Override
     public String toString(){
@@ -37,7 +37,7 @@ public abstract class Records {
     }
     
 	@Override
-	public abstract Records clone();
+	public abstract Record clone();
     
     
 }

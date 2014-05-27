@@ -70,14 +70,14 @@ public abstract class Activity {
     /**
     * @return the activityRecords
     */
-    public ArrayList <Records> getPerformance() {
-        ArrayList<Records> aux = new ArrayList();
-        for (Records rec : this.performance)
+    public ArrayList <Record> getPerformance() {
+        ArrayList<Record> aux = new ArrayList();
+        for (Record rec : this.performance)
             aux.add(rec.clone());
         return aux;
     }
 
-    public ArrayList <Records> getPerformanceAdmin() {
+    public ArrayList <Record> getPerformanceAdmin() {
         return this.performance;
     }
 

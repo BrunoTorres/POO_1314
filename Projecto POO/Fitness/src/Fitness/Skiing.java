@@ -60,12 +60,12 @@ public class Skiing extends Outdoor implements Distance,VerticalDistance
    private ListRecords createRecord() {
         ListRecords list=new ListRecords("Walking");
         
-        Records recCooper=new TimePerDistance("Cooper",12,this.distance,this.getTimeSpent());
-        Records rec1km=new DistancePerTime("1 km",1,this.distance,this.getTimeSpent());
-        Records rec1mile=new DistancePerTime("1 mile",1.609344,this.distance,this.getTimeSpent());
-        Records rec3km=new DistancePerTime("3 km",3,this.distance,this.getTimeSpent());
-        Records rec10km=new DistancePerTime("10 km",10,this.distance,this.getTimeSpent());
-        Records rechalfMarathon=new DistancePerTime("Half Marathon km",21.097494,this.distance,this.getTimeSpent());
+        Record recCooper=new TimePerDistance("Cooper",12,this.distance,this.getTimeSpent());
+        Record rec1km=new DistancePerTime("1 km",1,this.distance,this.getTimeSpent());
+        Record rec1mile=new DistancePerTime("1 mile",1.609344,this.distance,this.getTimeSpent());
+        Record rec3km=new DistancePerTime("3 km",3,this.distance,this.getTimeSpent());
+        Record rec10km=new DistancePerTime("10 km",10,this.distance,this.getTimeSpent());
+        Record rechalfMarathon=new DistancePerTime("Half Marathon km",21.097494,this.distance,this.getTimeSpent());
         
         list.addRecord(recCooper);
         list.addRecord(rec1km);

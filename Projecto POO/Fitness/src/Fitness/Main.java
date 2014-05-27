@@ -82,8 +82,9 @@ public class Main {
        GregorianCalendar date3= new GregorianCalendar(2002,10,4);
        /*
         Activity act = new MountainBiking("bike", date1, 155, 20, 5, "chuva");
-        Activity act1 = new Cycling("cy", date2, 155, 20, "chuva");
-        Activity act2 = new Running("run", date3, 155, 20, "chuva");
+        */
+	   Activity actcy = new Cycling("cy", date2, 155, 20, "chuva");
+       /* Activity act2 = new Running("run", date3, 155, 20, "chuva");
        */
         Activity act = new Running("run", date3, 100, 100, "chuva");
         Activity act1 = new Running("run", date3, 11, 50, "chuva");
@@ -92,6 +93,7 @@ public class Main {
        u.addActivity(act, "Running");
        u.addActivity(act1, "Running");
        u.addActivity(act2, "Running");
+	   u.addActivity(actcy, "Cycling");
        
        
       // TreeSet activi=(TreeSet)um.getLast10Activities(u);

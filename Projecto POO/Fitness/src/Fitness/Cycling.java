@@ -55,13 +55,13 @@ public class Cycling extends Outdoor implements Distance, RecordsActivity
     }
    
     private ListRecords createRecord() {
-        ListRecords list=new ListRecords("Running");
+        ListRecords list=new ListRecords("Cycling");
         
-        Records recCooper=new DistancePerTime("One hour (km)",60,this.distance,this.getTimeSpent());
-        Records rec10miles=new TimePerDistance("10 miles",16.09344,this.distance,this.getTimeSpent());
-        Records rec3km=new TimePerDistance("20 km",20,this.distance,this.getTimeSpent());
-        Records rec10km=new TimePerDistance("50 km",50,this.distance,this.getTimeSpent());
-        Records rec50miles=new TimePerDistance("50 miles",80.4672,this.distance,this.getTimeSpent());
+        Record recCooper=new DistancePerTime("One hour (km)",60,this.distance,this.getTimeSpent());
+        Record rec10miles=new TimePerDistance("10 miles",16.09344,this.distance,this.getTimeSpent());
+        Record rec3km=new TimePerDistance("20 km",20,this.distance,this.getTimeSpent());
+        Record rec10km=new TimePerDistance("50 km",50,this.distance,this.getTimeSpent());
+        Record rec50miles=new TimePerDistance("50 miles",80.4672,this.distance,this.getTimeSpent());
        
         list.addRecord(recCooper);
         list.addRecord(rec10miles);

@@ -1,7 +1,7 @@
 package Fitness;
 
 
-public final class TimePerDistance extends Records {
+public final class TimePerDistance extends Record {
 
 
     private double recordDistance;
@@ -46,7 +46,7 @@ public final class TimePerDistance extends Records {
         }
     }
 
-    public void update(Records act) {
+    public void update(Record act) {
         TimePerDistance a = (TimePerDistance) act;
         if (this.time < a.getTime()) {
             this.time = a.getTime();

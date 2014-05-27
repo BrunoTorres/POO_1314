@@ -1,7 +1,7 @@
 package Fitness;
 
 
-public final class DistancePerTime extends Records{
+public final class DistancePerTime extends Record{
 
     private double recordTime;
     private double distance;
@@ -38,7 +38,7 @@ public final class DistancePerTime extends Records{
         return (this.distance != 0.0);
     }
 
-    public void update(Records act){
+    public void update(Record act){
         DistancePerTime a=(DistancePerTime)act;
         if (this.distance < a.distance)
             this.distance=a.getDistance();

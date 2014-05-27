@@ -7,7 +7,7 @@ import java.util.TreeSet;
 public class ListRecords {
     
     private final String name;            // nome do tipo (Cycling...)
-    private ArrayList<Records> recs;
+    private ArrayList<Record> recs;
     
 public ListRecords(){
     this.name="";
@@ -18,9 +18,9 @@ public ListRecords(String name){
     this.recs=new ArrayList();
 }
 
-public ListRecords(String name, TreeSet<Records> recs){
+public ListRecords(String name, TreeSet<Record> recs){
     this.name=name;
-    for(Records r:recs)
+    for(Record r:recs)
         this.recs.add(r.clone());
     }
 public ListRecords(ListRecords list){
@@ -28,17 +28,17 @@ public ListRecords(ListRecords list){
     this.recs=list.getList();
 }
 
-  public ArrayList<Records> getList() {
-        ArrayList<Records> aux=new ArrayList();
-        for(Records r:this.recs)
+  public ArrayList<Record> getList() {
+        ArrayList<Record> aux=new ArrayList();
+        for(Record r:this.recs)
             aux.add(r);
         return aux;
    
     }
   public void updateList(ListRecords list){
-      ArrayList<Records>array=list.getList();
+      ArrayList<Record>array=list.getList();
       int i=0;
-      for(Records r :this.recs){
+      for(Record r :this.recs){
           r.update(array.get(i));
           i++;
       }
@@ -50,7 +50,7 @@ public ListRecords(ListRecords list){
         return this.name;        
     }
     
-    public void addRecord(Records rec){
+    public void addRecord(Record rec){
         
         this.recs.add(rec);
     }
@@ -61,7 +61,7 @@ public ListRecords(ListRecords list){
     
       public void setRecords(ListRecords list){
           int i=0;
-          for(Records c : this.recs){
+          for(Record c : this.recs){
               c.update(list.getList().get(i));
               i++;
           }
@@ -75,7 +75,7 @@ public ListRecords(ListRecords list){
     public String toString(){
         StringBuilder sb=new StringBuilder();
         sb.append("Nome do tipo da actividade: ").append(this.name).append("\n");
-        for(Records r:this.recs)
+        for(Record r:this.recs)
             sb.append((r.toString()));
         
         return sb.toString();
