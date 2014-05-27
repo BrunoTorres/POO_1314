@@ -15,7 +15,7 @@ public class FitnessUM {
     private String actName;
     private GregorianCalendar actDate;
     private double actTimeSpent;
-
+    
 
 
     public FitnessUM() {
