@@ -30,8 +30,7 @@ public abstract class Event {
 
     }
 
-    public Event(String name, String tipoActivity, String location, int maxParticipants, int participants, GregorianCalendar deadline, GregorianCalendar date,
-            GregorianCalendar duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking) {
+    public Event(String name, String tipoActivity, String location, int maxParticipants, int participants, GregorianCalendar deadline, GregorianCalendar date, GregorianCalendar duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking) {
 
         this.name = name;
         this.tipoActivity = tipoActivity;
@@ -45,9 +44,7 @@ public abstract class Event {
 
     }
 
-    public Event(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date,
-            GregorianCalendar duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking) {
-
+    public Event(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date, GregorianCalendar duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking) {
         this.name = name;
         this.tipoActivity = tipoActivity;
         this.location = location;
@@ -57,7 +54,6 @@ public abstract class Event {
         this.participantsList = participantsList;
         this.ranking = ranking;
         this.participants = participantsList.size();
-
     }
 
     public Event(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date,

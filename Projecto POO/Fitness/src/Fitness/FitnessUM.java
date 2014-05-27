@@ -20,7 +20,6 @@ public class FitnessUM {
 
     public FitnessUM() {
         this.db = new DataBase();
-
     }
 
     public FitnessUM(DataBase db) {
@@ -345,7 +344,7 @@ public class FitnessUM {
         System.out.println("19 - Cycling");
         System.out.println("20 - MountainBiking");
         System.out.println("21 - Orienteering");
-        System.out.println("22 - Snowbording");
+        System.out.println("22 - Snowboarding");
         System.out.println("23 - Polo");
 
         int i = input.nextInt();
@@ -420,7 +419,7 @@ public class FitnessUM {
                 act = createActivity("Orienteering");
                 break;
             case 22:
-                act = createActivity("Snowbording");
+                act = createActivity("Snowboarding");
                 break;
             case 23:
                 act = createActivity("Polo");
@@ -631,11 +630,11 @@ public class FitnessUM {
         System.out.println("Ano:");
         int ano = input.nextInt();
         this.actDate = new GregorianCalendar(ano, mes, dia);
-        System.out.println("Tempo despendido:");
+        System.out.println("Tempo despendido (em minutos):");
         this.actTimeSpent = input.nextInt();
     }
 
-    public Snowbording TypeToSnowbording() {
+    public Snowboarding TypeToSnowboarding() {
         this.TypeToAll();
         Scanner input = new Scanner(System.in);
         System.out.println("Tempo exterior:");
@@ -644,7 +643,7 @@ public class FitnessUM {
         double distance = input.nextInt();
         System.out.println("Distancia vertical:");
         double verticaldistance = input.nextInt();
-        Snowbording aux = new Snowbording(this.actName, this.actDate, this.actTimeSpent, distance, verticaldistance, weather);
+        Snowboarding aux = new Snowboarding(this.actName, this.actDate, this.actTimeSpent, distance, verticaldistance, weather);
 
         return aux;
     }
@@ -982,8 +981,8 @@ public class FitnessUM {
             case "Orienteering":
                 nova = TypeToOrienteering();
                 break;
-            default://Snowbording
-                nova = TypeToSnowbording();
+            default://Snowboarding
+                nova = TypeToSnowboarding();
                 break;
 
         }
