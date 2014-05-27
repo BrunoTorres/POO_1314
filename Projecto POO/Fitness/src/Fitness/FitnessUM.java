@@ -8,10 +8,15 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
-public class FitnessUM {
+public class FitnessUM {     
 
     private DataBase db;
     private Person p;
+    private String actName;
+    private GregorianCalendar actDate;
+    private int actTimeSpent;
+
+
 
     public FitnessUM() {
         this.db = new DataBase();
@@ -611,524 +616,295 @@ public class FitnessUM {
     }
 
     //////////////////////////////////////////////////CRIAR ACTIVITIES////////////////////////////////////////////////////// 
-    public Snowbording TypeToSnowbording() {
+    public void TypeToAll(){
         Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
-        String name = input.next();
+        this.actName = input.next();
         System.out.println("Dia:");
         int dia = input.nextInt();
         System.out.println("Mes:");
         int mes = input.nextInt();
+        mes--;
         System.out.println("Ano:");
         int ano = input.nextInt();
+        GregorianCalendar this.actDate = new GregorianCalendar(ano, mes, dia);
         System.out.println("Tempo despendido:");
-        int timeSpent = input.nextInt();
+        int this.actTimeSpent = input.nextInt();
+    }
+
+    public Snowbording TypeToSnowbording() {
+        this.TypeToAll();
+        Scanner input = new Scanner(System.in);
         System.out.println("Tempo exterior:");
         String weather = input.next();
         System.out.println("Distancia horizontal:");
         double distance = input.nextInt();
         System.out.println("Distancia vertical:");
         double verticaldistance = input.nextInt();
-        GregorianCalendar date = new GregorianCalendar(ano, mes, dia);
-
-        Snowbording aux = new Snowbording(name, date, timeSpent, distance, verticaldistance, weather);
+        Snowbording aux = new Snowbording(this.actName, this.actDate, this.actTimeSpent, distance, verticaldistance, weather);
 
         return aux;
     }
 
     public Orienteering TypeToOrienteering() {
+        this.TypeToAll();
         Scanner input = new Scanner(System.in);
-        System.out.println("Nome da actividade:");
-        String name = input.next();
-        System.out.println("Dia:");
-        int dia = input.nextInt();
-        System.out.println("Mes:");
-        int mes = input.nextInt();
-        System.out.println("Ano:");
-        int ano = input.nextInt();
-        System.out.println("Tempo despendido:");
-        int timeSpent = input.nextInt();
         System.out.println("Tempo exterior:");
         String weather = input.next();
         System.out.println("Distancia:");
         double distance = input.nextInt();
-
-        GregorianCalendar date = new GregorianCalendar(ano, mes, dia);
-        Orienteering aux = new Orienteering(name, date, timeSpent, distance, weather);
+        Orienteering aux = new Orienteering(this.actName, this.actDate, this.actTimeSpent, distance, weather);
 
         return aux;
     }
 
     public MountainBiking TypeToMountainBiking() {
+        this.TypeToAll();
         Scanner input = new Scanner(System.in);
-        System.out.println("Nome da actividade:");
-        String name = input.next();
-        System.out.println("Dia:");
-        int dia = input.nextInt();
-        System.out.println("Mes:");
-        int mes = input.nextInt();
-        System.out.println("Ano:");
-        int ano = input.nextInt();
-        System.out.println("Tempo despendido:");
-        int timeSpent = input.nextInt();
         System.out.println("Tempo exterior:");
         String weather = input.next();
         System.out.println("Distancia horizontal:");
         double distance = input.nextInt();
         System.out.println("Distancia vertical:");
         double verticaldistance = input.nextInt();
-        GregorianCalendar date = new GregorianCalendar(ano, mes, dia);
-        MountainBiking aux = new MountainBiking(name, date, timeSpent, distance, verticaldistance, weather);
+        MountainBiking aux = new MountainBiking(this.actName, this.actDate, this.actTimeSpent, distance, verticaldistance, weather);
 
         return aux;
     }
 
     public Cycling TypeToCycling() {
+        this.TypeToAll();
         Scanner input = new Scanner(System.in);
-
-        System.out.println("Nome da actividade:");
-        String name = input.next();
-        System.out.println("Dia:");
-        int dia = input.nextInt();
-        System.out.println("Mes:");
-        int mes = input.nextInt();
-        System.out.println("Ano:");
-        int ano = input.nextInt();
-        System.out.println("Tempo despendido:");
-        int timeSpent = input.nextInt();
         System.out.println("Tempo exterior:");
         String weather = input.next();
         System.out.println("Distancia:");
         double distance = input.nextInt();
-        mes-=1;
-        GregorianCalendar date = new GregorianCalendar(ano, mes, dia);
-        Cycling aux = new Cycling(name, date, timeSpent, distance, weather);
+        Cycling aux = new Cycling(this.actName, this.actDate, this,actTimeSpent, distance, weather);
 
         return aux;
     }
 
     public Skiing TypeToSkiing() {
+        this.TypeToAll();
         Scanner input = new Scanner(System.in);
-        System.out.println("Nome da actividade:");
-        String name = input.next();
-        System.out.println("Dia:");
-        int dia = input.nextInt();
-        System.out.println("Mes:");
-        int mes = input.nextInt();
-        System.out.println("Ano:");
-        int ano = input.nextInt();
-        System.out.println("Tempo despendido:");
-        int timeSpent = input.nextInt();
         System.out.println("Tempo exterior:");
         String weather = input.next();
         System.out.println("Distancia horizontal:");
         double distance = input.nextInt();
         System.out.println("Distancia: vertical");
         double verticaldistance = input.nextInt();
-        GregorianCalendar date = new GregorianCalendar(ano, mes, dia);
-        Skiing aux = new Skiing(name, date, timeSpent, distance, verticaldistance, weather);
+        Skiing aux = new Skiing(this.actName, this.actDate, this.actTimeSpent, distance, verticaldistance, weather);
 
         return aux;
     }
 
     public Tennis TypeToTennis() {
+        this.TypeToAll();
         Scanner input = new Scanner(System.in);
-        System.out.println("Nome da actividade:");
-        String name = input.next();
-        System.out.println("Dia:");
-        int dia = input.nextInt();
-        System.out.println("Mes:");
-        int mes = input.nextInt();
-        System.out.println("Ano:");
-        int ano = input.nextInt();
-        System.out.println("Tempo despendido:");
-        int timeSpent = input.nextInt();
         System.out.println("Score proprio");
         int myScore = input.nextInt();
         System.out.println("Score do adeversario:");
         int opScore = input.nextInt();
         System.out.println("Tempo exterior:");
         String weather = input.next();
-        GregorianCalendar date = new GregorianCalendar(ano, mes, dia);
-        Tennis aux = new Tennis(name, date, timeSpent, myScore, opScore, weather);
+        Tennis aux = new Tennis(this.actName, this.actDate, this.actTimeSpent, myScore, opScore, weather);
 
         return aux;
     }
 
     public Walking TypeToWalking() {
+        this.TypeToAll();
         Scanner input = new Scanner(System.in);
-        System.out.println("Nome da actividade:");
-        String name = input.next();
-        System.out.println("Dia:");
-        int dia = input.nextInt();
-        System.out.println("Mes:");
-        int mes = input.nextInt();
-        System.out.println("Ano:");
-        int ano = input.nextInt();
-        System.out.println("Tempo despendido:");
-        int timeSpent = input.nextInt();
         System.out.println("Tempo exterior:");
         String weather = input.next();
         System.out.println("Distancia:");
         double distance = input.nextInt();
-        GregorianCalendar date = new GregorianCalendar(ano, mes, dia);
-        Walking aux = new Walking(name, date, timeSpent, distance, weather);
+        Walking aux = new Walking(this.actName, this.actDate, this.actTimeSpent, distance, weather);
 
         return aux;
     }
 
     public Sailing TypeToSailing() {
+        this.TypeToAll();
         Scanner input = new Scanner(System.in);
-        System.out.println("Nome da actividade:");
-        String name = input.next();
-        System.out.println("Dia:");
-        int dia = input.nextInt();
-        System.out.println("Mes:");
-        int mes = input.nextInt();
-        System.out.println("Ano:");
-        int ano = input.nextInt();
-        System.out.println("Tempo despendido:");
-        int timeSpent = input.nextInt();
         System.out.println("Tempo exterior:");
         String weather = input.next();
         System.out.println("Distancia:");
         double distance = input.nextInt();
-        GregorianCalendar date = new GregorianCalendar(ano, mes, dia);
-
-        Sailing aux = new Sailing(name, date, timeSpent, distance, weather);
+        Sailing aux = new Sailing(this.actName, this.actDate, this.actTimeSpent, distance, weather);
 
         return aux;
     }
 
     public Skating TypeToSkating() {
+        this.TypeToAll();
         Scanner input = new Scanner(System.in);
-        System.out.println("Nome da actividade:");
-        String name = input.next();
-        System.out.println("Dia:");
-        int dia = input.nextInt();
-        System.out.println("Mes:");
-        int mes = input.nextInt();
-        System.out.println("Ano:");
-        int ano = input.nextInt();
-        System.out.println("Tempo despendido:");
-        int timeSpent = input.nextInt();
         System.out.println("Tempo exterior:");
         String weather = input.next();
         System.out.println("Distancia:");
         double distance = input.nextInt();
         GregorianCalendar date = new GregorianCalendar(ano, mes, dia);
-        Skating aux = new Skating(name, date, timeSpent, distance, weather);
+        Skating aux = new Skating(this.actName, this.actDate, this.actTimeSpent, distance, weather);
 
         return aux;
     }
 
     public Running TypeToRunning() {
+        this.TypeToAll();
         Scanner input = new Scanner(System.in);
-        System.out.println("Nome da actividade:");
-        String name = input.next();
-        System.out.println("Dia:");
-        int dia = input.nextInt();
-        System.out.println("Mes:");
-        int mes = input.nextInt();
-        System.out.println("Ano:");
-        int ano = input.nextInt();
-        System.out.println("Tempo despendido:");
-        int timeSpent = input.nextInt();
         System.out.println("Tempo exterior:");
         String weather = input.next();
         System.out.println("Distancia:");
         double distance = input.nextInt();
-        mes-=1;
-        GregorianCalendar date = new GregorianCalendar(ano, mes, dia);
-        Running aux = new Running(name, date, timeSpent, distance, weather);
+        Running aux = new Running(this.actName, this.actDate, this.actTimeSpent, distance, weather);
 
         return aux;
     }
 
     public VolleyBallBeach TypeToVolleyBallBeach() {
+        this.TypeToAll();
         Scanner input = new Scanner(System.in);
-        System.out.println("Nome da actividade:");
-        String name = input.next();
-        System.out.println("Dia:");
-        int dia = input.nextInt();
-        System.out.println("Mes:");
-        int mes = input.nextInt();
-        System.out.println("Ano:");
-        int ano = input.nextInt();
-        System.out.println("Tempo despendido:");
-        int timeSpent = input.nextInt();
         System.out.println("Score proprio");
         int myScore = input.nextInt();
         System.out.println("Score do adeversario:");
         int opScore = input.nextInt();
         System.out.println("Tempo exterior:");
         String weather = input.next();
-        GregorianCalendar date = new GregorianCalendar(ano, mes, dia);
-        VolleyBallBeach aux = new VolleyBallBeach(name, date, timeSpent, myScore, opScore, weather);
+        VolleyBallBeach aux = new VolleyBallBeach(this.actName, this.actDate, this.actTimeSpent, myScore, opScore, weather);
 
         return aux;
     }
 
     public Polo TypeToPolo() {
+        this.TypeToAll();
         Scanner input = new Scanner(System.in);
-        System.out.println("Nome da actividade:");
-        String name = input.next();
-        System.out.println("Dia:");
-        int dia = input.nextInt();
-        System.out.println("Mes:");
-        int mes = input.nextInt();
-        System.out.println("Ano:");
-        int ano = input.nextInt();
-        System.out.println("Tempo despendido:");
-        int timeSpent = input.nextInt();
         System.out.println("Score proprio");
         int myScore = input.nextInt();
         System.out.println("Score do adeversario:");
         int opScore = input.nextInt();
         System.out.println("Tempo exterior:");
         String weather = input.next();
-        GregorianCalendar date = new GregorianCalendar(ano, mes, dia);
-        Polo aux = new Polo(name, date, timeSpent, myScore, opScore, weather);
+        Polo aux = new Polo(this.actName, this.actDate, this.actTimeSpent, myScore, opScore, weather);
 
         return aux;
     }
 
     public Football TypeToFootball() {
+        this.TypeToAll();
         Scanner input = new Scanner(System.in);
-        System.out.println("Nome da actividade:");
-        String name = input.next();
-        System.out.println("Dia:");
-        int dia = input.nextInt();
-        System.out.println("Mes:");
-        int mes = input.nextInt();
-        System.out.println("Ano:");
-        int ano = input.nextInt();
-        System.out.println("Tempo despendido:");
-        int timeSpent = input.nextInt();
         System.out.println("Score proprio");
         int myScore = input.nextInt();
         System.out.println("Score do adeversario:");
         int opScore = input.nextInt();
         System.out.println("Tempo exterior:");
         String weather = input.next();
-        GregorianCalendar date = new GregorianCalendar(ano, mes, dia);
-        Football aux = new Football(name, date, timeSpent, myScore, opScore, weather);
+        Football aux = new Football(this.actName, this.actDate, this.actTimeSpent, myScore, opScore, weather);
 
         return aux;
     }
 
     public VolleyBallIndoor TypeToVolleyBallIndoor() {
+        this.TypeToAll();
         Scanner input = new Scanner(System.in);
-        System.out.println("Nome da actividade:");
-        String name = input.next();
-        System.out.println("Dia:");
-        int dia = input.nextInt();
-        System.out.println("Mes:");
-        int mes = input.nextInt();
-        System.out.println("Ano:");
-        int ano = input.nextInt();
-        System.out.println("Tempo despendido:");
-        int timeSpent = input.nextInt();
         System.out.println("Score proprio");
         int myScore = input.nextInt();
         System.out.println("Score do adeversario:");
         int opScore = input.nextInt();
-        GregorianCalendar date = new GregorianCalendar(ano, mes, dia);
-        VolleyBallIndoor aux = new VolleyBallIndoor(name, date, timeSpent, myScore, opScore);
+        VolleyBallIndoor aux = new VolleyBallIndoor(this.actName, this.actDate, this.actTimeSpent, myScore, opScore);
 
         return aux;
     }
 
     public Badminton TypeToBadminton() {
+        this.TypeToAll();
         Scanner input = new Scanner(System.in);
-        System.out.println("Nome da actividade:");
-        String name = input.next();
-        System.out.println("Dia:");
-        int dia = input.nextInt();
-        System.out.println("Mes:");
-        int mes = input.nextInt();
-        System.out.println("Ano:");
-        int ano = input.nextInt();
-        System.out.println("Tempo despendido:");
-        int timeSpent = input.nextInt();
         System.out.println("Score proprio");
         int myScore = input.nextInt();
         System.out.println("Score do adeversario:");
         int opScore = input.nextInt();
-        GregorianCalendar date = new GregorianCalendar(ano, mes, dia);
-        Badminton aux = new Badminton(name, date, timeSpent, myScore, opScore);
+        Badminton aux = new Badminton(this.actName, this.actDate, this.actTimeSpent, myScore, opScore);
 
         return aux;
     }
 
     public Boxing TypeToBoxing() {
+        this.TypeToAll();
         Scanner input = new Scanner(System.in);
-        System.out.println("Nome da actividade:");
-        String name = input.next();
-        System.out.println("Dia:");
-        int dia = input.nextInt();
-        System.out.println("Mes:");
-        int mes = input.nextInt();
-        System.out.println("Ano:");
-        int ano = input.nextInt();
-        System.out.println("Tempo despendido:");
-        int timeSpent = input.nextInt();
         System.out.println("Score proprio");
         int myScore = input.nextInt();
         System.out.println("Score do adeversario:");
         int opScore = input.nextInt();
-        GregorianCalendar date = new GregorianCalendar(ano, mes, dia);
-        Boxing aux = new Boxing(name, date, timeSpent, myScore, opScore);
+        Boxing aux = new Boxing(this.actName, this.actDate, this.actTimeSpent, myScore, opScore);
 
         return aux;
     }
 
     public TableTennis TypeToTableTennis() {
+        this.TypeToAll();
         Scanner input = new Scanner(System.in);
-        System.out.println("Nome da actividade:");
-        String name = input.next();
-        System.out.println("Dia:");
-        int dia = input.nextInt();
-        System.out.println("Mes:");
-        int mes = input.nextInt();
-        System.out.println("Ano:");
-        int ano = input.nextInt();
-        System.out.println("Tempo despendido:");
-        int timeSpent = input.nextInt();
         System.out.println("Score proprio");
         int myScore = input.nextInt();
         System.out.println("Score do adeversario:");
         int opScore = input.nextInt();
-        GregorianCalendar date = new GregorianCalendar(ano, mes, dia);
-        TableTennis aux = new TableTennis(name, date, timeSpent, myScore, opScore);
+        TableTennis aux = new TableTennis(this.actName, this.actDate, this.actTimeSpent, myScore, opScore);
 
         return aux;
     }
 
     public Basketball TypeToBasketball() {
+        this.TypeToAll();
         Scanner input = new Scanner(System.in);
-        System.out.println("Nome da actividade:");
-        String name = input.next();
-        System.out.println("Dia:");
-        int dia = input.nextInt();
-        System.out.println("Mes:");
-        int mes = input.nextInt();
-        System.out.println("Ano:");
-        int ano = input.nextInt();
-        System.out.println("Tempo despendido:");
-        int timeSpent = input.nextInt();
         System.out.println("Score proprio");
         int myScore = input.nextInt();
         System.out.println("Score do adeversario:");
         int opScore = input.nextInt();
-        GregorianCalendar date = new GregorianCalendar(ano, mes, dia);
-        Basketball aux = new Basketball(name, date, timeSpent, myScore, opScore);
+        Basketball aux = new Basketball(this.actName, this.actDate, this.actTimeSpent, myScore, opScore);
 
         return aux;
     }
 
     public Handball TypeToHandball() {
+        this.TypeToAll();
         Scanner input = new Scanner(System.in);
-        System.out.println("Nome da actividade:");
-        String name = input.next();
-        System.out.println("Dia:");
-        int dia = input.nextInt();
-        System.out.println("Mes:");
-        int mes = input.nextInt();
-        System.out.println("Ano:");
-        int ano = input.nextInt();
-        System.out.println("Tempo despendido:");
-        int timeSpent = input.nextInt();
         System.out.println("Score proprio");
         int myScore = input.nextInt();
         System.out.println("Score do adeversario:");
         int opScore = input.nextInt();
-        GregorianCalendar date = new GregorianCalendar(ano, mes, dia);
-        Handball aux = new Handball(name, date, timeSpent, myScore, opScore);
+        Handball aux = new Handball(this.actName, this.actDate, this.actTimeSpent, myScore, opScore);
 
         return aux;
     }
 
     public Swimming TypeToSwimming() {
+        this.TypeToAll();
         Scanner input = new Scanner(System.in);
-        System.out.println("Nome da actividade:");
-        String name = input.next();
-        System.out.println("Dia:");
-        int dia = input.nextInt();
-        System.out.println("Mes:");
-        int mes = input.nextInt();
-        System.out.println("Ano:");
-        int ano = input.nextInt();
-        System.out.println("Tempo despendido:");
-        int timeSpent = input.nextInt();
         System.out.println("Distancia:");
         double distance = input.nextInt();
-
-        GregorianCalendar date = new GregorianCalendar(ano, mes, dia);
-        Swimming aux = new Swimming(name, date, timeSpent, distance);
+        Swimming aux = new Swimming(this.actName, this.actDate, this.actTimeSpent, distance);
 
         return aux;
     }
 
     public IndoorCycling TypeToIndoorCycling() {
+        this.TypeToAll();
         Scanner input = new Scanner(System.in);
-        System.out.println("Nome da actividade:");
-        String name = input.next();
-        System.out.println("Dia:");
-        int dia = input.nextInt();
-        System.out.println("Mes:");
-        int mes = input.nextInt();
-        System.out.println("Ano:");
-        int ano = input.nextInt();
-
-        System.out.println("Tempo despendido:");
-        int timeSpent = input.nextInt();
         System.out.println("Distancia:");
         double distance = input.nextInt();
-
-        GregorianCalendar date = new GregorianCalendar(ano, mes, dia);
-        IndoorCycling aux = new IndoorCycling(name, date, timeSpent, distance);
+        IndoorCycling aux = new IndoorCycling(this.actName, this.actDate, this.actTimeSpent, distance);
 
         return aux;
-
     }
 
     public Aerobics TypeToAerobics() {
-
-        Scanner input = new Scanner(System.in);
-        System.out.println("Nome da actividade:");
-        String name = input.next();
-        System.out.println("Dia:");
-        int dia = input.nextInt();
-        System.out.println("Mes:");
-        int mes = input.nextInt();
-        System.out.println("Ano:");
-        int ano = input.nextInt();
-        System.out.println("Tempo despendido:");
-        int timeSpent = input.nextInt();
-
-        GregorianCalendar date = new GregorianCalendar(ano, mes, dia);
-        Aerobics aux = new Aerobics(name, date, timeSpent);
+        this.TypeToAll();
+        Aerobics aux = new Aerobics(this.actName, this.actDate, this.actTimeSpent);
 
         return aux;
     }
 
     public Yoga TypeToYoga() {
-
-        Scanner input = new Scanner(System.in);
-        System.out.println("Nome da actividade:");
-        String name = input.next();
-        System.out.println("Dia:");
-        int dia = input.nextInt();
-        System.out.println("Mes:");
-        int mes = input.nextInt();
-        System.out.println("Ano:");
-        int ano = input.nextInt();
-        System.out.println("Tempo despendido:");
-        int timeSpent = input.nextInt();
-         mes-=1;
-        GregorianCalendar date = new GregorianCalendar(ano, mes, dia);
-        Yoga aux = new Yoga(name, date, timeSpent);
+        this.TypeToAll();
+        Yoga aux = new Yoga(this.actName, this.actDate, this.actTimeSpent);
 
         return aux;
     }
