@@ -83,17 +83,20 @@ public class Main {
        /*
         Activity act = new MountainBiking("bike", date1, 155, 20, 5, "chuva");
         */
-	   Activity actcy = new Cycling("cy", date2, 155, 20, "chuva");
+	   //Activity actcy = new Cycling("cy", date2, 155, 20, "chuva");
        /* Activity act2 = new Running("run", date3, 155, 20, "chuva");
        */
         Activity act = new Running("run", date3, 100, 100, "chuva");
         Activity act1 = new Running("run", date3, 11, 50, "chuva");
         Activity act2 = new Running("run", date3, 155, 20, "chuva");
-       //Activity act3=um.createActivity("Swimming");       
+       //Activity act3=um.createActivity("Swimming");   
+        Activity actcy = new Cycling("cy", date2, 120, 20, "chuva");
+        Activity actc = new Cycling("cyy", date2, 50,100, "chuva");  //RECORD ESTA MAL onde hour km
        u.addActivity(act, "Running");
        u.addActivity(act1, "Running");
        u.addActivity(act2, "Running");
       u.addActivity(actcy, "Cycling");
+      u.addActivity(actc, "Cycling");
        
        
       // TreeSet activi=(TreeSet)um.getLast10Activities(u);
@@ -113,8 +116,7 @@ public class Main {
        //System.out.println(u.getFriendsList().toString());
        
        //Para ver actividades do amigo= list amigos getUserbyEmail depois getLast10activity do user e print
-       
-      // System.out.println(um.getLast10Activities(u).toString());
+       // System.out.println(um.getLast10Activities(u).toString());
       //System.out.println(u.getOneActivity("bike").toString());
       
       /*

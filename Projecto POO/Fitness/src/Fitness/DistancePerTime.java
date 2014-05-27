@@ -59,7 +59,12 @@ public final class DistancePerTime extends Record{
     public String toString(){
         StringBuilder sb = new StringBuilder();
         sb.append(super.toString());
-        sb.append("Distancia registada: ");sb.append(this.distance).append(" km \n");
+        if(this.distance > 0){             
+             sb.append("Distancia registada: ");
+             sb.append(this.distance).append(" km \n");
+        }
+        else
+            sb.append("Sem recorde").append("\n");
         return sb.toString();      
     }
 

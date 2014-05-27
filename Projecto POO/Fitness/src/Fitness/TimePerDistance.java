@@ -46,6 +46,7 @@ public final class TimePerDistance extends Record {
         }
     }
 
+    @Override
     public void update(Record act) {
         TimePerDistance a = (TimePerDistance) act;
         if (this.time < a.getTime()) {
@@ -58,8 +59,13 @@ public final class TimePerDistance extends Record {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(super.toString());
+        if(this.time >0){
         sb.append("Tempo registado: ");
         sb.append(this.time).append(" minutos\n");
+        }
+        else
+            sb.append("Sem recorde").append("\n");
+        
         return sb.toString();
     }
 
