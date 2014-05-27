@@ -579,8 +579,8 @@ public class FitnessUM {
     }
 
 	////////////////////////////////!!!FRIEND!!!//////////////////////////////////////////////////
-    public void sendFriendRequest(User friend, User userSend) {
-        friend.addFrindToMessage(userSend.getEmail());
+    public void sendFriendRequest(User user, User friendWhoSendsRequest) {
+        user.addFrindToMessage(friendWhoSendsRequest.getEmail());
     }
 
     public boolean existsFriendToAdd(User u) {
@@ -590,9 +590,14 @@ public class FitnessUM {
     }
 
         //ArrayList.toString()
-    public boolean acceptFriend(User u, String email) {                                                         //CLASSE MENSAGENS? UM 
-        boolean found = false;
-
+    public void acceptFriend(User u, String email) {                                                         //CLASSE MENSAGENS? UM 
+      //  boolean found = false;
+        
+        User amigo=getUserByEmail(email);
+           
+        u.addFriend(amigo);                                 
+        amigo.addFriend(u);
+        /*
         User u2 = new User();
         TreeSet<Person> userList = (TreeSet) this.db.getUserList();
 
@@ -606,13 +611,12 @@ public class FitnessUM {
             }
 
         }
-        if (found) {
+        */
+        //if (found) {
 
-            u.addFriend(u2);                                 
-            u2.addFriend(u);
-        }
+       // }
 
-        return found;
+      //  return found;
     }
 
     //////////////////////////////////////////////////CRIAR ACTIVITIES////////////////////////////////////////////////////// 
