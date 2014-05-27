@@ -14,7 +14,7 @@ import java.util.Comparator;
  *
  * @author bruno
  */
-public class ComparePerson implements Comparator<Person>,Serializable {
+public class ComparePersonByName implements Comparator<Person>,Serializable {
     
     @Override
     public int compare(Person p1,Person p2){

@@ -31,7 +31,7 @@ public class Main {
         Admin a1;
         //DataBase db=new DataBase();
         FitnessUM um=new FitnessUM();
-        TreeSet<Person> person= new TreeSet(new ComparePerson());
+        TreeSet<Person> person= new TreeSet(new ComparePersonByName());
        
       
        um.addUser("user1@gmail.com","2211","jose",'M',date,12,14,"correr");                    //VER GregorianCALENDAR!!!!
