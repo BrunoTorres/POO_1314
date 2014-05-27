@@ -164,10 +164,11 @@ public class User extends Person
          
           if(actt instanceof Distance) {
                Distance act = (Distance)actt;
+             
               ((Statistics)this.stats.get(date)).incrementsTimeDistanceCalories(actt.getTimeSpent(),act.getDistance(), actt.getCalories());
           }
          else{
-              
+                            
            ((Statistics)this.stats.get(date)).incrementsTimeDistanceCalories(actt.getTimeSpent(),0,actt.getCalories());
              
          }
@@ -199,11 +200,11 @@ public class User extends Person
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public boolean addActivity(Activity act,String tipoActividade){
-            setStats(act);
             if((act instanceof Running) || (act instanceof Walking) ||
                     (act instanceof Cycling) || (act instanceof MountainBiking) || (act instanceof Swimming))
-                updateRecords(tipoActividade,act);            
+                updateRecords(tipoActividade,act); 
             act.setCalories(this.weight);
+            setStats(act);
        return this.userActivities.add(act);
     }
     

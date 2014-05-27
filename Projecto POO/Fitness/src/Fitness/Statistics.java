@@ -75,7 +75,7 @@ public class Statistics {
     public String toStringTimeSpend(){
         StringBuilder sb=new StringBuilder();
         
-        sb.append("Time Spend: ");sb.append(this.timeSpend).append("\n");
+        sb.append("Time Spent: ");sb.append(this.timeSpend).append("\n");
         return sb.toString();
     }
     
