@@ -19,7 +19,7 @@ public class User extends Person
     private TreeSet<String> friendsList;
     private TreeMap<GregorianCalendar,Statistics> stats;
     private TreeMap<String,ListRecords> records;
-    private ArrayList<String> messageFrind;
+    private ArrayList<String> messageFriend;
         
     
     public User(){
@@ -30,7 +30,7 @@ public class User extends Person
         this.userActivities=new TreeSet<Activity>(new CompareActivity());
         this.friendsList=new TreeSet<String>(); 
         this.stats=new TreeMap<GregorianCalendar,Statistics> (new CompareStatsPerYearAndMonth());
-        this.messageFrind=new ArrayList();
+        this.messageFriend=new ArrayList();
         this.records=new TreeMap();
     }
     
@@ -46,7 +46,7 @@ public class User extends Person
             this.userActivities.add((Activity) act.clone());
         this.friendsList=(TreeSet<String>)friendsList.clone(); 
         this.stats=new TreeMap<GregorianCalendar,Statistics> (new CompareStatsPerYearAndMonth());
-        this.messageFrind=new ArrayList();
+        this.messageFriend=new ArrayList();
         this.records=new TreeMap();
     }
      public User(String email,String pass,String name,char gender,GregorianCalendar date,
@@ -59,7 +59,7 @@ public class User extends Person
         this.userActivities=new TreeSet<Activity>(new CompareActivity());
         this.friendsList=new TreeSet<String>();
         this.stats=new TreeMap<GregorianCalendar,Statistics> (new CompareStatsPerYearAndMonth());
-        this.messageFrind=new ArrayList();
+        this.messageFriend=new ArrayList();
         this.records=new TreeMap();
     }
        
@@ -71,7 +71,7 @@ public class User extends Person
         this.userActivities=(TreeSet<Activity>)u.getActivities();
         this.friendsList=(TreeSet<String>)u.getFriendsList();
         this.stats=(TreeMap)u.getStats();
-        this.messageFrind=(ArrayList)u.getMessage();  
+        this.messageFriend=(ArrayList)u.getMessage();  
         this.records=(TreeMap)u.getRecords();
         
     }
@@ -115,15 +115,15 @@ public class User extends Person
      
     }
     public List<String> getMessage(){
-        return this.messageFrind;
+        return this.messageFriend;
     }
     
-    public void addFrindToMessage(String email){
-        this.messageFrind.add(email);
+    public void addFriendToMessage(String email){
+        this.messageFriend.add(email);
     }
     
-    public void removeFrindFromMessage(String email){
-        this.messageFrind.remove(email);
+    public void removeFriendFromMessage(String email){
+        this.messageFriend.remove(email);
     }
     
     public void setHeight(int height){
@@ -212,7 +212,7 @@ public class User extends Person
     
      public boolean addFriend(User u){              //Adiciona amigos a lista
        boolean flag=false,found=false;     
-       flag=this.friendsList.add(u.getName());             
+       flag=this.friendsList.add(u.getEmail());             
        
        return flag;     
     }
