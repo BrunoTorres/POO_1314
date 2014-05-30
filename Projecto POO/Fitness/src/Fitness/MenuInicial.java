@@ -33,10 +33,20 @@ public class MenuInicial extends javax.swing.JFrame {
 	public MenuInicial() {
 		initComponents();
 		fitness = new FitnessUM();
-		fitness.addUser("ola@gmail.com", "pass", "user1", 'M', new GregorianCalendar(), 170, 70.0, "Futebol");
-		fitness.addUser("ola2@gmail.com", "pass", "user2", 'M', new GregorianCalendar(), 160, 70.0, "Running");
-		fitness.getUserByEmail("ola@gmail.com").addActivity(new Yoga("YOGA com os amigos", new GregorianCalendar(), 120), "Yoga");
-		fitness.getUserByEmail("ola@gmail.com").addActivity(new Yoga("YOGA2222 com os amigos", new GregorianCalendar(), 110), "Yoga");
+		User u1 = new User("1", "1", "user1", 'M', new GregorianCalendar(), 170, 70.0, "Futebol");
+		User u2 = new User("2", "2", "user2", 'M', new GregorianCalendar(), 160, 70.0, "Running");
+		User u3 = new User("3", "3", "user3", 'F', new GregorianCalendar(), 155, 50.0, "Tenis");
+		User u4 = new User("4", "4", "user4", 'F', new GregorianCalendar(), 161, 52.0, "Yoga");
+		fitness.addUser(u1.getEmail(), u1.getPassword(), u1.getName(), u1.getGender(), u1.getDate(), u1.getHeight(), u1.getWeight(), u1.getFavoriteActivity());
+		fitness.addUser(u2.getEmail(), u2.getPassword(), u2.getName(), u2.getGender(), u2.getDate(), u2.getHeight(), u2.getWeight(), u2.getFavoriteActivity());
+		fitness.addUser(u3.getEmail(), u3.getPassword(), u3.getName(), u3.getGender(), u3.getDate(), u3.getHeight(), u3.getWeight(), u3.getFavoriteActivity());
+		fitness.addUser(u4.getEmail(), u4.getPassword(), u4.getName(), u4.getGender(), u4.getDate(), u4.getHeight(), u4.getWeight(), u4.getFavoriteActivity());
+		fitness.getUserByEmail("1").addActivity(new Yoga("YOGA com os amigos", new GregorianCalendar(), 120), "Yoga");
+		fitness.getUserByEmail("1").addActivity(new Yoga("YOGA2222 com os amigos", new GregorianCalendar(), 110), "Yoga");
+		fitness.acceptFriend(fitness.getUserByEmail("1"), "2");
+		fitness.acceptFriend(fitness.getUserByEmail("1"), "3");
+		fitness.acceptFriend(fitness.getUserByEmail("1"), "4");
+		fitness.getUserByEmail("1").addFriendToMessage("user2 | 2");
 	}
 
 	/**

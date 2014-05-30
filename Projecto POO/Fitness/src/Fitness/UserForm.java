@@ -3,12 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Fitness;
 
 import java.util.ArrayList;
 import java.util.TreeSet;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.ListSelectionModel;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.Border;
+import javax.swing.text.StyleConstants;
 
 /**
  *
@@ -18,25 +24,33 @@ public class UserForm extends javax.swing.JFrame {
 
 	/**
 	 * Creates new form UserForm
+	 *
 	 * @param parent
 	 * @param fit
 	 */
 	public UserForm(JFrame parent, FitnessUM fit) {
 		initComponents();
+		User u = (User) fit.getActivePerson();
 		this.fit = fit;
-		this.setTitle(fit.getActivePerson().getName() + " - Utilizador");
+		this.setTitle(u.getName() + " - Utilizador");
 		//this.jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(fit.getActivePerson().getName()));
 		//this.jTabbedPane1.addT
-		this.acts = this.fit.getLast10Activities((User) this.fit.getActivePerson()).toArray();
-		this.currAct = 0;
-		//Object[] array = acts.toArray();
-		this.text10Act.setText(((Activity) this.acts[this.currAct]).toString());
-	}
-	
-	public void changeShownActivity(){
-		this.currAct = this.currAct + 1;
-		this.textNAct.setText(this.currAct + "/10");
 		
+		this.acts = this.fit.getLast10ActivitiesByActivity(u).toArray();
+		ArrayList<String> msgs = (ArrayList<String>) u.getMessage();
+		if(msgs.size() > 0){
+			this.listPedidosAmizade = new JList(msgs.toArray());
+		}
+		if (this.acts.length > 0) {
+			this.currAct = 1;
+			//Object[] array = acts.toArray();
+			this.changeShownActivity();
+		}
+	}
+
+	private void changeShownActivity() {
+		this.textNAct.setText(this.currAct + "/" + this.acts.length);
+		this.text10Act.setText((this.acts[this.currAct - 1]).toString());
 	}
 
 	/**
@@ -47,6 +61,12 @@ public class UserForm extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        panelMensagens = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        listPedidosAmizade = new javax.swing.JList();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         panelVer10Stats = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         text10Act = new javax.swing.JTextArea();
@@ -61,6 +81,67 @@ public class UserForm extends javax.swing.JFrame {
         setResizable(false);
 
         jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Pedidos de Amizade"));
+
+        jScrollPane2.setViewportView(listPedidosAmizade);
+
+        jButton2.setText("OK");
+        jButton2.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        jButton2.setMaximumSize(new java.awt.Dimension(36, 22));
+        jButton2.setMinimumSize(new java.awt.Dimension(36, 22));
+        jButton2.setPreferredSize(new java.awt.Dimension(36, 22));
+
+        jButton3.setText("CAN");
+        jButton3.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        jButton3.setMaximumSize(new java.awt.Dimension(36, 22));
+        jButton3.setMinimumSize(new java.awt.Dimension(36, 22));
+        jButton3.setPreferredSize(new java.awt.Dimension(36, 22));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout panelMensagensLayout = new javax.swing.GroupLayout(panelMensagens);
+        panelMensagens.setLayout(panelMensagensLayout);
+        panelMensagensLayout.setHorizontalGroup(
+            panelMensagensLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelMensagensLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        panelMensagensLayout.setVerticalGroup(
+            panelMensagensLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelMensagensLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(142, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Mensagens", panelMensagens);
 
         text10Act.setColumns(20);
         text10Act.setRows(5);
@@ -94,7 +175,14 @@ public class UserForm extends javax.swing.JFrame {
             }
         });
 
+        textNAct.setEditable(false);
+
         jButton1.setText("Ver actividades de um amigo");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelVer10StatsLayout = new javax.swing.GroupLayout(panelVer10Stats);
         panelVer10Stats.setLayout(panelVer10StatsLayout);
@@ -116,7 +204,7 @@ public class UserForm extends javax.swing.JFrame {
                         .addComponent(butNext)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(butLast)
-                        .addGap(0, 124, Short.MAX_VALUE)))
+                        .addGap(0, 118, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(panelVer10StatsLayout.createSequentialGroup()
                 .addGap(154, 154, 154)
@@ -157,24 +245,51 @@ public class UserForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void butNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNextActionPerformed
-        this.currAct++;
-		this.text10Act.setText(((Activity) this.acts[this.currAct]).toString());
+		if (this.currAct < this.acts.length) {
+			this.currAct++;
+			this.changeShownActivity();
+		}
     }//GEN-LAST:event_butNextActionPerformed
 
     private void butPrevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butPrevActionPerformed
-        this.currAct--;
-		this.text10Act.setText(((Activity) this.acts[this.currAct]).toString());
+		if (this.currAct > 1) {
+			this.currAct--;
+			this.changeShownActivity();
+		}
     }//GEN-LAST:event_butPrevActionPerformed
 
     private void butFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butFirstActionPerformed
-        this.currAct = 0;
-		this.text10Act.setText(((Activity) this.acts[this.currAct]).toString());
+		this.currAct = 1;
+		this.changeShownActivity();
     }//GEN-LAST:event_butFirstActionPerformed
 
     private void butLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butLastActionPerformed
-        this.currAct = 9;
-		this.text10Act.setText(((Activity) this.acts[this.currAct]).toString());
+		this.currAct = this.acts.length;
+		this.changeShownActivity();
     }//GEN-LAST:event_butLastActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+		JList listAmigos = new JList();
+		Object[] amigos = ((User) this.fit.getActivePerson()).getFriendsList().toArray();
+		//ArrayList<String> nomesAmigos = new ArrayList<>();
+		Object[] nomesAmigos = new Object[amigos.length];
+		int i = 0;
+		if (amigos.length > 0) {
+			for (Object o : amigos) {
+				nomesAmigos[i] = ((Object) fit.getUserByEmail((String) o).getName());
+				i++;
+			}
+			listAmigos = new JList(nomesAmigos);
+			listAmigos.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+			listAmigos.setBorder(javax.swing.BorderFactory.createBevelBorder(BevelBorder.LOWERED));
+			int res = JOptionPane.showConfirmDialog(this, listAmigos, "Seleccione um amigo", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+			if (res == JOptionPane.OK_OPTION) {
+				User u = this.fit.getUserByEmail((String) amigos[listAmigos.getSelectedIndex()]);
+				this.text10Act.setText("ACTIVIDADES DE " + listAmigos.getSelectedValue() + "\n\n");
+			}
+		}
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -183,8 +298,14 @@ public class UserForm extends javax.swing.JFrame {
     private javax.swing.JButton butNext;
     private javax.swing.JButton butPrev;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JList listPedidosAmizade;
+    private javax.swing.JPanel panelMensagens;
     private javax.swing.JPanel panelVer10Stats;
     private javax.swing.JTextArea text10Act;
     private javax.swing.JTextField textNAct;
