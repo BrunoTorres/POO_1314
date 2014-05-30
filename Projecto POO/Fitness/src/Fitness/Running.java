@@ -61,14 +61,14 @@ public class Running extends Outdoor implements Distance, RecordsActivity {
 
         Record recCooper = new DistancePerTime("Cooper", 12, this.distance, this.getTimeSpent());
         Record rec1hour = new DistancePerTime("1 hour", 60, this.distance, this.getTimeSpent());
-		Record rec1km = new TimePerDistance("1 km", 1, this.distance, this.getTimeSpent());
+	Record rec1km = new TimePerDistance("1 km", 1, this.distance, this.getTimeSpent());
         Record rec1mile = new TimePerDistance("1 mile", 1.609344, this.distance, this.getTimeSpent());
         Record rec3km = new TimePerDistance("3 km", 3, this.distance, this.getTimeSpent());
         Record rec10km = new TimePerDistance("10 km", 10, this.distance, this.getTimeSpent());
         Record rechalfMarathon = new TimePerDistance("Half Marathon km", 21.097494, this.distance, this.getTimeSpent());
 		
         list.addRecord(recCooper);
-		list.addRecord(rec1hour);
+	list.addRecord(rec1hour);
         list.addRecord(rec1km);
         list.addRecord(rec1mile);
         list.addRecord(rec3km);

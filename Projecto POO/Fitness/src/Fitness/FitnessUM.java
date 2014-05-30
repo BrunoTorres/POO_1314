@@ -17,7 +17,7 @@ public class FitnessUM {
     private GregorianCalendar actDate;
     private double actTimeSpent;
     private TreeSet<Person>userList;  // admin && users
-    private ArrayList<Event> events;    
+    private ArrayList<Event> events;      /// mostrar no inicio criar funcao que ver se ja foi o evento 
 
 
     public FitnessUM() {
@@ -59,6 +59,9 @@ public class FitnessUM {
        
     }
     
+    public void addUserByUser(User u){
+        this.userList.add(u);
+    }
     // to AdminRights
   /*
    public Set<Person> getUserListAdmin(){
@@ -101,8 +104,167 @@ public class FitnessUM {
         
      depois dos 35 anos a resistencia cai 10% por ano!
      logo aos 25 anos p=95% de acabar a prova para homem 
-        
+    
+    
+    
+    tabela tempo
+    
+    Sol
+    Sol com ventos vortes
+    Sol intenso
+    Sol intenso com ventos Fortes
+    Chuva
+    Chuva com ventos vortes
+    Chuva intensa
+    Chuva intensa com ventos vortes
+    Trovoada
+    Trovoada com ventos vortes
+    Nublado
      */
+    
+    
+    
+    //////////////SIMULAÇAO//////////////////////
+    private double tabelaWeather(String weather){
+        double factor=0;
+        switch(weather){
+            case "Sol":
+                factor=0.2;
+                break;
+            case "Sol intenso":
+                factor=0.7;
+                break;
+            case "Sol intenso com ventos vortes":
+                factor=0.8;
+                break;
+            case "Chuva":
+                factor=0.4;
+                break;
+            case "Chuva com Ventos Fortes":
+                factor=0.6;
+                break;
+            case "Chuva intensa":
+                factor=0.7;
+                break;
+            case "Chuva intensa com ventos vortes":
+                factor=0.9;
+                break;
+            case "Trovoada":
+                factor=0.3;
+                break;
+            case "Trovoada com ventos vortes":
+                factor=0.5;
+                break;
+            case "Nublado":
+                factor=0.6;
+                break;
+        }
+        return factor;
+    }
+    
+    private double tabelaTemperatura(double temperatura){
+        double factor;
+        if(temperatura <10)
+            factor=0.85;
+        else if(temperatura<20)
+            factor = 0.70;
+        else if(temperatura>39)
+            factor = 0.90;
+        else if(temperatura >30 )
+            factor = 0.75;
+        else
+            factor = 0.2;
+        
+        return factor;
+    }
+    
+    private double calculaTmMarathon(User u){
+        double tempo=0;
+        int numero=0;                      
+            for(ListRecords lr:u.getRecords().values()){
+                if(lr.getName().equals("Running")){
+                for(Record rec:lr.getList()){
+                    if(rec instanceof TimePerDistance){
+                        TimePerDistance tpd=(TimePerDistance)rec;
+                        if(tpd.getName().equals("Half Marathon km"))
+                        tempo+= tpd.getTime();
+                        else
+                            tempo+=tpd.getTime()*0.5;
+                    }                    
+                 numero++; 
+                 }
+                }
+                  
+        }
+       tempo=tempo/numero;
+       return tempo;
+    }
+    private int numeroActividadesM(User u){
+        int num=0;
+        for(Activity act:u.getActivities())
+            if(act instanceof Running)
+                num++;
+        return num;
+    }
+    private int numeroActividadesMbtt(User u){
+        int num=0;
+        for(Activity act:u.getActivities())
+            if(act instanceof MountainBiking)
+                num++;
+        return num;
+    }
+    private void formula(User u,String weather,double temperatura,String tipo){
+        double tempo=0;
+        double tempoMedio=0;
+        int numero=0;
+        /*
+         tempo por km = tempo medio -(calorias por minuto_ do utilizador na activide/1000)-
+     (1*weather)+(numero de actividades feitas deste tipo/100)
+        te
+        */
+         switch (tipo) {
+            case "Marathon":
+               tempoMedio= calculaTmMarathon(u);
+               numero=numeroActividadesM(u);
+                break;
+            case "Halfmarathon":
+               tempoMedio= calculaTmHalfmarathon(u); 
+               numero=numeroActividadesM(u);
+                break;
+            case "MarathonBTT":
+                tempoMedio=calculaTmMarathonBTT(u);
+                numero=numeroActividadesMbtt(u);
+                break;
+                      }
+        
+        tempo=tempoMedio-(1*tabelaWeather(weather))-(1*tabelaTemperatura(temperatura))+(numero/100);
+        
+    }
+    public void simulaEvent(Event e, String weather,double temperatura){
+        //cia A formula
+        double distance;
+        if(e instanceof Marathon){
+            Marathon m=(Marathon)e;
+            distance=m.getDistance();
+        }
+        else if(e instanceof Halfmarathon) 
+            distance =21.1;
+        else if(e instanceof MarathonBTT){
+            MarathonBTT btt=(MarathonBTT)e;
+            distance=btt.getDistance();
+        }
+        
+        
+        
+        
+        
+       
+        
+        
+    }
+    
+    
+    
     //////////EVENTS////////////////////////////////////////////
     /*
     public void addEvent(){
@@ -146,11 +308,24 @@ public class FitnessUM {
         }
         return flag;
     }
+    //adiciona um user a um evento se ja praticou se a data de termino ainda nao foi atingida e se o nº max de par ainda nao foi atingido 
+    public boolean userRegistEvent(User u, Event e){
+         GregorianCalendar date=new GregorianCalendar();
+         String tipo = e.getTipoActivity();
+         
+         if((userRegistaEventoSeFezActivity(u,tipo))&& (e.getDeadline().after(date)) &&
+                 (e.getMaxParticipants() > (e.getParticipants()+1))){
+             e.addUser(u);
+             return true;
+         }
+         else
+             return false;         
+    }
      //So se pode registar se ja praticou actividade do tipo do evento
-    public boolean userRegisterEvent(User u, Event e) { 
-        String tipo = e.getTipoActivity();
+    public boolean userRegistaEventoSeFezActivity(User u, String tipoEvento) { 
+       
         boolean flag = false;
-        switch (tipo) {
+        switch (tipoEvento) {
             case "Running":
                 flag = findRunning(u);
                 break;
