@@ -27,7 +27,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
         
         GregorianCalendar date;
-        date =new GregorianCalendar(2014,2,12);
+        date =new GregorianCalendar(1988,2,12);
         User u1,u2,u3;
         Admin a1;
         //DataBase db=new DataBase();
@@ -107,9 +107,9 @@ public class Main {
        
        //String name, GregorianCalendar date, double timeSpent,double distance, double verticaldistance,String weather)
        
-       Activity actbtt1 = new MountainBiking("MountainBiking", date3,2000, 40, 0.1, "chuva");
-        Activity act1bbt2 = new MountainBiking("MountainBiking",date3, 3000, 50, 0.2,"chuva");
-        Activity act2btt3 = new MountainBiking("MountainBiking", date3, 3005, 60,1, "chuva");
+       Activity actbtt1 = new MountainBiking("MountainBiking", date3,120, 40, 0.1, "chuva");
+        Activity act1bbt2 = new MountainBiking("MountainBiking",date3, 150, 50, 0.2,"chuva");
+        Activity act2btt3 = new MountainBiking("MountainBiking", date3, 250, 60,1, "chuva");
       // TreeSet activi=(TreeSet)um.getLast10Activities(u);
       //System.out.println(activi.toString()); 
       u3.addActivity(actbtt1, "MountainBiking");
@@ -135,7 +135,7 @@ public class Main {
        //um.addMarathon("calhaus corrida", "polo norte", 40, datacome,limite, 155);
        //Event e= um.getEventByName("calhaus corrida");
        
-        
+    
        um.userRegistEvent(u3, e);
        //for(Activity a:u3.getActivities())
           // System.out.println(a.toString());

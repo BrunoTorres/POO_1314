@@ -1,10 +1,8 @@
 package Fitness;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
@@ -34,10 +32,7 @@ public class User extends Person
         this.records=new TreeMap<>();
     }
     
-    public User(String email,String pass,String name,char gender,GregorianCalendar date,
-            int height,double weight,String favoriteActivity,
-            TreeSet<Activity> userActivities,TreeSet<String> friendsList)
-    {
+    public User(String email,String pass,String name,char gender,GregorianCalendar date, int height,double weight,String favoriteActivity, TreeSet<Activity> userActivities,TreeSet<String> friendsList){
         super(email,pass,name,gender,date);
         this.height=height;
         this.weight=weight;

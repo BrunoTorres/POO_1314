@@ -1,6 +1,7 @@
 package Fitness;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
@@ -65,34 +66,9 @@ public class FitnessUM {
     public void addUserByUser(User u){
         this.userList.add(u);
     }
-    // to AdminRights
-  /*
-   public Set<Person> getUserListAdmin(){
-       return this.userList;
-   }
+        
    
-   public List<Event> getEventListAdmin(){
-       return this.events;
-   }
-   
-   public void addPerson(Person person){
-       this.userList.add(person);
-   }
-    
-   public void addPerson(TreeSet<Person> persons){
-       for(Person p:persons)
-       this.userList.add(p);
-   }
-   */
-   
-   
-   
-    /////////////
-/*
-    public void addPerson(TreeSet<Person> persons) {
-       addPerson(persons);
-    }
-*/
+
         /////////Eventos///////////////////// 
         /*
      tempo define a classificação
@@ -106,23 +82,7 @@ public class FitnessUM {
      top de maratona melher=27 anos
         
      depois dos 35 anos a resistencia cai 10% por ano!
-     logo aos 25 anos p=95% de acabar a prova para homem 
-    
-    
-    
-    tabela tempo
-    
-    Sol
-    Sol com ventos vortes
-    Sol intenso
-    Sol intenso com ventos Fortes
-    Chuva
-    Chuva com ventos vortes
-    Chuva intensa
-    Chuva intensa com ventos vortes
-    Trovoada
-    Trovoada com ventos vortes
-    Nublado
+     logo aos 25 anos p=95% de acabar a prova para homem
      */
     
     
@@ -201,7 +161,7 @@ public class FitnessUM {
       return tempo;  
       
     }
-      private double calculaTmMarathonBTT(User u,double distancia){
+    private double calculaTmMarathonBTT(User u,double distancia){
         double tempo=0;
         int numero=0;
         
@@ -225,11 +185,11 @@ public class FitnessUM {
                numero++;
             }
         }
-        distance=distance/numero;
-        distance=distance/distancia;
-        factor=factor/numero;
-        tempo=(tempo/numero);
-        tempo=tempo-(factor*tempo);
+        distance/=numero;
+        distance/=distancia;
+        factor/=numero;
+        tempo/=numero;
+        tempo-=(factor*tempo);
         
         tempo/=(distance);
         
@@ -254,12 +214,10 @@ public class FitnessUM {
     }
     
     public double formula(User u,String weather,double temperatura,String tipo,double distance){
-        double tempo=0;
+        double tempo;
         double tempoMedio=0;
-        int numero=0;
-        /*
-         tempo por km = tempo medio -(1*weather)-(1*temperatura)+(numero de actividades feitas deste tipo/100)
-        */
+        double age,numero=0;
+        GregorianCalendar date = new GregorianCalendar();
          switch (tipo) {
             case "Marathon":
                tempoMedio= calculaTmMarathon(u,42.195);
@@ -271,15 +229,31 @@ public class FitnessUM {
                 break;
             case "MarathonBTT":
                 tempoMedio=calculaTmMarathonBTT(u,distance);
-                
                 numero=numeroActividadesMbtt(u);
                 break;
                       }
-        
-        tempo=tempoMedio+(1*tabelaWeather(weather))+(1*tabelaTemperatura(temperatura))-(numero/100);
+        age=date.get(Calendar.YEAR)-u.getDate().get(Calendar.YEAR);
+        tempo=tempoMedio+(1*tabelaWeather(weather))+(1*tabelaTemperatura(temperatura))-(numero/100)+(age/100);
         return tempo;
-        
+     
+     
     }
+    
+    private double kmDesisteM(User u,double tempo){
+        
+         double calories = 10* u.getWeight()*tempo;
+        GregorianCalendar date=new GregorianCalendar();
+        int age=date.get(Calendar.YEAR)-u.getDate().get(Calendar.YEAR);
+        double probabilidade;
+        if(age<15)
+                     
+            
+        
+        
+        return 0;
+    }
+    
+    
     public void simulaEvent(Event e, String weather,double temperatura){
         //cia A formula
         double distance;
@@ -383,7 +357,7 @@ public class FitnessUM {
      //So se pode registar se ja praticou actividade do tipo do evento
     public boolean userRegistaEventoSeFezActivity(User u, String tipoEvento) { 
        
-        boolean flag = false;
+        boolean flag;
         switch (tipoEvento) {
             case "Running":
                 flag = findRunning(u);
