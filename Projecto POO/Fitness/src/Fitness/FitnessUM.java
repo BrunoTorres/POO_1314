@@ -186,8 +186,9 @@ public class FitnessUM {
                 for(Record rec:lr.getList()){
                     if(rec instanceof TimePerDistance){
                         TimePerDistance tpd=(TimePerDistance)rec;
-                        if(tpd.getName().equals("Half Marathon km"))
+                        if(tpd.getName().equals("Half Marathon km")){
                         tempo+= tpd.getTime();
+                        }
                         else
                             tempo+=tpd.getTime()*0.5;
                     }                    
@@ -218,9 +219,7 @@ public class FitnessUM {
         double tempoMedio=0;
         int numero=0;
         /*
-         tempo por km = tempo medio -(calorias por minuto_ do utilizador na activide/1000)-
-     (1*weather)+(numero de actividades feitas deste tipo/100)
-        te
+         tempo por km = tempo medio -(1*weather)-(1*temperatura)+(numero de actividades feitas deste tipo/100)
         */
          switch (tipo) {
             case "Marathon":
@@ -255,12 +254,6 @@ public class FitnessUM {
         }
         
         
-        
-        
-        
-       
-        
-        
     }
     
     
@@ -270,6 +263,31 @@ public class FitnessUM {
     public void addEvent(){
         Systeam.out.println("Qual o tipo")
     }*/
+    
+    public void addEvent(Event e){
+        this.events.add(e);
+    }
+    
+    public void addMarathon(String name, String tipoActivity, String location, int maxParticipants, 
+            GregorianCalendar deadline, GregorianCalendar date, GregorianCalendar duration){
+        
+        Event e= new  Marathon( name,  tipoActivity,  location,  maxParticipants, deadline,  date,  duration);
+        this.events.add(e);
+    }
+    public void addHalfmarathon(String name, String tipoActivity, String location, int maxParticipants, 
+            GregorianCalendar deadline, GregorianCalendar date, GregorianCalendar duration){
+        
+        Event e= new  Halfmarathon( name,  tipoActivity,  location,  maxParticipants, deadline,  date,  duration);
+        this.events.add(e);
+    }
+    
+     public void addMarathonBTT(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline,
+             GregorianCalendar date, GregorianCalendar duration,double distance){
+        
+        Event e= new  MarathonBTT(name, tipoActivity, location, maxParticipants, deadline, date, duration, distance);
+        this.events.add(e);
+    }
+    
     public Event getEventByName(String name) {       // VER MELHOR!! SE NAO HOUVER O EVENTO RETORNAR O QUE?!
         Event event = new Trail();
         for (Event e : this.getEvents()) {
@@ -281,7 +299,7 @@ public class FitnessUM {
         return event;
     }
 
-    public boolean findRunning(User u) {
+    private boolean findRunning(User u) {
         boolean flag, found;
         flag = found = false;
 
@@ -295,7 +313,7 @@ public class FitnessUM {
         return flag;
     }
 
-    public boolean findMountainBiking(User u) {
+    private boolean findMountainBiking(User u) {
         boolean flag, found;
         flag = found = false;
 
@@ -808,7 +826,8 @@ public class FitnessUM {
 
 	////////////////////////////////!!!FRIEND!!!//////////////////////////////////////////////////
     public void sendFriendRequest(User user, User friendWhoSendsRequest) {
-        user.addFrindToMessage(friendWhoSendsRequest.getEmail());
+        user.addFriendToMessage(friendWhoSendsRequest.getEmail());
+      
     }
 
     public boolean existsFriendToAdd(User u) {
