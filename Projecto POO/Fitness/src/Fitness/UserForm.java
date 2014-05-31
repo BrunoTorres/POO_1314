@@ -5,16 +5,11 @@
  */
 package Fitness;
 
-import java.util.ArrayList;
-import java.util.TreeSet;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.border.BevelBorder;
-import javax.swing.border.Border;
-import javax.swing.text.StyleConstants;
 
 /**
  *
@@ -35,12 +30,8 @@ public class UserForm extends javax.swing.JFrame {
 		this.setTitle(u.getName() + " - Utilizador");
 		//this.jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(fit.getActivePerson().getName()));
 		//this.jTabbedPane1.addT
-		
+
 		this.acts = this.fit.getLast10ActivitiesByActivity(u).toArray();
-		ArrayList<String> msgs = (ArrayList<String>) u.getMessage();
-		if(msgs.size() > 0){
-			this.listPedidosAmizade = new JList(msgs.toArray());
-		}
 		if (this.acts.length > 0) {
 			this.currAct = 1;
 			//Object[] array = acts.toArray();
@@ -62,11 +53,8 @@ public class UserForm extends javax.swing.JFrame {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         panelMensagens = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        listPedidosAmizade = new javax.swing.JList();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        butVerPedidos = new javax.swing.JButton();
+        butAddActivity = new javax.swing.JButton();
         panelVer10Stats = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         text10Act = new javax.swing.JTextArea();
@@ -75,73 +63,53 @@ public class UserForm extends javax.swing.JFrame {
         butNext = new javax.swing.JButton();
         butLast = new javax.swing.JButton();
         textNAct = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        butVerAmigos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setName("frameInicial"); // NOI18N
         setResizable(false);
 
         jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Pedidos de Amizade"));
+        butVerPedidos.setText("Ver pedidos de amizade");
+        butVerPedidos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butVerPedidosActionPerformed(evt);
+            }
+        });
 
-        jScrollPane2.setViewportView(listPedidosAmizade);
-
-        jButton2.setText("OK");
-        jButton2.setMargin(new java.awt.Insets(1, 1, 1, 1));
-        jButton2.setMaximumSize(new java.awt.Dimension(36, 22));
-        jButton2.setMinimumSize(new java.awt.Dimension(36, 22));
-        jButton2.setPreferredSize(new java.awt.Dimension(36, 22));
-
-        jButton3.setText("CAN");
-        jButton3.setMargin(new java.awt.Insets(1, 1, 1, 1));
-        jButton3.setMaximumSize(new java.awt.Dimension(36, 22));
-        jButton3.setMinimumSize(new java.awt.Dimension(36, 22));
-        jButton3.setPreferredSize(new java.awt.Dimension(36, 22));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        butAddActivity.setText("+ ATIVIDADE");
+        butAddActivity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butAddActivityActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelMensagensLayout = new javax.swing.GroupLayout(panelMensagens);
         panelMensagens.setLayout(panelMensagensLayout);
         panelMensagensLayout.setHorizontalGroup(
             panelMensagensLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMensagensLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(panelMensagensLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelMensagensLayout.createSequentialGroup()
+                        .addGap(135, 135, 135)
+                        .addComponent(butVerPedidos))
+                    .addGroup(panelMensagensLayout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(butAddActivity)))
+                .addContainerGap(283, Short.MAX_VALUE))
         );
         panelMensagensLayout.setVerticalGroup(
             panelMensagensLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelMensagensLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(142, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMensagensLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(butAddActivity)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 259, Short.MAX_VALUE)
+                .addComponent(butVerPedidos)
+                .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Mensagens", panelMensagens);
+        jTabbedPane1.addTab("Home", panelMensagens);
 
         text10Act.setColumns(20);
         text10Act.setRows(5);
@@ -177,10 +145,10 @@ public class UserForm extends javax.swing.JFrame {
 
         textNAct.setEditable(false);
 
-        jButton1.setText("Ver actividades de um amigo");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        butVerAmigos.setText("Ver actividades de um amigo");
+        butVerAmigos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                butVerAmigosActionPerformed(evt);
             }
         });
 
@@ -204,11 +172,11 @@ public class UserForm extends javax.swing.JFrame {
                         .addComponent(butNext)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(butLast)
-                        .addGap(0, 118, Short.MAX_VALUE)))
+                        .addGap(0, 191, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(panelVer10StatsLayout.createSequentialGroup()
                 .addGap(154, 154, 154)
-                .addComponent(jButton1)
+                .addComponent(butVerAmigos)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelVer10StatsLayout.setVerticalGroup(
@@ -224,7 +192,7 @@ public class UserForm extends javax.swing.JFrame {
                     .addComponent(butLast)
                     .addComponent(textNAct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(butVerAmigos)
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
@@ -268,7 +236,7 @@ public class UserForm extends javax.swing.JFrame {
 		this.changeShownActivity();
     }//GEN-LAST:event_butLastActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void butVerAmigosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butVerAmigosActionPerformed
 		JList listAmigos = new JList();
 		Object[] amigos = ((User) this.fit.getActivePerson()).getFriendsList().toArray();
 		//ArrayList<String> nomesAmigos = new ArrayList<>();
@@ -289,22 +257,30 @@ public class UserForm extends javax.swing.JFrame {
 			}
 		}
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_butVerAmigosActionPerformed
+
+    private void butVerPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butVerPedidosActionPerformed
+        FriendRequestListForm pedidos = new FriendRequestListForm(this, fit);
+		pedidos.setVisible(true);
+    }//GEN-LAST:event_butVerPedidosActionPerformed
+
+    private void butAddActivityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAddActivityActionPerformed
+        AddActivityForm addActi = new AddActivityForm(this);
+		addActi.setVisible(true);
+		this.setEnabled(false);
+    }//GEN-LAST:event_butAddActivityActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton butAddActivity;
     private javax.swing.JButton butFirst;
     private javax.swing.JButton butLast;
     private javax.swing.JButton butNext;
     private javax.swing.JButton butPrev;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton butVerAmigos;
+    private javax.swing.JButton butVerPedidos;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JList listPedidosAmizade;
     private javax.swing.JPanel panelMensagens;
     private javax.swing.JPanel panelVer10Stats;
     private javax.swing.JTextArea text10Act;

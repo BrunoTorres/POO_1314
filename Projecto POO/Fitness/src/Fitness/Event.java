@@ -25,8 +25,8 @@ public abstract class Event {
         this.participants = 0;
         this.deadline = new GregorianCalendar();
         this.duration = new GregorianCalendar();
-        this.participantsList = new TreeSet<>();
-        this.ranking = new TreeSet<>();
+        this.participantsList = new TreeSet();
+        this.ranking = new TreeSet();
 
     }
 
@@ -38,7 +38,7 @@ public abstract class Event {
         this.participants = participants;
         this.deadline = (GregorianCalendar)deadline.clone();
         this.duration = (GregorianCalendar)duration.clone();
-        this.participantsList = new TreeSet<>(new ComparePersonByName()); 
+        this.participantsList = new TreeSet<User>(new ComparePersonByName()); 
         this.participantsList.addAll(participantsList);
        // this.ranking = new TreeSet<Activity>(new CompareactivityByTime()); 
       //  this.ranking.addAll(ranking);
@@ -53,7 +53,7 @@ public abstract class Event {
         this.deadline = deadline;
         this.duration = duration;
         this.participantsList = participantsList;
-        this.participantsList = new TreeSet<>(new ComparePersonByName()); 
+        this.participantsList = new TreeSet<User>(new ComparePersonByName()); 
         this.participantsList.addAll(participantsList);
        // this.ranking = new TreeSet<Activity>(new CompareactivityByTime());
        // this.ranking.addAll(ranking);
@@ -68,8 +68,8 @@ public abstract class Event {
         this.participants = 0;
         this.deadline = deadline;
         this.duration = duration;
-        this.participantsList = new TreeSet<>();
-        this.ranking = new TreeSet<>();
+        this.participantsList = new TreeSet();
+        this.ranking = new TreeSet();
 
     }
 
@@ -114,7 +114,7 @@ public abstract class Event {
     }
 
     public TreeSet<User> getParticipantsList() {
-        TreeSet<User> aux = new TreeSet<>();
+        TreeSet<User> aux = new TreeSet();
         for (User u : this.participantsList) {
             aux.add(u.clone());
         }

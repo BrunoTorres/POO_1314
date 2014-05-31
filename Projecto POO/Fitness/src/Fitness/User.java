@@ -19,7 +19,7 @@ public class User extends Person
     private TreeSet<String> friendsList;
     private TreeMap<GregorianCalendar,Statistics> stats;
     private TreeMap<String,ListRecords> records;
-    private ArrayList<String> messageFriend;
+    private TreeSet<String> messageFriend;
         
     
     public User(){
@@ -30,7 +30,7 @@ public class User extends Person
         this.userActivities=new TreeSet<>(new CompareActivity());
         this.friendsList=new TreeSet<>(); 
         this.stats=new TreeMap<> (new CompareStatsPerYearAndMonth());
-        this.messageFriend=new ArrayList<>();
+        this.messageFriend=new TreeSet<>();
         this.records=new TreeMap<>();
     }
     
@@ -46,7 +46,7 @@ public class User extends Person
             this.userActivities.add((Activity) act.clone());
         this.friendsList=(TreeSet<String>)friendsList.clone(); 
         this.stats=new TreeMap<> (new CompareStatsPerYearAndMonth());
-        this.messageFriend=new ArrayList<>();
+        this.messageFriend=new TreeSet<>();
         this.records=new TreeMap<>();
     }
      public User(String email,String pass,String name,char gender,GregorianCalendar date,
@@ -59,7 +59,7 @@ public class User extends Person
         this.userActivities=new TreeSet<>(new CompareActivity());
         this.friendsList=new TreeSet<>();
         this.stats=new TreeMap<> (new CompareStatsPerYearAndMonth());
-        this.messageFriend=new ArrayList<>();
+        this.messageFriend=new TreeSet<>();
         this.records=new TreeMap<>();
     }
        
@@ -71,7 +71,7 @@ public class User extends Person
         this.userActivities=(TreeSet<Activity>)u.getActivities();
         this.friendsList=(TreeSet<String>)u.getFriendsList();
         this.stats=(TreeMap<GregorianCalendar,Statistics>)u.getStats();
-        this.messageFriend=(ArrayList<String>)u.getMessage();  
+        this.messageFriend=(TreeSet<String>)u.getMessage();  
         this.records=(TreeMap<String,ListRecords>)u.getRecords();
     }
     public Map<String,ListRecords> getRecords(){
@@ -113,7 +113,7 @@ public class User extends Person
          return aux;
      
     }
-    public List<String> getMessage(){
+    public Set<String> getMessage(){
         return this.messageFriend;
     }
     
