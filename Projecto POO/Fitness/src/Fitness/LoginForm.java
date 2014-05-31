@@ -25,12 +25,12 @@ import javax.swing.text.MaskFormatter;
  *
  * @author jmano
  */
-public class MenuInicial extends javax.swing.JFrame {
+public class LoginForm extends javax.swing.JFrame {
 
 	/**
 	 * Creates new form MenuInicial
 	 */
-	public MenuInicial() {
+	public LoginForm() {
 		initComponents();
 		fitness = new FitnessUM();
 		User u1 = new User("1", "1", "user1", 'M', new GregorianCalendar(), 170, 70.0, "Futebol");
@@ -43,10 +43,11 @@ public class MenuInicial extends javax.swing.JFrame {
 		fitness.addUser(u4.getEmail(), u4.getPassword(), u4.getName(), u4.getGender(), u4.getDate(), u4.getHeight(), u4.getWeight(), u4.getFavoriteActivity());
 		fitness.getUserByEmail("1").addActivity(new Yoga("YOGA com os amigos", new GregorianCalendar(), 120), "Yoga");
 		fitness.getUserByEmail("1").addActivity(new Yoga("YOGA2222 com os amigos", new GregorianCalendar(), 110), "Yoga");
-		fitness.acceptFriend(fitness.getUserByEmail("1"), "2");
-		fitness.acceptFriend(fitness.getUserByEmail("1"), "3");
-		fitness.acceptFriend(fitness.getUserByEmail("1"), "4");
-		fitness.getUserByEmail("1").addFriendToMessage("user2 | 2");
+		fitness.sendFriendRequest(fitness.getUserByEmail("1"), fitness.getUserByEmail("4"));
+		fitness.sendFriendRequest(fitness.getUserByEmail("1"), fitness.getUserByEmail("3"));
+		fitness.sendFriendRequest(fitness.getUserByEmail("2"), fitness.getUserByEmail("3"));
+		fitness.sendFriendRequest(fitness.getUserByEmail("3"), fitness.getUserByEmail("3"));
+		
 	}
 
 	/**
@@ -250,16 +251,16 @@ public class MenuInicial extends javax.swing.JFrame {
 				}
 			}
 		} catch (ClassNotFoundException ex) {
-			java.util.logging.Logger.getLogger(MenuInicial.class
+			java.util.logging.Logger.getLogger(LoginForm.class
 					.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (InstantiationException ex) {
-			java.util.logging.Logger.getLogger(MenuInicial.class
+			java.util.logging.Logger.getLogger(LoginForm.class
 					.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (IllegalAccessException ex) {
-			java.util.logging.Logger.getLogger(MenuInicial.class
+			java.util.logging.Logger.getLogger(LoginForm.class
 					.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
-			java.util.logging.Logger.getLogger(MenuInicial.class
+			java.util.logging.Logger.getLogger(LoginForm.class
 					.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		}
 		//</editor-fold>
@@ -267,7 +268,7 @@ public class MenuInicial extends javax.swing.JFrame {
 		/* Create and display the form */
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				new MenuInicial().setVisible(true);
+				new LoginForm().setVisible(true);
 			}
 		});
 	}

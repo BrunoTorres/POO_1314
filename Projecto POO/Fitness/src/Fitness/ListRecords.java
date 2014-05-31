@@ -11,11 +11,11 @@ public class ListRecords {
     
 public ListRecords(){
     this.name="";
-    this.recs=new ArrayList();
+    this.recs=new ArrayList<>();
 }
 public ListRecords(String name){
     this.name=name;
-    this.recs=new ArrayList();
+    this.recs=new ArrayList<>();
 }
 
 public ListRecords(String name, TreeSet<Record> recs){
@@ -29,7 +29,7 @@ public ListRecords(ListRecords list){
 }
 
   public ArrayList<Record> getList() {
-        ArrayList<Record> aux=new ArrayList();
+        ArrayList<Record> aux=new ArrayList<>();
         for(Record r:this.recs)
             aux.add(r);
         return aux;

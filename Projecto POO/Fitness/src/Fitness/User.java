@@ -19,7 +19,7 @@ public class User extends Person
     private TreeSet<String> friendsList;
     private TreeMap<GregorianCalendar,Statistics> stats;
     private TreeMap<String,ListRecords> records;
-    private ArrayList<String> messageFriend;
+    private TreeSet<String> messageFriend;
         
     
     public User(){
@@ -27,11 +27,11 @@ public class User extends Person
         this.height=0;
         this.weight=0;
         this.favoriteActivity="";
-        this.userActivities=new TreeSet<Activity>(new CompareActivity());
-        this.friendsList=new TreeSet<String>(); 
-        this.stats=new TreeMap<GregorianCalendar,Statistics> (new CompareStatsPerYearAndMonth());
-        this.messageFriend=new ArrayList();
-        this.records=new TreeMap();
+        this.userActivities=new TreeSet<>(new CompareActivity());
+        this.friendsList=new TreeSet<>(); 
+        this.stats=new TreeMap<> (new CompareStatsPerYearAndMonth());
+        this.messageFriend=new TreeSet<>();
+        this.records=new TreeMap<>();
     }
     
     public User(String email,String pass,String name,char gender,GregorianCalendar date,
@@ -45,9 +45,9 @@ public class User extends Person
         for(Activity act:userActivities)
             this.userActivities.add((Activity) act.clone());
         this.friendsList=(TreeSet<String>)friendsList.clone(); 
-        this.stats=new TreeMap<GregorianCalendar,Statistics> (new CompareStatsPerYearAndMonth());
-        this.messageFriend=new ArrayList();
-        this.records=new TreeMap();
+        this.stats=new TreeMap<> (new CompareStatsPerYearAndMonth());
+        this.messageFriend=new TreeSet<>();
+        this.records=new TreeMap<>();
     }
      public User(String email,String pass,String name,char gender,GregorianCalendar date,
              int height,double weight,String favoriteActivity)
@@ -56,11 +56,11 @@ public class User extends Person
         this.height=height;
         this.weight=weight;
         this.favoriteActivity=favoriteActivity;
-        this.userActivities=new TreeSet<Activity>(new CompareActivity());
-        this.friendsList=new TreeSet<String>();
-        this.stats=new TreeMap<GregorianCalendar,Statistics> (new CompareStatsPerYearAndMonth());
-        this.messageFriend=new ArrayList();
-        this.records=new TreeMap();
+        this.userActivities=new TreeSet<>(new CompareActivity());
+        this.friendsList=new TreeSet<>();
+        this.stats=new TreeMap<> (new CompareStatsPerYearAndMonth());
+        this.messageFriend=new TreeSet<>();
+        this.records=new TreeMap<>();
     }
        
     public User(User u){
@@ -70,13 +70,12 @@ public class User extends Person
         this.favoriteActivity=u.getFavoriteActivity();
         this.userActivities=(TreeSet<Activity>)u.getActivities();
         this.friendsList=(TreeSet<String>)u.getFriendsList();
-        this.stats=(TreeMap)u.getStats();
-        this.messageFriend=(ArrayList)u.getMessage();  
-        this.records=(TreeMap)u.getRecords();
-        
+        this.stats=(TreeMap<GregorianCalendar,Statistics>)u.getStats();
+        this.messageFriend=(TreeSet<String>)u.getMessage();  
+        this.records=(TreeMap<String,ListRecords>)u.getRecords();
     }
     public Map<String,ListRecords> getRecords(){
-        TreeMap<String,ListRecords> aux=new TreeMap();
+        TreeMap<String,ListRecords> aux=new TreeMap<>();
         
         for(String s : this.records.keySet())
             aux.put(s, this.records.get(s));
@@ -94,7 +93,7 @@ public class User extends Person
         return this.favoriteActivity;
     }
     public Set<Activity> getActivities(){
-        TreeSet<Activity> res= new TreeSet<Activity>(new CompareActivity());
+        TreeSet<Activity> res= new TreeSet<>(new CompareActivity());
         for(Activity act : this.userActivities)
             res.add(act.clone());
     return res;
@@ -106,7 +105,7 @@ public class User extends Person
     
     
     public Map<GregorianCalendar,Statistics>getStats(){
-         TreeMap<GregorianCalendar,Statistics>aux =new TreeMap<GregorianCalendar,Statistics> (new CompareStatsPerYearAndMonth());
+         TreeMap<GregorianCalendar,Statistics>aux =new TreeMap<> (new CompareStatsPerYearAndMonth());
          
          for(GregorianCalendar key : this.stats.keySet())                                                                       //FUNCIONA??!!!
              aux.put(key,this.stats.get(key));
@@ -114,7 +113,7 @@ public class User extends Person
          return aux;
      
     }
-    public List<String> getMessage(){
+    public Set<String> getMessage(){
         return this.messageFriend;
     }
     
