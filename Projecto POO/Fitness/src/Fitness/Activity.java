@@ -71,7 +71,7 @@ public abstract class Activity {
     * @return the activityRecords
 
     public ArrayList <Record> getPerformance() {
-        ArrayList<Record> aux = new ArrayList();
+        ArrayList<Record> aux = new ArrayList<>();
         for (Record rec : this.performance)
             aux.add(rec.clone());
         return aux;
