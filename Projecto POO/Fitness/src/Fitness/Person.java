@@ -86,13 +86,13 @@ public abstract class Person
     @Override
     public String toString(){
     StringBuilder sb = new StringBuilder();
-    
+      
     sb.append("Nome: ");sb.append(this.name).append("\n");
     sb.append("Email: ");sb.append(this.email).append("\n");
     sb.append("Password: ");sb.append(this.password).append("\n");
     sb.append("Gender: ");sb.append(this.gender).append("\n");
     sb.append("Date of Birth: ");
-    sb.append(this.dateOfBirth.get(Calendar.DAY_OF_MONTH)).append(" / ");;
+    sb.append(this.dateOfBirth.get(Calendar.DAY_OF_MONTH)).append(" / ");
     sb.append(this.dateOfBirth.get(Calendar.MONTH)).append(" / ");
     sb.append(this.dateOfBirth.get(Calendar.YEAR)).append("\n"); 
     

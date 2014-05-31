@@ -17,18 +17,18 @@ public class MarathonBTT extends Event {
         this.distance = 0;
     }
 
-    public MarathonBTT(String name, String tipoActivity, String location, int maxParticipants, int participants, GregorianCalendar deadline, GregorianCalendar date, GregorianCalendar duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking,double distance) {
-        super(name, tipoActivity, location, maxParticipants, participants, deadline, date, duration, participantsList, ranking);
+    public MarathonBTT(String name, String location, int maxParticipants, int participants, GregorianCalendar deadline, GregorianCalendar date, double duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking,double distance) {
+        super(name, "MountainBiking", location, maxParticipants, participants, deadline, date, duration, participantsList, ranking);
         this.distance=distance;
     }
 
-    public MarathonBTT(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date, GregorianCalendar duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking,double distance) {
-        super(name, tipoActivity, location, maxParticipants, deadline, date, duration, participantsList, ranking);
+    public MarathonBTT(String name, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date, double duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking,double distance) {
+        super(name, "MountainBiking", location, maxParticipants, deadline, date, duration, participantsList, ranking);
         this.distance=distance;
     }
 
-    public MarathonBTT(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date, GregorianCalendar duration,double distance) {
-        super(name, tipoActivity, location, maxParticipants, deadline, date, duration);
+    public MarathonBTT(String name, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date, double duration,double distance) {
+        super(name, "MountainBiking", location, maxParticipants, deadline, date, duration);
         this.distance=distance;
     }
 

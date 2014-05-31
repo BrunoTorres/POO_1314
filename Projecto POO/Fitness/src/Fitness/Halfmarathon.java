@@ -16,16 +16,16 @@ public class Halfmarathon extends Event {
         //this.distance = 0;
     }
 
-    public Halfmarathon(String name, String tipoActivity, String location, int maxParticipants, int participants, GregorianCalendar deadline, GregorianCalendar date, GregorianCalendar duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking) {
-        super(name, tipoActivity, location, maxParticipants, participants, deadline, date, duration, participantsList, ranking);
+    public Halfmarathon(String name, String location, int maxParticipants, int participants, GregorianCalendar deadline, GregorianCalendar date, double duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking) {
+        super(name, "Running", location, maxParticipants, participants, deadline, date, duration, participantsList, ranking);
     }
 
-    public Halfmarathon(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date, GregorianCalendar duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking) {
-        super(name, tipoActivity, location, maxParticipants, deadline, date, duration, participantsList, ranking);
+    public Halfmarathon(String name, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date, double duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking) {
+        super(name, "Running", location, maxParticipants, deadline, date, duration, participantsList, ranking);
     }
 
-    public Halfmarathon(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date, GregorianCalendar duration) {
-        super(name, tipoActivity, location, maxParticipants, deadline, date, duration);
+    public Halfmarathon(String name, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date, double duration) {
+        super(name, "Running", location, maxParticipants, deadline, date, duration);
     }
 
     public Halfmarathon(Halfmarathon m) {

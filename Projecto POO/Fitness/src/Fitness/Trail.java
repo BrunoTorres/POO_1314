@@ -24,7 +24,7 @@ public class Trail extends Event {
     }
 
     public Trail(String name, String tipoActivity, String location, int maxParticipants, int participants,
-            GregorianCalendar deadline, GregorianCalendar date, GregorianCalendar duration, TreeSet<User> participantsList,
+            GregorianCalendar deadline, GregorianCalendar date, double duration, TreeSet<User> participantsList,
             TreeSet<Ranking> ranking,double distance) {
 
         super(name, tipoActivity, location, maxParticipants, participants, deadline, date, duration, participantsList, ranking);
@@ -32,14 +32,14 @@ public class Trail extends Event {
     }
 
     public Trail(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date,
-            GregorianCalendar duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking,double distance) {
+            double duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking,double distance) {
 
         super(name, tipoActivity, location, maxParticipants, deadline, date, duration, participantsList, ranking);
         this.distance=distance;
     }
 
     public Trail(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date,
-            GregorianCalendar duration,double distance) {
+            double duration,double distance) {
 
         super(name, tipoActivity, location, maxParticipants, deadline, date, duration);
         this.distance=distance;

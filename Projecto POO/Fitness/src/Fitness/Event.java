@@ -13,7 +13,7 @@ public abstract class Event {
     private int participants;
     private GregorianCalendar deadline;
     private GregorianCalendar date;
-    private GregorianCalendar duration;
+    private double duration;
     private TreeSet<User> participantsList;
     private TreeSet<Activity> ranking;
 
@@ -23,53 +23,57 @@ public abstract class Event {
         this.location = "";
         this.maxParticipants = 0;
         this.participants = 0;
+        this.date=new GregorianCalendar();
         this.deadline = new GregorianCalendar();
-        this.duration = new GregorianCalendar();
-        this.participantsList = new TreeSet();
-        this.ranking = new TreeSet();
+        this.duration = 0;
+        this.participantsList = new TreeSet<>(new ComparePersonByName());
+        this.ranking = new TreeSet<>();
 
     }
 
-    public Event(String name, String tipoActivity, String location, int maxParticipants, int participants, GregorianCalendar deadline, GregorianCalendar date, GregorianCalendar duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking) {
+    public Event(String name, String tipoActivity, String location, int maxParticipants, int participants, GregorianCalendar deadline, GregorianCalendar date, double duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking) {
         this.name = name;
         this.tipoActivity = tipoActivity;
         this.location = location;
         this.maxParticipants = maxParticipants;
         this.participants = participants;
+        this.date=(GregorianCalendar)date.clone();
         this.deadline = (GregorianCalendar)deadline.clone();
-        this.duration = (GregorianCalendar)duration.clone();
+        this.duration = duration;
         this.participantsList = new TreeSet<User>(new ComparePersonByName()); 
-        this.participantsList.addAll(participantsList);
+       // this.participantsList.addAll(participantsList);
        // this.ranking = new TreeSet<Activity>(new CompareactivityByTime()); 
       //  this.ranking.addAll(ranking);
 
     }
 
-    public Event(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date, GregorianCalendar duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking) {
+    public Event(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date, double duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking) {
         this.name = name;
         this.tipoActivity = tipoActivity;
         this.location = location;
         this.maxParticipants = maxParticipants;
-        this.deadline = deadline;
+        this.date=(GregorianCalendar)date.clone();
+        this.deadline = (GregorianCalendar)deadline.clone();
         this.duration = duration;
-        this.participantsList = participantsList;
+         this.participants = 0;
+        //this.participantsList = participantsList;
         this.participantsList = new TreeSet<User>(new ComparePersonByName()); 
-        this.participantsList.addAll(participantsList);
+       // this.participantsList.addAll(participantsList);
        // this.ranking = new TreeSet<Activity>(new CompareactivityByTime());
        // this.ranking.addAll(ranking);
     }
 
-    public Event(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date,
-            GregorianCalendar duration) {
+    public Event(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date, double duration) {
         this.name = name;
         this.tipoActivity = tipoActivity;
         this.location = location;
         this.maxParticipants = maxParticipants;
         this.participants = 0;
-        this.deadline = deadline;
+        this.date=(GregorianCalendar)date.clone();
+        this.deadline = (GregorianCalendar)deadline.clone();
         this.duration = duration;
-        this.participantsList = new TreeSet();
-        this.ranking = new TreeSet();
+        this.participantsList = new TreeSet<User>(new ComparePersonByName());
+        this.ranking = new TreeSet<>();
 
     }
 
@@ -80,6 +84,7 @@ public abstract class Event {
         this.maxParticipants = e.getMaxParticipants();
         this.participants = e.getParticipants();
         this.deadline = e.getDeadline();
+        this.date=e.getDate();
         this.duration = e.getDuration();
         this.participantsList = e.getParticipantsList();
         //this.ranking = e.getRanking();
@@ -105,16 +110,19 @@ public abstract class Event {
         return this.participants;
     }
 
+     public GregorianCalendar getDate() {
+        return this.date;
+    }
     public GregorianCalendar getDeadline() {
         return this.deadline;
     }
 
-    public GregorianCalendar getDuration() {
+    public double getDuration() {
         return this.duration;
     }
 
     public TreeSet<User> getParticipantsList() {
-        TreeSet<User> aux = new TreeSet();
+        TreeSet<User> aux = new TreeSet<User>(new ComparePersonByName());
         for (User u : this.participantsList) {
             aux.add(u.clone());
         }
@@ -142,12 +150,13 @@ public abstract class Event {
         this.date = date;
     }
 
-    public void setDuration(GregorianCalendar duration) {
+    public void setDuration(double duration) {
         this.duration = duration;
     }
 
     public void addUser(User u) {
-        this.participantsList.add(u);
+        this.participantsList.add(u.clone());
+        this.participants+=1;
     }
 
     public void setMaxParticipants(int max) {
@@ -161,21 +170,20 @@ public abstract class Event {
         sb.append("Tipo do evendo : ").append(this.tipoActivity).append("\n");
         sb.append("Localização do evendo : ").append(this.location).append("\n");
         sb.append("Nº max de participantes : ").append(this.maxParticipants).append("\n");
-        sb.append("Nº de participantes: ").append(this.participants).append("\n");
+        sb.append("Nº de participantes: ").append(this.participantsList.size()).append("\n");
         sb.append("Data do evento: ");
-        sb.append(this.date.get(Calendar.DAY_OF_MONTH)).append(" / ");;
+       
+        sb.append(this.date.get(Calendar.DAY_OF_MONTH)).append(" / ");
         sb.append(this.date.get(Calendar.MONTH)).append(" / ");
         sb.append(this.date.get(Calendar.YEAR)).append("\n");
         sb.append("Data limite de inscrição ");
-        sb.append(this.deadline.get(Calendar.DAY_OF_MONTH)).append(" / ");;
+        sb.append(this.deadline.get(Calendar.DAY_OF_MONTH)).append(" / ");
         sb.append(this.deadline.get(Calendar.MONTH)).append(" / ");
         sb.append(this.deadline.get(Calendar.YEAR)).append("\n");
         sb.append("Duração do evento ");
-        sb.append(this.duration.get(Calendar.HOUR)).append(" / ");;
-        sb.append(this.duration.get(Calendar.MINUTE)).append(" / ");
-        sb.append(this.duration.get(Calendar.SECOND)).append("\n");
+        sb.append(this.duration).append(" (min) \n");
         for (User u : this.participantsList) {
-            sb.append(u.getName()).append("\n");
+          sb.append(u.getName()).append("\n");
         }
        // for (Ranking r : this.ranking) {
        //     sb.append(r.toString());
@@ -197,7 +205,7 @@ public abstract class Event {
                     && this.maxParticipants == e.getMaxParticipants()
                     && this.participants == e.getParticipants()
                     && this.deadline.equals(e.getDeadline())
-                    && this.duration.equals(e.getDuration())
+                    && (this.duration==e.getDuration())
                     && this.participantsList.equals(e.getParticipantsList())
                    /* && this.ranking.equals(this.getRanking())*/);
         }
