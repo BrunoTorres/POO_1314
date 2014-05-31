@@ -1,6 +1,7 @@
 package Fitness;
 
 
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 import java.util.TreeSet;
@@ -33,10 +34,13 @@ public class Main {
         FitnessUM um=new FitnessUM();
         TreeSet<Person> person= new TreeSet(new ComparePersonByName());
        
+      u1=new User("user1@gmail.com","2211","jose",'M',date,12,14,"correr");
+      u2=new User("user3@gmail.com","1122","Manel",'F',date,11,15,"FAzer nada");  
+      u3= new User("user4@gmail.com","3322","Raul",'M',date,10,13,"Fazer NADa");
       
-       um.addUser("user1@gmail.com","2211","jose",'M',date,12,14,"correr");                    //VER GregorianCALENDAR!!!!
-       um.addUser("user3@gmail.com","1122","Manel",'F',date,11,15,"FAzer nada");
-       um.addUser("user4@gmail.com","3322","Raul",'M',date,10,13,"Fazer NADa");
+       um.addUserByUser(u1);                  //VER GregorianCALENDAR!!!!
+       um.addUserByUser(u2);
+       um.addUserByUser(u3);
        um.addAdmin("user4222@gmail.com","3322","Joselinaa",'M',date);
 
         /*
@@ -68,7 +72,7 @@ public class Main {
        System.out.println(um.getUserByEmail("cois@gmail.com").toString());
          */
         um.addUser("novo@gmail.com","1111","Novo",'M',date,12,14,"fugir");
-       System.out.println(um.getUserByEmail("user1@gmail.com").toString());
+       //System.out.println(um.getUserByEmail("user1@gmail.com").toString());
         //System.out.println(db.toString());
        
        
@@ -94,25 +98,67 @@ public class Main {
        u.addActivity(act, "Running");
        u.addActivity(act1, "Running");
        u.addActivity(act2, "Running");
-      u.addActivity(actcy, "Cycling");
+        u.addActivity(actcy, "Cycling");
       u.addActivity(actc, "Cycling");
-       
+       u2.addActivity(act, "Running");
+       u2.addActivity(act1, "Running");
+       u2.addActivity(act2, "Running");
       
+       
+       //String name, GregorianCalendar date, double timeSpent,double distance, double verticaldistance,String weather)
+       
+       Activity actbtt1 = new MountainBiking("MountainBiking", date3,2000, 40, 0.1, "chuva");
+        Activity act1bbt2 = new MountainBiking("MountainBiking",date3, 3000, 50, 0.2,"chuva");
+        Activity act2btt3 = new MountainBiking("MountainBiking", date3, 3005, 60,1, "chuva");
       // TreeSet activi=(TreeSet)um.getLast10Activities(u);
       //System.out.println(activi.toString()); 
-      
+      u3.addActivity(actbtt1, "MountainBiking");
+       u3.addActivity(act1bbt2, "MountainBiking");
+       u3.addActivity(act2btt3, "MountainBiking");
        /////////////////////////////////////////////
        //AMIGOS//
-       User amigo=um.getUserByEmail("user3@gmail.com");
+      // User amigo=um.getUserByEmail("user3@gmail.com");
        //System.out.println(amigo.toString());
-       um.sendFriendRequest(u,amigo);
-       if(um.existsFriendToAdd(u)){
+       //um.sendFriendRequest(u,amigo);
+       //if(um.existsFriendToAdd(u)){
           // System.out.println("sim existe \n");
-           um.acceptFriend(u,"user3@gmail.com");
-       }
-       for(String s :u.getRecords().keySet())
-       System.out.println(u.getRecords().get(s).toString());
-       //System.out.println(u.getFriendsList().toString());
+         //  um.acceptFriend(u,"user3@gmail.com");
+       //}
+      // for(String s :u.getRecords().keySet())
+        //System.out.println(u.getRecords().get(s).toString());
+       
+       GregorianCalendar limite=new GregorianCalendar(2014,11,2);
+       GregorianCalendar datacome= new GregorianCalendar(2014,11,4);
+       
+       um.addMarathonBTT("serra", "barcelos", 40, datacome,limite, 155,90);
+       Event e= um.getEventByName("serra");
+       //um.addMarathon("calhaus corrida", "polo norte", 40, datacome,limite, 155);
+       //Event e= um.getEventByName("calhaus corrida");
+       
+        
+       um.userRegistEvent(u3, e);
+       //for(Activity a:u3.getActivities())
+          // System.out.println(a.toString());
+       
+      double cal=um.formula(u3, "Sol", 30, "MarathonBTT", 90);
+       
+      // double cal=um.calculaTmMarathonBTT(u3, 90);
+         System.out.println(cal);
+        
+   //um.userRegistEvent(u1, e);
+     //System.out.println(u1.toString());
+      //um.userRegistEvent(u3, e);
+     // System.out.println(u3.toString());
+      //um.userRegistEvent(u2, e);
+     
+      // e.addUser(u3);
+      //    System.out.println(e.toString());
+       
+       
+      // System.out.println(teste);
+
+
+//System.out.println(u.getFriendsList().toString());
        
        //Para ver actividades do amigo= list amigos getUserbyEmail depois getLast10activity do user e print
        // System.out.println(um.getLast10Activities(u).toString());

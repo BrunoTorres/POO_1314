@@ -23,7 +23,10 @@ public class CompareActivity implements Comparator<Activity>,Serializable
             return -1;
         if(o1.getDate().before(o2.getDate()))
             return 1;
-        return(o1.getName().compareTo(o2.getName()));
+        if(o1.getTimeSpent()>o2.getTimeSpent())
+            return -1;
+       else
+            return 1;
           
            
            

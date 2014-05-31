@@ -9,6 +9,9 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
+
+
+
 public class FitnessUM {     
 
     //private DataBase db;
@@ -23,13 +26,13 @@ public class FitnessUM {
     public FitnessUM() {
        // this.db = new DataBase();
         this.userList= new TreeSet<Person>(new ComparePersonByName());
-        this.events=new ArrayList();
+        this.events=new ArrayList<>();
     }
  
     
     ////////////////////////
     public List<Event> getEvents(){
-        ArrayList<Event> aux=new ArrayList();
+        ArrayList<Event> aux=new ArrayList<>();
         for(Event e:this.events){
             aux.add(e.clone());
         }
@@ -134,25 +137,25 @@ public class FitnessUM {
             case "Sol intenso":
                 factor=0.7;
                 break;
-            case "Sol intenso com ventos vortes":
+            case "Sol intenso com ventos fortes":
                 factor=0.8;
                 break;
             case "Chuva":
                 factor=0.4;
                 break;
-            case "Chuva com Ventos Fortes":
+            case "Chuva com Ventos fortes":
                 factor=0.6;
                 break;
             case "Chuva intensa":
                 factor=0.7;
                 break;
-            case "Chuva intensa com ventos vortes":
+            case "Chuva intensa com ventos fortes":
                 factor=0.9;
                 break;
             case "Trovoada":
                 factor=0.3;
                 break;
-            case "Trovoada com ventos vortes":
+            case "Trovoada com ventos fortes":
                 factor=0.5;
                 break;
             case "Nublado":
@@ -165,41 +168,76 @@ public class FitnessUM {
     private double tabelaTemperatura(double temperatura){
         double factor;
         if(temperatura <10)
-            factor=0.85;
+            factor=0.70;
         else if(temperatura<20)
-            factor = 0.70;
+            factor = 0.60;
         else if(temperatura>39)
-            factor = 0.90;
+            factor = 0.95;
         else if(temperatura >30 )
-            factor = 0.75;
+            factor = 0.80;
         else
             factor = 0.2;
         
         return factor;
     }
     
-    private double calculaTmMarathon(User u){
+    private double calculaTmMarathon(User u,double distancia){
         double tempo=0;
-        int numero=0;                      
-            for(ListRecords lr:u.getRecords().values()){
-                if(lr.getName().equals("Running")){
-                for(Record rec:lr.getList()){
-                    if(rec instanceof TimePerDistance){
-                        TimePerDistance tpd=(TimePerDistance)rec;
-                        if(tpd.getName().equals("Half Marathon km")){
-                        tempo+= tpd.getTime();
-                        }
-                        else
-                            tempo+=tpd.getTime()*0.5;
-                    }                    
-                 numero++; 
-                 }
-                }
-                  
-        }
-       tempo=tempo/numero;
-       return tempo;
+        int numero=0;
+        double distance=0;
+        for(Activity act:u.getActivities())
+            if(act instanceof Running){
+                Running run=(Running) act;
+              distance+=run.getDistance();
+              tempo+= (run.getTimeSpent()/run.getDistance());
+               numero++;
+            } 
+        
+        tempo=tempo/numero;
+        distance=distance/numero;
+        distance=distance/distancia;
+        tempo=(tempo/numero);
+        tempo/=(distance);
+      return tempo;  
+      
     }
+      private double calculaTmMarathonBTT(User u,double distancia){
+        double tempo=0;
+        int numero=0;
+        
+        double distance=0;
+        double factor=0;
+        for(Activity act:u.getActivities()){
+            if(act instanceof MountainBiking){
+                MountainBiking run=(MountainBiking) act;
+               distance+=run.getDistance();
+               tempo+= (run.getTimeSpent()/run.getDistance());
+               if((run.getVerticalDistance()>0) &&(run.getVerticalDistance()<0.100))
+                   factor+=0.1;
+               else if((run.getVerticalDistance()>=0.100) &&(run.getVerticalDistance()<0.300))
+                   factor+=0.3;
+               else if((run.getVerticalDistance()>=0.300) &&(run.getVerticalDistance()<0.500))
+                   factor+=0.5;
+               else if((run.getVerticalDistance()>=0.500) &&(run.getVerticalDistance()<1))
+                   factor+=0.7;
+               else if(run.getVerticalDistance()>=1)
+                   factor+=0.8;
+               numero++;
+            }
+        }
+        distance=distance/numero;
+        distance=distance/distancia;
+        factor=factor/numero;
+        tempo=(tempo/numero);
+        tempo=tempo-(factor*tempo);
+        
+        tempo/=(distance);
+        
+            
+      return tempo;  
+      
+    }
+     
     private int numeroActividadesM(User u){
         int num=0;
         for(Activity act:u.getActivities())
@@ -214,7 +252,8 @@ public class FitnessUM {
                 num++;
         return num;
     }
-    private void formula(User u,String weather,double temperatura,String tipo){
+    
+    public double formula(User u,String weather,double temperatura,String tipo,double distance){
         double tempo=0;
         double tempoMedio=0;
         int numero=0;
@@ -223,20 +262,22 @@ public class FitnessUM {
         */
          switch (tipo) {
             case "Marathon":
-               tempoMedio= calculaTmMarathon(u);
+               tempoMedio= calculaTmMarathon(u,42.195);
                numero=numeroActividadesM(u);
                 break;
             case "Halfmarathon":
-               tempoMedio= calculaTmHalfmarathon(u); 
+               tempoMedio= calculaTmMarathon(u,21.1); 
                numero=numeroActividadesM(u);
                 break;
             case "MarathonBTT":
-                tempoMedio=calculaTmMarathonBTT(u);
+                tempoMedio=calculaTmMarathonBTT(u,distance);
+                
                 numero=numeroActividadesMbtt(u);
                 break;
                       }
         
-        tempo=tempoMedio-(1*tabelaWeather(weather))-(1*tabelaTemperatura(temperatura))+(numero/100);
+        tempo=tempoMedio+(1*tabelaWeather(weather))+(1*tabelaTemperatura(temperatura))-(numero/100);
+        return tempo;
         
     }
     public void simulaEvent(Event e, String weather,double temperatura){
@@ -268,23 +309,23 @@ public class FitnessUM {
         this.events.add(e);
     }
     
-    public void addMarathon(String name, String tipoActivity, String location, int maxParticipants, 
-            GregorianCalendar deadline, GregorianCalendar date, GregorianCalendar duration){
+    public void addMarathon(String name, String location, int maxParticipants, 
+            GregorianCalendar deadline, GregorianCalendar date, double duration){
         
-        Event e= new  Marathon( name,  tipoActivity,  location,  maxParticipants, deadline,  date,  duration);
+        Event e= new  Marathon( name,  location,  maxParticipants, deadline,  date,  duration);
         this.events.add(e);
     }
-    public void addHalfmarathon(String name, String tipoActivity, String location, int maxParticipants, 
-            GregorianCalendar deadline, GregorianCalendar date, GregorianCalendar duration){
+    public void addHalfmarathon(String name, String location, int maxParticipants, 
+            GregorianCalendar deadline, GregorianCalendar date, double duration){
         
-        Event e= new  Halfmarathon( name,  tipoActivity,  location,  maxParticipants, deadline,  date,  duration);
+        Event e= new  Halfmarathon( name,  location,  maxParticipants, deadline,  date,  duration);
         this.events.add(e);
     }
     
-     public void addMarathonBTT(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline,
-             GregorianCalendar date, GregorianCalendar duration,double distance){
+     public void addMarathonBTT(String name, String location, int maxParticipants, GregorianCalendar deadline,
+             GregorianCalendar date, double duration,double distance){
         
-        Event e= new  MarathonBTT(name, tipoActivity, location, maxParticipants, deadline, date, duration, distance);
+        Event e= new  MarathonBTT(name, location, maxParticipants, deadline, date, duration, distance);
         this.events.add(e);
     }
     
@@ -776,7 +817,7 @@ public class FitnessUM {
 	/////////////////////////////////////////////////Propriedade dos Utilizadores//////////////////////////////////////
     //Aceder as estatisticas(mensais anuais) STATISTICS by distancia tempo e\calorias
     public void searchStatisticsMONTH(User u, int tipo, int mes, int ano) {
-        TreeMap<GregorianCalendar, Statistics> aux = (TreeMap) u.getStats();
+        TreeMap<GregorianCalendar, Statistics> aux = (TreeMap<GregorianCalendar, Statistics>) u.getStats();
 
         GregorianCalendar data = new GregorianCalendar(ano, mes, 0);
         Statistics stats = aux.get(data);
@@ -798,7 +839,7 @@ public class FitnessUM {
     }
 
     public void searchStatisticsYear(User u, int tipo, int ano) {
-        TreeMap<GregorianCalendar, Statistics> aux = (TreeMap) u.getStats();
+        TreeMap<GregorianCalendar, Statistics> aux = (TreeMap<GregorianCalendar, Statistics>) u.getStats();
         Statistics nova = new Statistics();
         String s;
         for (int i = 1; i <= 12; i++) {
@@ -832,7 +873,7 @@ public class FitnessUM {
 
     public boolean existsFriendToAdd(User u) {
 
-        return (!((ArrayList) u.getMessage()).isEmpty());   // PARA DEVOLVER o contrario
+        return (!((ArrayList<String>) u.getMessage()).isEmpty());   // PARA DEVOLVER o contrario
 
     }
 
@@ -1248,7 +1289,7 @@ public class FitnessUM {
      }
      */
     public Set<Activity> getLast10ActivitiesByActivity(User u) {
-        TreeSet<Activity> aux = new TreeSet(new CompareActivity());
+        TreeSet<Activity> aux = new TreeSet<>(new CompareActivity());
         Iterator<Activity> it = u.getActivities().iterator();
         for (int i = 0; i < 10 && it.hasNext(); i++) {
             aux.add(it.next());
@@ -1257,7 +1298,7 @@ public class FitnessUM {
     }
     
       public Set<String> getLast10Activities(User u) {
-        TreeSet<String> aux = new TreeSet();
+        TreeSet<String> aux = new TreeSet<>();
         Iterator<Activity> it = u.getActivities().iterator();
         for (int i = 0; i < 10 && it.hasNext(); i++) {
             aux.add(it.next().getName());
@@ -1283,9 +1324,9 @@ public class FitnessUM {
     }
 
     public String seeAllFriend(User u) {
-        TreeSet<Person> dbUsers = (TreeSet) this.getUserList();
+        TreeSet<Person> dbUsers = (TreeSet<Person>) this.getUserList();
       //  TreeSet<String> userActivities = (TreeSet) u.getFriendsList();
-        TreeSet<User> users = new TreeSet();
+        TreeSet<User> users = new TreeSet<>();
 
         for (String s : u.getFriendsList()) {
             boolean found = false;
@@ -1306,7 +1347,7 @@ public class FitnessUM {
 	//Ver Actividade de um dado amigo //
     //Lista amigos,escolhe amigo        --
     public String listAllFriends(User u) {
-        TreeSet<String> s = (TreeSet) u.getFriendsList();
+        TreeSet<String> s = (TreeSet<String>) u.getFriendsList();
 
         return s.toString();
     }
