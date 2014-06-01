@@ -28,6 +28,9 @@ public class Halfmarathon extends Event implements Serializable{
     public Halfmarathon(String name, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date, double duration) {
         super(name, "Running", location, maxParticipants, deadline, date, duration);
     }
+     public Halfmarathon(String name, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date) {
+        super(name, "Running", location, maxParticipants, deadline, date);
+    }
 
     public Halfmarathon(Halfmarathon m) {
         super(m);

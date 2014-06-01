@@ -13,6 +13,7 @@ import java.io.Serializable;
  * @author Bruno
  */
 public class Simulacao implements Serializable{
+    
     public double tempoGeral;
     public double tempoMedio;
     public int kmDesiste;
@@ -70,9 +71,9 @@ public class Simulacao implements Serializable{
         return u.clone();
     }
     
-    public void actualiza(){
+    public void actualiza(double intrevalo){
         double tempo=this.tempoMedio*(Math.random()+0.5);
-        this.tempoGeral+=tempo;
+        this.tempoGeral+=(intrevalo*tempo);
         
     }
     
@@ -96,9 +97,23 @@ public class Simulacao implements Serializable{
     
     public String toString(){
         StringBuilder sb= new StringBuilder();
-        
+        int h,m;
+         double s;
+         h=(int)this.tempoGeral/60;
+         m=(int)this.tempoGeral%60;
+         
+         s=this.tempoGeral-((int)this.tempoGeral);
+         s=s*60;
         sb.append("Nome: ").append(u.getName());
-        sb.append(" || Tempo: ").append(this.tempoGeral).append("\n");
+           
+        sb.append(" || Tempo: ");
+        if(h>0)
+         sb.append(h).append("(h):");
+        sb.append(m).append("(min): ");
+        sb.append((int)s).append("(seg)\n");
+        
+        
+        
         
         return sb.toString();
         

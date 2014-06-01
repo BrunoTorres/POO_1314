@@ -2,7 +2,7 @@
 //LIXO
 
  //////////////////////////////////////////////////CRIAR ACTIVITIES////////////////////////////////////////////////////// 
-    public void TypeToAll(){
+/*    public void TypeToAll(){
         Scanner input = new Scanner(System.in);
         System.out.println("Nome da actividade:");
         this.actName = input.next();
@@ -702,4 +702,4 @@
     }
 
     
-    
+    */

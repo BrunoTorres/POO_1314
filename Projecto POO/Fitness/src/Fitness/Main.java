@@ -26,22 +26,16 @@ public class Main {
         
         Scanner input = new Scanner(System.in);
         
-        GregorianCalendar date;
-        date =new GregorianCalendar(1988,2,12);
+        
         User u1,u2,u3;
         Admin a1;
         //DataBase db=new DataBase();
         FitnessUM um=new FitnessUM();
         TreeSet<Person> person= new TreeSet(new ComparePersonByName());
        
-      u1=new User("user1@gmail.com","2211","jose",'M',date,12,14,"correr");
-      u2=new User("user3@gmail.com","1122","Manel",'F',date,11,15,"FAzer nada");  
-      u3= new User("user4@gmail.com","3322","Raul",'M',date,10,13,"Fazer NADa");
       
-       um.addUserByUser(u1);                  //VER GregorianCALENDAR!!!!
-       um.addUserByUser(u2);
-       um.addUserByUser(u3);
-       um.addAdmin("user4222@gmail.com","3322","Joselinaa",'M',date);
+      
+      
 
         /*
         if(um.isAdmin("cois1@gmail.com"))
@@ -71,15 +65,14 @@ public class Main {
         System.out.println("Pesquisar user");
        System.out.println(um.getUserByEmail("cois@gmail.com").toString());
          */
-        um.addUser("novo@gmail.com","1111","Novo",'M',date,12,14,"fugir");
+        //um.addUser("novo@gmail.com","1111","Novo",'M',date,12,14,"fugir");
        //System.out.println(um.getUserByEmail("user1@gmail.com").toString());
         //System.out.println(db.toString());
        
        
        //ADICIONAR ACTIVITIES A UM USER
        User u=um.getUserByEmail("user1@gmail.com");
-      // Activity act=um.createActivity("Cycling");
-       //Activity act2=um.createActivity("Running");
+  
        GregorianCalendar date1=new GregorianCalendar(2000,11,2);
        GregorianCalendar date2= new GregorianCalendar(2001,9,3);
        GregorianCalendar date3= new GregorianCalendar(2002,10,4);
@@ -89,32 +82,84 @@ public class Main {
 	   //Activity actcy = new Cycling("cy", date2, 155, 20, "chuva");
        /* Activity act2 = new Running("run", date3, 155, 20, "chuva");
        */
-        Activity act = new Running("run", date3, 100, 100, "chuva");
-        Activity act1 = new Running("run", date3, 11, 50, "chuva");
-        Activity act2 = new Running("run", date3, 155, 20, "chuva");
+        
        //Activity act3=um.createActivity("Swimming");   
         Activity actcy = new Cycling("cy", date2, 120, 20, "chuva");
         Activity actc = new Cycling("cyy", date2, 60,100, "chuva"); 
-       u.addActivity(act, "Running");
-       u.addActivity(act1, "Running");
-       u.addActivity(act2, "Running");
-        u.addActivity(actcy, "Cycling");
-      u.addActivity(actc, "Cycling");
-       u2.addActivity(act, "Running");
-       u2.addActivity(act1, "Running");
-       u2.addActivity(act2, "Running");
+       //u.addActivity(act, "Running");
+       //u.addActivity(act1, "Running");
+       //u.addActivity(act2, "Running");
+        //u.addActivity(actcy, "Cycling");
+      //u.addActivity(actc, "Cycling");
+       GregorianCalendar dateu3,dateu1,dateu2;
+        dateu1 =new GregorianCalendar(1988,2,12);
+        dateu2 =new GregorianCalendar(1900,2,12);
+        dateu3 =new GregorianCalendar(1990,2,12);
+      u1=new User("user1@gmail.com","2211","jose",'M',dateu1,12,14,"correr");
+      u2=new User("user3@gmail.com","1122","Manela",'F',dateu2,11,15,"FAzer nada");  
+      u3= new User("user4@gmail.com","3322","Raul",'M',dateu3,10,13,"Fazer NADa");
       
+       um.addUserByUser(u1);                  //VER GregorianCALENDAR!!!!
+       um.addUserByUser(u2);
+       um.addUserByUser(u3);
+       //um.addAdmin("user4222@gmail.com","3322","Joselinaa",'M',date);
+         Activity run1 = new Running("run", date3, 60, 20, "chuva");
+         Activity run2 = new Running("run", date3, 70, 30, "chuva");
+         Activity run3 = new Running("run", date3, 100, 40, "chuva");
+        Activity act11 = new MountainBiking("MountainBiking", date3,20, 2, 0.1, "chuva");
+        Activity act12 = new MountainBiking("MountainBiking",date3, 100, 50, 0.2,"chuva");
+        Activity act21 = new MountainBiking("MountainBiking", date3, 500, 60,1, "chuva");
+        
+       u1.addActivity(act11, "MountainBiking");
+       u1.addActivity(act12, "MountainBiking");
+       u1.addActivity(act21, "MountainBiking");   
+       u1.addActivity(run1, "Running");
+       u1.addActivity(run2, "Running");
+       u1.addActivity(run3, "Running");
        
+        Activity act = new MountainBiking("MountainBiking", date3,300, 40, 0.1, "chuva");
+        Activity act1 = new MountainBiking("MountainBiking",date3, 350,50, 0.2,"chuva");
+        Activity act2 = new MountainBiking("MountainBiking", date3, 10,2,0.5, "chuva");
+        Activity run11 = new Running("run", date3, 20, 4, "chuva");
+        Activity run21 = new Running("run", date3, 60, 15, "chuva");
+        Activity run31 = new Running("run", date3, 15, 2, "chuva");
+        
+       u2.addActivity(act, "MountainBiking");
+       u2.addActivity(act1, "MountainBiking");
+       u2.addActivity(act2, "MountainBiking"); 
+       u2.addActivity(run11, "Running");
+       u2.addActivity(run21, "Running");
+       u2.addActivity(run31, "Running");
        //String name, GregorianCalendar date, double timeSpent,double distance, double verticaldistance,String weather)
-       
-       Activity actbtt1 = new MountainBiking("MountainBiking", date3,120, 40, 0.1, "chuva");
+        Activity actbtt1 = new MountainBiking("MountainBiking", date3,120, 40, 0.1, "chuva");
         Activity act1bbt2 = new MountainBiking("MountainBiking",date3, 150, 50, 0.2,"chuva");
         Activity act2btt3 = new MountainBiking("MountainBiking", date3, 250, 60,1, "chuva");
+        Activity run12 = new Running("run", date3, 155, 60, "chuva");
+        Activity run22 = new Running("run", date3, 200, 70, "chuva");
+        Activity run32 = new Running("run", date3, 140, 90, "chuva");
       // TreeSet activi=(TreeSet)um.getLast10Activities(u);
       //System.out.println(activi.toString()); 
-      u3.addActivity(actbtt1, "MountainBiking");
+       u3.addActivity(actbtt1, "MountainBiking");
        u3.addActivity(act1bbt2, "MountainBiking");
        u3.addActivity(act2btt3, "MountainBiking");
+       u3.addActivity(run12, "Running");
+       u3.addActivity(run22, "Running");
+       u3.addActivity(run32, "Running");
+       
+       GregorianCalendar limite=new GregorianCalendar(2014,11,2);
+       GregorianCalendar datacome= new GregorianCalendar(2014,11,4);
+       
+       um.addMarathonBTT("serra", "barcelos", 40, datacome,limite, 155);
+       um.addMarathon("corridaNarua", "barcelos", 40, datacome,limite);
+        Event e1= um.getEventByName("corridaNarua");
+       Event e= um.getEventByName("serra");
+       e1.addUser(u1);
+       e1.addUser(u2);
+       e1.addUser(u3);
+       um.simulaEvent(e1, "Chuva com ventos fortes", 29);
+       
+       //Event e= um.getEventByName("calhaus corrida");
+       
        /////////////////////////////////////////////
        //AMIGOS//
       // User amigo=um.getUserByEmail("user3@gmail.com");
@@ -124,11 +169,10 @@ public class Main {
           // System.out.println("sim existe \n");
          //  um.acceptFriend(u,"user3@gmail.com");
        //}
-      // for(String s :u.getRecords().keySet())
-        //System.out.println(u.getRecords().get(s).toString());
+      // for(String s :u2.getRecords().keySet())
+        //System.out.println(u2.getRecords().get(s).toString());
        
-       GregorianCalendar limite=new GregorianCalendar(2014,11,2);
-       GregorianCalendar datacome= new GregorianCalendar(2014,11,4);
+       
        
      //  um.addMarathonBTT("serra", "barcelos", 40, datacome,limite, 155,90);
       // Event e= um.getEventByName("serra");
@@ -146,9 +190,6 @@ public class Main {
       //   System.out.println(cal);
       
       
-      double min=155.80;
-      int hora=(int)min/60;
-      int min2=(int)min%60;
         // System.out.println(hora);
      
          
