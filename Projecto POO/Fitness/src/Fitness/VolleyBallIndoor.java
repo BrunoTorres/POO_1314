@@ -1,7 +1,7 @@
 package Fitness;
 
 import java.util.GregorianCalendar;
-
+import java.io.Serializable;
 
 /**
  * Write a description of class VolleyBallIndoor here.
@@ -9,7 +9,7 @@ import java.util.GregorianCalendar;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class VolleyBallIndoor extends Indoor implements UserVs
+public class VolleyBallIndoor extends Indoor implements UserVs, Serializable
 
 {
     private int myScore;

@@ -1,7 +1,7 @@
 package Fitness;
 
 import java.util.GregorianCalendar;
-
+import java.io.Serializable;
 
 /**
  * Write a description of class Yoga here.
@@ -9,7 +9,7 @@ import java.util.GregorianCalendar;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Yoga extends Indoor 
+public class Yoga extends Indoor implements Serializable
 {
     
     

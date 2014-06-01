@@ -3,12 +3,13 @@ package Fitness;
 
 import java.util.GregorianCalendar;
 import java.util.TreeSet;
+import java.io.Serializable;
 
 /**
  *
  * @author Bruno
  */
-public class MarathonBTT extends Event {
+public class MarathonBTT extends Event implements Serializable {
 
     private double distance;
 

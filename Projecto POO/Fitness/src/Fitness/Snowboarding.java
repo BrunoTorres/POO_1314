@@ -1,7 +1,7 @@
 package Fitness;
 
 import java.util.GregorianCalendar;
-
+import java.io.Serializable;
 
 /**
  * Write a description of class Snowboarding here.
@@ -9,7 +9,7 @@ import java.util.GregorianCalendar;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Snowboarding extends Outdoor  implements Distance,VerticalDistance
+public class Snowboarding extends Outdoor  implements Distance, VerticalDistance, Serializable
 {
     private double distance;
     private double verticaldistance;

@@ -1,7 +1,7 @@
 package Fitness;
 
 import java.util.GregorianCalendar;
-
+import java.io.Serializable;
 
 /**
  * Write a description of class Walking here.
@@ -9,7 +9,7 @@ import java.util.GregorianCalendar;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Walking extends Outdoor implements Distance, RecordsActivity
+public class Walking extends Outdoor implements Distance, RecordsActivity, Serializable
 {
    
     private double distance;

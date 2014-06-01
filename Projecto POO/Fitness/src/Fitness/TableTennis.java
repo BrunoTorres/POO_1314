@@ -1,10 +1,10 @@
 package Fitness;
 
 import java.util.GregorianCalendar;
+import java.io.Serializable;
 
 
-
-public class TableTennis extends Indoor implements UserVs
+public class TableTennis extends Indoor implements UserVs, Serializable
 {
     private int myScore;
     private int opScore;

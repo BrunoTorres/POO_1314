@@ -8,12 +8,13 @@ package Fitness;
 
 import java.util.GregorianCalendar;
 import java.util.TreeSet;
+import java.io.Serializable;
 
 /**
  *
  * @author Bruno
  */
-public class Marathon extends Event{
+public class Marathon extends Event implements Serializable{
 
     private final double distance = 42.195;
    

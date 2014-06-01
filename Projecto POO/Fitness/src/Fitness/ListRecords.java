@@ -1,10 +1,11 @@
 
 package Fitness;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.TreeSet;
 
-public class ListRecords {
+public class ListRecords implements Serializable {
     
     private final String name;            // nome do tipo (Cycling...)
     private ArrayList<Record> recs;

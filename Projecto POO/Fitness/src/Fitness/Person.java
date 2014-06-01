@@ -4,8 +4,9 @@ package Fitness;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Objects;
+import java.io.Serializable;
 
-public abstract class Person
+public abstract class Person implements Serializable
 {
     private String email;
     private String password;

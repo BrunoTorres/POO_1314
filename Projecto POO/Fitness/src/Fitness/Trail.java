@@ -8,12 +8,12 @@ package Fitness;
 
 import java.util.GregorianCalendar;
 import java.util.TreeSet;
-
+import java.io.Serializable;
 /**
  *
  * @author Bruno
  */
-public class Trail extends Event {
+public class Trail extends Event implements Serializable{
     
     
     double distance;

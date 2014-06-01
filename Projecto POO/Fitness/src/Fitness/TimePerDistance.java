@@ -1,7 +1,8 @@
 package Fitness;
 
+import java.io.Serializable;
 
-public final class TimePerDistance extends Record {
+public final class TimePerDistance extends Record implements Serializable {
 
 
     private double recordDistance;

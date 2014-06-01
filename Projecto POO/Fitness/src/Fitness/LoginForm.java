@@ -7,6 +7,9 @@ package Fitness;
 
 import java.awt.Font;
 import java.awt.font.TextAttribute;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.ParseException;
@@ -34,21 +37,27 @@ public class LoginForm extends javax.swing.JFrame {
 		initComponents();
 		this.setLocationRelativeTo(null);
 		fitness = new FitnessUM();
-		User u1 = new User("1", "1", "user1", 'M', new GregorianCalendar(), 170, 70.0, "Futebol");
-		User u2 = new User("2", "2", "user2", 'M', new GregorianCalendar(), 160, 70.0, "Running");
-		User u3 = new User("3", "3", "user3", 'F', new GregorianCalendar(), 155, 50.0, "Tenis");
-		User u4 = new User("4", "4", "user4", 'F', new GregorianCalendar(), 161, 52.0, "Yoga");
-		fitness.addUser(u1.getEmail(), u1.getPassword(), u1.getName(), u1.getGender(), u1.getDate(), u1.getHeight(), u1.getWeight(), u1.getFavoriteActivity());
-		fitness.addUser(u2.getEmail(), u2.getPassword(), u2.getName(), u2.getGender(), u2.getDate(), u2.getHeight(), u2.getWeight(), u2.getFavoriteActivity());
-		fitness.addUser(u3.getEmail(), u3.getPassword(), u3.getName(), u3.getGender(), u3.getDate(), u3.getHeight(), u3.getWeight(), u3.getFavoriteActivity());
-		fitness.addUser(u4.getEmail(), u4.getPassword(), u4.getName(), u4.getGender(), u4.getDate(), u4.getHeight(), u4.getWeight(), u4.getFavoriteActivity());
-		fitness.getUserByEmail("1").addActivity(new Yoga("YOGA com os amigos", new GregorianCalendar(), 120), "Yoga");
-		fitness.getUserByEmail("1").addActivity(new Yoga("YOGA2222 com os amigos", new GregorianCalendar(), 110), "Yoga");
-		fitness.sendFriendRequest(fitness.getUserByEmail("1"), fitness.getUserByEmail("4"));
-		fitness.sendFriendRequest(fitness.getUserByEmail("1"), fitness.getUserByEmail("3"));
-		fitness.sendFriendRequest(fitness.getUserByEmail("2"), fitness.getUserByEmail("3"));
-		fitness.sendFriendRequest(fitness.getUserByEmail("3"), fitness.getUserByEmail("3"));
-		
+		try {
+			ObjectInputStream objInput = new ObjectInputStream(new FileInputStream("data.obj"));
+			fitness = new FitnessUM((FitnessUM) objInput.readObject());
+		} catch (IOException ex){
+			User u1 = new User("1", "1", "user1", 'M', new GregorianCalendar(), 170, 70.0, "Futebol");
+			User u2 = new User("2", "2", "user2", 'M', new GregorianCalendar(), 160, 70.0, "Running");
+			User u3 = new User("3", "3", "user3", 'F', new GregorianCalendar(), 155, 50.0, "Tenis");
+			User u4 = new User("4", "4", "user4", 'F', new GregorianCalendar(), 161, 52.0, "Yoga");
+			fitness.addUser(u1.getEmail(), u1.getPassword(), u1.getName(), u1.getGender(), u1.getDate(), u1.getHeight(), u1.getWeight(), u1.getFavoriteActivity());
+			fitness.addUser(u2.getEmail(), u2.getPassword(), u2.getName(), u2.getGender(), u2.getDate(), u2.getHeight(), u2.getWeight(), u2.getFavoriteActivity());
+			fitness.addUser(u3.getEmail(), u3.getPassword(), u3.getName(), u3.getGender(), u3.getDate(), u3.getHeight(), u3.getWeight(), u3.getFavoriteActivity());
+			fitness.addUser(u4.getEmail(), u4.getPassword(), u4.getName(), u4.getGender(), u4.getDate(), u4.getHeight(), u4.getWeight(), u4.getFavoriteActivity());
+			fitness.getUserByEmail("1").addActivity(new Yoga("YOGA com os amigos", new GregorianCalendar(), 120), "Yoga");
+			fitness.getUserByEmail("1").addActivity(new Yoga("YOGA2222 com os amigos", new GregorianCalendar(), 110), "Yoga");
+			fitness.sendFriendRequest(fitness.getUserByEmail("1"), fitness.getUserByEmail("4"));
+			fitness.sendFriendRequest(fitness.getUserByEmail("1"), fitness.getUserByEmail("3"));
+			fitness.sendFriendRequest(fitness.getUserByEmail("2"), fitness.getUserByEmail("3"));
+			fitness.sendFriendRequest(fitness.getUserByEmail("3"), fitness.getUserByEmail("3"));
+		} catch (ClassCastException | ClassNotFoundException e){
+			JOptionPane.showMessageDialog(null, e.getMessage());
+		}
 	}
 
 	/**
@@ -219,7 +228,7 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowGainedFocus
 
     private void butOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butOKActionPerformed
-        String email = this.textEmail.getText();
+		String email = this.textEmail.getText();
 		String pw = String.copyValueOf(this.textPw.getPassword());
 		if (fitness.existPassAndUser(email, pw)) {
 			if (!fitness.isAdmin(email)) {
@@ -233,8 +242,7 @@ public class LoginForm extends javax.swing.JFrame {
 			//menuLogin();
 		}
     }//GEN-LAST:event_butOKActionPerformed
-	
-	
+
 	/**
 	 * @param args the command line arguments
 	 */
@@ -274,7 +282,7 @@ public class LoginForm extends javax.swing.JFrame {
 			}
 		});
 	}
-	
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton butLimpar;

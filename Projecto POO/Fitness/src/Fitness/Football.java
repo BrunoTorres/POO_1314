@@ -1,9 +1,9 @@
 package Fitness;
 
 import java.util.GregorianCalendar;
+import java.io.Serializable;
 
-
-public class Football extends Outdoor implements UserVs
+public class Football extends Outdoor implements UserVs, Serializable
 {
   private int myScore;
    private int opScore;

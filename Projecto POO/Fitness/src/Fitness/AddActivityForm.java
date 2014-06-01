@@ -6,10 +6,13 @@
 package Fitness;
 
 import java.awt.Component;
+import java.awt.Container;
 import java.awt.event.ItemEvent;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
@@ -321,9 +324,8 @@ public class AddActivityForm extends javax.swing.JFrame {
                 .addGap(10, 10, 10)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         butOKAddAct.setText("ADICIONAR");
@@ -334,6 +336,11 @@ public class AddActivityForm extends javax.swing.JFrame {
         });
 
         butCancelAddAct.setText("CANCELAR");
+        butCancelAddAct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butCancelAddActActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -366,15 +373,16 @@ public class AddActivityForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-		this.parent.setEnabled(true);
+		this.parent.setVisible(true);
     }//GEN-LAST:event_formWindowClosing
 
     private void butOKAddActActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butOKAddActActionPerformed
 		boolean ok = true;
-		Component[] comps = this.rootPane.getComponents();
-		JOptionPane.showMessageDialog(this, comps.length);
-		for (int i = 0; i < comps.length && ok; i++) {
-			Component c = comps[i];
+		//Component[] comps = this.rootPane.getComponents();
+		ArrayList<Component> comps = (ArrayList<Component>) AddActivityForm.getAllComponents(this);
+		JOptionPane.showMessageDialog(this, comps.size());
+		for (int i = 0; i < comps.size() && ok; i++) {
+			Component c = comps.get(i);
 			if (c.isEnabled()) {
 				if (c instanceof JTextField) {
 					JTextField text = (JTextField) c;
@@ -386,7 +394,6 @@ public class AddActivityForm extends javax.swing.JFrame {
 		}
 
 		if (ok) {
-
 			String name = this.textName.getText();
 			String sport = (String) this.cboxSports.getSelectedItem();
 			int day = Integer.parseInt(this.cboxDia.getSelectedItem().toString());
@@ -396,17 +403,136 @@ public class AddActivityForm extends javax.swing.JFrame {
 			int horas = Integer.parseInt(this.textHoras.getText());
 			int mins = Integer.parseInt(this.textMins.getText());
 			int time = (horas * 60) + mins;
-			Yoga yoga = new Yoga(name, date, time);
-			u.addActivity(yoga, sport);
 
-			parent.setEnabled(true);
+			if (sport.equals("Running") || sport.equals("Cycling") || sport.equals("Walking") || sport.equals("Sailing") || sport.equals("Skating") || sport.equals("Orienteering")) {
+				String clima = this.textClima.getText();
+				double distanciaH = Double.parseDouble(this.textDistanciaH.getText());
+				switch (sport) {
+					case "Running":
+						u.addActivity(new Running(name, date, time, distanciaH, clima), "Running");
+						break;
+					case "Cycling":
+						u.addActivity(new Cycling(name, date, time, distanciaH, clima), "Cycling");
+						break;
+					case "Walking":
+						u.addActivity(new Walking(name, date, time, distanciaH, clima), "Walking");
+						break;
+					case "Sailing":
+						u.addActivity(new Sailing(name, date, time, distanciaH, clima), "Sailing");
+						break;
+					case "Skating":
+						u.addActivity(new Skating(name, date, time, distanciaH, clima), "Skating");
+						break;
+					case "Orienteering":
+						u.addActivity(new Orienteering(name, date, time, distanciaH, clima), "Orienteering");
+						break;
+					default:
+						break;
+				}
+			} else if (sport.equals("Snowboarding") || sport.equals("Mountain Biking") || sport.equals("Skiing")) {
+				String clima = this.textClima.getText();
+				double distanciaH = Double.parseDouble(this.textDistanciaH.getText());
+				double distanciaV = Double.parseDouble(this.textDistanciaV.getText());
+				switch(sport){
+					case "Snowboarding":
+						u.addActivity(new Snowboarding(name, date, time, distanciaH, distanciaV, clima), "Snowboarding");
+						break;
+					case "Mountain Biking":
+						u.addActivity(new MountainBiking(name, date, time, distanciaH, distanciaV, clima), "MountainBiking");
+						break;
+					case "Skiing":
+						u.addActivity(new Skiing(name, date, time, distanciaH, distanciaV, clima), "Skiing");
+						break;
+					default:
+						break;
+				}
+			} else if (sport.equals("Swimming") || sport.equals("Indoor Cycling")) {
+				double distanciaH = Double.parseDouble(this.textDistanciaH.getText());
+				switch(sport){
+					case "Swimming":
+						u.addActivity(new Swimming(name, date, time, distanciaH), "Swimming");
+						break;
+					case "Indoor Cycling":
+						u.addActivity(new IndoorCycling(name, date, time, distanciaH), "IndoorCycling");
+						break;
+					default:
+						break;
+				}
+			} else if (sport.equals("Football") || sport.equals("Polo") || sport.equals("Beach Volleyball") || sport.equals("Tennis")) {
+				String clima = this.textClima.getText();
+				int score = (int) this.spinnerPessoal.getValue();
+				int scoreAdv = (int) this.spinnerAdversario.getValue();
+				switch(sport){
+					case "Football":
+						u.addActivity(new Football(name, date, time, score, scoreAdv, clima), "Football");
+						break;
+					case "Polo":
+						u.addActivity(new Polo(name, date, time, score, scoreAdv, clima), "Polo");
+						break;
+					case "Beach Volleyball":
+						u.addActivity(new VolleyBallBeach(name, date, time, score, scoreAdv, clima), "VolleyBallBeach");
+						break;
+					case "Tennis":
+						u.addActivity(new Tennis(name, date, time, score, scoreAdv, clima), "Tennis");
+						break;
+					default:
+						break;
+				}
+			} else if (sport.equals("Handball") || sport.equals("Basketball") || sport.equals("Table Tennis") || sport.equals("Boxing") || sport.equals("Badminton") || sport.equals("Volleyball")) {
+				int score = (int) this.spinnerPessoal.getValue();
+				int scoreAdv = (int) this.spinnerAdversario.getValue();
+				switch(sport){
+					case "Handball":
+						u.addActivity(new Handball(name, date, time, score, scoreAdv), "Handball");
+						break;
+					case "Basketball":
+						u.addActivity(new Basketball(name, date, time, score, scoreAdv), "Basketball");
+						break;
+					case "Table Tennis":
+						u.addActivity(new TableTennis(name, date, time, score, scoreAdv), "TableTennis");
+						break;
+					case "Boxing":
+						u.addActivity(new Boxing(name, date, time, score, scoreAdv), "Boxing");
+						break;
+					case "Badminton":
+						u.addActivity(new Badminton(name, date, time, score, scoreAdv), "Badminton");
+						break;
+					case "Volleyball":
+						u.addActivity(new VolleyBallIndoor(name, date, time, score, scoreAdv), "VolleyBallIndoor");
+						break;
+					default:
+						break;
+				}
+			} else if(sport.equals("Yoga") || sport.equals("Aerobics")){
+				switch(sport){
+					case "Yoga":
+						u.addActivity(new Yoga(name, date, time), "Yoga");
+						break;
+					case "Aeorobics":
+						u.addActivity(new Aerobics(name, date, time), "Aerobics");
+						break;
+					default:
+						break;
+				}
+			}
+			
+			parent.setVisible(true);
+			parent.changeShown10Activity();
 			parent.changeShownActivity();
 			this.dispose();
 		}
     }//GEN-LAST:event_butOKAddActActionPerformed
 
-	private void enableDistanceFields() {
-
+	public static List<Component> getAllComponents(final Container c) {
+		Component[] comps = c.getComponents();
+		List<Component> compList = new ArrayList<Component>();
+		for (Component comp : comps) {
+			compList.add(comp);
+			if (comp instanceof Container) {
+				compList.addAll(getAllComponents((Container) comp));
+			}
+		}
+		return compList;
 	}
 
     private void cboxSportsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboxSportsItemStateChanged
@@ -451,6 +577,11 @@ public class AddActivityForm extends javax.swing.JFrame {
 			}
 		}
     }//GEN-LAST:event_cboxSportsItemStateChanged
+
+    private void butCancelAddActActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butCancelAddActActionPerformed
+        this.parent.setVisible(true);
+		this.dispose();
+    }//GEN-LAST:event_butCancelAddActActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
