@@ -5,12 +5,9 @@
  */
 package Fitness;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
@@ -46,17 +43,19 @@ public class UserForm extends javax.swing.JFrame {
 	public void changeShown10Activity() {
 		User u = (User) fit.getActivePerson();
 		this.acts = this.fit.getLast10ActivitiesByActivity(u).toArray();
-		
-		this.textNAct.setText(this.currAct + "/" + this.acts.length);
-		this.text10Act.setText((this.acts[this.currAct - 1]).toString());
+		if (this.acts.length > 0) {
+			this.textNAct.setText(this.currAct + "/" + this.acts.length);
+			this.text10Act.setText((this.acts[this.currAct - 1]).toString());
+		}
 	}
-	
+
 	public void changeShownActivity() {
 		User u = (User) fit.getActivePerson();
 		this.allActs = u.getUserActivitiesAdmin().toArray();
-		
-		this.textNActCons.setText(this.allActsCurr + "/" + this.allActs.length);
-		this.textConsultaAct.setText((this.allActs[this.allActsCurr - 1]).toString());
+		if (this.allActs.length > 0) {
+			this.textNActCons.setText(this.allActsCurr + "/" + this.allActs.length);
+			this.textConsultaAct.setText((this.allActs[this.allActsCurr - 1]).toString());
+		}
 	}
 
 	/**
@@ -371,45 +370,45 @@ public class UserForm extends javax.swing.JFrame {
     }//GEN-LAST:event_butVerAmigosActionPerformed
 
     private void butVerPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butVerPedidosActionPerformed
-        FriendRequestListForm pedidos = new FriendRequestListForm(this, fit);
+		FriendRequestListForm pedidos = new FriendRequestListForm(this, fit);
 		pedidos.setVisible(true);
     }//GEN-LAST:event_butVerPedidosActionPerformed
 
     private void butAddActivityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAddActivityActionPerformed
-        AddActivityForm addActi = new AddActivityForm(this,this.fit, this.fit.getUserByEmail(this.fit.getActivePerson().getEmail()));
+		AddActivityForm addActi = new AddActivityForm(this, this.fit, this.fit.getUserByEmail(this.fit.getActivePerson().getEmail()));
 		addActi.setVisible(true);
 		this.setVisible(false);
     }//GEN-LAST:event_butAddActivityActionPerformed
 
     private void panelVer10StatsFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_panelVer10StatsFocusGained
-        
+
     }//GEN-LAST:event_panelVer10StatsFocusGained
 
     private void formPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_formPropertyChange
-        
+
     }//GEN-LAST:event_formPropertyChange
 
     private void butFirstConsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butFirstConsActionPerformed
-        this.allActsCurr = 1;
+		this.allActsCurr = 1;
 		this.changeShownActivity();
     }//GEN-LAST:event_butFirstConsActionPerformed
 
     private void butPrevConsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butPrevConsActionPerformed
-        if (this.allActsCurr > 1) {
+		if (this.allActsCurr > 1) {
 			this.allActsCurr--;
 			this.changeShownActivity();
 		}
     }//GEN-LAST:event_butPrevConsActionPerformed
 
     private void butNextConsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNextConsActionPerformed
-        if (this.allActsCurr < this.allActs.length) {
+		if (this.allActsCurr < this.allActs.length) {
 			this.allActsCurr++;
 			this.changeShownActivity();
 		}
     }//GEN-LAST:event_butNextConsActionPerformed
 
     private void butLastConsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butLastConsActionPerformed
-        this.allActsCurr = allActs.length;
+		this.allActsCurr = allActs.length;
 		this.changeShownActivity();
     }//GEN-LAST:event_butLastConsActionPerformed
 
@@ -420,7 +419,7 @@ public class UserForm extends javax.swing.JFrame {
 			ObjectOutputStream oout = new ObjectOutputStream(out);
 			oout.writeObject(this.fit);
 			oout.flush();
-			//oout.close();
+			oout.close();
 		} catch (IOException ex) {
 			JOptionPane.showMessageDialog(this, ex.getMessage() + " | " + ex.getLocalizedMessage());
 		}

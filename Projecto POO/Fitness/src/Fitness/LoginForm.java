@@ -54,7 +54,7 @@ public class LoginForm extends javax.swing.JFrame {
 			fitness.sendFriendRequest(fitness.getUserByEmail("1"), fitness.getUserByEmail("4"));
 			fitness.sendFriendRequest(fitness.getUserByEmail("1"), fitness.getUserByEmail("3"));
 			fitness.sendFriendRequest(fitness.getUserByEmail("2"), fitness.getUserByEmail("3"));
-			fitness.sendFriendRequest(fitness.getUserByEmail("3"), fitness.getUserByEmail("3"));
+			fitness.sendFriendRequest(fitness.getUserByEmail("3"), fitness.getUserByEmail("4"));
 		} catch (ClassCastException | ClassNotFoundException e){
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
@@ -206,7 +206,11 @@ public class LoginForm extends javax.swing.JFrame {
 			JPasswordField textPwVer = new JPasswordField();
 			Object[] registar = {labelEmail, textEmail, labelNome, textNome, labelSexo, textSexo, labelDataNasc, textData, labelAltura, textAltura, labelPeso, textPeso, labelDesporto, textDesporto, labelPw, textPw, labelPwVer, textPwVer};
 
-			JOptionPane.showConfirmDialog(this, registar, "Registar utilizador", JOptionPane.OK_CANCEL_OPTION);
+			//int res = JOptionPane.showConfirmDialog(this, registar, "Registar utilizador", JOptionPane.OK_CANCEL_OPTION);
+			//if(res == JOptionPane.OK_OPTION){
+			RegistarUserForm reg = new RegistarUserForm(this, this.fitness);
+			reg.setVisible(true);
+			this.setVisible(false);
 		} catch (ParseException e) {
 			JOptionPane.showMessageDialog(this, "Data inserida incorretamente...");
 		}
@@ -234,8 +238,8 @@ public class LoginForm extends javax.swing.JFrame {
 			if (!fitness.isAdmin(email)) {
 				fitness.setFitnessPerson(fitness.getUserByEmail(email));
 				UserForm userForm = new UserForm(this, this.fitness);
-				this.setVisible(false);
 				userForm.setVisible(true);
+				this.dispose();
 			}
 		} else {
 			JOptionPane.showMessageDialog(this, "Login incorreto...", "Login", JOptionPane.ERROR_MESSAGE);
@@ -243,6 +247,10 @@ public class LoginForm extends javax.swing.JFrame {
 		}
     }//GEN-LAST:event_butOKActionPerformed
 
+	public FitnessUM getFitness(){
+		return this.fitness;
+	}
+	
 	/**
 	 * @param args the command line arguments
 	 */
@@ -294,5 +302,5 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JTextField textEmail;
     private javax.swing.JPasswordField textPw;
     // End of variables declaration//GEN-END:variables
-	FitnessUM fitness;
+	private FitnessUM fitness;
 }
