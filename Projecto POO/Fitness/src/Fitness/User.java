@@ -220,11 +220,19 @@ public class User extends Person implements Serializable{
 	public boolean removeActivity(String activityName) {
 		boolean found = false;
 		boolean flag = false;
+		TreeSet actAux = new TreeSet<>(new CompareActivity());
+		for(Activity a : this.userActivities)
+			actAux.add(a);
+		
+		//Iterator<Activity> it = actAux.iterator();
 		Iterator<Activity> it = this.userActivities.iterator();
-		Activity act = it.next();
 		while (it.hasNext() && !found) {
+			Activity act = it.next();
 			if (act.getName().equals(activityName)) {
-				flag = this.userActivities.remove(act);
+				System.out.println("Encontrou ACT!");
+				//flag = this.userActivities.remove(act);
+				it.remove();
+				flag = true;
 				found = true;
 			}
 		}
