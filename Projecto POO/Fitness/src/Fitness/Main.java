@@ -130,20 +130,28 @@ public class Main {
        GregorianCalendar limite=new GregorianCalendar(2014,11,2);
        GregorianCalendar datacome= new GregorianCalendar(2014,11,4);
        
-       um.addMarathonBTT("serra", "barcelos", 40, datacome,limite, 155,90);
-       Event e= um.getEventByName("serra");
+     //  um.addMarathonBTT("serra", "barcelos", 40, datacome,limite, 155,90);
+      // Event e= um.getEventByName("serra");
        //um.addMarathon("calhaus corrida", "polo norte", 40, datacome,limite, 155);
        //Event e= um.getEventByName("calhaus corrida");
        
     
-       um.userRegistEvent(u3, e);
+//       um.userRegistEvent(u3, e);
        //for(Activity a:u3.getActivities())
           // System.out.println(a.toString());
        
-      double cal=um.formula(u3, "Sol", 30, "MarathonBTT", 90);
+      //double cal=um.formula(u3, "Sol", 30, "MarathonBTT", 90);
        
       // double cal=um.calculaTmMarathonBTT(u3, 90);
-         System.out.println(cal);
+      //   System.out.println(cal);
+      
+      
+      double min=155.80;
+      int hora=(int)min/60;
+      int min2=(int)min%60;
+        // System.out.println(hora);
+     
+         
         
    //um.userRegistEvent(u1, e);
      //System.out.println(u1.toString());
