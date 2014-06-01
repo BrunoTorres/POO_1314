@@ -1,7 +1,7 @@
 package Fitness;
 
 import java.util.GregorianCalendar;
-
+import java.io.Serializable;
 
 public class Badminton extends Indoor implements UserVs, Serializable
 {

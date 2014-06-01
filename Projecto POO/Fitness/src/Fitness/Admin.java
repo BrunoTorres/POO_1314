@@ -3,7 +3,7 @@ package Fitness;
 
 import Fitness.Person;
 import java.util.GregorianCalendar;
-
+import java.io.Serializable;
 
 public class Admin extends Person implements Serializable
 {

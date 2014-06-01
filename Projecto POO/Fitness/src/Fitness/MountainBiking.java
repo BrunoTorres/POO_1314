@@ -1,7 +1,7 @@
 package Fitness;
 
 import java.util.GregorianCalendar;
-
+import java.io.Serializable;
 
 /**
  * Write a description of class MountainBiking here.

@@ -1,5 +1,6 @@
 package Fitness;
 
+import java.io.Serializable;
 
 public abstract class Record implements Serializable {
 

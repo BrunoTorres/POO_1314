@@ -1,5 +1,6 @@
 package Fitness;
 
+import java.io.Serializable;
 
 public class Statistics implements Serializable{
      
