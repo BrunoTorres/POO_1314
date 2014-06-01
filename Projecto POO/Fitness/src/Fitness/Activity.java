@@ -43,7 +43,7 @@ public abstract class Activity implements Serializable {
     }
 
     /**
-     *
+     * Construtor de cópia
      * @param a Uma Activity
      */
     public Activity(Activity a) {

@@ -39,7 +39,7 @@ public class Polo extends Outdoor implements UserVs, Serializable
     }
 
     /**
-     *
+     * Construtor de cópia
      * @param tb Um actividade Polo
      */
     public Polo(Polo tb){
