@@ -1,22 +1,44 @@
 package Fitness;
 
 
-import Fitness.Person;
 import java.util.GregorianCalendar;
 import java.io.Serializable;
 
+/**
+ * Classe referente ao Administrador
+ * 
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
+ */
 public class Admin extends Person implements Serializable
 {
     
-  public Admin(){
+    /**
+     * Construtor Vazio
+     */
+    public Admin(){
       super();
   }
   
-  public Admin(String email,String pass,String name,char gender,GregorianCalendar date){
+    /**
+     * Construtor
+     * @param email Email 
+     * @param pass Palavra passe 
+     * @param name Nome 
+     * @param gender Genero 
+     * @param date Data de Nascimento
+     */
+    public Admin(String email,String pass,String name,char gender,GregorianCalendar date){
        super(email,pass,name,gender,date);
   }
   
-  public Admin(Admin admin){
+    /**
+     * Construtor de cópia
+     * @param admin 
+     */
+    public Admin(Admin admin){
       super(admin.getEmail(), admin.getPassword(), admin.getName(), admin.getGender(), admin.getDate());
   }
   
