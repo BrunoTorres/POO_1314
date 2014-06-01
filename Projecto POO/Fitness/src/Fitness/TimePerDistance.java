@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 public final class TimePerDistance extends Record implements Serializable {
 
-
     private double recordDistance;
     private double time;
 
@@ -59,15 +58,23 @@ public final class TimePerDistance extends Record implements Serializable {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
+        int h, m;
+        double s;
+        h = (int) this.time / 60;
+        m = (int) this.time % 60;
+
+        s = this.time - ((int) this.time);
+        s = s * 60;
         sb.append(super.toString());
-        if(this.time >0){
-        sb.append("Tempo registado: ");
-        sb.append(this.time).append(" minutos\n");
-        }
-        else
-            sb.append("Sem recorde").append("\n");
-        
+        if (this.time > 0) {
+            sb.append("Tempo registado: ");
+            if (h > 0)  sb.append(h).append("(h):"); 
+            sb.append(m).append("(min): ");
+            sb.append((int) s).append("(seg)\n");
+        } else sb.append("Sem recorde").append("\n");
+
         return sb.toString();
+
     }
 
     @Override

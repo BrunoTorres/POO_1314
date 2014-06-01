@@ -112,7 +112,7 @@ public class FitnessUM implements Serializable{
             case "Chuva":
                 factor=0.4;
                 break;
-            case "Chuva com Ventos fortes":
+            case "Chuva com ventos fortes":
                 factor=0.6;
                 break;
             case "Chuva intensa":
@@ -273,18 +273,24 @@ public class FitnessUM implements Serializable{
     public void simulaEvent(Event e, String weather,double temperatura){
         double distance=0;
         String tipo="";
+        int tipoEvento=0;
+        boolean desistentes=false;
+        
         if(e instanceof Marathon){
             distance=42.195;
             tipo="Marathon";
+            tipoEvento=1;
         }        
         else if(e instanceof Halfmarathon){
             distance =21.1;
             tipo="Halfmarathon";
+            tipoEvento=2;
         }
         else if(e instanceof MarathonBTT){
             MarathonBTT btt=(MarathonBTT)e;
             distance=btt.getDistance();
             tipo="MarathonBTT";
+            tipoEvento=3;
         }
             for(User u:e.getParticipantsList()){ 
                 double tempo=formula(u,weather,temperatura,tipo,distance);
@@ -293,7 +299,7 @@ public class FitnessUM implements Serializable{
                 e.addSimulacao(s);           
         }
           
-          for(int i=0;i<(int)distance;i++){
+          for(int i=0;i<=(int)distance && !desistentes;i++){
               for(Simulacao s:e.getSimulacao()){
                   if(s.getKmDesiste()==i){
                       Ranking r=new Ranking(s.getUser(),i);
@@ -302,11 +308,11 @@ public class FitnessUM implements Serializable{
                   }
                   else{
                       e.getSimulacaoAdmin().remove(s);
-                      s.actualiza();
+                      s.actualiza(1);
                       e.getSimulacaoAdmin().add(s);    
                   }             
               }
-              int j=0;
+              int j=1;
               StringBuilder sb=new StringBuilder();
               sb.append("Km: ").append(i).append("\n");
               sb.append("Classificaçao: ").append("\n");
@@ -316,13 +322,27 @@ public class FitnessUM implements Serializable{
               }
               for(Ranking r:e.getDesistentes()){
                   if(r.getKm()==i)
-                 sb.append(j).append(": ").append(r.toString()).append("\n");                     
+                 sb.append(j).append(": ").append(r.toStringDesiste()).append("\n");                     
               }
               
            System.out.println(sb.toString());
+           if(e.getSimulacao().isEmpty())
+               desistentes=true;
         }
           for(Simulacao s:e.getSimulacaoAdmin()){
-              e.addRanking(s.getUser(), s.getTempoGeral());
+              if(tipoEvento==1){
+                  double aux=s.getTempoMedio()*0.195;
+                  aux+=s.tempoGeral;
+                  e.addRanking(s.getUser(), aux);
+              }
+              else if(tipoEvento==2){
+                  double aux=s.getTempoMedio()*0.1;
+                  aux+=s.tempoGeral;
+                  e.addRanking(s.getUser(), aux);
+              }
+                else e.addRanking(s.getUser(), s.getTempoGeral());
+              
+            
           }
           
           String s=e.getClassificacaoGeral();
@@ -340,22 +360,22 @@ public class FitnessUM implements Serializable{
     }
     
     public void addMarathon(String name, String location, int maxParticipants, 
-            GregorianCalendar deadline, GregorianCalendar date, double duration){
+            GregorianCalendar deadline, GregorianCalendar date){
         
-        Event e= new  Marathon( name,  location,  maxParticipants, deadline,  date,  duration);
+        Event e= new  Marathon( name,  location,  maxParticipants, deadline,  date);
         this.events.add(e);
     }
     public void addHalfmarathon(String name, String location, int maxParticipants, 
-            GregorianCalendar deadline, GregorianCalendar date, double duration){
+            GregorianCalendar deadline, GregorianCalendar date){
         
-        Event e= new  Halfmarathon( name,  location,  maxParticipants, deadline,  date,  duration);
+        Event e= new  Halfmarathon( name,  location,  maxParticipants, deadline,  date);
         this.events.add(e);
     }
     
      public void addMarathonBTT(String name, String location, int maxParticipants, GregorianCalendar deadline,
-             GregorianCalendar date, double duration,double distance){
+             GregorianCalendar date,double distance){
         
-        Event e= new  MarathonBTT(name, location, maxParticipants, deadline, date, duration, distance);
+        Event e= new  MarathonBTT(name, location, maxParticipants, deadline, date, distance);
         this.events.add(e);
     }
     

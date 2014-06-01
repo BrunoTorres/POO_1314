@@ -33,8 +33,8 @@ public abstract class Record implements Serializable {
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
-        sb.append("Nome: ");
-        sb.append(this.name).append("\n");
+        //sb.append("Nome: ").append("\n");
+        sb.append(this.name).append(":\n");
         return sb.toString();      
     }
     

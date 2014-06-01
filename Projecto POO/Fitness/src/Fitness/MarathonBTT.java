@@ -32,6 +32,10 @@ public class MarathonBTT extends Event implements Serializable {
         super(name, "MountainBiking", location, maxParticipants, deadline, date, duration);
         this.distance=distance;
     }
+     public MarathonBTT(String name, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date,double distance) {
+        super(name, "MountainBiking", location, maxParticipants, deadline, date);
+        this.distance=distance;
+    }
 
     public MarathonBTT(MarathonBTT m) {
         super(m);

@@ -88,6 +88,21 @@ public abstract class Event implements Serializable{
         this.simula=new TreeSet<>(new CompareSimulacao());
 
     }
+    public Event(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date) {
+        this.name = name;
+        this.tipoActivity = tipoActivity;
+        this.location = location;
+        this.maxParticipants = maxParticipants;
+        this.participants = 0;
+        this.date=(GregorianCalendar)date.clone();
+        this.deadline = (GregorianCalendar)deadline.clone();
+        this.duration = 0;
+        this.participantsList = new TreeSet<User>(new ComparePersonByName());
+        this.ranking = new TreeSet<>(new CompareRankingByTime());
+        this.desistentes=new TreeSet<>(new CompareRankingByKm());
+        this.simula=new TreeSet<>(new CompareSimulacao());
+
+    }
 
     public Event(Event e) {
         this.name = e.getName();
@@ -222,13 +237,14 @@ public abstract class Event implements Serializable{
         StringBuilder sb = new StringBuilder();
         
         sb.append("Classificação: ").append("\n");
-        int i=0;
+        int i=1;
         for(Ranking r:this.ranking){
-            sb.append(i).append(": ").append(r.toString()).append("\n");
+            
+            sb.append(i).append(": ").append(r.toStringTime());
             i++;
         }
         for(Ranking r:this.desistentes){
-            sb.append(i).append(": ").append(r.toString()).append("\n");
+            sb.append(i).append(": ").append(r.toStringDesiste()).append("\n");
             i++;
         }
         
@@ -251,8 +267,6 @@ public abstract class Event implements Serializable{
         sb.append(this.deadline.get(Calendar.DAY_OF_MONTH)).append(" / ");
         sb.append(this.deadline.get(Calendar.MONTH)).append(" / ");
         sb.append(this.deadline.get(Calendar.YEAR)).append("\n");
-        sb.append("Duração do evento ");
-        sb.append(this.duration).append(" (min) \n");
         for (User u : this.participantsList) {
           sb.append(u.getName()).append("\n");
         }
@@ -275,8 +289,7 @@ public abstract class Event implements Serializable{
                     && this.location.equals(e.getLocation())
                     && this.maxParticipants == e.getMaxParticipants()
                     && this.participants == e.getParticipants()
-                    && this.deadline.equals(e.getDeadline())
-                    && this.duration==e.getDuration()
+                    && this.deadline.equals(e.getDeadline())                   
                     && this.participantsList.equals(e.getParticipantsList())
                     && this.ranking.equals(e.getRanking())
                     && this.desistentes.equals(e.getDesistentes())

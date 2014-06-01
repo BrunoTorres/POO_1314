@@ -34,6 +34,9 @@ public class Marathon extends Event implements Serializable{
     public Marathon(String name, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date, double duration) {
         super(name, "Running", location, maxParticipants, deadline, date, duration);
     }
+    public Marathon(String name, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date) {
+        super(name, "Running", location, maxParticipants, deadline, date);
+    }
 
     public Marathon(Marathon m) {
         super(m);

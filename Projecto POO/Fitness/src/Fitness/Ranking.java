@@ -98,9 +98,9 @@ public class Ranking implements Serializable
          s=s*60;
          
         sb.append("Nome do atleta: ").append(this.athlete.getName()).append("\n");
-        sb.append("Tempo: ").append(h).append("(h):");
+        sb.append("\t Tempo: ").append(h).append("(h):");
         sb.append(m).append("(min): ");
-        sb.append(s).append("(seg)\n");
+        sb.append((int)s).append("(seg)\n");
         
         return sb.toString();
       
@@ -111,7 +111,7 @@ public class Ranking implements Serializable
         StringBuilder sb= new StringBuilder();
                 
         sb.append("Nome do atleta: ").append(this.athlete.getName()).append("\n");
-            
+        sb.append("\t Desistiu ao km: ").append(this.km);
         return sb.toString();
       
         

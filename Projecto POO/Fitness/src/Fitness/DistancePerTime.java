@@ -62,7 +62,7 @@ public final class DistancePerTime extends Record implements Serializable{
         sb.append(super.toString());
         if(this.distance > 0){             
              sb.append("Distancia registada: ");
-             sb.append(this.distance).append(" km \n");
+             sb.append((float)this.distance).append(" km \n");
         }
         else
             sb.append("Sem recorde").append("\n");
