@@ -3,7 +3,94 @@ package Fitness;
 
 public class Ranking
 {
-    private int position;
-    private Statistics eventPerformance;
-    private Person athlete;
+    public double time;
+    public int km;
+    public User athlete;
+    
+    
+    public Ranking(){
+        this.time=0;
+        this.km=0;
+        this.athlete=new User();
+        
+    }
+    
+    public Ranking(User u,double time){
+        this.athlete=u.clone();
+        this.time=time;
+        this.km=0;
+    }
+    
+    public Ranking(User u,int km){
+        this.athlete=u.clone();
+        this.km=km;
+        this.time=0;
+    }
+    public Ranking(Ranking r){
+        this.athlete=r.getAthlete();
+        this.km=r.getKm();
+        this.time=r.getTime();
+    }
+
+    /**
+     * @return the time
+     */
+    public double getTime() {
+        return this.time;
+    }
+
+    /**
+     * @return the km
+     */
+    public int getKm() {
+        return this.km;
+    }
+
+    /**
+     * @return the athlete
+     */
+    public User getAthlete() {
+        return this.athlete.clone();
+    }
+
+    /**
+     * @param time the time to set
+     */
+    public void setTime(double time) {
+        this.time = time;
+    }
+
+    /**
+     * @param km the km to set
+     */
+    public void setKm(int km) {
+        this.km = km;
+    }
+    
+   
+    
+    //equals,toString,clone
+    
+    @Override
+    public boolean equals(Object o){
+        if(this==o)
+            return true;
+        if(o==null || this.getClass() != o.getClass())
+            return false;
+        Ranking r=(Ranking)o;
+        return(this.athlete.equals(r.getAthlete()) && this.km==r.getKm() && this.time==r.getTime());       
+    }
+    
+    public Ranking clone(){
+        return new Ranking(this);
+    }
+    
+    public String toStringTime(){
+        StringBuilder sb= new StringBuilder();
+         
+        sb.append("Nome do atleta: ").append(this.athlete.getName()).append("\n");
+        sb.append("Tempo: ").append()
+        
+    }
+    
 }
