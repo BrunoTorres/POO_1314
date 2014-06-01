@@ -68,8 +68,8 @@ public class FitnessUM implements Serializable{
        
     }
     
-    public void addUserByUser(User u){
-        this.userList.add(u);
+    public boolean addUserByUser(User u){
+        return this.userList.add(u);
     }
     //
     @Override
