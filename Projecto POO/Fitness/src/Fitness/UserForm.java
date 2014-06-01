@@ -8,6 +8,7 @@ package Fitness;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.util.GregorianCalendar;
 import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
@@ -29,7 +30,7 @@ public class UserForm extends javax.swing.JFrame {
 	public UserForm(JFrame parent, FitnessUM fit) {
 		initComponents();
 		this.setLocationRelativeTo(parent);
-		User u = (User) fit.getActivePerson();
+		this.u = (User) fit.getActivePerson();
 		this.fit = fit;
 		this.setTitle(u.getName() + " - Utilizador");
 		//this.jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(fit.getActivePerson().getName()));
@@ -375,7 +376,7 @@ public class UserForm extends javax.swing.JFrame {
     }//GEN-LAST:event_butVerPedidosActionPerformed
 
     private void butAddActivityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAddActivityActionPerformed
-		AddActivityForm addActi = new AddActivityForm(this, this.fit, this.fit.getUserByEmail(this.fit.getActivePerson().getEmail()));
+		AddViewActivityForm addActi = new AddViewActivityForm(this, this.fit, this.fit.getUserByEmail(this.fit.getActivePerson().getEmail()));
 		addActi.setVisible(true);
 		this.setVisible(false);
     }//GEN-LAST:event_butAddActivityActionPerformed
@@ -401,6 +402,9 @@ public class UserForm extends javax.swing.JFrame {
     }//GEN-LAST:event_butPrevConsActionPerformed
 
     private void butNextConsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNextConsActionPerformed
+		
+		AddViewActivityForm view = new AddViewActivityForm(this, this.fit, this.u, (Activity) this.allActs[allActsCurr]);
+		view.setVisible(true);
 		if (this.allActsCurr < this.allActs.length) {
 			this.allActsCurr++;
 			this.changeShownActivity();
@@ -450,6 +454,7 @@ public class UserForm extends javax.swing.JFrame {
     private javax.swing.JTextField textNActCons;
     // End of variables declaration//GEN-END:variables
 	private FitnessUM fit;
+	private User u;
 	private int currAct = 0;
 	private int allActsCurr = 0;
 	private Object[] acts, allActs;

@@ -5,7 +5,6 @@
  */
 package Fitness;
 
-import java.awt.Graphics;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 
@@ -18,7 +17,7 @@ public class FriendRequestListForm extends javax.swing.JFrame {
 	/**
 	 * Creates new form PedidosAmizade
 	 */
-	public FriendRequestListForm(JFrame parent, FitnessUM fit) {
+	public FriendRequestListForm(UserForm parent, FitnessUM fit) {
 		initComponents();
 		this.setLocationRelativeTo(parent);
 		this.fit = fit;
