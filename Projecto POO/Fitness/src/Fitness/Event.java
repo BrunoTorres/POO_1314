@@ -1,10 +1,11 @@
 package Fitness;
 
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.TreeSet;
 
-public abstract class Event {
+public abstract class Event implements Serializable{
 
     private String name;
     private String tipoActivity;                //running ....  passar os tipos "Running" em trail e assim?!

@@ -6,11 +6,13 @@
 
 package Fitness;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Bruno
  */
-public class Simulacao {
+public class Simulacao implements Serializable{
     public double tempoGeral;
     public double tempoMedio;
     public int kmDesiste;
@@ -96,7 +98,7 @@ public class Simulacao {
         StringBuilder sb= new StringBuilder();
         
         sb.append("Nome: ").append(u.getName());
-        sb.append("|| Tempo: ").append(this.tempoGeral).append("\n");
+        sb.append(" || Tempo: ").append(this.tempoGeral).append("\n");
         
         return sb.toString();
         

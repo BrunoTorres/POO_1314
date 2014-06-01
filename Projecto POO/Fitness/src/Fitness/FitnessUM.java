@@ -1,5 +1,6 @@
 package Fitness;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -12,7 +13,7 @@ import java.util.TreeSet;
 
 
 
-public class FitnessUM {     
+public class FitnessUM implements Serializable{     
 
     //private DataBase db;
     private Person p;

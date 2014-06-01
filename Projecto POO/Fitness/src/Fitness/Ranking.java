@@ -1,7 +1,9 @@
 package Fitness;
 
+import java.io.Serializable;
 
-public class Ranking
+
+public class Ranking implements Serializable
 {
     public double time;
     public int km;
