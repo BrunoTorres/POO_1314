@@ -8,7 +8,7 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
-public class User extends Person {
+public class User extends Person implements Serializable{
 
 	private int height; // centímetros
 	private double weight; // kilogramas

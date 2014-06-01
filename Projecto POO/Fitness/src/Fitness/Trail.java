@@ -13,7 +13,7 @@ import java.util.TreeSet;
  *
  * @author Bruno
  */
-public class Trail extends Event {
+public class Trail extends Event implements Serializable{
     
     
     double distance;

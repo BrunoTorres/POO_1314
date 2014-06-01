@@ -2,7 +2,7 @@ package Fitness;
 
 import java.util.GregorianCalendar;
 
-public abstract class Outdoor extends Activity
+public abstract class Outdoor extends Activity implements Serializable
 {
     private String weather;
 

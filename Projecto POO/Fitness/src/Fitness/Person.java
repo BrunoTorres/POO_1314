@@ -5,7 +5,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Objects;
 
-public abstract class Person
+public abstract class Person implements Serializable
 {
     private String email;
     private String password;

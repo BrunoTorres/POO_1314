@@ -8,7 +8,7 @@ import java.util.TreeSet;
  *
  * @author Bruno
  */
-public class MarathonBTT extends Event {
+public class MarathonBTT extends Event implements Serializable {
 
     private double distance;
 

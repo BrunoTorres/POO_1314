@@ -1,7 +1,7 @@
 package Fitness;
 
 
-public abstract class Record {
+public abstract class Record implements Serializable {
 
 	private String name; //10 km|| Maratona...
     

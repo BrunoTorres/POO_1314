@@ -1,7 +1,7 @@
 package Fitness;
 
 
-public final class TimePerDistance extends Record {
+public final class TimePerDistance extends Record implements Serializable {
 
 
     private double recordDistance;

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-public abstract class Activity {
+public abstract class Activity implements Serializable{
 
     private String name; //Nome pode ser corrida com os amigos
     private GregorianCalendar date;

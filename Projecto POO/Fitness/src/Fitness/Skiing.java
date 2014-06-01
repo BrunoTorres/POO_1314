@@ -9,7 +9,7 @@ import java.util.GregorianCalendar;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Skiing extends Outdoor implements Distance,VerticalDistance
+public class Skiing extends Outdoor implements Distance, VerticalDistance, Serializable
 {
     private double distance;
     private double verticaldistance;

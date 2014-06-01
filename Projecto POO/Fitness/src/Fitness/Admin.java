@@ -5,7 +5,7 @@ import Fitness.Person;
 import java.util.GregorianCalendar;
 
 
-public class Admin extends Person
+public class Admin extends Person implements Serializable
 {
     
   public Admin(){

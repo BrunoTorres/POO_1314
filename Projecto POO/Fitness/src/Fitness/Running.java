@@ -8,7 +8,7 @@ import java.util.GregorianCalendar;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Running extends Outdoor implements Distance, RecordsActivity {
+public class Running extends Outdoor implements Distance, RecordsActivity, Serializable {
 
     private double distance;
     private ListRecords recs;

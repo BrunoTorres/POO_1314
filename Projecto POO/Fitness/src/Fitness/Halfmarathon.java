@@ -7,7 +7,7 @@ import java.util.TreeSet;
  *
  * @author Bruno
  */
-public class Halfmarathon extends Event {
+public class Halfmarathon extends Event implements Serializable{
 
     private final double distance = 21.1;
 

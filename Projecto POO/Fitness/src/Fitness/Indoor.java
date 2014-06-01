@@ -4,7 +4,7 @@ package Fitness;
 import java.util.GregorianCalendar;
 
 
-public abstract class Indoor extends Activity
+public abstract class Indoor extends Activity implements Serializable
 {
     
     public Indoor(){

@@ -4,7 +4,7 @@ import java.util.GregorianCalendar;
 
 
 
-public class Boxing extends Indoor implements UserVs
+public class Boxing extends Indoor implements UserVs, Serializable
 {
      
     private int myScore;

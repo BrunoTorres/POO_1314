@@ -13,7 +13,7 @@ import java.util.TreeSet;
  *
  * @author Bruno
  */
-public class Marathon extends Event{
+public class Marathon extends Event implements Serializable{
 
     private final double distance = 42.195;
    

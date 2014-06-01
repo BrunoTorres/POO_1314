@@ -1,7 +1,7 @@
 package Fitness;
 
 
-public class Statistics {
+public class Statistics implements Serializable{
      
     private double timeSpend;   
     private double calories;

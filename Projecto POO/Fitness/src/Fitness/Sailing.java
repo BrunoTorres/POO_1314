@@ -9,7 +9,7 @@ import java.util.GregorianCalendar;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Sailing extends Outdoor implements Distance
+public class Sailing extends Outdoor implements Distance, Serializable
 {
    private double distance;
 

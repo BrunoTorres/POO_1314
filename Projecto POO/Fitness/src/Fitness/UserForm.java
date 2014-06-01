@@ -414,15 +414,15 @@ public class UserForm extends javax.swing.JFrame {
     }//GEN-LAST:event_butLastConsActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-		FileOutputStream out = null;
+		//FileOutputStream out = null;
 		try {
-			out = new FileOutputStream("data.obj");
+			FileOutputStream out = new FileOutputStream("data.obj");
 			ObjectOutputStream oout = new ObjectOutputStream(out);
 			oout.writeObject(this.fit);
 			oout.flush();
-			oout.close();
+			//oout.close();
 		} catch (IOException ex) {
-			JOptionPane.showMessageDialog(this, ex.getMessage());
+			JOptionPane.showMessageDialog(this, ex.getMessage() + " | " + ex.getLocalizedMessage());
 		}
     }//GEN-LAST:event_formWindowClosing
 

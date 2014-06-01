@@ -3,7 +3,7 @@ package Fitness;
 import java.util.GregorianCalendar;
 
 
-public class Badminton extends Indoor implements UserVs
+public class Badminton extends Indoor implements UserVs, Serializable
 {
     private int myScore;
     private int opScore;
