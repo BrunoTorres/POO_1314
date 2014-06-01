@@ -17,6 +17,7 @@ public abstract class Event {
     private TreeSet<User> participantsList;
     private TreeSet<Ranking> ranking;
     private TreeSet<Ranking> desistentes;
+    private TreeSet<Simulacao> simula;
 
     public Event() {
         this.name = "";
@@ -30,7 +31,7 @@ public abstract class Event {
         this.participantsList = new TreeSet<>(new ComparePersonByName());
         this.ranking = new TreeSet<>(new CompareRankingByTime());
         this.desistentes=new TreeSet<>(new CompareRankingByKm());
-
+        this.simula=new TreeSet<>(new CompareSimulacao());
     }
 
     public Event(String name, String tipoActivity, String location, int maxParticipants, int participants, GregorianCalendar deadline, GregorianCalendar date, double duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking) {
@@ -45,6 +46,7 @@ public abstract class Event {
         this.participantsList = new TreeSet<User>(new ComparePersonByName()); 
         this.ranking = new TreeSet<>(new CompareRankingByTime());
         this.desistentes=new TreeSet<>(new CompareRankingByKm());
+        this.simula=new TreeSet<>(new CompareSimulacao());
        // this.participantsList.addAll(participantsList);
        // this.ranking = new TreeSet<Activity>(new CompareactivityByTime()); 
       //  this.ranking.addAll(ranking);
@@ -64,6 +66,7 @@ public abstract class Event {
         this.participantsList = new TreeSet<User>(new ComparePersonByName());
         this.ranking = new TreeSet<>(new CompareRankingByTime());
         this.desistentes=new TreeSet<>(new CompareRankingByKm());
+        this.simula=new TreeSet<>(new CompareSimulacao());
        // this.participantsList.addAll(participantsList);
        // this.ranking = new TreeSet<Activity>(new CompareactivityByTime());
        // this.ranking.addAll(ranking);
@@ -81,6 +84,7 @@ public abstract class Event {
         this.participantsList = new TreeSet<User>(new ComparePersonByName());
         this.ranking = new TreeSet<>(new CompareRankingByTime());
         this.desistentes=new TreeSet<>(new CompareRankingByKm());
+        this.simula=new TreeSet<>(new CompareSimulacao());
 
     }
 
@@ -94,8 +98,9 @@ public abstract class Event {
         this.date=e.getDate();
         this.duration = e.getDuration();
         this.participantsList = e.getParticipantsList();
-        this.ranking = new TreeSet<>(new CompareRankingByTime());
-        this.desistentes=new TreeSet<>(new CompareRankingByK());
+        this.ranking =e.getRanking();
+        this.desistentes=e.getDesistentes();
+        this.simula=e.getSimulacao();
     }
 
     public String getName() {
@@ -145,6 +150,13 @@ public abstract class Event {
         return aux;
 
     }
+    public TreeSet<Ranking> getDesistentesAdmin() {
+       return this.desistentes;
+    }
+    public TreeSet<Simulacao> getSimulacaoAdmin() {
+        return this.simula;
+    }
+    
     public TreeSet<Ranking> getDesistentes() {
         TreeSet<Ranking> aux = new TreeSet<>(new CompareRankingByKm());
         for (Ranking r : this.desistentes) {
@@ -153,6 +165,15 @@ public abstract class Event {
         return aux;
 
     }
+    
+    public TreeSet<Simulacao> getSimulacao() {
+       TreeSet<Simulacao> aux =new TreeSet<>(new CompareSimulacao());
+       for(Simulacao s:this.simula)
+           aux.add(s.clone());
+       return aux;
+    }
+    
+  
 
     public void setLocation(String location) {
         this.location = location;
@@ -180,12 +201,18 @@ public abstract class Event {
         this.participants+=1;
     }
     
-    public void addRanking(Ranking r){
+    public void addRanking(User u,double time){
+        Ranking r=new Ranking(u,time);
         this.ranking.add(r);
     }
     
-    public void addDesistente(Ranking r){
+    public void addDesistente(User u,int km){
+        Ranking r=new Ranking(u,km);
         this.desistentes.add(r);
+    }
+    
+    public void addSimulacao(Simulacao s){
+        this.simula.add(s);
     }
 
     //toString ,equals,clone
@@ -229,14 +256,16 @@ public abstract class Event {
                     && this.maxParticipants == e.getMaxParticipants()
                     && this.participants == e.getParticipants()
                     && this.deadline.equals(e.getDeadline())
-                    && (this.duration==e.getDuration())
+                    && this.duration==e.getDuration()
                     && this.participantsList.equals(e.getParticipantsList())
                     && this.ranking.equals(e.getRanking())
-                    && this.desistentes.equals(e.getDesistentes()));
+                    && this.desistentes.equals(e.getDesistentes())
+                    && this.simula.equals(e.getSimulacao()));
         }
     }
 
     @Override
     public abstract Event clone();
+
    
 }

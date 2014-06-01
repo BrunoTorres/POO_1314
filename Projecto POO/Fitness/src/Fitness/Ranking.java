@@ -87,9 +87,21 @@ public class Ranking
     
     public String toStringTime(){
         StringBuilder sb= new StringBuilder();
+         int h,m;
+         double s;
+         h=(int)this.time/60;
+         m=(int)this.time%60;
+         
+         s=this.time-((int)this.time);
+         s=s*60;
          
         sb.append("Nome do atleta: ").append(this.athlete.getName()).append("\n");
-        sb.append("Tempo: ").append()
+        sb.append("Tempo: ").append(h).append("(h):");
+        sb.append(m).append("(min): ");
+        sb.append(s).append("(seg)\n");
+        
+        return sb.toString();
+      
         
     }
     

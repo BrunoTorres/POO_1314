@@ -149,8 +149,10 @@ public class Main {
       double min=155.80;
       int hora=(int)min/60;
       int min2=(int)min%60;
-         System.out.println(hora);
-         System.out.println(min2);
+        // System.out.println(hora);
+     
+         
+        
    //um.userRegistEvent(u1, e);
      //System.out.println(u1.toString());
       //um.userRegistEvent(u3, e);
