@@ -215,6 +215,25 @@ public abstract class Event {
         this.simula.add(s);
     }
 
+    
+    
+    public String getClassificacaoGeral(){
+        StringBuilder sb = new StringBuilder();
+        
+        sb.append("Classificação: ").append("\n");
+        int i=0;
+        for(Ranking r:this.ranking){
+            sb.append(i).append(": ").append(r.toString()).append("\n");
+            i++;
+        }
+        for(Ranking r:this.desistentes){
+            sb.append(i).append(": ").append(r.toString()).append("\n");
+            i++;
+        }
+        
+          return sb.toString();  
+        
+    }
     //toString ,equals,clone
     public String toString() {
         StringBuilder sb = new StringBuilder();

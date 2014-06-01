@@ -105,4 +105,14 @@ public class Ranking
         
     }
     
+     public String toStringDesiste(){
+        StringBuilder sb= new StringBuilder();
+                
+        sb.append("Nome do atleta: ").append(this.athlete.getName()).append("\n");
+            
+        return sb.toString();
+      
+        
+    }
+    
 }

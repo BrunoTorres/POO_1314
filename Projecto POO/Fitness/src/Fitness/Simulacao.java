@@ -95,8 +95,8 @@ public class Simulacao {
     public String toString(){
         StringBuilder sb= new StringBuilder();
         
-        sb.append("Nome: ").append(u.getName()).append("\n");
-        sb.append("Tempo: ").append(this.tempoGeral).append("\n");
+        sb.append("Nome: ").append(u.getName());
+        sb.append("|| Tempo: ").append(this.tempoGeral).append("\n");
         
         return sb.toString();
         

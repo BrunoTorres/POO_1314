@@ -303,25 +303,29 @@ public class FitnessUM {
                       e.getSimulacaoAdmin().remove(s);
                       s.actualiza();
                       e.getSimulacaoAdmin().add(s);    
-                  }
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                     
-                  
+                  }             
               }
-                  
-                            
-        
-            
+              int j=0;
+              StringBuilder sb=new StringBuilder();
+              sb.append("Km: ").append(i).append("\n");
+              sb.append("Classificaçao: ").append("\n");
+              for(Simulacao s:e.getSimulacao()){
+                  sb.append(j).append(": ").append(s.toString()).append("\n");
+                  j++;
+              }
+              for(Ranking r:e.getDesistentes()){
+                  if(r.getKm()==i)
+                 sb.append(j).append(": ").append(r.toString()).append("\n");                     
+              }
+              
+           System.out.println(sb.toString());
         }
+          for(Simulacao s:e.getSimulacaoAdmin()){
+              e.addRanking(s.getUser(), s.getTempoGeral());
+          }
+          
+          String s=e.getClassificacaoGeral();
+          System.out.println(s);
         
     }
     
