@@ -20,6 +20,7 @@ public class FriendRequestListForm extends javax.swing.JFrame {
 	 */
 	public FriendRequestListForm(JFrame parent, FitnessUM fit) {
 		initComponents();
+		this.setLocationRelativeTo(parent);
 		this.fit = fit;
 		this.parent = parent;
 		parent.setEnabled(false);

@@ -3,12 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Fitness;
 
+import java.awt.Component;
+import java.awt.event.ItemEvent;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JSpinner;
+import javax.swing.JTextField;
 
 /**
  *
@@ -18,11 +23,15 @@ public class AddActivityForm extends javax.swing.JFrame {
 
 	/**
 	 * Creates new form AddActivityForm
+	 *
 	 * @param parent
 	 */
-	public AddActivityForm(JFrame parent) {
+	public AddActivityForm(UserForm parent, FitnessUM fit, User u) {
 		initComponents();
 		this.parent = parent;
+		this.fit = fit;
+		this.u = u;
+		this.setLocationRelativeTo(parent);
 		this.cboxSports.setSelectedIndex(12);
 		int dia = new GregorianCalendar().get(Calendar.DAY_OF_MONTH);
 		int mes = new GregorianCalendar().get(Calendar.MONTH);
@@ -69,6 +78,8 @@ public class AddActivityForm extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         spinnerAdversario = new javax.swing.JSpinner();
         jLabel10 = new javax.swing.JLabel();
+        butOKAddAct = new javax.swing.JButton();
+        butCancelAddAct = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -97,6 +108,11 @@ public class AddActivityForm extends javax.swing.JFrame {
         labelDate.setText("Data");
 
         cboxSports.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Yoga", "Aerobics", "Swimming", "Indoor Cycling", "Handball", "Basketball", "Table Tennis", "Boxing", "Badminton", "Volleyball", "Football", "Beach Volleyball", "Running", "Skating", "Sailing", "Walking", "Tennis", "Skiing", "Cycling", "Mountain Biking", "Orienteering", "Snowboarding", "Polo" }));
+        cboxSports.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cboxSportsItemStateChanged(evt);
+            }
+        });
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Horas");
@@ -117,6 +133,8 @@ public class AddActivityForm extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Clima"));
 
+        textClima.setEnabled(false);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -135,6 +153,10 @@ public class AddActivityForm extends javax.swing.JFrame {
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Distância"));
+
+        textDistanciaH.setEnabled(false);
+
+        textDistanciaV.setEnabled(false);
 
         jLabel4.setText("KMs");
 
@@ -178,7 +200,11 @@ public class AddActivityForm extends javax.swing.JFrame {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Pontuação"));
 
+        spinnerPessoal.setEnabled(false);
+
         jLabel9.setText("Pessoal");
+
+        spinnerAdversario.setEnabled(false);
 
         jLabel10.setText("Adversário");
 
@@ -208,7 +234,7 @@ public class AddActivityForm extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(spinnerAdversario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -262,7 +288,7 @@ public class AddActivityForm extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelName)
                     .addComponent(textName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -293,11 +319,21 @@ public class AddActivityForm extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
+
+        butOKAddAct.setText("ADICIONAR");
+        butOKAddAct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butOKAddActActionPerformed(evt);
+            }
+        });
+
+        butCancelAddAct.setText("CANCELAR");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -307,24 +343,119 @@ public class AddActivityForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(butCancelAddAct)
+                .addGap(18, 18, 18)
+                .addComponent(butOKAddAct)
+                .addGap(174, 174, 174))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(butOKAddAct)
+                    .addComponent(butCancelAddAct))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        this.parent.setEnabled(true);
+		this.parent.setEnabled(true);
     }//GEN-LAST:event_formWindowClosing
+
+    private void butOKAddActActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butOKAddActActionPerformed
+		boolean ok = true;
+		Component[] comps = this.rootPane.getComponents();
+		JOptionPane.showMessageDialog(this, comps.length);
+		for (int i = 0; i < comps.length && ok; i++) {
+			Component c = comps[i];
+			if (c.isEnabled()) {
+				if (c instanceof JTextField) {
+					JTextField text = (JTextField) c;
+					if (text.getText().isEmpty()) {
+						ok = false;
+					}
+				}//
+			}
+		}
+
+		if (ok) {
+
+			String name = this.textName.getText();
+			String sport = (String) this.cboxSports.getSelectedItem();
+			int day = Integer.parseInt(this.cboxDia.getSelectedItem().toString());
+			int month = this.cboxMes.getSelectedIndex();
+			int year = Integer.parseInt(this.cboxAno.getSelectedItem().toString());
+			GregorianCalendar date = new GregorianCalendar(year, month, day);
+			int horas = Integer.parseInt(this.textHoras.getText());
+			int mins = Integer.parseInt(this.textMins.getText());
+			int time = (horas * 60) + mins;
+			Yoga yoga = new Yoga(name, date, time);
+			u.addActivity(yoga, sport);
+
+			parent.setEnabled(true);
+			parent.changeShownActivity();
+			this.dispose();
+		}
+    }//GEN-LAST:event_butOKAddActActionPerformed
+
+	private void enableDistanceFields() {
+
+	}
+
+    private void cboxSportsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboxSportsItemStateChanged
+		if (evt.getStateChange() == ItemEvent.SELECTED) {
+			String sport = this.cboxSports.getSelectedItem().toString();
+			if (sport.equals("Running") || sport.equals("Cycling") || sport.equals("Walking") || sport.equals("Sailing") || sport.equals("Skating") || sport.equals("Orienteering")) {
+				this.textClima.setEnabled(true);
+				this.textDistanciaH.setEnabled(true);
+				this.textDistanciaV.setEnabled(false);
+				this.spinnerAdversario.setEnabled(false);
+				this.spinnerPessoal.setEnabled(false);
+			} else if (sport.equals("Snowboarding") || sport.equals("Mountain Biking") || sport.equals("Skiing")) {
+				this.textClima.setEnabled(true);
+				this.textDistanciaH.setEnabled(true);
+				this.textDistanciaV.setEnabled(true);
+				this.spinnerAdversario.setEnabled(false);
+				this.spinnerPessoal.setEnabled(false);
+			} else if (sport.equals("Swimming") || sport.equals("Indoor Cycling")) {
+				this.textClima.setEnabled(false);
+				this.textDistanciaH.setEnabled(true);
+				this.textDistanciaV.setEnabled(false);
+				this.spinnerAdversario.setEnabled(false);
+				this.spinnerPessoal.setEnabled(false);
+			} else if (sport.equals("Football") || sport.equals("Polo") || sport.equals("Beach Volleyball") || sport.equals("Tennis")) {
+				this.textClima.setEnabled(true);
+				this.textDistanciaH.setEnabled(false);
+				this.textDistanciaV.setEnabled(false);
+				this.spinnerAdversario.setEnabled(true);
+				this.spinnerPessoal.setEnabled(true);
+			} else if (sport.equals("Handball") || sport.equals("Basketball") || sport.equals("Table Tennis") || sport.equals("Boxing") || sport.equals("Badminton") || sport.equals("Volleyball")) {
+				this.textClima.setEnabled(false);
+				this.textDistanciaH.setEnabled(false);
+				this.textDistanciaV.setEnabled(false);
+				this.spinnerAdversario.setEnabled(true);
+				this.spinnerPessoal.setEnabled(true);
+			} else {
+				this.textClima.setEnabled(false);
+				this.textDistanciaH.setEnabled(false);
+				this.textDistanciaV.setEnabled(false);
+				this.spinnerAdversario.setEnabled(false);
+				this.spinnerPessoal.setEnabled(false);
+			}
+		}
+    }//GEN-LAST:event_cboxSportsItemStateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton butCancelAddAct;
+    private javax.swing.JButton butOKAddAct;
     private javax.swing.JComboBox cboxAno;
     private javax.swing.JComboBox cboxDia;
     private javax.swing.JComboBox cboxMes;
@@ -356,5 +487,7 @@ public class AddActivityForm extends javax.swing.JFrame {
     private javax.swing.JTextField textMins;
     private javax.swing.JTextField textName;
     // End of variables declaration//GEN-END:variables
-	private JFrame parent;
+	private UserForm parent;
+	private FitnessUM fit;
+	private User u;
 }

@@ -32,6 +32,7 @@ public class LoginForm extends javax.swing.JFrame {
 	 */
 	public LoginForm() {
 		initComponents();
+		this.setLocationRelativeTo(null);
 		fitness = new FitnessUM();
 		User u1 = new User("1", "1", "user1", 'M', new GregorianCalendar(), 170, 70.0, "Futebol");
 		User u2 = new User("2", "2", "user2", 'M', new GregorianCalendar(), 160, 70.0, "Running");
@@ -67,6 +68,7 @@ public class LoginForm extends javax.swing.JFrame {
         labelRegistar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         addWindowFocusListener(new java.awt.event.WindowFocusListener() {
             public void windowGainedFocus(java.awt.event.WindowEvent evt) {
                 formWindowGainedFocus(evt);
