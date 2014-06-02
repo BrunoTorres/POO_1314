@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.StringTokenizer;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
@@ -33,7 +34,7 @@ public class AddViewActivityForm extends javax.swing.JFrame {
 		this.parent = parent;
 		this.fit = fit;
 		this.u = u;
-		this.setName("add|-1");
+		this.setName("add, 0");
 		this.setLocationRelativeTo(parent);
 		this.cboxSports.setSelectedIndex(12);
 		int dia = new GregorianCalendar().get(Calendar.DAY_OF_MONTH);
@@ -42,6 +43,7 @@ public class AddViewActivityForm extends javax.swing.JFrame {
 		this.cboxDia.setSelectedItem(dia);
 		this.cboxMes.setSelectedIndex(mes);
 		this.cboxAno.setSelectedItem(ano);
+
 	}
 
 	public AddViewActivityForm(UserForm parent, FitnessUM fit, User u, Activity act) {
@@ -51,7 +53,7 @@ public class AddViewActivityForm extends javax.swing.JFrame {
 		this.u = u;
 		this.a = act;
 		this.setLocationRelativeTo(parent);
-		this.setName("view | 2");
+		this.setName("view, 2");
 		GregorianCalendar date = act.getDate();
 		this.textName.setText(act.getName());
 		this.cboxDia.setSelectedItem(date.get(Calendar.DAY_OF_MONTH));
@@ -63,46 +65,88 @@ public class AddViewActivityForm extends javax.swing.JFrame {
 		int mins = (int) (resto * 60);
 		this.textHoras.setText(String.valueOf(horas));
 		this.textMins.setText(String.valueOf(mins));
-		this.butOKAddAct.setText("Eliminar");
+		this.butOKAddAct.setText("ELIMINAR");
+
+		if (act instanceof Distance) {
+			this.textClima.setEditable(false);
+			this.textDistanciaH.setEditable(true);
+			
+			if (act instanceof Running) {
+				Running r = (Running) act;
+				this.cboxSports.setSelectedItem("Running");
+				this.textClima.setText(r.getWeather());
+				this.textDistanciaH.setText(String.valueOf(r.getDistance()));
+			} else if (act instanceof Cycling) {
+				Cycling s = (Cycling) act;
+				this.cboxSports.setSelectedItem("Cycling");
+				this.textClima.setText(s.getWeather());
+				this.textDistanciaH.setText(String.valueOf(s.getDistance()));
+			} else if (act instanceof Walking) {
+				Walking s = (Walking) act;
+				this.cboxSports.setSelectedItem("Walking");
+				this.textClima.setText(s.getWeather());
+				this.textDistanciaH.setText(String.valueOf(s.getDistance()));
+			} else if (act instanceof Sailing) {
+				Sailing s = (Sailing) act;
+				this.cboxSports.setSelectedItem("Sailing");
+				this.textClima.setText(s.getWeather());
+				this.textDistanciaH.setText(String.valueOf(s.getDistance()));
+			} else if (act instanceof Skating) {
+				Skating s = (Skating) act;
+				this.cboxSports.setSelectedItem("Skating");
+				this.textClima.setText(s.getWeather());
+				this.textDistanciaH.setText(String.valueOf(s.getDistance()));
+			} else {
+				Orienteering s = (Orienteering) act;
+				this.cboxSports.setSelectedItem("Orienteering");
+				this.textClima.setText(s.getWeather());
+				this.textDistanciaH.setText(String.valueOf(s.getDistance()));
+			}
+		}
+		/*else if (act instanceof VerticalDistance) {
+
+		}
 
 		if (act instanceof Running) {
 			Running r = (Running) act;
 			this.cboxSports.setSelectedItem("Running");
 			this.textClima.setText(r.getWeather());
 			this.textDistanciaH.setText(String.valueOf(r.getDistance()));
-		}/*
+		} else if (act instanceof Snowboarding) {
 
-		 } else if (sport.equals("Snowboarding") || sport.equals("Mountain Biking") || sport.equals("Skiing")) {
-		 this.textClima.setEnabled(true);
-		 this.textDistanciaH.setEnabled(true);
-		 this.textDistanciaV.setEnabled(true);
-		 this.spinnerAdversario.setEnabled(false);
-		 this.spinnerPessoal.setEnabled(false);
-		 } else if (sport.equals("Swimming") || sport.equals("Indoor Cycling")) {
-		 this.textClima.setEnabled(false);
-		 this.textDistanciaH.setEnabled(true);
-		 this.textDistanciaV.setEnabled(false);
-		 this.spinnerAdversario.setEnabled(false);
-		 this.spinnerPessoal.setEnabled(false);
-		 } else if (sport.equals("Football") || sport.equals("Polo") || sport.equals("Beach Volleyball") || sport.equals("Tennis")) {
-		 this.textClima.setEnabled(true);
-		 this.textDistanciaH.setEnabled(false);
-		 this.textDistanciaV.setEnabled(false);
-		 this.spinnerAdversario.setEnabled(true);
-		 this.spinnerPessoal.setEnabled(true);
-		 } else if (sport.equals("Handball") || sport.equals("Basketball") || sport.equals("Table Tennis") || sport.equals("Boxing") || sport.equals("Badminton") || sport.equals("Volleyball")) {
-		 this.textClima.setEnabled(false);
-		 this.textDistanciaH.setEnabled(false);
-		 this.textDistanciaV.setEnabled(false);
-		 this.spinnerAdversario.setEnabled(true);
-		 this.spinnerPessoal.setEnabled(true);
-		 } else {
-		 this.textClima.setEnabled(false);
-		 this.textDistanciaH.setEnabled(false);
-		 this.textDistanciaV.setEnabled(false);
-		 this.spinnerAdversario.setEnabled(false);
-		 this.spinnerPessoal.setEnabled(false);
-		 }*/
+			this.textClima.setEnabled(true);
+			this.textDistanciaH.setEnabled(true);
+			this.textDistanciaV.setEnabled(true);
+			this.spinnerAdversario.setEnabled(false);
+			this.spinnerPessoal.setEnabled(false);
+		} else if (sport.equals(
+				"Swimming") || sport.equals("Indoor Cycling")) {
+			this.textClima.setEnabled(false);
+			this.textDistanciaH.setEnabled(true);
+			this.textDistanciaV.setEnabled(false);
+			this.spinnerAdversario.setEnabled(false);
+			this.spinnerPessoal.setEnabled(false);
+		} else if (sport.equals(
+				"Football") || sport.equals("Polo") || sport.equals("Beach Volleyball") || sport.equals("Tennis")) {
+			this.textClima.setEnabled(true);
+			this.textDistanciaH.setEnabled(false);
+			this.textDistanciaV.setEnabled(false);
+			this.spinnerAdversario.setEnabled(true);
+			this.spinnerPessoal.setEnabled(true);
+		} else if (sport.equals(
+				"Handball") || sport.equals("Basketball") || sport.equals("Table Tennis") || sport.equals("Boxing") || sport.equals("Badminton") || sport.equals("Volleyball")) {
+			this.textClima.setEnabled(false);
+			this.textDistanciaH.setEnabled(false);
+			this.textDistanciaV.setEnabled(false);
+			this.spinnerAdversario.setEnabled(true);
+			this.spinnerPessoal.setEnabled(true);
+		} else {
+			this.textClima.setEnabled(false);
+			this.textDistanciaH.setEnabled(false);
+			this.textDistanciaV.setEnabled(false);
+			this.spinnerAdversario.setEnabled(false);
+			this.spinnerPessoal.setEnabled(false);
+		} */
 
 	}
 
@@ -442,11 +486,11 @@ public class AddViewActivityForm extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosing
 
     private void butOKAddActActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butOKAddActActionPerformed
-		String[] opAndIndex = this.getName().split("|");
-		String op = opAndIndex[0].trim();
+		String[] split = this.getName().split(",");
+
 		//int index = Integer.parseInt(opAndIndex[1].trim());
-		
-		if (op.equals("add")) {
+		if (split[0].equals("add")) {
+			System.out.println("ADD");
 			boolean ok = true;
 			ArrayList<Component> comps = (ArrayList<Component>) AddViewActivityForm.getAllComponents(this);
 			for (int i = 0; i < comps.size() && ok; i++) {
@@ -471,6 +515,7 @@ public class AddViewActivityForm extends javax.swing.JFrame {
 				int horas = Integer.parseInt(this.textHoras.getText());
 				int mins = Integer.parseInt(this.textMins.getText());
 				int time = (horas * 60) + mins;
+				boolean insere = false;
 
 				switch (sport) {
 					case "Running":
@@ -478,142 +523,135 @@ public class AddViewActivityForm extends javax.swing.JFrame {
 					case "Walking":
 					case "Sailing":
 					case "Skating":
-					case "Orienteering":
-						{
-							String clima = this.textClima.getText();
-							double distanciaH = Double.parseDouble(this.textDistanciaH.getText());
-							switch (sport) {
-								case "Running":
-									u.addActivity(new Running(name, date, time, distanciaH, clima), "Running");
-									break;
-								case "Cycling":
-									u.addActivity(new Cycling(name, date, time, distanciaH, clima), "Cycling");
-									break;
-								case "Walking":
-									u.addActivity(new Walking(name, date, time, distanciaH, clima), "Walking");
-									break;
-								case "Sailing":
-									u.addActivity(new Sailing(name, date, time, distanciaH, clima), "Sailing");
-									break;
-								case "Skating":
-									u.addActivity(new Skating(name, date, time, distanciaH, clima), "Skating");
-									break;
-								case "Orienteering":
-									u.addActivity(new Orienteering(name, date, time, distanciaH, clima), "Orienteering");
-									break;
-								default:
-									break;
-							}
-							break;
+					case "Orienteering": {
+						String clima = this.textClima.getText();
+						double distanciaH = Double.parseDouble(this.textDistanciaH.getText());
+						switch (sport) {
+							case "Running":
+								insere = u.addActivity(new Running(name, date, time, distanciaH, clima), "Running");
+								break;
+							case "Cycling":
+								insere = u.addActivity(new Cycling(name, date, time, distanciaH, clima), "Cycling");
+								break;
+							case "Walking":
+								insere = u.addActivity(new Walking(name, date, time, distanciaH, clima), "Walking");
+								break;
+							case "Sailing":
+								insere = u.addActivity(new Sailing(name, date, time, distanciaH, clima), "Sailing");
+								break;
+							case "Skating":
+								insere = u.addActivity(new Skating(name, date, time, distanciaH, clima), "Skating");
+								break;
+							case "Orienteering":
+								insere = u.addActivity(new Orienteering(name, date, time, distanciaH, clima), "Orienteering");
+								break;
+							default:
+								break;
 						}
-					
-					
-								
+						break;
+					}
+
 					case "Snowboarding":
 					case "Mountain Biking":
-					case "Skiing":
-						{
-							String clima = this.textClima.getText();
-							double distanciaH = Double.parseDouble(this.textDistanciaH.getText());
-							double distanciaV = Double.parseDouble(this.textDistanciaV.getText());
-							switch (sport) {
-								case "Snowboarding":
-									u.addActivity(new Snowboarding(name, date, time, distanciaH, distanciaV, clima), "Snowboarding");
-									break;
-								case "Mountain Biking":
-									u.addActivity(new MountainBiking(name, date, time, distanciaH, distanciaV, clima), "MountainBiking");
-									break;
-								case "Skiing":
-									u.addActivity(new Skiing(name, date, time, distanciaH, distanciaV, clima), "Skiing");
-									break;
-								default:
-									break;
-							}
-							break;
+					case "Skiing": {
+						String clima = this.textClima.getText();
+						double distanciaH = Double.parseDouble(this.textDistanciaH.getText());
+						double distanciaV = Double.parseDouble(this.textDistanciaV.getText());
+						switch (sport) {
+							case "Snowboarding":
+								insere = u.addActivity(new Snowboarding(name, date, time, distanciaH, distanciaV, clima), "Snowboarding");
+								break;
+							case "Mountain Biking":
+								insere = u.addActivity(new MountainBiking(name, date, time, distanciaH, distanciaV, clima), "MountainBiking");
+								break;
+							case "Skiing":
+								insere = u.addActivity(new Skiing(name, date, time, distanciaH, distanciaV, clima), "Skiing");
+								break;
+							default:
+								break;
 						}
+						break;
+					}
 					case "Swimming":
-					case "Indoor Cycling":
-						{
-							double distanciaH = Double.parseDouble(this.textDistanciaH.getText());
-							switch (sport) {
-								case "Swimming":
-									u.addActivity(new Swimming(name, date, time, distanciaH), "Swimming");
-									break;
-								case "Indoor Cycling":
-									u.addActivity(new IndoorCycling(name, date, time, distanciaH), "IndoorCycling");
-									break;
-								default:
-									break;
-							}
-							break;
+					case "Indoor Cycling": {
+						double distanciaH = Double.parseDouble(this.textDistanciaH.getText());
+						switch (sport) {
+							case "Swimming":
+								insere = u.addActivity(new Swimming(name, date, time, distanciaH), "Swimming");
+								break;
+							case "Indoor Cycling":
+								insere = u.addActivity(new IndoorCycling(name, date, time, distanciaH), "IndoorCycling");
+								break;
+							default:
+								break;
 						}
+						break;
+					}
 					case "Football":
 					case "Polo":
 					case "Beach Volleyball":
-					case "Tennis":
-						{
-							String clima = this.textClima.getText();
-							int score = (int) this.spinnerPessoal.getValue();
-							int scoreAdv = (int) this.spinnerAdversario.getValue();
-							switch (sport) {
-								case "Football":
-									u.addActivity(new Football(name, date, time, score, scoreAdv, clima), "Football");
-									break;
-								case "Polo":
-									u.addActivity(new Polo(name, date, time, score, scoreAdv, clima), "Polo");
-									break;
-								case "Beach Volleyball":
-									u.addActivity(new VolleyBallBeach(name, date, time, score, scoreAdv, clima), "VolleyBallBeach");
-									break;
-								case "Tennis":
-									u.addActivity(new Tennis(name, date, time, score, scoreAdv, clima), "Tennis");
-									break;
-								default:
-									break;
-							}
-							break;
+					case "Tennis": {
+						String clima = this.textClima.getText();
+						int score = (int) this.spinnerPessoal.getValue();
+						int scoreAdv = (int) this.spinnerAdversario.getValue();
+						switch (sport) {
+							case "Football":
+								insere = u.addActivity(new Football(name, date, time, score, scoreAdv, clima), "Football");
+								break;
+							case "Polo":
+								insere = u.addActivity(new Polo(name, date, time, score, scoreAdv, clima), "Polo");
+								break;
+							case "Beach Volleyball":
+								insere = u.addActivity(new VolleyBallBeach(name, date, time, score, scoreAdv, clima), "VolleyBallBeach");
+								break;
+							case "Tennis":
+								insere = u.addActivity(new Tennis(name, date, time, score, scoreAdv, clima), "Tennis");
+								break;
+							default:
+								break;
 						}
+						break;
+					}
 					case "Handball":
 					case "Basketball":
 					case "Table Tennis":
 					case "Boxing":
 					case "Badminton":
-					case "Volleyball":
-						{
-							int score = (int) this.spinnerPessoal.getValue();
-							int scoreAdv = (int) this.spinnerAdversario.getValue();
-							switch (sport) {
-								case "Handball":
-									u.addActivity(new Handball(name, date, time, score, scoreAdv), "Handball");
-									break;
-								case "Basketball":
-									u.addActivity(new Basketball(name, date, time, score, scoreAdv), "Basketball");
-									break;
-								case "Table Tennis":
-									u.addActivity(new TableTennis(name, date, time, score, scoreAdv), "TableTennis");
-									break;
-								case "Boxing":
-									u.addActivity(new Boxing(name, date, time, score, scoreAdv), "Boxing");
-									break;
-								case "Badminton":
-									u.addActivity(new Badminton(name, date, time, score, scoreAdv), "Badminton");
-									break;
-								case "Volleyball":
-									u.addActivity(new VolleyBallIndoor(name, date, time, score, scoreAdv), "VolleyBallIndoor");
-									break;
-								default:
-									break;
-							}
-							break;
+					case "Volleyball": {
+						int score = (int) this.spinnerPessoal.getValue();
+						int scoreAdv = (int) this.spinnerAdversario.getValue();
+						switch (sport) {
+							case "Handball":
+								insere = u.addActivity(new Handball(name, date, time, score, scoreAdv), "Handball");
+								break;
+							case "Basketball":
+								insere = u.addActivity(new Basketball(name, date, time, score, scoreAdv), "Basketball");
+								break;
+							case "Table Tennis":
+								insere = u.addActivity(new TableTennis(name, date, time, score, scoreAdv), "TableTennis");
+								break;
+							case "Boxing":
+								insere = u.addActivity(new Boxing(name, date, time, score, scoreAdv), "Boxing");
+								break;
+							case "Badminton":
+								insere = u.addActivity(new Badminton(name, date, time, score, scoreAdv), "Badminton");
+								break;
+							case "Volleyball":
+								insere = u.addActivity(new VolleyBallIndoor(name, date, time, score, scoreAdv), "VolleyBallIndoor");
+								break;
+							default:
+								break;
 						}
+						break;
+					}
 					case "Yoga":
 					case "Aerobics":
 						switch (sport) {
 							case "Yoga":
-								u.addActivity(new Yoga(name, date, time), "Yoga");
+								insere = u.addActivity(new Yoga(name, date, time), "Yoga");
 								break;
 							case "Aeorobics":
-								u.addActivity(new Aerobics(name, date, time), "Aerobics");
+								insere = u.addActivity(new Aerobics(name, date, time), "Aerobics");
 								break;
 							default:
 								break;
@@ -621,18 +659,27 @@ public class AddViewActivityForm extends javax.swing.JFrame {
 						break;
 				}
 
-				parent.setVisible(true);
-				parent.changeShown10Activity();
-				parent.changeShownActivity();
-				this.dispose();
+				if (insere) {
+					parent.setVisible(true);
+					parent.changeActivities("add");
+
+					this.dispose();
+					JOptionPane.showMessageDialog(this, "Atividade adicionada com sucesso...");
+				} else {
+					JOptionPane.showMessageDialog(this, "Ocorreu um erro. A atividade não foi adicionada...");
+				}
 			}
-		} else{
+		} else if (split[0].equals("view")) {
 			//ArrayList<Activity> acts = new ArrayList<>(this.u.getActivities());
 			boolean rem = this.u.removeActivity(this.a.getName());
-			if(rem)
+			if (rem) {
 				JOptionPane.showMessageDialog(this, "Atividade removida com sucesso...");
-			else
+				this.parent.setVisible(true);
+				this.parent.changeActivities("remove");
+				this.dispose();
+			} else {
 				JOptionPane.showMessageDialog(this, "Atividade não removida...");
+			}
 		}
     }//GEN-LAST:event_butOKAddActActionPerformed
 
