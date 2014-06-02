@@ -20,6 +20,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.JWindow;
 import javax.swing.text.MaskFormatter;
 
 /**
@@ -38,7 +39,7 @@ public class LoginForm extends javax.swing.JFrame {
 		try {
 			ObjectInputStream objInput = new ObjectInputStream(new FileInputStream("data.obj"));
 			fitness = new FitnessUM((FitnessUM) objInput.readObject());
-		} catch (IOException ex){
+		} catch (IOException ex) {
 			User u1 = new User("1", "1", "user1", 'M', new GregorianCalendar(), 170, 70.0, "Futebol");
 			User u2 = new User("2", "2", "user2", 'M', new GregorianCalendar(), 160, 70.0, "Running");
 			User u3 = new User("3", "3", "user3", 'F', new GregorianCalendar(), 155, 50.0, "Tenis");
@@ -53,7 +54,7 @@ public class LoginForm extends javax.swing.JFrame {
 			fitness.sendFriendRequest(fitness.getUserByEmail("1"), fitness.getUserByEmail("3"));
 			fitness.sendFriendRequest(fitness.getUserByEmail("2"), fitness.getUserByEmail("3"));
 			fitness.sendFriendRequest(fitness.getUserByEmail("3"), fitness.getUserByEmail("4"));
-		} catch (ClassCastException | ClassNotFoundException e){
+		} catch (ClassCastException | ClassNotFoundException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
 	}
@@ -90,6 +91,10 @@ public class LoginForm extends javax.swing.JFrame {
 
         jLabel3.setText("Password");
 
+        textEmail.setMaximumSize(new java.awt.Dimension(156, 25));
+        textEmail.setMinimumSize(new java.awt.Dimension(156, 25));
+        textEmail.setPreferredSize(new java.awt.Dimension(156, 25));
+
         butOK.setText("Entrar");
         butOK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,6 +109,10 @@ public class LoginForm extends javax.swing.JFrame {
             }
         });
 
+        textPw.setMaximumSize(new java.awt.Dimension(156, 25));
+        textPw.setMinimumSize(new java.awt.Dimension(156, 25));
+        textPw.setPreferredSize(new java.awt.Dimension(156, 25));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -115,8 +124,8 @@ public class LoginForm extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(textEmail)
-                    .addComponent(textPw, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE))
+                    .addComponent(textEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textPw, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(butLimpar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -179,39 +188,14 @@ public class LoginForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void butLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butLimparActionPerformed
-		// TODO add your handling code here:
+		this.textEmail.setText("");
+		this.textPw.setText("");
     }//GEN-LAST:event_butLimparActionPerformed
 
     private void labelRegistarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelRegistarMouseClicked
-		try {
-			JLabel labelEmail = new JLabel("Email");
-			JLabel labelNome = new JLabel("Nome");
-			JLabel labelSexo = new JLabel("Sexo (M/F)");
-			JLabel labelDataNasc = new JLabel("Data de Nascimento (dd-mm-aaaa)");
-			JLabel labelAltura = new JLabel("Altura");
-			JLabel labelPeso = new JLabel("Peso");
-			JLabel labelDesporto = new JLabel("Desporto favorito");
-			JLabel labelPw = new JLabel("Password");
-			JLabel labelPwVer = new JLabel("Confirmação da password");
-			JTextField textEmail = new JTextField();
-			JTextField textNome = new JTextField();
-			JTextField textSexo = new JTextField(1);
-			JFormattedTextField textData = new JFormattedTextField(new SimpleDateFormat("dd/MM/yyyy").format(new Date()));
-			JTextField textAltura = new JTextField();
-			JFormattedTextField textPeso = new JFormattedTextField(new MaskFormatter("##,##"));
-			JTextField textDesporto = new JTextField();
-			JPasswordField textPw = new JPasswordField();
-			JPasswordField textPwVer = new JPasswordField();
-			Object[] registar = {labelEmail, textEmail, labelNome, textNome, labelSexo, textSexo, labelDataNasc, textData, labelAltura, textAltura, labelPeso, textPeso, labelDesporto, textDesporto, labelPw, textPw, labelPwVer, textPwVer};
-
-			//int res = JOptionPane.showConfirmDialog(this, registar, "Registar utilizador", JOptionPane.OK_CANCEL_OPTION);
-			//if(res == JOptionPane.OK_OPTION){
-			RegistarUserForm reg = new RegistarUserForm(this, this.fitness);
-			reg.setVisible(true);
-			this.setVisible(false);
-		} catch (ParseException e) {
-			JOptionPane.showMessageDialog(this, "Data inserida incorretamente...");
-		}
+		RegistarUserForm reg = new RegistarUserForm(this, this.fitness);
+		reg.setVisible(true);
+		this.setVisible(false);
     }//GEN-LAST:event_labelRegistarMouseClicked
 
     private void labelRegistarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelRegistarMouseEntered
@@ -245,10 +229,10 @@ public class LoginForm extends javax.swing.JFrame {
 		}
     }//GEN-LAST:event_butOKActionPerformed
 
-	public FitnessUM getFitness(){
+	public FitnessUM getFitness() {
 		return this.fitness;
 	}
-	
+
 	/**
 	 * @param args the command line arguments
 	 */

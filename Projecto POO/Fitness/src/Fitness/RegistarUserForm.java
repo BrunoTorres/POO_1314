@@ -28,8 +28,8 @@ public class RegistarUserForm extends javax.swing.JFrame {
 		this.textNome.setForeground(Color.LIGHT_GRAY);
 		this.textEmail.setForeground(Color.LIGHT_GRAY);
 		this.textDespFav.setForeground(Color.LIGHT_GRAY);
-		this.textPW.setForeground(Color.LIGHT_GRAY);
-		this.textConfPW.setForeground(Color.LIGHT_GRAY);
+		//this.textPW.setForeground(Color.LIGHT_GRAY);
+		//this.textConfPW.setForeground(Color.LIGHT_GRAY);
 	}
 
 	/**
@@ -332,7 +332,7 @@ public class RegistarUserForm extends javax.swing.JFrame {
 			this.textDespFav.setForeground(Color.LIGHT_GRAY);
 		}
     }//GEN-LAST:event_textDespFavFocusLost
-
+	
     private void butCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butCancelActionPerformed
 		this.parent.setVisible(true);
 		this.dispose();

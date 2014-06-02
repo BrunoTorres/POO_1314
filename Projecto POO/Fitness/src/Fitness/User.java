@@ -229,8 +229,6 @@ public class User extends Person implements Serializable{
 		while (it.hasNext() && !found) {
 			Activity act = it.next();
 			if (act.getName().equals(activityName)) {
-				System.out.println("Encontrou ACT!");
-				//flag = this.userActivities.remove(act);
 				it.remove();
 				flag = true;
 				found = true;

@@ -399,7 +399,7 @@ public class UserForm extends javax.swing.JFrame {
 
     private void butAddActivityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAddActivityActionPerformed
 		AddViewActivityForm addActi = new AddViewActivityForm(this, this.fit, this.fit.getUserByEmail(this.fit.getActivePerson().getEmail()));
-		addActi.setName("add, 0");
+		addActi.setName("add");
 		addActi.setVisible(true);
 		this.setVisible(false);
     }//GEN-LAST:event_butAddActivityActionPerformed
