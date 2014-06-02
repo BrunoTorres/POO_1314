@@ -41,7 +41,16 @@ public class UserForm extends javax.swing.JFrame {
 		this.changeShownActivity();
 	}
 
-	public void changeShown10Activity() {
+	public void changeActivities(String op) {
+		if (op.equals("remove")) {
+			this.currAct = 1;
+			this.allActsCurr = 1;
+		}
+		changeShown10Activity();
+		changeShownActivity();
+	}
+
+	private void changeShown10Activity() {
 		User u = (User) fit.getActivePerson();
 		this.acts = this.fit.getLast10ActivitiesByActivity(u).toArray();
 		if (this.acts.length > 0) {
@@ -50,8 +59,7 @@ public class UserForm extends javax.swing.JFrame {
 		}
 	}
 
-	public void changeShownActivity() {
-		User u = (User) fit.getActivePerson();
+	private void changeShownActivity() {
 		this.allActs = u.getUserActivitiesAdmin().toArray();
 		if (this.allActs.length > 0) {
 			this.textNActCons.setText(this.allActsCurr + "/" + this.allActs.length);
@@ -85,6 +93,7 @@ public class UserForm extends javax.swing.JFrame {
         textNActCons = new javax.swing.JTextField();
         butNextCons = new javax.swing.JButton();
         butLastCons = new javax.swing.JButton();
+        butVerAtividade = new javax.swing.JButton();
         butAddActivity = new javax.swing.JButton();
         butVerPedidos = new javax.swing.JButton();
 
@@ -244,6 +253,13 @@ public class UserForm extends javax.swing.JFrame {
             }
         });
 
+        butVerAtividade.setText("Ver atividade");
+        butVerAtividade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butVerAtividadeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -265,6 +281,10 @@ public class UserForm extends javax.swing.JFrame {
                         .addComponent(butLastCons)
                         .addGap(0, 147, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(200, 200, 200)
+                .addComponent(butVerAtividade)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -278,7 +298,9 @@ public class UserForm extends javax.swing.JFrame {
                     .addComponent(butNextCons)
                     .addComponent(butLastCons)
                     .addComponent(textNActCons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addComponent(butVerAtividade)
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Consultar/Remover atividades", jPanel1);
@@ -317,7 +339,7 @@ public class UserForm extends javax.swing.JFrame {
                     .addComponent(butAddActivity)
                     .addComponent(butVerPedidos))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1))
         );
 
         pack();
@@ -377,6 +399,7 @@ public class UserForm extends javax.swing.JFrame {
 
     private void butAddActivityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAddActivityActionPerformed
 		AddViewActivityForm addActi = new AddViewActivityForm(this, this.fit, this.fit.getUserByEmail(this.fit.getActivePerson().getEmail()));
+		addActi.setName("add, 0");
 		addActi.setVisible(true);
 		this.setVisible(false);
     }//GEN-LAST:event_butAddActivityActionPerformed
@@ -402,9 +425,6 @@ public class UserForm extends javax.swing.JFrame {
     }//GEN-LAST:event_butPrevConsActionPerformed
 
     private void butNextConsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNextConsActionPerformed
-		
-		AddViewActivityForm view = new AddViewActivityForm(this, this.fit, this.u, (Activity) this.allActs[allActsCurr]);
-		view.setVisible(true);
 		if (this.allActsCurr < this.allActs.length) {
 			this.allActsCurr++;
 			this.changeShownActivity();
@@ -429,6 +449,11 @@ public class UserForm extends javax.swing.JFrame {
 		}
     }//GEN-LAST:event_formWindowClosing
 
+    private void butVerAtividadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butVerAtividadeActionPerformed
+        AddViewActivityForm view = new AddViewActivityForm(this, this.fit, this.u, (Activity) this.allActs[allActsCurr-1]);
+		view.setVisible(true);
+    }//GEN-LAST:event_butVerAtividadeActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton butAddActivity;
@@ -441,6 +466,7 @@ public class UserForm extends javax.swing.JFrame {
     private javax.swing.JButton butPrev;
     private javax.swing.JButton butPrevCons;
     private javax.swing.JButton butVerAmigos;
+    private javax.swing.JButton butVerAtividade;
     private javax.swing.JButton butVerPedidos;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
