@@ -4,40 +4,72 @@ import java.util.GregorianCalendar;
 import java.io.Serializable;
 
 /**
- * Write a description of class Cricket here.
+ * Actividade Polo.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public class Polo extends Outdoor implements UserVs, Serializable
 {
    private int myScore;
    private int opScore;
     
-    
+    /**
+     *Construtor
+     */
     public Polo(){
         super();
     }
+
+    /**
+     *
+     * @param name Nome da actividade
+     * @param date  Data da realização da actividade
+     * @param timeSpent Tempo gasto em minutos
+     * @param myScore Pontos feitos
+     * @param opScore Pontos recebidos
+     * @param weather Clima
+     */
     public Polo(String name, GregorianCalendar date, double timeSpent,int myScore,int opScore,String weather){
         super(name,date,timeSpent,weather);
         this.myScore=myScore;
         this.opScore=opScore;
     }
+
+    /**
+     * Construtor de cópia
+     * @param tb Um actividade Polo
+     */
     public Polo(Polo tb){
         super(tb);
         this.myScore=tb.getMyScore();
         this.opScore=tb.getOpScore();
     }
+
+    /**
+     *
+     * @return
+     */
     @Override
     public int getMyScore() {
       return this.myScore;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int getOpScore() {
         return this.opScore;
     }
     
+    /**
+     *
+     * @param peso Peso do user
+     */
     @Override
     public void setCalories(double peso) {
       double mets=8;
