@@ -1,41 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package Fitness;
 
 import java.io.Serializable;
 
 /**
- *
- * @author Bruno
+ * Regista o resultado de uma simulaçao de evento de um utilizador.
+ * 
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public class Simulacao implements Serializable{
     
-    /**
-     *
-     */
-    public double tempoGeral;
-
-    /**
-     *
-     */
-    public double tempoMedio;
-
-    /**
-     *
-     */
-    public int kmDesiste;
-
-    /**
-     *
-     */
-    public User u;
+    private double tempoGeral;
+    private double tempoMedio;
+    private int kmDesiste;
+    private User u;
     
-    /**
-     *
+    /**  
+     *  Construtor vazio.
      */
     public Simulacao(){
         this.tempoGeral=0;
@@ -45,22 +28,21 @@ public class Simulacao implements Serializable{
     }
 
     /**
-     *
-     * @param user
-     * @param tempoMedio
-     * @param km
+     * Construtor parametrizado.
+     * @param user - Utilizador associado.
+     * @param tempoMedio - Tempo medio por km em minutos.
+     * @param km - Numero de kilometros que o utilizador consegue fazer no evento.
      */
     public Simulacao(User user,double tempoMedio,int km){
         this.tempoGeral=0;
         this.tempoMedio=tempoMedio;
         this.kmDesiste=km;
         this.u=user.clone();
-       
     }
        
     /**
-     *
-     * @param s
+     * Construtor de cópia.
+     * @param tb - instancia de Simulaçao.
      */
     public Simulacao(Simulacao s){
         this.tempoGeral=s.getTempoGeral();
@@ -70,49 +52,54 @@ public class Simulacao implements Serializable{
     }
 
     /**
-     * @return the tempoGeral
+     * Método que devolve o tempo geral do utilizador.
+     * @return Devolve um double.
      */
     public double getTempoGeral() {
         return tempoGeral;
     }
 
     /**
-     * @return the tempoMedio
+     * Método que devolve o tempo medio por km em minutos.
+     * @return Devolve um double.
      */
     public double getTempoMedio() {
         return tempoMedio;
     }
 
     /**
-     * @return the kmDesiste
+    * Método que devolve o numero de kilometros que o utilizador consegue fazer no evento.
+     * @return Devolve um inteiro.
      */
     public int getKmDesiste() {
         return kmDesiste;
     }
 
     /**
-     * @return the u
+    * Método que o utilizador da Simulaçao.
+     * @return Devolve um clone do User.
      */
     public User getUser() {
         return u.clone();
     }
     
     /**
-     *
+     * Método que incrementa o tempo geral de acordo com o tempo medio (para um km).
      * @param intrevalo
      */
     public void actualiza(double intrevalo){
         double tempo=this.tempoMedio*(Math.random()+0.5);
         this.tempoGeral+=(intrevalo*tempo);
-        
     }
     
     //toSting,equals,clone
     
+    @Override
     public Simulacao clone(){
         return new Simulacao(this);
     }
     
+    @Override
     public boolean equals(Object o){
         if(this==o)
             return true;
@@ -125,29 +112,22 @@ public class Simulacao implements Serializable{
                 && this.u.equals(s.getUser()));
     } 
     
+    @Override
     public String toString(){
         StringBuilder sb= new StringBuilder();
         int h,m;
-         double s;
-         h=(int)this.tempoGeral/60;
-         m=(int)this.tempoGeral%60;
-         
-         s=this.tempoGeral-((int)this.tempoGeral);
-         s=s*60;
+        double s;
+
+        h=(int)this.tempoGeral/60;
+        m=(int)this.tempoGeral%60;
+        s=this.tempoGeral-((int)this.tempoGeral);
+        s=s*60;
         sb.append("Nome: ").append(u.getName());
-           
         sb.append(" || Tempo: ");
         if(h>0)
-         sb.append(h).append("(h):");
+        sb.append(h).append("(h):");
         sb.append(m).append("(min): ");
         sb.append((int)s).append("(seg)\n");
-        
-        
-        
-        
         return sb.toString();
-        
     }
-   
 }
-

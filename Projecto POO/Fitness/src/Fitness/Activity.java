@@ -45,7 +45,7 @@ public abstract class Activity implements Serializable {
 
     /**
      * Construtor de cópia da classe
-     * @param a Construtor recebe uma instância de Activity e cria uma cópia desta. 
+     * @param a - Objecto do tipo Activity. 
      */
     public Activity(Activity a) {
         this.name = a.getName();

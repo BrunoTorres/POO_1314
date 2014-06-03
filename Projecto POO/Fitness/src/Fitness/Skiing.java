@@ -4,19 +4,20 @@ import java.util.GregorianCalendar;
 import java.io.Serializable;
 
 /**
- * Write a description of class Skiing here.
+ * Actividade Skiing.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public class Skiing extends Outdoor implements Distance, VerticalDistance, Serializable
 {
     private double distance;
     private double verticaldistance;
-    private ListRecords recs;
     
     /**
-     *
+     * Construtor vazio.
      */
     public Skiing(){
         super();
@@ -24,25 +25,25 @@ public class Skiing extends Outdoor implements Distance, VerticalDistance, Seria
 
     /**
      *
-     * @param name
-     * @param date
-     * @param timeSpent
-     * @param distance
-     * @param verticaldistance
-     * @param weather
+     * Construtor parametrizado.
+     * @param name - Nome da actividade.
+     * @param date - Data da realização da actividade.
+     * @param timeSpent - Tempo gasto em minutos.
+     * @param distance - Distancia.
+     * @param verticaldistance - Diferença entre a maior e a menor altura (valor absoluto).
+     * @param weather - Clima.
+     *
      */
     public Skiing(String name, GregorianCalendar date, double timeSpent,double distance,
-            double verticaldistance,String weather){
+        double verticaldistance,String weather){
         super(name,date,timeSpent,weather);
         this.distance=distance;
         this.verticaldistance=verticaldistance;
-        this.recs=createRecord();
-        
     }
 
     /**
-     *
-     * @param tb
+     * Construtor de cópia.
+     * @param tb - instancia de Snowboarding.
      */
     public Skiing(Skiing tb){
         super(tb);
@@ -50,37 +51,21 @@ public class Skiing extends Outdoor implements Distance, VerticalDistance, Seria
         this.verticaldistance=tb.getVerticalDistance();
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public double getDistance() {
        return this.distance;
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public double getVerticalDistance() {
         return this.verticaldistance;
     }
 
-    /**
-     *
-     * @param distance
-     */
     @Override
     public void setDistance(double distance) {
        this.distance=distance;
     }
 
-    /**
-     *
-     * @param verticaldistance
-     */
     @Override
     public void setVerticalDistance(double verticaldistance) {
         this.verticaldistance=verticaldistance;
@@ -92,32 +77,10 @@ public class Skiing extends Outdoor implements Distance, VerticalDistance, Seria
       double calories=mets*peso*(this.getTimeSpent()/60);
       this.setActivityCalories(calories);    
     }
-   
-   private ListRecords createRecord() {
-        ListRecords list=new ListRecords("Walking");
-        
-        Record recCooper=new TimePerDistance("Cooper",12,this.distance,this.getTimeSpent());
-        Record rec1km=new DistancePerTime("1 km",1,this.distance,this.getTimeSpent());
-        Record rec1mile=new DistancePerTime("1 mile",1.609344,this.distance,this.getTimeSpent());
-        Record rec3km=new DistancePerTime("3 km",3,this.distance,this.getTimeSpent());
-        Record rec10km=new DistancePerTime("10 km",10,this.distance,this.getTimeSpent());
-        Record rechalfMarathon=new DistancePerTime("Half Marathon km",21.097494,this.distance,this.getTimeSpent());
-        
-        list.addRecord(recCooper);
-        list.addRecord(rec1km);
-        list.addRecord(rec1mile);
-        list.addRecord(rec3km);
-        list.addRecord(rec10km);
-        list.addRecord(rechalfMarathon);
-        
-        return list;
-   
-    }
-   
-   
+
      ////////////toString equals clone
     
-    
+    @Override
      public String toString(){
         StringBuilder sb=new StringBuilder();
         sb.append(super.toString());
@@ -138,13 +101,10 @@ public class Skiing extends Outdoor implements Distance, VerticalDistance, Seria
         return  ( super.equals(act)
                 && this.distance==act.getDistance()
                 && this.verticaldistance==act.getVerticalDistance());
-        
     }
 
     @Override
      public Skiing clone(){
         return new Skiing(this);
     }
-
-   
 }

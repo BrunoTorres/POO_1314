@@ -4,10 +4,12 @@ import java.util.GregorianCalendar;
 import java.io.Serializable;
 
 /**
- * Write a description of class Swimming here.
+ * Actividade Swimming.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public class Swimming extends Indoor implements Distance, RecordsActivity, Serializable
 {
@@ -15,7 +17,7 @@ public class Swimming extends Indoor implements Distance, RecordsActivity, Seria
     private ListRecords recs;
 
     /**
-     *
+     * Construtor vazio.
      */
     public Swimming(){
         super();
@@ -24,11 +26,11 @@ public class Swimming extends Indoor implements Distance, RecordsActivity, Seria
     }
 
     /**
-     *
-     * @param name
-     * @param date
-     * @param timeSpent
-     * @param distance
+     * Construtor parametrizado.
+     * @param name - Nome da actividade.
+     * @param date - Data da realização da actividade.
+     * @param timeSpent - Tempo gasto em minutos.
+     * @param distance - Distancia.
      */
     public Swimming(String name, GregorianCalendar date, double timeSpent,double distance){
         super(name,date,timeSpent);
@@ -38,8 +40,8 @@ public class Swimming extends Indoor implements Distance, RecordsActivity, Seria
     }
 
     /**
-     *
-     * @param tb
+     * Construtor de cópia.
+     * @param tb - instancia de Swimming.
      */
     public Swimming(Swimming tb){
         super(tb);
@@ -48,30 +50,27 @@ public class Swimming extends Indoor implements Distance, RecordsActivity, Seria
         
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public double getDistance() {
        return this.distance;
     }
 
-    /**
-     *
-     * @param distance
-     */
     @Override
     public void setDistance(double distance) {
        this.distance=distance;
     }
+
     @Override
    public void setCalories(double peso) {
     double mets=8;
       double calories=mets*peso*(this.getTimeSpent()/60);
       this.setActivityCalories(calories);    
     }
-   
+
+   /**
+     * Método que devolve a lista de recordes registados nessa actividade.
+     * @return Devolve uma ListRecords.
+     */
     private ListRecords createRecord() {
             ListRecords list=new ListRecords("Running");
             
@@ -92,7 +91,7 @@ public class Swimming extends Indoor implements Distance, RecordsActivity, Seria
    
      ////////////toString equals clone
     
-    
+    @Override
      public String toString(){
         StringBuilder sb=new StringBuilder();
         sb.append(super.toString());
@@ -110,7 +109,6 @@ public class Swimming extends Indoor implements Distance, RecordsActivity, Seria
         Swimming act = (Swimming) a;
         return  ( super.equals(act)
                 && this.distance==act.getDistance());
-        
     }
 
     @Override
@@ -118,13 +116,8 @@ public class Swimming extends Indoor implements Distance, RecordsActivity, Seria
         return new Swimming(this);
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public ListRecords getListRecords() {
         return this.recs.clone();
     }
-    
 }
