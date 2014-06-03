@@ -5,7 +5,7 @@ import java.util.GregorianCalendar;
 import java.io.Serializable;
 
 /**
- * Classe referente ao Administrador
+ * Classe referente ao Administrador.
  * 
  * @author Bruno Pereira
  * @author João Mano
@@ -36,7 +36,7 @@ public class Admin extends Person implements Serializable
   
     /**
      * Construtor de cópia
-     * @param admin Recebe uma distancia de Admin,
+     * @param admin Recebe uma instância de Admin. 
      */
     public Admin(Admin admin){
       super(admin.getEmail(), admin.getPassword(), admin.getName(), admin.getGender(), admin.getDate());

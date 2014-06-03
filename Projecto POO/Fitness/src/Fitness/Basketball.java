@@ -4,7 +4,7 @@ import java.util.GregorianCalendar;
 import java.io.Serializable;
 
 /**
- * Classe da actividade Basketeball
+ * Actividade Basketeball
  * 
  * @author Bruno Pereira
  * @author João Mano
@@ -24,12 +24,12 @@ public class Basketball extends Indoor implements UserVs, Serializable
     }
 
     /**
-     *
-     * @param name Nome da actividade
-     * @param date  Data da realização da actividade
-     * @param timeSpent Tempo gasto em minutos
-     * @param myScore Pontos feitos
-     * @param opScore Pontos recebidos
+     *  Construtor parametrizado.
+     * @param name Nome da actividade.
+     * @param date  Data da realização da actividade.
+     * @param timeSpent Tempo gasto em minutos.
+     * @param myScore Pontos feitos.
+     * @param opScore Pontos recebidos.
      */
     public Basketball(String name, GregorianCalendar date, double timeSpent,int myScore,int opScore){
         super(name,date,timeSpent);
