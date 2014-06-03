@@ -52,16 +52,16 @@ public abstract class Event implements Serializable {
      *
      * Construtor parametrizado.
      *
-     * @param name - Nome do Trail.
+     * @param name - Nome do Evento.
      * @param tipoActivity - Tipo de Activity a que o evento pertence.
-     * @param location - Nome da localidade do Trail.
+     * @param location - Nome da localidade do Evento.
      * @param maxParticipants - Numero de participantes máximo.
      * @param participants - Numero de participantes inscritos.
      * @param deadline - Data limite de inscrição.
-     * @param date - Data do Trail.
+     * @param date - Data do Evento.
      * @param duration - duração.
      * @param participantsList - Lista de participantes inscritos.
-     * @param ranking - classificação final do Trail.
+     * @param ranking - classificação final do Evento.
      */
     public Event(String name, String tipoActivity, String location, int maxParticipants, int participants, GregorianCalendar deadline, GregorianCalendar date, double duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking) {
         this.name = name;
@@ -83,15 +83,15 @@ public abstract class Event implements Serializable {
      *
      * Construtor parametrizado.
      *
-     * @param name - Nome do Trail.
+     * @param name - Nome do Evento.
      * @param tipoActivity - Tipo de Activity a que o evento pertence.
-     * @param location - Nome da localidade do Trail.
+     * @param location - Nome da localidade do Evento.
      * @param maxParticipants - Numero de participantes máximo.
      * @param deadline - Data limite de inscrição.
-     * @param date - Data do Trail.
+     * @param date - Data do Evento.
      * @param duration - duração.
      * @param participantsList - Lista de participantes inscritos.
-     * @param ranking - classificação final do Trail.
+     * @param ranking - classificação final do Evento.
      */
     public Event(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date, double duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking) {
         this.name = name;
@@ -113,12 +113,12 @@ public abstract class Event implements Serializable {
      *
      * Construtor parametrizado.
      *
-     * @param name - Nome do Trail.
+     * @param name - Nome do Evento.
      * @param tipoActivity - Tipo de Activity a que o evento pertence.
-     * @param location - Nome da localidade do Trail.
+     * @param location - Nome da localidade do Evento.
      * @param maxParticipants - Numero de participantes máximo.
      * @param deadline - Data limite de inscrição.
-     * @param date - Data do Trail.
+     * @param date - Data do Evento.
      * @param duration - duração.
      */
     public Event(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date, double duration) {
@@ -138,13 +138,13 @@ public abstract class Event implements Serializable {
     }
 
     /**
-     *
-     * @param name - Nome do Trail.
+     * Construtor parametrizado.
+     * @param name - Nome do Evento.
      * @param tipoActivity - Tipo de Activity a que o evento pertence.
-     * @param location - Nome da localidade do Trail.
+     * @param location - Nome da localidade do Evento.
      * @param maxParticipants - Numero de participantes máximo.
      * @param deadline - Data limite de inscrição.
-     * @param date - Data do Trail.
+     * @param date - Data do Evento.
      */
     public Event(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date) {
         this.name = name;
@@ -428,7 +428,6 @@ public abstract class Event implements Serializable {
     }
 
     //toString ,equals,clone
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

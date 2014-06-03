@@ -177,11 +177,11 @@ public class FitnessUM implements Serializable {
         for (Simulacao s : e.getSimulacaoAdmin()) {
             if (tipoEvento == 1) {
                 double aux = s.getTempoMedio() * 0.195;
-                aux += s.tempoGeral;
+                aux += s.getTempoGeral();
                 e.addRanking(s.getUser(), aux);
             } else if (tipoEvento == 2) {
                 double aux = s.getTempoMedio() * 0.1;
-                aux += s.tempoGeral;
+                aux += s.getTempoGeral();
                 e.addRanking(s.getUser(), aux);
             } else {
                 e.addRanking(s.getUser(), s.getTempoGeral());

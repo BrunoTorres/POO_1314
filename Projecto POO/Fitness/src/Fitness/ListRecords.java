@@ -1,136 +1,151 @@
-
 package Fitness;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.TreeSet;
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
 
 /**
+ * Classe que contem a lista de recordes.
  *
- * @author Bruno
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public class ListRecords implements Serializable {
-    
+
     private final String name;            // nome do tipo (Cycling...)
     private ArrayList<Record> recs;
-    
-    /**
-     *
-     */
-    public ListRecords(){
-    this.name="";
-    this.recs=new ArrayList<>();
-}
 
     /**
-     *
-     * @param name
+     * Construtor vazio.
      */
-    public ListRecords(String name){
-    this.name=name;
-    this.recs=new ArrayList<>();
-}
-
-    /**
-     *
-     * @param name
-     * @param recs
-     */
-    public ListRecords(String name, TreeSet<Record> recs){
-    this.name=name;
-    for(Record r:recs)
-        this.recs.add(r.clone());
+    public ListRecords() {
+        this.name = "";
+        this.recs = new ArrayList<>();
     }
 
     /**
+     * Construtor parametrizado.
      *
-     * @param list
+     * @param name Tipo da actividade a qual a a ListRecords se refere.
      */
-    public ListRecords(ListRecords list){
-    this.name=list.getName();
-    this.recs=list.getList();
-}
+    public ListRecords(String name) {
+        this.name = name;
+        this.recs = new ArrayList<>();
+    }
 
     /**
+     * Construtor parametrizado.
      *
-     * @return
+     * @param name -Tipo da actividade a qual a a ListRecords se refere.
+     * @param recs - Set de Record
      */
-    public ArrayList<Record> getList() {
-        ArrayList<Record> aux=new ArrayList<>();
-        for(Record r:this.recs)
+    public ListRecords(String name, Set<Record> recs) {
+        this.name = name;
+        for (Record r : recs) {
+            this.recs.add(r.clone());
+        }
+    }
+
+    /**
+     * Construtor de cópia.
+     *
+     * @param list instância de ListRecords.
+     */
+    public ListRecords(ListRecords list) {
+        this.name = list.getName();
+        this.recs = (ArrayList<Record>) list.getList();
+    }
+
+    /**
+     * Método que devolve uma lista de Recordes.
+     *
+     * @return List de Record
+     */
+    public List<Record> getList() {
+        ArrayList<Record> aux = new ArrayList<>();
+        for (Record r : this.recs) {
             aux.add(r);
+        }
         return aux;
-   
+
     }
 
     /**
+     * Método que devolve actualiza todos os recordes da classe.
      *
-     * @param list
+     * @param list instancia de ListRecords.
      */
-    public void updateList(ListRecords list){
-      ArrayList<Record>array=list.getList();
-      int i=0;
-      for(Record r :this.recs){
-          r.update(array.get(i));
-          i++;
-      }
-  }
-    
+    public void updateList(ListRecords list) {
+        ArrayList<Record> array = (ArrayList<Record>) list.getList();
+        int i = 0;
+        for (Record r : this.recs) {
+            r.update(array.get(i));
+            i++;
+        }
+    }
+
     /**
+     * Método que devolve o nome da classe.
      *
-     * @return
+     * @return String.
      */
     public String getName() {
-        return this.name;        
+        return this.name;
     }
-    
+
     /**
+     * Método que adiciona um recorde a classe.
      *
-     * @param rec
+     * @param rec Record.
      */
-    public void addRecord(Record rec){
-        
+    public void addRecord(Record rec) {
+
         this.recs.add(rec);
     }
-    
-    /**
-     *
-     * @param list
-     */
-    public void setRecords(ListRecords list){
-          int i=0;
-          for(Record c : this.recs){
-              c.update(list.getList().get(i));
-              i++;
-          }
-              
-              
-      }
-      
-      
+
     //toString,equals,clone
-    
-    public String toString(){
-        StringBuilder sb=new StringBuilder();
+    /**
+     * Método que altera os recordes.
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
         sb.append("Nome do tipo da actividade: ").append(this.name).append("\n");
-        for(Record r:this.recs)
+        for (Record r : this.recs) {
             sb.append((r.toString()));
-        
+        }
+
         return sb.toString();
     }
-    
-    public boolean equals(Object o){
-        if(this==o)
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
             return true;
-        if((o==null) ||(o.getClass() != this.getClass()))
+        }
+        if ((o == null) || (o.getClass() != this.getClass())) {
             return false;
-        ListRecords list=(ListRecords)o;
-        return (this.name.equals(list.getName()) &&
-                this.recs.equals(list.getList()));
+        }
+        ListRecords list = (ListRecords) o;
+        return (this.name.equals(list.getName())
+                && this.recs.equals(list.getList()));
     }
-    
-    public ListRecords clone(){
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 59 * hash + Objects.hashCode(this.name);
+        hash = 59 * hash + Objects.hashCode(this.recs);
+        return hash;
+    }
+
+    @Override
+    public ListRecords clone() {
         return new ListRecords(this);
     }
-    
+
 }

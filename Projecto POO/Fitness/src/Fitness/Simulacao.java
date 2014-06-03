@@ -3,7 +3,7 @@ package Fitness;
 import java.io.Serializable;
 
 /**
- * Regista o resultado de uma simulaçao para um evento de um utilizador.
+ * Regista o resultado de uma simulação para um evento de um utilizador.
  * 
  * @author Bruno Pereira
  * @author João Mano
