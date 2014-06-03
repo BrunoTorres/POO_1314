@@ -9,35 +9,23 @@ import java.io.Serializable;
 public class Ranking implements Serializable
 {
 
-    /**
-     *
-     */
     public double time;
-
-    /**
-     *
-     */
     public int km;
-
-    /**
-     *
-     */
     public User athlete;
     
     /**
-     *
+     * Construtor vazio.
      */
     public Ranking(){
         this.time=0;
         this.km=0;
         this.athlete=new User();
-        
     }
     
     /**
      *
-     * @param u
-     * @param time
+     * @param u - Utilizador.
+     * @param time - Tempo registado em minutos.
      */
     public Ranking(User u,double time){
         this.athlete=u.clone();
@@ -46,9 +34,9 @@ public class Ranking implements Serializable
     }
     
     /**
-     *
-     * @param u
-     * @param km
+     * Construtor parametrizado.
+     * @param u - Utilizador.
+     * @param km - kilometro em que utilizador desistiu.
      */
     public Ranking(User u,int km){
         this.athlete=u.clone();
@@ -57,7 +45,7 @@ public class Ranking implements Serializable
     }
 
     /**
-     *
+     * Construtor de copia
      * @param r
      */
     public Ranking(Ranking r){

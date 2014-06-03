@@ -12,7 +12,10 @@ import java.util.Objects;
  * @author Miguel Guimarães
  * @version 2014
  */
+
 public class Walking extends Outdoor implements Distance, RecordsActivity, Serializable {
+
+
 
     private double distance;
     private ListRecords recs;
@@ -35,11 +38,11 @@ public class Walking extends Outdoor implements Distance, RecordsActivity, Seria
      * @param distance - Distancia.
      * @param weather - Clima.
      */
+
     public Walking(String name, GregorianCalendar date, double timeSpent, double distance, String weather) {
         super(name, date, timeSpent, weather);
         this.distance = distance;
         this.recs = createRecord();
-
     }
 
     /**
@@ -86,7 +89,6 @@ public class Walking extends Outdoor implements Distance, RecordsActivity, Seria
         Record rec3km = new TimePerDistance("3 km", 3, this.distance, this.getTimeSpent());
         Record rec10km = new TimePerDistance("10 km", 10, this.distance, this.getTimeSpent());
         Record rechalfMarathon = new TimePerDistance("Half Marathon km", 21.097494, this.distance, this.getTimeSpent());
-
         list.addRecord(recCooper);
         list.addRecord(rec1hour);
         list.addRecord(rec1km);
@@ -111,9 +113,9 @@ public class Walking extends Outdoor implements Distance, RecordsActivity, Seria
 
     @Override
     public boolean equals(Object a) {
-        if (this == a) {
+        if (this ==a) 
             return true;
-        }
+  
         if (a == null || this.getClass() != a.getClass()) {
             return false;
         }
@@ -134,4 +136,5 @@ public class Walking extends Outdoor implements Distance, RecordsActivity, Seria
     public Walking clone() {
         return new Walking(this);
     }
+
 }

@@ -6,7 +6,7 @@ import java.util.GregorianCalendar;
 import java.util.Objects;
 
 /**
- * Classe abstracta. 
+ * Classe abstracta de actividades. 
  * 
  * @author Bruno Pereira
  * @author João Mano
