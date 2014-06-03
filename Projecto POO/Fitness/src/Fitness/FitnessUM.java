@@ -13,220 +13,193 @@ import java.util.TreeSet;
  *
  * @author Bruno
  */
-public class FitnessUM implements Serializable{     
+public class FitnessUM implements Serializable {
 
     //private DataBase db;
     private Person p;
-    private TreeSet<Person>userList;  // admin && users
+    private TreeSet<Person> userList;  // admin && users
     private ArrayList<Event> events;      /// mostrar no inicio criar funcao que ver se ja foi o evento 
 
     /**
      *
      */
     public FitnessUM() {
-       // this.db = new DataBase();
-        this.userList= new TreeSet<Person>(new ComparePersonByName());
-        this.events=new ArrayList<>();
+        // this.db = new DataBase();
+        this.userList = new TreeSet<Person>(new ComparePersonByName());
+        this.events = new ArrayList<>();
     }
- 
+
     /**
      *
      * @param um
      */
-    public FitnessUM(FitnessUM um){
-        this.p=um.getPerson();
-        this.userList=(TreeSet<Person>)um.getUserList();
-        this.events=(ArrayList<Event>)um.getEvents();
-    }
-    
-    /**
-     *
-     * @return
-     */
-    public Person getPerson(){
-        return this.p.clone();
-    }
- 
-    /**
-     *
-     * @return
-     */
-    public List<Event> getEvents(){
-        ArrayList<Event> aux=new ArrayList<>();
-        for(Event e:this.events){
-            aux.add(e.clone());
-        }
-        return aux;        
+    public FitnessUM(FitnessUM um) {
+        this.p = um.getPerson();
+        this.userList = (TreeSet<Person>) um.getUserList();
+        this.events = (ArrayList<Event>) um.getEvents();
     }
 
     /**
      *
      * @return
      */
-    public Set<Person> getUserList(){
-        TreeSet<Person> aux = new TreeSet<Person>(new ComparePersonByName());
-        for(Person p : this.userList)
-            aux.add(p.clone());
+    public Person getPerson() {
+        return this.p.clone();
+    }
+
+    /**
+     *
+     * @return
+     */
+    public List<Event> getEvents() {
+        ArrayList<Event> aux = new ArrayList<>();
+        for (Event e : this.events) {
+            aux.add(e.clone());
+        }
         return aux;
     }
-    
-    
-    private User getUser(String email){  
-       
-        boolean found=false;
-        User u=new User();
-        Iterator<Person> it=this.userList.iterator();                                         
-       while(it.hasNext() && !found)
-       {    Person per = it.next(); 
-           if((per.getEmail().equals(email)) && (per instanceof User))
-           {
-               u=(User)per;
-               found=true; 
-           }
-       }       
-       return u;
-       
+
+    /**
+     *
+     * @return
+     */
+    public Set<Person> getUserList() {
+        TreeSet<Person> aux = new TreeSet<Person>(new ComparePersonByName());
+        for (Person p : this.userList) {
+            aux.add(p.clone());
+        }
+        return aux;
     }
-    
+
+    private User getUser(String email) {
+
+        boolean found = false;
+        User u = new User();
+        Iterator<Person> it = this.userList.iterator();
+        while (it.hasNext() && !found) {
+            Person per = it.next();
+            if ((per.getEmail().equals(email)) && (per instanceof User)) {
+                u = (User) per;
+                found = true;
+            }
+        }
+        return u;
+
+    }
+
     /**
      *
      * @param u
      * @return
      */
-    public boolean addUserByUser(User u){
+    public boolean addUserByUser(User u) {
         return this.userList.add(u);
     }
+
     //
+
     @Override
-    public FitnessUM clone(){
+    public FitnessUM clone() {
         return new FitnessUM(this);
     }
-   
 
         /////////Eventos///////////////////// 
-       
-    
     //////////////SIMULAÇAO//////////////////////
-   
-    
     /**
      *
      * @param e
      * @param weather
      * @param temperatura
      */
-    public void simulaEvent(Event e, String weather,double temperatura){
-        double distance=0;
-        String tipo="";
-        int tipoEvento=0;
-        boolean desistentes=false;
-        
-        if(e instanceof Marathon){
-            distance=42.195;
-            tipo="Marathon";
-            tipoEvento=1;
-        }        
-        else if(e instanceof Halfmarathon){
-            distance =21.1;
-            tipo="Halfmarathon";
-            tipoEvento=2;
-        }      
-        else if(e instanceof MarathonBTT){
-            MarathonBTT btt=(MarathonBTT)e;
-            distance=btt.getDistance();
-            tipo="MarathonBTT";
-            tipoEvento=3;
+    public void simulaEvent(Event e, String weather, double temperatura) {
+        double distance = 0;
+        String tipo = "";
+        int tipoEvento = 0;
+        boolean desistentes = false;
+
+        if (e instanceof Marathon) {
+            distance = 42.195;
+            tipo = "Marathon";
+            tipoEvento = 1;
+        } else if (e instanceof Halfmarathon) {
+            distance = 21.1;
+            tipo = "Halfmarathon";
+            tipoEvento = 2;
+        } else if (e instanceof MarathonBTT) {
+            MarathonBTT btt = (MarathonBTT) e;
+            distance = btt.getDistance();
+            tipo = "MarathonBTT";
+            tipoEvento = 3;
+        } else if (e instanceof Trail) {
+            Trail trail = (Trail) e;
+            distance = trail.getDistance();
+            tipo = "Trail";
+            tipoEvento = 4;
         }
-          else if(e instanceof Trail){
-            Trail trail=(Trail)e;
-            distance=trail.getDistance();
-            tipo="Trail";
-            tipoEvento=4;
+        for (User u : e.getParticipantsList()) {
+            double tempo = u.formula(weather, temperatura, tipo, distance);
+            int km = (int) u.kmDesisteM(distance) + 1;
+            Simulacao s = new Simulacao(u, tempo, km);
+            e.addSimulacao(s);
         }
-            for(User u:e.getParticipantsList()){ 
-                double tempo=u.formula(weather,temperatura,tipo,distance);
-                int km=(int)u.kmDesisteM(distance)+1;
-                Simulacao s= new Simulacao(u,tempo,km);
-                e.addSimulacao(s);           
+
+        for (int i = 0; i <= (int) distance && !desistentes; i++) {
+            for (Simulacao s : e.getSimulacao()) {
+                if (s.getKmDesiste() == i) {
+                    Ranking r = new Ranking(s.getUser(), i);
+                    e.getDesistentesAdmin().add(r);
+                    e.getSimulacaoAdmin().remove(s);
+                } else {
+                    e.getSimulacaoAdmin().remove(s);
+                    s.actualiza(1);
+                    e.getSimulacaoAdmin().add(s);
+                }
+            }
+            int j = 1;
+            StringBuilder sb = new StringBuilder();
+            sb.append("Km: ").append(i).append("\n");
+            sb.append("Classificaçao: ").append("\n");
+            for (Simulacao s : e.getSimulacao()) {
+                sb.append(j).append(": ").append(s.toString()).append("\n");
+                j++;
+            }
+            for (Ranking r : e.getDesistentes()) {
+                if (r.getKm() == i) {
+                    sb.append(j).append(": ").append(r.toStringDesiste()).append("\n");
+                }
+            }
+
+            System.out.println(sb.toString());
+            if (e.getSimulacao().isEmpty()) {
+                desistentes = true;
+            }
         }
-          
-          for(int i=0;i<=(int)distance && !desistentes;i++){
-              for(Simulacao s:e.getSimulacao()){
-                  if(s.getKmDesiste()==i){
-                      Ranking r=new Ranking(s.getUser(),i);
-                      e.getDesistentesAdmin().add(r);
-                      e.getSimulacaoAdmin().remove(s);                     
-                  }
-                  else{
-                      e.getSimulacaoAdmin().remove(s);
-                      s.actualiza(1);
-                      e.getSimulacaoAdmin().add(s);    
-                  }             
-              }
-              int j=1;
-              StringBuilder sb=new StringBuilder();
-              sb.append("Km: ").append(i).append("\n");
-              sb.append("Classificaçao: ").append("\n");
-              for(Simulacao s:e.getSimulacao()){
-                  sb.append(j).append(": ").append(s.toString()).append("\n");
-                  j++;
-              }
-              for(Ranking r:e.getDesistentes()){
-                  if(r.getKm()==i)
-                 sb.append(j).append(": ").append(r.toStringDesiste()).append("\n");                     
-              }
-              
-           System.out.println(sb.toString());
-           if(e.getSimulacao().isEmpty())
-               desistentes=true;
+        for (Simulacao s : e.getSimulacaoAdmin()) {
+            if (tipoEvento == 1) {
+                double aux = s.getTempoMedio() * 0.195;
+                aux += s.tempoGeral;
+                e.addRanking(s.getUser(), aux);
+            } else if (tipoEvento == 2) {
+                double aux = s.getTempoMedio() * 0.1;
+                aux += s.tempoGeral;
+                e.addRanking(s.getUser(), aux);
+            } else {
+                e.addRanking(s.getUser(), s.getTempoGeral());
+            }
+
         }
-          for(Simulacao s:e.getSimulacaoAdmin()){
-              if(tipoEvento==1){
-                  double aux=s.getTempoMedio()*0.195;
-                  aux+=s.tempoGeral;
-                  e.addRanking(s.getUser(), aux);
-              }
-              else if(tipoEvento==2){
-                  double aux=s.getTempoMedio()*0.1;
-                  aux+=s.tempoGeral;
-                  e.addRanking(s.getUser(), aux);
-              }
-                else e.addRanking(s.getUser(), s.getTempoGeral());
-              
-            
-          }
-          
-          String s=e.getClassificacaoGeral();
-          System.out.println(s);
-        
+
+        String s = e.getClassificacaoGeral();
+        System.out.println(s);
+
     }
-    
-    
-    
+
     //////////EVENTS////////////////////////////////////////////
- 
     /**
      *
      * @param e
      */
-     
-    
-    public void addEvent(Event e){
-        this.events.add(e);
-    }
-    
-    /**
-     *
-     * @param name
-     * @param location
-     * @param maxParticipants
-     * @param deadline
-     * @param date
-     */
-    public void addMarathon(String name, String location, int maxParticipants, 
-            GregorianCalendar deadline, GregorianCalendar date){
-        
-        Event e= new  Marathon( name,  location,  maxParticipants, deadline,  date);
+    public void addEvent(Event e) {
         this.events.add(e);
     }
 
@@ -238,13 +211,28 @@ public class FitnessUM implements Serializable{
      * @param deadline
      * @param date
      */
-    public void addHalfmarathon(String name, String location, int maxParticipants, 
-            GregorianCalendar deadline, GregorianCalendar date){
-        
-        Event e= new  Halfmarathon( name,  location,  maxParticipants, deadline,  date);
+    public void addMarathon(String name, String location, int maxParticipants,
+            GregorianCalendar deadline, GregorianCalendar date) {
+
+        Event e = new Marathon(name, location, maxParticipants, deadline, date);
         this.events.add(e);
     }
-    
+
+    /**
+     *
+     * @param name
+     * @param location
+     * @param maxParticipants
+     * @param deadline
+     * @param date
+     */
+    public void addHalfmarathon(String name, String location, int maxParticipants,
+            GregorianCalendar deadline, GregorianCalendar date) {
+
+        Event e = new Halfmarathon(name, location, maxParticipants, deadline, date);
+        this.events.add(e);
+    }
+
     /**
      *
      * @param name
@@ -255,20 +243,19 @@ public class FitnessUM implements Serializable{
      * @param distance
      */
     public void addMarathonBTT(String name, String location, int maxParticipants, GregorianCalendar deadline,
-             GregorianCalendar date,double distance){
-        
-        Event e= new  MarathonBTT(name, location, maxParticipants, deadline, date, distance);
+            GregorianCalendar date, double distance) {
+
+        Event e = new MarathonBTT(name, location, maxParticipants, deadline, date, distance);
         this.events.add(e);
     }
-   
-     
+
     public void addTrail(String name, String location, int maxParticipants, GregorianCalendar deadline,
-             GregorianCalendar date,double distance){
-        
-        Event e= new  Trail(name, location, maxParticipants, deadline, date, distance);
+            GregorianCalendar date, double distance) {
+
+        Event e = new Trail(name, location, maxParticipants, deadline, date, distance);
         this.events.add(e);
     }
-    
+
     /**
      *
      * @param name
@@ -320,28 +307,28 @@ public class FitnessUM implements Serializable{
      * @param e
      * @return
      */
-        public boolean userRegistEvent(User u, Event e){
-         GregorianCalendar date=new GregorianCalendar();
-         String tipo = e.getTipoActivity();
-         
-         if((userRegistaEventoSeFezActivity(u,tipo))&& (e.getDeadline().after(date)) &&
-                 (e.getMaxParticipants() > (e.getParticipants()+1))){
-             e.addUser(u);
-             return true;
-         }
-         else
-             return false;         
+    public boolean userRegistEvent(User u, Event e) {
+        GregorianCalendar date = new GregorianCalendar();
+        String tipo = e.getTipoActivity();
+
+        if ((userRegistaEventoSeFezActivity(u, tipo)) && (e.getDeadline().after(date))
+                && (e.getMaxParticipants() > (e.getParticipants() + 1))) {
+            e.addUser(u);
+            return true;
+        } else {
+            return false;
+        }
     }
      //So se pode registar se ja praticou actividade do tipo do evento
- 
+
     /**
      *
      * @param u
      * @param tipoEvento
      * @return
      */
-        public boolean userRegistaEventoSeFezActivity(User u, String tipoEvento) { 
-       
+    public boolean userRegistaEventoSeFezActivity(User u, String tipoEvento) {
+
         boolean flag;
         switch (tipoEvento) {
             case "Running":
@@ -356,14 +343,12 @@ public class FitnessUM implements Serializable{
         return flag;
     }
 
-    
     //////////////////////////     Gerenciamento da aplicação /////////////////////////////////////////////////
-
     /**
      *
      * @return
      */
-        public Person getActivePerson() {
+    public Person getActivePerson() {
         return this.p;
     }
 
@@ -397,7 +382,6 @@ public class FitnessUM implements Serializable{
      * @return
      */
     public boolean existPassAndUser(String email, String pass) {                               //////////////////////////////////////////////            
-        
 
         boolean found = false;
         Iterator<Person> it = this.userList.iterator();
@@ -439,7 +423,7 @@ public class FitnessUM implements Serializable{
      * @return
      */
     public boolean isAdmin(String email) {                     // Procurar por email ou Admin admin?!
-      
+
         boolean flag = false;
         boolean found = false;
 
@@ -499,7 +483,6 @@ public class FitnessUM implements Serializable{
 
 	/////////////////////////////////////////////////Propriedade dos Utilizadores//////////////////////////////////////
     //Aceder as estatisticas(mensais anuais) STATISTICS by distancia tempo e\calorias
-
     /**
      *
      * @param u
@@ -507,7 +490,7 @@ public class FitnessUM implements Serializable{
      * @param mes
      * @param ano
      */
-        public void searchStatisticsMONTH(User u, int tipo, int mes, int ano) {
+    public void searchStatisticsMONTH(User u, int tipo, int mes, int ano) {
         TreeMap<GregorianCalendar, Statistics> aux = (TreeMap<GregorianCalendar, Statistics>) u.getStats();
 
         GregorianCalendar data = new GregorianCalendar(ano, mes, 0);
@@ -563,15 +546,14 @@ public class FitnessUM implements Serializable{
     }
 
 	////////////////////////////////!!!FRIEND!!!//////////////////////////////////////////////////
-
     /**
      *
      * @param user
      * @param friendWhoSendsRequest
      */
-        public void sendFriendRequest(User user, User friendWhoSendsRequest) {
+    public void sendFriendRequest(User user, User friendWhoSendsRequest) {
         user.addFriendToMessage(friendWhoSendsRequest.getEmail());
-      
+
     }
 
     /**
@@ -586,42 +568,39 @@ public class FitnessUM implements Serializable{
     }
 
         //ArrayList.toString()
-
     /**
      *
      * @param u
      * @param email
      */
-        public void acceptFriend(User u, String email) {                                                         //CLASSE MENSAGENS? UM 
-      //  boolean found = false;
-        
-        User amigo=getUserByEmail(email);
-           
-        u.addFriend(amigo);                                 
+    public void acceptFriend(User u, String email) {                                                         //CLASSE MENSAGENS? UM 
+        //  boolean found = false;
+
+        User amigo = getUserByEmail(email);
+
+        u.addFriend(amigo);
         amigo.addFriend(u);
         /*
-        User u2 = new User();
-        TreeSet<Person> userList = (TreeSet) this.db.getUserList();
+         User u2 = new User();
+         TreeSet<Person> userList = (TreeSet) this.db.getUserList();
 
-        Iterator<Person> it = userList.iterator();
+         Iterator<Person> it = userList.iterator();
 
-        while (it.hasNext() && !found) {
-            Person p = it.next();
-            if ((p.getEmail().equals(email)) && (p instanceof User)) {
-                u2 = (User) p;
-                found = true;
-            }
+         while (it.hasNext() && !found) {
+         Person p = it.next();
+         if ((p.getEmail().equals(email)) && (p instanceof User)) {
+         u2 = (User) p;
+         found = true;
+         }
 
-        }
-        */
+         }
+         */
         //if (found) {
 
        // }
-
-      //  return found;
+        //  return found;
     }
 
-   
     /*
      public boolean addActivity(Activity act,User u){
      boolean flag=false;
@@ -630,13 +609,11 @@ public class FitnessUM implements Serializable{
      return flag;
      }
      */
-
     /**
      *
      * @param u
      * @return
      */
-    
     public Set<Activity> getLast10ActivitiesByActivity(User u) {
         TreeSet<Activity> aux = new TreeSet<>(new CompareActivity());
         Iterator<Activity> it = u.getActivities().iterator();
@@ -645,7 +622,7 @@ public class FitnessUM implements Serializable{
         }
         return aux;
     }
-    
+
     /**
      *
      * @param u
@@ -659,16 +636,14 @@ public class FitnessUM implements Serializable{
         }
         return aux;
     }
-    
 
     /////// VE TODAS AS ACTIVIDADES DE TODOS OS AMIGOS ///////////////////////////
-
     /**
      *
      * @param users
      * @return
      */
-        public String FriendToString(TreeSet<User> users) {
+    public String FriendToString(TreeSet<User> users) {
         StringBuilder sb = new StringBuilder();
 
         for (User friend : users) {
@@ -690,7 +665,7 @@ public class FitnessUM implements Serializable{
      */
     public String seeAllFriend(User u) {
         TreeSet<Person> dbUsers = (TreeSet<Person>) this.getUserList();
-      //  TreeSet<String> userActivities = (TreeSet) u.getFriendsList();
+        //  TreeSet<String> userActivities = (TreeSet) u.getFriendsList();
         TreeSet<User> users = new TreeSet<>();
 
         for (String s : u.getFriendsList()) {
@@ -711,26 +686,24 @@ public class FitnessUM implements Serializable{
 
 	//Ver Actividade de um dado amigo //
     //Lista amigos,escolhe amigo        --
-
     /**
      *
      * @param u
      * @return
      */
-        public String listAllFriends(User u) {
+    public String listAllFriends(User u) {
         TreeSet<String> s = (TreeSet<String>) u.getFriendsList();
 
         return s.toString();
     }
 
     //Lista Activity do amigo 
-
     /**
      *
      * @param u
      * @return
      */
-        public String allActivitiesFriend(User u) {
+    public String allActivitiesFriend(User u) {
         StringBuilder sb = new StringBuilder();
         for (Activity act : u.getActivities()) {
             sb.append(act.toString());
@@ -742,27 +715,25 @@ public class FitnessUM implements Serializable{
 
 	//
     // Recebe nome da activityList e User Friend procura essa activity e lista 
-
     /**
      *
      * @param u
      * @param activity
      * @return
      */
-        public String seeOneActivityList(User u, String activity) {
+    public String seeOneActivityList(User u, String activity) {
         return u.getOneActivity(activity).toString();
 
     }
 
 	//////////////////////////////////// Propriedade dos Administradores//////////////////////////////////////////
-
     /**
      *
      * @param email
      * @return
      */
-        public boolean removeUser(String email) {
-    
+    public boolean removeUser(String email) {
+
         boolean flag = false;
         for (Person per : this.userList) {                                                             //melhorar RETIRAR FOR para Iterator!!!
             if (per instanceof User) {

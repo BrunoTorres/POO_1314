@@ -22,10 +22,10 @@ public abstract class Outdoor extends Activity implements Serializable
 
     /**
      *  Construtor parametrizado.
-     * @param name- Nome da actividade
-     * @param date-  Data da realização da actividade
-     * @param timeSpent- Tempo gasto em minutos
-     * @param weather -Clima
+     * @param name- Nome da actividade.
+     * @param date-  Data da realização da actividade.
+     * @param timeSpent- Tempo gasto em minutos.
+     * @param weather -Clima.
      */
     public Outdoor(String name, GregorianCalendar date, double timeSpent, String weather){
         super(name, date, timeSpent);
