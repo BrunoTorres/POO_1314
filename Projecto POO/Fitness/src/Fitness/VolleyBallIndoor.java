@@ -15,25 +15,50 @@ public class VolleyBallIndoor extends Indoor implements UserVs, Serializable
     private int myScore;
     private int opScore;
     
-    
+    /**
+     *
+     */
     public VolleyBallIndoor(){
         super();
     }
+
+    /**
+     *
+     * @param name
+     * @param date
+     * @param timeSpent
+     * @param myScore
+     * @param opScore
+     */
     public VolleyBallIndoor(String name, GregorianCalendar date, double timeSpent,int myScore,int opScore){
         super(name,date,timeSpent);
         this.myScore=myScore;
         this.opScore=opScore;
     }
+
+    /**
+     *
+     * @param tb
+     */
     public VolleyBallIndoor(VolleyBallIndoor tb){
         super(tb);
         this.myScore=tb.getMyScore();
         this.opScore=tb.getOpScore();
     }
+
+    /**
+     *
+     * @return
+     */
     @Override
     public int getMyScore() {
       return this.myScore;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int getOpScore() {
         return this.opScore;

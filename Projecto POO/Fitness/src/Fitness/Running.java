@@ -14,12 +14,23 @@ public class Running extends Outdoor implements Distance, RecordsActivity, Seria
     private double distance;
     private ListRecords recs;
 
+    /**
+     *
+     */
     public Running() {
         super();
         this.distance = 0;
         this.recs = new ListRecords();
     }
 
+    /**
+     *
+     * @param name
+     * @param date
+     * @param timeSpent
+     * @param distance
+     * @param weather
+     */
     public Running(String name, GregorianCalendar date, double timeSpent, double distance, String weather) {
         super(name, date, timeSpent, weather);
         this.distance = distance;
@@ -27,6 +38,10 @@ public class Running extends Outdoor implements Distance, RecordsActivity, Seria
 
     }
 
+    /**
+     *
+     * @param tb
+     */
     public Running(Running tb) {
         super(tb);
         this.distance = tb.getDistance();
@@ -34,16 +49,28 @@ public class Running extends Outdoor implements Distance, RecordsActivity, Seria
 
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public double getDistance() {
         return this.distance;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public ListRecords getListRecords() {
         return this.recs.clone();
     }
 
+    /**
+     *
+     * @param distance
+     */
     @Override
     public void setDistance(double distance) {
         this.distance = distance;

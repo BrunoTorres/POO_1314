@@ -14,28 +14,53 @@ public class Swimming extends Indoor implements Distance, RecordsActivity, Seria
     private double distance;
     private ListRecords recs;
 
+    /**
+     *
+     */
     public Swimming(){
         super();
         this.distance=0;
         this.recs=new ListRecords();
     }
+
+    /**
+     *
+     * @param name
+     * @param date
+     * @param timeSpent
+     * @param distance
+     */
     public Swimming(String name, GregorianCalendar date, double timeSpent,double distance){
         super(name,date,timeSpent);
         this.distance=distance;
         this.recs = createRecord();
         
     }
+
+    /**
+     *
+     * @param tb
+     */
     public Swimming(Swimming tb){
         super(tb);
         this.distance=tb.getDistance();
         this.recs=tb.getListRecords();
         
     }
-     @Override
+
+    /**
+     *
+     * @return
+     */
+    @Override
     public double getDistance() {
        return this.distance;
     }
 
+    /**
+     *
+     * @param distance
+     */
     @Override
     public void setDistance(double distance) {
        this.distance=distance;
@@ -93,7 +118,11 @@ public class Swimming extends Indoor implements Distance, RecordsActivity, Seria
         return new Swimming(this);
     }
 
-     @Override
+    /**
+     *
+     * @return
+     */
+    @Override
     public ListRecords getListRecords() {
         return this.recs.clone();
     }

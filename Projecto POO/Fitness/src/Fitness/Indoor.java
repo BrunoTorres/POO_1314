@@ -4,17 +4,34 @@ package Fitness;
 import java.util.GregorianCalendar;
 import java.io.Serializable;
 
+/**
+ *
+ * @author Bruno
+ */
 public abstract class Indoor extends Activity implements Serializable
 {
     
+    /**
+     *
+     */
     public Indoor(){
         super();
     }
 
+    /**
+     *
+     * @param name
+     * @param date
+     * @param timeSpent
+     */
     public Indoor(String name, GregorianCalendar date, double timeSpent){
         super(name, date, timeSpent);
     }
 
+    /**
+     *
+     * @param o
+     */
     public Indoor(Indoor o){
         super(o);
     }

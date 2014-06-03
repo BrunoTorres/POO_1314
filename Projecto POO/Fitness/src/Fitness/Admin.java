@@ -69,9 +69,15 @@ public class Admin extends Person implements Serializable
         
     }
     
-    @Override
+     @Override
     public Admin clone(){
         return new Admin(this);
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        return hash;
     }
 
   

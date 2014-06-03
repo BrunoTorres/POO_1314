@@ -3,30 +3,64 @@ package Fitness;
 import java.util.GregorianCalendar;
 import java.io.Serializable;
 
+/**
+ * Classe da actividade Badminton
+ * 
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
+ */
 public class Badminton extends Indoor implements UserVs, Serializable
 {
     private int myScore;
     private int opScore;
     
-    
+    /**
+     *Construtor vazio
+     */
     public Badminton(){
         super();
     }
+
+    /**
+     * @param name Nome da actividade
+     * @param date  Data da realização da actividade
+     * @param timeSpent Tempo gasto em minutos
+     * @param myScore Pontos feitos
+     * @param opScore Pontos recebidos
+     * 
+     */
     public Badminton(String name, GregorianCalendar date, double timeSpent,int myScore,int opScore){
         super(name,date,timeSpent);
         this.myScore=myScore;
         this.opScore=opScore;
     }
+
+    /**
+     *
+     * Construtor de cópia
+     * @param tb Um actividade Badminton
+     */
     public Badminton(Badminton tb){
         super(tb);
         this.myScore=tb.getMyScore();
         this.opScore=tb.getOpScore();
     }
+
+    /**
+     *
+     * @return int -Inteiro dos pontos feitos
+     */
     @Override
     public int getMyScore() {
       return this.myScore;
     }
 
+    /**
+     *
+     * @return int Inteiro dos pontos recebidos
+     */
     @Override
     public int getOpScore() {
         return this.opScore;
@@ -42,6 +76,7 @@ public class Badminton extends Indoor implements UserVs, Serializable
     ////////////toString equals clone
     
     
+    @Override
      public String toString(){
         StringBuilder sb=new StringBuilder();
         sb.append(super.toString());
@@ -68,8 +103,16 @@ public class Badminton extends Indoor implements UserVs, Serializable
     }
 
     @Override
-    public Indoor clone() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int hashCode() {
+        int hash = 5;
+        hash = 97 * hash + this.myScore;
+        hash = 97 * hash + this.opScore;
+        return hash;
+    }
+
+    @Override
+    public Badminton clone() {
+        return new Badminton(this);
     }
 
    

@@ -2,42 +2,77 @@ package Fitness;
 
 import java.io.Serializable;
 
+/**
+ *
+ * @author Bruno
+ */
 public final class TimePerDistance extends Record implements Serializable {
 
     private double recordDistance;
     private double time;
 
+    /**
+     *
+     */
     public TimePerDistance() {
         super();
         this.recordDistance = 0.0;
         this.time = 0.0;
     }
 
+    /**
+     *
+     * @param name
+     * @param recordDistance
+     * @param myDistance
+     * @param myTime
+     */
     public TimePerDistance(String name, double recordDistance, double myDistance, double myTime) {
         super(name);
         this.recordDistance = recordDistance;
         this.setStatistic(myDistance, myTime);
     }
 
+    /**
+     *
+     * @param stat
+     */
     public TimePerDistance(TimePerDistance stat) {
         super(stat);
         this.recordDistance = stat.getRecordDistance();
         this.time = stat.getTime();
     }
 
+    /**
+     *
+     * @return
+     */
     public double getTime() {
         return this.time;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getRecordDistance() {
         return this.recordDistance;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public boolean isEmpty() {
         return (this.time != 0.0);
     }
 
+    /**
+     *
+     * @param distance
+     * @param time
+     */
     public void setStatistic(double distance, double time) {
         double div;
         if (!(distance < this.recordDistance)) {
@@ -46,6 +81,10 @@ public final class TimePerDistance extends Record implements Serializable {
         }
     }
 
+    /**
+     *
+     * @param act
+     */
     @Override
     public void update(Record act) {
         TimePerDistance a = (TimePerDistance) act;

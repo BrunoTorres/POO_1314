@@ -19,6 +19,8 @@ public class RegistarUserForm extends javax.swing.JFrame {
 
 	/**
 	 * Creates new form RegistarUserForm
+     * @param parent
+     * @param fit
 	 */
 	public RegistarUserForm(LoginForm parent, FitnessUM fit) {
 		initComponents();

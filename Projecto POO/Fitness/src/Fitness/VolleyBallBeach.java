@@ -15,25 +15,51 @@ public class VolleyBallBeach extends Outdoor implements UserVs, Serializable
    private int myScore;
    private int opScore;
     
-    
+    /**
+     *
+     */
     public VolleyBallBeach(){
         super();
     }
+
+    /**
+     *
+     * @param name
+     * @param date
+     * @param timeSpent
+     * @param myScore
+     * @param opScore
+     * @param weather
+     */
     public VolleyBallBeach(String name, GregorianCalendar date, double timeSpent,int myScore,int opScore,String weather){
         super(name,date,timeSpent,weather);
         this.myScore=myScore;
         this.opScore=opScore;
     }
+
+    /**
+     *
+     * @param tb
+     */
     public VolleyBallBeach(VolleyBallBeach tb){
         super(tb);
         this.myScore=tb.getMyScore();
         this.opScore=tb.getOpScore();
     }
+
+    /**
+     *
+     * @return
+     */
     @Override
     public int getMyScore() {
       return this.myScore;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int getOpScore() {
         return this.opScore;

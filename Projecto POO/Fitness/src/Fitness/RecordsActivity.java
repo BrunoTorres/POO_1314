@@ -12,6 +12,10 @@ package Fitness;
  */
 public interface RecordsActivity {
     
+    /**
+     *
+     * @return
+     */
     public ListRecords getListRecords();
     
 }

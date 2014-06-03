@@ -13,24 +13,49 @@ public class IndoorCycling extends Indoor implements Distance, Serializable
 {
     private double distance;
 
+    /**
+     *
+     */
     public IndoorCycling(){
         super();
     }
+
+    /**
+     *
+     * @param name
+     * @param date
+     * @param timeSpent
+     * @param distance
+     */
     public IndoorCycling(String name, GregorianCalendar date, double timeSpent,double distance){
         super(name,date,timeSpent);
         this.distance=distance;
         
     }
+
+    /**
+     *
+     * @param tb
+     */
     public IndoorCycling(IndoorCycling tb){
         super(tb);
         this.distance=tb.getDistance();
         
     }
-     @Override
+
+    /**
+     *
+     * @return
+     */
+    @Override
     public double getDistance() {
        return this.distance;
     }
 
+    /**
+     *
+     * @param distance
+     */
     @Override
     public void setDistance(double distance) {
        this.distance=distance;

@@ -15,6 +15,9 @@ public class MountainBiking extends Outdoor implements Distance, VerticalDistanc
     private double verticaldistance;
     private ListRecords recs;
     
+    /**
+     *
+     */
     public MountainBiking(){
         super();
         this.distance=0;
@@ -22,6 +25,15 @@ public class MountainBiking extends Outdoor implements Distance, VerticalDistanc
         this.recs= new ListRecords();
     }
 
+    /**
+     *
+     * @param name
+     * @param date
+     * @param timeSpent
+     * @param distance
+     * @param verticaldistance
+     * @param weather
+     */
     public MountainBiking(String name, GregorianCalendar date, double timeSpent,double distance, double verticaldistance,String weather){
         super(name,date,timeSpent,weather);
         this.distance=distance;
@@ -29,6 +41,10 @@ public class MountainBiking extends Outdoor implements Distance, VerticalDistanc
         this.recs=createRecord();
     }
 
+    /**
+     *
+     * @param tb
+     */
     public MountainBiking(MountainBiking tb){
         super(tb);
         this.distance=tb.getDistance();
@@ -36,21 +52,37 @@ public class MountainBiking extends Outdoor implements Distance, VerticalDistanc
         this.recs=tb.getListRecords();
     }
 
-     @Override
+    /**
+     *
+     * @return
+     */
+    @Override
     public double getDistance() {
        return this.distance;
     }
 
-     @Override
+    /**
+     *
+     * @return
+     */
+    @Override
     public double getVerticalDistance() {
         return this.verticaldistance;
     }
 
+    /**
+     *
+     * @param distance
+     */
     @Override
     public void setDistance(double distance) {
        this.distance=distance;
     }
 
+    /**
+     *
+     * @param verticaldistance
+     */
     @Override
     public void setVerticalDistance(double verticaldistance) {
         this.verticaldistance=verticaldistance;
@@ -63,7 +95,11 @@ public class MountainBiking extends Outdoor implements Distance, VerticalDistanc
       this.setActivityCalories(calories);    
     }
    
-   public ListRecords getListRecords() {
+    /**
+     *
+     * @return
+     */
+    public ListRecords getListRecords() {
        return this.recs.clone();
     }
    

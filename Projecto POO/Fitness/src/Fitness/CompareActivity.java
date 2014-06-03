@@ -4,15 +4,15 @@ package Fitness;
 import java.io.Serializable;
 import java.util.Comparator;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 /**
- *
- * @author bruno
+ * Classe comparador
+ * Compara Actividades por data(ordem decrescente)
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public class CompareActivity implements Comparator<Activity>,Serializable
 {

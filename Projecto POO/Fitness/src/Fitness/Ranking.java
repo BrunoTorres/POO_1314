@@ -2,14 +2,31 @@ package Fitness;
 
 import java.io.Serializable;
 
-
+/**
+ *
+ * @author Bruno
+ */
 public class Ranking implements Serializable
 {
+
+    /**
+     *
+     */
     public double time;
+
+    /**
+     *
+     */
     public int km;
+
+    /**
+     *
+     */
     public User athlete;
     
-    
+    /**
+     *
+     */
     public Ranking(){
         this.time=0;
         this.km=0;
@@ -17,17 +34,32 @@ public class Ranking implements Serializable
         
     }
     
+    /**
+     *
+     * @param u
+     * @param time
+     */
     public Ranking(User u,double time){
         this.athlete=u.clone();
         this.time=time;
         this.km=0;
     }
     
+    /**
+     *
+     * @param u
+     * @param km
+     */
     public Ranking(User u,int km){
         this.athlete=u.clone();
         this.km=km;
         this.time=0;
     }
+
+    /**
+     *
+     * @param r
+     */
     public Ranking(Ranking r){
         this.athlete=r.getAthlete();
         this.km=r.getKm();
@@ -87,6 +119,10 @@ public class Ranking implements Serializable
         return new Ranking(this);
     }
     
+    /**
+     *
+     * @return
+     */
     public String toStringTime(){
         StringBuilder sb= new StringBuilder();
          int h,m;
@@ -107,7 +143,11 @@ public class Ranking implements Serializable
         
     }
     
-     public String toStringDesiste(){
+    /**
+     *
+     * @return
+     */
+    public String toStringDesiste(){
         StringBuilder sb= new StringBuilder();
                 
         sb.append("Nome do atleta: ").append(this.athlete.getName()).append("\n");

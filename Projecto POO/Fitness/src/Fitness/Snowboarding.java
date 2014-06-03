@@ -14,9 +14,22 @@ public class Snowboarding extends Outdoor  implements Distance, VerticalDistance
     private double distance;
     private double verticaldistance;
 
+    /**
+     *
+     */
     public Snowboarding(){
         super();
     }
+
+    /**
+     *
+     * @param name
+     * @param date
+     * @param timeSpent
+     * @param distance
+     * @param verticaldistance
+     * @param weather
+     */
     public Snowboarding(String name, GregorianCalendar date, double timeSpent,double distance,
             double verticaldistance,String weather){
         super(name,date,timeSpent,weather);
@@ -25,25 +38,48 @@ public class Snowboarding extends Outdoor  implements Distance, VerticalDistance
         
         
     }
+
+    /**
+     *
+     * @param tb
+     */
     public Snowboarding(Snowboarding tb){
         super(tb);
         this.distance=tb.getDistance();
         this.verticaldistance=tb.getVerticalDistance();
     }
-     @Override
+
+    /**
+     *
+     * @return
+     */
+    @Override
     public double getDistance() {
        return this.distance;
     }
-     @Override
+
+    /**
+     *
+     * @return
+     */
+    @Override
     public double getVerticalDistance() {
         return this.verticaldistance;
     }
 
-
+    /**
+     *
+     * @param distance
+     */
     @Override
     public void setDistance(double distance) {
        this.distance=distance;
     }
+
+    /**
+     *
+     * @param verticaldistance
+     */
     @Override
     public void setVerticalDistance(double verticaldistance) {
         this.verticaldistance=verticaldistance;

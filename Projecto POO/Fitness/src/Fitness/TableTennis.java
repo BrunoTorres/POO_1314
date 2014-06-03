@@ -3,31 +3,59 @@ package Fitness;
 import java.util.GregorianCalendar;
 import java.io.Serializable;
 
-
+/**
+ *
+ * @author Bruno
+ */
 public class TableTennis extends Indoor implements UserVs, Serializable
 {
     private int myScore;
     private int opScore;
     
-    
+    /**
+     *
+     */
     public TableTennis(){
         super();
     }
+
+    /**
+     *
+     * @param name
+     * @param date
+     * @param timeSpent
+     * @param myScore
+     * @param opScore
+     */
     public TableTennis(String name, GregorianCalendar date, double timeSpent,int myScore,int opScore){
         super(name,date,timeSpent);
         this.myScore=myScore;
         this.opScore=opScore;
     }
+
+    /**
+     *
+     * @param tb
+     */
     public TableTennis(TableTennis tb){
         super(tb);
         this.myScore=tb.getMyScore();
         this.opScore=tb.getOpScore();
     }
+
+    /**
+     *
+     * @return
+     */
     @Override
     public int getMyScore() {
       return this.myScore;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int getOpScore() {
         return this.opScore;
