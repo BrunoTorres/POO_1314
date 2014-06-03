@@ -6,8 +6,8 @@ import java.util.GregorianCalendar;
 import java.util.Objects;
 
 /**
- * Classe abstracta. 
- * 
+ * Classe abstracta.
+ *
  * @author Bruno Pereira
  * @author João Mano
  * @author Miguel Guimarães
@@ -32,9 +32,10 @@ public abstract class Activity implements Serializable {
 
     /**
      * Construtor
-     * @param name Nome da actividade. 
+     *
+     * @param name Nome da actividade.
      * @param date Data da actividade.
-     * @param timeSpent Tempo gasto na actividade, em minutos. 
+     * @param timeSpent Tempo gasto na actividade, em minutos.
      */
     public Activity(String name, GregorianCalendar date, double timeSpent) {
         this.name = name;
@@ -45,6 +46,7 @@ public abstract class Activity implements Serializable {
 
     /**
      * Construtor de cópia da classe
+     *
      * @param a-Objecto Activity.
      */
     public Activity(Activity a) {
@@ -56,6 +58,7 @@ public abstract class Activity implements Serializable {
 
     /**
      * Método que devolve o nome da actividade.
+     *
      * @return Devolve uma string.
      */
     public String getName() {
@@ -63,7 +66,8 @@ public abstract class Activity implements Serializable {
     }
 
     /**
-     * Método que devolve a data de quando foi realizada a actividade. 
+     * Método que devolve a data de quando foi realizada a actividade.
+     *
      * @return Devolve um GregorianCalendar.
      */
     public GregorianCalendar getDate() {
@@ -72,6 +76,7 @@ public abstract class Activity implements Serializable {
 
     /**
      * Método que devolve o tempo gasto na actividade em minutos.
+     *
      * @return Devolve um double.
      */
     public double getTimeSpent() {
@@ -80,6 +85,7 @@ public abstract class Activity implements Serializable {
 
     /**
      * Método que devolve o numero de calorias gastos.
+     *
      * @return Devolve um double.
      */
     public double getCalories() {
@@ -88,6 +94,7 @@ public abstract class Activity implements Serializable {
 
     /**
      * Método para alterar o nome da actividade.
+     *
      * @param name String para o novo nome.
      *
      */
@@ -97,12 +104,14 @@ public abstract class Activity implements Serializable {
 
     /**
      * Método que define as calorias em função do tipo de actividade,do peso do utilizador e da tempo gasto na actividade.
-     * @param peso Peso do utilizador. 
+     *
+     * @param peso Peso do utilizador.
      */
     public abstract void setCalories(double peso);
 
     /**
      * Método que redefine as calorias da actividade
+     *
      * @param calories Novo numero para as calorias.
      */
     public void setActivityCalories(double calories) {
@@ -123,8 +132,7 @@ public abstract class Activity implements Serializable {
         return (this.name.equals(act.getName())
                 && this.date.equals(act.getDate())
                 && this.timeSpent == act.getTimeSpent()
-                && this.calories == act.getCalories()); 
-         
+                && this.calories == act.getCalories());
 
     }
 
