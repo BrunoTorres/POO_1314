@@ -4,29 +4,32 @@ import java.util.GregorianCalendar;
 import java.io.Serializable;
 
 /**
- * Write a description of class Sailing here.
+ * Actividade Skating.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public class Sailing extends Outdoor implements Distance, Serializable
 {
    private double distance;
 
     /**
-     *
+     * Construtor vazio.
      */
     public Sailing(){
         super();
     }
 
     /**
+     * Construtor parametrizado.
+     * @param name - Nome da actividade.
+     * @param date - Data da realização da actividade.
+     * @param timeSpent - Tempo gasto em minutos.
+     * @param distance - Distancia.
+     * @param weather - Clima.
      *
-     * @param name
-     * @param date
-     * @param timeSpent
-     * @param distance
-     * @param weather
      */
     public Sailing(String name, GregorianCalendar date, double timeSpent,double distance,String weather){
         super(name,date,timeSpent,weather);
@@ -35,8 +38,8 @@ public class Sailing extends Outdoor implements Distance, Serializable
     }
 
     /**
-     *
-     * @param tb
+     * Construtor de cópia.
+     * @param tb - instancia de Skating.
      */
     public Sailing(Sailing tb){
         super(tb);
@@ -44,36 +47,26 @@ public class Sailing extends Outdoor implements Distance, Serializable
         
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public double getDistance() {
        return this.distance;
     }
 
-    /**
-     *
-     * @param distance
-     */
     @Override
     public void setDistance(double distance) {
        this.distance=distance;
     }
+
     @Override
    public void setCalories(double peso) {
-    double mets=3;
-      double calories=mets*peso*(this.getTimeSpent()/60);
-      this.setActivityCalories(calories);    
+        double mets=3;
+        double calories=mets*peso*(this.getTimeSpent()/60);
+        this.setActivityCalories(calories);    
     }
-   
-   
-   
-   
+
      ////////////toString equals clone
     
-    
+    @Override
      public String toString(){
         StringBuilder sb=new StringBuilder();
         sb.append(super.toString());
@@ -91,7 +84,6 @@ public class Sailing extends Outdoor implements Distance, Serializable
         Sailing act = (Sailing) a;
         return  ( super.equals(act)
                 && this.distance==act.getDistance());
-        
     }
 
     @Override
