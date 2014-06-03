@@ -108,6 +108,4 @@ public class Badminton extends Indoor implements UserVs, Serializable {
         return new Badminton(this);
     }
 
-
 }
-

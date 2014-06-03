@@ -391,7 +391,7 @@ public class User extends Person implements Serializable {
 
     }
 
-	//Metodos Para admin
+    //Metodos Para admin
     /**
      *
      * @return
@@ -408,200 +408,215 @@ public class User extends Person implements Serializable {
 
         return this.friendsList;
     }
-    
-    private double calculaTmMarathon(double distancia){
-        double tempo=0;
-        int numero=0;
-        double distance=0;
-        for(Activity act:this.getActivities())
-            if(act instanceof Running){
-                Running run=(Running) act;
-              distance+=run.getDistance();
-              tempo+= (run.getTimeSpent()/run.getDistance());
-               numero++;
-            } 
-        
-        tempo=tempo/numero;
-        distance=distance/numero;
-        distance=distance/distancia;
-        tempo=(tempo/numero);
-        tempo/=(distance);
-      return tempo;  
-      
-    }
-    private double calculaTmMarathonBTT(double distancia){
-        double tempo=0;
-        int numero=0;
-        
-        double distance=0;
-        double factor=0;
-        for(Activity act:this.getActivities()){
-            if(act instanceof MountainBiking){
-                MountainBiking run=(MountainBiking) act;
-               distance+=run.getDistance();
-               tempo+= (run.getTimeSpent()/run.getDistance());
-               if((run.getVerticalDistance()>0) &&(run.getVerticalDistance()<0.100))
-                   factor+=0.1;
-               else if((run.getVerticalDistance()>=0.100) &&(run.getVerticalDistance()<0.300))
-                   factor+=0.3;
-               else if((run.getVerticalDistance()>=0.300) &&(run.getVerticalDistance()<0.500))
-                   factor+=0.5;
-               else if((run.getVerticalDistance()>=0.500) &&(run.getVerticalDistance()<1))
-                   factor+=0.7;
-               else if(run.getVerticalDistance()>=1)
-                   factor+=0.8;
-               numero++;
+
+    private double calculaTmMarathon(double distancia) {
+        double tempo = 0;
+        int numero = 0;
+        double distance = 0;
+        for (Activity act : this.getActivities()) {
+            if (act instanceof Running) {
+                Running run = (Running) act;
+                distance += run.getDistance();
+                tempo += (run.getTimeSpent() / run.getDistance());
+                numero++;
             }
         }
-        distance/=numero;
-        distance/=distancia;
-        factor/=numero;
-        tempo/=numero;
-        tempo-=(factor*tempo);
-        
-        tempo/=(distance);
-            
-      return tempo;  
-      
+
+        tempo = tempo / numero;
+        distance = distance / numero;
+        distance = distance / distancia;
+        tempo = (tempo / numero);
+        tempo /= (distance);
+        return tempo;
+
     }
-     
-    private int numeroActividadesM(){
-        int num=0;
-        for(Activity act:this.getActivities())
-            if(act instanceof Running)
-                num++;
-        return num;
+
+    private double calculaTmMarathonBTT(double distancia) {
+        double tempo = 0;
+        int numero = 0;
+
+        double distance = 0;
+        double factor = 0;
+        for (Activity act : this.getActivities()) {
+            if (act instanceof MountainBiking) {
+                MountainBiking run = (MountainBiking) act;
+                distance += run.getDistance();
+                tempo += (run.getTimeSpent() / run.getDistance());
+                if ((run.getVerticalDistance() > 0) && (run.getVerticalDistance() < 0.100)) {
+                    factor += 0.1;
+                } else if ((run.getVerticalDistance() >= 0.100) && (run.getVerticalDistance() < 0.300)) {
+                    factor += 0.3;
+                } else if ((run.getVerticalDistance() >= 0.300) && (run.getVerticalDistance() < 0.500)) {
+                    factor += 0.5;
+                } else if ((run.getVerticalDistance() >= 0.500) && (run.getVerticalDistance() < 1)) {
+                    factor += 0.7;
+                } else if (run.getVerticalDistance() >= 1) {
+                    factor += 0.8;
+                }
+                numero++;
+            }
+        }
+        distance /= numero;
+        distance /= distancia;
+        factor /= numero;
+        tempo /= numero;
+        tempo -= (factor * tempo);
+
+        tempo /= (distance);
+
+        return tempo;
+
     }
-    private int numeroActividadesMbtt(){
-        int num=0;
-        for(Activity act:this.getActivities())
-            if(act instanceof MountainBiking)
+
+    private int numeroActividadesM() {
+        int num = 0;
+        for (Activity act : this.getActivities()) {
+            if (act instanceof Running) {
                 num++;
+            }
+        }
         return num;
     }
 
-    
-     private double tabelaWeather(String weather){
-        double factor=0;
-        switch(weather){
+    private int numeroActividadesMbtt() {
+        int num = 0;
+        for (Activity act : this.getActivities()) {
+            if (act instanceof MountainBiking) {
+                num++;
+            }
+        }
+        return num;
+    }
+
+    private double tabelaWeather(String weather) {
+        double factor = 0;
+        switch (weather) {
             case "Sol":
-                factor=0.2;
+                factor = 0.2;
                 break;
             case "Sol intenso":
-                factor=0.7;
+                factor = 0.7;
                 break;
             case "Sol intenso com ventos fortes":
-                factor=0.8;
+                factor = 0.8;
                 break;
             case "Chuva":
-                factor=0.4;
+                factor = 0.4;
                 break;
             case "Chuva com ventos fortes":
-                factor=0.6;
+                factor = 0.6;
                 break;
             case "Chuva intensa":
-                factor=0.7;
+                factor = 0.7;
                 break;
             case "Chuva intensa com ventos fortes":
-                factor=0.9;
+                factor = 0.9;
                 break;
             case "Trovoada":
-                factor=0.3;
+                factor = 0.3;
                 break;
             case "Trovoada com ventos fortes":
-                factor=0.5;
+                factor = 0.5;
                 break;
             case "Nublado":
-                factor=0.6;
+                factor = 0.6;
                 break;
         }
         return factor;
     }
-    
-    private double tabelaTemperatura(double temperatura){
+
+    private double tabelaTemperatura(double temperatura) {
         double factor;
-        if(temperatura <10)
-            factor=0.70;
-        else if(temperatura<20)
+        if (temperatura < 10) {
+            factor = 0.70;
+        } else if (temperatura < 20) {
             factor = 0.60;
-        else if(temperatura>39)
+        } else if (temperatura > 39) {
             factor = 0.95;
-        else if(temperatura >30 )
+        } else if (temperatura > 30) {
             factor = 0.80;
-        else
+        } else {
             factor = 0.2;
-        
+        }
+
         return factor;
     }
-    
-    
-    
-    
-  
-    
-    public double kmDesisteM(double kmTotal){        
-         //double calories = 10* u.getWeight()*tempo;
-        double factor=0;
-        GregorianCalendar date=new GregorianCalendar();
-        int age=date.get(Calendar.YEAR)-this.getDate().get(Calendar.YEAR);
+
+    public double kmDesisteM(double kmTotal) {
+        //double calories = 10* u.getWeight()*tempo;
+        double factor = 0;
+        GregorianCalendar date = new GregorianCalendar();
+        int age = date.get(Calendar.YEAR) - this.getDate().get(Calendar.YEAR);
         double probabilidade;
-        if(age<15)       factor=Math.random()+0.1;
-        else if(age<20)  factor=Math.random()+0.5;
-        else if(age<25 ) factor=Math.random()+0.7;
-        else if(age<30)  factor=Math.random()+0.85;
-        else if(age<35)  factor=Math.random()+0.9;
-        else if(age<40)  factor=Math.random()+0.6;
-        else if(age<45)  factor=Math.random()+0.5;
-        else if(age<50)  factor=Math.random()+0.4;
-        else if(age<55)  factor=Math.random()+0.3;
-        else if(age<60)  factor=Math.random()+0.2;
-        else if(age<65)  factor=Math.random()+0.1;
-        else if(age>=65) factor=Math.random()+0.05;
-   
-        kmTotal*=factor;
-        
+        if (age < 15) {
+            factor = Math.random() + 0.1;
+        } else if (age < 20) {
+            factor = Math.random() + 0.5;
+        } else if (age < 25) {
+            factor = Math.random() + 0.7;
+        } else if (age < 30) {
+            factor = Math.random() + 0.85;
+        } else if (age < 35) {
+            factor = Math.random() + 0.9;
+        } else if (age < 40) {
+            factor = Math.random() + 0.6;
+        } else if (age < 45) {
+            factor = Math.random() + 0.5;
+        } else if (age < 50) {
+            factor = Math.random() + 0.4;
+        } else if (age < 55) {
+            factor = Math.random() + 0.3;
+        } else if (age < 60) {
+            factor = Math.random() + 0.2;
+        } else if (age < 65) {
+            factor = Math.random() + 0.1;
+        } else if (age >= 65) {
+            factor = Math.random() + 0.05;
+        }
+
+        kmTotal *= factor;
+
         return kmTotal;
     }
-      /**
+
+    /**
      *
-     * 
+     *
      * @param weather
      * @param temperatura
      * @param tipo
      * @param distance
      * @return
      */
-    public double formula(String weather,double temperatura,String tipo,double distance){
+    public double formula(String weather, double temperatura, String tipo, double distance) {
         double tempo;
-        double tempoMedio=0;
-        double age,numero=0;
+        double tempoMedio = 0;
+        double age, numero = 0;
         GregorianCalendar date = new GregorianCalendar();
-         switch (tipo) {
+        switch (tipo) {
             case "Marathon":
-               tempoMedio= calculaTmMarathon(42.195);
-               numero=numeroActividadesM();
+                tempoMedio = calculaTmMarathon(42.195);
+                numero = numeroActividadesM();
                 break;
             case "Halfmarathon":
-               tempoMedio= calculaTmMarathon(21.1); 
-               numero=numeroActividadesM();
+                tempoMedio = calculaTmMarathon(21.1);
+                numero = numeroActividadesM();
                 break;
             case "MarathonBTT":
-                tempoMedio=calculaTmMarathonBTT(distance);
-                numero=numeroActividadesMbtt();
+                tempoMedio = calculaTmMarathonBTT(distance);
+                numero = numeroActividadesMbtt();
                 break;
             case "Trail":
-                tempoMedio=calculaTmMarathon(distance);
-                tempoMedio=tempoMedio+(tempoMedio*0.3);
-                numero=numeroActividadesM();
+                tempoMedio = calculaTmMarathon(distance);
+                tempoMedio = tempoMedio + (tempoMedio * 0.3);
+                numero = numeroActividadesM();
                 break;
-                      }
-        age=date.get(Calendar.YEAR)-this.getDate().get(Calendar.YEAR);
-        tempo=tempoMedio+(1*tabelaWeather(weather))+(1*tabelaTemperatura(temperatura))-(numero/100)+(age/100);
+        }
+        age = date.get(Calendar.YEAR) - this.getDate().get(Calendar.YEAR);
+        tempo = tempoMedio + (1 * tabelaWeather(weather)) + (1 * tabelaTemperatura(temperatura)) - (numero / 100) + (age / 100);
         return tempo;
     }
-    
-    
-    
+
     //Equals,toString e Clone
     @Override
     public boolean equals(Object o) {

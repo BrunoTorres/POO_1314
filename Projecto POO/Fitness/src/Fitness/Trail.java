@@ -5,7 +5,7 @@ import java.util.TreeSet;
 import java.io.Serializable;
 /**
  *
- * .Classe Trail.
+ * Evento Trail.
  * 
  * @author Bruno Pereira
  * @author João Mano
@@ -28,15 +28,15 @@ public class Trail extends Event implements Serializable{
      *
      * Construtor parametrizado.
      * @param name - Nome do Trail.
-     * @param tipoActivity - Tipo de Activity.
+     * @param tipoActivity - Tipo de Activity a que o evento pertence.
      * @param location - Nome da localidade do Trail.
-     * @param maxParticipants - Numero de participantes maximo.
+     * @param maxParticipants - Numero de participantes máximo.
      * @param participants - Numero de participantes inscritos.
-     * @param deadline - Data limite de inscriçao.
+     * @param deadline - Data limite de inscrição.
      * @param date - Data do Trail.
-     * @param duration - Duraçao.
+     * @param duration - duração.
      * @param participantsList - Lista de participantes inscritos.
-     * @param ranking - Classificaçao final do Trail.
+     * @param ranking - classificação final do Trail.
      * @param distance - Distancia.
      */
     public Trail(String name, String tipoActivity, String location, int maxParticipants, int participants,

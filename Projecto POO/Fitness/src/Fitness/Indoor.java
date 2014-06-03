@@ -5,14 +5,18 @@ import java.util.GregorianCalendar;
 import java.io.Serializable;
 
 /**
- *
- * @author Bruno
+ * Classe abstracta para todas as actividades que não tenham o clima como variável de instancia. 
+ * 
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public abstract class Indoor extends Activity implements Serializable
 {
     
     /**
-     *
+     *Construtor vazio
      */
     public Indoor(){
         super();
@@ -20,29 +24,23 @@ public abstract class Indoor extends Activity implements Serializable
 
     /**
      *
-     * @param name
-     * @param date
-     * @param timeSpent
+     *  Construtor parametrizado.
+     * @param name- Nome da actividade.
+     * @param date-  Data da realização da actividade.
+     * @param timeSpent- Tempo gasto em minutos.
      */
     public Indoor(String name, GregorianCalendar date, double timeSpent){
         super(name, date, timeSpent);
     }
 
     /**
-     *
-     * @param o
+     *  Construtor de cópia.
+     * @param o- objecto do tipo Indoor.
      */
     public Indoor(Indoor o){
         super(o);
     }
 
-    
-
-    /**
-     *
-     * @param a
-     * @return
-     */
     
     @Override
     public boolean equals(Object a){
@@ -67,6 +65,12 @@ public abstract class Indoor extends Activity implements Serializable
     
     @Override
     public abstract Indoor clone();
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
     
     
     
