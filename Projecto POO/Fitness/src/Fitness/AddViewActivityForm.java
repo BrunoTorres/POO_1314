@@ -73,7 +73,7 @@ public class AddViewActivityForm extends javax.swing.JFrame {
 		this.textHoras.setText(String.valueOf(horas));
 		this.textMins.setText(String.valueOf(mins));
 		this.textCalorias.setEnabled(true);
-		this.textCalorias.setText(String.valueOf(act.getCalories()));
+		this.textCalorias.setText(String.valueOf((int) act.getCalories()));
 		this.butOKAddAct.setText("ELIMINAR");
 
 		this.cboxDia.setEnabled(false);

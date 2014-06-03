@@ -100,6 +100,7 @@ public class UserForm extends javax.swing.JFrame {
         butVerAtividade = new javax.swing.JButton();
         butAddActivity = new javax.swing.JButton();
         butVerPedidos = new javax.swing.JButton();
+        butAddAmigo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("frameInicial"); // NOI18N
@@ -323,6 +324,8 @@ public class UserForm extends javax.swing.JFrame {
             }
         });
 
+        butAddAmigo.setText("+ AMIGO");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -333,6 +336,8 @@ public class UserForm extends javax.swing.JFrame {
                 .addComponent(butAddActivity)
                 .addGap(18, 18, 18)
                 .addComponent(butVerPedidos)
+                .addGap(18, 18, 18)
+                .addComponent(butAddAmigo)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -341,7 +346,8 @@ public class UserForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(butAddActivity)
-                    .addComponent(butVerPedidos))
+                    .addComponent(butVerPedidos)
+                    .addComponent(butAddAmigo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTabbedPane1))
         );
@@ -461,6 +467,7 @@ public class UserForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton butAddActivity;
+    private javax.swing.JButton butAddAmigo;
     private javax.swing.JButton butFirst;
     private javax.swing.JButton butFirstCons;
     private javax.swing.JButton butLast;

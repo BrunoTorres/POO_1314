@@ -35,6 +35,8 @@
               <Component id="butAddActivity" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="butVerPedidos" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="butAddAmigo" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -46,6 +48,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="butAddActivity" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="butVerPedidos" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="butAddAmigo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jTabbedPane1" max="32767" attributes="0"/>
@@ -351,6 +354,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butVerPedidosActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="butAddAmigo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="+ AMIGO"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
