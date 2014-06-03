@@ -28,11 +28,11 @@ public class Walking extends Outdoor implements Distance, RecordsActivity, Seria
 
     /**
      * Construtor parametrizado.
-     * @param name Nome da actividade.
-     * @param date  Data da realização da actividade.
-     * @param timeSpent Tempo gasto em minutos.
-     * @param distance Distancia.
-     * @param weather Clima.
+     * @param name - Nome da actividade.
+     * @param date - Data da realização da actividade.
+     * @param timeSpent - Tempo gasto em minutos.
+     * @param distance - Distancia.
+     * @param weather - Clima.
      */
     public Walking(String name, GregorianCalendar date, double timeSpent,double distance,String weather){
         super(name,date,timeSpent,weather);
@@ -43,7 +43,7 @@ public class Walking extends Outdoor implements Distance, RecordsActivity, Seria
 
     /**
      * Construtor de cópia.
-     * @param tb Recebe uma instancia de Acivity
+     * @param tb - instancia de Acivity
      */
     public Walking(Walking tb){
         super(tb);
@@ -128,13 +128,10 @@ public class Walking extends Outdoor implements Distance, RecordsActivity, Seria
         Walking act = (Walking) a;
         return  ( super.equals(act)
                 && this.distance==act.getDistance());
-        
     }
 
     @Override
      public Walking clone(){
         return new Walking(this);
     }
-
-    
 }

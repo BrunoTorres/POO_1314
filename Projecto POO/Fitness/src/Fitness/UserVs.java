@@ -2,7 +2,13 @@ package Fitness;
 
 /**
  *
- * @author Bruno
+ * Interface de metodos relacionados com actividades de distancia vertical.
+ *
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
+ *
  */
 public interface UserVs
 {

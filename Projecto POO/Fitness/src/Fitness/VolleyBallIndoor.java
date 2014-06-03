@@ -18,7 +18,7 @@ public class VolleyBallIndoor extends Indoor implements UserVs, Serializable
     private int opScore;
     
     /**
-     *
+     * Construtor vazio.
      */
     public VolleyBallIndoor(){
         super();
@@ -26,11 +26,12 @@ public class VolleyBallIndoor extends Indoor implements UserVs, Serializable
 
     /**
      *
-     * @param name
-     * @param date
-     * @param timeSpent
-     * @param myScore
-     * @param opScore
+     *  Construtor parametrizado.
+     * @param name - Nome da actividade.
+     * @param date - Data da realização da actividade.
+     * @param timeSpent - Tempo gasto em minutos.
+     * @param myScore - Pontos feitos.
+     * @param opScore - Pontos recebidos.
      */
     public VolleyBallIndoor(String name, GregorianCalendar date, double timeSpent,int myScore,int opScore){
         super(name,date,timeSpent);
@@ -39,8 +40,8 @@ public class VolleyBallIndoor extends Indoor implements UserVs, Serializable
     }
 
     /**
-     *
-     * @param tb
+     * Construtor de cópia.
+     * @param tb - Recebe instância de VolleyBallIndoor.
      */
     public VolleyBallIndoor(VolleyBallIndoor tb){
         super(tb);
@@ -48,19 +49,11 @@ public class VolleyBallIndoor extends Indoor implements UserVs, Serializable
         this.opScore=tb.getOpScore();
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public int getMyScore() {
       return this.myScore;
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public int getOpScore() {
         return this.opScore;
@@ -75,7 +68,7 @@ public class VolleyBallIndoor extends Indoor implements UserVs, Serializable
     
     ////////////toString equals clone
     
-    
+    @Override
      public String toString(){
         StringBuilder sb=new StringBuilder();
         sb.append(super.toString());
@@ -98,7 +91,6 @@ public class VolleyBallIndoor extends Indoor implements UserVs, Serializable
         return  ( super.equals(act)
                 && this.myScore==act.getMyScore()
                 && this.opScore==act.getOpScore());
-        
     }
 
     @Override

@@ -1,21 +1,25 @@
 package Fitness;
 
 /**
+ * Interface de metodos relacionados com actividades de distancia vertical.
  *
- * @author Bruno
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public interface VerticalDistance
 {
   
     /**
-     *
-     * @return
+     * Método que devolve a distancia vertical realizada na actividade.
+     * @return Devolve um inteiro.
      */
     double getVerticalDistance();
 
     /**
-     *
-     * @param verticaldistance
+     * Método para alterar a distancia vertical da actividade.
+     * @param distance - distancia da actividade (double).
      */
     void setVerticalDistance(double verticaldistance);
 }
