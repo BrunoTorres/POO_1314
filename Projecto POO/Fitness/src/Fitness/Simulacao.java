@@ -14,20 +14,42 @@ import java.io.Serializable;
  */
 public class Simulacao implements Serializable{
     
+    /**
+     *
+     */
     public double tempoGeral;
+
+    /**
+     *
+     */
     public double tempoMedio;
+
+    /**
+     *
+     */
     public int kmDesiste;
+
+    /**
+     *
+     */
     public User u;
     
-    
-    
-    
+    /**
+     *
+     */
     public Simulacao(){
         this.tempoGeral=0;
         this.tempoMedio=0;
         this.kmDesiste=0;
         this.u=new User();
     }
+
+    /**
+     *
+     * @param user
+     * @param tempoMedio
+     * @param km
+     */
     public Simulacao(User user,double tempoMedio,int km){
         this.tempoGeral=0;
         this.tempoMedio=tempoMedio;
@@ -36,6 +58,10 @@ public class Simulacao implements Serializable{
        
     }
        
+    /**
+     *
+     * @param s
+     */
     public Simulacao(Simulacao s){
         this.tempoGeral=s.getTempoGeral();
         this.tempoMedio=s.getTempoMedio();
@@ -71,6 +97,10 @@ public class Simulacao implements Serializable{
         return u.clone();
     }
     
+    /**
+     *
+     * @param intrevalo
+     */
     public void actualiza(double intrevalo){
         double tempo=this.tempoMedio*(Math.random()+0.5);
         this.tempoGeral+=(intrevalo*tempo);

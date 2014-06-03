@@ -13,24 +13,50 @@ public class Orienteering extends Outdoor implements Distance, Serializable
 {
     private double distance;
 
+    /**
+     *
+     */
     public Orienteering(){
         super();
     }
+
+    /**
+     *
+     * @param name
+     * @param date
+     * @param timeSpent
+     * @param distance
+     * @param weather
+     */
     public Orienteering(String name, GregorianCalendar date, double timeSpent,double distance,String weather){
         super(name,date,timeSpent,weather);
         this.distance=distance;
         
     }
+
+    /**
+     *
+     * @param tb
+     */
     public Orienteering(Orienteering tb){
         super(tb);
         this.distance=tb.getDistance();
         
     }
-     @Override
+
+    /**
+     *
+     * @return
+     */
+    @Override
     public double getDistance() {
        return this.distance;
     }
 
+    /**
+     *
+     * @param distance
+     */
     @Override
     public void setDistance(double distance) {
        this.distance=distance;
@@ -38,7 +64,7 @@ public class Orienteering extends Outdoor implements Distance, Serializable
     @Override
    public void setCalories(double peso) {
     double mets=2;
-      double calories=mets*peso*this.getTimeSpent();
+      double calories=mets*peso*(this.getTimeSpent()/60);
       this.setActivityCalories(calories);    
     }
    

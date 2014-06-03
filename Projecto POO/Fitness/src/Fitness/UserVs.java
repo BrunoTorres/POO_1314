@@ -1,11 +1,22 @@
 package Fitness;
 
-
-
+/**
+ *
+ * @author Bruno
+ */
 public interface UserVs
 {
-     int getMyScore(); 
+ 
+    /**
+     *
+     * @return
+     */
+    int getMyScore(); 
     
-     int getOpScore();
+    /**
+     *
+     * @return
+     */
+    int getOpScore();
         
 }

@@ -6,6 +6,10 @@ import java.util.GregorianCalendar;
 import java.util.Objects;
 import java.io.Serializable;
 
+/**
+ *
+ * @author Bruno
+ */
 public abstract class Person implements Serializable
 {
     private String email;
@@ -14,7 +18,9 @@ public abstract class Person implements Serializable
     private char gender;
     private GregorianCalendar dateOfBirth;
 
-
+    /**
+     *
+     */
     public Person(){
         this.email="";
         this.password="";
@@ -25,7 +31,16 @@ public abstract class Person implements Serializable
         
     }
     //Construtores
-    public Person(String email,String pass,String name,char gender,GregorianCalendar date){
+
+    /**
+     *
+     * @param email
+     * @param pass
+     * @param name
+     * @param gender
+     * @param date
+     */
+        public Person(String email,String pass,String name,char gender,GregorianCalendar date){
         this.email=email;
         this.password=pass;
         this.name=name;
@@ -33,6 +48,10 @@ public abstract class Person implements Serializable
         this.dateOfBirth=(GregorianCalendar)date.clone();
     }
 
+    /**
+     *
+     * @param p
+     */
     public Person(Person p){
         this.email=p.getEmail();
         this.password=p.getPassword();
@@ -41,24 +60,58 @@ public abstract class Person implements Serializable
         this.dateOfBirth=p.getDate();
     }
 
+    /**
+     *
+     * @return
+     */
     public String getEmail(){
         return this.email;
     }
+
+    /**
+     *
+     * @return
+     */
     public String getPassword(){
         return this.password;
     }
+
+    /**
+     *
+     * @return
+     */
     public String getName(){
         return this.name;
     }
+
+    /**
+     *
+     * @return
+     */
     public char getGender(){
         return this.gender;
     }
+
+    /**
+     *
+     * @return
+     */
     public GregorianCalendar getDate(){
         return (GregorianCalendar)this.dateOfBirth.clone();
     }
+
+    /**
+     *
+     * @param email
+     */
     public void setEmail(String email){
         this.email=email;
     }
+
+    /**
+     *
+     * @param pass
+     */
     public void setPassword(String pass){
         this.password=pass;
     }

@@ -5,6 +5,10 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.TreeSet;
 
+/**
+ *
+ * @author Bruno
+ */
 public abstract class Event implements Serializable{
 
     private String name;
@@ -20,6 +24,9 @@ public abstract class Event implements Serializable{
     private TreeSet<Ranking> desistentes;
     private TreeSet<Simulacao> simula;
 
+    /**
+     *
+     */
     public Event() {
         this.name = "";
         this.tipoActivity = "";
@@ -35,6 +42,19 @@ public abstract class Event implements Serializable{
         this.simula=new TreeSet<>(new CompareSimulacao());
     }
 
+    /**
+     *
+     * @param name
+     * @param tipoActivity
+     * @param location
+     * @param maxParticipants
+     * @param participants
+     * @param deadline
+     * @param date
+     * @param duration
+     * @param participantsList
+     * @param ranking
+     */
     public Event(String name, String tipoActivity, String location, int maxParticipants, int participants, GregorianCalendar deadline, GregorianCalendar date, double duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking) {
         this.name = name;
         this.tipoActivity = tipoActivity;
@@ -54,6 +74,18 @@ public abstract class Event implements Serializable{
 
     }
 
+    /**
+     *
+     * @param name
+     * @param tipoActivity
+     * @param location
+     * @param maxParticipants
+     * @param deadline
+     * @param date
+     * @param duration
+     * @param participantsList
+     * @param ranking
+     */
     public Event(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date, double duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking) {
         this.name = name;
         this.tipoActivity = tipoActivity;
@@ -73,6 +105,16 @@ public abstract class Event implements Serializable{
        // this.ranking.addAll(ranking);
     }
 
+    /**
+     *
+     * @param name
+     * @param tipoActivity
+     * @param location
+     * @param maxParticipants
+     * @param deadline
+     * @param date
+     * @param duration
+     */
     public Event(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date, double duration) {
         this.name = name;
         this.tipoActivity = tipoActivity;
@@ -88,6 +130,16 @@ public abstract class Event implements Serializable{
         this.simula=new TreeSet<>(new CompareSimulacao());
 
     }
+
+    /**
+     *
+     * @param name
+     * @param tipoActivity
+     * @param location
+     * @param maxParticipants
+     * @param deadline
+     * @param date
+     */
     public Event(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date) {
         this.name = name;
         this.tipoActivity = tipoActivity;
@@ -104,6 +156,10 @@ public abstract class Event implements Serializable{
 
     }
 
+    /**
+     *
+     * @param e
+     */
     public Event(Event e) {
         this.name = e.getName();
         this.tipoActivity = e.getTipoActivity();
@@ -119,37 +175,74 @@ public abstract class Event implements Serializable{
         this.simula=e.getSimulacao();
     }
 
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return this.name;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getTipoActivity() {
         return this.tipoActivity;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getLocation() {
         return this.location;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getMaxParticipants() {
         return this.maxParticipants;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getParticipants() {
         return this.participants;
     }
 
-     public GregorianCalendar getDate() {
+    /**
+     *
+     * @return
+     */
+    public GregorianCalendar getDate() {
         return this.date;
     }
+
+    /**
+     *
+     * @return
+     */
     public GregorianCalendar getDeadline() {
         return this.deadline;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getDuration() {
         return this.duration;
     }
 
+    /**
+     *
+     * @return
+     */
     public TreeSet<User> getParticipantsList() {
         TreeSet<User> aux = new TreeSet<User>(new ComparePersonByName());
         for (User u : this.participantsList) {
@@ -158,6 +251,10 @@ public abstract class Event implements Serializable{
         return aux;
     }
 
+    /**
+     *
+     * @return
+     */
     public TreeSet<Ranking> getRanking() {
         TreeSet<Ranking> aux = new TreeSet<>(new CompareRankingByTime());
         for (Ranking r : this.ranking) {
@@ -166,13 +263,27 @@ public abstract class Event implements Serializable{
         return aux;
 
     }
+
+    /**
+     *
+     * @return
+     */
     public TreeSet<Ranking> getDesistentesAdmin() {
        return this.desistentes;
     }
+
+    /**
+     *
+     * @return
+     */
     public TreeSet<Simulacao> getSimulacaoAdmin() {
         return this.simula;
     }
     
+    /**
+     *
+     * @return
+     */
     public TreeSet<Ranking> getDesistentes() {
         TreeSet<Ranking> aux = new TreeSet<>(new CompareRankingByKm());
         for (Ranking r : this.desistentes) {
@@ -182,6 +293,10 @@ public abstract class Event implements Serializable{
 
     }
     
+    /**
+     *
+     * @return
+     */
     public TreeSet<Simulacao> getSimulacao() {
        TreeSet<Simulacao> aux =new TreeSet<>(new CompareSimulacao());
        for(Simulacao s:this.simula)
@@ -189,50 +304,87 @@ public abstract class Event implements Serializable{
        return aux;
     }
     
-  
-
+    /**
+     *
+     * @param location
+     */
     public void setLocation(String location) {
         this.location = location;
     }
 
+    /**
+     *
+     * @param deadline
+     */
     public void setDeadline(GregorianCalendar deadline) {
         this.deadline = deadline;
     }
 
+    /**
+     *
+     * @param date
+     */
     public void setDate(GregorianCalendar date) {
         this.date = date;
     }
 
+    /**
+     *
+     * @param duration
+     */
     public void setDuration(double duration) {
         this.duration = duration;
     }
 
+    /**
+     *
+     * @param max
+     */
     public void setMaxParticipants(int max) {
         this.maxParticipants = max;
     }
     
-    
+    /**
+     *
+     * @param u
+     */
     public void addUser(User u) {
         this.participantsList.add(u.clone());
         this.participants+=1;
     }
     
+    /**
+     *
+     * @param u
+     * @param time
+     */
     public void addRanking(User u,double time){
         Ranking r=new Ranking(u,time);
         this.ranking.add(r);
     }
     
+    /**
+     *
+     * @param u
+     * @param km
+     */
     public void addDesistente(User u,int km){
         Ranking r=new Ranking(u,km);
         this.desistentes.add(r);
     }
     
+    /**
+     *
+     * @param s
+     */
     public void addSimulacao(Simulacao s){
         this.simula.add(s);
     }
 
-    
-    
+    /**
+     *
+     * @return
+     */
     public String getClassificacaoGeral(){
         StringBuilder sb = new StringBuilder();
         

@@ -3,6 +3,15 @@ package Fitness;
 import java.util.GregorianCalendar;
 import java.io.Serializable;
 
+/**
+ *
+ * Classe da actividade Basketeball
+ * 
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
+ */
 
 public class Boxing extends Indoor implements UserVs, Serializable
 {
@@ -10,25 +19,50 @@ public class Boxing extends Indoor implements UserVs, Serializable
     private int myScore;
     private int opScore;
     
-    
+    /**
+     *Construtor vazio
+     */
     public Boxing(){
         super();
     }
+
+    /**
+     *
+     * @param name Nome da actividade
+     * @param date  Data da realização da actividade
+     * @param timeSpent Tempo gasto em minutos
+     * @param myScore Pontos feitos
+     * @param opScore Pontos recebidos
+     */
     public Boxing(String name, GregorianCalendar date, double timeSpent,int myScore,int opScore){
         super(name,date,timeSpent);
         this.myScore=myScore;
         this.opScore=opScore;
     }
+
+    /**
+     * Construtor de cópia
+     * @param tb Uma actividade Boxing
+     */
     public Boxing(Boxing tb){
         super(tb);
         this.myScore=tb.getMyScore();
         this.opScore=tb.getOpScore();
     }
+
+    /**
+     *
+     * @return int -Inteiro dos pontos feitos
+     */
     @Override
     public int getMyScore() {
       return this.myScore;
     }
 
+    /**
+     *
+     * @return int Inteiro dos pontos recebidos
+     */
     @Override
     public int getOpScore() {
         return this.opScore;
@@ -36,7 +70,7 @@ public class Boxing extends Indoor implements UserVs, Serializable
     @Override
     public void setCalories(double peso) {   //METS=12
       double mets=12;
-      double calories=mets*peso*this.getTimeSpent();
+      double calories=mets*peso*(this.getTimeSpent()/60);
       this.setActivityCalories(calories);
        
     }
@@ -44,6 +78,7 @@ public class Boxing extends Indoor implements UserVs, Serializable
     ////////////toString equals clone
     
     
+    @Override
      public String toString(){
         StringBuilder sb=new StringBuilder();
         sb.append(super.toString());
@@ -67,6 +102,14 @@ public class Boxing extends Indoor implements UserVs, Serializable
                 && this.myScore==act.getMyScore()
                 && this.opScore==act.getOpScore());
         
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 67 * hash + this.myScore;
+        hash = 67 * hash + this.opScore;
+        return hash;
     }
 
      @Override

@@ -27,6 +27,8 @@ public class AddViewActivityForm extends javax.swing.JFrame {
 	 * Creates new form AddActivityForm
 	 *
 	 * @param parent
+     * @param fit
+     * @param u
 	 */
 	public AddViewActivityForm(UserForm parent, FitnessUM fit, User u) {
 		initComponents();
@@ -45,7 +47,14 @@ public class AddViewActivityForm extends javax.swing.JFrame {
 
 	}
 
-	public AddViewActivityForm(UserForm parent, FitnessUM fit, User u, Activity act) {
+    /**
+     *
+     * @param parent
+     * @param fit
+     * @param u
+     * @param act
+     */
+    public AddViewActivityForm(UserForm parent, FitnessUM fit, User u, Activity act) {
 		initComponents();
 		this.parent = parent;
 		this.fit = fit;
@@ -771,7 +780,12 @@ public class AddViewActivityForm extends javax.swing.JFrame {
 		}
     }//GEN-LAST:event_butOKAddActActionPerformed
 
-	public static List<Component> getAllComponents(final Container c) {
+    /**
+     *
+     * @param c
+     * @return
+     */
+    public static List<Component> getAllComponents(final Container c) {
 		Component[] comps = c.getComponents();
 		List<Component> compList = new ArrayList<Component>();
 		for (Component comp : comps) {

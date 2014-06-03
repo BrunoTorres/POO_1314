@@ -12,16 +12,29 @@ import java.io.Serializable;
 public class Yoga extends Indoor implements Serializable
 {
     
-    
-    
+    /**
+     *
+     */
     public Yoga(){
         super();
     }
+
+    /**
+     *
+     * @param name
+     * @param date
+     * @param timeSpent
+     */
     public Yoga(String name, GregorianCalendar date, double timeSpent){
         super(name,date,timeSpent);
         
         
     }
+
+    /**
+     *
+     * @param tb
+     */
     public Yoga(Yoga tb){
         super(tb);
         

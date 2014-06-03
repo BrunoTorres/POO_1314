@@ -9,6 +9,10 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
+/**
+ *
+ * @author Bruno
+ */
 public class User extends Person implements Serializable{
 
 	private int height; // centímetros
@@ -20,7 +24,10 @@ public class User extends Person implements Serializable{
 	private TreeMap<String, ListRecords> records;
 	private TreeSet<String> messageFriend;
 
-	public User() {
+    /**
+     *
+     */
+    public User() {
 		super();
 		this.height = 0;
 		this.weight = 0;
@@ -32,7 +39,20 @@ public class User extends Person implements Serializable{
 		this.records = new TreeMap<>();
 	}
 
-	public User(String email, String pass, String name, char gender, GregorianCalendar date, int height, double weight, String favoriteActivity, TreeSet<Activity> userActivities, TreeSet<String> friendsList) {
+    /**
+     *
+     * @param email
+     * @param pass
+     * @param name
+     * @param gender
+     * @param date
+     * @param height
+     * @param weight
+     * @param favoriteActivity
+     * @param userActivities
+     * @param friendsList
+     */
+    public User(String email, String pass, String name, char gender, GregorianCalendar date, int height, double weight, String favoriteActivity, TreeSet<Activity> userActivities, TreeSet<String> friendsList) {
 		super(email, pass, name, gender, date);
 		this.height = height;
 		this.weight = weight;
@@ -46,7 +66,18 @@ public class User extends Person implements Serializable{
 		this.records = new TreeMap<>();
 	}
 
-	public User(String email, String pass, String name, char gender, GregorianCalendar date,
+    /**
+     *
+     * @param email
+     * @param pass
+     * @param name
+     * @param gender
+     * @param date
+     * @param height
+     * @param weight
+     * @param favoriteActivity
+     */
+    public User(String email, String pass, String name, char gender, GregorianCalendar date,
 			int height, double weight, String favoriteActivity) {
 		super(email, pass, name, gender, date);
 		this.height = height;
@@ -59,7 +90,11 @@ public class User extends Person implements Serializable{
 		this.records = new TreeMap<>();
 	}
 
-	public User(User u) {
+    /**
+     *
+     * @param u
+     */
+    public User(User u) {
 		super(u.getEmail(), u.getPassword(), u.getName(), u.getGender(), u.getDate());
 		this.height = u.getHeight();
 		this.weight = u.getWeight();
@@ -71,7 +106,11 @@ public class User extends Person implements Serializable{
 		this.records = (TreeMap<String, ListRecords>) u.getRecords();
 	}
 
-	public Map<String, ListRecords> getRecords() {
+    /**
+     *
+     * @return
+     */
+    public Map<String, ListRecords> getRecords() {
 		TreeMap<String, ListRecords> aux = new TreeMap<>();
 
 		for (String s : this.records.keySet()) {
@@ -80,19 +119,35 @@ public class User extends Person implements Serializable{
 		return aux;
 	}
 
-	public int getHeight() {
+    /**
+     *
+     * @return
+     */
+    public int getHeight() {
 		return this.height;
 	}
 
-	public double getWeight() {
+    /**
+     *
+     * @return
+     */
+    public double getWeight() {
 		return this.weight;
 	}
 
-	public String getFavoriteActivity() {
+    /**
+     *
+     * @return
+     */
+    public String getFavoriteActivity() {
 		return this.favoriteActivity;
 	}
 
-	public Set<Activity> getActivities() {
+    /**
+     *
+     * @return
+     */
+    public Set<Activity> getActivities() {
 		TreeSet<Activity> res = new TreeSet<>(new CompareActivity());
 		for (Activity act : this.userActivities) {
 			res.add(act.clone());
@@ -100,11 +155,19 @@ public class User extends Person implements Serializable{
 		return res;
 	}
 
-	public Set<String> getFriendsList() {
+    /**
+     *
+     * @return
+     */
+    public Set<String> getFriendsList() {
 		return (TreeSet<String>) this.friendsList.clone();
 	}
 
-	public Map<GregorianCalendar, Statistics> getStats() {
+    /**
+     *
+     * @return
+     */
+    public Map<GregorianCalendar, Statistics> getStats() {
 		TreeMap<GregorianCalendar, Statistics> aux = new TreeMap<>(new CompareStatsPerYearAndMonth());
 
 		for (GregorianCalendar key : this.stats.keySet()) //FUNCIONA??!!!
@@ -116,31 +179,60 @@ public class User extends Person implements Serializable{
 
 	}
 
-	public Set<String> getMessage() {
+    /**
+     *
+     * @return
+     */
+    public Set<String> getMessage() {
 		return this.messageFriend;
 	}
 
-	public void addFriendToMessage(String email) {
+    /**
+     *
+     * @param email
+     */
+    public void addFriendToMessage(String email) {
 		this.messageFriend.add(email);
 	}
 
-	public void removeFriendFromMessage(String email) {
+    /**
+     *
+     * @param email
+     */
+    public void removeFriendFromMessage(String email) {
 		this.messageFriend.remove(email);
 	}
 
-	public void setHeight(int height) {
+    /**
+     *
+     * @param height
+     */
+    public void setHeight(int height) {
 		this.height = height;
 	}
 
-	public void setWeight(float weight) {
+    /**
+     *
+     * @param weight
+     */
+    public void setWeight(float weight) {
 		this.weight = weight;
 	}
 
-	public void setFavoriteActivity(String favorite) {
+    /**
+     *
+     * @param favorite
+     */
+    public void setFavoriteActivity(String favorite) {
 		this.favoriteActivity = favorite;
 	}
 
-	public Activity getOneActivity(String name) {
+    /**
+     *
+     * @param name
+     * @return
+     */
+    public Activity getOneActivity(String name) {
 
 		Activity act;
 		boolean found = false;
@@ -200,6 +292,13 @@ public class User extends Person implements Serializable{
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    /**
+     *
+     * @param act
+     * @param tipoActividade
+     * @return
+     */
+    
 	public boolean addActivity(Activity act, String tipoActividade) {
 		if ((act instanceof Running) || (act instanceof Walking)
 				|| (act instanceof Cycling) || (act instanceof MountainBiking) || (act instanceof Swimming)) {
@@ -210,14 +309,24 @@ public class User extends Person implements Serializable{
 		return this.userActivities.add(act);
 	}
 
-	public boolean addFriend(User u) {              //Adiciona amigos a lista
+    /**
+     *
+     * @param u
+     * @return
+     */
+    public boolean addFriend(User u) {              //Adiciona amigos a lista
 		boolean flag = false, found = false;
 		flag = this.friendsList.add(u.getEmail());
 
 		return flag;
 	}
 
-	public boolean removeActivity(String activityName) {
+    /**
+     *
+     * @param activityName
+     * @return
+     */
+    public boolean removeActivity(String activityName) {
 		boolean found = false;
 		boolean flag = false;
 		TreeSet actAux = new TreeSet<>(new CompareActivity());
@@ -239,7 +348,14 @@ public class User extends Person implements Serializable{
 	}
 
     //////////////////Records///////////////
-	public boolean addRecord(String tipoActividade, Activity act) {
+
+    /**
+     *
+     * @param tipoActividade
+     * @param act
+     * @return
+     */
+    	public boolean addRecord(String tipoActividade, Activity act) {
 		RecordsActivity a;
 		if (act instanceof RecordsActivity) {
 			a = (RecordsActivity) act;
@@ -249,7 +365,13 @@ public class User extends Person implements Serializable{
 
 	}
 
-	public boolean updateRecords(String tipoActividade, Activity act) {
+    /**
+     *
+     * @param tipoActividade
+     * @param act
+     * @return
+     */
+    public boolean updateRecords(String tipoActividade, Activity act) {
 
 		if (!this.records.containsKey(tipoActividade)) {
 			return addRecord(tipoActividade, act);
@@ -273,11 +395,20 @@ public class User extends Person implements Serializable{
 	}
 
 	//Metodos Para admin
-	public Set<Activity> getUserActivitiesAdmin() {
+
+    /**
+     *
+     * @return
+     */
+    	public Set<Activity> getUserActivitiesAdmin() {
 		return this.userActivities;
 	}
 
-	public Set<String> getFriendsListAdmin() {
+    /**
+     *
+     * @return
+     */
+    public Set<String> getFriendsListAdmin() {
 
 		return this.friendsList;
 	}

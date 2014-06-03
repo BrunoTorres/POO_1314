@@ -10,9 +10,10 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
-
-
-
+/**
+ *
+ * @author Bruno
+ */
 public class FitnessUM implements Serializable{     
 
     //private DataBase db;
@@ -20,23 +21,37 @@ public class FitnessUM implements Serializable{
     private TreeSet<Person>userList;  // admin && users
     private ArrayList<Event> events;      /// mostrar no inicio criar funcao que ver se ja foi o evento 
 
-
+    /**
+     *
+     */
     public FitnessUM() {
        // this.db = new DataBase();
         this.userList= new TreeSet<Person>(new ComparePersonByName());
         this.events=new ArrayList<>();
     }
  
+    /**
+     *
+     * @param um
+     */
     public FitnessUM(FitnessUM um){
         this.p=um.getPerson();
         this.userList=(TreeSet<Person>)um.getUserList();
         this.events=(ArrayList<Event>)um.getEvents();
     }
     
+    /**
+     *
+     * @return
+     */
     public Person getPerson(){
         return this.p.clone();
     }
  
+    /**
+     *
+     * @return
+     */
     public List<Event> getEvents(){
         ArrayList<Event> aux=new ArrayList<>();
         for(Event e:this.events){
@@ -44,6 +59,11 @@ public class FitnessUM implements Serializable{
         }
         return aux;        
     }
+
+    /**
+     *
+     * @return
+     */
     public Set<Person> getUserList(){
         TreeSet<Person> aux = new TreeSet<Person>(new ComparePersonByName());
         for(Person p : this.userList)
@@ -68,6 +88,11 @@ public class FitnessUM implements Serializable{
        
     }
     
+    /**
+     *
+     * @param u
+     * @return
+     */
     public boolean addUserByUser(User u){
         return this.userList.add(u);
     }
@@ -79,22 +104,7 @@ public class FitnessUM implements Serializable{
    
 
         /////////Eventos///////////////////// 
-        /*
-     tempo define a classificação
-     weather=0.1...ate 0.qq coisa quanto maior = pior tempo logo pior tempo por km;
-        
-     tempo por km = tempo medio -(calorias por minuto_ do utilizador na activide/1000)-
-     (1*weather)+(numero de actividades feitas deste tipo/100)
-        
-     probabilidade de desistir:
-     top de maratora homem=25 anos
-     top de maratona melher=27 anos
-        
-     depois dos 35 anos a resistencia cai 10% por ano!
-     logo aos 25 anos p=95% de acabar a prova para homem
-     */
-    
-    
+       
     
     //////////////SIMULAÇAO//////////////////////
     private double tabelaWeather(String weather){
@@ -221,6 +231,15 @@ public class FitnessUM implements Serializable{
         return num;
     }
     
+    /**
+     *
+     * @param u
+     * @param weather
+     * @param temperatura
+     * @param tipo
+     * @param distance
+     * @return
+     */
     public double formula(User u,String weather,double temperatura,String tipo,double distance){
         double tempo;
         double tempoMedio=0;
@@ -238,6 +257,11 @@ public class FitnessUM implements Serializable{
             case "MarathonBTT":
                 tempoMedio=calculaTmMarathonBTT(u,distance);
                 numero=numeroActividadesMbtt(u);
+                break;
+            case "Trail":
+                tempoMedio=calculaTmMarathon(u,distance);
+                tempoMedio=tempoMedio+(tempoMedio*0.3);
+                numero=numeroActividadesM(u);
                 break;
                       }
         age=date.get(Calendar.YEAR)-u.getDate().get(Calendar.YEAR);
@@ -269,7 +293,12 @@ public class FitnessUM implements Serializable{
         return kmTotal;
     }
     
-    
+    /**
+     *
+     * @param e
+     * @param weather
+     * @param temperatura
+     */
     public void simulaEvent(Event e, String weather,double temperatura){
         double distance=0;
         String tipo="";
@@ -285,12 +314,18 @@ public class FitnessUM implements Serializable{
             distance =21.1;
             tipo="Halfmarathon";
             tipoEvento=2;
-        }
+        }      
         else if(e instanceof MarathonBTT){
             MarathonBTT btt=(MarathonBTT)e;
             distance=btt.getDistance();
             tipo="MarathonBTT";
             tipoEvento=3;
+        }
+          else if(e instanceof Trail){
+            Trail trail=(Trail)e;
+            distance=trail.getDistance();
+            tipo="Trail";
+            tipoEvento=4;
         }
             for(User u:e.getParticipantsList()){ 
                 double tempo=formula(u,weather,temperatura,tipo,distance);
@@ -354,17 +389,39 @@ public class FitnessUM implements Serializable{
     
     //////////EVENTS////////////////////////////////////////////
  
+    /**
+     *
+     * @param e
+     */
+     
     
     public void addEvent(Event e){
         this.events.add(e);
     }
     
+    /**
+     *
+     * @param name
+     * @param location
+     * @param maxParticipants
+     * @param deadline
+     * @param date
+     */
     public void addMarathon(String name, String location, int maxParticipants, 
             GregorianCalendar deadline, GregorianCalendar date){
         
         Event e= new  Marathon( name,  location,  maxParticipants, deadline,  date);
         this.events.add(e);
     }
+
+    /**
+     *
+     * @param name
+     * @param location
+     * @param maxParticipants
+     * @param deadline
+     * @param date
+     */
     public void addHalfmarathon(String name, String location, int maxParticipants, 
             GregorianCalendar deadline, GregorianCalendar date){
         
@@ -372,13 +429,35 @@ public class FitnessUM implements Serializable{
         this.events.add(e);
     }
     
-     public void addMarathonBTT(String name, String location, int maxParticipants, GregorianCalendar deadline,
+    /**
+     *
+     * @param name
+     * @param location
+     * @param maxParticipants
+     * @param deadline
+     * @param date
+     * @param distance
+     */
+    public void addMarathonBTT(String name, String location, int maxParticipants, GregorianCalendar deadline,
              GregorianCalendar date,double distance){
         
         Event e= new  MarathonBTT(name, location, maxParticipants, deadline, date, distance);
         this.events.add(e);
     }
+   
+     
+    public void addTrail(String name, String location, int maxParticipants, GregorianCalendar deadline,
+             GregorianCalendar date,double distance){
+        
+        Event e= new  Trail(name, location, maxParticipants, deadline, date, distance);
+        this.events.add(e);
+    }
     
+    /**
+     *
+     * @param name
+     * @return
+     */
     public Event getEventByName(String name) {       // VER MELHOR!! SE NAO HOUVER O EVENTO RETORNAR O QUE?!
         Event event = new Trail();
         for (Event e : this.getEvents()) {
@@ -418,7 +497,14 @@ public class FitnessUM implements Serializable{
         return flag;
     }
     //adiciona um user a um evento se ja praticou se a data de termino ainda nao foi atingida e se o nº max de par ainda nao foi atingido 
-    public boolean userRegistEvent(User u, Event e){
+
+    /**
+     *
+     * @param u
+     * @param e
+     * @return
+     */
+        public boolean userRegistEvent(User u, Event e){
          GregorianCalendar date=new GregorianCalendar();
          String tipo = e.getTipoActivity();
          
@@ -431,7 +517,14 @@ public class FitnessUM implements Serializable{
              return false;         
     }
      //So se pode registar se ja praticou actividade do tipo do evento
-    public boolean userRegistaEventoSeFezActivity(User u, String tipoEvento) { 
+ 
+    /**
+     *
+     * @param u
+     * @param tipoEvento
+     * @return
+     */
+        public boolean userRegistaEventoSeFezActivity(User u, String tipoEvento) { 
        
         boolean flag;
         switch (tipoEvento) {
@@ -449,10 +542,19 @@ public class FitnessUM implements Serializable{
 
     
     //////////////////////////     Gerenciamento da aplicação /////////////////////////////////////////////////
-    public Person getActivePerson() {
+
+    /**
+     *
+     * @return
+     */
+        public Person getActivePerson() {
         return this.p;
     }
 
+    /**
+     *
+     * @param p
+     */
     public void setFitnessPerson(Person p) {
         if (p instanceof User) {
             this.p = (User) p;
@@ -461,12 +563,23 @@ public class FitnessUM implements Serializable{
         }
     }
 
+    /**
+     *
+     * @param email
+     * @return
+     */
     public User getUserByEmail(String email) {
         User u;
         u = this.getUser(email);
         return u;
     }
 
+    /**
+     *
+     * @param email
+     * @param pass
+     * @return
+     */
     public boolean existPassAndUser(String email, String pass) {                               //////////////////////////////////////////////            
         
 
@@ -482,6 +595,11 @@ public class FitnessUM implements Serializable{
         return found;
     }
 
+    /**
+     *
+     * @param email
+     * @return
+     */
     public boolean existPerson(String email) {
         boolean flag = false;
         boolean found = false;
@@ -499,6 +617,11 @@ public class FitnessUM implements Serializable{
         return flag;
     }
 
+    /**
+     *
+     * @param email
+     * @return
+     */
     public boolean isAdmin(String email) {                     // Procurar por email ou Admin admin?!
       
         boolean flag = false;
@@ -518,6 +641,18 @@ public class FitnessUM implements Serializable{
 
     }
 
+    /**
+     *
+     * @param email
+     * @param pass
+     * @param name
+     * @param gender
+     * @param date
+     * @param height
+     * @param weight
+     * @param favoriteActivity
+     * @return
+     */
     public boolean addUser(String email, String pass, String name, char gender, GregorianCalendar date,
             int height, double weight, String favoriteActivity) {
         boolean flag;
@@ -528,6 +663,15 @@ public class FitnessUM implements Serializable{
 
     }
 
+    /**
+     *
+     * @param email
+     * @param pass
+     * @param name
+     * @param gender
+     * @param date
+     * @return
+     */
     public boolean addAdmin(String email, String pass, String name, char gender, GregorianCalendar date) {
         boolean flag;
         Admin admin = new Admin(email, pass, name, gender, date);
@@ -539,7 +683,15 @@ public class FitnessUM implements Serializable{
 
 	/////////////////////////////////////////////////Propriedade dos Utilizadores//////////////////////////////////////
     //Aceder as estatisticas(mensais anuais) STATISTICS by distancia tempo e\calorias
-    public void searchStatisticsMONTH(User u, int tipo, int mes, int ano) {
+
+    /**
+     *
+     * @param u
+     * @param tipo
+     * @param mes
+     * @param ano
+     */
+        public void searchStatisticsMONTH(User u, int tipo, int mes, int ano) {
         TreeMap<GregorianCalendar, Statistics> aux = (TreeMap<GregorianCalendar, Statistics>) u.getStats();
 
         GregorianCalendar data = new GregorianCalendar(ano, mes, 0);
@@ -561,6 +713,12 @@ public class FitnessUM implements Serializable{
         }
     }
 
+    /**
+     *
+     * @param u
+     * @param tipo
+     * @param ano
+     */
     public void searchStatisticsYear(User u, int tipo, int ano) {
         TreeMap<GregorianCalendar, Statistics> aux = (TreeMap<GregorianCalendar, Statistics>) u.getStats();
         Statistics nova = new Statistics();
@@ -589,11 +747,22 @@ public class FitnessUM implements Serializable{
     }
 
 	////////////////////////////////!!!FRIEND!!!//////////////////////////////////////////////////
-    public void sendFriendRequest(User user, User friendWhoSendsRequest) {
+
+    /**
+     *
+     * @param user
+     * @param friendWhoSendsRequest
+     */
+        public void sendFriendRequest(User user, User friendWhoSendsRequest) {
         user.addFriendToMessage(friendWhoSendsRequest.getEmail());
       
     }
 
+    /**
+     *
+     * @param u
+     * @return
+     */
     public boolean existsFriendToAdd(User u) {
 
         return (!((ArrayList<String>) u.getMessage()).isEmpty());   // PARA DEVOLVER o contrario
@@ -601,7 +770,13 @@ public class FitnessUM implements Serializable{
     }
 
         //ArrayList.toString()
-    public void acceptFriend(User u, String email) {                                                         //CLASSE MENSAGENS? UM 
+
+    /**
+     *
+     * @param u
+     * @param email
+     */
+        public void acceptFriend(User u, String email) {                                                         //CLASSE MENSAGENS? UM 
       //  boolean found = false;
         
         User amigo=getUserByEmail(email);
@@ -639,6 +814,13 @@ public class FitnessUM implements Serializable{
      return flag;
      }
      */
+
+    /**
+     *
+     * @param u
+     * @return
+     */
+    
     public Set<Activity> getLast10ActivitiesByActivity(User u) {
         TreeSet<Activity> aux = new TreeSet<>(new CompareActivity());
         Iterator<Activity> it = u.getActivities().iterator();
@@ -648,7 +830,12 @@ public class FitnessUM implements Serializable{
         return aux;
     }
     
-      public Set<String> getLast10Activities(User u) {
+    /**
+     *
+     * @param u
+     * @return
+     */
+    public Set<String> getLast10Activities(User u) {
         TreeSet<String> aux = new TreeSet<>();
         Iterator<Activity> it = u.getActivities().iterator();
         for (int i = 0; i < 10 && it.hasNext(); i++) {
@@ -659,7 +846,13 @@ public class FitnessUM implements Serializable{
     
 
     /////// VE TODAS AS ACTIVIDADES DE TODOS OS AMIGOS ///////////////////////////
-    public String FriendToString(TreeSet<User> users) {
+
+    /**
+     *
+     * @param users
+     * @return
+     */
+        public String FriendToString(TreeSet<User> users) {
         StringBuilder sb = new StringBuilder();
 
         for (User friend : users) {
@@ -674,6 +867,11 @@ public class FitnessUM implements Serializable{
         return sb.toString();
     }
 
+    /**
+     *
+     * @param u
+     * @return
+     */
     public String seeAllFriend(User u) {
         TreeSet<Person> dbUsers = (TreeSet<Person>) this.getUserList();
       //  TreeSet<String> userActivities = (TreeSet) u.getFriendsList();
@@ -697,14 +895,26 @@ public class FitnessUM implements Serializable{
 
 	//Ver Actividade de um dado amigo //
     //Lista amigos,escolhe amigo        --
-    public String listAllFriends(User u) {
+
+    /**
+     *
+     * @param u
+     * @return
+     */
+        public String listAllFriends(User u) {
         TreeSet<String> s = (TreeSet<String>) u.getFriendsList();
 
         return s.toString();
     }
 
     //Lista Activity do amigo 
-    public String allActivitiesFriend(User u) {
+
+    /**
+     *
+     * @param u
+     * @return
+     */
+        public String allActivitiesFriend(User u) {
         StringBuilder sb = new StringBuilder();
         for (Activity act : u.getActivities()) {
             sb.append(act.toString());
@@ -716,13 +926,26 @@ public class FitnessUM implements Serializable{
 
 	//
     // Recebe nome da activityList e User Friend procura essa activity e lista 
-    public String seeOneActivityList(User u, String activity) {
+
+    /**
+     *
+     * @param u
+     * @param activity
+     * @return
+     */
+        public String seeOneActivityList(User u, String activity) {
         return u.getOneActivity(activity).toString();
 
     }
 
 	//////////////////////////////////// Propriedade dos Administradores//////////////////////////////////////////
-    public boolean removeUser(String email) {
+
+    /**
+     *
+     * @param email
+     * @return
+     */
+        public boolean removeUser(String email) {
     
         boolean flag = false;
         for (Person per : this.userList) {                                                             //melhorar RETIRAR FOR para Iterator!!!
@@ -740,6 +963,11 @@ public class FitnessUM implements Serializable{
 
     }
 
+    /**
+     *
+     * @param activity
+     * @return
+     */
     public boolean removeActivity(Activity activity) {
         boolean flag = false;
 
@@ -754,6 +982,10 @@ public class FitnessUM implements Serializable{
 
     }
 
+    /**
+     *
+     * @param name
+     */
     public void removeActivityFromUser(String name) {    //remove uma actividade de todos os users name of activity
 
         for (Person per : this.userList) {

@@ -3,6 +3,7 @@ package Fitness;
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Objects;
 
 /**
  * Classe abstracta
@@ -123,12 +124,22 @@ public abstract class Activity implements Serializable {
     }
 
     @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 41 * hash + Objects.hashCode(this.name);
+        hash = 41 * hash + Objects.hashCode(this.date);
+        hash = 41 * hash + (int) (Double.doubleToLongBits(this.timeSpent) ^ (Double.doubleToLongBits(this.timeSpent) >>> 32));
+        hash = 41 * hash + (int) (Double.doubleToLongBits(this.calories) ^ (Double.doubleToLongBits(this.calories) >>> 32));
+        return hash;
+    }
+
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Descrição: ");
         sb.append(this.name).append("\n");
         sb.append("Data: ");
-        sb.append(this.date.get(Calendar.DAY_OF_MONTH)).append(" / ");;
+        sb.append(this.date.get(Calendar.DAY_OF_MONTH)).append(" / ");
         sb.append((this.date.get(Calendar.MONTH)) + 1).append(" / ");
         sb.append(this.date.get(Calendar.YEAR)).append("\n");
         sb.append("Duração: ");

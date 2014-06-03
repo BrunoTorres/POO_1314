@@ -156,10 +156,12 @@ public class Main {
        e1.addUser(u1);
        e1.addUser(u2);
        e1.addUser(u3);
-       um.simulaEvent(e1, "Chuva com ventos fortes", 29);
+       //um.simulaEvent(e1, "Chuva com ventos fortes", 29);
        
        //Event e= um.getEventByName("calhaus corrida");
        
+       
+       System.out.println(act.getCalories());
        /////////////////////////////////////////////
        //AMIGOS//
       // User amigo=um.getUserByEmail("user3@gmail.com");

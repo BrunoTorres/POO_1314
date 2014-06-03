@@ -4,22 +4,36 @@ import java.util.GregorianCalendar;
 import java.io.Serializable;
 
 /**
- * Write a description of class Cycling here.
+ *
+ * Classe da actividade Cycling
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public class Cycling extends Outdoor implements Distance, RecordsActivity, Serializable 
 {
     private double distance;
     private ListRecords recs;
     
-    
+    /**
+     *Construtor vazio
+     */
     public Cycling(){
         super();
         this.distance=0;
         this.recs=new ListRecords();
     }
+
+    /**
+     *
+     * @param name Nome da actividade
+     * @param date  Data da realização da actividade
+     * @param timeSpent Tempo gasto em minutos
+     * @param distance Distancia feita
+     * @param weather Clima
+     */
     public Cycling(String name, GregorianCalendar date, double timeSpent,double distance,String weather){
         super(name,date,timeSpent,weather);
         this.distance=distance;
@@ -28,17 +42,32 @@ public class Cycling extends Outdoor implements Distance, RecordsActivity, Seria
         
         
     }
+
+    /**
+     *
+      * Construtor de cópia
+     * @param tb Uma actividade Cycling
+     */
     public Cycling(Cycling tb){
         super(tb);
         this.distance=tb.getDistance();
         this.recs=tb.getListRecords();
         
     }
-     @Override
+
+    /**
+     *
+     * @return
+     */
+    @Override
     public double getDistance() {
        return this.distance;
     }
 
+    /**
+     *
+     * @param distance
+     */
     @Override
     public void setDistance(double distance) {
        this.distance=distance;
@@ -46,10 +75,14 @@ public class Cycling extends Outdoor implements Distance, RecordsActivity, Seria
     @Override
    public void setCalories(double peso) {
     double mets=7;
-      double calories=mets*peso*this.getTimeSpent();
+      double calories=mets*peso*(this.getTimeSpent()/60);
       this.setActivityCalories(calories);    
     }
 
+    /**
+     *
+     * @return
+     */
     public ListRecords getListRecords() {
        return this.recs.clone();
     }

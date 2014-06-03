@@ -2,20 +2,34 @@ package Fitness;
 
 import java.io.Serializable;
 
+/**
+ *
+ * @author Bruno
+ */
 public abstract class Record implements Serializable {
 
 	private String name; //10 km|| Maratona...
     
-	
-	public Record(){
+    /**
+     *
+     */
+    public Record(){
 		this.name = "";
 	}
     
+    /**
+     *
+     * @param name
+     */
     public Record(String name){
         this.name = name;
     }
 
-	public Record(Record stat) {
+    /**
+     *
+     * @param stat
+     */
+    public Record(Record stat) {
 		this.name = stat.getName();
 	}
     
@@ -26,8 +40,16 @@ public abstract class Record implements Serializable {
 		return name;
 	}
 
-	public abstract boolean isEmpty();
+    /**
+     *
+     * @return
+     */
+    public abstract boolean isEmpty();
 
+    /**
+     *
+     * @param act
+     */
     public abstract void update(Record act);
      
     @Override

@@ -1,10 +1,22 @@
 package Fitness;
 
-
+/**
+ *
+ * @author Bruno
+ */
 public interface Distance
 {
   
-     double getDistance();
-     void setDistance(double distance);
+    /**
+     *
+     * @return
+     */
+    double getDistance();
+
+    /**
+     *
+     * @param distance
+     */
+    void setDistance(double distance);
     
 }

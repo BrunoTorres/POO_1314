@@ -18,11 +18,27 @@ public class Trail extends Event implements Serializable{
     
     double distance;
   
-
+    /**
+     *
+     */
     public Trail() {
         super();
     }
 
+    /**
+     *
+     * @param name
+     * @param tipoActivity
+     * @param location
+     * @param maxParticipants
+     * @param participants
+     * @param deadline
+     * @param date
+     * @param duration
+     * @param participantsList
+     * @param ranking
+     * @param distance
+     */
     public Trail(String name, String tipoActivity, String location, int maxParticipants, int participants,
             GregorianCalendar deadline, GregorianCalendar date, double duration, TreeSet<User> participantsList,
             TreeSet<Ranking> ranking,double distance) {
@@ -31,6 +47,19 @@ public class Trail extends Event implements Serializable{
         this.distance=distance;
     }
 
+    /**
+     *
+     * @param name
+     * @param tipoActivity
+     * @param location
+     * @param maxParticipants
+     * @param deadline
+     * @param date
+     * @param duration
+     * @param participantsList
+     * @param ranking
+     * @param distance
+     */
     public Trail(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date,
             double duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking,double distance) {
 
@@ -38,22 +67,40 @@ public class Trail extends Event implements Serializable{
         this.distance=distance;
     }
 
-    public Trail(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date,
-            double duration,double distance) {
+    /**
+     *
+     * @param name
+     * @param location
+     * @param maxParticipants
+     * @param deadline
+     * @param date
+     * @param distance
+     */
+    public Trail(String name, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date,double distance) {
 
-        super(name, tipoActivity, location, maxParticipants, deadline, date, duration);
+        super(name, "Running", location, maxParticipants, deadline, date);
         this.distance=distance;
     }
 
+    /**
+     *
+     * @param m
+     */
     public Trail(Trail m) {
         super(m);
         this.distance=m.getDistance();
     }
 
+    /**
+     *
+     * @return
+     */
     public double getDistance() {
         return this.distance;
     }
 
+      
+    
     //toString,equals,clone
     @Override
     public String toString() {

@@ -41,7 +41,11 @@ public class UserForm extends javax.swing.JFrame {
 		this.changeShownActivity();
 	}
 
-	public void changeActivities(String op) {
+    /**
+     *
+     * @param op
+     */
+    public void changeActivities(String op) {
 		if (op.equals("remove")) {
 			this.currAct = 1;
 			this.allActsCurr = 1;

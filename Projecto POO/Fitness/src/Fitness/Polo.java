@@ -17,7 +17,7 @@ public class Polo extends Outdoor implements UserVs, Serializable
    private int opScore;
     
     /**
-     *Construtor
+     *Construtor vazio
      */
     public Polo(){
         super();
@@ -50,7 +50,7 @@ public class Polo extends Outdoor implements UserVs, Serializable
 
     /**
      *
-     * @return
+     * @return int -Inteiro dos pontos feitos
      */
     @Override
     public int getMyScore() {
@@ -59,7 +59,7 @@ public class Polo extends Outdoor implements UserVs, Serializable
 
     /**
      *
-     * @return
+     * @return int Inteiro dos pontos recebidos
      */
     @Override
     public int getOpScore() {
@@ -73,7 +73,7 @@ public class Polo extends Outdoor implements UserVs, Serializable
     @Override
     public void setCalories(double peso) {
       double mets=8;
-      double calories=mets*peso*this.getTimeSpent();
+      double calories=mets*peso*(this.getTimeSpent()/60);
       this.setActivityCalories(calories);    
     }
     

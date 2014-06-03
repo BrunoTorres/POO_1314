@@ -14,25 +14,50 @@ public class Handball extends Indoor implements UserVs, Serializable
     private int myScore;
     private int opScore;
     
-    
+    /**
+     *
+     */
     public Handball(){
         super();
     }
+
+    /**
+     *
+     * @param name
+     * @param date
+     * @param timeSpent
+     * @param myScore
+     * @param opScore
+     */
     public Handball(String name, GregorianCalendar date, double timeSpent,int myScore,int opScore){
         super(name,date,timeSpent);
         this.myScore=myScore;
         this.opScore=opScore;
     }
+
+    /**
+     *
+     * @param tb
+     */
     public Handball(Handball tb){
         super(tb);
         this.myScore=tb.getMyScore();
         this.opScore=tb.getOpScore();
     }
+
+    /**
+     *
+     * @return
+     */
     @Override
     public int getMyScore() {
       return this.myScore;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int getOpScore() {
         return this.opScore;
@@ -41,7 +66,7 @@ public class Handball extends Indoor implements UserVs, Serializable
     @Override
     public void setCalories(double peso) {//MET=12
     double mets=12;
-      double calories=mets*peso*this.getTimeSpent();
+      double calories=mets*peso*(this.getTimeSpent()/60);
       this.setActivityCalories(calories);    
     }
     

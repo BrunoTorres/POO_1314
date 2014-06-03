@@ -3,30 +3,60 @@ package Fitness;
 import java.util.GregorianCalendar;
 import java.io.Serializable;
 
+/**
+ *
+ * @author Bruno
+ */
 public class Football extends Outdoor implements UserVs, Serializable
 {
   private int myScore;
    private int opScore;
     
-    
+    /**
+     *
+     */
     public Football(){
         super();
     }
+
+    /**
+     *
+     * @param name
+     * @param date
+     * @param timeSpent
+     * @param myScore
+     * @param opScore
+     * @param weather
+     */
     public Football(String name, GregorianCalendar date, double timeSpent,int myScore,int opScore,String weather){
         super(name,date,timeSpent,weather);
         this.myScore=myScore;
         this.opScore=opScore;
     }
+
+    /**
+     *
+     * @param tb
+     */
     public Football(Football tb){
         super(tb);
         this.myScore=tb.getMyScore();
         this.opScore=tb.getOpScore();
     }
+
+    /**
+     *
+     * @return
+     */
     @Override
     public int getMyScore() {
       return this.myScore;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int getOpScore() {
         return this.opScore;
@@ -35,7 +65,7 @@ public class Football extends Outdoor implements UserVs, Serializable
     @Override
     public void setCalories(double peso) {
       double mets=8;
-      double calories=mets*peso*this.getTimeSpent();
+      double calories=mets*peso*(this.getTimeSpent()/60);
       this.setActivityCalories(calories);    
     }
     

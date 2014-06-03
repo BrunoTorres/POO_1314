@@ -16,6 +16,8 @@ public class FriendRequestListForm extends javax.swing.JFrame {
 
 	/**
 	 * Creates new form PedidosAmizade
+     * @param parent
+     * @param fit
 	 */
 	public FriendRequestListForm(UserForm parent, FitnessUM fit) {
 		initComponents();
