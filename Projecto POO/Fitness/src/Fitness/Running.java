@@ -74,7 +74,6 @@ public class Running extends Outdoor implements Distance, RecordsActivity, Seria
         this.setActivityCalories(calories);
     }
 
-   
     private ListRecords createRecord() {
         ListRecords list = new ListRecords("Running");
 

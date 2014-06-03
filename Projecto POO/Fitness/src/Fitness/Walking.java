@@ -12,10 +12,7 @@ import java.util.Objects;
  * @author Miguel Guimarães
  * @version 2014
  */
-
 public class Walking extends Outdoor implements Distance, RecordsActivity, Serializable {
-
-
 
     private double distance;
     private ListRecords recs;
@@ -38,7 +35,6 @@ public class Walking extends Outdoor implements Distance, RecordsActivity, Seria
      * @param distance - Distancia.
      * @param weather - Clima.
      */
-
     public Walking(String name, GregorianCalendar date, double timeSpent, double distance, String weather) {
         super(name, date, timeSpent, weather);
         this.distance = distance;
@@ -101,7 +97,7 @@ public class Walking extends Outdoor implements Distance, RecordsActivity, Seria
 
     }
 
-     ////////////toString equals clone
+    ////////////toString equals clone
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -113,9 +109,10 @@ public class Walking extends Outdoor implements Distance, RecordsActivity, Seria
 
     @Override
     public boolean equals(Object a) {
-        if (this ==a) 
+        if (this == a) {
             return true;
-  
+        }
+
         if (a == null || this.getClass() != a.getClass()) {
             return false;
         }

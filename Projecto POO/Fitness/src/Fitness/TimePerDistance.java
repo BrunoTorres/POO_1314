@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * Classe que define os recordes de distancia por tempo.
- * 
+ *
  * @author Bruno Pereiras
  * @author João Mano
  * @author Miguel Guimarães
@@ -15,9 +15,9 @@ public final class TimePerDistance extends Record implements Serializable {
     private double recordDistance;
     private double time;
 
-    /** 
+    /**
      * Construtor vazio.
-     */ 
+     */
     public TimePerDistance() {
         super();
         this.recordDistance = 0.0;
@@ -39,8 +39,9 @@ public final class TimePerDistance extends Record implements Serializable {
         this.setStatistic(myDistance, myTime);
     }
 
-   /**
+    /**
      * Construtor de cópia
+     *
      * @param stat - instância de TimePerDistance.
      */
     public TimePerDistance(TimePerDistance stat) {
@@ -51,6 +52,7 @@ public final class TimePerDistance extends Record implements Serializable {
 
     /**
      * Método que devolve o tempo em minutos.
+     *
      * @return double,distancia.
      */
     public double getTime() {
@@ -59,6 +61,7 @@ public final class TimePerDistance extends Record implements Serializable {
 
     /**
      * Método que devolve a distancia do recorde em km.
+     *
      * @return double,distancia.
      */
     public double getRecordDistance() {
@@ -85,6 +88,7 @@ public final class TimePerDistance extends Record implements Serializable {
 
     /**
      * Método que altera o tempo, caso o parâmetro recebido seja menor que o tempo da instancia.
+     *
      * @param act-Instancia Record.
      */
     @Override
@@ -108,10 +112,14 @@ public final class TimePerDistance extends Record implements Serializable {
         sb.append(super.toString());
         if (this.time > 0) {
             sb.append("Tempo registado: ");
-            if (h > 0)  sb.append(h).append("(h):"); 
+            if (h > 0) {
+                sb.append(h).append("(h):");
+            }
             sb.append(m).append("(min): ");
             sb.append((int) s).append("(seg)\n");
-        } else sb.append("Sem recorde").append("\n");
+        } else {
+            sb.append("Sem recorde").append("\n");
+        }
 
         return sb.toString();
     }
