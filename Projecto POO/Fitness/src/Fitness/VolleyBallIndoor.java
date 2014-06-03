@@ -4,10 +4,12 @@ import java.util.GregorianCalendar;
 import java.io.Serializable;
 
 /**
- * Write a description of class VolleyBallIndoor here.
+ * Actividade VolleyBallIndoor.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public class VolleyBallIndoor extends Indoor implements UserVs, Serializable
 

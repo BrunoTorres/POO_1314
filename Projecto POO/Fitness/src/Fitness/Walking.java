@@ -42,7 +42,7 @@ public class Walking extends Outdoor implements Distance, RecordsActivity, Seria
     }
 
     /**
-     *
+     * Construtor de cópia.
      * @param tb Recebe uma instancia de Acivity
      */
     public Walking(Walking tb){
@@ -53,8 +53,8 @@ public class Walking extends Outdoor implements Distance, RecordsActivity, Seria
     }
 
     /**
-     *
-     * @return
+     * Método que devolve a distancia realizada na actividade.
+     * @return Devolve um inteiro.
      */
     @Override
     public double getDistance() {
@@ -62,17 +62,14 @@ public class Walking extends Outdoor implements Distance, RecordsActivity, Seria
     }
      
     /**
-     *
-     * @return
+     * Método que devolve a lista de recordes registados nessa actividade.
+     * @return Devolve uma ListRecords.
      */
     public ListRecords getListRecords() {
        return this.recs.clone();
     }
 
-    /**
-     *
-     * @param distance
-     */
+    
     @Override
     public void setDistance(double distance) {
        this.distance=distance;
@@ -84,6 +81,10 @@ public class Walking extends Outdoor implements Distance, RecordsActivity, Seria
       this.setActivityCalories(calories);    
     }
    
+   /**
+     * Determina quais recordes foram registados nessa actividade
+     * @return Devolve uma ListRecords.
+     */
    private ListRecords createRecord() {
         ListRecords list=new ListRecords("Walking");
         
@@ -109,7 +110,7 @@ public class Walking extends Outdoor implements Distance, RecordsActivity, Seria
  
      ////////////toString equals clone
     
-    
+    @Override
      public String toString(){
         StringBuilder sb=new StringBuilder();
         sb.append(super.toString());
