@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 /**
  *
- * Classe da actividade Basketeball
+ * Actividade Boxing
  * 
  * @author Bruno Pereira
  * @author João Mano
@@ -27,7 +27,7 @@ public class Boxing extends Indoor implements UserVs, Serializable
     }
 
     /**
-     *
+     * Construtor parametrizado.
      * @param name Nome da actividade
      * @param date  Data da realização da actividade
      * @param timeSpent Tempo gasto em minutos
@@ -42,7 +42,7 @@ public class Boxing extends Indoor implements UserVs, Serializable
 
     /**
      * Construtor de cópia
-     * @param tb Uma actividade Boxing
+     * @param tb  Recebe uma instância Boxing
      */
     public Boxing(Boxing tb){
         super(tb);
@@ -50,19 +50,13 @@ public class Boxing extends Indoor implements UserVs, Serializable
         this.opScore=tb.getOpScore();
     }
 
-    /**
-     *
-     * @return int -Inteiro dos pontos feitos
-     */
+   
     @Override
     public int getMyScore() {
       return this.myScore;
     }
 
-    /**
-     *
-     * @return int- Inteiro dos pontos recebidos
-     */
+    
     @Override
     public int getOpScore() {
         return this.opScore;

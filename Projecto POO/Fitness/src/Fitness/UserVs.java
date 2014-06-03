@@ -8,14 +8,14 @@ public interface UserVs
 {
  
     /**
-     *
-     * @return
+     * Método que devolve os pontos realizados.
+     * @return Devolve um inteiro.
      */
     int getMyScore(); 
     
     /**
-     *
-     * @return
+     * Método que devolve os pontos realizados pelo adversário.
+     * @return Devolve um inteiro.
      */
     int getOpScore();
         
