@@ -4,10 +4,12 @@ import java.util.GregorianCalendar;
 import java.io.Serializable;
 
 /**
- * Write a description of class Walking here.
+ * Actividade Walking.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public class Walking extends Outdoor implements Distance, RecordsActivity, Serializable
 {
@@ -16,7 +18,7 @@ public class Walking extends Outdoor implements Distance, RecordsActivity, Seria
     private ListRecords recs;
 
     /**
-     *
+     *Construtor vazio.
      */
     public Walking(){
         super();
@@ -25,12 +27,12 @@ public class Walking extends Outdoor implements Distance, RecordsActivity, Seria
     }
 
     /**
-     *
-     * @param name
-     * @param date
-     * @param timeSpent
-     * @param distance
-     * @param weather
+     * Construtor parametrizado.
+     * @param name Nome da actividade.
+     * @param date  Data da realização da actividade.
+     * @param timeSpent Tempo gasto em minutos.
+     * @param distance Distancia.
+     * @param weather Clima.
      */
     public Walking(String name, GregorianCalendar date, double timeSpent,double distance,String weather){
         super(name,date,timeSpent,weather);
@@ -41,7 +43,7 @@ public class Walking extends Outdoor implements Distance, RecordsActivity, Seria
 
     /**
      *
-     * @param tb
+     * @param tb Recebe uma instancia de Acivity
      */
     public Walking(Walking tb){
         super(tb);
