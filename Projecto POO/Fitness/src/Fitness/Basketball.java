@@ -40,7 +40,7 @@ public class Basketball extends Indoor implements UserVs, Serializable
 
     /**
       * Construtor de cópia
-     * @param tb Um actividade Basketball
+     * @param tb Uma actividade Basketball
      */
     public Basketball(Basketball tb){
         super(tb);
@@ -69,7 +69,7 @@ public class Basketball extends Indoor implements UserVs, Serializable
     @Override
     public void setCalories(double peso) {//MET=6
       double mets=6;
-      double calories=mets*peso*this.getTimeSpent();
+      double calories=mets*peso*(this.getTimeSpent()/60);
       this.setActivityCalories(calories);    
     }
     

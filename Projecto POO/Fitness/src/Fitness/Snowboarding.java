@@ -88,7 +88,7 @@ public class Snowboarding extends Outdoor  implements Distance, VerticalDistance
     @Override
    public void setCalories(double peso) {
     double mets=8.5;
-      double calories=mets*peso*this.getTimeSpent();
+      double calories=mets*peso*(this.getTimeSpent()/60);
       this.setActivityCalories(calories);    
     }
    

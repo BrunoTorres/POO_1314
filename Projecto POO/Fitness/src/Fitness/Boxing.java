@@ -42,7 +42,7 @@ public class Boxing extends Indoor implements UserVs, Serializable
 
     /**
      * Construtor de cópia
-     * @param tb Um actividade Boxing
+     * @param tb Uma actividade Boxing
      */
     public Boxing(Boxing tb){
         super(tb);
@@ -70,7 +70,7 @@ public class Boxing extends Indoor implements UserVs, Serializable
     @Override
     public void setCalories(double peso) {   //METS=12
       double mets=12;
-      double calories=mets*peso*this.getTimeSpent();
+      double calories=mets*peso*(this.getTimeSpent()/60);
       this.setActivityCalories(calories);
        
     }

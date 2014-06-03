@@ -9,9 +9,14 @@ package Fitness;
 import java.io.Serializable;
 import java.util.Comparator;
 
+
 /**
- *
- * @author Bruno
+ * Classe comparador
+ * Compara Simulacao por tempo(minutos)
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public class CompareSimulacao implements Comparator<Simulacao>,Serializable {
 

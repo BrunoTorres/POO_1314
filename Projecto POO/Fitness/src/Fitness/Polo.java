@@ -73,7 +73,7 @@ public class Polo extends Outdoor implements UserVs, Serializable
     @Override
     public void setCalories(double peso) {
       double mets=8;
-      double calories=mets*peso*this.getTimeSpent();
+      double calories=mets*peso*(this.getTimeSpent()/60);
       this.setActivityCalories(calories);    
     }
     

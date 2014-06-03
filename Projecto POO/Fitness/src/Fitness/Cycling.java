@@ -4,10 +4,13 @@ import java.util.GregorianCalendar;
 import java.io.Serializable;
 
 /**
- * Write a description of class Cycling here.
+ *
+ * Classe da actividade Cycling
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public class Cycling extends Outdoor implements Distance, RecordsActivity, Serializable 
 {
@@ -15,7 +18,7 @@ public class Cycling extends Outdoor implements Distance, RecordsActivity, Seria
     private ListRecords recs;
     
     /**
-     *
+     *Construtor vazio
      */
     public Cycling(){
         super();
@@ -25,11 +28,11 @@ public class Cycling extends Outdoor implements Distance, RecordsActivity, Seria
 
     /**
      *
-     * @param name
-     * @param date
-     * @param timeSpent
-     * @param distance
-     * @param weather
+     * @param name Nome da actividade
+     * @param date  Data da realização da actividade
+     * @param timeSpent Tempo gasto em minutos
+     * @param distance Distancia feita
+     * @param weather Clima
      */
     public Cycling(String name, GregorianCalendar date, double timeSpent,double distance,String weather){
         super(name,date,timeSpent,weather);
@@ -42,7 +45,8 @@ public class Cycling extends Outdoor implements Distance, RecordsActivity, Seria
 
     /**
      *
-     * @param tb
+      * Construtor de cópia
+     * @param tb Uma actividade Cycling
      */
     public Cycling(Cycling tb){
         super(tb);
@@ -71,7 +75,7 @@ public class Cycling extends Outdoor implements Distance, RecordsActivity, Seria
     @Override
    public void setCalories(double peso) {
     double mets=7;
-      double calories=mets*peso*this.getTimeSpent();
+      double calories=mets*peso*(this.getTimeSpent()/60);
       this.setActivityCalories(calories);    
     }
 

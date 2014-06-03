@@ -77,7 +77,7 @@ public class Walking extends Outdoor implements Distance, RecordsActivity, Seria
     }
     @Override
    public void setCalories(double peso) {
-    double mets=7;
+    double mets=2.5;
       double calories=mets*peso*this.getTimeSpent();
       this.setActivityCalories(calories);    
     }

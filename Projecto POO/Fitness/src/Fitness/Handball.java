@@ -66,7 +66,7 @@ public class Handball extends Indoor implements UserVs, Serializable
     @Override
     public void setCalories(double peso) {//MET=12
     double mets=12;
-      double calories=mets*peso*this.getTimeSpent();
+      double calories=mets*peso*(this.getTimeSpent()/60);
       this.setActivityCalories(calories);    
     }
     

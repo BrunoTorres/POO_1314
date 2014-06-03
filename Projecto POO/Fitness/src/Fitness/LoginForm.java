@@ -229,7 +229,11 @@ public class LoginForm extends javax.swing.JFrame {
 		}
     }//GEN-LAST:event_butOKActionPerformed
 
-	public FitnessUM getFitness() {
+    /**
+     *
+     * @return
+     */
+    public FitnessUM getFitness() {
 		return this.fitness;
 	}
 

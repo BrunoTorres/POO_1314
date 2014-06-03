@@ -64,7 +64,7 @@ public class TableTennis extends Indoor implements UserVs, Serializable
     @Override
     public void setCalories(double peso) {//MET=4
     double mets=4;
-      double calories=mets*peso*this.getTimeSpent();
+      double calories=mets*peso*(this.getTimeSpent()/60);
       this.setActivityCalories(calories);    
     }
     

@@ -79,7 +79,7 @@ public class Running extends Outdoor implements Distance, RecordsActivity, Seria
     @Override
     public void setCalories(double peso) {        
         double mets = 7;
-        double calories = mets * peso * this.getTimeSpent();
+        double calories = mets * peso * (this.getTimeSpent()/60);
         this.setActivityCalories(calories);
        
     }

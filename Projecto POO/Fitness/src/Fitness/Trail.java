@@ -70,18 +70,15 @@ public class Trail extends Event implements Serializable{
     /**
      *
      * @param name
-     * @param tipoActivity
      * @param location
      * @param maxParticipants
      * @param deadline
      * @param date
-     * @param duration
      * @param distance
      */
-    public Trail(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date,
-            double duration,double distance) {
+    public Trail(String name, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date,double distance) {
 
-        super(name, tipoActivity, location, maxParticipants, deadline, date, duration);
+        super(name, "Running", location, maxParticipants, deadline, date);
         this.distance=distance;
     }
 
@@ -102,6 +99,8 @@ public class Trail extends Event implements Serializable{
         return this.distance;
     }
 
+      
+    
     //toString,equals,clone
     @Override
     public String toString() {

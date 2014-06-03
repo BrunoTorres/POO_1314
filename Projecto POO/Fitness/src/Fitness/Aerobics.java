@@ -34,8 +34,8 @@ public class Aerobics extends Indoor implements Serializable
 
     /**
      *
-      * Construtor de cópia
-     * @param tb Um actividade Polo
+     * Construtor de cópia
+     * @param tb Uma actividade Aerobics
      */
     public Aerobics(Aerobics tb){
         super(tb);
@@ -46,7 +46,7 @@ public class Aerobics extends Indoor implements Serializable
     @Override
     public void setCalories(double peso) {
       double mets=6.5;
-      double calories=mets*peso*this.getTimeSpent();
+      double calories=mets*peso*(this.getTimeSpent()/60);
       this.setActivityCalories(calories);    
     }
     

@@ -91,7 +91,7 @@ public class MountainBiking extends Outdoor implements Distance, VerticalDistanc
     @Override
    public void setCalories(double peso) {
     double mets=8.5;
-      double calories=mets*peso*this.getTimeSpent();
+      double calories=mets*peso*(this.getTimeSpent()/60);
       this.setActivityCalories(calories);    
     }
    
