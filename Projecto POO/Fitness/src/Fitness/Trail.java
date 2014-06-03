@@ -119,6 +119,13 @@ public class Trail extends Event implements Serializable{
     }
 
     @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 41 * hash + (int) (Double.doubleToLongBits(this.distance) ^ (Double.doubleToLongBits(this.distance) >>> 32));
+        return hash;
+    }
+
+    @Override
     public Trail clone() {
         return new Trail(this);
     }

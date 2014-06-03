@@ -97,6 +97,14 @@ public class VolleyBallBeach extends Outdoor implements UserVs, Serializable
     }
 
     @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 89 * hash + this.myScore;
+        hash = 89 * hash + this.opScore;
+        return hash;
+    }
+
+    @Override
      public VolleyBallBeach clone(){
         return new VolleyBallBeach(this);
     }   

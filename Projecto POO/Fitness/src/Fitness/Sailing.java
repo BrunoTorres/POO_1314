@@ -87,6 +87,13 @@ public class Sailing extends Outdoor implements Distance, Serializable
     }
 
     @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.distance) ^ (Double.doubleToLongBits(this.distance) >>> 32));
+        return hash;
+    }
+
+    @Override
      public Sailing clone(){
         return new Sailing(this);
     }

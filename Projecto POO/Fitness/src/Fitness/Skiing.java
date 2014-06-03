@@ -43,7 +43,7 @@ public class Skiing extends Outdoor implements Distance, VerticalDistance, Seria
 
     /**
      * Construtor de cópia.
-     * @param tb - instancia de Snowboarding.
+     * @param tb - instância de Skiing.
      */
     public Skiing(Skiing tb){
         super(tb);
@@ -101,6 +101,14 @@ public class Skiing extends Outdoor implements Distance, VerticalDistance, Seria
         return  ( super.equals(act)
                 && this.distance==act.getDistance()
                 && this.verticaldistance==act.getVerticalDistance());
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 71 * hash + (int) (Double.doubleToLongBits(this.distance) ^ (Double.doubleToLongBits(this.distance) >>> 32));
+        hash = 71 * hash + (int) (Double.doubleToLongBits(this.verticaldistance) ^ (Double.doubleToLongBits(this.verticaldistance) >>> 32));
+        return hash;
     }
 
     @Override

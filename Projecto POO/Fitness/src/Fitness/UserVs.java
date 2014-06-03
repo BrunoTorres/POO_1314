@@ -2,7 +2,7 @@ package Fitness;
 
 /**
  *
- * Interface de metodos relacionados com actividades de distancia vertical.
+ * Interface de métodos relacionados com actividades de distancia vertical.
  *
  * @author Bruno Pereira
  * @author João Mano

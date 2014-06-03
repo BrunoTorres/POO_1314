@@ -92,6 +92,14 @@ public class Tennis extends Outdoor implements UserVs, Serializable
     }
 
     @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 23 * hash + this.myScore;
+        hash = 23 * hash + this.opScore;
+        return hash;
+    }
+
+    @Override
      public Tennis clone(){
         return new Tennis(this);
     }

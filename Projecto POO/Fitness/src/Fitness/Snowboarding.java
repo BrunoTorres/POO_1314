@@ -102,6 +102,14 @@ public class Snowboarding extends Outdoor  implements Distance, VerticalDistance
     }
 
     @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.distance) ^ (Double.doubleToLongBits(this.distance) >>> 32));
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.verticaldistance) ^ (Double.doubleToLongBits(this.verticaldistance) >>> 32));
+        return hash;
+    }
+
+    @Override
      public Snowboarding clone(){
         return new Snowboarding(this);
     }

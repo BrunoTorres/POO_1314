@@ -1,6 +1,7 @@
 package Fitness;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * Regista o resultado de uma simulação para um evento de um utilizador.
@@ -42,7 +43,7 @@ public class Simulacao implements Serializable{
        
     /**
      * Construtor de cópia.
-     * @param tb - instancia de Simulaçao.
+     * @param s - instancia de Simulaçao.
      */
     public Simulacao(Simulacao s){
         this.tempoGeral=s.getTempoGeral();
@@ -60,7 +61,7 @@ public class Simulacao implements Serializable{
     }
 
     /**
-     * Método que devolve o tempo medio por km em minutos.
+     * Método que devolve o tempo médio por km em minutos.
      * @return Devolve um double.
      */
     public double getTempoMedio() {
@@ -76,7 +77,7 @@ public class Simulacao implements Serializable{
     }
 
     /**
-    * Método que o utilizador da Simulaçao.
+     * Método que o utilizador da Simulação.
      * @return Devolve um clone do User.
      */
     public User getUser() {
@@ -84,7 +85,7 @@ public class Simulacao implements Serializable{
     }
     
     /**
-     * Método que incrementa o tempo geral de acordo com o tempo medio (para um km).
+     * Método que incrementa o tempo geral de acordo com o tempo médio (para um km).
      * @param intrevalo
      */
     public void actualiza(double intrevalo){
@@ -111,6 +112,16 @@ public class Simulacao implements Serializable{
                 && this.tempoMedio==s.getTempoMedio()
                 && this.u.equals(s.getUser()));
     } 
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 79 * hash + (int) (Double.doubleToLongBits(this.tempoGeral) ^ (Double.doubleToLongBits(this.tempoGeral) >>> 32));
+        hash = 79 * hash + (int) (Double.doubleToLongBits(this.tempoMedio) ^ (Double.doubleToLongBits(this.tempoMedio) >>> 32));
+        hash = 79 * hash + this.kmDesiste;
+        hash = 79 * hash + Objects.hashCode(this.u);
+        return hash;
+    }
     
     @Override
     public String toString(){

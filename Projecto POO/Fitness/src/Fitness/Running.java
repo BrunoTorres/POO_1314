@@ -2,10 +2,11 @@ package Fitness;
 
 import java.util.GregorianCalendar;
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
- * Actividade Skating.
- * 
+ * Actividade Running.
+ *
  * @author Bruno Pereira
  * @author João Mano
  * @author Miguel Guimarães
@@ -27,6 +28,7 @@ public class Running extends Outdoor implements Distance, RecordsActivity, Seria
 
     /**
      * Construtor parametrizado.
+     *
      * @param name - Nome da actividade.
      * @param date - Data da realização da actividade.
      * @param timeSpent - Tempo gasto em minutos.
@@ -41,12 +43,13 @@ public class Running extends Outdoor implements Distance, RecordsActivity, Seria
 
     /**
      * Construtor de cópia.
+     *
      * @param tb - instancia de Running.
      */
     public Running(Running tb) {
         super(tb);
         this.distance = tb.getDistance();
-        this.recs=tb.getListRecords();
+        this.recs = tb.getListRecords();
     }
 
     @Override
@@ -65,16 +68,13 @@ public class Running extends Outdoor implements Distance, RecordsActivity, Seria
     }
 
     @Override
-    public void setCalories(double peso) {        
+    public void setCalories(double peso) {
         double mets = 7;
-        double calories = mets * peso * (this.getTimeSpent()/60);
+        double calories = mets * peso * (this.getTimeSpent() / 60);
         this.setActivityCalories(calories);
     }
 
-    /**
-     * Determina quais recordes foram registados nessa actividade
-     * @return Devolve uma ListRecords.
-     */
+   
     private ListRecords createRecord() {
         ListRecords list = new ListRecords("Running");
 
@@ -85,7 +85,7 @@ public class Running extends Outdoor implements Distance, RecordsActivity, Seria
         Record rec3km = new TimePerDistance("3 km", 3, this.distance, this.getTimeSpent());
         Record rec10km = new TimePerDistance("10 km", 10, this.distance, this.getTimeSpent());
         Record rechalfMarathon = new TimePerDistance("Half Marathon km", 21.097494, this.distance, this.getTimeSpent());
-		
+
         list.addRecord(recCooper);
         list.addRecord(rec1hour);
         list.addRecord(rec1km);
@@ -98,7 +98,6 @@ public class Running extends Outdoor implements Distance, RecordsActivity, Seria
     }
 
     ////////////toString equals clone
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -109,16 +108,26 @@ public class Running extends Outdoor implements Distance, RecordsActivity, Seria
     }
 
     @Override
-    public boolean equals(Object a){
-        if(this == a)
+    public boolean equals(Object a) {
+        if (this == a) {
             return true;
-        if(a == null || this.getClass() != a.getClass())
+        }
+        if (a == null || this.getClass() != a.getClass()) {
             return false;
+        }
         Running act = (Running) a;
-        return  ( super.equals(act)
-                && this.distance==act.getDistance());
+        return (super.equals(act)
+                && this.distance == act.getDistance());
     }
-        
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 53 * hash + (int) (Double.doubleToLongBits(this.distance) ^ (Double.doubleToLongBits(this.distance) >>> 32));
+        hash = 53 * hash + Objects.hashCode(this.recs);
+        return hash;
+    }
+
     @Override
     public Running clone() {
         return new Running(this);

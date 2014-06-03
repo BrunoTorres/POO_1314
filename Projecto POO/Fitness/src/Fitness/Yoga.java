@@ -4,7 +4,7 @@ import java.util.GregorianCalendar;
 import java.io.Serializable;
 
 /**
- * Actividade Aerobics.
+ * Actividade Yoga.
  * 
  * @author Bruno Pereira
  * @author João Mano
@@ -76,4 +76,10 @@ public class Yoga extends Indoor implements Serializable
      public Yoga clone(){
         return new Yoga(this);
     } 
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
 }

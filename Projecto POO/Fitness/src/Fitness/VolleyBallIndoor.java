@@ -94,6 +94,14 @@ public class VolleyBallIndoor extends Indoor implements UserVs, Serializable
     }
 
     @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 23 * hash + this.myScore;
+        hash = 23 * hash + this.opScore;
+        return hash;
+    }
+
+    @Override
      public VolleyBallIndoor clone(){
         return new VolleyBallIndoor(this);
     } 

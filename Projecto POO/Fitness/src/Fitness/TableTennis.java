@@ -94,6 +94,14 @@ public class TableTennis extends Indoor implements UserVs, Serializable
     }
 
     @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 59 * hash + this.myScore;
+        hash = 59 * hash + this.opScore;
+        return hash;
+    }
+
+    @Override
      public TableTennis clone(){
         return new TableTennis(this);
     }

@@ -112,6 +112,13 @@ public class Swimming extends Indoor implements Distance, RecordsActivity, Seria
     }
 
     @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.distance) ^ (Double.doubleToLongBits(this.distance) >>> 32));
+        return hash;
+    }
+
+    @Override
      public Swimming clone(){
         return new Swimming(this);
     }

@@ -3,7 +3,7 @@ package Fitness;
 import java.io.Serializable;
 
 /**
- *  Classe abstracta de recordes.
+ * Classe abstracta de recordes.
  *
  * @author Bruno Pereira
  * @author João Mano
@@ -13,56 +13,61 @@ import java.io.Serializable;
 public abstract class Record implements Serializable {
 
     private String name;
-    
+
     /**
      * Construtor vazio.
      */
-    public Record(){
+    public Record() {
         this.name = "";
     }
-    
+
     /**
      * Construtor parametrizado.
+     *
      * @param name - Nome do Recorde.
      */
-    public Record(String name){
+    public Record(String name) {
         this.name = name;
     }
 
     /**
      * Construtor de copia.
+     *
      * @param stat - Instancia de Record
      */
     public Record(Record stat) {
-      this.name = stat.getName();
-  }
-  
-    /**
-     * Método que devolve o nome do recorde.
-     * @return Nome, String.
-     */
-   public String getName() {
-      return name;
-  }
+        this.name = stat.getName();
+    }
 
     /**
-    * Verifica se o recorde existe.
-    * @return True para vazio, False caso contrario.
-    */
+     * Método que devolve o nome do recorde.
+     *
+     * @return Nome, String.
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Método que verifica se o recorde existe.
+     *
+     * @return True para vazio, False caso contrario.
+     */
     public abstract boolean isEmpty();
 
     /**
      * Método que altera o tempo, caso o parâmetro recebido seja menor que o tempo da instancia.
+     *
      * @param act-Instancia Record.
      */
     public abstract void update(Record act);
 
     @Override
-    public String toString(){
+    public String toString() {
         StringBuilder sb = new StringBuilder();
         //sb.append("Nome: ").append("\n");
         sb.append(this.name).append(":\n");
-        return sb.toString();      
+        return sb.toString();
     }
 
     @Override

@@ -31,7 +31,7 @@ public abstract class Activity implements Serializable {
     }
 
     /**
-     * Construtor
+     * Construtor parametrizado
      *
      * @param name Nome da actividade.
      * @param date Data da actividade.
