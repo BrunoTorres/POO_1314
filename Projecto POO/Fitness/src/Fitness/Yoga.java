@@ -4,26 +4,28 @@ import java.util.GregorianCalendar;
 import java.io.Serializable;
 
 /**
- * Write a description of class Yoga here.
+ * Actividade Aerobics.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public class Yoga extends Indoor implements Serializable
 {
     
     /**
-     *
+     * Construtor vazio.
      */
     public Yoga(){
         super();
     }
 
     /**
-     *
-     * @param name
-     * @param date
-     * @param timeSpent
+     * Construtor parametrizado.
+     * @param name Nome da actividade.
+     * @param date  Data da realização da actividade.
+     * @param timeSpent Tempo gasto em minutos.
      */
     public Yoga(String name, GregorianCalendar date, double timeSpent){
         super(name,date,timeSpent);
@@ -32,8 +34,8 @@ public class Yoga extends Indoor implements Serializable
     }
 
     /**
-     *
-     * @param tb
+     * Construtor de cópia.
+     * @param tb Recebe instância de Yoga.
      */
     public Yoga(Yoga tb){
         super(tb);
@@ -50,7 +52,7 @@ public class Yoga extends Indoor implements Serializable
     
     ////////////toString equals clone
     
-    
+    @Override
      public String toString(){
         StringBuilder sb=new StringBuilder();
         sb.append(super.toString());
