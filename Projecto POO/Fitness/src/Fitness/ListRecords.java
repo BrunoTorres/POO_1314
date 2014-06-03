@@ -125,7 +125,7 @@ public class ListRecords implements Serializable {
         if((o==null) ||(o.getClass() != this.getClass()))
             return false;
         ListRecords list=(ListRecords)o;
-        return (this.name==list.getName() &&
+        return (this.name.equals(list.getName()) &&
                 this.recs.equals(list.getList()));
     }
     

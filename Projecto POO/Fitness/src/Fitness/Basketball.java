@@ -2,7 +2,6 @@ package Fitness;
 
 import java.util.GregorianCalendar;
 import java.io.Serializable;
-import java.util.Arrays;
 
 /**
  * Classe da actividade Basketeball

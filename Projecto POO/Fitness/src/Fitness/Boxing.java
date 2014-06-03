@@ -61,7 +61,7 @@ public class Boxing extends Indoor implements UserVs, Serializable
 
     /**
      *
-     * @return int Inteiro dos pontos recebidos
+     * @return int- Inteiro dos pontos recebidos
      */
     @Override
     public int getOpScore() {

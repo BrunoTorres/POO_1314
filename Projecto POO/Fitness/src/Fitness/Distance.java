@@ -2,20 +2,25 @@ package Fitness;
 
 /**
  *
- * @author Bruno
+ *  Interface
+ * 
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public interface Distance
 {
   
     /**
      *
-     * @return
+     * @return distancia
      */
     double getDistance();
 
     /**
      *
-     * @param distance
+     * @param distance Altera distancia
      */
     void setDistance(double distance);
     

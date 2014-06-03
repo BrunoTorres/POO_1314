@@ -23,11 +23,11 @@ public class Admin extends Person implements Serializable
   }
   
     /**
-     * Construtor
+     * Construtor parametrizado 
      * @param email Email 
-     * @param pass Palavra passe 
+     * @param pass Palavra-passe 
      * @param name Nome 
-     * @param gender Genero 
+     * @param gender Género 
      * @param date Data de Nascimento
      */
     public Admin(String email,String pass,String name,char gender,GregorianCalendar date){
@@ -36,7 +36,7 @@ public class Admin extends Person implements Serializable
   
     /**
      * Construtor de cópia
-     * @param admin 
+     * @param admin Recebe uma distancia de Admin,
      */
     public Admin(Admin admin){
       super(admin.getEmail(), admin.getPassword(), admin.getName(), admin.getGender(), admin.getDate());

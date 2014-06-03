@@ -57,7 +57,7 @@ public class Cycling extends Outdoor implements Distance, RecordsActivity, Seria
 
     /**
      *
-     * @return
+     * @return int -Distancia feita
      */
     @Override
     public double getDistance() {
@@ -66,7 +66,7 @@ public class Cycling extends Outdoor implements Distance, RecordsActivity, Seria
 
     /**
      *
-     * @param distance
+     * @param distance -Altera a distancia feita
      */
     @Override
     public void setDistance(double distance) {
@@ -81,8 +81,9 @@ public class Cycling extends Outdoor implements Distance, RecordsActivity, Seria
 
     /**
      *
-     * @return
+     * @return Lista de records
      */
+    @Override
     public ListRecords getListRecords() {
        return this.recs.clone();
     }
@@ -110,6 +111,7 @@ public class Cycling extends Outdoor implements Distance, RecordsActivity, Seria
      ////////////toString equals clone
     
     
+    @Override
      public String toString(){
         StringBuilder sb=new StringBuilder();
         sb.append(super.toString());
@@ -128,6 +130,13 @@ public class Cycling extends Outdoor implements Distance, RecordsActivity, Seria
         return  ( super.equals(act)
                 && this.distance==act.getDistance());
         
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 89 * hash + (int) (Double.doubleToLongBits(this.distance) ^ (Double.doubleToLongBits(this.distance) >>> 32));
+        return hash;
     }
 
     @Override

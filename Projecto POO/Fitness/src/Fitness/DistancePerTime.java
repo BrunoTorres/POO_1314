@@ -4,7 +4,11 @@ import java.io.Serializable;
 
 /**
  *
- * @author Bruno
+ * 
+ * @author Bruno Pereiras
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public final class DistancePerTime extends Record implements Serializable{
 
@@ -12,7 +16,7 @@ public final class DistancePerTime extends Record implements Serializable{
     private double distance;
 
     /**
-     *
+     *Construtor vazio
      */
     public DistancePerTime(){
         super();
@@ -22,10 +26,10 @@ public final class DistancePerTime extends Record implements Serializable{
 
     /**
      *
-     * @param name
-     * @param recordTime
-     * @param distance
-     * @param time
+     * @param name Nome do recorde
+     * @param recordTime Tempo do recorde
+     * @param distance   Distancia do recorde
+     * @param time   Tempo feito
      */
     public DistancePerTime(String name, double recordTime,double distance,double time){
         super(name);
@@ -38,7 +42,7 @@ public final class DistancePerTime extends Record implements Serializable{
      * @param stat
      */
     public DistancePerTime(DistancePerTime stat){
-        super(stat);
+        super(stat.getName());
         this.recordTime = stat.getRecordTime();
         this.distance = stat.getDistance();
     }
@@ -65,7 +69,7 @@ public final class DistancePerTime extends Record implements Serializable{
      */
     @Override
     public boolean isEmpty(){
-        return (this.distance != 0.0);
+        return (this.distance == 0.0);
     }
 
     /**

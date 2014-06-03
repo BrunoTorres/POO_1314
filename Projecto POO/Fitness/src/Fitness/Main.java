@@ -85,7 +85,11 @@ public class Main {
         
        //Activity act3=um.createActivity("Swimming");   
         Activity actcy = new Cycling("cy", date2, 120, 20, "chuva");
-        Activity actc = new Cycling("cyy", date2, 60,100, "chuva"); 
+        Activity actc = new Cycling("cyy", date2, 60,100, "chuva");
+        
+        
+        Activity actbad1 = new Badminton("cy", date2,155, 10, 0);
+        Activity actbad2 = new Badminton("cyy", date2,155, 50,20);
        //u.addActivity(act, "Running");
        //u.addActivity(act1, "Running");
        //u.addActivity(act2, "Running");
@@ -109,7 +113,11 @@ public class Main {
         Activity act11 = new MountainBiking("MountainBiking", date3,20, 2, 0.1, "chuva");
         Activity act12 = new MountainBiking("MountainBiking",date3, 100, 50, 0.2,"chuva");
         Activity act21 = new MountainBiking("MountainBiking", date3, 500, 60,1, "chuva");
-        
+       u1.addActivity(actbad1, "Badminton");
+       u1.addActivity(actbad2, "Badminton");
+       
+       
+       
        u1.addActivity(act11, "MountainBiking");
        u1.addActivity(act12, "MountainBiking");
        u1.addActivity(act21, "MountainBiking");   
@@ -156,12 +164,12 @@ public class Main {
        e1.addUser(u1);
        e1.addUser(u2);
        e1.addUser(u3);
-       //um.simulaEvent(e1, "Chuva com ventos fortes", 29);
+       um.simulaEvent(e1, "Chuva com ventos fortes", 29);
        
        //Event e= um.getEventByName("calhaus corrida");
        
        
-       System.out.println(act.getCalories());
+       //System.out.println(act.getCalories());
        /////////////////////////////////////////////
        //AMIGOS//
       // User amigo=um.getUserByEmail("user3@gmail.com");
@@ -171,7 +179,7 @@ public class Main {
           // System.out.println("sim existe \n");
          //  um.acceptFriend(u,"user3@gmail.com");
        //}
-      // for(String s :u2.getRecords().keySet())
+      //for(String s :u1.getRecords().keySet())
         //System.out.println(u2.getRecords().get(s).toString());
        
        

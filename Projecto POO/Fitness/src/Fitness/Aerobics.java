@@ -4,7 +4,7 @@ import java.util.GregorianCalendar;
 import java.io.Serializable;
 
 /**
- * Classe da actividade Aerobica
+ * Actividade Aerobics
  * 
  * @author Bruno Pereira
  * @author João Mano
@@ -22,7 +22,7 @@ public class Aerobics extends Indoor implements Serializable
     }
 
     /**
-     *
+     * Construtor parametrizado 
      * @param name Nome da actividade
      * @param date  Data da realização da actividade
      * @param timeSpent Tempo gasto em minutos
@@ -35,7 +35,7 @@ public class Aerobics extends Indoor implements Serializable
     /**
      *
      * Construtor de cópia
-     * @param tb Uma actividade Aerobics
+     * @param tb Recebe instância de Aerobics
      */
     public Aerobics(Aerobics tb){
         super(tb);
