@@ -42,7 +42,7 @@ public class Boxing extends Indoor implements UserVs, Serializable
 
     /**
      * Construtor de cópia
-     * @param tb  Recebe uma instância Boxing
+     * @param tb - instância de Boxing
      */
     public Boxing(Boxing tb){
         super(tb);

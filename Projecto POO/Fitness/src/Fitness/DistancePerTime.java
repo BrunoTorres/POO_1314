@@ -3,7 +3,7 @@ package Fitness;
 import java.io.Serializable;
 
 /**
- *
+ * Classe que define os recordes de distancia por tempo.
  * 
  * @author Bruno Pereiras
  * @author João Mano
@@ -25,11 +25,11 @@ public final class DistancePerTime extends Record implements Serializable{
     }
 
     /**
-     *
-     * @param name Nome do recorde
-     * @param recordTime Tempo do recorde
-     * @param distance   Distancia do recorde
-     * @param time   Tempo feito
+     * Construtor parametrizado.
+     * @param name-Nome do recorde
+     * @param recordTime-Tempo do recorde
+     * @param distance-Distancia do recorde
+     * @param time-Tempo feito
      */
     public DistancePerTime(String name, double recordTime,double distance,double time){
         super(name);
@@ -38,8 +38,8 @@ public final class DistancePerTime extends Record implements Serializable{
     }
 
     /**
-     *
-     * @param stat
+     * Construtor de cópia
+     * @param stat -instância de DistancePerTime
      */
     public DistancePerTime(DistancePerTime stat){
         super(stat.getName());
@@ -48,50 +48,41 @@ public final class DistancePerTime extends Record implements Serializable{
     }
 
     /**
-     *
-     * @return
+     * Método que devolve a distancia.
+     * @return double,distancia.
      */
     public double getDistance(){
         return this.distance;
     }
 
     /**
-     *
-     * @return
+     * Método que devolve o tempo recorde.
+     * @return double,recorde.
      */
     public double getRecordTime(){
         return this.recordTime;
     }
 
-    /**
-     *
-     * @return
-     */
+    
     @Override
     public boolean isEmpty(){
         return (this.distance == 0.0);
     }
 
     /**
-     *
-     * @param act
+     * Método que altera a distancia,caso o parâmetro recebido seja maior que a distancia da instancia.
+     * @param act-Instancia Record.
      */
+    @Override
     public void update(Record act){
         DistancePerTime a=(DistancePerTime)act;
         if (this.distance < a.distance)
             this.distance=a.getDistance();
-
-        
         
     }
 
-    /**
-     *
-     * @param time
-     * @param distance
-     * @return
-     */
-    public double setStatistic(double time, double distance){
+  
+    private double setStatistic(double time, double distance){
         double div=0;
         if(!(time < this.recordTime)) {
             div = this.recordTime / time;

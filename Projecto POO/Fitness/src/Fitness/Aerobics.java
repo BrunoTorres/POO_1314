@@ -35,7 +35,7 @@ public class Aerobics extends Indoor implements Serializable
     /**
      *
      * Construtor de cópia
-     * @param tb Recebe instância de Aerobics
+     * @param tb-instância de Aerobics
      */
     public Aerobics(Aerobics tb){
         super(tb);

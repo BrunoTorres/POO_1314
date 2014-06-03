@@ -6,13 +6,17 @@ import java.util.GregorianCalendar;
 import java.util.TreeSet;
 
 /**
- *
- * @author Bruno
+ * Classe abstraía para todos os eventos.
+ * 
+ * @author Bruno Pereiras
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public abstract class Event implements Serializable{
 
     private String name;
-    private String tipoActivity;                //running ....  passar os tipos "Running" em trail e assim?!
+    private String tipoActivity;                
     private String location;
     private int maxParticipants;
     private int participants;
@@ -25,7 +29,7 @@ public abstract class Event implements Serializable{
     private TreeSet<Simulacao> simula;
 
     /**
-     *
+     * Construtor vazio.
      */
     public Event() {
         this.name = "";
