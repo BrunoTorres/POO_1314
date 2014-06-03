@@ -107,9 +107,7 @@ public class Badminton extends Indoor implements UserVs, Serializable {
     public Badminton clone() {
         return new Badminton(this);
     }
-<<<<<<< HEAD
+
 
 }
-=======
-}
->>>>>>> df68f2e120e3feabaf75a405ada9045b1a58fe61
+
