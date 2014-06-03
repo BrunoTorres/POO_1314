@@ -3,17 +3,21 @@ package Fitness;
 import java.io.Serializable;
 
 /**
- *
- * @author Bruno
+ * Classe que define os recordes de distancia por tempo.
+ * 
+ * @author Bruno Pereiras
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public final class TimePerDistance extends Record implements Serializable {
 
     private double recordDistance;
     private double time;
 
-    /**
-     *
-     */
+    /** 
+     * Construtor vazio.
+     */ 
     public TimePerDistance() {
         super();
         this.recordDistance = 0.0;
@@ -22,10 +26,12 @@ public final class TimePerDistance extends Record implements Serializable {
 
     /**
      *
-     * @param name
-     * @param recordDistance
-     * @param myDistance
-     * @param myTime
+     * Construtor parametrizado.
+     *
+     * @param name - Nome do recorde.
+     * @param recordDistance - Distancia do recorde.
+     * @param myDistance - Distancia feita.
+     * @param myTime - Tempo feito.
      */
     public TimePerDistance(String name, double recordDistance, double myDistance, double myTime) {
         super(name);
@@ -33,9 +39,9 @@ public final class TimePerDistance extends Record implements Serializable {
         this.setStatistic(myDistance, myTime);
     }
 
-    /**
-     *
-     * @param stat
+   /**
+     * Construtor de cópia
+     * @param stat - instância de TimePerDistance.
      */
     public TimePerDistance(TimePerDistance stat) {
         super(stat);
@@ -44,25 +50,21 @@ public final class TimePerDistance extends Record implements Serializable {
     }
 
     /**
-     *
-     * @return
+     * Método que devolve o tempo em minutos.
+     * @return double,distancia.
      */
     public double getTime() {
         return this.time;
     }
 
     /**
-     *
-     * @return
+     * Método que devolve a distancia do recorde em km.
+     * @return double,distancia.
      */
     public double getRecordDistance() {
         return this.recordDistance;
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public boolean isEmpty() {
         return (this.time != 0.0);
@@ -73,7 +75,7 @@ public final class TimePerDistance extends Record implements Serializable {
      * @param distance
      * @param time
      */
-    public void setStatistic(double distance, double time) {
+    private void setStatistic(double distance, double time) {
         double div;
         if (!(distance < this.recordDistance)) {
             div = this.recordDistance / distance;
@@ -82,8 +84,8 @@ public final class TimePerDistance extends Record implements Serializable {
     }
 
     /**
-     *
-     * @param act
+     * Método que altera o tempo, caso o parâmetro recebido seja menor que o tempo da instancia.
+     * @param act-Instancia Record.
      */
     @Override
     public void update(Record act) {
@@ -91,7 +93,6 @@ public final class TimePerDistance extends Record implements Serializable {
         if (this.time < a.getTime()) {
             this.time = a.getTime();
         }
-
     }
 
     @Override
@@ -113,12 +114,10 @@ public final class TimePerDistance extends Record implements Serializable {
         } else sb.append("Sem recorde").append("\n");
 
         return sb.toString();
-
     }
 
     @Override
     public TimePerDistance clone() {
         return new TimePerDistance(this);
     }
-
 }

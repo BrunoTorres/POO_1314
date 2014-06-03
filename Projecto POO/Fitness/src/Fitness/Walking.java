@@ -43,7 +43,7 @@ public class Walking extends Outdoor implements Distance, RecordsActivity, Seria
 
     /**
      * Construtor de cópia.
-     * @param tb - instancia de Acivity
+     * @param tb - instancia de Walking.
      */
     public Walking(Walking tb){
         super(tb);

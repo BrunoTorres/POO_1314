@@ -4,10 +4,12 @@ import java.util.GregorianCalendar;
 import java.io.Serializable;
 
 /**
- * Write a description of class Snowboarding here.
+ * Actividade Snowboarding.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public class Snowboarding extends Outdoor  implements Distance, VerticalDistance, Serializable
 {
@@ -15,7 +17,7 @@ public class Snowboarding extends Outdoor  implements Distance, VerticalDistance
     private double verticaldistance;
 
     /**
-     *
+     * Construtor vazio.
      */
     public Snowboarding(){
         super();
@@ -23,25 +25,24 @@ public class Snowboarding extends Outdoor  implements Distance, VerticalDistance
 
     /**
      *
-     * @param name
-     * @param date
-     * @param timeSpent
-     * @param distance
-     * @param verticaldistance
-     * @param weather
+     * Construtor parametrizado.
+     * @param name - Nome da actividade.
+     * @param date - Data da realização da actividade.
+     * @param timeSpent - Tempo gasto em minutos.
+     * @param distance - Distancia.
+     * @param verticaldistance - Diferença entre a maior e a menor altura (valor absoluto).
+     * @param weather - Clima.
      */
     public Snowboarding(String name, GregorianCalendar date, double timeSpent,double distance,
-            double verticaldistance,String weather){
+        double verticaldistance,String weather){
         super(name,date,timeSpent,weather);
         this.distance=distance;
         this.verticaldistance=verticaldistance;
-        
-        
     }
 
     /**
-     *
-     * @param tb
+     * Construtor de cópia.
+     * @param tb - instancia de Snowboarding.
      */
     public Snowboarding(Snowboarding tb){
         super(tb);
@@ -49,37 +50,21 @@ public class Snowboarding extends Outdoor  implements Distance, VerticalDistance
         this.verticaldistance=tb.getVerticalDistance();
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public double getDistance() {
        return this.distance;
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public double getVerticalDistance() {
         return this.verticaldistance;
     }
 
-    /**
-     *
-     * @param distance
-     */
     @Override
     public void setDistance(double distance) {
        this.distance=distance;
     }
 
-    /**
-     *
-     * @param verticaldistance
-     */
     @Override
     public void setVerticalDistance(double verticaldistance) {
         this.verticaldistance=verticaldistance;
@@ -92,12 +77,8 @@ public class Snowboarding extends Outdoor  implements Distance, VerticalDistance
       this.setActivityCalories(calories);    
     }
    
-   
-   
-   
      ////////////toString equals clone
-    
-    
+    @Override
      public String toString(){
         StringBuilder sb=new StringBuilder();
         sb.append(super.toString());
@@ -118,12 +99,10 @@ public class Snowboarding extends Outdoor  implements Distance, VerticalDistance
         return  ( super.equals(act)
                 && this.distance==act.getDistance()
                 && this.verticaldistance==act.getVerticalDistance());
-        
     }
 
     @Override
      public Snowboarding clone(){
         return new Snowboarding(this);
     }
-
 }
