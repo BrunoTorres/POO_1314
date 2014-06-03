@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package Fitness;
 
 import java.util.GregorianCalendar;
@@ -11,7 +5,12 @@ import java.util.TreeSet;
 import java.io.Serializable;
 /**
  *
- * @author Bruno
+ * .Classe Trail.
+ * 
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public class Trail extends Event implements Serializable{
     
@@ -19,7 +18,7 @@ public class Trail extends Event implements Serializable{
     double distance;
   
     /**
-     *
+     * Construtor vazio.
      */
     public Trail() {
         super();
@@ -27,17 +26,18 @@ public class Trail extends Event implements Serializable{
 
     /**
      *
-     * @param name
-     * @param tipoActivity
-     * @param location
-     * @param maxParticipants
-     * @param participants
-     * @param deadline
-     * @param date
-     * @param duration
-     * @param participantsList
-     * @param ranking
-     * @param distance
+     * Construtor parametrizado.
+     * @param name - Nome do Trail.
+     * @param tipoActivity - Tipo de Activity.
+     * @param location - Nome da localidade do Trail.
+     * @param maxParticipants - Numero de participantes maximo.
+     * @param participants - Numero de participantes inscritos.
+     * @param deadline - Data limite de inscriçao.
+     * @param date - Data do Trail.
+     * @param duration - Duraçao.
+     * @param participantsList - Lista de participantes inscritos.
+     * @param ranking - Classificaçao final do Trail.
+     * @param distance - Distancia.
      */
     public Trail(String name, String tipoActivity, String location, int maxParticipants, int participants,
             GregorianCalendar deadline, GregorianCalendar date, double duration, TreeSet<User> participantsList,
@@ -49,16 +49,17 @@ public class Trail extends Event implements Serializable{
 
     /**
      *
-     * @param name
-     * @param tipoActivity
-     * @param location
-     * @param maxParticipants
-     * @param deadline
-     * @param date
-     * @param duration
-     * @param participantsList
-     * @param ranking
-     * @param distance
+     * Construtor parametrizado.
+     * @param name - Nome do Trail.
+     * @param tipoActivity - Tipo de Activity.
+     * @param location - Nome da localidade do Trail.
+     * @param maxParticipants - Numero de participantes maximo.
+     * @param deadline - Data limite de inscriçao.
+     * @param date - Data do Trail.
+     * @param duration - Duraçao.
+     * @param participantsList - Lista de participantes inscritos.
+     * @param ranking - Classificaçao final do Trail.
+     * @param distance - Distancia.
      */
     public Trail(String name, String tipoActivity, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date,
             double duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking,double distance) {
@@ -68,13 +69,13 @@ public class Trail extends Event implements Serializable{
     }
 
     /**
-     *
-     * @param name
-     * @param location
-     * @param maxParticipants
-     * @param deadline
-     * @param date
-     * @param distance
+     * Construtor parametrizado.
+     * @param name - Nome do Trail.
+     * @param location - Nome da localidade do Trail.
+     * @param maxParticipants - Numero de participantes maximo.
+     * @param deadline - Data limite de inscriçao.
+     * @param date - Data do Trail.
+     * @param distance - Distancia.
      */
     public Trail(String name, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date,double distance) {
 
@@ -83,8 +84,8 @@ public class Trail extends Event implements Serializable{
     }
 
     /**
-     *
-     * @param m
+     * Construtor de cópia.
+     * @param m - Instancia de Trail.
      */
     public Trail(Trail m) {
         super(m);
@@ -92,8 +93,8 @@ public class Trail extends Event implements Serializable{
     }
 
     /**
-     *
-     * @return
+     * Método que devolve a distancia realizada na actividade.
+     * @return Devolve um inteiro.
      */
     public double getDistance() {
         return this.distance;

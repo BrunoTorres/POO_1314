@@ -4,10 +4,12 @@ import java.util.GregorianCalendar;
 import java.io.Serializable;
 
 /**
- * Write a description of class Tennis here.
+ * Actividade Tennis.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public class Tennis extends Outdoor implements UserVs, Serializable
 { 
@@ -15,7 +17,7 @@ public class Tennis extends Outdoor implements UserVs, Serializable
     private int opScore;
     
     /**
-     *
+     * Construtor vazio.
      */
     public Tennis(){
         super();
@@ -23,12 +25,13 @@ public class Tennis extends Outdoor implements UserVs, Serializable
 
     /**
      *
-     * @param name
-     * @param date
-     * @param timeSpent
-     * @param myScore
-     * @param opScore
-     * @param weather
+     *  Construtor parametrizado.
+     * @param name - Nome da actividade.
+     * @param date - Data da realização da actividade.
+     * @param timeSpent - Tempo gasto em minutos.
+     * @param myScore - Pontos feitos.
+     * @param opScore - Pontos recebidos.
+     * @param weather - clima.
      */
     public Tennis(String name, GregorianCalendar date, double timeSpent,int myScore,int opScore,String weather){
         super(name,date,timeSpent,weather);
@@ -37,8 +40,8 @@ public class Tennis extends Outdoor implements UserVs, Serializable
     }
 
     /**
-     *
-     * @param tb
+     * Construtor de copia.
+     * @param tb - Instância de Tennis.
      */
     public Tennis(Tennis tb){
         super(tb);
@@ -46,19 +49,11 @@ public class Tennis extends Outdoor implements UserVs, Serializable
         this.opScore=tb.getOpScore();
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public int getMyScore() {
       return this.myScore;
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public int getOpScore() {
         return this.opScore;
@@ -73,7 +68,7 @@ public class Tennis extends Outdoor implements UserVs, Serializable
     
     ////////////toString equals clone
     
-    
+    @Override
      public String toString(){
         StringBuilder sb=new StringBuilder();
         sb.append(super.toString());
@@ -83,8 +78,6 @@ public class Tennis extends Outdoor implements UserVs, Serializable
         sb.append(this.opScore).append("\n");
         return sb.toString();      
     }
-    
-    
     
     @Override
     public boolean equals(Object a){
@@ -96,14 +89,10 @@ public class Tennis extends Outdoor implements UserVs, Serializable
         return  ( super.equals(act)
                 && this.myScore==act.getMyScore()
                 && this.opScore==act.getOpScore());
-        
     }
 
     @Override
      public Tennis clone(){
         return new Tennis(this);
     }
-    
-    
-    
 }

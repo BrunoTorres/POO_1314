@@ -4,10 +4,12 @@ import java.util.GregorianCalendar;
 import java.io.Serializable;
 
 /**
- * Write a description of class VolleyBallBeach here.
+ * Actividade VolleyBallBeach.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public class VolleyBallBeach extends Outdoor implements UserVs, Serializable
 {
@@ -16,7 +18,7 @@ public class VolleyBallBeach extends Outdoor implements UserVs, Serializable
    private int opScore;
     
     /**
-     *
+     * Construtor vazio.
      */
     public VolleyBallBeach(){
         super();
@@ -24,12 +26,13 @@ public class VolleyBallBeach extends Outdoor implements UserVs, Serializable
 
     /**
      *
-     * @param name
-     * @param date
-     * @param timeSpent
-     * @param myScore
-     * @param opScore
-     * @param weather
+     *  Construtor parametrizado.
+     * @param name - Nome da actividade.
+     * @param date - Data da realização da actividade.
+     * @param timeSpent - Tempo gasto em minutos.
+     * @param myScore - Pontos feitos.
+     * @param opScore - Pontos recebidos.
+     * @param weather - clima.
      */
     public VolleyBallBeach(String name, GregorianCalendar date, double timeSpent,int myScore,int opScore,String weather){
         super(name,date,timeSpent,weather);
@@ -38,8 +41,8 @@ public class VolleyBallBeach extends Outdoor implements UserVs, Serializable
     }
 
     /**
-     *
-     * @param tb
+     * Construtor de copia.
+     * @param tb - Instância de VolleyBallBeach.
      */
     public VolleyBallBeach(VolleyBallBeach tb){
         super(tb);
@@ -68,7 +71,7 @@ public class VolleyBallBeach extends Outdoor implements UserVs, Serializable
     
     ////////////toString equals clone
     
-    
+    @Override
      public String toString(){
         StringBuilder sb=new StringBuilder();
         sb.append(super.toString());
@@ -91,14 +94,10 @@ public class VolleyBallBeach extends Outdoor implements UserVs, Serializable
         return  ( super.equals(act)
                 && this.myScore==act.getMyScore()
                 && this.opScore==act.getOpScore());
-        
     }
 
     @Override
      public VolleyBallBeach clone(){
         return new VolleyBallBeach(this);
-    }
-    
-    
-   
+    }   
 }

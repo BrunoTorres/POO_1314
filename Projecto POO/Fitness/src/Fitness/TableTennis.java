@@ -5,7 +5,12 @@ import java.io.Serializable;
 
 /**
  *
- * @author Bruno
+ * Actividade TableTennis.
+ * 
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public class TableTennis extends Indoor implements UserVs, Serializable
 {
@@ -13,7 +18,7 @@ public class TableTennis extends Indoor implements UserVs, Serializable
     private int opScore;
     
     /**
-     *
+     * Construtor vazio.
      */
     public TableTennis(){
         super();
@@ -21,11 +26,12 @@ public class TableTennis extends Indoor implements UserVs, Serializable
 
     /**
      *
-     * @param name
-     * @param date
-     * @param timeSpent
-     * @param myScore
-     * @param opScore
+     *  Construtor parametrizado.
+     * @param name - Nome da actividade.
+     * @param date - Data da realização da actividade.
+     * @param timeSpent - Tempo gasto em minutos.
+     * @param myScore - Pontos feitos.
+     * @param opScore - Pontos recebidos.
      */
     public TableTennis(String name, GregorianCalendar date, double timeSpent,int myScore,int opScore){
         super(name,date,timeSpent);
@@ -34,8 +40,8 @@ public class TableTennis extends Indoor implements UserVs, Serializable
     }
 
     /**
-     *
-     * @param tb
+     * Construtor de cópia.
+     * @param tb - Instância de TableTennis.
      */
     public TableTennis(TableTennis tb){
         super(tb);
@@ -43,34 +49,26 @@ public class TableTennis extends Indoor implements UserVs, Serializable
         this.opScore=tb.getOpScore();
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public int getMyScore() {
       return this.myScore;
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public int getOpScore() {
         return this.opScore;
     }
     
     @Override
-    public void setCalories(double peso) {//MET=4
-    double mets=4;
-      double calories=mets*peso*(this.getTimeSpent()/60);
-      this.setActivityCalories(calories);    
+    public void setCalories(double peso) {
+        double mets=4;
+        double calories=mets*peso*(this.getTimeSpent()/60);
+        this.setActivityCalories(calories);    
     }
     
     ////////////toString equals clone
     
-    
+    @Override
      public String toString(){
         StringBuilder sb=new StringBuilder();
         sb.append(super.toString());
@@ -93,13 +91,10 @@ public class TableTennis extends Indoor implements UserVs, Serializable
         return  ( super.equals(act)
                 && this.myScore==act.getMyScore()
                 && this.opScore==act.getOpScore());
-        
     }
 
     @Override
      public TableTennis clone(){
         return new TableTennis(this);
     }
-
-    
 }
