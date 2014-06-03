@@ -16,7 +16,7 @@ public final class DistancePerTime extends Record implements Serializable{
     private double distance;
 
     /**
-     *Construtor vazio
+     * Construtor vazio.
      */
     public DistancePerTime(){
         super();
@@ -26,10 +26,10 @@ public final class DistancePerTime extends Record implements Serializable{
 
     /**
      * Construtor parametrizado.
-     * @param name-Nome do recorde
-     * @param recordTime-Tempo do recorde
-     * @param distance-Distancia do recorde
-     * @param time-Tempo feito
+     * @param name - Nome do recorde.
+     * @param recordTime - Tempo do recorde em minutos.
+     * @param distance - Distancia do recorde em km.
+     * @param time - Tempo feito em minutos.
      */
     public DistancePerTime(String name, double recordTime,double distance,double time){
         super(name);
@@ -39,7 +39,7 @@ public final class DistancePerTime extends Record implements Serializable{
 
     /**
      * Construtor de cópia
-     * @param stat -instância de DistancePerTime
+     * @param stat - instância de DistancePerTime
      */
     public DistancePerTime(DistancePerTime stat){
         super(stat.getName());
@@ -48,7 +48,7 @@ public final class DistancePerTime extends Record implements Serializable{
     }
 
     /**
-     * Método que devolve a distancia.
+     * Método que devolve a distancia em km.
      * @return double,distancia.
      */
     public double getDistance(){
@@ -56,7 +56,7 @@ public final class DistancePerTime extends Record implements Serializable{
     }
 
     /**
-     * Método que devolve o tempo recorde.
+     * Método que devolve o tempo recorde em minutos.
      * @return double,recorde.
      */
     public double getRecordTime(){
@@ -70,7 +70,7 @@ public final class DistancePerTime extends Record implements Serializable{
     }
 
     /**
-     * Método que altera a distancia,caso o parâmetro recebido seja maior que a distancia da instancia.
+     * Método que altera a distancia, caso o parâmetro recebido seja maior que a distancia da instancia.
      * @param act-Instancia Record.
      */
     @Override
@@ -78,10 +78,8 @@ public final class DistancePerTime extends Record implements Serializable{
         DistancePerTime a=(DistancePerTime)act;
         if (this.distance < a.distance)
             this.distance=a.getDistance();
-        
     }
 
-  
     private double setStatistic(double time, double distance){
         double div=0;
         if(!(time < this.recordTime)) {
@@ -108,6 +106,4 @@ public final class DistancePerTime extends Record implements Serializable{
     public DistancePerTime clone(){
         return new DistancePerTime(this);
     }
-
-
 }
