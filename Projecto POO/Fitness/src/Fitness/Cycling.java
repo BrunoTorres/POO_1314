@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 /**
  *
- * Classe da actividade Cycling
+ * Actividade Cycling
  * 
  * @author Bruno Pereira
  * @author João Mano

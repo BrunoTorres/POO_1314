@@ -47,19 +47,13 @@ public class VolleyBallBeach extends Outdoor implements UserVs, Serializable
         this.opScore=tb.getOpScore();
     }
 
-    /**
-     *
-     * @return
-     */
+  
     @Override
     public int getMyScore() {
       return this.myScore;
     }
 
-    /**
-     *
-     * @return
-     */
+  
     @Override
     public int getOpScore() {
         return this.opScore;

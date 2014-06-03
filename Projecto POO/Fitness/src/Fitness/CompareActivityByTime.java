@@ -6,7 +6,7 @@ import java.util.Comparator;
 
 /**
  * Classe comparador
- * Compara Actividades por tempo gasto (ordem decrescente)
+ * Compara Actividades por tempo gasto(ordem decrescente)
  * @author Bruno Pereira
  * @author João Mano
  * @author Miguel Guimarães

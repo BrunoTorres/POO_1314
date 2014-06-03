@@ -49,19 +49,13 @@ public class Badminton extends Indoor implements UserVs, Serializable
         this.opScore=tb.getOpScore();
     }
 
-    /**
-     * Método que devolve os pontos realizados.
-     * @return Devolve um inteiro.
-     */
+  
     @Override
     public int getMyScore() {
       return this.myScore;
     }
 
-    /**
-     * Método que devolve os pontos realizados pelo adversário.
-     * @return Devolve um inteiro.
-     */
+    
     @Override
     public int getOpScore() {
         return this.opScore;

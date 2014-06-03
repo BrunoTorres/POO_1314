@@ -7,7 +7,8 @@ import java.util.Comparator;
 
 
 /**
- * Classe comparador
+ * Classe comparador.
+ * 
  * Compara Actividades por data(ordem decrescente)
  * @author Bruno Pereira
  * @author João Mano

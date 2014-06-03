@@ -17,7 +17,7 @@ public class Basketball extends Indoor implements UserVs, Serializable
     private int opScore;
     
     /**
-     *Construtor vazio
+     *Construtor vazio.
      */
     public Basketball(){
         super();
@@ -39,7 +39,7 @@ public class Basketball extends Indoor implements UserVs, Serializable
 
     /**
       * Construtor de cópia
-     * @param tb Uma actividade Basketball
+     * @param tb Recebe uma instância Basketball
      */
     public Basketball(Basketball tb){
         super(tb);
@@ -47,19 +47,13 @@ public class Basketball extends Indoor implements UserVs, Serializable
         this.opScore=tb.getOpScore();
     }
 
-    /**
-     *
-     * @return int -Inteiro dos pontos feitos
-     */
+  
     @Override
     public int getMyScore() {
       return this.myScore;
     }
 
-    /**
-     *
-     * @return int Inteiro dos pontos recebidos
-     */
+    
     @Override
     public int getOpScore() {
         return this.opScore;

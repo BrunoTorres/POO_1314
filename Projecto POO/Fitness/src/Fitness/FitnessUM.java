@@ -72,8 +72,7 @@ public class FitnessUM implements Serializable{
     
     
     private User getUser(String email){  
-        
-        
+       
         boolean found=false;
         User u=new User();
         Iterator<Person> it=this.userList.iterator();                                         
