@@ -70,7 +70,7 @@ public class Main {
        
        
        //ADICIONAR ACTIVITIES A UM USER
-       User u=um.getUserByEmail("user1@gmail.com");
+      // User u=um.getUserByEmail("user1@gmail.com");
   
        GregorianCalendar date1=new GregorianCalendar(2000,11,2);
        GregorianCalendar date2= new GregorianCalendar(2001,9,3);

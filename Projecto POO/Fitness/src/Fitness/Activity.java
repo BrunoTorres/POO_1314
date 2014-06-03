@@ -6,7 +6,7 @@ import java.util.GregorianCalendar;
 import java.util.Objects;
 
 /**
- * Classe abstracta de actividades. 
+ * Classe abstracta. 
  * 
  * @author Bruno Pereira
  * @author João Mano
@@ -45,7 +45,7 @@ public abstract class Activity implements Serializable {
 
     /**
      * Construtor de cópia da classe
-     * @param a - Objecto do tipo Activity. 
+     * @param a-Objecto Activity.
      */
     public Activity(Activity a) {
         this.name = a.getName();
