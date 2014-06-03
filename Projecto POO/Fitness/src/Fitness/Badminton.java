@@ -4,7 +4,7 @@ import java.util.GregorianCalendar;
 import java.io.Serializable;
 
 /**
- * Classe da actividade Badminton
+ * Actividade Badminton
  * 
  * @author Bruno Pereira
  * @author João Mano
@@ -17,17 +17,18 @@ public class Badminton extends Indoor implements UserVs, Serializable
     private int opScore;
     
     /**
-     *Construtor vazio
+     * Construtor vazio
      */
     public Badminton(){
         super();
     }
 
     /**
+     *  Construtor parametrizado.
      * @param name Nome da actividade
      * @param date  Data da realização da actividade
      * @param timeSpent Tempo gasto em minutos
-     * @param myScore Pontos feitos
+     * @param myScore Pontos feitos 
      * @param opScore Pontos recebidos
      * 
      */
@@ -39,8 +40,8 @@ public class Badminton extends Indoor implements UserVs, Serializable
 
     /**
      *
-     * Construtor de cópia
-     * @param tb Uma actividade Badminton
+     * Construtor de cópia.
+     * @param tb Recebe instância de Badminton.
      */
     public Badminton(Badminton tb){
         super(tb);
@@ -49,8 +50,8 @@ public class Badminton extends Indoor implements UserVs, Serializable
     }
 
     /**
-     *
-     * @return int -Inteiro dos pontos feitos
+     * Método que devolve os pontos realizados.
+     * @return Devolve um inteiro.
      */
     @Override
     public int getMyScore() {
@@ -58,8 +59,8 @@ public class Badminton extends Indoor implements UserVs, Serializable
     }
 
     /**
-     *
-     * @return int Inteiro dos pontos recebidos
+     * Método que devolve os pontos realizados pelo adversário.
+     * @return Devolve um inteiro.
      */
     @Override
     public int getOpScore() {
@@ -67,7 +68,7 @@ public class Badminton extends Indoor implements UserVs, Serializable
     }
     
     @Override
-    public void setCalories(double peso) { //Met=4.5
+    public void setCalories(double peso) { 
       double mets=4.5;
       double calories=mets*peso*(this.getTimeSpent()/60);
       this.setActivityCalories(calories);

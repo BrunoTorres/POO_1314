@@ -6,7 +6,7 @@ import java.util.GregorianCalendar;
 import java.util.Objects;
 
 /**
- * Classe abstracta 
+ * Classe abstracta. 
  * 
  * @author Bruno Pereira
  * @author João Mano
@@ -21,7 +21,7 @@ public abstract class Activity implements Serializable {
     private double calories;
 
     /**
-     * Construtor Vazio
+     * Construtor vazio.
      */
     public Activity() {
         this.name = "";
@@ -55,36 +55,40 @@ public abstract class Activity implements Serializable {
     }
 
     /**
-     * @return Devolve o nome da actividade.
+     * Método que devolve o nome da actividade.
+     * @return Devolve uma string.
      */
     public String getName() {
         return this.name;
     }
 
     /**
-     * @return Devolve a data de quando foi realizada a actividade.
+     * Método que devolve a data de quando foi realizada a actividade. 
+     * @return Devolve um GregorianCalendar.
      */
     public GregorianCalendar getDate() {
         return (GregorianCalendar) this.date.clone();
     }
 
     /**
-     * @return Devolve um inteiro o tempo gasto na actividade em minutos.
+     * Método que devolve o tempo gasto na actividade em minutos.
+     * @return Devolve um double.
      */
     public double getTimeSpent() {
         return this.timeSpent;
     }
 
     /**
-     * @return Devolve um inteiro com o numero de calorias gastos.
+     * Método que devolve o numero de calorias gastos.
+     * @return Devolve um double.
      */
     public double getCalories() {
         return this.calories;
     }
 
     /**
-     * Altera o nome da actividade.
-     * @param name Novo nome para a actividade.
+     * Método para alterar o nome da actividade.
+     * @param name String para o novo nome.
      *
      */
     public void setName(String name) {
@@ -92,13 +96,13 @@ public abstract class Activity implements Serializable {
     }
 
     /**
-     * Define as calorias em função do tipo de actividade,do peso do utilizador e da tempo gasto na actividade.
-     * @param peso Peso do utilizador 
+     * Método que define as calorias em função do tipo de actividade,do peso do utilizador e da tempo gasto na actividade.
+     * @param peso Peso do utilizador. 
      */
     public abstract void setCalories(double peso);
 
     /**
-     * Altera as calorias da actividade
+     * Método que redefine as calorias da actividade
      * @param calories Novo numero para as calorias.
      */
     public void setActivityCalories(double calories) {
