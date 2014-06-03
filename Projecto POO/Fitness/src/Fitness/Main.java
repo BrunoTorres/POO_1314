@@ -76,7 +76,10 @@ public class Main {
        GregorianCalendar date1=new GregorianCalendar(2000,11,2);
        GregorianCalendar date2= new GregorianCalendar(2001,9,3);
        GregorianCalendar date3= new GregorianCalendar(2002,10,4);
+       
        /*
+       
+       da
         Activity act = new MountainBiking("bike", date1, 155, 20, 5, "chuva");
         */
 	   //Activity actcy = new Cycling("cy", date2, 155, 20, "chuva");

@@ -2,9 +2,10 @@ package Fitness;
 
 import java.util.GregorianCalendar;
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
- *
+ * Classe abstracta para todas as actividades que tenham o clima como variável de instancia. 
  * @author Bruno
  */
 public abstract class Outdoor extends Activity implements Serializable
@@ -12,7 +13,7 @@ public abstract class Outdoor extends Activity implements Serializable
     private String weather;
 
     /**
-     *
+     *Construtor vazio
      */
     public Outdoor(){
         super();
@@ -20,11 +21,11 @@ public abstract class Outdoor extends Activity implements Serializable
     }
 
     /**
-     *
-     * @param name
-     * @param date
-     * @param timeSpent
-     * @param weather
+     *  Construtor parametrizado.
+     * @param name- Nome da actividade
+     * @param date-  Data da realização da actividade
+     * @param timeSpent- Tempo gasto em minutos
+     * @param weather -Clima
      */
     public Outdoor(String name, GregorianCalendar date, double timeSpent, String weather){
         super(name, date, timeSpent);
@@ -32,8 +33,8 @@ public abstract class Outdoor extends Activity implements Serializable
     }
 
     /**
-     *
-     * @param act
+     *  Construtor de cópia.
+     * @param act- objecto do tipo Outdoor.
      */
     public Outdoor(Outdoor act){
         super(act);
@@ -41,13 +42,14 @@ public abstract class Outdoor extends Activity implements Serializable
     }
 
     /**
-     *
-     * @return
+     * Método que devolve o clima. 
+     * @return String.
      */
     public String getWeather(){
         return this.weather;
     }
 
+    @Override
     public boolean equals(Object a){
         if(this == a)
             return true;
@@ -58,6 +60,14 @@ public abstract class Outdoor extends Activity implements Serializable
         return ( (super.equals(act)) && (this.weather.equals(act.getWeather())) );
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 97 * hash + Objects.hashCode(this.weather);
+        return hash;
+    }
+
+    @Override
     public  String toString(){
         StringBuilder sb = new StringBuilder();
         sb.append(super.toString());
@@ -65,6 +75,7 @@ public abstract class Outdoor extends Activity implements Serializable
         return sb.toString();
     }
 
+    @Override
     public abstract Outdoor clone();
 
 }

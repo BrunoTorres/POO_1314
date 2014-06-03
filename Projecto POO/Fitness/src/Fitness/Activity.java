@@ -32,9 +32,9 @@ public abstract class Activity implements Serializable {
 
     /**
      * Construtor
-     * @param name Nome da actividade realizada,dado pelo utilizadores. 
-     * @param date Data em que o utilizador realiza a actividade.
-     * @param timeSpent Tempo gasto na actividade, em minutos, pelo utilizador. 
+     * @param name Nome da actividade. 
+     * @param date Data da actividade.
+     * @param timeSpent Tempo gasto na actividade, em minutos. 
      */
     public Activity(String name, GregorianCalendar date, double timeSpent) {
         this.name = name;

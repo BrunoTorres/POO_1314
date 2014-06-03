@@ -2,7 +2,7 @@ package Fitness;
 
 /**
  *
- *  Interface de metodos relacionados com actividades de distancia.
+ *  Interface de métodos relacionados com actividades de distancia.
  * 
  * @author Bruno Pereira
  * @author João Mano
@@ -20,7 +20,7 @@ public interface Distance
 
     /**
      * Método para alterar a distancia da actividade.
-     * @param distance double distancia da actividade.
+     * @param distance - distancia da actividade.
      */
     void setDistance(double distance);
     
