@@ -3,8 +3,8 @@
 \contentsline {subsection}{\numberline {1.1}Actividades}{2}
 \contentsline {subsubsection}{\numberline {1.1.1}Classe abstracta Activity}{3}
 \contentsline {subsubsection}{\numberline {1.1.2}Indoor,Outdoor e actividades desportivas}{3}
-\contentsline {subsubsection}{\numberline {1.1.3}Comparadores e Interfaces}{3}
-\contentsline {subsection}{\numberline {1.2}}{3}
+\contentsline {subsubsection}{\numberline {1.1.3}Comparadores}{3}
+\contentsline {subsection}{\numberline {1.2}Utilizadores}{3}
 \contentsline {subsection}{\numberline {1.3}Classe Abstracta Person}{3}
 \contentsline {subsection}{\numberline {1.4}Eventos}{4}
 \contentsline {subsection}{\numberline {1.5}Classe abstracta Event}{4}
