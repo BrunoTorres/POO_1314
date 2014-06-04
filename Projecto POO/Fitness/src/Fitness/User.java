@@ -25,7 +25,6 @@ public class User extends Person implements Serializable {
 	private String favoriteActivity;
 	private TreeSet<Activity> userActivities;
 	private TreeSet<String> friendsList;
-	private TreeMap<GregorianCalendar, Statistics> stats;
 	private TreeMap<String, ListRecords> records;
 	private TreeSet<String> messageFriend;
 
@@ -178,22 +177,6 @@ public class User extends Person implements Serializable {
 	}
 
 	/**
-	 * Método que devolve um Map de data(GregorianCalendar) para Statistics(onde estão guardadas as estatísticas do utilizador por mês)
-	 *
-	 * @return Map de GregorianCalendar para Statistics.
-	 */
-	public Map<GregorianCalendar, Statistics> getStats() {
-		TreeMap<GregorianCalendar, Statistics> aux = new TreeMap<>(new CompareStatsPerYearAndMonth());
-
-		for (GregorianCalendar key : this.stats.keySet()) {
-			aux.put(key, this.stats.get(key));
-		}
-
-		return aux;
-
-	}
-
-	/**
 	 * Métdo que devolve um Set com as mensgens existentes, cada String corresponde a email de um user que fez um pedido de amizade.
 	 *
 	 * @return Set de String.
@@ -297,18 +280,6 @@ public class User extends Person implements Serializable {
 		} else {
 			Statistics stat = new Statistics(actt.getTimeSpent(), actt.getCalories());
 			this.stats.put(date, stat);
-		}
-
-	}
-
-	private void setStats(Activity act) {
-		GregorianCalendar date = new GregorianCalendar(act.getDate().get(Calendar.YEAR), act.getDate().get(Calendar.MONTH), 0);
-		if (this.stats.containsKey(date)) {
-			updateStat(act);
-			System.out.println("EXISTE DATE");
-		} else {
-			createStat(act);
-			System.out.println("NOVA DATE");
 		}
 
 	}
