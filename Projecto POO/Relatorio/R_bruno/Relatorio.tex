@@ -130,9 +130,18 @@ Para organizar as actividades criaram-se dois tipo de comparadores:
 \end{figure}
 
 ~\\~\\
-Como certos desportos usam
 
+Depois de uma análise às actividades desportivas, ficou claro que para certas actividades se deviam registar distancias e para outras registar pontuações,neste seguimento foram criadas as seguintes interfaces:
 
+\begin{figure}
+
+\end{figure}  
+
+\begin{itemize}
+\item UserVs-Interface de métodos relacionados com pontos(pontos próprios e pontos do adversário)
+\item Distance -Interface de métodos relacionados com actividades de distancia.
+\item VerticalDistance- Interface de métodos relacionados com actividades de distancia vertical
+\end{itemize}
 
 \subsection{Utilizadores}
 Para destiguir utilizadores regulares de administradores criou-se a seguinte estrutura:
@@ -241,9 +250,10 @@ Estas duas classes têm os mesmos métodos, no entanto os métodos \textit{updat
 
 Classe que agrupa todos os recordes de uma actividade. Tem como variáveis:
 \begin{itemize}
-\item \textit{String name} - Aqui o nome simboliza o tipo de actividade(ex: Running);
+\item \textit{String name} - Aqui o nome simboliza o tipo de actividade (Ex: Running, Walking...);
 \item \textit{ArrayList$<$Record$>$ recs} - Lista dos recordes;
 \end{itemize}
+Tem implementado métodos construtores, \textit{getters}, \textit{setters} e ainda um método \textit{updateList()} que aplica a função \textit{update()} a todos os objectos \textit{Record} da lista. (Subsitui na lista original caso recorde da segunda lista seja melhor).
 
 \end{document}
 

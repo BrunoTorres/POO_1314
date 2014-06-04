@@ -2,7 +2,7 @@ package Fitness;
 
 /**
  *
- * Interface de métodos relacionados com actividades de distancia vertical.
+ * Interface de métodos relacionados com pontos(pontos próprios e pontos do adversário)
  *
  * @author Bruno Pereira
  * @author João Mano
