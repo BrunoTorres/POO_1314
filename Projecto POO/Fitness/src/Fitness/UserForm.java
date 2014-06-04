@@ -13,11 +13,13 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.TreeMap;
+import java.util.TreeSet;
 import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.border.BevelBorder;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -45,6 +47,7 @@ public class UserForm extends javax.swing.JFrame {
 		this.allActs = new ArrayList<>(u.getActivities());
 		this.changeActivities("init");
 		this.preencheRunRecords();
+		this.preencheTabAmigos();
 	}
 
 	/**
@@ -303,6 +306,11 @@ public class UserForm extends javax.swing.JFrame {
         cboxRecordSport = new javax.swing.JComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableRecords = new javax.swing.JTable();
+        jPanel8 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tableAmigos = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
         butAddActivity = new javax.swing.JButton();
         butVerPedidos = new javax.swing.JButton();
         butAddAmigo = new javax.swing.JButton();
@@ -913,6 +921,76 @@ public class UserForm extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Recordes", jPanel1);
 
+        jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "SELECIONAR AMIGO"));
+
+        tableAmigos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nome", "Idade", "Email"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableAmigos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane2.setViewportView(tableAmigos);
+
+        jButton1.setText("Ver amigo");
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(44, Short.MAX_VALUE))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(293, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Amigos", jPanel8);
+
         butAddActivity.setText("+ ATIVIDADE");
         butAddActivity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -991,6 +1069,10 @@ public class UserForm extends javax.swing.JFrame {
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
 		//FileOutputStream out = null;
+		this.guardaEstado();
+    }//GEN-LAST:event_formWindowClosing
+
+	private void guardaEstado() {
 		try {
 			FileOutputStream out = new FileOutputStream("data.obj");
 			ObjectOutputStream oout = new ObjectOutputStream(out);
@@ -1000,7 +1082,7 @@ public class UserForm extends javax.swing.JFrame {
 		} catch (IOException ex) {
 			JOptionPane.showMessageDialog(this, ex.getMessage() + " | " + ex.getLocalizedMessage());
 		}
-    }//GEN-LAST:event_formWindowClosing
+	}
 
     private void butAddAmigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAddAmigoActionPerformed
 		SearchFriendForm addAmigo = new SearchFriendForm(this, this.u, this.fit);
@@ -1010,6 +1092,7 @@ public class UserForm extends javax.swing.JFrame {
 
     private void butLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butLogoutActionPerformed
 		this.dispose();
+		this.guardaEstado();
 		LoginForm login = new LoginForm();
 		login.setVisible(true);
     }//GEN-LAST:event_butLogoutActionPerformed
@@ -1165,18 +1248,15 @@ public class UserForm extends javax.swing.JFrame {
 			}
 
 			String sport = this.cboxRecordSport.getSelectedItem().toString();
-			
-			switch(sport){
+
+			switch (sport) {
 				case "Running / Walking":
-					System.out.println("Running");
 					this.preencheRunRecords();
 					break;
 				case "Mountain Biking / Cycling":
-					System.out.println("Bike");
 					this.preencheBikeRecords();
 					break;
 				default:
-					System.out.println("Swim");
 					this.preencheSwimRecords();
 					break;
 			}
@@ -1191,7 +1271,7 @@ public class UserForm extends javax.swing.JFrame {
 			switch (l.getName()) {
 				case "Running":
 				case "Walking":
-					run = l.clone().getList();
+					run = (ArrayList<Record>) l.clone().getList();
 					break;
 				default:
 					break;
@@ -1228,9 +1308,9 @@ public class UserForm extends javax.swing.JFrame {
 
 		for (ListRecords l : rec.values()) {
 			switch (l.getName()) {
-				case "MountainByking":
+				case "Mountain Byking":
 				case "Cycling":
-					bike = l.clone().getList();
+					bike = (ArrayList<Record>) l.clone().getList();
 					break;
 				default:
 					break;
@@ -1268,7 +1348,7 @@ public class UserForm extends javax.swing.JFrame {
 		for (ListRecords l : rec.values()) {
 			switch (l.getName()) {
 				case "Swimming":
-					swim = l.clone().getList();
+					swim = (ArrayList<Record>) l.clone().getList();
 					break;
 				default:
 					break;
@@ -1287,6 +1367,27 @@ public class UserForm extends javax.swing.JFrame {
 					this.tableRecords.setValueAt("N/A", i, 1);
 				}
 			}
+		}
+	}
+
+	private void preencheTabAmigos() {
+		TreeSet<String> emails = (TreeSet<String>) this.u.getFriendsList();
+		//ArrayList<String> emails = new ArrayList<>();
+		TreeSet<User> friends = new TreeSet<>(new CompareUserByName());
+		for (String e : emails)
+			friends.add(this.fit.getUserByEmail(e));
+		
+		DefaultTableModel dtm = (DefaultTableModel) this.tableAmigos.getModel();
+		for(int i = 0; i < friends.size(); i++)
+			dtm.addRow(new Object[] { null, null, null});	
+		this.tableAmigos.setModel(dtm);
+		
+		int i = 0;
+		for (User u : friends){
+			this.tableAmigos.setValueAt(u.getName(), i, 0);
+			this.tableAmigos.setValueAt((int) (u.getDate().getTimeInMillis() / 31536E6) + " anos", i, 1);
+			this.tableAmigos.setValueAt(u.getEmail(), i, 2);
+			i++;
 		}
 	}
 
@@ -1309,6 +1410,7 @@ public class UserForm extends javax.swing.JFrame {
     private javax.swing.JComboBox cboxMinsData;
     private javax.swing.JComboBox cboxRecordSport;
     private javax.swing.JComboBox cboxSports;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1329,7 +1431,10 @@ public class UserForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel labelDate;
     private javax.swing.JLabel labelDay;
@@ -1340,6 +1445,7 @@ public class UserForm extends javax.swing.JFrame {
     private javax.swing.JPanel panelMensagens;
     private javax.swing.JSpinner spinnerAdversario;
     private javax.swing.JSpinner spinnerPessoal;
+    private javax.swing.JTable tableAmigos;
     private javax.swing.JTable tableRecords;
     private javax.swing.JTextField textCalorias;
     private javax.swing.JTextField textClima;

@@ -48,8 +48,8 @@ public class LoginForm extends javax.swing.JFrame {
 			fitness.addUser(u2.getEmail(), u2.getPassword(), u2.getName(), u2.getGender(), u2.getDate(), u2.getHeight(), u2.getWeight(), u2.getFavoriteActivity());
 			fitness.addUser(u3.getEmail(), u3.getPassword(), u3.getName(), u3.getGender(), u3.getDate(), u3.getHeight(), u3.getWeight(), u3.getFavoriteActivity());
 			fitness.addUser(u4.getEmail(), u4.getPassword(), u4.getName(), u4.getGender(), u4.getDate(), u4.getHeight(), u4.getWeight(), u4.getFavoriteActivity());
-			fitness.getUserByEmail("1").addActivity(new Yoga("YOGA com os amigos", new GregorianCalendar(), 120), "Yoga");
-			fitness.getUserByEmail("1").addActivity(new Yoga("YOGA2222 com os amigos", new GregorianCalendar(), 110), "Yoga");
+			//fitness.getUserByEmail("1").addActivity(new Yoga("YOGA com os amigos", new GregorianCalendar(), 120), "Yoga");
+			//fitness.getUserByEmail("1").addActivity(new Yoga("YOGA2222 com os amigos", new GregorianCalendar(), 110), "Yoga");
 			fitness.sendFriendRequest(fitness.getUserByEmail("1"), fitness.getUserByEmail("4"));
 			fitness.sendFriendRequest(fitness.getUserByEmail("1"), fitness.getUserByEmail("3"));
 			fitness.sendFriendRequest(fitness.getUserByEmail("2"), fitness.getUserByEmail("3"));
