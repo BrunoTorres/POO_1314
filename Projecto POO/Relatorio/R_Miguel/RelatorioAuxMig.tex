@@ -47,11 +47,11 @@ tal como os construtores, \textit{getters} e \textit{setters}.
 \subsubsection{Classe abstracta Person}
 Classe geral para todo tipo de utilizador. As suas variáveis são:
 \begin{itemize}
-\item \textit{String email};
-\item \textit{String password};
-\item \textit{String name};
-\item \textit{char gender};
-\item \textit{GregorianCalendar dateOfBirth};
+\item \textit{String email} - Email do utilizador;
+\item \textit{String password} - Password da conta;
+\item \textit{String name} - Nome do utilzador;
+\item \textit{char gender} - Género do utilizador;
+\item \textit{GregorianCalendar dateOfBirth} - Data de nascimento do utilizador;
 \end{itemize}
 e contém os métodos construtores \textit{getters} e \textit{setters}
 
@@ -64,15 +64,15 @@ A classe User adiciona as seguintes variáveis:
 \item \textit{int height};
 \item \textit{double weight};
 \item \textit{String favoriteActivity};
-\item \textit{TreeSet<Activity> userActivities};
-\item \textit{TreeSet<String> friendsList};
-\item \textit{TreeMap<String, ListRecords> records};
-\item \textit{TreeSet<String> messageFriend};
+\item \textit{TreeSet<Activity> userActivities} - Actividades realizadas pelo utilizador;
+\item \textit{TreeSet<String> friendsList} - Lista dos amigos do utilizador;
+\item \textit{TreeMap<String, ListRecords> records} - Lista dos seus recordes pessoais;
+\item \textit{TreeSet<String> messageFriend} - Lista de pedidos de amizade;
 \end{itemize}
 Respectivos métodos \textit{getters} e \textit{setters}, construtores e métodos auxiliares para gerir os seus amigos, recordes, as suas actividades e estatísticas relevantes. Ainda contém funções auxiliares para a simulação de eventos.
 
-\subsubsection{Comparators}
-O tipo Person tem apenas um comparator:
+\subsubsection{Comparador}
+O tipo Person tem apenas um comparador:
 \begin{itemize}
 \item ComparePersonByName - que ordena por ordem alfabética do seu nome.
 \end{itemize}
@@ -82,11 +82,29 @@ O tipo Person tem apenas um comparator:
 
 A classe Statistics é usada para mostrar ao utilizador dados relevantes das suas actividades, estes podem ser descriminados por um dado mês ou por um ano. As suas variáveis são:
 \begin{itemize}
-\item \textit{double timeSpend};
+\item \textit{double timeSpend} ;
 \item \textit{double calories};
 \item \textit{double distance};
 \end{itemize}
 contém os respectivos métodos \textit{getters} e \textit{setters} e construtores.
+
+
+
+\subsubsection{Classe abstracta Record}
+
+Esta classe representa todos os recordes que o utilizador pode bater. Contém apenas uma variável:
+\begin{itemize}
+\item \textit{String name};
+\end{itemize}
+métodos construtores, \textit{getName()} e \textit{isEmpty()} que verifica se esse recorde existe ou não.
+
+
+\subsubsection{DistancePerTime e TimePerDistance}
+Estas classes simboliza os dois diferentes tipos de recordes.\\
+
+DistancePerTime é um recorde em que o objectivo é fazer a maior distância para um  dado tempo.  
+As suas variáveis são
+Enquanto que TimePerDistance representa um recorde de menor tempo para uma certa distância.\\
 
 
 \end{document}
