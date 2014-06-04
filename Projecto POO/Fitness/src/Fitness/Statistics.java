@@ -28,8 +28,8 @@ public class Statistics implements Serializable {
 
     /**
      * Construtor parametrizado.
-     * @param timeSpend - Tempo (double)
-     * @param calories - Calorias (double)
+     * @param timeSpend  Tempo (double)
+     * @param calories Calorias (double)
      */
     public Statistics(double timeSpend, double calories) {
         this.distance = 0;
@@ -39,9 +39,9 @@ public class Statistics implements Serializable {
 
     /**
      * Construtor parametrizado.
-     * @param timeSpend - Tempo (double)
-     * @param calories - Calorias (double)
-     * @param distance - Distância (double)
+     * @param timeSpend  Tempo (double)
+     * @param calories  Calorias (double)
+     * @param distance  Distância (double)
      */
     public Statistics(double timeSpend, double calories, double distance) {
         this.distance = distance;
@@ -51,7 +51,7 @@ public class Statistics implements Serializable {
 
     /**
      * Construtor de cópia.
-     * @param stat - Instâncias de Statistic.
+     * @param stat  Instâncias de Statistic.
      */
     public Statistics(Statistics stat) {
         this.timeSpend = stat.getTimeSpend();
@@ -85,9 +85,9 @@ public class Statistics implements Serializable {
 
     /**
      * Método que incrementa as tempo, distância e calorias dados três valores.
-     * @param time - Tempo a incrementar, double.
-     * @param distance - Distância a incrementar, double.
-     * @param calories - Calorias a incrementar, double.
+     * @param time  Tempo a incrementar, double.
+     * @param distance  Distância a incrementar, double.
+     * @param calories  Calorias a incrementar, double.
      */
     public void incrementsTimeDistanceCalories(double time, double distance, double calories) {
         this.calories += calories;
