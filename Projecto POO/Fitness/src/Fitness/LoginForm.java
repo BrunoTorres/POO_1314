@@ -219,7 +219,7 @@ public class LoginForm extends javax.swing.JFrame {
 		if (fitness.existPassAndUser(email, pw)) {
 			if (!fitness.isAdmin(email)) {
 				fitness.setFitnessPerson(fitness.getUserByEmail(email));
-				UserForm userForm = new UserForm(this, this.fitness);
+				UserForm userForm = new UserForm(this, this.fitness, fitness.getUserByEmail(email));
 				userForm.setVisible(true);
 				this.dispose();
 			}
