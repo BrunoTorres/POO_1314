@@ -37,8 +37,10 @@ public class ViewFriendForm extends javax.swing.JFrame {
 		this.allActsCurr = 1;
 		this.allActs = new ArrayList<>(u.getActivities());
 		this.changeActivities("init");
-		this.preencheRunRecords();
+		this.preencheRecords();
 		this.preencheTabAmigos();
+		this.preencheStats();
+		this.preencheDados();
 	}
 
 	/**
@@ -50,6 +52,33 @@ public class ViewFriendForm extends javax.swing.JFrame {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         panelMensagens = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        textNomeUser = new javax.swing.JTextField();
+        textEmail = new javax.swing.JTextField();
+        cboxDiaNasc = new javax.swing.JComboBox();
+        cboxMesNasc = new javax.swing.JComboBox();
+        cboxAnoNasc = new javax.swing.JComboBox();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        textPeso = new javax.swing.JTextField();
+        textAltura = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        textDespFav = new javax.swing.JTextField();
+        jPanel11 = new javax.swing.JPanel();
+        butMensais = new javax.swing.JRadioButton();
+        butAnuais = new javax.swing.JRadioButton();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        textTempoGasto = new javax.swing.JTextField();
+        textDistPercorrida = new javax.swing.JTextField();
+        textCaloriasQueim = new javax.swing.JTextField();
+        butPrevMonth = new javax.swing.JButton();
+        butNextMonth = new javax.swing.JButton();
+        textMesAno = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         labelName = new javax.swing.JLabel();
@@ -116,15 +145,250 @@ public class ViewFriendForm extends javax.swing.JFrame {
 
         jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
+        jPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "DADOS PESSOAIS"));
+
+        jLabel14.setText("Nome");
+
+        jLabel15.setText("Data de Nascimento");
+
+        jLabel16.setText("Email");
+
+        textNomeUser.setEditable(false);
+        textNomeUser.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        textEmail.setEditable(false);
+        textEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        cboxDiaNasc.setFont(new java.awt.Font("Dialog", 0, 9)); // NOI18N
+        cboxDiaNasc.setModel(new javax.swing.DefaultComboBoxModel(new Integer[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31}));
+        cboxDiaNasc.setEnabled(false);
+        cboxDiaNasc.setMaximumSize(new java.awt.Dimension(45, 21));
+        cboxDiaNasc.setMinimumSize(new java.awt.Dimension(45, 21));
+        cboxDiaNasc.setPreferredSize(new java.awt.Dimension(45, 21));
+
+        cboxMesNasc.setFont(new java.awt.Font("Dialog", 0, 9)); // NOI18N
+        cboxMesNasc.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"}));
+        cboxMesNasc.setEnabled(false);
+        cboxMesNasc.setMaximumSize(new java.awt.Dimension(95, 21));
+        cboxMesNasc.setMinimumSize(new java.awt.Dimension(95, 21));
+        cboxMesNasc.setPreferredSize(new java.awt.Dimension(95, 21));
+
+        cboxAnoNasc.setFont(new java.awt.Font("Dialog", 0, 9)); // NOI18N
+        cboxAnoNasc.setModel(new javax.swing.DefaultComboBoxModel(new Integer[] { 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014}));
+        cboxAnoNasc.setEnabled(false);
+        cboxAnoNasc.setMaximumSize(new java.awt.Dimension(68, 21));
+        cboxAnoNasc.setMinimumSize(new java.awt.Dimension(68, 21));
+        cboxAnoNasc.setPreferredSize(new java.awt.Dimension(68, 21));
+
+        jLabel17.setText("Peso");
+
+        jLabel18.setText("Altura");
+
+        textPeso.setEditable(false);
+        textPeso.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        textAltura.setEditable(false);
+        textAltura.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jLabel19.setText("Desporto Favorito");
+
+        textDespFav.setEditable(false);
+        textDespFav.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel16))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(textNomeUser)
+                            .addComponent(textEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)))
+                    .addComponent(jLabel15)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(cboxDiaNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(cboxMesNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(25, 25, 25)
+                        .addComponent(cboxAnoNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(50, 50, 50)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+                    .addComponent(textDespFav)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel10Layout.createSequentialGroup()
+                                .addComponent(jLabel17)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(textPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel10Layout.createSequentialGroup()
+                                .addComponent(jLabel18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(textAltura)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(textNomeUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17)
+                    .addComponent(textPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(textEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel18)
+                    .addComponent(textAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(jLabel19))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cboxDiaNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cboxMesNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cboxAnoNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textDespFav, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "ESTATÍSTICAS"));
+
+        butMensais.setSelected(true);
+        butMensais.setText("Mensais");
+        butMensais.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butMensaisActionPerformed(evt);
+            }
+        });
+
+        butAnuais.setText("Anuais");
+        butAnuais.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butAnuaisActionPerformed(evt);
+            }
+        });
+
+        jLabel20.setText("Tempo gasto");
+
+        jLabel21.setText("Distância percorrida");
+
+        jLabel22.setText("Calorias queimadas");
+
+        textTempoGasto.setEditable(false);
+        textTempoGasto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        textDistPercorrida.setEditable(false);
+        textDistPercorrida.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        textCaloriasQueim.setEditable(false);
+        textCaloriasQueim.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        butPrevMonth.setText("< Mês");
+        butPrevMonth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butPrevMonthActionPerformed(evt);
+            }
+        });
+
+        butNextMonth.setText("Mês >");
+        butNextMonth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butNextMonthActionPerformed(evt);
+            }
+        });
+
+        textMesAno.setEditable(false);
+        textMesAno.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel21)
+                            .addComponent(jLabel22))
+                        .addGap(33, 33, 33))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                        .addComponent(butPrevMonth)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(textMesAno, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+                    .addComponent(textTempoGasto)
+                    .addComponent(textDistPercorrida)
+                    .addComponent(textCaloriasQueim))
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(butMensais)
+                            .addComponent(butAnuais))
+                        .addContainerGap())
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(butNextMonth)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(butMensais)
+                    .addComponent(jLabel20)
+                    .addComponent(textTempoGasto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(butAnuais)
+                    .addComponent(jLabel21)
+                    .addComponent(textDistPercorrida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(textCaloriasQueim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(butPrevMonth)
+                    .addComponent(butNextMonth)
+                    .addComponent(textMesAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(105, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout panelMensagensLayout = new javax.swing.GroupLayout(panelMensagens);
         panelMensagens.setLayout(panelMensagensLayout);
         panelMensagensLayout.setHorizontalGroup(
             panelMensagensLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 530, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMensagensLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelMensagensLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         panelMensagensLayout.setVerticalGroup(
             panelMensagensLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 533, Short.MAX_VALUE)
+            .addGroup(panelMensagensLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Home", panelMensagens);
@@ -599,7 +863,7 @@ public class ViewFriendForm extends javax.swing.JFrame {
 
         jLabel13.setText("Desporto");
 
-        cboxRecordSport.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Running / Walking", "Mountain Biking / Cycling", "Swimming" }));
+        cboxRecordSport.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Running", "Walking", "Mountain Biking", "Cycling", "Swimming" }));
         cboxRecordSport.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cboxRecordSportItemStateChanged(evt);
@@ -903,26 +1167,32 @@ public class ViewFriendForm extends javax.swing.JFrame {
 
     private void cboxRecordSportItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboxRecordSportItemStateChanged
         if (evt.getStateChange() == ItemEvent.SELECTED) {
-            for (int i = 0; i < this.tableRecords.getRowCount(); i++) {
-                for (int j = 0; j < this.tableRecords.getColumnCount(); j++) {
-                    this.tableRecords.setValueAt(null, i, j);
-                }
-            }
+			for (int i = 0; i < this.tableRecords.getRowCount(); i++) {
+				for (int j = 0; j < this.tableRecords.getColumnCount(); j++) {
+					this.tableRecords.setValueAt(null, i, j);
+				}
+			}
 
-            String sport = this.cboxRecordSport.getSelectedItem().toString();
+			String sport = this.cboxRecordSport.getSelectedItem().toString();
 
-            switch (sport) {
-                case "Running / Walking":
-                this.preencheRunRecords();
-                break;
-                case "Mountain Biking / Cycling":
-                this.preencheBikeRecords();
-                break;
-                default:
-                this.preencheSwimRecords();
-                break;
-            }
-        }
+			switch (sport) {
+				case "Running":
+					this.preencheRunRecords();
+					break;
+				case "Walking":
+					this.preencheWalkRecords();
+					break;
+				case "Mountain Biking":
+					this.preencheMountainRecords();
+					break;
+				case "Cycling":
+					this.preencheCyclingRecords();
+					break;
+				default:
+					this.preencheSwimRecords();
+					break;
+			}
+		}
     }//GEN-LAST:event_cboxRecordSportItemStateChanged
 	
 	private void preencheRunRecords() {
@@ -932,6 +1202,43 @@ public class ViewFriendForm extends javax.swing.JFrame {
 		for (ListRecords l : rec.values()) {
 			switch (l.getName()) {
 				case "Running":
+					run = (ArrayList<Record>) l.clone().getList();
+					break;
+				default:
+					break;
+			}
+		}
+
+		for (int i = 0; i < run.size(); i++) {
+			Record r = run.get(i).clone();
+			if (r instanceof DistancePerTime) {
+				DistancePerTime dpt = (DistancePerTime) r;
+				this.tableRecords.setValueAt(dpt.getName(), i, 0);
+				float dist = (float) dpt.getDistance();
+				if (dist > 0.0) {
+					this.tableRecords.setValueAt(dpt.getDistance() + " KMs", i, 1);
+				} else {
+					this.tableRecords.setValueAt("N/A", i, 1);
+				}
+			} else {
+				TimePerDistance tpd = (TimePerDistance) r;
+				this.tableRecords.setValueAt(tpd.getName(), i, 0);
+				float time = (float) tpd.getTime();
+				if (time > 0.0) {
+					this.tableRecords.setValueAt(time + " mins", i, 1);
+				} else {
+					this.tableRecords.setValueAt("N/A", i, 1);
+				}
+			}
+		}
+	}
+
+	private void preencheWalkRecords() {
+		TreeMap<String, ListRecords> rec = (TreeMap<String, ListRecords>) this.u.getRecords();
+		ArrayList<Record> run = new ArrayList<>();
+
+		for (ListRecords l : rec.values()) {
+			switch (l.getName()) {
 				case "Walking":
 					run = (ArrayList<Record>) l.clone().getList();
 					break;
@@ -945,7 +1252,7 @@ public class ViewFriendForm extends javax.swing.JFrame {
 			if (r instanceof DistancePerTime) {
 				DistancePerTime dpt = (DistancePerTime) r;
 				this.tableRecords.setValueAt(dpt.getName(), i, 0);
-				Double dist = dpt.getDistance();
+				float dist = (float) dpt.getDistance();
 				if (dist > 0.0) {
 					this.tableRecords.setValueAt(dpt.getDistance() + " KMs", i, 1);
 				} else {
@@ -954,7 +1261,7 @@ public class ViewFriendForm extends javax.swing.JFrame {
 			} else {
 				TimePerDistance tpd = (TimePerDistance) r;
 				this.tableRecords.setValueAt(tpd.getName(), i, 0);
-				Double time = tpd.getTime();
+				float time = (float) tpd.getTime();
 				if (time > 0.0) {
 					this.tableRecords.setValueAt(time + " mins", i, 1);
 				} else {
@@ -964,13 +1271,50 @@ public class ViewFriendForm extends javax.swing.JFrame {
 		}
 	}
 
-	private void preencheBikeRecords() {
+	private void preencheMountainRecords() {
 		TreeMap<String, ListRecords> rec = (TreeMap<String, ListRecords>) this.u.getRecords();
 		ArrayList<Record> bike = new ArrayList<>();
 
 		for (ListRecords l : rec.values()) {
 			switch (l.getName()) {
-				case "Mountain Byking":
+				case "Mountain Biking":
+					bike = (ArrayList<Record>) l.clone().getList();
+					break;
+				default:
+					break;
+			}
+		}
+
+		for (int i = 0; i < bike.size(); i++) {
+			Record r = bike.get(i).clone();
+			if (r instanceof DistancePerTime) {
+				DistancePerTime dpt = (DistancePerTime) r;
+				this.tableRecords.setValueAt(dpt.getName(), i, 0);
+				float dist = (float) dpt.getDistance();
+				if (dist > 0.0) {
+					this.tableRecords.setValueAt(dist + " KMs", i, 1);
+				} else {
+					this.tableRecords.setValueAt("N/A", i, 1);
+				}
+			} else {
+				TimePerDistance tpd = (TimePerDistance) r;
+				this.tableRecords.setValueAt(tpd.getName(), i, 0);
+				float time = (float) tpd.getTime();
+				if (time > 0.0) {
+					this.tableRecords.setValueAt(time + " mins", i, 1);
+				} else {
+					this.tableRecords.setValueAt("N/A", i, 1);
+				}
+			}
+		}
+	}
+
+	private void preencheCyclingRecords() {
+		TreeMap<String, ListRecords> rec = (TreeMap<String, ListRecords>) this.u.getRecords();
+		ArrayList<Record> bike = new ArrayList<>();
+
+		for (ListRecords l : rec.values()) {
+			switch (l.getName()) {
 				case "Cycling":
 					bike = (ArrayList<Record>) l.clone().getList();
 					break;
@@ -984,16 +1328,16 @@ public class ViewFriendForm extends javax.swing.JFrame {
 			if (r instanceof DistancePerTime) {
 				DistancePerTime dpt = (DistancePerTime) r;
 				this.tableRecords.setValueAt(dpt.getName(), i, 0);
-				Double dist = dpt.getDistance();
+				float dist = (float) dpt.getDistance();
 				if (dist > 0.0) {
-					this.tableRecords.setValueAt(dpt.getDistance() + " KMs", i, 1);
+					this.tableRecords.setValueAt(dist + " KMs", i, 1);
 				} else {
 					this.tableRecords.setValueAt("N/A", i, 1);
 				}
 			} else {
 				TimePerDistance tpd = (TimePerDistance) r;
 				this.tableRecords.setValueAt(tpd.getName(), i, 0);
-				Double time = tpd.getTime();
+				float time = (float) tpd.getTime();
 				if (time > 0.0) {
 					this.tableRecords.setValueAt(time + " mins", i, 1);
 				} else {
@@ -1022,7 +1366,7 @@ public class ViewFriendForm extends javax.swing.JFrame {
 			if (r instanceof TimePerDistance) {
 				TimePerDistance tpd = (TimePerDistance) r;
 				this.tableRecords.setValueAt(tpd.getName(), i, 0);
-				Double time = tpd.getTime();
+				float time = (float) tpd.getTime();
 				if (time > 0.0) {
 					this.tableRecords.setValueAt(time + " mins", i, 1);
 				} else {
@@ -1030,6 +1374,14 @@ public class ViewFriendForm extends javax.swing.JFrame {
 				}
 			}
 		}
+	}
+
+	public void preencheRecords() {
+		this.preencheWalkRecords();
+		this.preencheMountainRecords();
+		this.preencheCyclingRecords();
+		this.preencheSwimRecords();
+		this.preencheRunRecords();
 	}
 	
 	private void preencheTabAmigos() {
@@ -1050,6 +1402,21 @@ public class ViewFriendForm extends javax.swing.JFrame {
 			this.tableAmigos.setValueAt(u.getEmail(), i, 2);
 			i++;
 		}
+	}
+	
+	private void preencheDados() {
+		this.textNomeUser.setText(this.u.getName());
+		this.textEmail.setText(this.u.getEmail());
+		this.textAltura.setText(String.valueOf(this.u.getHeight()));
+		this.textPeso.setText(String.valueOf(this.u.getWeight()));
+		this.textDespFav.setText(this.u.getFavoriteActivity());
+		GregorianCalendar dataNasc = this.u.getDate();
+		int dia = dataNasc.get(Calendar.DAY_OF_MONTH);
+		int mes = dataNasc.get(Calendar.MONTH);
+		int ano = dataNasc.get(Calendar.YEAR);
+		this.cboxDiaNasc.setSelectedItem(dia);
+		this.cboxMesNasc.setSelectedIndex(mes);
+		this.cboxAnoNasc.setSelectedItem(ano);
 	}
 	
 	public final void changeActivities(String op) {
@@ -1247,18 +1614,139 @@ public class ViewFriendForm extends javax.swing.JFrame {
 		this.parent.setVisible(true);
     }//GEN-LAST:event_formWindowClosing
 
+    private void butMensaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butMensaisActionPerformed
+        this.butAnuais.setSelected(false);
+        this.butMensais.setSelected(true);
+        this.butNextMonth.setText("Mês >");
+        this.butPrevMonth.setText("< Mês");
+		this.preencheStats();
+    }//GEN-LAST:event_butMensaisActionPerformed
+
+    private void butAnuaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAnuaisActionPerformed
+        this.butAnuais.setSelected(true);
+        this.butMensais.setSelected(false);
+        this.butNextMonth.setText("Ano >");
+        this.butPrevMonth.setText("< Ano");
+		this.preencheStats();
+    }//GEN-LAST:event_butAnuaisActionPerformed
+
+    private void butPrevMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butPrevMonthActionPerformed
+        if (this.butMensais.isSelected()) {
+            if (this.currMes == 0) {
+                this.currMes = 11;
+                this.currAno--;
+            } else {
+                this.currMes--;
+            }
+        } else {
+            this.currAno--;
+        }
+        this.preencheStats();
+    }//GEN-LAST:event_butPrevMonthActionPerformed
+
+    private void butNextMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNextMonthActionPerformed
+        if (this.butMensais.isSelected()) {
+            if (this.currMes == 11) {
+                this.currMes = 0;
+                this.currAno++;
+            } else {
+                this.currMes++;
+            }
+        } else {
+            this.currAno++;
+        }
+        this.preencheStats();
+    }//GEN-LAST:event_butNextMonthActionPerformed
+
+	private void preencheStats() {
+		Statistics stat = new Statistics();
+		TreeMap<GregorianCalendar, Statistics> stats = (TreeMap<GregorianCalendar, Statistics>) this.u.getStats();
+		GregorianCalendar dataAtual = new GregorianCalendar();
+		String mes = "";
+		if (this.butMensais.isSelected()) {
+			stat = this.u.getStats(this.currAno, this.currMes);
+			switch (this.currMes) {
+				case 0:
+					mes = "Janeiro";
+					break;
+				case 1:
+					mes = "Fevereiro";
+					break;
+				case 2:
+					mes = "Março";
+					break;
+				case 3:
+					mes = "Abril";
+					break;
+				case 4:
+					mes = "Maio";
+					break;
+				case 5:
+					mes = "Junho";
+					break;
+				case 6:
+					mes = "Julho";
+					break;
+				case 7:
+					mes = "Agosto";
+					break;
+				case 8:
+					mes = "Setembro";
+					break;
+				case 9:
+					mes = "Outubro";
+					break;
+				case 10:
+					mes = "Novembro";
+					break;
+				default:
+					mes = "Dezembro";
+					break;
+			}
+		} else {
+			stat = this.u.getStats(this.currAno);
+			
+		}
+		if (stat.getCalories() != 0 && stat.getDistance() != 0.0 && stat.getTimeSpend() != 0.0) {
+			String cals = stat.toStringCalories().split(":")[1].trim();
+			String time = stat.toStringTimeSpend().split(":")[1].trim();
+			String dist = stat.toStringDistance().split(":")[1].trim();
+			this.textCaloriasQueim.setText(cals);
+			this.textDistPercorrida.setText(dist);
+			this.textTempoGasto.setText(time);
+			if(this.butMensais.isSelected())
+				this.textMesAno.setText(mes + " (" + this.currAno + ")");
+			else
+				this.textMesAno.setText(String.valueOf(this.currAno));
+		} else {
+			this.textCaloriasQueim.setText("N/A");
+			this.textTempoGasto.setText("N/A");
+			this.textDistPercorrida.setText("N/A");
+			if(this.butMensais.isSelected())
+				this.textMesAno.setText(mes + " (" + this.currAno + ")");
+			else
+				this.textMesAno.setText(String.valueOf(this.currAno));
+		}
+	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton but10;
     private javax.swing.JRadioButton butAll;
+    private javax.swing.JRadioButton butAnuais;
     private javax.swing.JButton butFirst;
     private javax.swing.JButton butLast;
+    private javax.swing.JRadioButton butMensais;
     private javax.swing.JButton butNext;
+    private javax.swing.JButton butNextMonth;
     private javax.swing.JButton butPrev;
+    private javax.swing.JButton butPrevMonth;
     private javax.swing.JComboBox cboxAno;
+    private javax.swing.JComboBox cboxAnoNasc;
     private javax.swing.JComboBox cboxDia;
+    private javax.swing.JComboBox cboxDiaNasc;
     private javax.swing.JComboBox cboxHoraData;
     private javax.swing.JComboBox cboxMes;
+    private javax.swing.JComboBox cboxMesNasc;
     private javax.swing.JComboBox cboxMinsData;
     private javax.swing.JComboBox cboxRecordSport;
     private javax.swing.JComboBox cboxSports;
@@ -1267,7 +1755,16 @@ public class ViewFriendForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1276,6 +1773,8 @@ public class ViewFriendForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1298,14 +1797,23 @@ public class ViewFriendForm extends javax.swing.JFrame {
     private javax.swing.JSpinner spinnerPessoal;
     private javax.swing.JTable tableAmigos;
     private javax.swing.JTable tableRecords;
+    private javax.swing.JTextField textAltura;
     private javax.swing.JTextField textCalorias;
+    private javax.swing.JTextField textCaloriasQueim;
     private javax.swing.JTextField textClima;
+    private javax.swing.JTextField textDespFav;
+    private javax.swing.JTextField textDistPercorrida;
     private javax.swing.JTextField textDistanciaH;
     private javax.swing.JTextField textDistanciaV;
+    private javax.swing.JTextField textEmail;
     private javax.swing.JTextField textHoras;
+    private javax.swing.JTextField textMesAno;
     private javax.swing.JTextField textMins;
     private javax.swing.JTextField textNAct;
     private javax.swing.JTextField textName;
+    private javax.swing.JTextField textNomeUser;
+    private javax.swing.JTextField textPeso;
+    private javax.swing.JTextField textTempoGasto;
     // End of variables declaration//GEN-END:variables
 
 	private UserForm parent;
@@ -1313,5 +1821,7 @@ public class ViewFriendForm extends javax.swing.JFrame {
 	private User u;
 	private int currAct = 0;
 	private int allActsCurr = 0;
+	private int currMes = new GregorianCalendar().get(Calendar.MONTH);
+	private int currAno = new GregorianCalendar().get(Calendar.YEAR);
 	private ArrayList<Activity> acts10, allActs;
 }

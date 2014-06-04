@@ -1548,6 +1548,7 @@ public class UserForm extends javax.swing.JFrame {
 		this.butMensais.setSelected(true);
 		this.butNextMonth.setText("Mês >");
 		this.butPrevMonth.setText("< Mês");
+		this.preencheStats();
     }//GEN-LAST:event_butMensaisActionPerformed
 
     private void butAnuaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAnuaisActionPerformed
@@ -1555,6 +1556,7 @@ public class UserForm extends javax.swing.JFrame {
 		this.butMensais.setSelected(false);
 		this.butNextMonth.setText("Ano >");
 		this.butPrevMonth.setText("< Ano");
+		this.preencheStats();
     }//GEN-LAST:event_butAnuaisActionPerformed
 
     private void butNextMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNextMonthActionPerformed

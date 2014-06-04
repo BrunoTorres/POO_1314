@@ -56,7 +56,8 @@ public class FriendRequestListForm extends javax.swing.JFrame {
         listPedidosAmizade.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane2.setViewportView(listPedidosAmizade);
 
-        butAddAmigo.setText("OK");
+        butAddAmigo.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        butAddAmigo.setText("+ AMIGO");
         butAddAmigo.setMargin(new java.awt.Insets(0, 0, 0, 0));
         butAddAmigo.setMaximumSize(new java.awt.Dimension(40, 29));
         butAddAmigo.setMinimumSize(new java.awt.Dimension(40, 29));
@@ -67,11 +68,17 @@ public class FriendRequestListForm extends javax.swing.JFrame {
             }
         });
 
-        butRejeitaAmigo.setText("CAN");
+        butRejeitaAmigo.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        butRejeitaAmigo.setText("REJEITAR");
         butRejeitaAmigo.setMargin(new java.awt.Insets(0, 0, 0, 0));
         butRejeitaAmigo.setMaximumSize(new java.awt.Dimension(40, 25));
         butRejeitaAmigo.setMinimumSize(new java.awt.Dimension(40, 25));
         butRejeitaAmigo.setPreferredSize(new java.awt.Dimension(40, 25));
+        butRejeitaAmigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butRejeitaAmigoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -83,9 +90,9 @@ public class FriendRequestListForm extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
+                        .addGap(64, 64, 64)
                         .addComponent(butRejeitaAmigo, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(47, 47, 47)
+                        .addGap(38, 38, 38)
                         .addComponent(butAddAmigo, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -136,6 +143,16 @@ public class FriendRequestListForm extends javax.swing.JFrame {
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
 		this.parent.setEnabled(true);
     }//GEN-LAST:event_formWindowClosing
+
+    private void butRejeitaAmigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butRejeitaAmigoActionPerformed
+        if (!this.listPedidosAmizade.isSelectionEmpty()) {
+			String mailUser = ((User) this.fit.getActivePerson()).getEmail();
+			String[] info = this.listPedidosAmizade.getSelectedValue().toString().split(":");
+			String mail = info[1].trim();
+			this.removePedido(mailUser, mail);
+			this.parent.preencheTabAmigos();
+		}
+    }//GEN-LAST:event_butRejeitaAmigoActionPerformed
 
 	private void preenchePedidos() {
 		User u = this.fit.getUserByEmail(this.fit.getActivePerson().getEmail());
