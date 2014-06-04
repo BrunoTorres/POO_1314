@@ -1,0 +1,282 @@
+\documentclass[10pt,notitlepage,twoside]{article}
+\usepackage{a4wide}
+\usepackage[portuges]{babel}
+\usepackage[applemac]{inputenc}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage[all]{xy}
+
+\begin{document}
+
+%%%CAPA%%%
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{logo.pdf}
+\end{figure}
+
+$\\$
+$\\$
+
+\begin{center}
+
+Escola de Engenharia \\~ \\~ \\~  Departamento de Informática \\~ \\ ~ \\~ Licenciatura em Engenharia Informática \\~ \\~ \\~ Programação Orientada aos Objectos \\~ \\~ \\~ \\~ \\~ \\~ \\~  Projecto Java - Racing Manager\\~ \\~ \\~ \\~ \\~ \\~ \\~
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{Fotografia1} ~~~~~~~~
+\includegraphics[scale=0.183]{Fotografia2}~~~~~~~
+\includegraphics[scale=0.339]{Fotografia3}
+\end{figure}
+
+A69854 ~~~~~~~~~~~~~~~~~~ A66822 ~~~~~~~~~~~~~~~~~~ A   \\~  Jo„o Mano ~~~~~~~~ Miguel Guimar„es ~~~~~~~~ Bruno Torres  \\~ \\~ \\~ \\~ \\~ \\~ Braga, Junho de 2014
+\end{center}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+%%%Estrutura%%%
+
+\section{Estrutura da aplicação}
+
+\subsection{Classe abstracta Activity}
+
+Esta classe È a fundaÁ„o de todas as actividades da aplicaÁ„o, contÈm as vari·veis, \textit{String name}, \textit{GregorianCalendar date}, \textit{double timeSpent} e \textit{double calories}; e mÈtodos, \textit{public String getName()}, \textit{public GregorianCalendar getDate()}, \textit{public double getTimeSpent()}, \textit{public double getCalories()}, \textit{public void setName(String name)}, \textit{public abstract void setCalories(double peso)}, \textit{public void setActivityCalories(double calories)}, comuns a todas.
+
+\subsection{Classe Abstracta Veiculo}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{veiculo}
+\end{figure}
+
+Optou-se por uma classe abstracta pois, para além de permitir criar um ``esqueleto'' para as suas subclasses, reutilizando código, permite também obrigar as suas subclasses a implementar vários métodos necessários ao funcionamento da aplicação. Isto faz com que a aplicação seja desde logo extensível no toca a novas classes de veículos. \\
+
+Se a opção fosse uma interface, as variáveis e métodos de instância de \textit{Veículo} não podiam ser reutilizadas. Se não fosse uma classe abstracta, não obrigava as subclasses a implementar os métodos pretendidos.
+
+Para além das variáveis de instância pedidas no enunciado, tem uma \textit{String idVeiculo}, que serve como identidade e ordem dentro da aplicação, um \textit{Piloto condutor} e um \textit{int voltas} que representam o condutor actual do veículo e o número de voltas que esse condutor irá fazer numa dada corrida. \\
+
+Para além dos construtores, \textit{getters}, \textit{setters} e \textit{equals()}, obriga as suas subclasses a implementar os métodos:
+
+\begin{itemize}
+\item[-] \textit{clone()} e \textit{toString()};
+\item[-] \textit{int tempoProximaVolta()}, que calcula um desvio ao tempo médio por volta, em milisegundos;
+\item[-] \textit{boolean terminouVolta()}, que determina se um carro termina, ou não, uma dada volta de acordo com a sua fiabilidade e um factor aleatório;
+\item[-] \textit{int quantasVoltas()}, que determina o número de voltas a fazer pelo primeiro condutor do veiculo, de acordo com a qualidade dos dois pilotos;
+\item[-] \textit{void trocaCondutor()}, que troca para o segundo piloto, somando o tempo de paragem ao tempo da volta.
+\end{itemize}
+
+\subsubsection{Classe PC1}
+
+Para além das variáveis e métodos herdados de \textit{Veiculo}, tem um \textit{static final int cilindrada = 6000}, pois os PC1 têm sempre 6000$cm^{3}$ de cilindrada, um \textit{int hibridoCv} para o motor híbrido (= 0 caso não tenha) e um \textit{Random rand} para uniformizar a distribuição de probabilidade em \textit{terminouVolta()}.
+
+\subsubsection{Classe PC2}
+
+Para além das variáveis e métodos herdados de \textit{Veiculo}, tem um \textit{int hibridoCv} para o motor híbrido (= 0 caso não tenha), um \textit{int preparacao} que é a preparação mecânica do carro e que afecta a sua fiabilidade, e um \textit{Random rand} para uniformizar a distribuição de probabilidade em \textit{terminouVolta()}.
+
+\subsubsection{Classe GT}
+
+Para além das variáveis e métodos herdados de \textit{Veiculo}, tem um \textit{static final int fiabilidadeInicial = 100} que é a fiabilidade no início de cada corrida, um \textit{int hibridoCv} para o motor híbrido (= 0 caso não tenha), uma \textit{double taxaDecrescimo} que é a taxa a que a fiabilidade desce em cada volta, e um \textit{Random rand} para uniformizar a distribuição de probabilidade em \textit{terminouVolta()}.
+
+\subsubsection{Classe SC}
+
+Para além das variáveis e métodos herdados de \textit{Veiculo}, tem um \textit{static final int cilindrada = 2500}, pois os SC têm sempre 2500$cm^{3}$ de cilindrada,  e um \textit{Random rand} para uniformizar a distribuição de probabilidade em \textit{terminouVolta()}.
+
+$\\$
+
+\subsection{Interface Hibrido}
+
+As classes PC1, PC2 e GT implementam a interface  \textit{Hibrido}, que as obriga a implementar o método \textit{int getPotenciaMotorElectrico()}, que retorna a potência do motor eléctrico em KW. Isto não faz com estas classes sejam obrigadas a ter uma variável de instância para o motor híbrido mas, como não é permitida herança múltipla de classes, não se pode criar uma superclasse \textit{Hibrido}.
+
+$\\$
+
+\subsection{Classe Circuito}
+
+Para além das variáveis de instância pedidas no enunciado, esta classe apenas tem uma \textit{String idCircuito}, que serve como identidade e ordem dentro da aplicação e um \textit{String nome} do circuito. Todos os tempos estão em milisegundos, a resolução dos tempos na aplicação. \\
+
+Para além dos construtores, \textit{getters}, \textit{setters}, \textit{equals()}, \textit{clone()} e \textit{toString()}, implementa os métodos \textit{void printCircuito()}, que imprime a informção do circuito e \textit{String toTime(int millis)}, que recebe um tempo em milisegundos e retorna uma \textit{String} em formato mins:segs:milis. \\
+
+Os tempos médios por volta das categorias PC1, PC2, GT e SC são respectivamente, +2s, +3.5s, +5s e +6s do que o tempo record da pista.
+
+\newpage
+
+\subsection{Classe Corrida}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{corrida}
+\end{figure}
+
+Tem como variáveis de instância uma \textit{String idCorrida}, que serve como identidade e ordem dentro da aplicação, um \textit{Circuito circuito}, um \textit{Map$<$String,Veiculo$>$ veiculos} e uma \textit{List$<$Classificação$>$classificacoes}. \\
+
+Os veículos do campeonato são replicados para cada corrida para não terem de ser passados como parâmetro na aplicação. Como a dimensão dos dados é relativamente pequena isto não tem impacto no tempo de execução do programa. \\
+
+Em relação ás classificações, optou-se por um List por forma a usar o \textit{sort}, utilizando um \textit{Comparator}.  \\
+
+Para além dos construtores, \textit{getters}, \textit{setters}, \textit{equals()}, \textit{clone()} e \textit{toString()}, implementa os métodos \textit{void efectuaCorrida(boolean chuva)}, que efectua a corrida, \textit{void printClassificacao()}, que imprime a classificação da corrida, \textit{String toTime(int millis)}, que recebe um tempo em milisegundos e retorna uma \textit{String} em formato mins:segs:milis e \textit{void reiniciarCorrida()}, que faz \textit{reset} da corrida.
+
+\subsection{Classe Classificação}
+
+Como a aplicação só tem uma classificação geral, optou-se por adicionar uma variável para guradar os pontos dos veículos em vez de fazer uma nova classe para o efeito. \\
+
+Tem como variáveis de instância um \textit{Veiculo veiculo}, um \textit{int tempo}, em milisegundos, um \textit{boolean dnf}, que indica se terminou a corrida, um \textit{int voltaDnf} que, em caso de não terminação da corrida, guarda a volta de desistência e um \textit{int pontos}, para guardar os pontos do veículo. \\
+
+Para além dos construtores, \textit{getters}, \textit{setters}, \textit{equals()}, \textit{clone()} e \textit{toString()}, implementa apenas o método \textit{void incrementaPontos(int  pontos)}, que serve para ir somando os pontos do veículo ao longo do programa. \\
+
+Como esta classe serve dois propósitos, classificar dentro de uma corrida, em função do tempo, e classificar no campeonato, em função dos pontos, são implementados dois \textit{Comparators}, \textit{ClassificacaoTempoComparator}, que ordena por ordem ascendente de tempo, e \textit{ClassificacaoPontosComparator}, que ordena por ordem descendente de pontos. \\
+
+\subsection{Classe Aposta}
+
+Tem como variáveis de instância uma \textit{String idCorrida}, que serve como identidade e ordem dentro da aplicação, um \textit{double montante}, três \textit{Veiculo ouro, prata, bronze}, uma \textit{double odd} e um \textit{double ganho}. \\
+
+Para além dos construtores, \textit{getters}, \textit{setters}, \textit{equals()}, \textit{clone()} e \textit{toString()}, implementa apenas o método \textit{double calculaOdd()}, que calcula a odd que a aposta deve ter de acordo com seus veículos. \\
+
+O método \textit{calculaOdd()} é chamado dentro do construtor da aposta, ficando logo definida a odd no momento da criação da aposta.
+
+$\\$
+
+\subsection{Classe Jogador}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{jogador}
+\end{figure}
+
+Para além das variáveis de instância pedidas no enunciado, esta classe apenas tem uma \textit{String idJogador}, que serve como identidade e ordem dentro da aplicação. \\
+
+Para além dos construtores, \textit{getters}, \textit{setters}, \textit{equals()}, \textit{clone()} e \textit{toString()}, implementa apenas o método \textit{void fazAposta(Aposta a)}, que coloca a aposta nas apostas correntes, desde que não haja uma aposta na mesma corrida nas apostas correntes ou nas apostas passadas. \\
+
+Implementa ainda o método \textit{actualizaAposta(String idCorrida, Veiculo ouro, Veiculo prata, Veiculo bronze)}, que processa a aposta. \\
+
+Como a aplicação deve registar um \textit{scoreboard} de apostadores, foi implementado um \textit{JogadorGanhosComparator}, que ordena por ordem descendente de ganhos.
+
+\newpage
+
+\subsection{Classe Campeonato}
+
+Tem como variáveis de instância uma \textit{String corridaActual}, que é a idCorrida de uma das corridas, um \textit{Map$<$String,Corrida$>$ corridas}, um \textit{Map$<$String,Jogador$>$ jogadores} e um \textit{List$<$Classificacao$>$ classificacaoGeral}. \\
+
+Para além dos construtores, \textit{getters}, \textit{setters}, \textit{equals()}, \textit{clone()} e \textit{toString()}, implementa os métodos:
+
+\begin{itemize}
+\item[-] \textit{void actualizaApostas(String idCorrida)}, que actualiza as apostas de uma corrida;
+\item[-] \textit{void printClassificacaoGeral()}, que imprime a classificacao geral do campeonato;
+\item[-] \textit{void printClassificacaoHibrido()},  que imprime a classificacao geral do campeonato, mas apenas dos carros híbridos;
+\item[-] \textit{void printScoreBoard()}, que imprime os três apostadores com mais ganhos no campeonato;
+\item[-] \textit{void reiniciarCampeonato()}, que faz \textit{reset} do campeonat.
+\end{itemize}
+
+A estrutura de dados das corridas é um TreeMap, pois é necessário unicidade e ordem. A ordem é dada pela identidade da corrida.
+
+\subsection{Classe Simulação}
+
+Tem como variáveis de instância um \textit{Campeonato campeonato}, um \textit{Map$<$String,Piloto$>$ pilotos}, um \textit{Map$<$String,Veiculo$>$ veiculos}, um \textit{Map$<$String,Circuito$>$ circuitos} e um \textit{Map$<$String,Jogador$>$ jogadores}. \\
+
+Os menus têm todos o formato [n] $<$opção$>$, tendo o utilizador que premir o número da opção que pretende escolher. O menus são muito interactivos pois pode-se sempre voltar a um menu anterior e têm uma interface muito simples. \\
+
+Por exemplo, Carregar Campeonto -$>$ Retomar Campeonato -$>$ Menu Principal -$>$ Sair:
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{menu1}
+\end{figure}
+
+$\\$
+$\\$
+
+Execução de uma corrida, aqui sem o primeiro classificado e desistências de cada volta:
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{menu2}
+\end{figure}
+
+\subsection{Classe Main}
+
+Apenas cria uma simulação e chama o menu principal da aplicação. \\
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{main}
+\end{figure}
+
+\newpage
+
+\section{Decisões a Destacar}
+
+$\\$
+
+\subsection{Fiabilidades}
+
+As fiabilidades inicialmente propostas eram, de facto, baixas, o que resultava em corridas com três ou quatro finalistas. Assim sendo, tiveram um aumento à volta dos 10\%.
+
+\begin{itemize}
+\item[PC1] - 95\% e, se tiver um motor híbrido, 90\%.
+\item[PC2] - 85\% a 95\% em função da cilindrada e da preparação mecânica do carro. Se tiver um motor híbrido, 80\% a 90\%.
+\item[GT] - 100\% de fiabilidade inicial, que decresce em cada volta de acordo com uma taxa definida pelo utilizador. Se tiver um motor híbrido, a fiabilidade inicial passa a ser 95\%.
+\item[SC] - 80\% a 95\%, influenciada em 25\% pela cilindrada (constante, igual a 2500$cm^3$) e em 75\% pela qualidade dos pilotos.
+\end{itemize}
+
+\subsection{Motores híbridos}
+
+Optou-se por um limite de cavalagem nos motores hibridos de 300 CV. A razão desta escolha deve-se a uma pesquisa sobre este tipo de motores, que revelou valores máximos próximos deste valor.
+
+\subsection{Tempos de Voltas}
+
+Optou-se por fazer com que cada um de 4 atributos - cilindrada, cavalagem, fiabilidade e qualidade do condutor - influencie em até 1s no desvio resultante. A isto soma-se 1s e ainda um factor aleatório que aumenta/diminui estes 5s em até 20\%.\\
+
+O desvio ao tempo médio retornado pelo método \textit{tempoProximaVolta(boolean chuva)} está no intervalo [-6,6] segundos, sem contar com uma possível redução do tempo causada pelos motores híbridos, na ordem dos 10\%.  \\
+
+Para determinar se o desvio ao tempo médio é positivo ou negativo, olha-se para a cilindrada, cavalagem e qualidade do condutor: se mais metade destes atributos for maior do que o ponto médio dos valores possíveis destes atributos, então o desvio será negativo. Casso contrário, será positivo. \\
+
+O facto de os desvio estarem neste intervalo faz com que todas as classes possam bater o record das pistas.
+
+\newpage
+
+\subsection{Odds}
+
+O cálculo da odd de uma aposta é feito no momento da sua criação. Os atributos que contribuem para a odd são: a média das qualidades dos pilotos, a média das fiabilidades dos veículos, a média das cilindradas e a média das cavalagens. \\
+
+Cada um destes atributos tem um peso de até 2.5 e as odds ficam assim compreendidas no intervalo [1.15,10].
+
+\subsection{Limitações}
+
+Limitaram-se certas variáveis de instância a gamas de valores realistas e que, ao serem usados em métodos da aplicação, produzirem valores com sentido. Por isso, grandezas como distâncias e tempos têm que ser não-negativos.  \\
+
+Um exemplo é o da cavalagem, que está compreendida entre 0 e 1200 \textit{CV}. Isto tem o objectivo de não deixar o utilizador inserir valor absurdos na aplicação. \\
+
+Outra medida com o mesmo sentido foi o de fazer com a simulação fosse "à prova de bala" - embora os menus tenham todos como opções valores inteiros, a aplicação recebe uma \textit{String}. Assim, o utilizador pode escrever valores diferentes dos pretendidos e a aplicação não gerar erro.
+
+$\\$
+$\\$
+
+\section{Extensionabilidade}
+
+Com a classe abstracta \textit{Veiculo} a aplicação é extensível a outro tipo de veículos. Mas na prática não é extensível, pelo menos totalmente. \\
+
+Quando se quer criar um campeonato, ao criar um veículo é preciso especificar a sua classe por forma a chamar o seu construtor. Ora, se alguém que não tenha acesso ao módulo \textit{Simulação} quiser uma nova classe de veículo, não a pode construir em ambiente de consola. \\
+
+Outro caso está na classe \textit{Circuito}: no enunciado foi pedido um tempo médio para cada classe de carro, que é usado no método \textit{efectuaCorrida()} para somar, em cada volta, ao desvio dado por \textit{tempoProximaVolta()}. \\
+
+Mais uma vez, se um utilizador sem acesso ao módulo \textit{Circuito} quisesse uma nova classe de veículos, não poderia especificar o seu tempo médio nos circuitos. \\
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

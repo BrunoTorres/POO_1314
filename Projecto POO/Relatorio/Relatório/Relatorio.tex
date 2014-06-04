@@ -1,10 +1,10 @@
-\documentclass[10pt,notitlepage,twoside]{article}
-\usepackage{a4wide}
-\usepackage[portuges]{babel}
-\usepackage[applemac]{inputenc}
-\usepackage{graphicx}
-\usepackage{verbatim}
-\usepackage[all]{xy}
+\documentclass[10pt,notitlepage]{article}
+\usepackage{graphicx} 
+\usepackage{verbatim} 
+\usepackage[portuguese]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage[hmargin=2cm,vmargin=3.5cm,bmargin=2cm]{geometry}
+
 
 \begin{document}
 
@@ -20,15 +20,15 @@ $\\$
 
 \begin{center}
 
-Escola de Engenharia \\~ \\~ \\~  Departamento de Inform‡tica \\~ \\ ~ \\~ Licenciatura em Engenharia Inform‡tica \\~ \\~ \\~ Programa‹o Orientada aos Objectos \\~ \\~ \\~ \\~ \\~ \\~ \\~  Projecto Java - Racing Manager\\~ \\~ \\~ \\~ \\~ \\~ \\~
+Escola de Engenharia \\~ \\~ \\~  Departamento de InformÃ¡tica \\~ \\ ~ \\~ Licenciatura em Engenharia InformÃ¡tica \\~ \\~ \\~ ProgramaÃ§Ã£o Orientada aos Objectos \\~ \\~ \\~ \\~ \\~ \\~ \\~  Projecto Java - FitnesUM \\~ \\~ \\~ \\~ \\~ \\~ \\~
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.6]{Fotografia1} ~~~~~~~~
-\includegraphics[scale=0.183]{Fotografia2}~~~~~~~
-\includegraphics[scale=0.339]{Fotografia3}
+\includegraphics[scale=0.6]{} 
+\includegraphics[scale=0.183]{}
+\includegraphics[scale=0.339]{}
 \end{figure}
 
-A55171 ~~~~~~~~~~~~~~~~~~ A55718 ~~~~~~~~~~~~~~~~~~ A64293   \\~  Tiago Concei‹o ~~~~~~~~ Hugo Mendes ~~~~~~~~ Jorge Ferreira  \\~ \\~ \\~ \\~ \\~ \\~ Braga, Junho de 2013
+A69854 ~~~~~~~~~~~~~~~~~~ A66822 ~~~~~~~~~~~~~~~~~~ A   \\~  JoÃ£o Mano ~~~~~~~~ Miguel GuimarÃ£es ~~~~~~~~ Bruno Torres  \\~ \\~ \\~ \\~ \\~ \\~ Braga, Junho de 2014
 \end{center}
 
 \newpage
@@ -39,68 +39,81 @@ A55171 ~~~~~~~~~~~~~~~~~~ A55718 ~~~~~~~~~~~~~~~~~~ A64293   \\~  Tiago Concei‹
 
 %%%Estrutura%%%
 
-\section{Estrutura da aplica‹o}
+\section{Estrutura da aplicaÃ§Ã£o}
 
-\subsection{Classe Piloto}
+\subsection{Classe abstracta Activity}
 
-Para alm das vari‡veis de inst‰ncia pedidas no enunciado, esta classe apenas tem uma \textit{String idPiloto}, que serve como identidade e ordem dentro da aplica‹o.
-
-N‹o implementa nenhum mtodo para alm dos construtores, \textit{getters}, \textit{setters}, \textit{equals()}, \textit{clone()} e \textit{toString()}.
-
-\subsection{Classe Abstracta Veiculo}
+Esta Ã© a classe mais abstrata, que tem a fundaÃ§Ã£o de todas as actividadades desta aplicaÃ§Ã£o. ContÃ©m variÃ¡veis comuns a todas as actividades, \textit{name}, \textit{date}, \textit{timeSpent} e \textit{calories} tal como os construtores, \textit{getters} e  \textit{setters}.
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.6]{veiculo}
+\includegraphics[scale=0.6]{actividades.jpeg}
 \end{figure}
 
-Optou-se por uma classe abstracta pois, para alm de permitir criar um ``esqueleto'' para as suas subclasses, reutilizando c—digo, permite tambm obrigar as suas subclasses a implementar v‡rios mtodos necess‡rios ao funcionamento da aplica‹o. Isto faz com que a aplica‹o seja desde logo extens’vel no toca a novas classes de ve’culos. \\
 
-Se a op‹o fosse uma interface, as vari‡veis e mtodos de inst‰ncia de \textit{Ve’culo} n‹o podiam ser reutilizadas. Se n‹o fosse uma classe abstracta, n‹o obrigava as subclasses a implementar os mtodos pretendidos.
+\subsection{Classe Abstracta Person}
 
-Para alm das vari‡veis de inst‰ncia pedidas no enunciado, tem uma \textit{String idVeiculo}, que serve como identidade e ordem dentro da aplica‹o, um \textit{Piloto condutor} e um \textit{int voltas} que representam o condutor actual do ve’culo e o nœmero de voltas que esse condutor ir‡ fazer numa dada corrida. \\
+Aqui usÃ¡mos mais uma classe abstracta para definir todas as pessoas que usam a aplicaÃ§Ã£o (Administradores ou utilizadores normais). As variÃ¡veis comuns aos todos os tipos de pessoas sÃ£o \textit{email}, \textit{password}, \textit{name}, \textit{gender}, e \textit{dateOfBirth}. Para alÃ©m de 
+construtores, \textit{getters} e \textit{setters} esta classe nÃ£o tem mÃ©todos auxiliares.
 
-Para alm dos construtores, \textit{getters}, \textit{setters} e \textit{equals()}, obriga as suas subclasses a implementar os mtodos: 
 
-\begin{itemize} 
+
+
+
+\subsection{Classe abstracta Event}
+
+Classe com o conceito mais abstracto de Evento, contÃ©m as variÃ¡veis \textit{name}, \textit{tipoActivity}, \textit{location}, \textit{maxParticipants}, \textit{participants}, \textit{deadline}, \textit{date}, \textit{duration}, \textit{participantsList}, \textit{ranking}, \textit{desistentes} e \textit{simula}, respetivos \textit{getters} e \textit{setters} e os vÃ¡rios contrutores. Ainda tem mÃ©todos auxiliares para adicionar um \textit{User}, \textit{ranking}, 
+
+
+\subsection{Classe Abstracta Veiculo}
+
+Optou-se por uma classe abstracta pois, para alï¿½m de permitir criar um ``esqueleto'' para as suas subclasses, reutilizando cï¿½digo, permite tambï¿½m obrigar as suas subclasses a implementar vï¿½rios mï¿½todos necessï¿½rios ao funcionamento da aplicaï¿½ï¿½o. Isto faz com que a aplicaï¿½ï¿½o seja desde logo extensï¿½vel no toca a novas classes de veï¿½culos. \\
+
+Se a opï¿½ï¿½o fosse uma interface, as variï¿½veis e mï¿½todos de instï¿½ncia de \textit{Veï¿½culo} nï¿½o podiam ser reutilizadas. Se nï¿½o fosse uma classe abstracta, nï¿½o obrigava as subclasses a implementar os mï¿½todos pretendidos.
+
+Para alï¿½m das variï¿½veis de instï¿½ncia pedidas no enunciado, tem uma \textit{String idVeiculo}, que serve como identidade e ordem dentro da aplicaï¿½ï¿½o, um \textit{Piloto condutor} e um \textit{int voltas} que representam o condutor actual do veï¿½culo e o nï¿½mero de voltas que esse condutor irï¿½ fazer numa dada corrida. \\
+
+Para alï¿½m dos construtores, \textit{getters}, \textit{setters} e \textit{equals()}, obriga as suas subclasses a implementar os mï¿½todos:
+
+\begin{itemize}
 \item[-] \textit{clone()} e \textit{toString()};
-\item[-] \textit{int tempoProximaVolta()}, que calcula um desvio ao tempo mdio por volta, em milisegundos;
-\item[-] \textit{boolean terminouVolta()}, que determina se um carro termina, ou n‹o, uma dada volta de acordo com a sua fiabilidade e um factor aleat—rio;
-\item[-] \textit{int quantasVoltas()}, que determina o nœmero de voltas a fazer pelo primeiro condutor do veiculo, de acordo com a qualidade dos dois pilotos;
+\item[-] \textit{int tempoProximaVolta()}, que calcula um desvio ao tempo mï¿½dio por volta, em milisegundos;
+\item[-] \textit{boolean terminouVolta()}, que determina se um carro termina, ou nï¿½o, uma dada volta de acordo com a sua fiabilidade e um factor aleatï¿½rio;
+\item[-] \textit{int quantasVoltas()}, que determina o nï¿½mero de voltas a fazer pelo primeiro condutor do veiculo, de acordo com a qualidade dos dois pilotos;
 \item[-] \textit{void trocaCondutor()}, que troca para o segundo piloto, somando o tempo de paragem ao tempo da volta.
 \end{itemize}
 
 \subsubsection{Classe PC1}
 
-Para alm das vari‡veis e mtodos herdados de \textit{Veiculo}, tem um \textit{static final int cilindrada = 6000}, pois os PC1 tm sempre 6000$cm^{3}$ de cilindrada, um \textit{int hibridoCv} para o motor h’brido (= 0 caso n‹o tenha) e um \textit{Random rand} para uniformizar a distribui‹o de probabilidade em \textit{terminouVolta()}.
+Para alï¿½m das variï¿½veis e mï¿½todos herdados de \textit{Veiculo}, tem um \textit{static final int cilindrada = 6000}, pois os PC1 tï¿½m sempre 6000$cm^{3}$ de cilindrada, um \textit{int hibridoCv} para o motor hï¿½brido (= 0 caso nï¿½o tenha) e um \textit{Random rand} para uniformizar a distribuiï¿½ï¿½o de probabilidade em \textit{terminouVolta()}.
 
 \subsubsection{Classe PC2}
 
-Para alm das vari‡veis e mtodos herdados de \textit{Veiculo}, tem um \textit{int hibridoCv} para o motor h’brido (= 0 caso n‹o tenha), um \textit{int preparacao} que  a prepara‹o mec‰nica do carro e que afecta a sua fiabilidade, e um \textit{Random rand} para uniformizar a distribui‹o de probabilidade em \textit{terminouVolta()}.
+Para alï¿½m das variï¿½veis e mï¿½todos herdados de \textit{Veiculo}, tem um \textit{int hibridoCv} para o motor hï¿½brido (= 0 caso nï¿½o tenha), um \textit{int preparacao} que ï¿½ a preparaï¿½ï¿½o mecï¿½nica do carro e que afecta a sua fiabilidade, e um \textit{Random rand} para uniformizar a distribuiï¿½ï¿½o de probabilidade em \textit{terminouVolta()}.
 
 \subsubsection{Classe GT}
 
-Para alm das vari‡veis e mtodos herdados de \textit{Veiculo}, tem um \textit{static final int fiabilidadeInicial = 100} que  a fiabilidade no in’cio de cada corrida, um \textit{int hibridoCv} para o motor h’brido (= 0 caso n‹o tenha), uma \textit{double taxaDecrescimo} que  a taxa a que a fiabilidade desce em cada volta, e um \textit{Random rand} para uniformizar a distribui‹o de probabilidade em \textit{terminouVolta()}.
+Para alï¿½m das variï¿½veis e mï¿½todos herdados de \textit{Veiculo}, tem um \textit{static final int fiabilidadeInicial = 100} que ï¿½ a fiabilidade no inï¿½cio de cada corrida, um \textit{int hibridoCv} para o motor hï¿½brido (= 0 caso nï¿½o tenha), uma \textit{double taxaDecrescimo} que ï¿½ a taxa a que a fiabilidade desce em cada volta, e um \textit{Random rand} para uniformizar a distribuiï¿½ï¿½o de probabilidade em \textit{terminouVolta()}.
 
 \subsubsection{Classe SC}
 
-Para alm das vari‡veis e mtodos herdados de \textit{Veiculo}, tem um \textit{static final int cilindrada = 2500}, pois os SC tm sempre 2500$cm^{3}$ de cilindrada,  e um \textit{Random rand} para uniformizar a distribui‹o de probabilidade em \textit{terminouVolta()}.
+Para alï¿½m das variï¿½veis e mï¿½todos herdados de \textit{Veiculo}, tem um \textit{static final int cilindrada = 2500}, pois os SC tï¿½m sempre 2500$cm^{3}$ de cilindrada,  e um \textit{Random rand} para uniformizar a distribuiï¿½ï¿½o de probabilidade em \textit{terminouVolta()}.
 
 $\\$
 
 \subsection{Interface Hibrido}
 
-As classes PC1, PC2 e GT implementam a interface  \textit{Hibrido}, que as obriga a implementar o mtodo \textit{int getPotenciaMotorElectrico()}, que retorna a potncia do motor elctrico em KW. Isto n‹o faz com estas classes sejam obrigadas a ter uma vari‡vel de inst‰ncia para o motor h’brido mas, como n‹o  permitida herana mœltipla de classes, n‹o se pode criar uma superclasse \textit{Hibrido}.
+As classes PC1, PC2 e GT implementam a interface  \textit{Hibrido}, que as obriga a implementar o mï¿½todo \textit{int getPotenciaMotorElectrico()}, que retorna a potï¿½ncia do motor elï¿½ctrico em KW. Isto nï¿½o faz com estas classes sejam obrigadas a ter uma variï¿½vel de instï¿½ncia para o motor hï¿½brido mas, como nï¿½o ï¿½ permitida heranï¿½a mï¿½ltipla de classes, nï¿½o se pode criar uma superclasse \textit{Hibrido}.
 
 $\\$
 
 \subsection{Classe Circuito}
 
-Para alm das vari‡veis de inst‰ncia pedidas no enunciado, esta classe apenas tem uma \textit{String idCircuito}, que serve como identidade e ordem dentro da aplica‹o e um \textit{String nome} do circuito. Todos os tempos est‹o em milisegundos, a resolu‹o dos tempos na aplica‹o. \\
+Para alï¿½m das variï¿½veis de instï¿½ncia pedidas no enunciado, esta classe apenas tem uma \textit{String idCircuito}, que serve como identidade e ordem dentro da aplicaï¿½ï¿½o e um \textit{String nome} do circuito. Todos os tempos estï¿½o em milisegundos, a resoluï¿½ï¿½o dos tempos na aplicaï¿½ï¿½o. \\
 
-Para alm dos construtores, \textit{getters}, \textit{setters}, \textit{equals()}, \textit{clone()} e \textit{toString()}, implementa os mtodos \textit{void printCircuito()}, que imprime a inform‹o do circuito e \textit{String toTime(int millis)}, que recebe um tempo em milisegundos e retorna uma \textit{String} em formato mins:segs:milis. \\
+Para alï¿½m dos construtores, \textit{getters}, \textit{setters}, \textit{equals()}, \textit{clone()} e \textit{toString()}, implementa os mï¿½todos \textit{void printCircuito()}, que imprime a informï¿½ï¿½o do circuito e \textit{String toTime(int millis)}, que recebe um tempo em milisegundos e retorna uma \textit{String} em formato mins:segs:milis. \\
 
-Os tempos mdios por volta das categorias PC1, PC2, GT e SC s‹o respectivamente, +2s, +3.5s, +5s e +6s do que o tempo record da pista.
+Os tempos mï¿½dios por volta das categorias PC1, PC2, GT e SC sï¿½o respectivamente, +2s, +3.5s, +5s e +6s do que o tempo record da pista.
 
 \newpage
 
@@ -111,31 +124,31 @@ Os tempos mdios por volta das categorias PC1, PC2, GT e SC s‹o respectivamente,
 \includegraphics[scale=0.6]{corrida}
 \end{figure}
 
-Tem como vari‡veis de inst‰ncia uma \textit{String idCorrida}, que serve como identidade e ordem dentro da aplica‹o, um \textit{Circuito circuito}, um \textit{Map$<$String,Veiculo$>$ veiculos} e uma \textit{List$<$Classifica‹o$>$classificacoes}. \\
+Tem como variï¿½veis de instï¿½ncia uma \textit{String idCorrida}, que serve como identidade e ordem dentro da aplicaï¿½ï¿½o, um \textit{Circuito circuito}, um \textit{Map$<$String,Veiculo$>$ veiculos} e uma \textit{List$<$Classificaï¿½ï¿½o$>$classificacoes}. \\
 
-Os ve’culos do campeonato s‹o replicados para cada corrida para n‹o terem de ser passados como par‰metro na aplica‹o. Como a dimens‹o dos dados  relativamente pequena isto n‹o tem impacto no tempo de execu‹o do programa. \\
+Os veï¿½culos do campeonato sï¿½o replicados para cada corrida para nï¿½o terem de ser passados como parï¿½metro na aplicaï¿½ï¿½o. Como a dimensï¿½o dos dados ï¿½ relativamente pequena isto nï¿½o tem impacto no tempo de execuï¿½ï¿½o do programa. \\
 
-Em rela‹o ‡s classifica›es, optou-se por um List por forma a usar o \textit{sort}, utilizando um \textit{Comparator}.  \\
+Em relaï¿½ï¿½o ï¿½s classificaï¿½ï¿½es, optou-se por um List por forma a usar o \textit{sort}, utilizando um \textit{Comparator}.  \\
 
-Para alm dos construtores, \textit{getters}, \textit{setters}, \textit{equals()}, \textit{clone()} e \textit{toString()}, implementa os mtodos \textit{void efectuaCorrida(boolean chuva)}, que efectua a corrida, \textit{void printClassificacao()}, que imprime a classifica‹o da corrida, \textit{String toTime(int millis)}, que recebe um tempo em milisegundos e retorna uma \textit{String} em formato mins:segs:milis e \textit{void reiniciarCorrida()}, que faz \textit{reset} da corrida.
+Para alï¿½m dos construtores, \textit{getters}, \textit{setters}, \textit{equals()}, \textit{clone()} e \textit{toString()}, implementa os mï¿½todos \textit{void efectuaCorrida(boolean chuva)}, que efectua a corrida, \textit{void printClassificacao()}, que imprime a classificaï¿½ï¿½o da corrida, \textit{String toTime(int millis)}, que recebe um tempo em milisegundos e retorna uma \textit{String} em formato mins:segs:milis e \textit{void reiniciarCorrida()}, que faz \textit{reset} da corrida.
 
-\subsection{Classe Classifica‹o}
+\subsection{Classe Classificaï¿½ï¿½o}
 
-Como a aplica‹o s— tem uma classifica‹o geral, optou-se por adicionar uma vari‡vel para guradar os pontos dos ve’culos em vez de fazer uma nova classe para o efeito. \\
+Como a aplicaï¿½ï¿½o sï¿½ tem uma classificaï¿½ï¿½o geral, optou-se por adicionar uma variï¿½vel para guradar os pontos dos veï¿½culos em vez de fazer uma nova classe para o efeito. \\
 
-Tem como vari‡veis de inst‰ncia um \textit{Veiculo veiculo}, um \textit{int tempo}, em milisegundos, um \textit{boolean dnf}, que indica se terminou a corrida, um \textit{int voltaDnf} que, em caso de n‹o termina‹o da corrida, guarda a volta de desistncia e um \textit{int pontos}, para guardar os pontos do ve’culo. \\
+Tem como variï¿½veis de instï¿½ncia um \textit{Veiculo veiculo}, um \textit{int tempo}, em milisegundos, um \textit{boolean dnf}, que indica se terminou a corrida, um \textit{int voltaDnf} que, em caso de nï¿½o terminaï¿½ï¿½o da corrida, guarda a volta de desistï¿½ncia e um \textit{int pontos}, para guardar os pontos do veï¿½culo. \\
 
-Para alm dos construtores, \textit{getters}, \textit{setters}, \textit{equals()}, \textit{clone()} e \textit{toString()}, implementa apenas o mtodo \textit{void incrementaPontos(int  pontos)}, que serve para ir somando os pontos do ve’culo ao longo do programa. \\
+Para alï¿½m dos construtores, \textit{getters}, \textit{setters}, \textit{equals()}, \textit{clone()} e \textit{toString()}, implementa apenas o mï¿½todo \textit{void incrementaPontos(int  pontos)}, que serve para ir somando os pontos do veï¿½culo ao longo do programa. \\
 
-Como esta classe serve dois prop—sitos, classificar dentro de uma corrida, em fun‹o do tempo, e classificar no campeonato, em fun‹o dos pontos, s‹o implementados dois \textit{Comparators}, \textit{ClassificacaoTempoComparator}, que ordena por ordem ascendente de tempo, e \textit{ClassificacaoPontosComparator}, que ordena por ordem descendente de pontos. \\ 
+Como esta classe serve dois propï¿½sitos, classificar dentro de uma corrida, em funï¿½ï¿½o do tempo, e classificar no campeonato, em funï¿½ï¿½o dos pontos, sï¿½o implementados dois \textit{Comparators}, \textit{ClassificacaoTempoComparator}, que ordena por ordem ascendente de tempo, e \textit{ClassificacaoPontosComparator}, que ordena por ordem descendente de pontos. \\
 
 \subsection{Classe Aposta}
 
-Tem como vari‡veis de inst‰ncia uma \textit{String idCorrida}, que serve como identidade e ordem dentro da aplica‹o, um \textit{double montante}, trs \textit{Veiculo ouro, prata, bronze}, uma \textit{double odd} e um \textit{double ganho}. \\
+Tem como variï¿½veis de instï¿½ncia uma \textit{String idCorrida}, que serve como identidade e ordem dentro da aplicaï¿½ï¿½o, um \textit{double montante}, trï¿½s \textit{Veiculo ouro, prata, bronze}, uma \textit{double odd} e um \textit{double ganho}. \\
 
-Para alm dos construtores, \textit{getters}, \textit{setters}, \textit{equals()}, \textit{clone()} e \textit{toString()}, implementa apenas o mtodo \textit{double calculaOdd()}, que calcula a odd que a aposta deve ter de acordo com seus ve’culos. \\
+Para alï¿½m dos construtores, \textit{getters}, \textit{setters}, \textit{equals()}, \textit{clone()} e \textit{toString()}, implementa apenas o mï¿½todo \textit{double calculaOdd()}, que calcula a odd que a aposta deve ter de acordo com seus veï¿½culos. \\
 
-O mtodo \textit{calculaOdd()}  chamado dentro do construtor da aposta, ficando logo definida a odd no momento da cria‹o da aposta.
+O mï¿½todo \textit{calculaOdd()} ï¿½ chamado dentro do construtor da aposta, ficando logo definida a odd no momento da criaï¿½ï¿½o da aposta.
 
 $\\$
 
@@ -146,37 +159,37 @@ $\\$
 \includegraphics[scale=0.6]{jogador}
 \end{figure}
 
-Para alm das vari‡veis de inst‰ncia pedidas no enunciado, esta classe apenas tem uma \textit{String idJogador}, que serve como identidade e ordem dentro da aplica‹o. \\
+Para alï¿½m das variï¿½veis de instï¿½ncia pedidas no enunciado, esta classe apenas tem uma \textit{String idJogador}, que serve como identidade e ordem dentro da aplicaï¿½ï¿½o. \\
 
-Para alm dos construtores, \textit{getters}, \textit{setters}, \textit{equals()}, \textit{clone()} e \textit{toString()}, implementa apenas o mtodo \textit{void fazAposta(Aposta a)}, que coloca a aposta nas apostas correntes, desde que n‹o haja uma aposta na mesma corrida nas apostas correntes ou nas apostas passadas. \\
+Para alï¿½m dos construtores, \textit{getters}, \textit{setters}, \textit{equals()}, \textit{clone()} e \textit{toString()}, implementa apenas o mï¿½todo \textit{void fazAposta(Aposta a)}, que coloca a aposta nas apostas correntes, desde que nï¿½o haja uma aposta na mesma corrida nas apostas correntes ou nas apostas passadas. \\
 
-Implementa ainda o mtodo \textit{actualizaAposta(String idCorrida, Veiculo ouro, Veiculo prata, Veiculo bronze)}, que processa a aposta. \\
+Implementa ainda o mï¿½todo \textit{actualizaAposta(String idCorrida, Veiculo ouro, Veiculo prata, Veiculo bronze)}, que processa a aposta. \\
 
-Como a aplica‹o deve registar um \textit{scoreboard} de apostadores, foi implementado um \textit{JogadorGanhosComparator}, que ordena por ordem descendente de ganhos.
+Como a aplicaï¿½ï¿½o deve registar um \textit{scoreboard} de apostadores, foi implementado um \textit{JogadorGanhosComparator}, que ordena por ordem descendente de ganhos.
 
 \newpage
 
 \subsection{Classe Campeonato}
 
-Tem como vari‡veis de inst‰ncia uma \textit{String corridaActual}, que  a idCorrida de uma das corridas, um \textit{Map$<$String,Corrida$>$ corridas}, um \textit{Map$<$String,Jogador$>$ jogadores} e um \textit{List$<$Classificacao$>$ classificacaoGeral}. \\
+Tem como variï¿½veis de instï¿½ncia uma \textit{String corridaActual}, que ï¿½ a idCorrida de uma das corridas, um \textit{Map$<$String,Corrida$>$ corridas}, um \textit{Map$<$String,Jogador$>$ jogadores} e um \textit{List$<$Classificacao$>$ classificacaoGeral}. \\
 
-Para alm dos construtores, \textit{getters}, \textit{setters}, \textit{equals()}, \textit{clone()} e \textit{toString()}, implementa os mtodos: 
+Para alï¿½m dos construtores, \textit{getters}, \textit{setters}, \textit{equals()}, \textit{clone()} e \textit{toString()}, implementa os mï¿½todos:
 
-\begin{itemize} 
-\item[-] \textit{void actualizaApostas(String idCorrida)}, que actualiza as apostas de uma corrida; 
+\begin{itemize}
+\item[-] \textit{void actualizaApostas(String idCorrida)}, que actualiza as apostas de uma corrida;
 \item[-] \textit{void printClassificacaoGeral()}, que imprime a classificacao geral do campeonato;
-\item[-] \textit{void printClassificacaoHibrido()},  que imprime a classificacao geral do campeonato, mas apenas dos carros h’bridos;
-\item[-] \textit{void printScoreBoard()}, que imprime os trs apostadores com mais ganhos no campeonato;
+\item[-] \textit{void printClassificacaoHibrido()},  que imprime a classificacao geral do campeonato, mas apenas dos carros hï¿½bridos;
+\item[-] \textit{void printScoreBoard()}, que imprime os trï¿½s apostadores com mais ganhos no campeonato;
 \item[-] \textit{void reiniciarCampeonato()}, que faz \textit{reset} do campeonat.
 \end{itemize}
 
-A estrutura de dados das corridas  um TreeMap, pois  necess‡rio unicidade e ordem. A ordem  dada pela identidade da corrida.
+A estrutura de dados das corridas ï¿½ um TreeMap, pois ï¿½ necessï¿½rio unicidade e ordem. A ordem ï¿½ dada pela identidade da corrida.
 
-\subsection{Classe Simula‹o}
+\subsection{Classe Simulaï¿½ï¿½o}
 
-Tem como vari‡veis de inst‰ncia um \textit{Campeonato campeonato}, um \textit{Map$<$String,Piloto$>$ pilotos}, um \textit{Map$<$String,Veiculo$>$ veiculos}, um \textit{Map$<$String,Circuito$>$ circuitos} e um \textit{Map$<$String,Jogador$>$ jogadores}. \\
+Tem como variï¿½veis de instï¿½ncia um \textit{Campeonato campeonato}, um \textit{Map$<$String,Piloto$>$ pilotos}, um \textit{Map$<$String,Veiculo$>$ veiculos}, um \textit{Map$<$String,Circuito$>$ circuitos} e um \textit{Map$<$String,Jogador$>$ jogadores}. \\
 
-Os menus tm todos o formato [n] $<$op‹o$>$, tendo o utilizador que premir o nœmero da op‹o que pretende escolher. O menus s‹o muito interactivos pois pode-se sempre voltar a um menu anterior e tm uma interface muito simples. \\
+Os menus tï¿½m todos o formato [n] $<$opï¿½ï¿½o$>$, tendo o utilizador que premir o nï¿½mero da opï¿½ï¿½o que pretende escolher. O menus sï¿½o muito interactivos pois pode-se sempre voltar a um menu anterior e tï¿½m uma interface muito simples. \\
 
 Por exemplo, Carregar Campeonto -$>$ Retomar Campeonato -$>$ Menu Principal -$>$ Sair:
 
@@ -188,7 +201,7 @@ Por exemplo, Carregar Campeonto -$>$ Retomar Campeonato -$>$ Menu Principal -$>$
 $\\$
 $\\$
 
-Execu‹o de uma corrida, aqui sem o primeiro classificado e desistncias de cada volta:
+Execuï¿½ï¿½o de uma corrida, aqui sem o primeiro classificado e desistï¿½ncias de cada volta:
 
 \begin{figure}[h]
 \centering
@@ -197,7 +210,7 @@ Execu‹o de uma corrida, aqui sem o primeiro classificado e desistncias de cada
 
 \subsection{Classe Main}
 
-Apenas cria uma simula‹o e chama o menu principal da aplica‹o. \\
+Apenas cria uma simulaï¿½ï¿½o e chama o menu principal da aplicaï¿½ï¿½o. \\
 
 \begin{figure}[h]
 \centering
@@ -206,32 +219,32 @@ Apenas cria uma simula‹o e chama o menu principal da aplica‹o. \\
 
 \newpage
 
-\section{Decis›es a Destacar}
+\section{Decisï¿½es a Destacar}
 
 $\\$
 
 \subsection{Fiabilidades}
 
-As fiabilidades inicialmente propostas eram, de facto, baixas, o que resultava em corridas com trs ou quatro finalistas. Assim sendo, tiveram um aumento ˆ volta dos 10\%.
+As fiabilidades inicialmente propostas eram, de facto, baixas, o que resultava em corridas com trï¿½s ou quatro finalistas. Assim sendo, tiveram um aumento ï¿½ volta dos 10\%.
 
-\begin{itemize} 
-\item[PC1] - 95\% e, se tiver um motor h’brido, 90\%.  
-\item[PC2] - 85\% a 95\% em fun‹o da cilindrada e da prepara‹o mec‰nica do carro. Se tiver um motor h’brido, 80\% a 90\%.  
-\item[GT] - 100\% de fiabilidade inicial, que decresce em cada volta de acordo com uma taxa definida pelo utilizador. Se tiver um motor h’brido, a fiabilidade inicial passa a ser 95\%.  
+\begin{itemize}
+\item[PC1] - 95\% e, se tiver um motor hï¿½brido, 90\%.
+\item[PC2] - 85\% a 95\% em funï¿½ï¿½o da cilindrada e da preparaï¿½ï¿½o mecï¿½nica do carro. Se tiver um motor hï¿½brido, 80\% a 90\%.
+\item[GT] - 100\% de fiabilidade inicial, que decresce em cada volta de acordo com uma taxa definida pelo utilizador. Se tiver um motor hï¿½brido, a fiabilidade inicial passa a ser 95\%.
 \item[SC] - 80\% a 95\%, influenciada em 25\% pela cilindrada (constante, igual a 2500$cm^3$) e em 75\% pela qualidade dos pilotos.
 \end{itemize}
 
-\subsection{Motores h’bridos}
+\subsection{Motores hï¿½bridos}
 
-Optou-se por um limite de cavalagem nos motores hibridos de 300 CV. A raz‹o desta escolha deve-se a uma pesquisa sobre este tipo de motores, que revelou valores m‡ximos pr—ximos deste valor.
+Optou-se por um limite de cavalagem nos motores hibridos de 300 CV. A razï¿½o desta escolha deve-se a uma pesquisa sobre este tipo de motores, que revelou valores mï¿½ximos prï¿½ximos deste valor.
 
 \subsection{Tempos de Voltas}
 
-Optou-se por fazer com que cada um de 4 atributos - cilindrada, cavalagem, fiabilidade e qualidade do condutor - influencie em at 1s no desvio resultante. A isto soma-se 1s e ainda um factor aleat—rio que aumenta/diminui estes 5s em at 20\%.\\
+Optou-se por fazer com que cada um de 4 atributos - cilindrada, cavalagem, fiabilidade e qualidade do condutor - influencie em atï¿½ 1s no desvio resultante. A isto soma-se 1s e ainda um factor aleatï¿½rio que aumenta/diminui estes 5s em atï¿½ 20\%.\\
 
-O desvio ao tempo mdio retornado pelo mtodo \textit{tempoProximaVolta(boolean chuva)} est‡ no intervalo [-6,6] segundos, sem contar com uma poss’vel redu‹o do tempo causada pelos motores h’bridos, na ordem dos 10\%.  \\
+O desvio ao tempo mï¿½dio retornado pelo mï¿½todo \textit{tempoProximaVolta(boolean chuva)} estï¿½ no intervalo [-6,6] segundos, sem contar com uma possï¿½vel reduï¿½ï¿½o do tempo causada pelos motores hï¿½bridos, na ordem dos 10\%.  \\
 
-Para determinar se o desvio ao tempo mdio  positivo ou negativo, olha-se para a cilindrada, cavalagem e qualidade do condutor: se mais metade destes atributos for maior do que o ponto mdio dos valores poss’veis destes atributos, ent‹o o desvio ser‡ negativo. Casso contr‡rio, ser‡ positivo. \\
+Para determinar se o desvio ao tempo mï¿½dio ï¿½ positivo ou negativo, olha-se para a cilindrada, cavalagem e qualidade do condutor: se mais metade destes atributos for maior do que o ponto mï¿½dio dos valores possï¿½veis destes atributos, entï¿½o o desvio serï¿½ negativo. Casso contrï¿½rio, serï¿½ positivo. \\
 
 O facto de os desvio estarem neste intervalo faz com que todas as classes possam bater o record das pistas.
 
@@ -239,30 +252,30 @@ O facto de os desvio estarem neste intervalo faz com que todas as classes possam
 
 \subsection{Odds}
 
-O c‡lculo da odd de uma aposta  feito no momento da sua cria‹o. Os atributos que contribuem para a odd s‹o: a mdia das qualidades dos pilotos, a mdia das fiabilidades dos ve’culos, a mdia das cilindradas e a mdia das cavalagens. \\
+O cï¿½lculo da odd de uma aposta ï¿½ feito no momento da sua criaï¿½ï¿½o. Os atributos que contribuem para a odd sï¿½o: a mï¿½dia das qualidades dos pilotos, a mï¿½dia das fiabilidades dos veï¿½culos, a mï¿½dia das cilindradas e a mï¿½dia das cavalagens. \\
 
-Cada um destes atributos tem um peso de at 2.5 e as odds ficam assim compreendidas no intervalo [1.15,10].
+Cada um destes atributos tem um peso de atï¿½ 2.5 e as odds ficam assim compreendidas no intervalo [1.15,10].
 
-\subsection{Limita›es}
+\subsection{Limitaï¿½ï¿½es}
 
-Limitaram-se certas vari‡veis de inst‰ncia a gamas de valores realistas e que, ao serem usados em mtodos da aplica‹o, produzirem valores com sentido. Por isso, grandezas como dist‰ncias e tempos tm que ser n‹o-negativos.  \\
+Limitaram-se certas variï¿½veis de instï¿½ncia a gamas de valores realistas e que, ao serem usados em mï¿½todos da aplicaï¿½ï¿½o, produzirem valores com sentido. Por isso, grandezas como distï¿½ncias e tempos tï¿½m que ser nï¿½o-negativos.  \\
 
-Um exemplo  o da cavalagem, que est‡ compreendida entre 0 e 1200 \textit{CV}. Isto tem o objectivo de n‹o deixar o utilizador inserir valor absurdos na aplica‹o. \\
+Um exemplo ï¿½ o da cavalagem, que estï¿½ compreendida entre 0 e 1200 \textit{CV}. Isto tem o objectivo de nï¿½o deixar o utilizador inserir valor absurdos na aplicaï¿½ï¿½o. \\
 
-Outra medida com o mesmo sentido foi o de fazer com a simula‹o fosse "ˆ prova de bala" - embora os menus tenham todos como op›es valores inteiros, a aplica‹o recebe uma \textit{String}. Assim, o utilizador pode escrever valores diferentes dos pretendidos e a aplica‹o n‹o gerar erro. 
+Outra medida com o mesmo sentido foi o de fazer com a simulaï¿½ï¿½o fosse "ï¿½ prova de bala" - embora os menus tenham todos como opï¿½ï¿½es valores inteiros, a aplicaï¿½ï¿½o recebe uma \textit{String}. Assim, o utilizador pode escrever valores diferentes dos pretendidos e a aplicaï¿½ï¿½o nï¿½o gerar erro.
 
 $\\$
 $\\$
 
 \section{Extensionabilidade}
 
-Com a classe abstracta \textit{Veiculo} a aplica‹o  extens’vel a outro tipo de ve’culos. Mas na pr‡tica n‹o  extens’vel, pelo menos totalmente. \\ 
+Com a classe abstracta \textit{Veiculo} a aplicaï¿½ï¿½o ï¿½ extensï¿½vel a outro tipo de veï¿½culos. Mas na prï¿½tica nï¿½o ï¿½ extensï¿½vel, pelo menos totalmente. \\
 
-Quando se quer criar um campeonato, ao criar um ve’culo  preciso especificar a sua classe por forma a chamar o seu construtor. Ora, se algum que n‹o tenha acesso ao m—dulo \textit{Simula‹o} quiser uma nova classe de ve’culo, n‹o a pode construir em ambiente de consola. \\
+Quando se quer criar um campeonato, ao criar um veï¿½culo ï¿½ preciso especificar a sua classe por forma a chamar o seu construtor. Ora, se alguï¿½m que nï¿½o tenha acesso ao mï¿½dulo \textit{Simulaï¿½ï¿½o} quiser uma nova classe de veï¿½culo, nï¿½o a pode construir em ambiente de consola. \\
 
-Outro caso est‡ na classe \textit{Circuito}: no enunciado foi pedido um tempo mdio para cada classe de carro, que  usado no mtodo \textit{efectuaCorrida()} para somar, em cada volta, ao desvio dado por \textit{tempoProximaVolta()}. \\ 
+Outro caso estï¿½ na classe \textit{Circuito}: no enunciado foi pedido um tempo mï¿½dio para cada classe de carro, que ï¿½ usado no mï¿½todo \textit{efectuaCorrida()} para somar, em cada volta, ao desvio dado por \textit{tempoProximaVolta()}. \\
 
-Mais uma vez, se um utilizador sem acesso ao m—dulo \textit{Circuito} quisesse uma nova classe de ve’culos, n‹o poderia especificar o seu tempo mdio nos circuitos. \\
+Mais uma vez, se um utilizador sem acesso ao mï¿½dulo \textit{Circuito} quisesse uma nova classe de veï¿½culos, nï¿½o poderia especificar o seu tempo mï¿½dio nos circuitos. \\
 
 \end{document}
 

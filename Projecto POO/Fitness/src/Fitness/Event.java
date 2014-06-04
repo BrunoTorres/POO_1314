@@ -8,7 +8,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 /**
- * Classe abstrata para todos os eventos.
+ * Classe abstracta para todos os eventos.
  *
  * @author Bruno Pereiras
  * @author João Mano

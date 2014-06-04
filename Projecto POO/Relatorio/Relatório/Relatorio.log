@@ -1,22 +1,25 @@
-This is pdfTeXk, Version 3.1415926-1.40.9 (Web2C 7.5.7) (format=pdflatex 2009.10.31)  18 JUN 2013 21:29
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.5.1)  4 JUN 2014 14:58
 entering extended mode
-\write18 enabled.
- %&-line parsing enabled.
-**Relatorio.tex
-(./Relatorio.tex
-LaTeX2e <2005/12/01>
-Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, german-x-2008-06-18, ngerman-x-2008-06-18, ancientgreek, ibycus, ar
-abic, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danish, dutc
-h, esperanto, estonian, farsi, finnish, french, galician, german, ngerman, mono
-greek, greek, hungarian, icelandic, indonesian, interlingua, irish, italian, la
-tin, lithuanian, mongolian, mongolian2a, bokmal, nynorsk, polish, portuguese, r
-omanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, turki
-sh, ukenglish, ukrainian, uppersorbian, welsh, loaded.
-(/usr/local/texlive/2008/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2005/09/16 v1.4f Standard LaTeX document class
-(/usr/local/texlive/2008/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
+**C:/Users/Bruno/Documents/GitHub/Li3/Projecto*POO/Relatorio/RelatoÃÅrio/Relato
+rio.tex
+
+("C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/Relatorio/RelatoÃÅrio/Relato
+rio.tex"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size10.clo"
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -30,169 +33,310 @@ File: size10.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/local/texlive/2008/texmf-dist/tex/latex/ltxmisc/a4wide.sty
-Package: a4wide 1994/08/30
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2008/texmf-dist/tex/latex/ntgclass/a4.sty
-Package: a4 2004/04/15 v1.2g A4 based page layout
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
 ))
-(/usr/local/texlive/2008/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2008/07/06 v3.8l The Babel package
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks15
+\verbatim@line=\toks16
+\verbatim@in@stream=\read1
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
+Package: babel 2008/07/08 v3.8m The Babel package
 
-(/usr/local/texlive/2008/texmf-dist/tex/generic/babel/portuges.ldf
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
+File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\portuges.ldf"
 Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
 
-(/usr/local/texlive/2008/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2008/07/06 v3.8l Babel common definitions
-\babel@savecnt=\count87
-\U@D=\dimen103
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
+File: babel.def 2008/07/08 v3.8m Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen105
 )
 Package babel Info: Making " an active character on input line 145.
 ))
-(/usr/local/texlive/2008/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2006/05/05 v1.1b Input encoding file
-\inpenc@prehook=\toks14
-\inpenc@posthook=\toks15
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
 
-(/usr/local/texlive/2008/texmf-dist/tex/latex/base/applemac.def
-File: applemac.def 2006/05/05 v1.1b Input encoding file
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\utf8.def"
+File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
+Now handling font encoding OML ...
+... no UTF-8 mapping file for font encoding OML
+Now handling font encoding T1 ...
+... processing UTF-8 mapping file for font encoding T1
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
+File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C0 (decimal 192)
+   defining Unicode char U+00C1 (decimal 193)
+   defining Unicode char U+00C2 (decimal 194)
+   defining Unicode char U+00C3 (decimal 195)
+   defining Unicode char U+00C4 (decimal 196)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00C7 (decimal 199)
+   defining Unicode char U+00C8 (decimal 200)
+   defining Unicode char U+00C9 (decimal 201)
+   defining Unicode char U+00CA (decimal 202)
+   defining Unicode char U+00CB (decimal 203)
+   defining Unicode char U+00CC (decimal 204)
+   defining Unicode char U+00CD (decimal 205)
+   defining Unicode char U+00CE (decimal 206)
+   defining Unicode char U+00CF (decimal 207)
+   defining Unicode char U+00D0 (decimal 208)
+   defining Unicode char U+00D1 (decimal 209)
+   defining Unicode char U+00D2 (decimal 210)
+   defining Unicode char U+00D3 (decimal 211)
+   defining Unicode char U+00D4 (decimal 212)
+   defining Unicode char U+00D5 (decimal 213)
+   defining Unicode char U+00D6 (decimal 214)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00D9 (decimal 217)
+   defining Unicode char U+00DA (decimal 218)
+   defining Unicode char U+00DB (decimal 219)
+   defining Unicode char U+00DC (decimal 220)
+   defining Unicode char U+00DD (decimal 221)
+   defining Unicode char U+00DE (decimal 222)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E0 (decimal 224)
+   defining Unicode char U+00E1 (decimal 225)
+   defining Unicode char U+00E2 (decimal 226)
+   defining Unicode char U+00E3 (decimal 227)
+   defining Unicode char U+00E4 (decimal 228)
+   defining Unicode char U+00E5 (decimal 229)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00E7 (decimal 231)
+   defining Unicode char U+00E8 (decimal 232)
+   defining Unicode char U+00E9 (decimal 233)
+   defining Unicode char U+00EA (decimal 234)
+   defining Unicode char U+00EB (decimal 235)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F0 (decimal 240)
+   defining Unicode char U+00F1 (decimal 241)
+   defining Unicode char U+00F2 (decimal 242)
+   defining Unicode char U+00F3 (decimal 243)
+   defining Unicode char U+00F4 (decimal 244)
+   defining Unicode char U+00F5 (decimal 245)
+   defining Unicode char U+00F6 (decimal 246)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+00F9 (decimal 249)
+   defining Unicode char U+00FA (decimal 250)
+   defining Unicode char U+00FB (decimal 251)
+   defining Unicode char U+00FC (decimal 252)
+   defining Unicode char U+00FD (decimal 253)
+   defining Unicode char U+00FE (decimal 254)
+   defining Unicode char U+00FF (decimal 255)
+   defining Unicode char U+0102 (decimal 258)
+   defining Unicode char U+0103 (decimal 259)
+   defining Unicode char U+0104 (decimal 260)
+   defining Unicode char U+0105 (decimal 261)
+   defining Unicode char U+0106 (decimal 262)
+   defining Unicode char U+0107 (decimal 263)
+   defining Unicode char U+010C (decimal 268)
+   defining Unicode char U+010D (decimal 269)
+   defining Unicode char U+010E (decimal 270)
+   defining Unicode char U+010F (decimal 271)
+   defining Unicode char U+0110 (decimal 272)
+   defining Unicode char U+0111 (decimal 273)
+   defining Unicode char U+0118 (decimal 280)
+   defining Unicode char U+0119 (decimal 281)
+   defining Unicode char U+011A (decimal 282)
+   defining Unicode char U+011B (decimal 283)
+   defining Unicode char U+011E (decimal 286)
+   defining Unicode char U+011F (decimal 287)
+   defining Unicode char U+0130 (decimal 304)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0132 (decimal 306)
+   defining Unicode char U+0133 (decimal 307)
+   defining Unicode char U+0139 (decimal 313)
+   defining Unicode char U+013A (decimal 314)
+   defining Unicode char U+013D (decimal 317)
+   defining Unicode char U+013E (decimal 318)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0143 (decimal 323)
+   defining Unicode char U+0144 (decimal 324)
+   defining Unicode char U+0147 (decimal 327)
+   defining Unicode char U+0148 (decimal 328)
+   defining Unicode char U+014A (decimal 330)
+   defining Unicode char U+014B (decimal 331)
+   defining Unicode char U+0150 (decimal 336)
+   defining Unicode char U+0151 (decimal 337)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0154 (decimal 340)
+   defining Unicode char U+0155 (decimal 341)
+   defining Unicode char U+0158 (decimal 344)
+   defining Unicode char U+0159 (decimal 345)
+   defining Unicode char U+015A (decimal 346)
+   defining Unicode char U+015B (decimal 347)
+   defining Unicode char U+015E (decimal 350)
+   defining Unicode char U+015F (decimal 351)
+   defining Unicode char U+0160 (decimal 352)
+   defining Unicode char U+0161 (decimal 353)
+   defining Unicode char U+0162 (decimal 354)
+   defining Unicode char U+0163 (decimal 355)
+   defining Unicode char U+0164 (decimal 356)
+   defining Unicode char U+0165 (decimal 357)
+   defining Unicode char U+016E (decimal 366)
+   defining Unicode char U+016F (decimal 367)
+   defining Unicode char U+0170 (decimal 368)
+   defining Unicode char U+0171 (decimal 369)
+   defining Unicode char U+0178 (decimal 376)
+   defining Unicode char U+0179 (decimal 377)
+   defining Unicode char U+017A (decimal 378)
+   defining Unicode char U+017B (decimal 379)
+   defining Unicode char U+017C (decimal 380)
+   defining Unicode char U+017D (decimal 381)
+   defining Unicode char U+017E (decimal 382)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+201E (decimal 8222)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+2423 (decimal 9251)
+)
+Now handling font encoding OT1 ...
+... processing UTF-8 mapping file for font encoding OT1
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
+File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00B8 (decimal 184)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+)
+Now handling font encoding OMS ...
+... processing UTF-8 mapping file for font encoding OMS
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
+File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+)
+Now handling font encoding OMX ...
+... no UTF-8 mapping file for font encoding OMX
+Now handling font encoding U ...
+... no UTF-8 mapping file for font encoding U
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+02C6 (decimal 710)
+   defining Unicode char U+02DC (decimal 732)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2026 (decimal 8230)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2423 (decimal 9251)
 ))
-(/usr/local/texlive/2008/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
 
-(/usr/local/texlive/2008/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
-\KV@toks@=\toks16
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
-(/usr/local/texlive/2008/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
-
-(/usr/local/texlive/2008/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
 )
-(/usr/local/texlive/2008/texmf/tex/latex/config/graphics.cfg
-File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-Package graphics Info: Driver file: pdftex.def on input line 90.
+\Gm@cnth=\count89
+\Gm@cntv=\count90
+\c@Gm@tempcnt=\count91
+\Gm@bindingoffset=\dimen106
+\Gm@wd@mp=\dimen107
+\Gm@odd@mp=\dimen108
+\Gm@even@mp=\dimen109
+\Gm@layoutwidth=\dimen110
+\Gm@layoutheight=\dimen111
+\Gm@layouthoffset=\dimen112
+\Gm@layoutvoffset=\dimen113
+\Gm@dimlist=\toks19
 
-(/usr/local/texlive/2008/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2008/09/08 v0.04l Graphics/color for pdfTeX
-\Gread@gobject=\count88
-))
-\Gin@req@height=\dimen104
-\Gin@req@width=\dimen105
-)
-(/usr/local/texlive/2008/texmf-dist/tex/latex/tools/verbatim.sty
-Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks17
-\verbatim@line=\toks18
-\verbatim@in@stream=\read1
-)
-(/usr/local/texlive/2008/texmf-dist/tex/generic/xypic/xy.sty
-(/usr/local/texlive/2008/texmf-dist/tex/generic/xypic/xy.tex Bootstrap'ing:
-catcodes, docmode,
-(/usr/local/texlive/2008/texmf-dist/tex/generic/xypic/xyrecat.tex)
-(/usr/local/texlive/2008/texmf-dist/tex/generic/xypic/xyidioms.tex)
-
- Xy-pic version 3.7 <1999/02/16>
- Copyright (c) 1991-1998 by Kristoffer H. Rose <krisrose@ens-lyon.fr>
- Xy-pic is free software: see the User's Guide for details.
-
-Loading kernel: messages; fonts; allocations: state,
-\X@c=\dimen106
-\Y@c=\dimen107
-\U@c=\dimen108
-\D@c=\dimen109
-\L@c=\dimen110
-\R@c=\dimen111
-\Edge@c=\toks19
-\X@p=\dimen112
-\Y@p=\dimen113
-\U@p=\dimen114
-\D@p=\dimen115
-\L@p=\dimen116
-\R@p=\dimen117
-\Edge@p=\toks20
-\X@origin=\dimen118
-\Y@origin=\dimen119
-\X@xbase=\dimen120
-\Y@xbase=\dimen121
-\X@ybase=\dimen122
-\Y@ybase=\dimen123
-\X@min=\dimen124
-\Y@min=\dimen125
-\X@max=\dimen126
-\Y@max=\dimen127
-\lastobjectbox@=\box26
-\zerodotbox@=\box27
-\almostz@=\dimen128
- direction,
-\d@X=\dimen129
-\d@Y=\dimen130
-\K@=\count89
-\KK@=\count90
-\Direction=\count91
-\K@dXdY=\dimen131
-\K@dYdX=\dimen132
-\xyread@=\read2
-\xywrite@=\write3
-\csp@=\count92
-\quotPTK@=\dimen133
-
-utility macros; pictures: \xy, positions,
-\swaptoks@@=\toks21
-\connectobjectbox@@=\box28
- objects,
-\styletoks@=\toks22
- decorations;
-kernel objects: directionals, circles, text; options; algorithms: directions,
-edges, connections;  Xy-pic loaded)
-Package: xy 1999/02/16 Xy-pic version 3.7
-
-(/usr/local/texlive/2008/texmf-dist/tex/generic/xypic/xyall.tex
- Xy-pic option: All features v.3.3
-(/usr/local/texlive/2008/texmf-dist/tex/generic/xypic/xycurve.tex
- Xy-pic option: Curve and Spline extension v.3.7 curve,
-\crv@cnt@=\count93
-\crvpts@=\toks23
-\splinebox@=\box29
-\splineval@=\dimen134
-\splinedepth@=\dimen135
-\splinetol@=\dimen136
-\splinelength@=\dimen137
- circles,
-\L@=\dimen138
- loaded)
-(/usr/local/texlive/2008/texmf-dist/tex/generic/xypic/xyframe.tex
- Xy-pic option: Frame and Bracket extension v.3.7 loaded)
-(/usr/local/texlive/2008/texmf-dist/tex/generic/xypic/xycmtip.tex
- Xy-pic option: Computer Modern tip extension v.3.3
-(/usr/local/texlive/2008/texmf-dist/tex/generic/xypic/xytips.tex
- Xy-pic option: More Tips extension v.3.3 loaded) loaded)
-(/usr/local/texlive/2008/texmf-dist/tex/generic/xypic/xyline.tex
- Xy-pic option: Line styles extension v.3.6
-\xylinethick@=\dimen139
- loaded)
-(/usr/local/texlive/2008/texmf-dist/tex/generic/xypic/xyrotate.tex
- Xy-pic option: Rotate and Scale extension v.3.3 loaded)
-(/usr/local/texlive/2008/texmf-dist/tex/generic/xypic/xycolor.tex
- Xy-pic option: Colour extension v.3.3 loaded)
-(/usr/local/texlive/2008/texmf-dist/tex/generic/xypic/xymatrix.tex
- Xy-pic option: Matrix feature v.3.4
-\Row=\count94
-\Col=\count95
-\queue@=\toks24
-\queue@@=\toks25
-\qcount@=\count96
-\qcount@@=\count97
-\matrixsize@=\count98
- loaded)
-(/usr/local/texlive/2008/texmf-dist/tex/generic/xypic/xyarrow.tex
- Xy-pic option: Arrow and Path feature v.3.5 path, \ar, loaded)
-(/usr/local/texlive/2008/texmf-dist/tex/generic/xypic/xygraph.tex
- Xy-pic option: Graph feature v.3.7 loaded) loaded)) (./Relatorio.aux)
-\openout1 = `Relatorio.aux'.
-
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Users\Bruno\Documents\GitHub\Li3\Projecto POO\Relatorio\RelatoÃÅrio\Relato
+rio.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
@@ -206,21 +350,59 @@ LaTeX Font Info:    ... okay on input line 9.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
 
-(/usr/local/texlive/2008/texmf-dist/tex/context/base/supp-pdf.tex
+(C:\Users\Bruno\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count99
-\scratchdimen=\dimen140
-\scratchbox=\box30
-\nofMPsegments=\count100
-\nofMParguments=\count101
-\everyMPshowfont=\toks26
-\MPscratchCnt=\count102
-\MPscratchDim=\dimen141
-\MPnumerator=\count103
-\everyMPtoPDFconversion=\toks27
-) <logo.pdf, id=1, 318.18875pt x 159.59625pt>
+\scratchcounter=\count92
+\scratchdimen=\dimen114
+\scratchbox=\box26
+\nofMPsegments=\count93
+\nofMParguments=\count94
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count95
+\MPscratchDim=\dimen115
+\MPnumerator=\count96
+\makeMPintoPDFobject=\count97
+\everyMPtoPDFconversion=\toks21
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 500.484pt, 56.9055pt)
+* v-part:(T,H,B)=(99.58464pt, 638.47984pt, 56.9055pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=500.484pt
+* \textheight=638.47984pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-9.68535pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+<logo.pdf, id=1, 318.18875pt x 159.59625pt>
 File: logo.pdf Graphic file (type pdf)
  <use logo.pdf>
+Package pdftex.def Info: logo.pdf used on input line 15.
+(pdftex.def)             Requested size: 159.09398pt x 79.79791pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 18.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -230,257 +412,3694 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--20
 
  []
 
-<Fotografia1.jpg, id=2, 120.45pt x 150.5625pt>
-File: Fotografia1.jpg Graphic file (type jpg)
- <use Fotografia1.jpg>
-<Fotografia2.png, id=3, 368.37625pt x 500.87125pt>
-File: Fotografia2.png Graphic file (type png)
- <use Fotografia2.png>
-<Fotografia3.png, id=5, 201.75375pt x 271.0125pt>
-File: Fotografia3.png Graphic file (type png)
- <use Fotografia3.png>
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.23 ...ria \\~ \\~ \\~  Departamento de InformÔøΩ
+                                                  tica \\~ \\ ~ \\~ Licencia...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.23 ...~ \\~ Licenciatura em Engenharia InformÔøΩ
+                                                  tica \\~ \\~ \\~ ProgramaÔ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.23 ...aria InformÔøΩtica \\~ \\~ \\~ ProgramaÔøΩ
+                                                  ÔøΩo Orientada aos Objecto...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.23 ...a InformÔøΩtica \\~ \\~ \\~ ProgramaÔøΩÔøΩ
+                                                  o Orientada aos Objectos \...
+
+? 
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.26 \includegraphics[scale=0.6]{}
+                                  
+? 
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.27 \includegraphics[scale=0.183]{}
+                                    
+? 
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.28 \includegraphics[scale=0.339]{}
+                                    
+? 
 [1
 
-{/usr/local/texlive/2008/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./logo.
-pdf> <./Fotografia1.jpg> <./Fotografia2.png> <./Fotografia3.png>]
-(./Relatorio.toc)
-\tf@toc=\write4
-\openout4 = `Relatorio.toc'.
+{C:/Users/Bruno/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/Br
+uno/Documents/GitHub/Li3/Projecto POO/Relatorio/RelatoÃÅrio/logo.pdf>]
+("C:\Users\Bruno\Documents\GitHub\Li3\Projecto POO\Relatorio\RelatoÃÅrio\Relato
+rio.toc")
+\tf@toc=\write3
+ [2]
 
- [2] <veiculo.png, id=27, 437.635pt x 303.1325pt>
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.42 \section{Estrutura da aplicaÔøΩÔøΩo}
+                                         
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.42 \section{Estrutura da aplicaÔøΩÔøΩo}
+                                         
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 Esta classe ÔøΩ
+                     a fundaÔøΩÔøΩo de todas as actividades da aplicaÔøΩÔøΩo...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 Esta classe ÔøΩ a fundaÔøΩ
+                               ÔøΩo de todas as actividades da aplicaÔøΩÔøΩo...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 Esta classe ÔøΩ a fundaÔøΩÔøΩ
+                                  o de todas as actividades da aplicaÔøΩÔøΩo...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 ...ΩÔøΩo de todas as actividades da aplicaÔøΩ
+                                                  ÔøΩo, contÔøΩm as variÔøΩv...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 ...Ωo de todas as actividades da aplicaÔøΩÔøΩ
+                                                  o, contÔøΩm as variÔøΩveis...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 ...s as actividades da aplicaÔøΩÔøΩo, contÔøΩ
+                                                  m as variÔøΩveis, \textit{...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 ...ades da aplicaÔøΩÔøΩo, contÔøΩm as variÔøΩ
+                                                  veis, \textit{String name}...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 ...eSpent} e \textit{double calories}; e mÔøΩ
+                                                  todos, \textit{public Stri...
+
+? 
+<veiculo.png, id=20, 437.635pt x 303.1325pt>
 File: veiculo.png Graphic file (type png)
+ <use veiculo.png>
+Package pdftex.def Info: veiculo.png used on input line 52.
+(pdftex.def)             Requested size: 262.58302pt x 181.8809pt.
 
-<use veiculo.png>
-Underfull \hbox (badness 10000) in paragraph at lines 57--58
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.55 ... por uma classe abstracta pois, para alÔøΩ
+                                                  m de permitir criar um ``e...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.55 ...para as suas subclasses, reutilizando cÔøΩ
+                                                  digo, permite tambÔøΩm obr...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.55 ...es, reutilizando cÔøΩdigo, permite tambÔøΩ
+                                                  m obrigar as suas subclass...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.55 ...igar as suas subclasses a implementar vÔøΩ
+                                                  rios mÔøΩtodos necessÔøΩri...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.55 ...uas subclasses a implementar vÔøΩrios mÔøΩ
+                                                  todos necessÔøΩrios ao fun...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.55 ...a implementar vÔøΩrios mÔøΩtodos necessÔøΩ
+                                                  rios ao funcionamento da a...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.55 ...ecessÔøΩrios ao funcionamento da aplicaÔøΩ
+                                                  ÔøΩo. Isto faz com que a a...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.55 ...ssÔøΩrios ao funcionamento da aplicaÔøΩÔøΩ
+                                                  o. Isto faz com que a apli...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.55 ...plicaÔøΩÔøΩo. Isto faz com que a aplicaÔøΩ
+                                                  ÔøΩo seja desde logo exten...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.55 ...caÔøΩÔøΩo. Isto faz com que a aplicaÔøΩÔøΩ
+                                                  o seja desde logo extensÔø...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.55 ... a aplicaÔøΩÔøΩo seja desde logo extensÔøΩ
+                                                  vel no toca a novas classe...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.55 ...ensÔøΩvel no toca a novas classes de veÔøΩ
+                                                  culos. \\
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--56
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--62
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.57 Se a opÔøΩ
+               ÔøΩo fosse uma interface, as variÔøΩveis e mÔøΩtodos de instÔ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.57 Se a opÔøΩÔøΩ
+                  o fosse uma interface, as variÔøΩveis e mÔøΩtodos de instÔ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.57 ... opÔøΩÔøΩo fosse uma interface, as variÔøΩ
+                                                  veis e mÔøΩtodos de instÔø...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.57 ...fosse uma interface, as variÔøΩveis e mÔøΩ
+                                                  todos de instÔøΩncia de \t...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.57 ...ace, as variÔøΩveis e mÔøΩtodos de instÔøΩ
+                                                  ncia de \textit{VeÔøΩculo}...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.57 ...todos de instÔøΩncia de \textit{VeÔøΩculo}
+                                                   nÔøΩo podiam ser reutiliz...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.57 ... de instÔøΩncia de \textit{VeÔøΩculo} nÔøΩ
+                                                  o podiam ser reutilizadas....
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.57 ...lo} nÔøΩo podiam ser reutilizadas. Se nÔøΩ
+                                                  o fosse uma classe abstrac...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.57 ... Se nÔøΩo fosse uma classe abstracta, nÔøΩ
+                                                  o obrigava as subclasses a...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.57 ...rigava as subclasses a implementar os mÔøΩ
+                                                  todos pretendidos.
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.59 Para alÔøΩ
+               m das variÔøΩveis de instÔøΩncia pedidas no enunciado, tem um...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.59 Para alÔøΩm das variÔøΩ
+                            veis de instÔøΩncia pedidas no enunciado, tem um...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.59 Para alÔøΩm das variÔøΩveis de instÔøΩ
+                                           ncia pedidas no enunciado, tem um...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.59 ...omo identidade e ordem dentro da aplicaÔøΩ
+                                                  ÔøΩo, um \textit{Piloto co...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.59 ... identidade e ordem dentro da aplicaÔøΩÔøΩ
+                                                  o, um \textit{Piloto condu...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.59 ...que representam o condutor actual do veÔøΩ
+                                                  culo e o nÔøΩmero de volta...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.59 ...am o condutor actual do veÔøΩculo e o nÔøΩ
+                                                  mero de voltas que esse co...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.59 ...nÔøΩmero de voltas que esse condutor irÔøΩ
+                                                   fazer numa dada corrida. \\
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
 
  []
 
-[3 <./veiculo.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 89--90
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 Para alÔøΩ
+               m dos construtores, \textit{getters}, \textit{setters} e \tex...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ...a as suas subclasses a implementar os mÔøΩ
+                                                  todos:
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 ...ta()}, que calcula um desvio ao tempo mÔøΩ
+                                                  dio por volta, em milisegu...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.66 ...que determina se um carro termina, ou nÔøΩ
+                                                  o, uma dada volta de acord...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.66 ...com a sua fiabilidade e um factor aleatÔøΩ
+                                                  rio;
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.67 ...int quantasVoltas()}, que determina o nÔøΩ
+                                                  mero de voltas a fazer pel...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.73 Para alÔøΩ
+               m das variÔøΩveis e mÔøΩtodos herdados de \textit{Veiculo}, t...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.73 Para alÔøΩm das variÔøΩ
+                            veis e mÔøΩtodos herdados de \textit{Veiculo}, t...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.73 Para alÔøΩm das variÔøΩveis e mÔøΩ
+                                       todos herdados de \textit{Veiculo}, t...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.73 ...l int cilindrada = 6000}, pois os PC1 tÔøΩ
+                                                  m sempre 6000$cm^{3}$ de c...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.73 ...m \textit{int hibridoCv} para o motor hÔøΩ
+                                                  brido (= 0 caso nÔøΩo tenh...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.73 ...oCv} para o motor hÔøΩbrido (= 0 caso nÔøΩ
+                                                  o tenha) e um \textit{Rand...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.73 ...ndom rand} para uniformizar a distribuiÔøΩ
+                                                  ÔøΩo de probabilidade em \...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.73 ...m rand} para uniformizar a distribuiÔøΩÔøΩ
+                                                  o de probabilidade em \tex...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.77 Para alÔøΩ
+               m das variÔøΩveis e mÔøΩtodos herdados de \textit{Veiculo}, t...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.77 Para alÔøΩm das variÔøΩ
+                            veis e mÔøΩtodos herdados de \textit{Veiculo}, t...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.77 Para alÔøΩm das variÔøΩveis e mÔøΩ
+                                       todos herdados de \textit{Veiculo}, t...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.77 ...m \textit{int hibridoCv} para o motor hÔøΩ
+                                                  brido (= 0 caso nÔøΩo tenh...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.77 ...oCv} para o motor hÔøΩbrido (= 0 caso nÔøΩ
+                                                  o tenha), um \textit{int p...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.77 ...tenha), um \textit{int preparacao} que ÔøΩ
+                                                   a preparaÔøΩÔøΩo mecÔøΩni...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.77 ...extit{int preparacao} que ÔøΩ a preparaÔøΩ
+                                                  ÔøΩo mecÔøΩnica do carro e...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.77 ...it{int preparacao} que ÔøΩ a preparaÔøΩÔøΩ
+                                                  o mecÔøΩnica do carro e qu...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.77 ...reparacao} que ÔøΩ a preparaÔøΩÔøΩo mecÔøΩ
+                                                  nica do carro e que afecta...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.77 ...ndom rand} para uniformizar a distribuiÔøΩ
+                                                  ÔøΩo de probabilidade em \...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.77 ...m rand} para uniformizar a distribuiÔøΩÔøΩ
+                                                  o de probabilidade em \tex...
+
+? 
+[3 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/Relatorio/RelatoÃÅrio/veic
+ulo.png>]
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.81 Para alÔøΩ
+               m das variÔøΩveis e mÔøΩtodos herdados de \textit{Veiculo}, t...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.81 Para alÔøΩm das variÔøΩ
+                            veis e mÔøΩtodos herdados de \textit{Veiculo}, t...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.81 Para alÔøΩm das variÔøΩveis e mÔøΩ
+                                       todos herdados de \textit{Veiculo}, t...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.81 ...inal int fiabilidadeInicial = 100} que ÔøΩ
+                                                   a fiabilidade no inÔøΩcio...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.81 ...cial = 100} que ÔøΩ a fiabilidade no inÔøΩ
+                                                  cio de cada corrida, um \t...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.81 ...m \textit{int hibridoCv} para o motor hÔøΩ
+                                                  brido (= 0 caso nÔøΩo tenh...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.81 ...oCv} para o motor hÔøΩbrido (= 0 caso nÔøΩ
+                                                  o tenha), uma \textit{doub...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.81 ...uma \textit{double taxaDecrescimo} que ÔøΩ
+                                                   a taxa a que a fiabilidad...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.81 ...ndom rand} para uniformizar a distribuiÔøΩ
+                                                  ÔøΩo de probabilidade em \...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.81 ...m rand} para uniformizar a distribuiÔøΩÔøΩ
+                                                  o de probabilidade em \tex...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.85 Para alÔøΩ
+               m das variÔøΩveis e mÔøΩtodos herdados de \textit{Veiculo}, t...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.85 Para alÔøΩm das variÔøΩ
+                            veis e mÔøΩtodos herdados de \textit{Veiculo}, t...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.85 Para alÔøΩm das variÔøΩveis e mÔøΩ
+                                       todos herdados de \textit{Veiculo}, t...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.85 ...al int cilindrada = 2500}, pois os SC tÔøΩ
+                                                  m sempre 2500$cm^{3}$ de c...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.85 ...ndom rand} para uniformizar a distribuiÔøΩ
+                                                  ÔøΩo de probabilidade em \...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.85 ...m rand} para uniformizar a distribuiÔøΩÔøΩ
+                                                  o de probabilidade em \tex...
+
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--88
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--96
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.91 ...brido}, que as obriga a implementar o mÔøΩ
+                                                  todo \textit{int getPotenc...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.91 ...ciaMotorElectrico()}, que retorna a potÔøΩ
+                                                  ncia do motor elÔøΩctrico ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.91 ...}, que retorna a potÔøΩncia do motor elÔøΩ
+                                                  ctrico em KW. Isto nÔøΩo f...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.91 ...ncia do motor elÔøΩctrico em KW. Isto nÔøΩ
+                                                  o faz com estas classes se...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.91 ... classes sejam obrigadas a ter uma variÔøΩ
+                                                  vel de instÔøΩncia para o ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.91 ... obrigadas a ter uma variÔøΩvel de instÔøΩ
+                                                  ncia para o motor hÔøΩbrid...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.91 ...ariÔøΩvel de instÔøΩncia para o motor hÔøΩ
+                                                  brido mas, como nÔøΩo ÔøΩ ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.91 ...ncia para o motor hÔøΩbrido mas, como nÔøΩ
+                                                  o ÔøΩ permitida heranÔøΩa ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.91 ...para o motor hÔøΩbrido mas, como nÔøΩo ÔøΩ
+                                                   permitida heranÔøΩa mÔøΩl...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.91 ...ido mas, como nÔøΩo ÔøΩ permitida heranÔøΩ
+                                                  a mÔøΩltipla de classes, n...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.91 ...s, como nÔøΩo ÔøΩ permitida heranÔøΩa mÔøΩ
+                                                  ltipla de classes, nÔøΩo s...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.91 ...tida heranÔøΩa mÔøΩltipla de classes, nÔøΩ
+                                                  o se pode criar uma superc...
+
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
 
  []
 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.97 Para alÔøΩ
+               m das variÔøΩveis de instÔøΩncia pedidas no enunciado, esta c...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.97 Para alÔøΩm das variÔøΩ
+                            veis de instÔøΩncia pedidas no enunciado, esta c...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.97 Para alÔøΩm das variÔøΩveis de instÔøΩ
+                                           ncia pedidas no enunciado, esta c...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.97 ...omo identidade e ordem dentro da aplicaÔøΩ
+                                                  ÔøΩo e um \textit{String n...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.97 ... identidade e ordem dentro da aplicaÔøΩÔøΩ
+                                                  o e um \textit{String nome...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.97 ... nome} do circuito. Todos os tempos estÔøΩ
+                                                  o em milisegundos, a resol...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.97 ...empos estÔøΩo em milisegundos, a resoluÔøΩ
+                                                  ÔøΩo dos tempos na aplicaÔ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.97 ...os estÔøΩo em milisegundos, a resoluÔøΩÔøΩ
+                                                  o dos tempos na aplicaÔøΩÔ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.97 ...s, a resoluÔøΩÔøΩo dos tempos na aplicaÔøΩ
+                                                  ÔøΩo. \\
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.97 ...a resoluÔøΩÔøΩo dos tempos na aplicaÔøΩÔøΩ
+                                                  o. \\
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+
+ []
+
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.99 Para alÔøΩ
+               m dos construtores, \textit{getters}, \textit{setters}, \text...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.99 ... e \textit{toString()}, implementa os mÔøΩ
+                                                  todos \textit{void printCi...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.99 ... printCircuito()}, que imprime a informÔøΩ
+                                                  ÔøΩo do circuito e \textit...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.99 ...intCircuito()}, que imprime a informÔøΩÔøΩ
+                                                  o do circuito e \textit{St...
+
+? 
 
 Underfull \hbox (badness 10000) in paragraph at lines 99--100
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--102
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
 
- []
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.101 Os tempos mÔøΩ
+                    dios por volta das categorias PC1, PC2, GT e SC sÔøΩo re...
 
-[4] <corrida.png, id=37, 503.8825pt x 298.11375pt>
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.101 ...lta das categorias PC1, PC2, GT e SC sÔøΩ
+                                                  o respectivamente, +2s, +3...
+
+? 
+[4] <corrida.png, id=31, 503.8825pt x 298.11375pt>
 File: corrida.png Graphic file (type png)
  <use corrida.png>
-Overfull \hbox (66.77165pt too wide) in paragraph at lines 114--115
-\OT1/cmr/m/n/10 tro da aplica^^Xc~ao, um \OT1/cmr/m/it/10 Cir-cuito cir-cuito\O
-T1/cmr/m/n/10 , um \OT1/cmr/m/it/10 Map$\OML/cmm/m/it/10 <$\OT1/cmr/m/it/10 Str
-ing,Veiculo$\OML/cmm/m/it/10 >$ \OT1/cmr/m/it/10 vei-cu-los \OT1/cmr/m/n/10 e u
-ma \OT1/cmr/m/it/10 List$\OML/cmm/m/it/10 <$\OT1/cmr/m/it/10 Classifica^^Xc~ao$
-\OML/cmm/m/it/10 >$\OT1/cmr/m/it/10 classificacoes\OT1/cmr/m/n/10 . 
+Package pdftex.def Info: corrida.png used on input line 109.
+(pdftex.def)             Requested size: 302.33183pt x 178.86963pt.
+
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.112 Tem como variÔøΩ
+                      veis de instÔøΩncia uma \textit{String idCorrida}, que...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.112 Tem como variÔøΩveis de instÔøΩ
+                                     ncia uma \textit{String idCorrida}, que...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.112 ...mo identidade e ordem dentro da aplicaÔøΩ
+                                                  ÔøΩo, um \textit{Circuito ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.112 ...identidade e ordem dentro da aplicaÔøΩÔøΩ
+                                                  o, um \textit{Circuito cir...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.112 ...ist$<$ClassificaÔøΩÔøΩo$>$classificacoes}
+                                                  . \\
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.112 ...ist$<$ClassificaÔøΩÔøΩo$>$classificacoes}
+                                                  . \\
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
+
  []
 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.114 Os veÔøΩ
+              culos do campeonato sÔøΩo replicados para cada corrida para nÔ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.114 Os veÔøΩculos do campeonato sÔøΩ
+                                      o replicados para cada corrida para nÔ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.114 ...Ωo replicados para cada corrida para nÔøΩ
+                                                  o terem de ser passados co...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.114 ...a nÔøΩo terem de ser passados como parÔøΩ
+                                                  metro na aplicaÔøΩÔøΩo. Co...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.114 ...er passados como parÔøΩmetro na aplicaÔøΩ
+                                                  ÔøΩo. Como a dimensÔøΩo do...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.114 ...passados como parÔøΩmetro na aplicaÔøΩÔøΩ
+                                                  o. Como a dimensÔøΩo dos d...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.114 ...Ωmetro na aplicaÔøΩÔøΩo. Como a dimensÔøΩ
+                                                  o dos dados ÔøΩ relativame...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.114 ...aÔøΩÔøΩo. Como a dimensÔøΩo dos dados ÔøΩ
+                                                   relativamente pequena ist...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.114 ...dados ÔøΩ relativamente pequena isto nÔøΩ
+                                                  o tem impacto no tempo de ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.114 ...to nÔøΩo tem impacto no tempo de execuÔøΩ
+                                                  ÔøΩo do programa. \\
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.114 ...nÔøΩo tem impacto no tempo de execuÔøΩÔøΩ
+                                                  o do programa. \\
+? 
 
 Underfull \hbox (badness 10000) in paragraph at lines 114--115
 
  []
 
 
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.116 Em relaÔøΩ
+                ÔøΩo ÔøΩs classificaÔøΩÔøΩes, optou-se por um List por forma...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.116 Em relaÔøΩÔøΩ
+                   o ÔøΩs classificaÔøΩÔøΩes, optou-se por um List por forma...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.116 Em relaÔøΩÔøΩo ÔøΩ
+                        s classificaÔøΩÔøΩes, optou-se por um List por forma...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.116 Em relaÔøΩÔøΩo ÔøΩs classificaÔøΩ
+                                       ÔøΩes, optou-se por um List por forma...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.116 Em relaÔøΩÔøΩo ÔøΩs classificaÔøΩÔøΩ
+                                          es, optou-se por um List por forma...
+
+? 
+
 Underfull \hbox (badness 10000) in paragraph at lines 116--117
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--119
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.118 Para alÔøΩ
+                m dos construtores, \textit{getters}, \textit{setters}, \tex...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.118 ...e \textit{toString()}, implementa os mÔøΩ
+                                                  todos \textit{void efectua...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.118 ...sificacao()}, que imprime a classificaÔøΩ
+                                                  ÔøΩo da corrida, \textit{S...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.118 ...icacao()}, que imprime a classificaÔøΩÔøΩ
+                                                  o da corrida, \textit{Stri...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.120 \subsection{Classe ClassificaÔøΩÔøΩo}
+                                           
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.120 \subsection{Classe ClassificaÔøΩÔøΩo}
+                                           
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.122 Como a aplicaÔøΩ
+                      ÔøΩo sÔøΩ tem uma classificaÔøΩÔøΩo geral, optou-se po...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.122 Como a aplicaÔøΩÔøΩ
+                         o sÔøΩ tem uma classificaÔøΩÔøΩo geral, optou-se po...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.122 Como a aplicaÔøΩÔøΩo sÔøΩ
+                                tem uma classificaÔøΩÔøΩo geral, optou-se po...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.122 ... aplicaÔøΩÔøΩo sÔøΩ tem uma classificaÔøΩ
+                                                  ÔøΩo geral, optou-se por a...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.122 ...licaÔøΩÔøΩo sÔøΩ tem uma classificaÔøΩÔøΩ
+                                                  o geral, optou-se por adic...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.122 ...geral, optou-se por adicionar uma variÔøΩ
+                                                  vel para guradar os pontos...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.122 ...riÔøΩvel para guradar os pontos dos veÔøΩ
+                                                  culos em vez de fazer uma ...
+
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
 
  []
 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.124 Tem como variÔøΩ
+                      veis de instÔøΩncia um \textit{Veiculo veiculo}, um \t...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.124 Tem como variÔøΩveis de instÔøΩ
+                                     ncia um \textit{Veiculo veiculo}, um \t...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.124 ...textit{int voltaDnf} que, em caso de nÔøΩ
+                                                  o terminaÔøΩÔøΩo da corrid...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.124 ...oltaDnf} que, em caso de nÔøΩo terminaÔøΩ
+                                                  ÔøΩo da corrida, guarda a ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.124 ...aDnf} que, em caso de nÔøΩo terminaÔøΩÔøΩ
+                                                  o da corrida, guarda a vol...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.124 ...o da corrida, guarda a volta de desistÔøΩ
+                                                  ncia e um \textit{int pont...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.124 ... pontos}, para guardar os pontos do veÔøΩ
+                                                  culo. \\
+? 
 
 Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
  []
 
 
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.126 Para alÔøΩ
+                m dos construtores, \textit{getters}, \textit{setters}, \tex...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.126 ...tit{toString()}, implementa apenas o mÔøΩ
+                                                  todo \textit{void incremen...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.126 ... serve para ir somando os pontos do veÔøΩ
+                                                  culo ao longo do programa. \\
+
+? 
+
 Underfull \hbox (badness 10000) in paragraph at lines 126--127
 
  []
 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.128 Como esta classe serve dois propÔøΩ
+                                         sitos, classificar dentro de uma co...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.128 ...ssificar dentro de uma corrida, em funÔøΩ
+                                                  ÔøΩo do tempo, e classific...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.128 ...ficar dentro de uma corrida, em funÔøΩÔøΩ
+                                                  o do tempo, e classificar ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.128 ...o, e classificar no campeonato, em funÔøΩ
+                                                  ÔøΩo dos pontos, sÔøΩo imp...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.128 ...e classificar no campeonato, em funÔøΩÔøΩ
+                                                  o dos pontos, sÔøΩo implem...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.128 ...ampeonato, em funÔøΩÔøΩo dos pontos, sÔøΩ
+                                                  o implementados dois \text...
+
+? 
 
 Underfull \hbox (badness 10000) in paragraph at lines 128--129
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 130--131
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.132 Tem como variÔøΩ
+                      veis de instÔøΩncia uma \textit{String idCorrida}, que...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.132 Tem como variÔøΩveis de instÔøΩ
+                                     ncia uma \textit{String idCorrida}, que...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.132 ...mo identidade e ordem dentro da aplicaÔøΩ
+                                                  ÔøΩo, um \textit{double mo...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.132 ...identidade e ordem dentro da aplicaÔøΩÔøΩ
+                                                  o, um \textit{double monta...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.132 ...ΩÔøΩo, um \textit{double montante}, trÔøΩ
+                                                  s \textit{Veiculo ouro, pr...
+
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 132--133
 
  []
 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.134 Para alÔøΩ
+                m dos construtores, \textit{getters}, \textit{setters}, \tex...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.134 ...tit{toString()}, implementa apenas o mÔøΩ
+                                                  todo \textit{double calcul...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.134 ... aposta deve ter de acordo com seus veÔøΩ
+                                                  culos. \\
+? 
 
 Underfull \hbox (badness 10000) in paragraph at lines 134--135
 
  []
 
-[5 <./corrida.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 136--137
+[5 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/Relatorio/RelatoÃÅrio/corr
+ida.png>]
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.136 O mÔøΩ
+            todo \textit{calculaOdd()} ÔøΩ chamado dentro do construtor da a...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.136 O mÔøΩtodo \textit{calculaOdd()} ÔøΩ
+                                           chamado dentro do construtor da a...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.136 ...logo definida a odd no momento da criaÔøΩ
+                                                  ÔøΩo da aposta.
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.136 ...o definida a odd no momento da criaÔøΩÔøΩ
+                                                  o da aposta.
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 140--141
-
- []
-
-<jogador.png, id=41, 311.1625pt x 261.97874pt>
+<jogador.png, id=35, 311.1625pt x 261.97874pt>
 File: jogador.png Graphic file (type png)
  <use jogador.png>
+Package pdftex.def Info: jogador.png used on input line 144.
+(pdftex.def)             Requested size: 186.69894pt x 157.18845pt.
+
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.147 Para alÔøΩ
+                m das variÔøΩveis de instÔøΩncia pedidas no enunciado, esta ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.147 Para alÔøΩm das variÔøΩ
+                             veis de instÔøΩncia pedidas no enunciado, esta ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.147 Para alÔøΩm das variÔøΩveis de instÔøΩ
+                                            ncia pedidas no enunciado, esta ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.147 ...mo identidade e ordem dentro da aplicaÔøΩ
+                                                  ÔøΩo. \\
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.147 ...identidade e ordem dentro da aplicaÔøΩÔøΩ
+                                                  o. \\
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--148
+
+ []
+
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.149 Para alÔøΩ
+                m dos construtores, \textit{getters}, \textit{setters}, \tex...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.149 ...tit{toString()}, implementa apenas o mÔøΩ
+                                                  todo \textit{void fazApost...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.149 ...sta nas apostas correntes, desde que nÔøΩ
+                                                  o haja uma aposta na mesma...
+
+? 
+
 Underfull \hbox (badness 10000) in paragraph at lines 149--150
 
  []
 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.151 Implementa ainda o mÔøΩ
+                             todo \textit{actualizaAposta(String idCorrida, ...
+
+? 
 
 Underfull \hbox (badness 10000) in paragraph at lines 151--152
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 153--154
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.153 Como a aplicaÔøΩ
+                      ÔøΩo deve registar um \textit{scoreboard} de apostador...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.153 Como a aplicaÔøΩÔøΩ
+                         o deve registar um \textit{scoreboard} de apostador...
+
+? 
+[6 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/Relatorio/RelatoÃÅrio/joga
+dor.png>]
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.159 Tem como variÔøΩ
+                      veis de instÔøΩncia uma \textit{String corridaActual},...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.159 Tem como variÔøΩveis de instÔøΩ
+                                     ncia uma \textit{String corridaActual},...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.159 ...ma \textit{String corridaActual}, que ÔøΩ
+                                                   a idCorrida de uma das co...
+
+? 
+
+Overfull \hbox (18.32098pt too wide) in paragraph at lines 159--160
+\OT1/cmr/m/n/10 Tem como va-ri-veis de instn-cia uma \OT1/cmr/m/it/10 String co
+r-ri-da-Ac-tual\OT1/cmr/m/n/10 , que  a id-Cor-rida de uma das cor-ri-das, um \
+OT1/cmr/m/it/10 Map$\OML/cmm/m/it/10 <$\OT1/cmr/m/it/10 String,Corrida$\OML/cmm
+/m/it/10 >$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--160
 
  []
 
-[6 <./jogador.png (PNG copy)>]
-Overfull \hbox (2.81044pt too wide) in paragraph at lines 161--162
-\OT1/cmr/m/n/10 um \OT1/cmr/m/it/10 Map$\OML/cmm/m/it/10 <$\OT1/cmr/m/it/10 Str
-ing,Corrida$\OML/cmm/m/it/10 >$ \OT1/cmr/m/it/10 cor-ri-das\OT1/cmr/m/n/10 , um
- \OT1/cmr/m/it/10 Map$\OML/cmm/m/it/10 <$\OT1/cmr/m/it/10 String,Jogador$\OML/c
-mm/m/it/10 >$ \OT1/cmr/m/it/10 jo-ga-do-res \OT1/cmr/m/n/10 e um \OT1/cmr/m/it/
-10 List$\OML/cmm/m/it/10 <$\OT1/cmr/m/it/10 Classificacao$\OML/cmm/m/it/10 >$
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.161 Para alÔøΩ
+                m dos construtores, \textit{getters}, \textit{setters}, \tex...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.161 ...e \textit{toString()}, implementa os mÔøΩ
+                                                  todos:
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.166 ...do campeonato, mas apenas dos carros hÔøΩ
+                                                  bridos;
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.167 ... printScoreBoard()}, que imprime os trÔøΩ
+                                                  s apostadores com mais gan...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.171 A estrutura de dados das corridas ÔøΩ
+                                            um TreeMap, pois ÔøΩ necessÔøΩri...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.171 ...dos das corridas ÔøΩ um TreeMap, pois ÔøΩ
+                                                   necessÔøΩrio unicidade e ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.171 ...rridas ÔøΩ um TreeMap, pois ÔøΩ necessÔøΩ
+                                                  rio unicidade e ordem. A o...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.171 ...cessÔøΩrio unicidade e ordem. A ordem ÔøΩ
+                                                   dada pela identidade da c...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.173 \subsection{Classe SimulaÔøΩÔøΩo}
+                                       
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.173 \subsection{Classe SimulaÔøΩÔøΩo}
+                                       
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.175 Tem como variÔøΩ
+                      veis de instÔøΩncia um \textit{Campeonato campeonato},...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.175 Tem como variÔøΩveis de instÔøΩ
+                                     ncia um \textit{Campeonato campeonato},...
+
+? 
+
+Overfull \hbox (11.54785pt too wide) in paragraph at lines 175--176
+\OT1/cmr/m/n/10 Tem como va-ri-veis de instn-cia um \OT1/cmr/m/it/10 Cam-pe-o-n
+ato cam-pe-o-nato\OT1/cmr/m/n/10 , um \OT1/cmr/m/it/10 Map$\OML/cmm/m/it/10 <$\
+OT1/cmr/m/it/10 String,Piloto$\OML/cmm/m/it/10 >$ \OT1/cmr/m/it/10 pi-lo-tos\OT
+1/cmr/m/n/10 , um \OT1/cmr/m/it/10 Map$\OML/cmm/m/it/10 <$\OT1/cmr/m/it/10 Stri
+ng,Veiculo$\OML/cmm/m/it/10 >$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 161--162
+Underfull \hbox (badness 10000) in paragraph at lines 175--176
 
  []
 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.177 Os menus tÔøΩ
+                   m todos o formato [n] $<$opÔøΩÔøΩo$>$, tendo o utilizador...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.177 Os menus tÔøΩm todos o formato [n] $<$opÔøΩ
+                                                 ÔøΩo$>$, tendo o utilizador...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.177 ...nus tÔøΩm todos o formato [n] $<$opÔøΩÔøΩ
+                                                  o$>$, tendo o utilizador q...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.177 ...$>$, tendo o utilizador que premir o nÔøΩ
+                                                  mero da opÔøΩÔøΩo que pret...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.177 ...utilizador que premir o nÔøΩmero da opÔøΩ
+                                                  ÔøΩo que pretende escolher...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.177 ...lizador que premir o nÔøΩmero da opÔøΩÔøΩ
+                                                  o que pretende escolher. O...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.177 ...ΩÔøΩo que pretende escolher. O menus sÔøΩ
+                                                  o muito interactivos pois ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.177 ...e sempre voltar a um menu anterior e tÔøΩ
+                                                  m uma interface muito simp...
+
+? 
 
 Underfull \hbox (badness 10000) in paragraph at lines 177--178
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
-
- []
-
-<menu1.png, id=45, 676.5275pt x 365.365pt>
+<menu1.png, id=39, 676.5275pt x 365.365pt>
 File: menu1.png Graphic file (type png)
  <use menu1.png>
-Underfull \hbox (badness 10000) in paragraph at lines 188--190
+Package pdftex.def Info: menu1.png used on input line 183.
+(pdftex.def)             Requested size: 405.91962pt x 219.22069pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--188
 
  []
 
-<menu2.png, id=46, 768.8725pt x 570.13pt>
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.189 ExecuÔøΩ
+              ÔøΩo de uma corrida, aqui sem o primeiro classificado e desist...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.189 ExecuÔøΩÔøΩ
+                 o de uma corrida, aqui sem o primeiro classificado e desist...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.189 ...i sem o primeiro classificado e desistÔøΩ
+                                                  ncias de cada volta:
+? 
+<menu2.png, id=41, 768.8725pt x 570.13pt>
 File: menu2.png Graphic file (type png)
  <use menu2.png>
-Overfull \hbox (36.74081pt too wide) in paragraph at lines 195--196
- [][] 
+Package pdftex.def Info: menu2.png used on input line 193.
+(pdftex.def)             Requested size: 461.32706pt x 342.08064pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.198 Apenas cria uma simulaÔøΩ
+                               ÔøΩo e chama o menu principal da aplicaÔøΩÔøΩ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.198 Apenas cria uma simulaÔøΩÔøΩ
+                                  o e chama o menu principal da aplicaÔøΩÔøΩ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.198 ...øΩo e chama o menu principal da aplicaÔøΩ
+                                                  ÔøΩo. \\
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.198 ... e chama o menu principal da aplicaÔøΩÔøΩ
+                                                  o. \\
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 198--199
+
  []
 
-[7 <./menu1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 200--201
-
- []
-
-<main.png, id=52, 280.04625pt x 214.8025pt>
+<main.png, id=42, 280.04625pt x 214.8025pt>
 File: main.png Graphic file (type png)
- <use main.png> [8 <./menu2.png (PNG copy)> <./main.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 211--212
+ <use main.png>
+Package pdftex.def Info: main.png used on input line 202.
+(pdftex.def)             Requested size: 168.02904pt x 128.88249pt.
+ [7 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/Relatorio/RelatoÃÅrio/men
+u1.png>] [8 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/Relatorio/RelatoÃ
+Årio/menu2.png> <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/Relatorio/Rel
+atoÃÅrio/main.png>]
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.207 \section{DecisÔøΩes a Destacar}
+                                     
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--210
 
  []
 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.213 ...as, o que resultava em corridas com trÔøΩ
+                                                  s ou quatro finalistas. As...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.213 ...stas. Assim sendo, tiveram um aumento ÔøΩ
+                                                   volta dos 10\%.
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.216 \item[PC1] - 95\% e, se tiver um motor hÔøΩ
+                                                 brido, 90\%.
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.217 \item[PC2] - 85\% a 95\% em funÔøΩ
+                                        ÔøΩo da cilindrada e da preparaÔøΩÔø...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.217 \item[PC2] - 85\% a 95\% em funÔøΩÔøΩ
+                                           o da cilindrada e da preparaÔøΩÔø...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.217 ... funÔøΩÔøΩo da cilindrada e da preparaÔøΩ
+                                                  ÔøΩo mecÔøΩnica do carro. ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.217 ...nÔøΩÔøΩo da cilindrada e da preparaÔøΩÔøΩ
+                                                  o mecÔøΩnica do carro. Se ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.217 ... da cilindrada e da preparaÔøΩÔøΩo mecÔøΩ
+                                                  nica do carro. Se tiver um...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.217 ...cÔøΩnica do carro. Se tiver um motor hÔøΩ
+                                                  brido, 80\% a 90\%.
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.218 ...a pelo utilizador. Se tiver um motor hÔøΩ
+                                                  brido, a fiabilidade inici...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.222 \subsection{Motores hÔøΩbridos}
+                                     
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.224 ... nos motores hibridos de 300 CV. A razÔøΩ
+                                                  o desta escolha deve-se a ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.224 ...tipo de motores, que revelou valores mÔøΩ
+                                                  ximos prÔøΩximos deste valor.
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.224 ...ores, que revelou valores mÔøΩximos prÔøΩ
+                                                  ximos deste valor.
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.228 ...alidade do condutor - influencie em atÔøΩ
+                                                   1s no desvio resultante. ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.228 ...sto soma-se 1s e ainda um factor aleatÔøΩ
+                                                  rio que aumenta/diminui es...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.228 ...rio que aumenta/diminui estes 5s em atÔøΩ
+                                                   20\%.\\
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--229
+
+ []
+
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.230 O desvio ao tempo mÔøΩ
+                            dio retornado pelo mÔøΩtodo \textit{tempoProxima...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.230 ...svio ao tempo mÔøΩdio retornado pelo mÔøΩ
+                                                  todo \textit{tempoProximaV...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.230 ...{tempoProximaVolta(boolean chuva)} estÔøΩ
+                                                   no intervalo [-6,6] segun...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.230 ...6,6] segundos, sem contar com uma possÔøΩ
+                                                  vel reduÔøΩÔøΩo do tempo c...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.230 ...os, sem contar com uma possÔøΩvel reduÔøΩ
+                                                  ÔøΩo do tempo causada pelo...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.230 ... sem contar com uma possÔøΩvel reduÔøΩÔøΩ
+                                                  o do tempo causada pelos m...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.230 ...ΩÔøΩo do tempo causada pelos motores hÔøΩ
+                                                  bridos, na ordem dos 10\%....
+
+? 
 
 Underfull \hbox (badness 10000) in paragraph at lines 230--231
 
  []
 
 
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.232 Para determinar se o desvio ao tempo mÔøΩ
+                                               dio ÔøΩ positivo ou negativo,...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.232 ...terminar se o desvio ao tempo mÔøΩdio ÔøΩ
+                                                   positivo ou negativo, olh...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.232 ...s atributos for maior do que o ponto mÔøΩ
+                                                  dio dos valores possÔøΩvei...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.232 ...o que o ponto mÔøΩdio dos valores possÔøΩ
+                                                  veis destes atributos, ent...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.232 ...ores possÔøΩveis destes atributos, entÔøΩ
+                                                  o o desvio serÔøΩ negativo...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.232 ...destes atributos, entÔøΩo o desvio serÔøΩ
+                                                   negativo. Casso contrÔøΩr...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.232 ... o desvio serÔøΩ negativo. Casso contrÔøΩ
+                                                  rio, serÔøΩ positivo. \\
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.232 ...erÔøΩ negativo. Casso contrÔøΩrio, serÔøΩ
+                                                   positivo. \\
+? 
+
 Underfull \hbox (badness 10000) in paragraph at lines 232--233
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 234--235
-
- []
-
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 242--243
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.240 O cÔøΩ
+            lculo da odd de uma aposta ÔøΩ feito no momento da sua criaÔøΩÔø...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.240 O cÔøΩlculo da odd de uma aposta ÔøΩ
+                                           feito no momento da sua criaÔøΩÔø...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.240 ...posta ÔøΩ feito no momento da sua criaÔøΩ
+                                                  ÔøΩo. Os atributos que con...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.240 ...ta ÔøΩ feito no momento da sua criaÔøΩÔøΩ
+                                                  o. Os atributos que contri...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.240 ... atributos que contribuem para a odd sÔøΩ
+                                                  o: a mÔøΩdia das qualidade...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.240 ...s que contribuem para a odd sÔøΩo: a mÔøΩ
+                                                  dia das qualidades dos pil...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.240 ...ÔøΩdia das qualidades dos pilotos, a mÔøΩ
+                                                  dia das fiabilidades dos v...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.240 ...tos, a mÔøΩdia das fiabilidades dos veÔøΩ
+                                                  culos, a mÔøΩdia das cilin...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.240 ...a das fiabilidades dos veÔøΩculos, a mÔøΩ
+                                                  dia das cilindradas e a mÔ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.240 ...culos, a mÔøΩdia das cilindradas e a mÔøΩ
+                                                  dia das cavalagens. \\
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 240--241
 
  []
 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.242 ... um destes atributos tem um peso de atÔøΩ
+                                                   2.5 e as odds ficam assim...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.244 \subsection{LimitaÔøΩÔøΩes}
+                                 
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.244 \subsection{LimitaÔøΩÔøΩes}
+                                 
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.246 Limitaram-se certas variÔøΩ
+                                 veis de instÔøΩncia a gamas de valores real...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.246 Limitaram-se certas variÔøΩveis de instÔøΩ
+                                                ncia a gamas de valores real...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.246 ... realistas e que, ao serem usados em mÔøΩ
+                                                  todos da aplicaÔøΩÔøΩo, pr...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.246 ...ao serem usados em mÔøΩtodos da aplicaÔøΩ
+                                                  ÔøΩo, produzirem valores c...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.246 ...serem usados em mÔøΩtodos da aplicaÔøΩÔøΩ
+                                                  o, produzirem valores com ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.246 ...sentido. Por isso, grandezas como distÔøΩ
+                                                  ncias e tempos tÔøΩm que s...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.246 ...grandezas como distÔøΩncias e tempos tÔøΩ
+                                                  m que ser nÔøΩo-negativos....
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.246 ... distÔøΩncias e tempos tÔøΩm que ser nÔøΩ
+                                                  o-negativos.  \\
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
+
+ []
+
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.248 Um exemplo ÔøΩ
+                     o da cavalagem, que estÔøΩ compreendida entre 0 e 1200 ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.248 Um exemplo ÔøΩ o da cavalagem, que estÔøΩ
+                                                compreendida entre 0 e 1200 ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.248 ...\textit{CV}. Isto tem o objectivo de nÔøΩ
+                                                  o deixar o utilizador inse...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.248 ...zador inserir valor absurdos na aplicaÔøΩ
+                                                  ÔøΩo. \\
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.248 ...or inserir valor absurdos na aplicaÔøΩÔøΩ
+                                                  o. \\
+? 
 
 Underfull \hbox (badness 10000) in paragraph at lines 248--249
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 250--251
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.250 ...mo sentido foi o de fazer com a simulaÔøΩ
+                                                  ÔøΩo fosse "ÔøΩ prova de b...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.250 ...sentido foi o de fazer com a simulaÔøΩÔøΩ
+                                                  o fosse "ÔøΩ prova de bala...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.250 ...o de fazer com a simulaÔøΩÔøΩo fosse "ÔøΩ
+                                                   prova de bala" - embora o...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.250 ...- embora os menus tenham todos como opÔøΩ
+                                                  ÔøΩes valores inteiros, a ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.250 ...mbora os menus tenham todos como opÔøΩÔøΩ
+                                                  es valores inteiros, a apl...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.250 ... opÔøΩÔøΩes valores inteiros, a aplicaÔøΩ
+                                                  ÔøΩo recebe uma \textit{St...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.250 ...ÔøΩÔøΩes valores inteiros, a aplicaÔøΩÔøΩ
+                                                  o recebe uma \textit{Strin...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.250 ... diferentes dos pretendidos e a aplicaÔøΩ
+                                                  ÔøΩo nÔøΩo gerar erro.
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.250 ...ferentes dos pretendidos e a aplicaÔøΩÔøΩ
+                                                  o nÔøΩo gerar erro.
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.250 ...es dos pretendidos e a aplicaÔøΩÔøΩo nÔøΩ
+                                                  o gerar erro.
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 252--254
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--256
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.257 ...se abstracta \textit{Veiculo} a aplicaÔøΩ
+                                                  ÔøΩo ÔøΩ extensÔøΩvel a ou...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.257 ...abstracta \textit{Veiculo} a aplicaÔøΩÔøΩ
+                                                  o ÔøΩ extensÔøΩvel a outro...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.257 ...acta \textit{Veiculo} a aplicaÔøΩÔøΩo ÔøΩ
+                                                   extensÔøΩvel a outro tipo...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.257 ...it{Veiculo} a aplicaÔøΩÔøΩo ÔøΩ extensÔøΩ
+                                                  vel a outro tipo de veÔøΩc...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.257 ...Ωo ÔøΩ extensÔøΩvel a outro tipo de veÔøΩ
+                                                  culos. Mas na prÔøΩtica nÔ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.257 ... a outro tipo de veÔøΩculos. Mas na prÔøΩ
+                                                  tica nÔøΩo ÔøΩ extensÔøΩve...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.257 ...tipo de veÔøΩculos. Mas na prÔøΩtica nÔøΩ
+                                                  o ÔøΩ extensÔøΩvel, pelo m...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.257 ...de veÔøΩculos. Mas na prÔøΩtica nÔøΩo ÔøΩ
+                                                   extensÔøΩvel, pelo menos ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.257 ...los. Mas na prÔøΩtica nÔøΩo ÔøΩ extensÔøΩ
+                                                  vel, pelo menos totalmente...
+
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--258
 
  []
 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.259 ...er criar um campeonato, ao criar um veÔøΩ
+                                                  culo ÔøΩ preciso especific...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.259 ... um campeonato, ao criar um veÔøΩculo ÔøΩ
+                                                   preciso especificar a sua...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.259 ... chamar o seu construtor. Ora, se alguÔøΩ
+                                                  m que nÔøΩo tenha acesso a...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.259 ...seu construtor. Ora, se alguÔøΩm que nÔøΩ
+                                                  o tenha acesso ao mÔøΩdulo...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.259 ...e alguÔøΩm que nÔøΩo tenha acesso ao mÔøΩ
+                                                  dulo \textit{SimulaÔøΩÔøΩo...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.259 ...acesso ao mÔøΩdulo \textit{SimulaÔøΩÔøΩo}
+                                                   quiser uma nova classe de...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.259 ...acesso ao mÔøΩdulo \textit{SimulaÔøΩÔøΩo}
+                                                   quiser uma nova classe de...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.259 ...aÔøΩÔøΩo} quiser uma nova classe de veÔøΩ
+                                                  culo, nÔøΩo a pode constru...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.259 ...quiser uma nova classe de veÔøΩculo, nÔøΩ
+                                                  o a pode construir em ambi...
+
+? 
 
 Underfull \hbox (badness 10000) in paragraph at lines 259--260
 
  []
 
 
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.261 Outro caso estÔøΩ
+                        na classe \textit{Circuito}: no enunciado foi pedido...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.261 ...o}: no enunciado foi pedido um tempo mÔøΩ
+                                                  dio para cada classe de ca...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.261 ...ÔøΩdio para cada classe de carro, que ÔøΩ
+                                                   usado no mÔøΩtodo \textit...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.261 ...da classe de carro, que ÔøΩ usado no mÔøΩ
+                                                  todo \textit{efectuaCorrid...
+
+? 
+
 Underfull \hbox (badness 10000) in paragraph at lines 261--262
 
  []
 
 
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.263 ... vez, se um utilizador sem acesso ao mÔøΩ
+                                                  dulo \textit{Circuito} qui...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.263 ...rcuito} quisesse uma nova classe de veÔøΩ
+                                                  culos, nÔøΩo poderia espec...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.263 ...sesse uma nova classe de veÔøΩculos, nÔøΩ
+                                                  o poderia especificar o se...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ÔøΩ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.263 ...ÔøΩo poderia especificar o seu tempo mÔøΩ
+                                                  dio nos circuitos. \\
+? 
+
 Underfull \hbox (badness 10000) in paragraph at lines 263--264
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 265--266
-
- []
-
-[10] (./Relatorio.aux) ) 
+[10]
+("C:\Users\Bruno\Documents\GitHub\Li3\Projecto POO\Relatorio\RelatoÃÅrio\Relato
+rio.aux") ) 
 Here is how much of TeX's memory you used:
- 3559 strings out of 493876
- 44567 string characters out of 1150567
- 134143 words of memory out of 3000000
- 6797 multiletter control sequences out of 10000+50000
- 6647 words of font info for 27 fonts, out of 3000000 for 5000
- 714 hyphenation exceptions out of 8191
- 25i,7n,24p,520b,271s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2008/texmf-dist/fonts/type1/bluesky
-/cm/cmbx10.pfb></usr/local/texlive/2008/texmf-dist/fonts/type1/bluesky/cm/cmbx1
-2.pfb></usr/local/texlive/2008/texmf-dist/fonts/type1/bluesky/cm/cmmi10.pfb></u
-sr/local/texlive/2008/texmf-dist/fonts/type1/bluesky/cm/cmr10.pfb></usr/local/t
-exlive/2008/texmf-dist/fonts/type1/bluesky/cm/cmr7.pfb></usr/local/texlive/2008
-/texmf-dist/fonts/type1/bluesky/cm/cmti10.pfb>
-Output written on Relatorio.pdf (10 pages, 840549 bytes).
+ 2232 strings out of 493921
+ 29858 string characters out of 3144877
+ 93085 words of memory out of 3000000
+ 5506 multiletter control sequences out of 15000+200000
+ 5504 words of font info for 20 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 27i,6n,31p,855b,222s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+bx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx
+12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10
+.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pf
+b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on Relatorio.pdf (10 pages, 305136 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 131072)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 77 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
