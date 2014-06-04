@@ -4,6 +4,7 @@
 \usepackage[portuguese]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[hmargin=2cm,vmargin=3.5cm,bmargin=2cm]{geometry}
+\usepackage{multicol}
 
 
 \begin{document}
@@ -53,7 +54,7 @@ Programação Orientada aos Objectos
 
 \subsection{Actividades}
 Foram definidas as seguindes actividades desportivas para a nossa aplicação:
-
+\begin{multicols}{2} 
 \begin{itemize}
 \item Yoga 
 \item Aerobics
@@ -79,8 +80,8 @@ Foram definidas as seguindes actividades desportivas para a nossa aplicação:
 \item Snowboarding
 \item Polo
 \end{itemize}
+\end{multicols}
 
-\newpage
 Para a implementação destas actividades foi usada a seguinte estrutura:
 
 
@@ -210,26 +211,39 @@ Como se pode verificar na figura ~\ref{fig:recordes}, apenas as seguintes activi
 
 \subsubsection{Classe abstracta Record}
 
-Esta classe representa todos os recordes que o utilizador pode bater.
-
-
-
- Contém apenas uma variável:
+Esta classe representa todos os recordes que o utilizador pode bater. Contém apenas uma variável:
 \begin{itemize}
-\item \textit{String name};
+\item \textit{String name}-Nome do tipo de recorde a bater(ex: 1km,10 miles,Cooper...)
 \end{itemize}
 métodos construtores, \textit{getName()} e \textit{isEmpty()} que verifica se esse recorde existe ou não.
 
 
-\subsection{Eventos}
+\subsubsection{DistancePerTime e TimePerDistance}
+Estas classes simboliza os dois diferentes tipos de recordes.\\
 
-\subsection{Classe abstracta Event}
+DistancePerTime é um recorde em que o objectivo é fazer a maior distância para um dado tempo.  
+As suas variáveis são:
+\begin{itemize}
+\item \textit{double recordTime} - Tempo do recorde;
+\item \textit{double distance} - Distância registada;
+\end{itemize}
+Enquanto que TimePerDistance representa um recorde de menor tempo para uma certa distância.
+As suas variaveis sao:
+\begin{itemize}
+\item \textit{double recordDistance} - Distância do recorde;
+\item \textit{double time} - Tempo registado;
+\end{itemize}
+~\\
+Estas duas classes têm os mesmos métodos, no entanto os métodos \textit{update} e \textit{setStatistics}, estão implementados de maneiras diferentes, tendo em conta que em DistancePerTime, quanto maior a distância melhor é o recorde, e no caso do TimePerDistance,  o melhor recorde é o de menor tempo.
 
-Classe com o conceito mais abstracto de Evento, contém as variáveis \textit{name}, \textit{tipoActivity}, \textit{location}, \textit{maxParticipants}, \textit{participants}, \textit{deadline}, \textit{date}, \textit{duration}, \textit{participantsList}, \textit{ranking}, \textit{desistentes} e \textit{simula}, respetivos \textit{getters} e \textit{setters} e os vários contrutores. Ainda tem métodos auxiliares para adicionar um \textit{User}, \textit{ranking}, 
 
+\subsubsection{ListRecords}
 
-\subsection{}
-
+Classe que agrupa todos os recordes de uma actividade. Tem como variáveis:
+\begin{itemize}
+\item \textit{String name} - Aqui o nome simboliza o tipo de actividade(ex: Running);
+\item \textit{ArrayList$<$Record$>$ recs} - Lista dos recordes;
+\end{itemize}
 
 \end{document}
 
