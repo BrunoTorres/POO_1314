@@ -95,10 +95,11 @@ public class Main {
        //u.addActivity(act2, "Running");
         //u.addActivity(actcy, "Cycling");
       //u.addActivity(actc, "Cycling");
-       GregorianCalendar dateu3,dateu1,dateu2;
+       GregorianCalendar dateu3,dateu1,dateu2,date33;
         dateu1 =new GregorianCalendar(1988,2,12);
         dateu2 =new GregorianCalendar(1900,2,12);
         dateu3 =new GregorianCalendar(1990,2,12);
+        date33 =new GregorianCalendar(1100,2,12);
       u1=new User("user1@gmail.com","2211","jose",'M',dateu1,12,14,"correr");
       u2=new User("user3@gmail.com","1122","Manela",'F',dateu2,11,15,"FAzer nada");  
       u3= new User("user4@gmail.com","3322","Raul",'M',dateu3,10,13,"Fazer NADa");
@@ -128,9 +129,9 @@ public class Main {
         Activity act = new MountainBiking("MountainBiking", date3,300, 40, 0.1, "chuva");
         Activity act1 = new MountainBiking("MountainBiking",date3, 350,50, 0.2,"chuva");
         Activity act2 = new MountainBiking("MountainBiking", date3, 10,2,0.5, "chuva");
-        Activity run11 = new Running("run", date3, 20, 4, "chuva");
-        Activity run21 = new Running("run", date3, 60, 15, "chuva");
-        Activity run31 = new Running("run", date3, 15, 2, "chuva");
+        Activity run11 = new Running("run1", date3, 20, 4, "chuva");
+        Activity run21 = new Running("run2", date3, 60, 15, "chuva");
+        Activity run31 = new Running("run3", date3, 15, 2, "chuva");
         
        u2.addActivity(act, "MountainBiking");
        u2.addActivity(act1, "MountainBiking");
@@ -143,7 +144,7 @@ public class Main {
         Activity act1bbt2 = new MountainBiking("MountainBiking",date3, 150, 50, 0.2,"chuva");
         Activity act2btt3 = new MountainBiking("MountainBiking", date3, 250, 60,1, "chuva");
         Activity run12 = new Running("run", date3, 155, 60, "chuva");
-        Activity run22 = new Running("run", date3, 200, 70, "chuva");
+        Activity run22 = new Running("run", date33, 200, 70, "chuva");
         Activity run32 = new Running("run", date3, 140, 90, "chuva");
       // TreeSet activi=(TreeSet)um.getLast10Activities(u);
       //System.out.println(activi.toString()); 
@@ -179,8 +180,8 @@ public class Main {
           // System.out.println("sim existe \n");
          //  um.acceptFriend(u,"user3@gmail.com");
        //}
-      for(String s :u1.getRecords().keySet())
-       System.out.println(u2.getRecords().get(s).toString());
+      //for(String s :u1.getRecords().keySet())
+      // System.out.println(u2.getRecords().get(s).toString());
        
        
        
@@ -223,14 +224,31 @@ public class Main {
        // System.out.println(um.getLast10Activities(u).toString());
       //System.out.println(u.getOneActivity("bike").toString());
       
-      /*
-      for(Statistics s :u.getStats().values()){
+      
+      for(Statistics s :u2.getStats().values()){
          System.out.println(s.toStringDistance());
          System.out.println(s.toStringCalories());
          System.out.println(s.toStringTimeSpend()); 
          
       }
-              */
+      
+      u2.removeActivity("run2");
+      
+      
+      System.out.println("novo\n");
+            
+      
+       for(Statistics s :u2.getStats().values()){
+         System.out.println(s.toStringDistance());
+         System.out.println(s.toStringCalories());
+         System.out.println(s.toStringTimeSpend()); 
+         
+      }
+         System.out.println(".......................\n");
+       System.out.println(run22.getCalories());
+        System.out.println(".......................\n");
+       // date33 =new GregorianCalendar(1900,2,12);
+       um.searchStatisticsYear(u3, 3, 1100);
        //System.out.println(um.getUserByEmail("cois@gmail.com").toString());
       //System.out.println( act.toString());
       
