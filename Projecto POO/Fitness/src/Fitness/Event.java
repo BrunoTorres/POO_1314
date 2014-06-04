@@ -8,7 +8,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 /**
- * Classe abstraía para todos os eventos.
+ * Classe abstrata para todos os eventos.
  *
  * @author Bruno Pereiras
  * @author João Mano
@@ -163,9 +163,9 @@ public abstract class Event implements Serializable {
     }
 
     /**
-     * Construtor de cópia
+     * Construtor de cópia.
      *
-     * @param e-Objecto Evento
+     * @param e - Objecto do tipo Evento.
      */
     public Event(Event e) {
         this.name = e.getName();
@@ -212,7 +212,7 @@ public abstract class Event implements Serializable {
     /**
      * Método que devolve o número máximo de participantes.
      *
-     * @return Inteiro.
+     * @return Número máximo de participantes, inteiro.
      */
     public int getMaxParticipants() {
         return this.maxParticipants;
@@ -221,7 +221,7 @@ public abstract class Event implements Serializable {
     /**
      * Método que devolve o número de participantes registados no evento.
      *
-     * @return Inteiro.
+     * @return Número de participantes, inteiro.
      */
     public int getParticipants() {
         return this.participants;
@@ -239,7 +239,7 @@ public abstract class Event implements Serializable {
     /**
      * Método que devolve a data limite para as inscrições no evento.
      *
-     * @return GregorianCalendar.
+     * @return Data limite, GregorianCalendar.
      */
     public GregorianCalendar getDeadline() {
         return this.deadline;
@@ -248,7 +248,7 @@ public abstract class Event implements Serializable {
     /**
      * Método que devolve a duração do evento em minutos.
      *
-     * @return minutos em double.
+     * @return Minutos, double.
      */
     public double getDuration() {
         return this.duration;
@@ -270,7 +270,7 @@ public abstract class Event implements Serializable {
     /**
      * Método que devolve um set com as classificações dos participantes, que não desistiram.
      *
-     * @return Set de Ranking
+     * @return Set de Ranking.
      */
     public Set<Ranking> getRanking() {
         TreeSet<Ranking> aux = new TreeSet<>(new CompareRankingByTime());
@@ -282,7 +282,7 @@ public abstract class Event implements Serializable {
     }
 
     /**
-     * Método que devolve a referencia para o set com os participantes que desistiram.
+     * Método que devolve a referência para o set com os participantes que desistiram.
      *
      * @return Set de Ranking.
      */
@@ -291,9 +291,9 @@ public abstract class Event implements Serializable {
     }
 
     /**
-     * Método que devolve a referencia para o set com as classificações dos participantes, que não desistiram.
+     * Método que devolve a referência para o set com as classificações dos participantes, que não desistiram.
      *
-     * @return set de Simulacao.
+     * @return Set de Simulacao.
      */
     public Set<Simulacao> getSimulacaoAdmin() {
         return this.simula;
@@ -302,7 +302,7 @@ public abstract class Event implements Serializable {
     /**
      * Método que devolve um set com os participantes que desistiram.
      *
-     * @return set de Raking.
+     * @return set de Ranking.
      */
     public Set<Ranking> getDesistentes() {
         TreeSet<Ranking> aux = new TreeSet<>(new CompareRankingByKm());
@@ -338,7 +338,7 @@ public abstract class Event implements Serializable {
     /**
      * Método que altera a data limite do registo no evento.
      *
-     * @param deadline -GregorianCalendar com a nova data limite
+     * @param deadline - GregorianCalendar com a nova data limite.
      */
     public void setDeadline(GregorianCalendar deadline) {
         this.deadline = deadline;
@@ -347,7 +347,7 @@ public abstract class Event implements Serializable {
     /**
      * Método que altera a data do evento.
      *
-     * @param date -GregorianCalendar com a nova data do evento.
+     * @param date - GregorianCalendar com a nova data do evento.
      */
     public void setDate(GregorianCalendar date) {
         this.date = date;
@@ -356,7 +356,7 @@ public abstract class Event implements Serializable {
     /**
      * Método que altera o número máximo de participantes.
      *
-     * @param max-Inteiro com o novo máximo.
+     * @param max- Inteiro com o novo máximo.
      */
     public void setMaxParticipants(int max) {
         this.maxParticipants = max;
@@ -365,7 +365,7 @@ public abstract class Event implements Serializable {
     /**
      * Método que adiciona um User ao evento.
      *
-     * @param u-User a ser adicionado.
+     * @param u- User a ser adicionado.
      */
     public void addUser(User u) {
         this.participantsList.add(u.clone());
@@ -376,7 +376,7 @@ public abstract class Event implements Serializable {
      * Método que adiciona um user à lista de classificações do evento. Cria um novo Ranking com a informação, e adiciona a lista.
      *
      * @param u- User
-     * @param time -Double do tempo em minutos.
+     * @param time - Double do tempo em minutos.
      */
     public void addRanking(User u, double time) {
         Ranking r = new Ranking(u, time);
@@ -386,8 +386,8 @@ public abstract class Event implements Serializable {
     /**
      * Método adiciona um user ao set de desististes. Cria um novo Ranking com a informação, e adiciona ao set dos desistentes.
      *
-     * @param u- User
-     * @param km-Km em que user desiste.
+     * @param u- User.
+     * @param km- Km em que user desiste.
      */
     public void addDesistente(User u, int km) {
         Ranking r = new Ranking(u, km);
@@ -397,14 +397,14 @@ public abstract class Event implements Serializable {
     /**
      * Método adiciona uma simulação ao evento.
      *
-     * @param s Simulacao
+     * @param s - Simulacao
      */
     public void addSimulacao(Simulacao s) {
         this.simula.add(s);
     }
 
     /**
-     * Método que devolve a classificação geral do evento
+     * Método que devolve a classificação geral do evento.
      *
      * @return String com a classificação.
      */

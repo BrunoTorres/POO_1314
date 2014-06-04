@@ -6,7 +6,8 @@ import java.util.Comparator;
 
 /**
  * Classe comparador.
- * Compara Pessoas por nome. 
+ * Compara Pessoas por ordem alfabética do nome. 
+ * 
  * @author Bruno Pereira
  * @author João Mano
  * @author Miguel Guimarães

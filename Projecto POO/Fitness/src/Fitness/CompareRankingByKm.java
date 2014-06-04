@@ -6,7 +6,7 @@ import java.util.Comparator;
 
 /**
  * Classe comparador.
- * Compara Rankings por km.
+ * Compara Rankings por km (Ordem decrescente).
  * @author Bruno Pereira
  * @author João Mano
  * @author Miguel Guimarães

@@ -11,7 +11,7 @@ import java.util.Comparator;
 
 /**
  * Classe comparador.
- * Compara Ranking por tempo(minutos).
+ * Compara Ranking por tempo, por ordem crescente.
  * @author Bruno Pereira
  * @author João Mano
  * @author Miguel Guimarães

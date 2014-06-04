@@ -4,7 +4,7 @@ import java.util.GregorianCalendar;
 import java.io.Serializable;
 
 /**
- * Write a description of class Handball here.
+ * Actividade Handball.
  *
  * @author (your name)
  * @version (a version number or a date)

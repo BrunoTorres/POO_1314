@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 /**
  *
- * Actividade Cycling
+ * Actividade Cycling.
  *
  * @author Bruno Pereira
  * @author João Mano
@@ -18,7 +18,7 @@ public class Cycling extends Outdoor implements Distance, RecordsActivity, Seria
     private ListRecords recs;
 
     /**
-     * Construtor vazio
+     * Construtor vazio.
      */
     public Cycling() {
         super();
@@ -29,11 +29,11 @@ public class Cycling extends Outdoor implements Distance, RecordsActivity, Seria
     /**
      * Construtor parametrizado.
      *
-     * @param name Nome da actividade
-     * @param date Data da realização da actividade
-     * @param timeSpent Tempo gasto em minutos
-     * @param distance Distancia feita
-     * @param weather Clima
+     * @param name - Nome da actividade.
+     * @param date - Data da realização da actividade.
+     * @param timeSpent - Tempo gasto em minutos.
+     * @param distance - Distancia feita.
+     * @param weather - Clima.
      */
     public Cycling(String name, GregorianCalendar date, double timeSpent, double distance, String weather) {
         super(name, date, timeSpent, weather);
@@ -45,9 +45,9 @@ public class Cycling extends Outdoor implements Distance, RecordsActivity, Seria
 
     /**
      *
-     * Construtor de cópia
+     * Construtor de cópia.
      *
-     * @param tb  instância de Cycling
+     * @param tb - instância de Cycling.
      */
     public Cycling(Cycling tb) {
         super(tb);

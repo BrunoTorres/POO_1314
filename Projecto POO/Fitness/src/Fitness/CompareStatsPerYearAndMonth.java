@@ -7,7 +7,8 @@ import java.util.GregorianCalendar;
 
 /**
  * Classe comparador.
- * Compara Simulacao por data.
+ * Compara Simulacao por data, do mais recente, para o mais antigo.
+ * 
  * @author Bruno Pereira
  * @author João Mano
  * @author Miguel Guimarães
