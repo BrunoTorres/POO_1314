@@ -519,16 +519,16 @@ public class AddViewActivityForm extends javax.swing.JFrame {
 
 		if (ok) {
 			try {
-				String name = this.textName.getText();
-				String sport = (String) this.cboxSports.getSelectedItem();
-				int day = Integer.parseInt(this.cboxDia.getSelectedItem().toString());
+				String name = this.textName.getText().trim();
+				String sport = ((String) this.cboxSports.getSelectedItem()).trim();
+				int day = Integer.parseInt(this.cboxDia.getSelectedItem().toString().trim());
 				int month = this.cboxMes.getSelectedIndex();
-				int year = Integer.parseInt(this.cboxAno.getSelectedItem().toString());
-				int hour = Integer.parseInt(this.cboxHoraData.getSelectedItem().toString());
-				int min = Integer.parseInt(this.cboxMinsData.getSelectedItem().toString());
+				int year = Integer.parseInt(this.cboxAno.getSelectedItem().toString().trim());
+				int hour = Integer.parseInt(this.cboxHoraData.getSelectedItem().toString().trim());
+				int min = Integer.parseInt(this.cboxMinsData.getSelectedItem().toString().trim());
 				GregorianCalendar date = new GregorianCalendar(year, month, day, hour, min);
-				int horas = Integer.parseInt(this.textHoras.getText());
-				int mins = Integer.parseInt(this.textMins.getText());
+				int horas = Integer.parseInt(this.textHoras.getText().trim());
+				int mins = Integer.parseInt(this.textMins.getText().trim());
 				int time = (horas * 60) + mins;
 				boolean insere = false;
 
@@ -539,8 +539,8 @@ public class AddViewActivityForm extends javax.swing.JFrame {
 					case "Sailing":
 					case "Skating":
 					case "Orienteering": {
-						String clima = this.textClima.getText();
-						double distanciaH = Double.parseDouble(this.textDistanciaH.getText());
+						String clima = this.textClima.getText().trim();
+						double distanciaH = Double.parseDouble(this.textDistanciaH.getText().trim());
 						switch (sport) {
 							case "Running":
 								insere = u.addActivity(new Running(name, date, time, distanciaH, clima), "Running");
@@ -569,9 +569,9 @@ public class AddViewActivityForm extends javax.swing.JFrame {
 					case "Snowboarding":
 					case "Mountain Biking":
 					case "Skiing": {
-						String clima = this.textClima.getText();
-						double distanciaH = Double.parseDouble(this.textDistanciaH.getText());
-						double distanciaV = Double.parseDouble(this.textDistanciaV.getText());
+						String clima = this.textClima.getText().trim();
+						double distanciaH = Double.parseDouble(this.textDistanciaH.getText().trim());
+						double distanciaV = Double.parseDouble(this.textDistanciaV.getText().trim());
 						switch (sport) {
 							case "Snowboarding":
 								insere = u.addActivity(new Snowboarding(name, date, time, distanciaH, distanciaV, clima), "Snowboarding");
@@ -589,7 +589,7 @@ public class AddViewActivityForm extends javax.swing.JFrame {
 					}
 					case "Swimming":
 					case "Indoor Cycling": {
-						double distanciaH = Double.parseDouble(this.textDistanciaH.getText());
+						double distanciaH = Double.parseDouble(this.textDistanciaH.getText().trim());
 						switch (sport) {
 							case "Swimming":
 								insere = u.addActivity(new Swimming(name, date, time, distanciaH), "Swimming");
@@ -606,7 +606,7 @@ public class AddViewActivityForm extends javax.swing.JFrame {
 					case "Polo":
 					case "Beach Volleyball":
 					case "Tennis": {
-						String clima = this.textClima.getText();
+						String clima = this.textClima.getText().trim();
 						int score = (int) this.spinnerPessoal.getValue();
 						int scoreAdv = (int) this.spinnerAdversario.getValue();
 						switch (sport) {

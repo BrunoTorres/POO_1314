@@ -342,15 +342,15 @@ public class RegistarUserForm extends javax.swing.JFrame {
 
     private void butOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butOKActionPerformed
 		boolean ok = true;
-		String name = this.textNome.getText();
-		String mail = this.textEmail.getText();
-		String despFav = this.textDespFav.getText();
+		String name = this.textNome.getText().trim();
+		String mail = this.textEmail.getText().trim();
+		String despFav = this.textDespFav.getText().trim();
 		String pw = String.copyValueOf(this.textPW.getPassword());
 		String confpw = String.copyValueOf(this.textConfPW.getPassword());
 		String sexo = (String) this.cboxSexo.getSelectedItem().toString();
-		String peso = this.textPeso.getText();
-		String altura = this.textAltura.getText();
-		GregorianCalendar date = new GregorianCalendar(Integer.parseInt(cboxAno.getSelectedItem().toString()), cboxMes.getSelectedIndex(), Integer.parseInt(cboxDia.getSelectedItem().toString()));
+		String peso = this.textPeso.getText().trim();
+		String altura = this.textAltura.getText().trim();
+		GregorianCalendar date = new GregorianCalendar(Integer.parseInt(cboxAno.getSelectedItem().toString().trim()), cboxMes.getSelectedIndex(), Integer.parseInt(cboxDia.getSelectedItem().toString().trim()));
 		double pesoDouble = 0.0;
 		int alturaInt = 0;
 		

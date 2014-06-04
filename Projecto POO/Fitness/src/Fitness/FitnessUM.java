@@ -79,6 +79,36 @@ public class FitnessUM implements Serializable {
         }
         return aux;
     }
+	
+	/**
+     * Método que devolve a lista de eventos que ainda não ocorreram e ainda têm vagas disponíveis.
+     *
+     * @return List de Event.
+     */
+    public List<Event> getOpenEvents() {
+        ArrayList<Event> aux = new ArrayList<>();
+		GregorianCalendar now = new GregorianCalendar();
+        for (Event e : this.events) {
+			if(e.getDate().after(now) && e.getParticipants() < e.getMaxParticipants())
+				aux.add(e.clone());
+        }
+        return aux;
+    }
+	
+	/**
+     * Método que devolve a lista de eventos que já ocorreram.
+     *
+     * @return List de Event.
+     */
+    public List<Event> getOccurredEvents() {
+        ArrayList<Event> aux = new ArrayList<>();
+		GregorianCalendar now = new GregorianCalendar();
+        for (Event e : this.events) {
+			if(e.getDate().before(now))
+				aux.add(e.clone());
+        }
+        return aux;
+    }
 
     /**
      * Método que devolve um set contendo todos os utilizadores e administradores.
@@ -91,6 +121,40 @@ public class FitnessUM implements Serializable {
             aux.add(p.clone());
         }
         return aux;
+	}
+	
+	/**
+     * Método que devolve quantas atividades estão registadas na aplicação.
+     *
+     * @return número de atividades registadas.
+     */
+	public int getNumActivities(){
+		int num = 0;
+		TreeSet<Person> persons = new TreeSet<>(new ComparePersonByName());
+		persons.addAll(this.getUserList());
+		for(Person p : persons){
+			if(p instanceof User){
+				User u = (User) p;
+				num += u.getActivities().size();
+			}
+		}
+		
+		return num;
+	}
+	
+	/**
+     * Método que devolve quantos Users estão registados na aplicação.
+     *
+     * @return número de Users registados.
+     */
+	public int getNumUsers(){
+		int num = 0;
+		ArrayList<Person> persons = new ArrayList<>(this.getUserList());
+		for(Person p : persons)
+			if (p instanceof User)
+				num++;
+		
+		return num;
 	}
 
     /**
