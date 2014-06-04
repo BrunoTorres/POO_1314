@@ -114,17 +114,17 @@ As suas variaveis sao:
 \item \textit{double recordDistance} - Distância do recorde;
 \item \textit{double time} - Tempo registado;
 \end{itemize}\\
-Estas duas classes têm os mesmos métodos, no entanto os métodos \textit{update} e \textit{setStatistics}, estão implementados de maneiras diferentes, tendo em conta que em DistancePerTime, quanto maior a distância melhor é o recorde, e no caso do TimePerDistance,  o melhor recorde é o de menor tempo.
+Estas duas classes têm os mesmos métodos, no entanto os métodos \textit{update()} e \textit{setStatistics()}, estão implementados de maneiras diferentes, tendo em conta que em DistancePerTime, quanto maior a distância melhor é o recorde, e no caso do TimePerDistance,  o melhor recorde é o de menor tempo.
 
 
 \subsubsection{ListRecords}
 
 Classe que agrupa todos os recordes de uma actividade. Tem como variáveis:
 \begin{itemize}
-\item \textit{String name} - Aqui o nome simboliza o tipo de actividade;
+\item \textit{String name} - Aqui o nome simboliza o tipo de actividade (Ex: Running, Walking...);
 \item \textit{ArrayList$<$Record$>$ recs} - Lista dos recordes;
 \end{itemize}
-
+Tem implementado métodos construtores, \textit{getters}, \textit{setters} e ainda um método \textit{updateList()} que aplica a função \textit{update()} a todos os objectos \textit{Record} da lista. (Subsitui na lista original caso recorde da segunda lista seja melhor).
 
 
 
