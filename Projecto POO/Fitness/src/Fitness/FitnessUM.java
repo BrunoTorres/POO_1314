@@ -10,8 +10,11 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 
 /**
- *
- * @author Bruno
+ * Classe principal da actividade.
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public class FitnessUM implements Serializable {
 
@@ -21,7 +24,7 @@ public class FitnessUM implements Serializable {
     private ArrayList<Event> events;      /// mostrar no inicio criar funcao que ver se ja foi o evento 
 
     /**
-     *
+     * Construtor vazio.
      */
     public FitnessUM() {
         // this.db = new DataBase();
@@ -30,8 +33,8 @@ public class FitnessUM implements Serializable {
     }
 
     /**
-     *
-     * @param um
+     * Construtor de cópia.
+     * @param um instância de FitnessUm.
      */
     public FitnessUM(FitnessUM um) {
         this.p = um.getPerson();
@@ -40,7 +43,7 @@ public class FitnessUM implements Serializable {
     }
 
     /**
-     *
+     * Método que devolve uma pessoa,(pessoa que está logada na aplicação)  
      * @return
      */
     public Person getPerson() {
@@ -48,8 +51,8 @@ public class FitnessUM implements Serializable {
     }
 
     /**
-     *
-     * @return
+     *Método que devolve a lista de eventos.
+     * @return List de Event.
      */
     public List<Event> getEvents() {
         ArrayList<Event> aux = new ArrayList<>();
@@ -60,8 +63,8 @@ public class FitnessUM implements Serializable {
     }
 
     /**
-     *
-     * @return
+     *Método que devolve um set contendo todos os utilizadores e administradores.
+     * @return Set de Person.
      */
     public Set<Person> getUserList() {
         TreeSet<Person> aux = new TreeSet<Person>(new ComparePersonByName());
@@ -88,28 +91,26 @@ public class FitnessUM implements Serializable {
     }
 
     /**
-     *
-     * @param u
-     * @return
+     *Método que adiciona um user a lista de user e administradores.
+     * @param u Utilizador a ser adicionado
+     * @return true ou false,caso consiga ou não adicionar o user.
      */
     public boolean addUserByUser(User u) {
         return this.userList.add(u);
     }
 
-    //
 
     @Override
     public FitnessUM clone() {
         return new FitnessUM(this);
     }
 
-        /////////Eventos///////////////////// 
     //////////////SIMULAÇAO//////////////////////
     /**
-     *
-     * @param e
-     * @param weather
-     * @param temperatura
+     *Método que simula um evento,km a km e mostrando no fim a classificação final.
+     * @param e Evento.
+     * @param weather Clima.
+     * @param temperatura Temperatura no evento.
      */
     public void simulaEvent(Event e, String weather, double temperatura) {
         double distance = 0;
@@ -196,20 +197,20 @@ public class FitnessUM implements Serializable {
 
     //////////EVENTS////////////////////////////////////////////
     /**
-     *
-     * @param e
+     *Método que adiciona um evento a lista de eventos.
+     * @param e Evento a adicionar.
      */
     public void addEvent(Event e) {
         this.events.add(e);
     }
 
     /**
-     *
-     * @param name
-     * @param location
-     * @param maxParticipants
-     * @param deadline
-     * @param date
+     *Método que adiciona um evento do tipo Marathon a lista de eventos.
+     * @param name Nome do evento.
+     * @param location Localização do evento.
+     * @param maxParticipants Número máximo de participantes.
+     * @param deadline Data limite de inscrição.
+     * @param date Data do evento.
      */
     public void addMarathon(String name, String location, int maxParticipants,
             GregorianCalendar deadline, GregorianCalendar date) {
@@ -220,11 +221,12 @@ public class FitnessUM implements Serializable {
 
     /**
      *
-     * @param name
-     * @param location
-     * @param maxParticipants
-     * @param deadline
-     * @param date
+     *Método que adiciona um evento do tipo Halfmarathon a lista de eventos.
+     * @param name Nome do evento.
+     * @param location Localização do evento.
+     * @param maxParticipants Número máximo de participantes.
+     * @param deadline Data limite de inscrição.
+     * @param date Data do evento.
      */
     public void addHalfmarathon(String name, String location, int maxParticipants,
             GregorianCalendar deadline, GregorianCalendar date) {
@@ -234,13 +236,13 @@ public class FitnessUM implements Serializable {
     }
 
     /**
-     *
-     * @param name
-     * @param location
-     * @param maxParticipants
-     * @param deadline
-     * @param date
-     * @param distance
+     *Método que adiciona um evento do tipo MarathonBTT a lista de eventos.
+     * @param name Nome do evento.
+     * @param location Localização do evento.
+     * @param maxParticipants Número máximo de participantes.
+     * @param deadline Data limite de inscrição.
+     * @param date Data do evento.
+     * @param distance Distancia do evento.
      */
     public void addMarathonBTT(String name, String location, int maxParticipants, GregorianCalendar deadline,
             GregorianCalendar date, double distance) {
@@ -249,6 +251,15 @@ public class FitnessUM implements Serializable {
         this.events.add(e);
     }
 
+    /**
+     *Método que adiciona um evento do tipo Trail a lista de eventos.
+     * @param name Nome do evento.
+     * @param location Localização do evento.
+     * @param maxParticipants Número máximo de participantes.
+     * @param deadline Data limite de inscrição.
+     * @param date Data do evento.
+     * @param distance Distancia do evento.
+     */
     public void addTrail(String name, String location, int maxParticipants, GregorianCalendar deadline,
             GregorianCalendar date, double distance) {
 
@@ -257,9 +268,9 @@ public class FitnessUM implements Serializable {
     }
 
     /**
-     *
-     * @param name
-     * @return
+     * Método que procura um evento pelo seu nome.
+     * @param name Nome do evento a procurar.
+     * @return Event.
      */
     public Event getEventByName(String name) {       // VER MELHOR!! SE NAO HOUVER O EVENTO RETORNAR O QUE?!
         Event event = new Trail();
@@ -302,10 +313,10 @@ public class FitnessUM implements Serializable {
     //adiciona um user a um evento se ja praticou se a data de termino ainda nao foi atingida e se o nº max de par ainda nao foi atingido 
 
     /**
-     *
-     * @param u
-     * @param e
-     * @return
+     *Método que adiciona um user a um evento se: já tiver praticado,se a data de termino e o número máximo de participantes ainda não tiverem sido atingidos.
+     * @param u Utilizador a registar.
+     * @param e Evento onde se vai registar o user.
+     * @return true se adicionou o user,false caso contrário.
      */
     public boolean userRegistEvent(User u, Event e) {
         GregorianCalendar date = new GregorianCalendar();
@@ -319,13 +330,13 @@ public class FitnessUM implements Serializable {
             return false;
         }
     }
-     //So se pode registar se ja praticou actividade do tipo do evento
+    
 
     /**
-     *
-     * @param u
-     * @param tipoEvento
-     * @return
+     *Método que verifica se o user já praticou o tipo de actividade "Running" ou " MountainBiking".
+     * @param u User
+     * @param tipoEvento Tipo do evento
+     * @return true se o user já particou o tipo de actividade do evento,false caso contrário.
      */
     public boolean userRegistaEventoSeFezActivity(User u, String tipoEvento) {
 
@@ -345,17 +356,14 @@ public class FitnessUM implements Serializable {
 
     //////////////////////////     Gerenciamento da aplicação /////////////////////////////////////////////////
     /**
-     *
+     *Método que devolve a referencia de uma pessoa,(pessoa que está logada na aplicação) 
      * @return
      */
     public Person getActivePerson() {
         return this.p;
     }
 
-    /**
-     *
-     * @param p
-     */
+
     public void setFitnessPerson(Person p) {
         if (p instanceof User) {
             this.p = (User) p;
@@ -365,9 +373,9 @@ public class FitnessUM implements Serializable {
     }
 
     /**
-     *
-     * @param email
-     * @return
+     *Método que procura um utilizador pelo email.
+     * @param email Email.
+     * @return User.
      */
     public User getUserByEmail(String email) {
         User u;
@@ -376,10 +384,10 @@ public class FitnessUM implements Serializable {
     }
 
     /**
-     *
-     * @param email
-     * @param pass
-     * @return
+     *Método que procura utilizadores e administradores pelo email e palavra-passe.
+     * @param email Email
+     * @param pass Palavra-passe.
+     * @return true se encontrou,false caso contrário.
      */
     public boolean existPassAndUser(String email, String pass) {                               //////////////////////////////////////////////            
 
@@ -396,9 +404,9 @@ public class FitnessUM implements Serializable {
     }
 
     /**
-     *
-     * @param email
-     * @return
+     *Método que procura a existência de um utilizador ou administrador pelo email. 
+     * @param email Email.
+     * @return true se encontrou , false caso contrário.
      */
     public boolean existPerson(String email) {
         boolean flag = false;
@@ -418,11 +426,11 @@ public class FitnessUM implements Serializable {
     }
 
     /**
-     *
-     * @param email
-     * @return
+     *Método que procura por email se uma dada pessoa é administrador.
+     * @param email email.
+     * @return true caso seja,false caso não seja.
      */
-    public boolean isAdmin(String email) {                     // Procurar por email ou Admin admin?!
+    public boolean isAdmin(String email) {                     
 
         boolean flag = false;
         boolean found = false;
@@ -442,16 +450,16 @@ public class FitnessUM implements Serializable {
     }
 
     /**
-     *
-     * @param email
-     * @param pass
-     * @param name
-     * @param gender
-     * @param date
-     * @param height
-     * @param weight
-     * @param favoriteActivity
-     * @return
+     * Método que adiciona um user a lista.
+     * @param email Email.
+     * @param pass Palavra-passe.
+     * @param name Nome.
+     * @param gender Género.
+     * @param date Data de Nascimento.
+     * @param height Altura.    
+     * @param weight Peso.
+     * @param favoriteActivity Actividade favorita.
+     * @return true se conseguiu adicionar,false caso contrário.
      */
     public boolean addUser(String email, String pass, String name, char gender, GregorianCalendar date,
             int height, double weight, String favoriteActivity) {
@@ -464,13 +472,13 @@ public class FitnessUM implements Serializable {
     }
 
     /**
-     *
-     * @param email
-     * @param pass
-     * @param name
-     * @param gender
-     * @param date
-     * @return
+     *Método que adiciona um administrador a lista.
+     * @param email Email.
+     * @param pass Palavra-passe.
+     * @param name Nome.
+     * @param gender Género.
+     * @param date Data de Nascimento.
+     * @return true se conseguiu adicionar,false caso contrário.
      */
     public boolean addAdmin(String email, String pass, String name, char gender, GregorianCalendar date) {
         boolean flag;
@@ -484,11 +492,11 @@ public class FitnessUM implements Serializable {
 	/////////////////////////////////////////////////Propriedade dos Utilizadores//////////////////////////////////////
     //Aceder as estatisticas(mensais anuais) STATISTICS by distancia tempo e\calorias
     /**
-     *
-     * @param u
-     * @param tipo
-     * @param mes
-     * @param ano
+     * Método que imprime as estatísticas mensais do utilizador.
+     * @param u User.
+     * @param tipo tipo de estatísticas a pesquisar.
+     * @param mes mês a pesquisar.
+     * @param ano ano a pesquisar.
      */
     public void searchStatisticsMONTH(User u, int tipo, int mes, int ano) {
         TreeMap<GregorianCalendar, Statistics> aux = (TreeMap<GregorianCalendar, Statistics>) u.getStats();
@@ -513,10 +521,10 @@ public class FitnessUM implements Serializable {
     }
 
     /**
-     *
-     * @param u
-     * @param tipo
-     * @param ano
+     * Método que imprime as estatísticas anuais do utilizador.
+     * @param u User.
+     * @param tipo tipo de estatísticas a pesquisar.
+     * @param ano ano a pesquisar.
      */
     public void searchStatisticsYear(User u, int tipo, int ano) {
         TreeMap<GregorianCalendar, Statistics> aux = (TreeMap<GregorianCalendar, Statistics>) u.getStats();
@@ -547,9 +555,9 @@ public class FitnessUM implements Serializable {
 
 	////////////////////////////////!!!FRIEND!!!//////////////////////////////////////////////////
     /**
-     *
-     * @param user
-     * @param friendWhoSendsRequest
+     * Método para enviar um pedido de amizade.
+     * @param user User a qual se envia o pedido.
+     * @param friendWhoSendsRequest User que envia o pedido.
      */
     public void sendFriendRequest(User user, User friendWhoSendsRequest) {
         user.addFriendToMessage(friendWhoSendsRequest.getEmail());
@@ -557,62 +565,34 @@ public class FitnessUM implements Serializable {
     }
 
     /**
-     *
-     * @param u
-     * @return
+     * Método que procura se existe algum pedido de amizade.
+     * @param u User.
+     * @return true se exite,false caso contrário.
      */
     public boolean existsFriendToAdd(User u) {
 
-        return (!((ArrayList<String>) u.getMessage()).isEmpty());   // PARA DEVOLVER o contrario
+        return (!((ArrayList<String>) u.getMessage()).isEmpty());   
 
     }
 
-        //ArrayList.toString()
+       
     /**
-     *
-     * @param u
-     * @param email
+     * Método para aceitar um user como amigo.
+     * @param u User que vai aceitar.
+     * @param email Email do amigo que enviou o pedido de amizade. 
      */
-    public void acceptFriend(User u, String email) {                                                         //CLASSE MENSAGENS? UM 
-        //  boolean found = false;
-
+    public void acceptFriend(User u, String email) {                                                         
+       
         User amigo = getUserByEmail(email);
-
         u.addFriend(amigo);
         amigo.addFriend(u);
-        /*
-         User u2 = new User();
-         TreeSet<Person> userList = (TreeSet) this.db.getUserList();
-
-         Iterator<Person> it = userList.iterator();
-
-         while (it.hasNext() && !found) {
-         Person p = it.next();
-         if ((p.getEmail().equals(email)) && (p instanceof User)) {
-         u2 = (User) p;
-         found = true;
-         }
-
-         }
-         */
-        //if (found) {
-
-       // }
-        //  return found;
+        
     }
 
-    /*
-     public boolean addActivity(Activity act,User u){
-     boolean flag=false;
-     if (ExistSport(act.getSportName())){                                                    
-     }
-     return flag;
-     }
-     */
     /**
-     *
-     * @param u
-     * @return
+     * Método que devolve as ultimas 10 actividades de um user.
+     * @param u User.
+     * @return Set de Activity.
      */
     public Set<Activity> getLast10ActivitiesByActivity(User u) {
         TreeSet<Activity> aux = new TreeSet<>(new CompareActivity());
@@ -624,7 +604,7 @@ public class FitnessUM implements Serializable {
     }
 
     /**
-     *
+     * Método que devolve o nome das últimas 10 actividades de um user.
      * @param u
      * @return
      */
@@ -639,11 +619,11 @@ public class FitnessUM implements Serializable {
 
     /////// VE TODAS AS ACTIVIDADES DE TODOS OS AMIGOS ///////////////////////////
     /**
-     *
-     * @param users
-     * @return
+     * Método que constrói uma String com a informação dos amigos de uma lista de utilizadores.
+     * @param users Set de user.
+     * @return String.
      */
-    public String FriendToString(TreeSet<User> users) {
+    public String FriendToString(Set<User> users) {
         StringBuilder sb = new StringBuilder();
 
         for (User friend : users) {
@@ -652,20 +632,15 @@ public class FitnessUM implements Serializable {
             sb.append("Favorite Activity: ");
             sb.append(friend.getFavoriteActivity()).append("\n");
             sb.append("Activities").append("\n");
-            sb.append(friend.getActivities().toString());                                           //toSring() METODO IMPLENTADO NA ACTIVITYLIST!!!!
+            sb.append(friend.getActivities().toString());                                           
 
         }
         return sb.toString();
     }
 
-    /**
-     *
-     * @param u
-     * @return
-     */
+    
     public String seeAllFriend(User u) {
         TreeSet<Person> dbUsers = (TreeSet<Person>) this.getUserList();
-        //  TreeSet<String> userActivities = (TreeSet) u.getFriendsList();
         TreeSet<User> users = new TreeSet<>();
 
         for (String s : u.getFriendsList()) {
@@ -687,9 +662,9 @@ public class FitnessUM implements Serializable {
 	//Ver Actividade de um dado amigo //
     //Lista amigos,escolhe amigo        --
     /**
-     *
-     * @param u
-     * @return
+     * Método que cria uma string com todos os emails dos amigos.
+     * @param u User.
+     * @return String.
      */
     public String listAllFriends(User u) {
         TreeSet<String> s = (TreeSet<String>) u.getFriendsList();
@@ -699,9 +674,9 @@ public class FitnessUM implements Serializable {
 
     //Lista Activity do amigo 
     /**
-     *
-     * @param u
-     * @return
+     * Método que cria uma string com as actividades dos amigos.
+     * @param u User.
+     * @return String.
      */
     public String allActivitiesFriend(User u) {
         StringBuilder sb = new StringBuilder();
@@ -716,10 +691,10 @@ public class FitnessUM implements Serializable {
 	//
     // Recebe nome da activityList e User Friend procura essa activity e lista 
     /**
-     *
-     * @param u
-     * @param activity
-     * @return
+     * Método que cria uma string com a informação de uma dada actividade.
+     * @param u User.
+     * @param activity Actividade.
+     * @return String.
      */
     public String seeOneActivityList(User u, String activity) {
         return u.getOneActivity(activity).toString();
@@ -728,9 +703,9 @@ public class FitnessUM implements Serializable {
 
 	//////////////////////////////////// Propriedade dos Administradores//////////////////////////////////////////
     /**
-     *
-     * @param email
-     * @return
+     *Método que remove um user da lista.
+     * @param email Email do user.
+     * @return true se conseguir eliminar,false caso contrario.
      */
     public boolean removeUser(String email) {
 
@@ -751,9 +726,9 @@ public class FitnessUM implements Serializable {
     }
 
     /**
-     *
-     * @param activity
-     * @return
+     * Método que remove uma actividade de todos os utilizadores.
+     * @param activity Actividade.
+     * @return true se removeu,false caso contrário.
      */
     public boolean removeActivity(Activity activity) {
         boolean flag = false;
@@ -770,10 +745,10 @@ public class FitnessUM implements Serializable {
     }
 
     /**
-     *
-     * @param name
+     *Método que remove uma actividade de todos os users.
+     * @param name Nome da actividade.
      */
-    public void removeActivityFromUser(String name) {    //remove uma actividade de todos os users name of activity
+    public void removeActivityFromUser(String name) {    
 
         for (Person per : this.userList) {
             if (per instanceof User) {
