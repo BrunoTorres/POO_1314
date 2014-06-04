@@ -27,8 +27,8 @@ public class AddViewActivityForm extends javax.swing.JFrame {
 	 * Creates new form AddActivityForm
 	 *
 	 * @param parent
-     * @param fit
-     * @param u
+	 * @param fit
+	 * @param u
 	 */
 	public AddViewActivityForm(UserForm parent, FitnessUM fit, User u) {
 		initComponents();
@@ -44,179 +44,6 @@ public class AddViewActivityForm extends javax.swing.JFrame {
 		this.cboxDia.setSelectedItem(dia);
 		this.cboxMes.setSelectedIndex(mes);
 		this.cboxAno.setSelectedItem(ano);
-
-	}
-
-    /**
-     *
-     * @param parent
-     * @param fit
-     * @param u
-     * @param act
-     */
-    public AddViewActivityForm(UserForm parent, FitnessUM fit, User u, Activity act) {
-		initComponents();
-		this.parent = parent;
-		this.fit = fit;
-		this.u = u;
-		this.a = act;
-		this.setLocationRelativeTo(parent);
-		this.setName("view");
-		GregorianCalendar date = act.getDate();
-		this.textName.setText(act.getName());
-		this.cboxDia.setSelectedItem(date.get(Calendar.DAY_OF_MONTH));
-		this.cboxMes.setSelectedIndex(date.get(Calendar.MONTH));
-		this.cboxAno.setSelectedItem(date.get(Calendar.YEAR));
-		double time = act.getTimeSpent();
-		int horas = (int) (time / 60);
-		int mins = (int) (time % 60);
-		this.textHoras.setText(String.valueOf(horas));
-		this.textMins.setText(String.valueOf(mins));
-		this.textCalorias.setEnabled(true);
-		this.textCalorias.setText(String.valueOf((int) act.getCalories()));
-		this.butOKAddAct.setText("ELIMINAR");
-
-		this.cboxDia.setEnabled(false);
-		this.cboxMes.setEnabled(false);
-		this.cboxAno.setEnabled(false);
-		this.cboxSports.setEnabled(false);
-		this.textName.setEditable(false);
-		this.textClima.setEditable(false);
-		this.textHoras.setEditable(false);
-		this.textMins.setEditable(false);
-		this.textDistanciaH.setEditable(false);
-		this.textDistanciaH.setEnabled(false);
-		this.textDistanciaV.setEditable(false);
-		this.textDistanciaV.setEnabled(false);
-		this.spinnerAdversario.setEnabled(false);
-		this.spinnerPessoal.setEnabled(false);
-
-		if (act instanceof Distance || act instanceof VerticalDistance) {
-			this.textDistanciaH.setEnabled(true);
-			if (act instanceof VerticalDistance) {
-				this.textDistanciaV.setEnabled(true);
-			}
-
-			if (act instanceof Running) {
-				Running r = (Running) act;
-				this.cboxSports.setSelectedItem("Running");
-				this.textClima.setText(r.getWeather());
-				this.textDistanciaH.setText(String.valueOf(r.getDistance()));
-			} else if (act instanceof Cycling) {
-				Cycling s = (Cycling) act;
-				this.cboxSports.setSelectedItem("Cycling");
-				this.textClima.setText(s.getWeather());
-				this.textDistanciaH.setText(String.valueOf(s.getDistance()));
-			} else if (act instanceof Walking) {
-				Walking s = (Walking) act;
-				this.cboxSports.setSelectedItem("Walking");
-				this.textClima.setText(s.getWeather());
-				this.textDistanciaH.setText(String.valueOf(s.getDistance()));
-			} else if (act instanceof Sailing) {
-				Sailing s = (Sailing) act;
-				this.cboxSports.setSelectedItem("Sailing");
-				this.textClima.setText(s.getWeather());
-				this.textDistanciaH.setText(String.valueOf(s.getDistance()));
-			} else if (act instanceof Skating) {
-				Skating s = (Skating) act;
-				this.cboxSports.setSelectedItem("Skating");
-				this.textClima.setText(s.getWeather());
-				this.textDistanciaH.setText(String.valueOf(s.getDistance()));
-			} else if (act instanceof Orienteering) {
-				Orienteering s = (Orienteering) act;
-				this.cboxSports.setSelectedItem("Orienteering");
-				this.textClima.setText(s.getWeather());
-				this.textDistanciaH.setText(String.valueOf(s.getDistance()));
-			} else if (act instanceof Swimming) {
-				Swimming s = (Swimming) act;
-				this.cboxSports.setSelectedItem("Swimming");
-				this.textDistanciaH.setText(String.valueOf(s.getDistance()));
-				this.textClima.setEnabled(false);
-			} else if (act instanceof IndoorCycling) {
-				IndoorCycling s = (IndoorCycling) act;
-				this.cboxSports.setSelectedItem("Indoor Cycling");
-				this.textDistanciaH.setText(String.valueOf(s.getDistance()));
-				this.textClima.setEnabled(false);
-			} else if (act instanceof Snowboarding) {
-				Snowboarding s = (Snowboarding) act;
-				this.cboxSports.setSelectedItem("Snowboarding");
-				this.textClima.setText(s.getWeather());
-				this.textDistanciaH.setText(String.valueOf(s.getDistance()));
-				this.textDistanciaV.setText(String.valueOf(s.getVerticalDistance()));
-			} else if (act instanceof MountainBiking) {
-				MountainBiking s = (MountainBiking) act;
-				this.cboxSports.setSelectedItem("Mountain Biking");
-				this.textClima.setText(s.getWeather());
-				this.textDistanciaH.setText(String.valueOf(s.getDistance()));
-				this.textDistanciaV.setText(String.valueOf(s.getVerticalDistance()));
-			} else {
-				Skiing s = (Skiing) act;
-				this.cboxSports.setSelectedItem("Skiing");
-				this.textClima.setText(s.getWeather());
-				this.textDistanciaH.setText(String.valueOf(s.getDistance()));
-				this.textDistanciaV.setText(String.valueOf(s.getVerticalDistance()));
-			}
-		} else if (act instanceof UserVs) {
-			if (act instanceof Football || act instanceof Polo || act instanceof Tennis) {
-				this.textClima.setEnabled(true);
-			}
-
-			if (act instanceof Football) {
-				Football r = (Football) act;
-				this.cboxSports.setSelectedItem("Football");
-				this.textClima.setText(r.getWeather());
-				this.spinnerPessoal.setValue(r.getMyScore());
-				this.spinnerAdversario.setValue(r.getOpScore());
-			} else if (act instanceof Polo) {
-				Polo r = (Polo) act;
-				this.cboxSports.setSelectedItem("Polo");
-				this.textClima.setText(r.getWeather());
-				this.spinnerPessoal.setValue(r.getMyScore());
-				this.spinnerAdversario.setValue(r.getOpScore());
-			} else if (act instanceof Tennis) {
-				Tennis r = (Tennis) act;
-				this.cboxSports.setSelectedItem("Tennis");
-				this.textClima.setText(r.getWeather());
-				this.spinnerPessoal.setValue(r.getMyScore());
-				this.spinnerAdversario.setValue(r.getOpScore());
-			} else if (act instanceof Handball) {
-				Handball r = (Handball) act;
-				this.cboxSports.setSelectedItem("Handball");
-				this.spinnerPessoal.setValue(r.getMyScore());
-				this.spinnerAdversario.setValue(r.getOpScore());
-			} else if (act instanceof Basketball) {
-				Basketball r = (Basketball) act;
-				this.cboxSports.setSelectedItem("Basketball");
-				this.spinnerPessoal.setValue(r.getMyScore());
-				this.spinnerAdversario.setValue(r.getOpScore());
-			} else if (act instanceof TableTennis) {
-				TableTennis r = (TableTennis) act;
-				this.cboxSports.setSelectedItem("Table Tennis");
-				this.spinnerPessoal.setValue(r.getMyScore());
-				this.spinnerAdversario.setValue(r.getOpScore());
-			} else if (act instanceof Boxing) {
-				Boxing r = (Boxing) act;
-				this.cboxSports.setSelectedItem("Boxing");
-				this.spinnerPessoal.setValue(r.getMyScore());
-				this.spinnerAdversario.setValue(r.getOpScore());
-			} else if (act instanceof Badminton) {
-				Badminton r = (Badminton) act;
-				this.cboxSports.setSelectedItem("Badminton");
-				this.spinnerPessoal.setValue(r.getMyScore());
-				this.spinnerAdversario.setValue(r.getOpScore());
-			} else {
-				VolleyBallIndoor s = (VolleyBallIndoor) act;
-				this.cboxSports.setSelectedItem("Volleyball");
-				this.spinnerPessoal.setValue(s.getMyScore());
-				this.spinnerAdversario.setValue(s.getOpScore());
-			}
-		} else {
-			if (act instanceof Yoga) {
-				this.cboxSports.setSelectedItem("Yoga");
-			} else {
-				this.cboxSports.setSelectedItem("Aerobics");
-			}
-		}
 
 	}
 
@@ -259,10 +86,18 @@ public class AddViewActivityForm extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         textCalorias = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        cboxHoraData = new javax.swing.JComboBox();
+        cboxMinsData = new javax.swing.JComboBox();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         butOKAddAct = new javax.swing.JButton();
         butCancelAddAct = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(513, 403));
+        setMinimumSize(new java.awt.Dimension(513, 403));
+        setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
@@ -273,6 +108,8 @@ public class AddViewActivityForm extends javax.swing.JFrame {
         });
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "NOVA ATIVIDADE"));
+        jPanel1.setMaximumSize(new java.awt.Dimension(491, 381));
+        jPanel1.setMinimumSize(new java.awt.Dimension(491, 381));
 
         labelName.setText("Nome");
 
@@ -280,20 +117,35 @@ public class AddViewActivityForm extends javax.swing.JFrame {
 
         labelDay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelDay.setText("Dia");
+        labelDay.setMaximumSize(new java.awt.Dimension(45, 14));
+        labelDay.setMinimumSize(new java.awt.Dimension(45, 14));
+        labelDay.setPreferredSize(new java.awt.Dimension(45, 14));
 
         labelMonth.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelMonth.setText("Mês");
+        labelMonth.setMaximumSize(new java.awt.Dimension(95, 14));
+        labelMonth.setMinimumSize(new java.awt.Dimension(95, 14));
+        labelMonth.setPreferredSize(new java.awt.Dimension(95, 14));
 
         labelYear.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelYear.setText("Ano");
+        labelYear.setMaximumSize(new java.awt.Dimension(68, 14));
+        labelYear.setMinimumSize(new java.awt.Dimension(68, 14));
+        labelYear.setPreferredSize(new java.awt.Dimension(68, 14));
 
         labelTime.setText("Duração");
 
         labelDate.setText("Data");
 
         textName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textName.setMaximumSize(new java.awt.Dimension(244, 28));
+        textName.setMinimumSize(new java.awt.Dimension(244, 28));
+        textName.setPreferredSize(new java.awt.Dimension(244, 28));
 
         cboxSports.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Yoga", "Aerobics", "Swimming", "Indoor Cycling", "Handball", "Basketball", "Table Tennis", "Boxing", "Badminton", "Volleyball", "Football", "Beach Volleyball", "Running", "Skating", "Sailing", "Walking", "Tennis", "Skiing", "Cycling", "Mountain Biking", "Orienteering", "Snowboarding", "Polo" }));
+        cboxSports.setMaximumSize(new java.awt.Dimension(244, 23));
+        cboxSports.setMinimumSize(new java.awt.Dimension(244, 23));
+        cboxSports.setPreferredSize(new java.awt.Dimension(244, 23));
         cboxSports.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cboxSportsItemStateChanged(evt);
@@ -316,18 +168,35 @@ public class AddViewActivityForm extends javax.swing.JFrame {
 
         cboxMes.setFont(new java.awt.Font("Dialog", 0, 9)); // NOI18N
         cboxMes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"}));
+        cboxMes.setMaximumSize(new java.awt.Dimension(95, 21));
+        cboxMes.setMinimumSize(new java.awt.Dimension(95, 21));
+        cboxMes.setPreferredSize(new java.awt.Dimension(95, 21));
 
         cboxAno.setFont(new java.awt.Font("Dialog", 0, 9)); // NOI18N
         cboxAno.setModel(new javax.swing.DefaultComboBoxModel(new Integer[] { 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014}));
+        cboxAno.setMaximumSize(new java.awt.Dimension(68, 21));
+        cboxAno.setMinimumSize(new java.awt.Dimension(68, 21));
+        cboxAno.setPreferredSize(new java.awt.Dimension(68, 21));
 
         textHoras.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textHoras.setMaximumSize(new java.awt.Dimension(45, 28));
+        textHoras.setMinimumSize(new java.awt.Dimension(45, 28));
+        textHoras.setPreferredSize(new java.awt.Dimension(45, 28));
 
         textMins.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textMins.setMaximumSize(new java.awt.Dimension(45, 28));
+        textMins.setMinimumSize(new java.awt.Dimension(45, 28));
+        textMins.setPreferredSize(new java.awt.Dimension(45, 28));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Clima"));
+        jPanel2.setMaximumSize(new java.awt.Dimension(112, 120));
+        jPanel2.setMinimumSize(new java.awt.Dimension(112, 120));
+        jPanel2.setPreferredSize(new java.awt.Dimension(112, 74));
 
         textClima.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        textClima.setEnabled(false);
+        textClima.setMaximumSize(new java.awt.Dimension(76, 28));
+        textClima.setMinimumSize(new java.awt.Dimension(76, 28));
+        textClima.setPreferredSize(new java.awt.Dimension(76, 28));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -335,7 +204,7 @@ public class AddViewActivityForm extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(textClima, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE)
+                .addComponent(textClima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -347,12 +216,18 @@ public class AddViewActivityForm extends javax.swing.JFrame {
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Distância"));
+        jPanel3.setMaximumSize(new java.awt.Dimension(137, 140));
+        jPanel3.setMinimumSize(new java.awt.Dimension(137, 120));
 
         textDistanciaH.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        textDistanciaH.setEnabled(false);
+        textDistanciaH.setMaximumSize(new java.awt.Dimension(52, 28));
+        textDistanciaH.setMinimumSize(new java.awt.Dimension(52, 28));
+        textDistanciaH.setPreferredSize(new java.awt.Dimension(52, 28));
 
         textDistanciaV.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        textDistanciaV.setEnabled(false);
+        textDistanciaV.setMaximumSize(new java.awt.Dimension(52, 28));
+        textDistanciaV.setMinimumSize(new java.awt.Dimension(52, 28));
+        textDistanciaV.setPreferredSize(new java.awt.Dimension(52, 28));
 
         jLabel4.setText("KMs");
 
@@ -368,11 +243,11 @@ public class AddViewActivityForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(textDistanciaH, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(textDistanciaH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel4))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(textDistanciaV, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(textDistanciaV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel8))
                     .addComponent(jLabel5))
@@ -395,12 +270,19 @@ public class AddViewActivityForm extends javax.swing.JFrame {
         );
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Pontuação"));
+        jPanel4.setMaximumSize(new java.awt.Dimension(168, 140));
+        jPanel4.setMinimumSize(new java.awt.Dimension(168, 120));
+        jPanel4.setPreferredSize(new java.awt.Dimension(168, 140));
 
-        spinnerPessoal.setEnabled(false);
+        spinnerPessoal.setMaximumSize(new java.awt.Dimension(59, 28));
+        spinnerPessoal.setMinimumSize(new java.awt.Dimension(59, 28));
+        spinnerPessoal.setPreferredSize(new java.awt.Dimension(59, 28));
 
         jLabel9.setText("Pessoal");
 
-        spinnerAdversario.setEnabled(false);
+        spinnerAdversario.setMaximumSize(new java.awt.Dimension(59, 28));
+        spinnerAdversario.setMinimumSize(new java.awt.Dimension(59, 28));
+        spinnerAdversario.setPreferredSize(new java.awt.Dimension(59, 28));
 
         jLabel10.setText("Adversário");
 
@@ -411,8 +293,8 @@ public class AddViewActivityForm extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(spinnerAdversario)
-                    .addComponent(spinnerPessoal, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spinnerAdversario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spinnerPessoal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
@@ -438,6 +320,27 @@ public class AddViewActivityForm extends javax.swing.JFrame {
         textCalorias.setEditable(false);
         textCalorias.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textCalorias.setEnabled(false);
+        textCalorias.setMaximumSize(new java.awt.Dimension(60, 28));
+        textCalorias.setMinimumSize(new java.awt.Dimension(60, 28));
+        textCalorias.setPreferredSize(new java.awt.Dimension(60, 28));
+
+        jLabel7.setText("Hora");
+
+        cboxHoraData.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        cboxHoraData.setModel(new javax.swing.DefaultComboBoxModel(new Integer[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23}));
+        cboxHoraData.setMaximumSize(new java.awt.Dimension(45, 21));
+        cboxHoraData.setMinimumSize(new java.awt.Dimension(45, 21));
+        cboxHoraData.setPreferredSize(new java.awt.Dimension(45, 21));
+
+        cboxMinsData.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        cboxMinsData.setModel(new javax.swing.DefaultComboBoxModel(new Integer[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59}));
+        cboxMinsData.setMaximumSize(new java.awt.Dimension(45, 21));
+        cboxMinsData.setMinimumSize(new java.awt.Dimension(45, 21));
+        cboxMinsData.setPreferredSize(new java.awt.Dimension(45, 21));
+
+        jLabel11.setText("h");
+
+        jLabel12.setText("m");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -447,53 +350,63 @@ public class AddViewActivityForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelName)
+                            .addComponent(labelDate)
+                            .addComponent(jLabel7))
+                        .addGap(45, 45, 45)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(labelDay, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cboxDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cboxMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(12, 12, 12)
+                                        .addComponent(cboxMinsData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(4, 4, 4)
+                                        .addComponent(jLabel12)))
+                                .addGap(25, 25, 25)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(cboxAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(textName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cboxSports, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(cboxHoraData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel11)
+                                .addGap(194, 194, 194))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(labelTime)
                         .addGap(31, 31, 31)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(textHoras, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(textHoras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(27, 27, 27)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(textMins, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                            .addComponent(textMins, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(textCalorias, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelName)
-                            .addComponent(labelDate))
-                        .addGap(45, 45, 45)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(labelDay, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(cboxDia, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(labelMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cboxMes, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(cboxAno, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(labelYear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addComponent(textName)
-                            .addComponent(cboxSports, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(textCalorias, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelName)
                     .addComponent(textName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -511,26 +424,33 @@ public class AddViewActivityForm extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(labelDay)
-                            .addComponent(labelMonth)
-                            .addComponent(labelYear))))
+                            .addComponent(labelDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(8, 8, 8)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(cboxHoraData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cboxMinsData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(textCalorias)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(labelTime)
-                        .addComponent(textHoras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(textMins, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel6)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelTime)
+                    .addComponent(textHoras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textMins, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6)
+                    .addComponent(textCalorias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(9, 9, 9)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0))
         );
 
         butOKAddAct.setText("ADICIONAR");
@@ -552,26 +472,27 @@ public class AddViewActivityForm extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(butCancelAddAct)
-                .addGap(18, 18, 18)
-                .addComponent(butOKAddAct)
-                .addGap(174, 174, 174))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(142, 142, 142)
+                        .addComponent(butCancelAddAct)
+                        .addGap(18, 18, 18)
+                        .addComponent(butOKAddAct)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(butOKAddAct)
                     .addComponent(butCancelAddAct))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -582,210 +503,198 @@ public class AddViewActivityForm extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosing
 
     private void butOKAddActActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butOKAddActActionPerformed
-		if (this.getName().equals("add")) {
-			boolean ok = true;
-			ArrayList<Component> comps = (ArrayList<Component>) AddViewActivityForm.getAllComponents(this);
-			for (int i = 0; i < comps.size() && ok; i++) {
-				Component c = comps.get(i);
-				if (c.isEnabled()) {
-					if (c instanceof JTextField) {
-						JTextField text = (JTextField) c;
-						if (text.getText().isEmpty()) {
-							ok = false;
-						}
+		boolean ok = true;
+		ArrayList<Component> comps = (ArrayList<Component>) AddViewActivityForm.getAllComponents(this);
+		for (int i = 0; i < comps.size() && ok; i++) {
+			Component c = comps.get(i);
+			if (c.isEnabled()) {
+				if (c instanceof JTextField) {
+					JTextField text = (JTextField) c;
+					if (text.getText().isEmpty()) {
+						ok = false;
 					}
 				}
 			}
+		}
 
-			if (ok) {
-				try {
-					String name = this.textName.getText();
-					String sport = (String) this.cboxSports.getSelectedItem();
-					int day = Integer.parseInt(this.cboxDia.getSelectedItem().toString());
-					int month = this.cboxMes.getSelectedIndex();
-					int year = Integer.parseInt(this.cboxAno.getSelectedItem().toString());
-					GregorianCalendar date = new GregorianCalendar(year, month, day);
-					int horas = Integer.parseInt(this.textHoras.getText());
-					int mins = Integer.parseInt(this.textMins.getText());
-					int time = (horas * 60) + mins;
-					boolean insere = false;
+		if (ok) {
+			try {
+				String name = this.textName.getText();
+				String sport = (String) this.cboxSports.getSelectedItem();
+				int day = Integer.parseInt(this.cboxDia.getSelectedItem().toString());
+				int month = this.cboxMes.getSelectedIndex();
+				int year = Integer.parseInt(this.cboxAno.getSelectedItem().toString());
+				int hour = Integer.parseInt(this.cboxHoraData.getSelectedItem().toString());
+				int min = Integer.parseInt(this.cboxMinsData.getSelectedItem().toString());
+				GregorianCalendar date = new GregorianCalendar(year, month, day, hour, min);
+				int horas = Integer.parseInt(this.textHoras.getText());
+				int mins = Integer.parseInt(this.textMins.getText());
+				int time = (horas * 60) + mins;
+				boolean insere = false;
 
-					switch (sport) {
-						case "Running":
-						case "Cycling":
-						case "Walking":
-						case "Sailing":
-						case "Skating":
-						case "Orienteering": {
-							String clima = this.textClima.getText();
-							double distanciaH = Double.parseDouble(this.textDistanciaH.getText());
-							switch (sport) {
-								case "Running":
-									insere = u.addActivity(new Running(name, date, time, distanciaH, clima), "Running");
-									break;
-								case "Cycling":
-									insere = u.addActivity(new Cycling(name, date, time, distanciaH, clima), "Cycling");
-									break;
-								case "Walking":
-									insere = u.addActivity(new Walking(name, date, time, distanciaH, clima), "Walking");
-									break;
-								case "Sailing":
-									insere = u.addActivity(new Sailing(name, date, time, distanciaH, clima), "Sailing");
-									break;
-								case "Skating":
-									insere = u.addActivity(new Skating(name, date, time, distanciaH, clima), "Skating");
-									break;
-								case "Orienteering":
-									insere = u.addActivity(new Orienteering(name, date, time, distanciaH, clima), "Orienteering");
-									break;
-								default:
-									break;
-							}
-							break;
+				switch (sport) {
+					case "Running":
+					case "Cycling":
+					case "Walking":
+					case "Sailing":
+					case "Skating":
+					case "Orienteering": {
+						String clima = this.textClima.getText();
+						double distanciaH = Double.parseDouble(this.textDistanciaH.getText());
+						switch (sport) {
+							case "Running":
+								insere = u.addActivity(new Running(name, date, time, distanciaH, clima), "Running");
+								break;
+							case "Cycling":
+								insere = u.addActivity(new Cycling(name, date, time, distanciaH, clima), "Cycling");
+								break;
+							case "Walking":
+								insere = u.addActivity(new Walking(name, date, time, distanciaH, clima), "Walking");
+								break;
+							case "Sailing":
+								insere = u.addActivity(new Sailing(name, date, time, distanciaH, clima), "Sailing");
+								break;
+							case "Skating":
+								insere = u.addActivity(new Skating(name, date, time, distanciaH, clima), "Skating");
+								break;
+							case "Orienteering":
+								insere = u.addActivity(new Orienteering(name, date, time, distanciaH, clima), "Orienteering");
+								break;
+							default:
+								break;
 						}
-
-						case "Snowboarding":
-						case "Mountain Biking":
-						case "Skiing": {
-							String clima = this.textClima.getText();
-							double distanciaH = Double.parseDouble(this.textDistanciaH.getText());
-							double distanciaV = Double.parseDouble(this.textDistanciaV.getText());
-							switch (sport) {
-								case "Snowboarding":
-									insere = u.addActivity(new Snowboarding(name, date, time, distanciaH, distanciaV, clima), "Snowboarding");
-									break;
-								case "Mountain Biking":
-									insere = u.addActivity(new MountainBiking(name, date, time, distanciaH, distanciaV, clima), "MountainBiking");
-									break;
-								case "Skiing":
-									insere = u.addActivity(new Skiing(name, date, time, distanciaH, distanciaV, clima), "Skiing");
-									break;
-								default:
-									break;
-							}
-							break;
-						}
-						case "Swimming":
-						case "Indoor Cycling": {
-							double distanciaH = Double.parseDouble(this.textDistanciaH.getText());
-							switch (sport) {
-								case "Swimming":
-									insere = u.addActivity(new Swimming(name, date, time, distanciaH), "Swimming");
-									break;
-								case "Indoor Cycling":
-									insere = u.addActivity(new IndoorCycling(name, date, time, distanciaH), "IndoorCycling");
-									break;
-								default:
-									break;
-							}
-							break;
-						}
-						case "Football":
-						case "Polo":
-						case "Beach Volleyball":
-						case "Tennis": {
-							String clima = this.textClima.getText();
-							int score = (int) this.spinnerPessoal.getValue();
-							int scoreAdv = (int) this.spinnerAdversario.getValue();
-							switch (sport) {
-								case "Football":
-									insere = u.addActivity(new Football(name, date, time, score, scoreAdv, clima), "Football");
-									break;
-								case "Polo":
-									insere = u.addActivity(new Polo(name, date, time, score, scoreAdv, clima), "Polo");
-									break;
-								case "Beach Volleyball":
-									insere = u.addActivity(new VolleyBallBeach(name, date, time, score, scoreAdv, clima), "VolleyBallBeach");
-									break;
-								case "Tennis":
-									insere = u.addActivity(new Tennis(name, date, time, score, scoreAdv, clima), "Tennis");
-									break;
-								default:
-									break;
-							}
-							break;
-						}
-						case "Handball":
-						case "Basketball":
-						case "Table Tennis":
-						case "Boxing":
-						case "Badminton":
-						case "Volleyball": {
-							int score = (int) this.spinnerPessoal.getValue();
-							int scoreAdv = (int) this.spinnerAdversario.getValue();
-							switch (sport) {
-								case "Handball":
-									insere = u.addActivity(new Handball(name, date, time, score, scoreAdv), "Handball");
-									break;
-								case "Basketball":
-									insere = u.addActivity(new Basketball(name, date, time, score, scoreAdv), "Basketball");
-									break;
-								case "Table Tennis":
-									insere = u.addActivity(new TableTennis(name, date, time, score, scoreAdv), "TableTennis");
-									break;
-								case "Boxing":
-									insere = u.addActivity(new Boxing(name, date, time, score, scoreAdv), "Boxing");
-									break;
-								case "Badminton":
-									insere = u.addActivity(new Badminton(name, date, time, score, scoreAdv), "Badminton");
-									break;
-								case "Volleyball":
-									insere = u.addActivity(new VolleyBallIndoor(name, date, time, score, scoreAdv), "VolleyBallIndoor");
-									break;
-								default:
-									break;
-							}
-							break;
-						}
-						case "Yoga":
-						case "Aerobics":
-							switch (sport) {
-								case "Yoga":
-									insere = u.addActivity(new Yoga(name, date, time), "Yoga");
-									break;
-								case "Aeorobics":
-									insere = u.addActivity(new Aerobics(name, date, time), "Aerobics");
-									break;
-								default:
-									break;
-							}
-							break;
+						break;
 					}
 
-					if (insere) {
-						parent.setVisible(true);
-						parent.changeActivities("add");
-
-						this.dispose();
-						JOptionPane.showMessageDialog(this, "Atividade adicionada com sucesso...");
-					} else {
-						JOptionPane.showMessageDialog(this, "Ocorreu um erro. A atividade não foi adicionada...");
+					case "Snowboarding":
+					case "Mountain Biking":
+					case "Skiing": {
+						String clima = this.textClima.getText();
+						double distanciaH = Double.parseDouble(this.textDistanciaH.getText());
+						double distanciaV = Double.parseDouble(this.textDistanciaV.getText());
+						switch (sport) {
+							case "Snowboarding":
+								insere = u.addActivity(new Snowboarding(name, date, time, distanciaH, distanciaV, clima), "Snowboarding");
+								break;
+							case "Mountain Biking":
+								insere = u.addActivity(new MountainBiking(name, date, time, distanciaH, distanciaV, clima), "MountainBiking");
+								break;
+							case "Skiing":
+								insere = u.addActivity(new Skiing(name, date, time, distanciaH, distanciaV, clima), "Skiing");
+								break;
+							default:
+								break;
+						}
+						break;
 					}
-				} catch (NumberFormatException e) {
-					JOptionPane.showMessageDialog(this, "Dados inseridos incorretamente...");
+					case "Swimming":
+					case "Indoor Cycling": {
+						double distanciaH = Double.parseDouble(this.textDistanciaH.getText());
+						switch (sport) {
+							case "Swimming":
+								insere = u.addActivity(new Swimming(name, date, time, distanciaH), "Swimming");
+								break;
+							case "Indoor Cycling":
+								insere = u.addActivity(new IndoorCycling(name, date, time, distanciaH), "IndoorCycling");
+								break;
+							default:
+								break;
+						}
+						break;
+					}
+					case "Football":
+					case "Polo":
+					case "Beach Volleyball":
+					case "Tennis": {
+						String clima = this.textClima.getText();
+						int score = (int) this.spinnerPessoal.getValue();
+						int scoreAdv = (int) this.spinnerAdversario.getValue();
+						switch (sport) {
+							case "Football":
+								insere = u.addActivity(new Football(name, date, time, score, scoreAdv, clima), "Football");
+								break;
+							case "Polo":
+								insere = u.addActivity(new Polo(name, date, time, score, scoreAdv, clima), "Polo");
+								break;
+							case "Beach Volleyball":
+								insere = u.addActivity(new VolleyBallBeach(name, date, time, score, scoreAdv, clima), "VolleyBallBeach");
+								break;
+							case "Tennis":
+								insere = u.addActivity(new Tennis(name, date, time, score, scoreAdv, clima), "Tennis");
+								break;
+							default:
+								break;
+						}
+						break;
+					}
+					case "Handball":
+					case "Basketball":
+					case "Table Tennis":
+					case "Boxing":
+					case "Badminton":
+					case "Volleyball": {
+						int score = (int) this.spinnerPessoal.getValue();
+						int scoreAdv = (int) this.spinnerAdversario.getValue();
+						switch (sport) {
+							case "Handball":
+								insere = u.addActivity(new Handball(name, date, time, score, scoreAdv), "Handball");
+								break;
+							case "Basketball":
+								insere = u.addActivity(new Basketball(name, date, time, score, scoreAdv), "Basketball");
+								break;
+							case "Table Tennis":
+								insere = u.addActivity(new TableTennis(name, date, time, score, scoreAdv), "TableTennis");
+								break;
+							case "Boxing":
+								insere = u.addActivity(new Boxing(name, date, time, score, scoreAdv), "Boxing");
+								break;
+							case "Badminton":
+								insere = u.addActivity(new Badminton(name, date, time, score, scoreAdv), "Badminton");
+								break;
+							case "Volleyball":
+								insere = u.addActivity(new VolleyBallIndoor(name, date, time, score, scoreAdv), "VolleyBallIndoor");
+								break;
+							default:
+								break;
+						}
+						break;
+					}
+					case "Yoga":
+					case "Aerobics":
+						switch (sport) {
+							case "Yoga":
+								insere = u.addActivity(new Yoga(name, date, time), "Yoga");
+								break;
+							case "Aeorobics":
+								insere = u.addActivity(new Aerobics(name, date, time), "Aerobics");
+								break;
+							default:
+								break;
+						}
+						break;
 				}
+
+				if (insere) {
+					parent.setVisible(true);
+					parent.changeActivities("add");
+
+					this.dispose();
+					JOptionPane.showMessageDialog(this, "Atividade adicionada com sucesso...");
+				} else {
+					JOptionPane.showMessageDialog(this, "Ocorreu um erro. A atividade não foi adicionada...");
+				}
+			} catch (NumberFormatException e) {
+				JOptionPane.showMessageDialog(this, "Dados inseridos incorretamente...");
 			}
-		} else if (this.getName().equals("view")) {
-			boolean rem = this.u.removeActivity(this.a.getName());
-			if (rem) {
-				JOptionPane.showMessageDialog(this, "Atividade removida com sucesso...");
-				this.parent.setVisible(true);
-				this.parent.changeActivities("remove");
-				this.dispose();
-			} else {
-				JOptionPane.showMessageDialog(this, "Atividade não removida...");
-			}
-		} else {
-			JOptionPane.showMessageDialog(this, "ERRO!");
 		}
     }//GEN-LAST:event_butOKAddActActionPerformed
 
-    /**
-     *
-     * @param c
-     * @return
-     */
-    public static List<Component> getAllComponents(final Container c) {
+	/**
+	 *
+	 * @param c
+	 * @return
+	 */
+	public static List<Component> getAllComponents(final Container c) {
 		Component[] comps = c.getComponents();
 		List<Component> compList = new ArrayList<Component>();
 		for (Component comp : comps) {
@@ -871,15 +780,20 @@ public class AddViewActivityForm extends javax.swing.JFrame {
     private javax.swing.JButton butOKAddAct;
     private javax.swing.JComboBox cboxAno;
     private javax.swing.JComboBox cboxDia;
+    private javax.swing.JComboBox cboxHoraData;
     private javax.swing.JComboBox cboxMes;
+    private javax.swing.JComboBox cboxMinsData;
     private javax.swing.JComboBox cboxSports;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
