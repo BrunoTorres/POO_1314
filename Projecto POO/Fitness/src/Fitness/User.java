@@ -38,7 +38,6 @@ public class User extends Person implements Serializable {
 		this.favoriteActivity = "";
 		this.userActivities = new TreeSet<>(new CompareActivity());
 		this.friendsList = new TreeSet<>();
-		this.stats = new TreeMap<>(new CompareStatsPerYearAndMonth());
 		this.messageFriend = new TreeSet<>();
 		this.records = new TreeMap<>();
 	}
@@ -66,7 +65,6 @@ public class User extends Person implements Serializable {
 			this.userActivities.add((Activity) act.clone());
 		}
 		this.friendsList = (TreeSet<String>) friendsList.clone();
-		this.stats = new TreeMap<>(new CompareStatsPerYearAndMonth());
 		this.messageFriend = new TreeSet<>();
 		this.records = new TreeMap<>();
 	}
@@ -91,7 +89,6 @@ public class User extends Person implements Serializable {
 		this.favoriteActivity = favoriteActivity;
 		this.userActivities = new TreeSet<>(new CompareActivity());
 		this.friendsList = new TreeSet<>();
-		this.stats = new TreeMap<>(new CompareStatsPerYearAndMonth());
 		this.messageFriend = new TreeSet<>();
 		this.records = new TreeMap<>();
 	}
@@ -108,7 +105,6 @@ public class User extends Person implements Serializable {
 		this.favoriteActivity = u.getFavoriteActivity();
 		this.userActivities = (TreeSet<Activity>) u.getActivities();
 		this.friendsList = (TreeSet<String>) u.getFriendsList();
-		this.stats = (TreeMap<GregorianCalendar, Statistics>) u.getStats();
 		this.messageFriend = (TreeSet<String>) u.getMessage();
 		this.records = (TreeMap<String, ListRecords>) u.getRecords();
 	}
@@ -254,35 +250,6 @@ public class User extends Person implements Serializable {
 	}
 
 //////////////////////////////TO STATS                              compor NAO esta POR MES!!!!!||||||||||||||||||||||||||||||||||||\\
-	private void updateStat(Activity actt) {
-
-		GregorianCalendar date = new GregorianCalendar(actt.getDate().get(Calendar.YEAR), actt.getDate().get(Calendar.MONTH), 0);
-
-		if (actt instanceof Distance) {
-			Distance act = (Distance) actt;
-
-			((Statistics) this.stats.get(date)).incrementsTimeDistanceCalories(actt.getTimeSpent(), act.getDistance(), actt.getCalories());
-		} else {
-
-			((Statistics) this.stats.get(date)).incrementsTimeDistanceCalories(actt.getTimeSpent(), 0, actt.getCalories());
-
-		}
-
-	}
-
-	private void createStat(Activity actt) {
-		GregorianCalendar date = new GregorianCalendar(actt.getDate().get(Calendar.YEAR), actt.getDate().get(Calendar.MONTH), 0);
-
-		if (actt instanceof Distance) {
-			Distance act = (Distance) actt;
-			Statistics stat = new Statistics(actt.getTimeSpent(), actt.getCalories(), act.getDistance());
-			this.stats.put(date, stat);
-		} else {
-			Statistics stat = new Statistics(actt.getTimeSpent(), actt.getCalories());
-			this.stats.put(date, stat);
-		}
-
-	}
 
 	public Statistics getStats(int ano, int mes) {
 		Iterator<Activity> it = this.userActivities.iterator();
@@ -351,7 +318,6 @@ public class User extends Person implements Serializable {
 			updateRecords(tipoActividade, act);
 		}
 		act.setCalories(this.weight);
-		setStats(act);
 		return this.userActivities.add(act);
 	}
 

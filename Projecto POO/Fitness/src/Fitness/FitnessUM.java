@@ -511,46 +511,6 @@ public class FitnessUM implements Serializable {
     }
 
     /////////////////////////////////////////////////Propriedade dos Utilizadores//////////////////////////////////////
-    //Aceder as estatisticas(mensais anuais) STATISTICS by distancia tempo e\calorias
-    /**
-     * Método que imprime as estatísticas mensais do utilizador.
-     *
-     * @param u User.
-     * @param mes mês a pesquisar.
-     * @param ano ano a pesquisar.
-	 * @return estatísticas pesquisadas
-     */
-    public Statistics searchStatistics(User u, int mes, int ano) {
-        TreeMap<GregorianCalendar, Statistics> aux = (TreeMap<GregorianCalendar, Statistics>) u.getStats();
-
-        GregorianCalendar data = new GregorianCalendar(ano, mes, 0);
-        Statistics stats = aux.get(data);
-		
-		return stats;        
-    }
-
-    /**
-     * Método que imprime as estatísticas anuais do utilizador.
-     *
-     * @param u User.
-     * @param ano ano a pesquisar.
-	 * @return estatísticas pesquisadas
-     */
-    public Statistics searchStatistics(User u, int ano) {
-        TreeMap<GregorianCalendar, Statistics> aux = (TreeMap<GregorianCalendar, Statistics>) u.getStats();
-        Statistics nova = new Statistics();
-        for (int i = 0; i <= 11; i++) {
-            GregorianCalendar date = new GregorianCalendar(ano, i, 0);
-			if (aux.containsKey(date)){
-				int ano1 = date.get(Calendar.YEAR);
-				int mes = date.get(Calendar.MONTH);
-				System.out.println("Ano: " + ano1 + " | Mes: " + mes);
-				System.out.println("Time: " + aux.get(date).getTimeSpend() + " | Dist: " + aux.get(date).getDistance() + " | Cals: " + aux.get(date).getCalories());
-                nova.incrementsTimeDistanceCalories(aux.get(date).getTimeSpend(), aux.get(date).getDistance(), aux.get(date).getCalories());
-			}
-        }
-		return nova;
-    }
 
     ////////////////////////////////!!!FRIEND!!!//////////////////////////////////////////////////
     /**

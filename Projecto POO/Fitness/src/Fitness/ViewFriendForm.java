@@ -1660,7 +1660,6 @@ public class ViewFriendForm extends javax.swing.JFrame {
 
 	private void preencheStats() {
 		Statistics stat = new Statistics();
-		TreeMap<GregorianCalendar, Statistics> stats = (TreeMap<GregorianCalendar, Statistics>) this.u.getStats();
 		GregorianCalendar dataAtual = new GregorianCalendar();
 		String mes = "";
 		if (this.butMensais.isSelected()) {
