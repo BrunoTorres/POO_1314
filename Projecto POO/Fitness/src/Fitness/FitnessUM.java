@@ -2,9 +2,11 @@ package Fitness;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
@@ -514,64 +516,40 @@ public class FitnessUM implements Serializable {
      * Método que imprime as estatísticas mensais do utilizador.
      *
      * @param u User.
-     * @param tipo tipo de estatísticas a pesquisar.
      * @param mes mês a pesquisar.
      * @param ano ano a pesquisar.
+	 * @return estatísticas pesquisadas
      */
-    public void searchStatisticsMONTH(User u, int tipo, int mes, int ano) {
+    public Statistics searchStatistics(User u, int mes, int ano) {
         TreeMap<GregorianCalendar, Statistics> aux = (TreeMap<GregorianCalendar, Statistics>) u.getStats();
 
         GregorianCalendar data = new GregorianCalendar(ano, mes, 0);
         Statistics stats = aux.get(data);
-        String s;
-
-        switch (tipo) {
-            case 1:
-                System.out.println(stats.toStringDistance());
-                break;
-            case 2:
-                System.out.println(stats.toStringTimeSpend());
-                break;
-            case 3:
-                System.out.println(stats.toStringCalories());
-                break;
-            default:
-                break;
-        }
+		
+		return stats;        
     }
 
     /**
      * Método que imprime as estatísticas anuais do utilizador.
      *
      * @param u User.
-     * @param tipo tipo de estatísticas a pesquisar.
      * @param ano ano a pesquisar.
+	 * @return estatísticas pesquisadas
      */
-    public void searchStatisticsYear(User u, int tipo, int ano) {
+    public Statistics searchStatistics(User u, int ano) {
         TreeMap<GregorianCalendar, Statistics> aux = (TreeMap<GregorianCalendar, Statistics>) u.getStats();
         Statistics nova = new Statistics();
-        String s;
-        for (int i = 1; i <= 12; i++) {
+        for (int i = 0; i <= 11; i++) {
             GregorianCalendar date = new GregorianCalendar(ano, i, 0);
-            if (aux.containsKey(date)) {
+            if (aux.containsKey(date)){
+				int ano1 = date.get(Calendar.YEAR);
+				int mes = date.get(Calendar.MONTH);
+				System.out.println("Ano: " + ano1 + " | Mes: " + mes);
+				System.out.println("Time: " + aux.get(date).getTimeSpend() + " | Dist: " + aux.get(date).getDistance() + " | Cals: " + aux.get(date).getCalories());
                 nova.incrementsTimeDistanceCalories(aux.get(date).getTimeSpend(), aux.get(date).getDistance(), aux.get(date).getCalories());
-            }
-
+			}
         }
-
-        switch (tipo) {
-            case 1:
-                System.out.println(nova.toStringDistance());
-                break;
-            case 2:
-                System.out.println(nova.toStringTimeSpend());
-                break;
-            case 3:
-                System.out.println(nova.toStringCalories());
-                break;
-            default:
-                break;
-        }
+		return nova;
     }
 
     ////////////////////////////////!!!FRIEND!!!//////////////////////////////////////////////////

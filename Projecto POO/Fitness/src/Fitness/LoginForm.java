@@ -10,18 +10,9 @@ import java.awt.font.TextAttribute;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Map;
-import javax.swing.JFormattedTextField;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-import javax.swing.JWindow;
-import javax.swing.text.MaskFormatter;
 
 /**
  *
@@ -149,6 +140,7 @@ public class LoginForm extends javax.swing.JFrame {
         );
 
         labelRegistar.setText("Registar");
+        labelRegistar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         labelRegistar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 labelRegistarMouseClicked(evt);

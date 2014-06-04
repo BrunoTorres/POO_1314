@@ -1034,8 +1034,7 @@ public class ViewFriendForm extends javax.swing.JFrame {
 	
 	private void preencheTabAmigos() {
 		TreeSet<String> emails = (TreeSet<String>) this.u.getFriendsList();
-		//ArrayList<String> emails = new ArrayList<>();
-		TreeSet<User> friends = new TreeSet<>(new CompareUserByName());
+		TreeSet<User> friends = new TreeSet<>(new ComparePersonByName());
 		for (String e : emails)
 			friends.add(this.fit.getUserByEmail(e));
 		

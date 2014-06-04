@@ -128,8 +128,8 @@ public class FriendRequestListForm extends javax.swing.JFrame {
 			String[] info = this.listPedidosAmizade.getSelectedValue().toString().split(":");
 			String mail = info[1].trim();
 			this.fit.acceptFriend(this.fit.getUserByEmail(mailUser), mail);
-
 			this.removePedido(mailUser, mail);
+			this.parent.preencheTabAmigos();
 		}
     }//GEN-LAST:event_butAddAmigoActionPerformed
 
@@ -170,5 +170,5 @@ public class FriendRequestListForm extends javax.swing.JFrame {
     private javax.swing.JList listPedidosAmizade;
     // End of variables declaration//GEN-END:variables
 	FitnessUM fit;
-	JFrame parent;
+	UserForm parent;
 }

@@ -43,7 +43,7 @@ public class UserForm extends javax.swing.JFrame {
 		this.allActsCurr = 1;
 		this.allActs = new ArrayList<>(u.getActivities());
 		this.changeActivities("init");
-		this.preencheRunRecords();
+		this.preencheRecords();
 		this.preencheTabAmigos();
 		this.preencheStats();
 		this.preencheDados();
@@ -274,7 +274,12 @@ public class UserForm extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        labelTempoGasto = new javax.swing.JLabel();
+        textTempoGasto = new javax.swing.JTextField();
+        textDistPercorrida = new javax.swing.JTextField();
+        textCaloriasQueim = new javax.swing.JTextField();
+        butPrevMonth = new javax.swing.JButton();
+        butNextMonth = new javax.swing.JButton();
+        textMesAno = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         labelName = new javax.swing.JLabel();
@@ -494,7 +499,27 @@ public class UserForm extends javax.swing.JFrame {
 
         jLabel22.setText("Calorias queimadas");
 
-        labelTempoGasto.setText("tempogasto");
+        textTempoGasto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        textDistPercorrida.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        textCaloriasQueim.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        butPrevMonth.setText("< Mês");
+        butPrevMonth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butPrevMonthActionPerformed(evt);
+            }
+        });
+
+        butNextMonth.setText("Mês >");
+        butNextMonth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butNextMonthActionPerformed(evt);
+            }
+        });
+
+        textMesAno.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -503,21 +528,31 @@ public class UserForm extends javax.swing.JFrame {
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                    .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addComponent(jLabel20)
-                                .addGap(67, 67, 67)
-                                .addComponent(labelTempoGasto, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel21))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel21)
+                            .addComponent(jLabel22))
+                        .addGap(33, 33, 33))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                        .addComponent(butPrevMonth)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(textMesAno, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+                    .addComponent(textTempoGasto)
+                    .addComponent(textDistPercorrida)
+                    .addComponent(textCaloriasQueim))
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(butMensais)
-                            .addComponent(butAnuais)))
+                            .addComponent(butAnuais))
+                        .addContainerGap())
                     .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addComponent(jLabel22)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(butNextMonth)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -526,14 +561,22 @@ public class UserForm extends javax.swing.JFrame {
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(butMensais)
                     .addComponent(jLabel20)
-                    .addComponent(labelTempoGasto))
+                    .addComponent(textTempoGasto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(butAnuais)
-                    .addComponent(jLabel21))
+                    .addComponent(jLabel21)
+                    .addComponent(textDistPercorrida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel22)
-                .addContainerGap(173, Short.MAX_VALUE))
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(textCaloriasQueim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(butPrevMonth)
+                    .addComponent(butNextMonth)
+                    .addComponent(textMesAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(105, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout panelMensagensLayout = new javax.swing.GroupLayout(panelMensagens);
@@ -554,7 +597,7 @@ public class UserForm extends javax.swing.JFrame {
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Home", panelMensagens);
@@ -1043,7 +1086,7 @@ public class UserForm extends javax.swing.JFrame {
 
         jLabel13.setText("Desporto");
 
-        cboxRecordSport.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Running / Walking", "Mountain Biking / Cycling", "Swimming" }));
+        cboxRecordSport.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Running", "Walking", "Mountain Biking", "Cycling", "Swimming" }));
         cboxRecordSport.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cboxRecordSportItemStateChanged(evt);
@@ -1289,7 +1332,6 @@ public class UserForm extends javax.swing.JFrame {
     }//GEN-LAST:event_formPropertyChange
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-		//FileOutputStream out = null;
 		this.guardaEstado();
     }//GEN-LAST:event_formWindowClosing
 
@@ -1471,11 +1513,17 @@ public class UserForm extends javax.swing.JFrame {
 			String sport = this.cboxRecordSport.getSelectedItem().toString();
 
 			switch (sport) {
-				case "Running / Walking":
+				case "Running":
 					this.preencheRunRecords();
 					break;
-				case "Mountain Biking / Cycling":
-					this.preencheBikeRecords();
+				case "Walking":
+					this.preencheWalkRecords();
+					break;
+				case "Mountain Biking":
+					this.preencheMountainRecords();
+					break;
+				case "Cycling":
+					this.preencheCyclingRecords();
 					break;
 				default:
 					this.preencheSwimRecords();
@@ -1496,12 +1544,46 @@ public class UserForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void butMensaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butMensaisActionPerformed
-        // TODO add your handling code here:
+		this.butAnuais.setSelected(false);
+		this.butMensais.setSelected(true);
+		this.butNextMonth.setText("Mês >");
+		this.butPrevMonth.setText("< Mês");
     }//GEN-LAST:event_butMensaisActionPerformed
 
     private void butAnuaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAnuaisActionPerformed
-        // TODO add your handling code here:
+		this.butAnuais.setSelected(true);
+		this.butMensais.setSelected(false);
+		this.butNextMonth.setText("Ano >");
+		this.butPrevMonth.setText("< Ano");
     }//GEN-LAST:event_butAnuaisActionPerformed
+
+    private void butNextMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNextMonthActionPerformed
+		if (this.butMensais.isSelected()) {
+			if (this.currMes == 11) {
+				this.currMes = 0;
+				this.currAno++;
+			} else {
+				this.currMes++;
+			}
+		} else {
+			this.currAno++;
+		}
+		this.preencheStats();
+    }//GEN-LAST:event_butNextMonthActionPerformed
+
+    private void butPrevMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butPrevMonthActionPerformed
+        if (this.butMensais.isSelected()) {
+			if (this.currMes == 0) {
+				this.currMes = 11;
+				this.currAno--;
+			} else {
+				this.currMes--;
+			}
+		} else {
+			this.currAno--;
+		}
+		this.preencheStats();
+    }//GEN-LAST:event_butPrevMonthActionPerformed
 
 	private void preencheRunRecords() {
 		TreeMap<String, ListRecords> rec = (TreeMap<String, ListRecords>) this.u.getRecords();
@@ -1510,6 +1592,43 @@ public class UserForm extends javax.swing.JFrame {
 		for (ListRecords l : rec.values()) {
 			switch (l.getName()) {
 				case "Running":
+					run = (ArrayList<Record>) l.clone().getList();
+					break;
+				default:
+					break;
+			}
+		}
+
+		for (int i = 0; i < run.size(); i++) {
+			Record r = run.get(i).clone();
+			if (r instanceof DistancePerTime) {
+				DistancePerTime dpt = (DistancePerTime) r;
+				this.tableRecords.setValueAt(dpt.getName(), i, 0);
+				float dist = (float) dpt.getDistance();
+				if (dist > 0.0) {
+					this.tableRecords.setValueAt(dpt.getDistance() + " KMs", i, 1);
+				} else {
+					this.tableRecords.setValueAt("N/A", i, 1);
+				}
+			} else {
+				TimePerDistance tpd = (TimePerDistance) r;
+				this.tableRecords.setValueAt(tpd.getName(), i, 0);
+				float time = (float) tpd.getTime();
+				if (time > 0.0) {
+					this.tableRecords.setValueAt(time + " mins", i, 1);
+				} else {
+					this.tableRecords.setValueAt("N/A", i, 1);
+				}
+			}
+		}
+	}
+
+	private void preencheWalkRecords() {
+		TreeMap<String, ListRecords> rec = (TreeMap<String, ListRecords>) this.u.getRecords();
+		ArrayList<Record> run = new ArrayList<>();
+
+		for (ListRecords l : rec.values()) {
+			switch (l.getName()) {
 				case "Walking":
 					run = (ArrayList<Record>) l.clone().getList();
 					break;
@@ -1523,7 +1642,7 @@ public class UserForm extends javax.swing.JFrame {
 			if (r instanceof DistancePerTime) {
 				DistancePerTime dpt = (DistancePerTime) r;
 				this.tableRecords.setValueAt(dpt.getName(), i, 0);
-				Double dist = dpt.getDistance();
+				float dist = (float) dpt.getDistance();
 				if (dist > 0.0) {
 					this.tableRecords.setValueAt(dpt.getDistance() + " KMs", i, 1);
 				} else {
@@ -1532,7 +1651,7 @@ public class UserForm extends javax.swing.JFrame {
 			} else {
 				TimePerDistance tpd = (TimePerDistance) r;
 				this.tableRecords.setValueAt(tpd.getName(), i, 0);
-				Double time = tpd.getTime();
+				float time = (float) tpd.getTime();
 				if (time > 0.0) {
 					this.tableRecords.setValueAt(time + " mins", i, 1);
 				} else {
@@ -1542,13 +1661,50 @@ public class UserForm extends javax.swing.JFrame {
 		}
 	}
 
-	private void preencheBikeRecords() {
+	private void preencheMountainRecords() {
 		TreeMap<String, ListRecords> rec = (TreeMap<String, ListRecords>) this.u.getRecords();
 		ArrayList<Record> bike = new ArrayList<>();
 
 		for (ListRecords l : rec.values()) {
 			switch (l.getName()) {
-				case "Mountain Byking":
+				case "Mountain Biking":
+					bike = (ArrayList<Record>) l.clone().getList();
+					break;
+				default:
+					break;
+			}
+		}
+
+		for (int i = 0; i < bike.size(); i++) {
+			Record r = bike.get(i).clone();
+			if (r instanceof DistancePerTime) {
+				DistancePerTime dpt = (DistancePerTime) r;
+				this.tableRecords.setValueAt(dpt.getName(), i, 0);
+				float dist = (float) dpt.getDistance();
+				if (dist > 0.0) {
+					this.tableRecords.setValueAt(dist + " KMs", i, 1);
+				} else {
+					this.tableRecords.setValueAt("N/A", i, 1);
+				}
+			} else {
+				TimePerDistance tpd = (TimePerDistance) r;
+				this.tableRecords.setValueAt(tpd.getName(), i, 0);
+				float time = (float) tpd.getTime();
+				if (time > 0.0) {
+					this.tableRecords.setValueAt(time + " mins", i, 1);
+				} else {
+					this.tableRecords.setValueAt("N/A", i, 1);
+				}
+			}
+		}
+	}
+
+	private void preencheCyclingRecords() {
+		TreeMap<String, ListRecords> rec = (TreeMap<String, ListRecords>) this.u.getRecords();
+		ArrayList<Record> bike = new ArrayList<>();
+
+		for (ListRecords l : rec.values()) {
+			switch (l.getName()) {
 				case "Cycling":
 					bike = (ArrayList<Record>) l.clone().getList();
 					break;
@@ -1562,16 +1718,16 @@ public class UserForm extends javax.swing.JFrame {
 			if (r instanceof DistancePerTime) {
 				DistancePerTime dpt = (DistancePerTime) r;
 				this.tableRecords.setValueAt(dpt.getName(), i, 0);
-				Double dist = dpt.getDistance();
+				float dist = (float) dpt.getDistance();
 				if (dist > 0.0) {
-					this.tableRecords.setValueAt(dpt.getDistance() + " KMs", i, 1);
+					this.tableRecords.setValueAt(dist + " KMs", i, 1);
 				} else {
 					this.tableRecords.setValueAt("N/A", i, 1);
 				}
 			} else {
 				TimePerDistance tpd = (TimePerDistance) r;
 				this.tableRecords.setValueAt(tpd.getName(), i, 0);
-				Double time = tpd.getTime();
+				float time = (float) tpd.getTime();
 				if (time > 0.0) {
 					this.tableRecords.setValueAt(time + " mins", i, 1);
 				} else {
@@ -1600,7 +1756,7 @@ public class UserForm extends javax.swing.JFrame {
 			if (r instanceof TimePerDistance) {
 				TimePerDistance tpd = (TimePerDistance) r;
 				this.tableRecords.setValueAt(tpd.getName(), i, 0);
-				Double time = tpd.getTime();
+				float time = (float) tpd.getTime();
 				if (time > 0.0) {
 					this.tableRecords.setValueAt(time + " mins", i, 1);
 				} else {
@@ -1610,10 +1766,17 @@ public class UserForm extends javax.swing.JFrame {
 		}
 	}
 
-	private void preencheTabAmigos() {
+	public void preencheRecords() {
+		this.preencheWalkRecords();
+		this.preencheMountainRecords();
+		this.preencheCyclingRecords();
+		this.preencheSwimRecords();
+		this.preencheRunRecords();
+	}
+
+	public void preencheTabAmigos() {
 		TreeSet<String> emails = (TreeSet<String>) this.u.getFriendsList();
-		//ArrayList<String> emails = new ArrayList<>();
-		TreeSet<User> friends = new TreeSet<>(new CompareUserByName());
+		TreeSet<User> friends = new TreeSet<>(new ComparePersonByName());
 		for (String e : emails) {
 			friends.add(this.fit.getUserByEmail(e));
 		}
@@ -1633,11 +1796,79 @@ public class UserForm extends javax.swing.JFrame {
 		}
 	}
 
-	private void preencheStats(){
-		// COMO FUNCIONA O GETSTATS???
+	private void preencheStats() {
+		Statistics stat = new Statistics();
+		TreeMap<GregorianCalendar, Statistics> stats = (TreeMap<GregorianCalendar, Statistics>) this.u.getStats();
+		GregorianCalendar dataAtual = new GregorianCalendar();
+		int anoAtual = dataAtual.get(Calendar.YEAR);
+		int mesAtual = dataAtual.get(Calendar.MONTH);
+		String mes = "";
+		String textMes = this.textMesAno.getText();
+		if (this.butMensais.isSelected()) {
+			stat = this.fit.searchStatistics(this.u, this.currMes, this.currAno);
+			switch (this.currMes) {
+				case 0:
+					mes = "Janeiro";
+					break;
+				case 1:
+					mes = "Fevereiro";
+					break;
+				case 2:
+					mes = "Março";
+					break;
+				case 3:
+					mes = "Abril";
+					break;
+				case 4:
+					mes = "Maio";
+					break;
+				case 5:
+					mes = "Junho";
+					break;
+				case 6:
+					mes = "Julho";
+					break;
+				case 7:
+					mes = "Agosto";
+					break;
+				case 8:
+					mes = "Setembro";
+					break;
+				case 9:
+					mes = "Outubro";
+					break;
+				case 10:
+					mes = "Novembro";
+					break;
+				default:
+					mes = "Dezembro";
+					break;
+			}
+		} else {
+			stat = this.fit.searchStatistics(this.u, this.currAno);
+			
+		}
+		if (stat != null && stat.getCalories() != 0 && stat.getDistance() != 0.0 && stat.getTimeSpend() != 0.0) {
+			System.out.println("STAAAT: " + currAno + " | " + currMes);
+			String cals = stat.toStringCalories().split(":")[1].trim();
+			String time = stat.toStringTimeSpend().split(":")[1].trim();
+			String dist = stat.toStringDistance().split(":")[1].trim();
+			this.textCaloriasQueim.setText(cals);
+			this.textDistPercorrida.setText(dist);
+			this.textTempoGasto.setText(time);
+			if(this.butMensais.isSelected())
+				this.textMesAno.setText(mes + " (" + this.currAno + ")");
+			else
+				this.textMesAno.setText(String.valueOf(this.currAno));
+		} else {
+			System.out.println("NOT STAAAT: " + currAno + " | " + currMes);
+			this.textCaloriasQueim.setText("");
+			this.textTempoGasto.setText("");
+			this.textDistPercorrida.setText("");
+		}
 	}
-	
-	private void preencheDados(){
+
+	private void preencheDados() {
 		this.textNomeUser.setText(this.u.getName());
 		this.textEmail.setText(this.u.getEmail());
 		this.textAltura.setText(String.valueOf(this.u.getHeight()));
@@ -1662,7 +1893,9 @@ public class UserForm extends javax.swing.JFrame {
     private javax.swing.JButton butLogout;
     private javax.swing.JRadioButton butMensais;
     private javax.swing.JButton butNext;
+    private javax.swing.JButton butNextMonth;
     private javax.swing.JButton butPrev;
+    private javax.swing.JButton butPrevMonth;
     private javax.swing.JButton butRemove;
     private javax.swing.JButton butVerPedidos;
     private javax.swing.JComboBox cboxAno;
@@ -1716,7 +1949,6 @@ public class UserForm extends javax.swing.JFrame {
     private javax.swing.JLabel labelDay;
     private javax.swing.JLabel labelMonth;
     private javax.swing.JLabel labelName;
-    private javax.swing.JLabel labelTempoGasto;
     private javax.swing.JLabel labelTime;
     private javax.swing.JLabel labelYear;
     private javax.swing.JPanel panelMensagens;
@@ -1726,21 +1958,27 @@ public class UserForm extends javax.swing.JFrame {
     private javax.swing.JTable tableRecords;
     private javax.swing.JTextField textAltura;
     private javax.swing.JTextField textCalorias;
+    private javax.swing.JTextField textCaloriasQueim;
     private javax.swing.JTextField textClima;
     private javax.swing.JTextField textDespFav;
+    private javax.swing.JTextField textDistPercorrida;
     private javax.swing.JTextField textDistanciaH;
     private javax.swing.JTextField textDistanciaV;
     private javax.swing.JTextField textEmail;
     private javax.swing.JTextField textHoras;
+    private javax.swing.JTextField textMesAno;
     private javax.swing.JTextField textMins;
     private javax.swing.JTextField textNAct;
     private javax.swing.JTextField textName;
     private javax.swing.JTextField textNomeUser;
     private javax.swing.JTextField textPeso;
+    private javax.swing.JTextField textTempoGasto;
     // End of variables declaration//GEN-END:variables
 	private FitnessUM fit;
 	private User u;
 	private int currAct = 0;
 	private int allActsCurr = 0;
+	private int currMes = new GregorianCalendar().get(Calendar.MONTH);
+	private int currAno = new GregorianCalendar().get(Calendar.YEAR);
 	private ArrayList<Activity> acts10, allActs;
 }
