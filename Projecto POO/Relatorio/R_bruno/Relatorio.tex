@@ -1,7 +1,7 @@
 \documentclass[10pt,notitlepage]{article}
 \usepackage{graphicx} 
 \usepackage{verbatim} 
-\usepackage[portuguese]{babel} 
+\usepackage[portuguese]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[hmargin=2cm,vmargin=3.5cm,bmargin=2cm]{geometry}
 
@@ -66,10 +66,6 @@ Foram definidas as seguindes actividades desportivas para a nossa aplicação:
 \item Badminton
 \item VolleyBallIndoor
 \item Football
-\end{itemize}
-
-
-\begin{itemize}
 \item VolleyBallBeach
 \item Running
 \item Skating
@@ -84,9 +80,10 @@ Foram definidas as seguindes actividades desportivas para a nossa aplicação:
 \item Polo
 \end{itemize}
 
-
 \newpage
 Para a implementação destas actividades foi usada a seguinte estrutura:
+
+
 
 \begin{figure}[ht]
 \centering
@@ -141,7 +138,7 @@ Para destiguir utilizadores regulares de administradores criou-se a seguinte est
 ~\\
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=0.8]{Person.jpg}
+\includegraphics[scale=0.6]{Statsfinal.jpg}
 \caption{Estrutura das classes User e Admin}
 \end{figure}
 
@@ -167,10 +164,10 @@ A classe User adiciona as seguintes variáveis:
 \item \textit{int height};
 \item \textit{double weight};
 \item \textit{String favoriteActivity};
-\item \textit{TreeSet<Activity> userActivities};
-\item \textit{TreeSet<String> friendsList};
-\item \textit{TreeMap<String, ListRecords> records};
-\item \textit{TreeSet<String> messageFriend};
+\item \textit{TreeSet$<$Activity$>$ userActivities} - Actividades realizadas pelo utilizador;
+\item \textit{TreeSet$<$String$>$ friendsList} - Lista dos amigos do utilizador;
+\item \textit{TreeMap$<$String, ListRecords$>$ records} - Lista dos seus recordes pessoais;
+\item \textit{TreeSet$<$String messageFriend} - Lista de pedidos de amizade;
 \end{itemize}
 Respectivos métodos \textit{getters} e \textit{setters}, construtores e métodos auxiliares para a gestão de amigos/pedidos de amizade, recordes pessoais, das suas actividades e estatísticas relevantes. Ainda contém funções auxiliares para a simulação de eventos.
 
@@ -179,7 +176,49 @@ O tipo Person tem apenas um comparator:
 \begin{itemize}
 \item ComparePersonByName - que ordena por ordem alfabética do seu nome.
 \end{itemize}
+\subsubsection{Statistics}
 
+A classe Statistics é usada para mostrar ao utilizador dados relevantes das suas actividades, estes podem ser descriminados por um dado mês ou por um ano. As suas variáveis são:
+\begin{itemize}
+\item \textit{double timeSpend};
+\item \textit{double calories};
+\item \textit{double distance};
+\end{itemize}
+contém os respectivos métodos \textit{getters} e \textit{setters} e construtores.
+
+
+\subsection{Recordes Pessoais}
+Para registar os recordes chegou-se a estrutura da fig ~\ref{fig:recordes}:
+~\\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{Records.jpg}
+\caption{Estrutura dos recordes}
+\label{fig:recordes}
+\end{figure}
+
+
+Como se pode verificar na figura ~\ref{fig:recordes}, apenas as seguintes actividades contêm recordes:
+\begin{itemize}
+\item Running
+\item Cycling
+\item Walking
+\item MountainBiking
+\item Swimming
+\end{itemize} 
+
+
+\subsubsection{Classe abstracta Record}
+
+Esta classe representa todos os recordes que o utilizador pode bater.
+
+
+
+ Contém apenas uma variável:
+\begin{itemize}
+\item \textit{String name};
+\end{itemize}
+métodos construtores, \textit{getName()} e \textit{isEmpty()} que verifica se esse recorde existe ou não.
 
 
 \subsection{Eventos}
