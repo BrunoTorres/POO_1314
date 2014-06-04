@@ -1,7 +1,6 @@
 package Fitness;
 
 
-import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 import java.util.TreeSet;
@@ -71,7 +70,7 @@ public class Main {
        
        
        //ADICIONAR ACTIVITIES A UM USER
-       User u=um.getUserByEmail("user1@gmail.com");
+      // User u=um.getUserByEmail("user1@gmail.com");
   
        GregorianCalendar date1=new GregorianCalendar(2000,11,2);
        GregorianCalendar date2= new GregorianCalendar(2001,9,3);
@@ -167,7 +166,7 @@ public class Main {
        e1.addUser(u1);
        e1.addUser(u2);
        e1.addUser(u3);
-       um.simulaEvent(e1, "Chuva com ventos fortes", 29);
+       //um.simulaEvent(e1, "Chuva com ventos fortes", 29);
        
        //Event e= um.getEventByName("calhaus corrida");
        
@@ -182,8 +181,8 @@ public class Main {
           // System.out.println("sim existe \n");
          //  um.acceptFriend(u,"user3@gmail.com");
        //}
-      //for(String s :u1.getRecords().keySet())
-        //System.out.println(u2.getRecords().get(s).toString());
+      for(String s :u1.getRecords().keySet())
+       System.out.println(u2.getRecords().get(s).toString());
        
        
        

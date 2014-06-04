@@ -1,21 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package Fitness;
 
 /**
+ * Interface para todas as actividades com recordes.
  *
- * @author bruno
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public interface RecordsActivity {
-    
+
     /**
+     * Método que devolve a lista de recordes registados nessa actividade.
      *
-     * @return
+     * @return Devolve uma ListRecords.
      */
     public ListRecords getListRecords();
-    
+
 }

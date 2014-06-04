@@ -23,11 +23,11 @@ public class Admin extends Person implements Serializable {
     /**
      * Construtor parametrizado
      *
-     * @param email Email
-     * @param pass Palavra-passe
-     * @param name Nome
-     * @param gender Género
-     * @param date Data de Nascimento
+     * @param email-Email
+     * @param pass-Palavra-passe
+     * @param name-Nome
+     * @param gender-Género
+     * @param date-Data de Nascimento
      */
     public Admin(String email, String pass, String name, char gender, GregorianCalendar date) {
         super(email, pass, name, gender, date);
