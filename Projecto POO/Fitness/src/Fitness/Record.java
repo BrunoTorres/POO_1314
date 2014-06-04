@@ -56,9 +56,9 @@ public abstract class Record implements Serializable {
     public abstract boolean isEmpty();
 
     /**
-     * Método que altera o tempo, caso o parâmetro recebido seja menor que o tempo da instancia.
+     * Método que atualiza o atual recorde caso o recorde dado seja melhor
      *
-     * @param act-Instancia Record.
+     * @param act - Objecto do tipo Record
      */
     public abstract void update(Record act);
 
