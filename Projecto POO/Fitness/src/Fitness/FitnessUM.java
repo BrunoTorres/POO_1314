@@ -541,7 +541,7 @@ public class FitnessUM implements Serializable {
         Statistics nova = new Statistics();
         for (int i = 0; i <= 11; i++) {
             GregorianCalendar date = new GregorianCalendar(ano, i, 0);
-            if (aux.containsKey(date)){
+			if (aux.containsKey(date)){
 				int ano1 = date.get(Calendar.YEAR);
 				int mes = date.get(Calendar.MONTH);
 				System.out.println("Ano: " + ano1 + " | Mes: " + mes);

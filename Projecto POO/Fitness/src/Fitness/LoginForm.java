@@ -84,9 +84,11 @@ public class LoginForm extends javax.swing.JFrame {
 
         textEmail.setMaximumSize(new java.awt.Dimension(156, 25));
         textEmail.setMinimumSize(new java.awt.Dimension(156, 25));
+        textEmail.setNextFocusableComponent(textPw);
         textEmail.setPreferredSize(new java.awt.Dimension(156, 25));
 
         butOK.setText("Entrar");
+        butOK.setNextFocusableComponent(butLimpar);
         butOK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butOKActionPerformed(evt);
@@ -94,6 +96,7 @@ public class LoginForm extends javax.swing.JFrame {
         });
 
         butLimpar.setText("Limpar");
+        butLimpar.setNextFocusableComponent(textEmail);
         butLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butLimparActionPerformed(evt);
@@ -102,6 +105,7 @@ public class LoginForm extends javax.swing.JFrame {
 
         textPw.setMaximumSize(new java.awt.Dimension(156, 25));
         textPw.setMinimumSize(new java.awt.Dimension(156, 25));
+        textPw.setNextFocusableComponent(butOK);
         textPw.setPreferredSize(new java.awt.Dimension(156, 25));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

@@ -1800,12 +1800,9 @@ public class UserForm extends javax.swing.JFrame {
 		Statistics stat = new Statistics();
 		TreeMap<GregorianCalendar, Statistics> stats = (TreeMap<GregorianCalendar, Statistics>) this.u.getStats();
 		GregorianCalendar dataAtual = new GregorianCalendar();
-		int anoAtual = dataAtual.get(Calendar.YEAR);
-		int mesAtual = dataAtual.get(Calendar.MONTH);
 		String mes = "";
-		String textMes = this.textMesAno.getText();
 		if (this.butMensais.isSelected()) {
-			stat = this.fit.searchStatistics(this.u, this.currMes, this.currAno);
+			stat = this.u.getStats(this.currAno, this.currMes);
 			switch (this.currMes) {
 				case 0:
 					mes = "Janeiro";
@@ -1845,11 +1842,10 @@ public class UserForm extends javax.swing.JFrame {
 					break;
 			}
 		} else {
-			stat = this.fit.searchStatistics(this.u, this.currAno);
+			stat = this.u.getStats(this.currAno);
 			
 		}
-		if (stat != null && stat.getCalories() != 0 && stat.getDistance() != 0.0 && stat.getTimeSpend() != 0.0) {
-			System.out.println("STAAAT: " + currAno + " | " + currMes);
+		if (stat.getCalories() != 0 && stat.getDistance() != 0.0 && stat.getTimeSpend() != 0.0) {
 			String cals = stat.toStringCalories().split(":")[1].trim();
 			String time = stat.toStringTimeSpend().split(":")[1].trim();
 			String dist = stat.toStringDistance().split(":")[1].trim();
@@ -1861,10 +1857,13 @@ public class UserForm extends javax.swing.JFrame {
 			else
 				this.textMesAno.setText(String.valueOf(this.currAno));
 		} else {
-			System.out.println("NOT STAAAT: " + currAno + " | " + currMes);
-			this.textCaloriasQueim.setText("");
-			this.textTempoGasto.setText("");
-			this.textDistPercorrida.setText("");
+			this.textCaloriasQueim.setText("N/A");
+			this.textTempoGasto.setText("N/A");
+			this.textDistPercorrida.setText("N/A");
+			if(this.butMensais.isSelected())
+				this.textMesAno.setText(mes + " (" + this.currAno + ")");
+			else
+				this.textMesAno.setText(String.valueOf(this.currAno));
 		}
 	}
 
