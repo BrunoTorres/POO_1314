@@ -1,0 +1,106 @@
+\documentclass[10pt,notitlepage]{article}
+\usepackage{graphicx} 
+\usepackage{verbatim} 
+\usepackage[portuguese]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage[hmargin=2cm,vmargin=3.5cm,bmargin=2cm]{geometry}
+
+
+\begin{document}
+
+\subsubsection{Classe abstracta Event}
+
+Classe com o conceito mais abstracto de Evento, contém as variáveis:
+\begin{itemize}
+\item \textit{String name};
+\item \textit{String tipoActivity};
+\item \textit{String location};
+\item \textit{int maxParticipants};
+\item \textit{int participants};
+\item \textit{GregorianCalendar deadline};
+\item \textit{GregorianCalendar date};
+\item \textit{double duration};
+\item \textit{TreeSet<User> participantsList};
+\item \textit{TreeSet<Ranking> ranking};
+\item \textit{TreeSet<Ranking> desistentes};
+\item \textit{TreeSet<Simulacao> simula};
+\end{itemize}
+respectivos \textit{getters} e \textit{setters} e os vários construtores. Ainda tem métodos auxiliares para, adicionar um \textit{User}, \textit{Ranking} (desistente ou não) e \textit{Simulaçao} aos respectivos \textit{Sets} e para mostrar a classificação geral do evento.
+
+
+\subsubsection{Tipo de Evento}
+
+Subclasses de Evento (Marathon, HalfMarathon, MarathonBTT e Trail), todas estas contem mais uma variável \textit{distance}, que nos casos de Marathon e HalfMarathon são variáveis \textit{final}, porque este tipo de eventos tem distâncias especificas. Não tem métodos auxiliares para além de \textit{getDistance()}.
+
+
+\subsubsection{Classe abstracta Activity}
+
+Esta é a classe mais abstracta que contem o conceito de actividade. Contém variáveis comuns a todas as actividades:
+\begin{itemize}
+\item \textit{String name};
+\item \textit{GregorianCalendar date};
+\item \textit{double timeSpent};
+\item \textit{double calories};
+\end{itemize}
+tal como os construtores, \textit{getters} e \textit{setters}.
+
+\subsubsection{Classe abstracta Person}
+Classe geral para todo tipo de utilizador. As suas variáveis são:
+\begin{itemize}
+\item \textit{String email};
+\item \textit{String password};
+\item \textit{String name};
+\item \textit{char gender};
+\item \textit{GregorianCalendar dateOfBirth};
+\end{itemize}
+e contém os métodos construtores \textit{getters} e \textit{setters}
+
+\subsubsection{Classes User e Admin}
+
+As subclasses de Person referem-se a dois possíveis tipos de utilizador; utilizador normal ou utilizador com privilégios de administrador.\\
+A classe Admin não tem métodos ou variáveis adicionais, visto que este tipo de utilizador apenas opera sobre a base de dados da aplicação.\\
+A classe User adiciona as seguintes variáveis:
+\begin{itemize}
+\item \textit{int height};
+\item \textit{double weight};
+\item \textit{String favoriteActivity};
+\item \textit{TreeSet<Activity> userActivities};
+\item \textit{TreeSet<String> friendsList};
+\item \textit{TreeMap<String, ListRecords> records};
+\item \textit{TreeSet<String> messageFriend};
+\end{itemize}
+Respectivos métodos \textit{getters} e \textit{setters}, construtores e métodos auxiliares para gerir os seus amigos, recordes, as suas actividades e estatísticas relevantes. Ainda contém funções auxiliares para a simulação de eventos.
+
+\subsubsection{Comparators}
+O tipo Person tem apenas um comparator:
+\begin{itemize}
+\item ComparePersonByName - que ordena por ordem alfabética do seu nome.
+\end{itemize}
+
+
+\subsubsection{Statistics}
+
+A classe Statistics é usada para mostrar ao utilizador dados relevantes das suas actividades, estes podem ser descriminados por um dado mês ou por um ano. As suas variáveis são:
+\begin{itemize}
+\item \textit{double timeSpend};
+\item \textit{double calories};
+\item \textit{double distance};
+\end{itemize}
+contém os respectivos métodos \textit{getters} e \textit{setters} e construtores.
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
