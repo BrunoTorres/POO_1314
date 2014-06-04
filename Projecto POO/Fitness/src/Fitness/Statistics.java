@@ -3,8 +3,12 @@ package Fitness;
 import java.io.Serializable;
 
 /**
+ * Classe agrega dadas das actividades.
  *
- * @author Bruno
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public class Statistics implements Serializable {
 
@@ -13,7 +17,7 @@ public class Statistics implements Serializable {
     private double distance;
 
     /**
-     *
+     * Construtor vazio.
      */
     public Statistics() {
 
@@ -23,9 +27,9 @@ public class Statistics implements Serializable {
     }
 
     /**
-     *
-     * @param timeSpend
-     * @param calories
+     * Construtor parametrizado.
+     * @param timeSpend - Tempo (double)
+     * @param calories - Calorias (double)
      */
     public Statistics(double timeSpend, double calories) {
         this.distance = 0;
@@ -34,10 +38,10 @@ public class Statistics implements Serializable {
     }
 
     /**
-     *
-     * @param timeSpend
-     * @param calories
-     * @param distance
+     * Construtor parametrizado.
+     * @param timeSpend - Tempo (double)
+     * @param calories - Calorias (double)
+     * @param distance - Distância (double)
      */
     public Statistics(double timeSpend, double calories, double distance) {
         this.distance = distance;
@@ -46,8 +50,8 @@ public class Statistics implements Serializable {
     }
 
     /**
-     *
-     * @param stat
+     * Construtor de cópia.
+     * @param stat - Instâncias de Statistic.
      */
     public Statistics(Statistics stat) {
         this.timeSpend = stat.getTimeSpend();
@@ -56,34 +60,34 @@ public class Statistics implements Serializable {
     }
 
     /**
-     *
-     * @return
+     * Método que devolve o tempo.
+     * @return Tempo, double.
      */
     public double getTimeSpend() {
         return this.timeSpend;
     }
 
     /**
-     *
-     * @return
+     * Método que devolve o número de calorias gastas.
+     * @return Calorias, double.
      */
     public double getCalories() {
         return this.calories;
     }
 
     /**
-     *
-     * @return
+     * Método que devolve a distância.
+     * @return Distância, double.
      */
     public double getDistance() {
         return this.distance;
     }
 
     /**
-     *
-     * @param time
-     * @param distance
-     * @param calories
+     * Método que incrementa as tempo, distância e calorias dados três valores.
+     * @param time - Tempo a incrementar, double.
+     * @param distance - Distância a incrementar, double.
+     * @param calories - Calorias a incrementar, double.
      */
     public void incrementsTimeDistanceCalories(double time, double distance, double calories) {
         this.calories += calories;
@@ -92,8 +96,8 @@ public class Statistics implements Serializable {
     }
 
     /**
-     *
-     * @return
+     * Método toString para mostrar apenas a variável de distância.
+     * @return Distância, String.
      */
     public String toStringDistance() {
         StringBuilder sb = new StringBuilder();
@@ -102,9 +106,9 @@ public class Statistics implements Serializable {
         return sb.toString();
     }
 
-    /**
-     *
-     * @return
+    /** 
+     * Método toString para mostrar apenas a variável de calorias.
+     * @return Calorias, String.
      */
     public String toStringCalories() {
         StringBuilder sb = new StringBuilder();
@@ -114,8 +118,8 @@ public class Statistics implements Serializable {
     }
 
     /**
-     *
-     * @return
+     * Método toString para mostrar apenas a variável de tempo.
+     * @return Tempo, String
      */
     public String toStringTimeSpend() {
         StringBuilder sb = new StringBuilder();
