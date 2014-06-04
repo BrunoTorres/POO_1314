@@ -52,7 +52,7 @@ Programação Orientada aos Objectos
 \section{Estrutura da aplicação}
 
 \subsection{Actividades}
-Para a nossa aplicação foram criadas seguintes actividades:
+Foram definidas as seguindes actividades desportivas para a nossa aplicação:
 \begin{itemize}
 \item 
 \item
@@ -75,18 +75,43 @@ Para a nossa aplicação foram criadas seguintes actividades:
 \item
 
 \end{itemize}
-Para a implementação das actividades optou-se pela seguinte estrutura:
-%\\%
-\begin{figure}[h]
+
+\newpage
+Para a implementação destas actividades foi usada a seguinte estrutura:
+
+\begin{figure}[ht]
 \centering
 \includegraphics[scale=0.5]{Activity.jpg}
+\caption{Estrutura das actividades}
+\label{fig:actividades}
 \end{figure}
+
 
 \subsubsection{Classe abstracta Activity}
 
-Esta é a classe mais abstrata, que tem a fundação de todas as actividadades desta aplicação. Contém variáveis comuns a todas as actividades, \textit{name}, \textit{date}, \textit{timeSpent} e \textit{calories} tal como os construtores, \textit{getters} e  \textit{setters}.
+Esta é a classe mais abstrata, que tem a fundação de todas as actividadades desta aplicação. Contém variáveis comuns a todas as actividades:
 
+ \textit{name}, \textit{date}, \textit{timeSpent} e \textit{calories} tal como os construtores, \textit{getters} e  \textit{setters}.
 
+\subsubsection{Indoor,Outdoor e actividades desportivas}
+Todas as actividades desportivas tem um aspecto importante,o clima caso sejam praticadas ao ar livre.\\
+Devido a este aspecto foram criadas duas classes abstractas,subclasses de \textit{Activity},para essa distinção.  
+\begin{itemize}
+\item Outdoor,contém a variável: \textit{String weather}  
+\item Indoor
+\end{itemize}
+
+Todas as actividades desportivas são subclasses de \textit{Indoor} ou \textit{Outdoor} como exemplicado na figura ~\ref{fig:actividades}. 
+\subsubsection{Comparadores e Interfaces}
+
+\subsection{}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{Activity.jpg}
+\caption{Estrutura das actividades}
+\label{fig:actividades}
+\end{figure}
 
 
 \subsection{Classe Abstracta Person}
@@ -97,6 +122,7 @@ construtores, \textit{getters} e \textit{setters} esta classe não tem métodos 
 
 
 
+\subsection{Eventos}
 
 \subsection{Classe abstracta Event}
 
