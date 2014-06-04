@@ -8,7 +8,6 @@ import java.util.Comparator;
 
 /**
  * Classe comparador.
- * 
  * Compara Actividades por data(ordem decrescente)
  * @author Bruno Pereira
  * @author João Mano
@@ -17,7 +16,6 @@ import java.util.Comparator;
  */
 public class CompareActivity implements Comparator<Activity>,Serializable
 {
-
     @Override
     public int compare(Activity o1, Activity o2) {
         if(o1.getDate().after(o2.getDate()))

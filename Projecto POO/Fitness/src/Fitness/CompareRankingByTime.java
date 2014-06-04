@@ -10,8 +10,8 @@ import java.io.Serializable;
 import java.util.Comparator;
 
 /**
- * Classe comparador
- * Compara Ranking por tempo(minutos)
+ * Classe comparador.
+ * Compara Ranking por tempo(minutos).
  * @author Bruno Pereira
  * @author João Mano
  * @author Miguel Guimarães

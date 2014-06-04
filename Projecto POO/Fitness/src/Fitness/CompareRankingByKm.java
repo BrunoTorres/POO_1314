@@ -5,8 +5,8 @@ import java.io.Serializable;
 import java.util.Comparator;
 
 /**
- * Classe comparador
- * Compara Rankings por km
+ * Classe comparador.
+ * Compara Rankings por km.
  * @author Bruno Pereira
  * @author João Mano
  * @author Miguel Guimarães

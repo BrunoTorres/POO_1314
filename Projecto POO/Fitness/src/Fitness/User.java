@@ -5,13 +5,18 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
 /**
+ * Classe referente aos utilizadores.
  *
- * @author Bruno
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014no
  */
 public class User extends Person implements Serializable {
 
@@ -25,7 +30,7 @@ public class User extends Person implements Serializable {
     private TreeSet<String> messageFriend;
 
     /**
-     *
+     *Construtor vazio
      */
     public User() {
         super();
@@ -40,17 +45,18 @@ public class User extends Person implements Serializable {
     }
 
     /**
+     * Construtor parametrizado
      *
-     * @param email
-     * @param pass
-     * @param name
-     * @param gender
-     * @param date
-     * @param height
-     * @param weight
-     * @param favoriteActivity
-     * @param userActivities
-     * @param friendsList
+     * @param email Email.
+     * @param pass Palavra-passe.
+     * @param name Nome.
+     * @param gender Género.
+     * @param date Data de Nascimento.
+     * @param height Altura.    
+     * @param weight Peso.
+     * @param favoriteActivity Actividade favorita.
+     * @param userActivities Set com as actividades realizadas.
+     * @param friendsList Set com o email dos amigos.
      */
     public User(String email, String pass, String name, char gender, GregorianCalendar date, int height, double weight, String favoriteActivity, TreeSet<Activity> userActivities, TreeSet<String> friendsList) {
         super(email, pass, name, gender, date);
@@ -67,15 +73,16 @@ public class User extends Person implements Serializable {
     }
 
     /**
+     * Construtor parametrizado
      *
-     * @param email
-     * @param pass
-     * @param name
-     * @param gender
-     * @param date
-     * @param height
-     * @param weight
-     * @param favoriteActivity
+     * @param email Email.
+     * @param pass Palavra-passe.
+     * @param name Nome.
+     * @param gender Género.
+     * @param date Data de Nascimento.
+     * @param height Altura.    
+     * @param weight Peso.
+     * @param favoriteActivity Actividade favorita.
      */
     public User(String email, String pass, String name, char gender, GregorianCalendar date,
             int height, double weight, String favoriteActivity) {
@@ -91,8 +98,8 @@ public class User extends Person implements Serializable {
     }
 
     /**
-     *
-     * @param u
+     * Construtor de cópia.
+     * @param u-instância de User.
      */
     public User(User u) {
         super(u.getEmail(), u.getPassword(), u.getName(), u.getGender(), u.getDate());
@@ -107,8 +114,8 @@ public class User extends Person implements Serializable {
     }
 
     /**
-     *
-     * @return
+     *Método que devolve um Map de String(tipo de actividade) para uma lista de recordes.
+     * @return Map de String para ListRecords.
      */
     public Map<String, ListRecords> getRecords() {
         TreeMap<String, ListRecords> aux = new TreeMap<>();
@@ -120,32 +127,32 @@ public class User extends Person implements Serializable {
     }
 
     /**
-     *
-     * @return
+     * Método que devolve a altura.
+     * @return Inteiro.
      */
     public int getHeight() {
         return this.height;
     }
 
     /**
-     *
-     * @return
+     *Método que devolve o peso.
+     * @return Inteiro.
      */
     public double getWeight() {
         return this.weight;
     }
 
     /**
-     *
-     * @return
+     *Método que devolve a actividade favorita.
+     * @return String.
      */
     public String getFavoriteActivity() {
         return this.favoriteActivity;
     }
 
-    /**
-     *
-     * @return
+   /**
+     *Método que devolve um Set com as actividades realizadas.
+     * @return Set de Activity..
      */
     public Set<Activity> getActivities() {
         TreeSet<Activity> res = new TreeSet<>(new CompareActivity());
@@ -156,21 +163,21 @@ public class User extends Person implements Serializable {
     }
 
     /**
-     *
-     * @return
+     * Método que devolve um Set com os emails dos amigos.
+     * @return Set de String.
      */
     public Set<String> getFriendsList() {
         return (TreeSet<String>) this.friendsList.clone();
     }
 
     /**
-     *
-     * @return
+     * Método que devolve um Map de data(GregorianCalendar) para Statistics(onde estão guardadas as estatísticas do utilizador por mês)
+     * @return Map de GregorianCalendar para Statistics.
      */
     public Map<GregorianCalendar, Statistics> getStats() {
         TreeMap<GregorianCalendar, Statistics> aux = new TreeMap<>(new CompareStatsPerYearAndMonth());
 
-        for (GregorianCalendar key : this.stats.keySet()) //FUNCIONA??!!!
+        for (GregorianCalendar key : this.stats.keySet()) 
         {
             aux.put(key, this.stats.get(key));
         }
@@ -180,57 +187,57 @@ public class User extends Person implements Serializable {
     }
 
     /**
-     *
-     * @return
+     * Métdo que devolve um Set com as mensgens existentes, cada String corresponde a email de um user que fez um pedido de amizade. 
+     * @return Set de String.
      */
     public Set<String> getMessage() {
         return this.messageFriend;
     }
 
     /**
-     *
-     * @param email
+     *Método que adiciona na caixa de mensagens um email de um user.
+     * @param email Email do user que fez o pedido de amizade.
      */
     public void addFriendToMessage(String email) {
         this.messageFriend.add(email);
     }
 
     /**
-     *
-     * @param email
+     * Método que remove o email de um user da caixa de mensagens.
+     * @param email email do user que fez o pedido de amizade.
      */
     public void removeFriendFromMessage(String email) {
         this.messageFriend.remove(email);
     }
 
     /**
-     *
-     * @param height
+     *Método que altera a altura do user.
+     * @param height Nova altura.
      */
     public void setHeight(int height) {
         this.height = height;
     }
 
     /**
-     *
-     * @param weight
+     *Método que altera o peso do user. 
+     * @param weight Novo peso.
      */
     public void setWeight(float weight) {
         this.weight = weight;
     }
 
     /**
-     *
-     * @param favorite
+     *Método que altera a actividade favorita do user.
+     * @param favorite Nova actividade favorita.
      */
     public void setFavoriteActivity(String favorite) {
         this.favoriteActivity = favorite;
     }
 
     /**
-     *
-     * @param name
-     * @return
+     *Método que procura uma actividade realizada por nome.
+     * @param name Nome da actividade.
+     * @return Activity.
      */
     public Activity getOneActivity(String name) {
 
@@ -291,10 +298,10 @@ public class User extends Person implements Serializable {
     }
 
     /**
-     *
-     * @param act
-     * @param tipoActividade
-     * @return
+     * Método que adiciona uma actividade a lista de actividades,e actualiza os recordes caso essa actividade tenha recordes.
+     * @param act Activity a adicionar.
+     * @param tipoActividade Tipo de actividade.
+     * @return 1 ou 0 caso consiga ou não adicionar a actividade.
      */
     public boolean addActivity(Activity act, String tipoActividade) {
         if ((act instanceof Running) || (act instanceof Walking)
@@ -307,11 +314,11 @@ public class User extends Person implements Serializable {
     }
 
     /**
-     *
-     * @param u
-     * @return
+     *Método que adiciona um user a lista de amigos.
+     * @param u Utilizador a adicionar.
+     * @return 1 ou 0 caso consigo ou não adicionar o user. 
      */
-    public boolean addFriend(User u) {              //Adiciona amigos a lista
+    public boolean addFriend(User u) {              
         boolean flag = false, found = false;
         flag = this.friendsList.add(u.getEmail());
 
@@ -319,19 +326,18 @@ public class User extends Person implements Serializable {
     }
 
     /**
-     *
-     * @param activityName
-     * @return
+     *Método que remove um actividade da lista de actividades.
+     * @param activityName Nome da actividade a ser removida.
+     * @return true ou false,caso consiga ou não remover a actividade.
      */
     public boolean removeActivity(String activityName) {
         boolean found = false;
         boolean flag = false;
+        /*
         TreeSet actAux = new TreeSet<>(new CompareActivity());
         for (Activity a : this.userActivities) {
             actAux.add(a);
-        }
-
-        //Iterator<Activity> it = actAux.iterator();
+        }*/
         Iterator<Activity> it = this.userActivities.iterator();
         while (it.hasNext() && !found) {
             Activity act = it.next();
@@ -347,10 +353,10 @@ public class User extends Person implements Serializable {
 
     //////////////////Records///////////////
     /**
-     *
-     * @param tipoActividade
-     * @param act
-     * @return
+     *Método que adiciona um uma lista de recordes de um tipo de actividade.
+     * @param tipoActividade Tipo de actividade a qual se referem os recordes.
+     * @param act Actividade com a lista de recordes.
+     * @return true se tudo correu bem.
      */
     public boolean addRecord(String tipoActividade, Activity act) {
         RecordsActivity a;
@@ -363,10 +369,10 @@ public class User extends Person implements Serializable {
     }
 
     /**
-     *
-     * @param tipoActividade
-     * @param act
-     * @return
+     *Método que actualiza os recordes de um tipo de actividade.
+     * @param tipoActividade Tipo de actividade
+     * @param act Actividade com os recordes.
+     * @return true se act é do tipo RecodsActivity(se tem recordes) false caso contrário.
      */
     public boolean updateRecords(String tipoActividade, Activity act) {
 
@@ -393,16 +399,16 @@ public class User extends Person implements Serializable {
 
     //Metodos Para admin
     /**
-     *
-     * @return
+     *Método que devolve a referência da lista de actividades.
+     * @return Set de activity.
      */
     public Set<Activity> getUserActivitiesAdmin() {
         return this.userActivities;
     }
 
     /**
-     *
-     * @return
+     * Método que devolve a referência da lista de amigos.
+     * @return Set de String.
      */
     public Set<String> getFriendsListAdmin() {
 
@@ -542,6 +548,11 @@ public class User extends Person implements Serializable {
         return factor;
     }
 
+    /**
+     *Método que calcula o km em que o user pode desistir.
+     * @param kmTotal
+     * @return double com o km de desistência.
+     */
     public double kmDesisteM(double kmTotal) {
         //double calories = 10* u.getWeight()*tempo;
         double factor = 0;
@@ -581,12 +592,12 @@ public class User extends Person implements Serializable {
 
     /**
      *
-     *
-     * @param weather
-     * @param temperatura
-     * @param tipo
-     * @param distance
-     * @return
+     *Método que calcula o tempo médio do user para um evento,tendo em conta a idade,clima temperatura e numero de actividades realizadas do tipo do evento. 
+     * @param weather Clima.
+     * @param temperatura Temperatura.
+     * @param tipo Tipo do evento.
+     * @param distance Distancia do evento.
+     * @return double com o tempo médio.
      */
     public double formula(String weather, double temperatura, String tipo, double distance) {
         double tempo;
@@ -635,6 +646,17 @@ public class User extends Person implements Serializable {
                     && this.userActivities.equals(u.getActivities()));
         }
 
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 83 * hash + this.height;
+        hash = 83 * hash + (int) (Double.doubleToLongBits(this.weight) ^ (Double.doubleToLongBits(this.weight) >>> 32));
+        hash = 83 * hash + Objects.hashCode(this.favoriteActivity);
+        hash = 83 * hash + Objects.hashCode(this.userActivities);
+        hash = 83 * hash + Objects.hashCode(this.friendsList);
+        return hash;
     }
 
     @Override

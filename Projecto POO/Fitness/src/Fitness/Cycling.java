@@ -47,7 +47,7 @@ public class Cycling extends Outdoor implements Distance, RecordsActivity, Seria
      *
      * Construtor de cópia
      *
-     * @param tb-instância de Cycling
+     * @param tb  instância de Cycling
      */
     public Cycling(Cycling tb) {
         super(tb);

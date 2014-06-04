@@ -10,8 +10,8 @@ import java.io.Serializable;
 import java.util.Comparator;
 
 /**
- * Classe comparador
- * Compara User por Nome(minutos)
+ * Classe comparador.
+ * Compara User por Nome(minutos).
  * @author Bruno Pereira
  * @author João Mano
  * @author Miguel Guimarães

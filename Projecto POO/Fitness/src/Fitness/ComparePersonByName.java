@@ -5,8 +5,8 @@ import java.io.Serializable;
 import java.util.Comparator;
 
 /**
- * Classe comparador
- * Compara Pessoas por nome 
+ * Classe comparador.
+ * Compara Pessoas por nome. 
  * @author Bruno Pereira
  * @author João Mano
  * @author Miguel Guimarães

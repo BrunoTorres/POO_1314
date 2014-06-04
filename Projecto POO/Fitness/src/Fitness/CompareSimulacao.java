@@ -11,8 +11,8 @@ import java.util.Comparator;
 
 
 /**
- * Classe comparador
- * Compara Simulacao por tempo(minutos)
+ * Classe comparador.
+ * Compara Simulacao por tempo(minutos).
  * @author Bruno Pereira
  * @author João Mano
  * @author Miguel Guimarães
