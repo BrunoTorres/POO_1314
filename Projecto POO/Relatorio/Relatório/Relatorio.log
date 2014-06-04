@@ -1,9 +1,8 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.5.1)  4 JUN 2014 14:58
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.5.1)  4 JUN 2014 16:14
 entering extended mode
-**C:/Users/Bruno/Documents/GitHub/Li3/Projecto*POO/Relatorio/RelatoÌrio/Relato
-rio.tex
+**Relatorio.tex
 
-("C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/Relatorio/RelatoÌrio/Relato
+("C:\Users\Bruno\Documents\GitHub\Li3\Projecto POO\Relatorio\RelatoÌrio\Relato
 rio.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
@@ -398,6 +397,8 @@ LaTeX Font Info:    ... okay on input line 9.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+! I can't write on file `Relatorio.pdf'.
+Please type another file name for output: 
 <logo.pdf, id=1, 318.18875pt x 159.59625pt>
 File: logo.pdf Graphic file (type pdf)
  <use logo.pdf>
@@ -412,97 +413,162 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--20
 
  []
 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.23 ...ria \\~ \\~ \\~  Departamento de Informï¿½
-                                                  tica \\~ \\ ~ \\~ Licencia...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.23 ...~ \\~ Licenciatura em Engenharia Informï¿½
-                                                  tica \\~ \\~ \\~ Programaï...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.23 ...aria Informï¿½tica \\~ \\~ \\~ Programaï¿½
-                                                  ï¿½o Orientada aos Objecto...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.23 ...a Informï¿½tica \\~ \\~ \\~ Programaï¿½ï¿½
-                                                  o Orientada aos Objectos \...
-
-? 
-
-! LaTeX Error: File `' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.26 \includegraphics[scale=0.6]{}
-                                  
-? 
-
-! LaTeX Error: File `' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.27 \includegraphics[scale=0.183]{}
-                                    
-? 
-
-! LaTeX Error: File `' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.28 \includegraphics[scale=0.339]{}
-                                    
-? 
-[1
+<autores.png, id=2, 501.875pt x 160.6pt>
+File: autores.png Graphic file (type png)
+ <use autores.png>
+Package pdftex.def Info: autores.png used on input line 26.
+(pdftex.def)             Requested size: 301.12732pt x 96.36073pt.
+ [1
 
 {C:/Users/Bruno/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/Br
-uno/Documents/GitHub/Li3/Projecto POO/Relatorio/RelatoÌrio/logo.pdf>]
+uno/Documents/GitHub/Li3/Projecto POO/Relatorio/RelatoÌrio/logo.pdf> <C:/Users
+/Bruno/Documents/GitHub/Li3/Projecto POO/Relatorio/RelatoÌrio/autores.png>] [2
+]
 ("C:\Users\Bruno\Documents\GitHub\Li3\Projecto POO\Relatorio\RelatoÌrio\Relato
-rio.toc")
+rio.toc"
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 ... or <return> to continue without it.}o}{5}
+                                                  
+? 
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 ... or <return> to continue without it.}o}{5}
+                                                  
+? 
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.18 ... or <return> to continue without it.}o}{7}
+                                                  
+? 
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.18 ... or <return> to continue without it.}o}{7}
+                                                  
+? 
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.20 ... to continue without it.}es a Destacar}{9}
+                                                  
+? 
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.22 ...return> to continue without it.}bridos}{9}
+                                                  
+? 
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.25 ...r <return> to continue without it.}es}{10}
+                                                  
+? 
+
+! Package inputenc Error: Unicode char \u 8:\GenericError {(inputenc)          
+      }{Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with La
+TeX}{See the inputenc package documentation for explanation.}{Your command was 
+ignored.
+(inputenc) Type  I <command> <return>  to replace it with another command,
+(inputenc) or  <return>  to continue without it.} not set up for use with LaTeX
+.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.25 ...r <return> to continue without it.}es}{10}
+                                                  
+? 
+)
 \tf@toc=\write3
- [2]
+ [3]
 
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+LaTeX Warning: File `actividades.jpeg' not found on input line 48.
 
-See the inputenc package documentation for explanation.
+
+! Package pdftex.def Error: File `actividades.jpeg' not found.
+
+See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.42 \section{Estrutura da aplicaï¿½ï¿½o}
-                                         
+l.48 \includegraphics[scale=0.6]{actividades.jpeg}
+                                                  
 ? 
 
 ! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
@@ -511,111 +577,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.42 \section{Estrutura da aplicaï¿½ï¿½o}
-                                         
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.46 Esta classe ï¿½
-                     a fundaï¿½ï¿½o de todas as actividades da aplicaï¿½ï¿½o...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.46 Esta classe ï¿½ a fundaï¿½
-                               ï¿½o de todas as actividades da aplicaï¿½ï¿½o...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.46 Esta classe ï¿½ a fundaï¿½ï¿½
-                                  o de todas as actividades da aplicaï¿½ï¿½o...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.46 ...½ï¿½o de todas as actividades da aplicaï¿½
-                                                  ï¿½o, contï¿½m as variï¿½v...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.46 ...½o de todas as actividades da aplicaï¿½ï¿½
-                                                  o, contï¿½m as variï¿½veis...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.46 ...s as actividades da aplicaï¿½ï¿½o, contï¿½
-                                                  m as variï¿½veis, \textit{...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.46 ...ades da aplicaï¿½ï¿½o, contï¿½m as variï¿½
-                                                  veis, \textit{String name}...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.46 ...eSpent} e \textit{double calories}; e mï¿½
-                                                  todos, \textit{public Stri...
-
-? 
-<veiculo.png, id=20, 437.635pt x 303.1325pt>
-File: veiculo.png Graphic file (type png)
- <use veiculo.png>
-Package pdftex.def Info: veiculo.png used on input line 52.
-(pdftex.def)             Requested size: 262.58302pt x 181.8809pt.
-
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.55 ... por uma classe abstracta pois, para alï¿½
+l.68 ... por uma classe abstracta pois, para alï¿½
                                                   m de permitir criar um ``e...
 
 ? 
@@ -626,7 +588,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.55 ...para as suas subclasses, reutilizando cï¿½
+l.68 ...para as suas subclasses, reutilizando cï¿½
                                                   digo, permite tambï¿½m obr...
 
 ? 
@@ -637,7 +599,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.55 ...es, reutilizando cï¿½digo, permite tambï¿½
+l.68 ...es, reutilizando cï¿½digo, permite tambï¿½
                                                   m obrigar as suas subclass...
 
 ? 
@@ -648,7 +610,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.55 ...igar as suas subclasses a implementar vï¿½
+l.68 ...igar as suas subclasses a implementar vï¿½
                                                   rios mï¿½todos necessï¿½ri...
 
 ? 
@@ -659,7 +621,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.55 ...uas subclasses a implementar vï¿½rios mï¿½
+l.68 ...uas subclasses a implementar vï¿½rios mï¿½
                                                   todos necessï¿½rios ao fun...
 
 ? 
@@ -670,7 +632,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.55 ...a implementar vï¿½rios mï¿½todos necessï¿½
+l.68 ...a implementar vï¿½rios mï¿½todos necessï¿½
                                                   rios ao funcionamento da a...
 
 ? 
@@ -681,7 +643,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.55 ...ecessï¿½rios ao funcionamento da aplicaï¿½
+l.68 ...ecessï¿½rios ao funcionamento da aplicaï¿½
                                                   ï¿½o. Isto faz com que a a...
 
 ? 
@@ -692,7 +654,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.55 ...ssï¿½rios ao funcionamento da aplicaï¿½ï¿½
+l.68 ...ssï¿½rios ao funcionamento da aplicaï¿½ï¿½
                                                   o. Isto faz com que a apli...
 
 ? 
@@ -703,7 +665,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.55 ...plicaï¿½ï¿½o. Isto faz com que a aplicaï¿½
+l.68 ...plicaï¿½ï¿½o. Isto faz com que a aplicaï¿½
                                                   ï¿½o seja desde logo exten...
 
 ? 
@@ -714,7 +676,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.55 ...caï¿½ï¿½o. Isto faz com que a aplicaï¿½ï¿½
+l.68 ...caï¿½ï¿½o. Isto faz com que a aplicaï¿½ï¿½
                                                   o seja desde logo extensï¿...
 
 ? 
@@ -725,7 +687,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.55 ... a aplicaï¿½ï¿½o seja desde logo extensï¿½
+l.68 ... a aplicaï¿½ï¿½o seja desde logo extensï¿½
                                                   vel no toca a novas classe...
 
 ? 
@@ -736,11 +698,11 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.55 ...ensï¿½vel no toca a novas classes de veï¿½
+l.68 ...ensï¿½vel no toca a novas classes de veï¿½
                                                   culos. \\
 ? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--56
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
 
  []
 
@@ -751,7 +713,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.57 Se a opï¿½
+l.70 Se a opï¿½
                ï¿½o fosse uma interface, as variï¿½veis e mï¿½todos de instï...
 
 ? 
@@ -762,7 +724,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.57 Se a opï¿½ï¿½
+l.70 Se a opï¿½ï¿½
                   o fosse uma interface, as variï¿½veis e mï¿½todos de instï...
 
 ? 
@@ -773,7 +735,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.57 ... opï¿½ï¿½o fosse uma interface, as variï¿½
+l.70 ... opï¿½ï¿½o fosse uma interface, as variï¿½
                                                   veis e mï¿½todos de instï¿...
 
 ? 
@@ -784,7 +746,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.57 ...fosse uma interface, as variï¿½veis e mï¿½
+l.70 ...fosse uma interface, as variï¿½veis e mï¿½
                                                   todos de instï¿½ncia de \t...
 
 ? 
@@ -795,7 +757,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.57 ...ace, as variï¿½veis e mï¿½todos de instï¿½
+l.70 ...ace, as variï¿½veis e mï¿½todos de instï¿½
                                                   ncia de \textit{Veï¿½culo}...
 
 ? 
@@ -806,7 +768,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.57 ...todos de instï¿½ncia de \textit{Veï¿½culo}
+l.70 ...todos de instï¿½ncia de \textit{Veï¿½culo}
                                                    nï¿½o podiam ser reutiliz...
 
 ? 
@@ -817,7 +779,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.57 ... de instï¿½ncia de \textit{Veï¿½culo} nï¿½
+l.70 ... de instï¿½ncia de \textit{Veï¿½culo} nï¿½
                                                   o podiam ser reutilizadas....
 
 ? 
@@ -828,7 +790,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.57 ...lo} nï¿½o podiam ser reutilizadas. Se nï¿½
+l.70 ...lo} nï¿½o podiam ser reutilizadas. Se nï¿½
                                                   o fosse uma classe abstrac...
 
 ? 
@@ -839,7 +801,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.57 ... Se nï¿½o fosse uma classe abstracta, nï¿½
+l.70 ... Se nï¿½o fosse uma classe abstracta, nï¿½
                                                   o obrigava as subclasses a...
 
 ? 
@@ -850,7 +812,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.57 ...rigava as subclasses a implementar os mï¿½
+l.70 ...rigava as subclasses a implementar os mï¿½
                                                   todos pretendidos.
 ? 
 
@@ -860,7 +822,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.59 Para alï¿½
+l.72 Para alï¿½
                m das variï¿½veis de instï¿½ncia pedidas no enunciado, tem um...
 
 ? 
@@ -871,7 +833,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.59 Para alï¿½m das variï¿½
+l.72 Para alï¿½m das variï¿½
                             veis de instï¿½ncia pedidas no enunciado, tem um...
 
 ? 
@@ -882,7 +844,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.59 Para alï¿½m das variï¿½veis de instï¿½
+l.72 Para alï¿½m das variï¿½veis de instï¿½
                                            ncia pedidas no enunciado, tem um...
 
 ? 
@@ -893,7 +855,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.59 ...omo identidade e ordem dentro da aplicaï¿½
+l.72 ...omo identidade e ordem dentro da aplicaï¿½
                                                   ï¿½o, um \textit{Piloto co...
 
 ? 
@@ -904,7 +866,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.59 ... identidade e ordem dentro da aplicaï¿½ï¿½
+l.72 ... identidade e ordem dentro da aplicaï¿½ï¿½
                                                   o, um \textit{Piloto condu...
 
 ? 
@@ -915,7 +877,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.59 ...que representam o condutor actual do veï¿½
+l.72 ...que representam o condutor actual do veï¿½
                                                   culo e o nï¿½mero de volta...
 
 ? 
@@ -926,7 +888,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.59 ...am o condutor actual do veï¿½culo e o nï¿½
+l.72 ...am o condutor actual do veï¿½culo e o nï¿½
                                                   mero de voltas que esse co...
 
 ? 
@@ -937,11 +899,11 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.59 ...nï¿½mero de voltas que esse condutor irï¿½
+l.72 ...nï¿½mero de voltas que esse condutor irï¿½
                                                    fazer numa dada corrida. \\
 ? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--60
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
 
  []
 
@@ -952,7 +914,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.61 Para alï¿½
+l.74 Para alï¿½
                m dos construtores, \textit{getters}, \textit{setters} e \tex...
 
 ? 
@@ -963,7 +925,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.61 ...a as suas subclasses a implementar os mï¿½
+l.74 ...a as suas subclasses a implementar os mï¿½
                                                   todos:
 ? 
 
@@ -973,7 +935,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.65 ...ta()}, que calcula um desvio ao tempo mï¿½
+l.78 ...ta()}, que calcula um desvio ao tempo mï¿½
                                                   dio por volta, em milisegu...
 
 ? 
@@ -984,7 +946,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.66 ...que determina se um carro termina, ou nï¿½
+l.79 ...que determina se um carro termina, ou nï¿½
                                                   o, uma dada volta de acord...
 
 ? 
@@ -995,7 +957,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.66 ...com a sua fiabilidade e um factor aleatï¿½
+l.79 ...com a sua fiabilidade e um factor aleatï¿½
                                                   rio;
 ? 
 
@@ -1005,7 +967,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.67 ...int quantasVoltas()}, que determina o nï¿½
+l.80 ...int quantasVoltas()}, que determina o nï¿½
                                                   mero de voltas a fazer pel...
 
 ? 
@@ -1016,7 +978,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.73 Para alï¿½
+l.86 Para alï¿½
                m das variï¿½veis e mï¿½todos herdados de \textit{Veiculo}, t...
 
 ? 
@@ -1027,7 +989,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.73 Para alï¿½m das variï¿½
+l.86 Para alï¿½m das variï¿½
                             veis e mï¿½todos herdados de \textit{Veiculo}, t...
 
 ? 
@@ -1038,7 +1000,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.73 Para alï¿½m das variï¿½veis e mï¿½
+l.86 Para alï¿½m das variï¿½veis e mï¿½
                                        todos herdados de \textit{Veiculo}, t...
 
 ? 
@@ -1049,7 +1011,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.73 ...l int cilindrada = 6000}, pois os PC1 tï¿½
+l.86 ...l int cilindrada = 6000}, pois os PC1 tï¿½
                                                   m sempre 6000$cm^{3}$ de c...
 
 ? 
@@ -1060,7 +1022,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.73 ...m \textit{int hibridoCv} para o motor hï¿½
+l.86 ...m \textit{int hibridoCv} para o motor hï¿½
                                                   brido (= 0 caso nï¿½o tenh...
 
 ? 
@@ -1071,7 +1033,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.73 ...oCv} para o motor hï¿½brido (= 0 caso nï¿½
+l.86 ...oCv} para o motor hï¿½brido (= 0 caso nï¿½
                                                   o tenha) e um \textit{Rand...
 
 ? 
@@ -1082,7 +1044,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.73 ...ndom rand} para uniformizar a distribuiï¿½
+l.86 ...ndom rand} para uniformizar a distribuiï¿½
                                                   ï¿½o de probabilidade em \...
 
 ? 
@@ -1093,7 +1055,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.73 ...m rand} para uniformizar a distribuiï¿½ï¿½
+l.86 ...m rand} para uniformizar a distribuiï¿½ï¿½
                                                   o de probabilidade em \tex...
 
 ? 
@@ -1104,7 +1066,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.77 Para alï¿½
+l.90 Para alï¿½
                m das variï¿½veis e mï¿½todos herdados de \textit{Veiculo}, t...
 
 ? 
@@ -1115,7 +1077,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.77 Para alï¿½m das variï¿½
+l.90 Para alï¿½m das variï¿½
                             veis e mï¿½todos herdados de \textit{Veiculo}, t...
 
 ? 
@@ -1126,7 +1088,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.77 Para alï¿½m das variï¿½veis e mï¿½
+l.90 Para alï¿½m das variï¿½veis e mï¿½
                                        todos herdados de \textit{Veiculo}, t...
 
 ? 
@@ -1137,7 +1099,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.77 ...m \textit{int hibridoCv} para o motor hï¿½
+l.90 ...m \textit{int hibridoCv} para o motor hï¿½
                                                   brido (= 0 caso nï¿½o tenh...
 
 ? 
@@ -1148,7 +1110,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.77 ...oCv} para o motor hï¿½brido (= 0 caso nï¿½
+l.90 ...oCv} para o motor hï¿½brido (= 0 caso nï¿½
                                                   o tenha), um \textit{int p...
 
 ? 
@@ -1159,7 +1121,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.77 ...tenha), um \textit{int preparacao} que ï¿½
+l.90 ...tenha), um \textit{int preparacao} que ï¿½
                                                    a preparaï¿½ï¿½o mecï¿½ni...
 
 ? 
@@ -1170,7 +1132,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.77 ...extit{int preparacao} que ï¿½ a preparaï¿½
+l.90 ...extit{int preparacao} que ï¿½ a preparaï¿½
                                                   ï¿½o mecï¿½nica do carro e...
 
 ? 
@@ -1181,7 +1143,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.77 ...it{int preparacao} que ï¿½ a preparaï¿½ï¿½
+l.90 ...it{int preparacao} que ï¿½ a preparaï¿½ï¿½
                                                   o mecï¿½nica do carro e qu...
 
 ? 
@@ -1192,7 +1154,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.77 ...reparacao} que ï¿½ a preparaï¿½ï¿½o mecï¿½
+l.90 ...reparacao} que ï¿½ a preparaï¿½ï¿½o mecï¿½
                                                   nica do carro e que afecta...
 
 ? 
@@ -1203,7 +1165,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.77 ...ndom rand} para uniformizar a distribuiï¿½
+l.90 ...ndom rand} para uniformizar a distribuiï¿½
                                                   ï¿½o de probabilidade em \...
 
 ? 
@@ -1214,12 +1176,11 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.77 ...m rand} para uniformizar a distribuiï¿½ï¿½
+l.90 ...m rand} para uniformizar a distribuiï¿½ï¿½
                                                   o de probabilidade em \tex...
 
 ? 
-[3 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/Relatorio/RelatoÌrio/veic
-ulo.png>]
+[4]
 
 ! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
 
@@ -1227,7 +1188,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.81 Para alï¿½
+l.94 Para alï¿½
                m das variï¿½veis e mï¿½todos herdados de \textit{Veiculo}, t...
 
 ? 
@@ -1238,7 +1199,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.81 Para alï¿½m das variï¿½
+l.94 Para alï¿½m das variï¿½
                             veis e mï¿½todos herdados de \textit{Veiculo}, t...
 
 ? 
@@ -1249,7 +1210,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.81 Para alï¿½m das variï¿½veis e mï¿½
+l.94 Para alï¿½m das variï¿½veis e mï¿½
                                        todos herdados de \textit{Veiculo}, t...
 
 ? 
@@ -1260,7 +1221,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.81 ...inal int fiabilidadeInicial = 100} que ï¿½
+l.94 ...inal int fiabilidadeInicial = 100} que ï¿½
                                                    a fiabilidade no inï¿½cio...
 
 ? 
@@ -1271,7 +1232,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.81 ...cial = 100} que ï¿½ a fiabilidade no inï¿½
+l.94 ...cial = 100} que ï¿½ a fiabilidade no inï¿½
                                                   cio de cada corrida, um \t...
 
 ? 
@@ -1282,7 +1243,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.81 ...m \textit{int hibridoCv} para o motor hï¿½
+l.94 ...m \textit{int hibridoCv} para o motor hï¿½
                                                   brido (= 0 caso nï¿½o tenh...
 
 ? 
@@ -1293,7 +1254,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.81 ...oCv} para o motor hï¿½brido (= 0 caso nï¿½
+l.94 ...oCv} para o motor hï¿½brido (= 0 caso nï¿½
                                                   o tenha), uma \textit{doub...
 
 ? 
@@ -1304,7 +1265,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.81 ...uma \textit{double taxaDecrescimo} que ï¿½
+l.94 ...uma \textit{double taxaDecrescimo} que ï¿½
                                                    a taxa a que a fiabilidad...
 
 ? 
@@ -1315,7 +1276,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.81 ...ndom rand} para uniformizar a distribuiï¿½
+l.94 ...ndom rand} para uniformizar a distribuiï¿½
                                                   ï¿½o de probabilidade em \...
 
 ? 
@@ -1326,7 +1287,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.81 ...m rand} para uniformizar a distribuiï¿½ï¿½
+l.94 ...m rand} para uniformizar a distribuiï¿½ï¿½
                                                   o de probabilidade em \tex...
 
 ? 
@@ -1337,7 +1298,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.85 Para alï¿½
+l.98 Para alï¿½
                m das variï¿½veis e mï¿½todos herdados de \textit{Veiculo}, t...
 
 ? 
@@ -1348,7 +1309,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.85 Para alï¿½m das variï¿½
+l.98 Para alï¿½m das variï¿½
                             veis e mï¿½todos herdados de \textit{Veiculo}, t...
 
 ? 
@@ -1359,7 +1320,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.85 Para alï¿½m das variï¿½veis e mï¿½
+l.98 Para alï¿½m das variï¿½veis e mï¿½
                                        todos herdados de \textit{Veiculo}, t...
 
 ? 
@@ -1370,7 +1331,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.85 ...al int cilindrada = 2500}, pois os SC tï¿½
+l.98 ...al int cilindrada = 2500}, pois os SC tï¿½
                                                   m sempre 2500$cm^{3}$ de c...
 
 ? 
@@ -1381,7 +1342,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.85 ...ndom rand} para uniformizar a distribuiï¿½
+l.98 ...ndom rand} para uniformizar a distribuiï¿½
                                                   ï¿½o de probabilidade em \...
 
 ? 
@@ -1392,12 +1353,12 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.85 ...m rand} para uniformizar a distribuiï¿½ï¿½
+l.98 ...m rand} para uniformizar a distribuiï¿½ï¿½
                                                   o de probabilidade em \tex...
 
 ? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--88
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
 
  []
 
@@ -1408,7 +1369,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.91 ...brido}, que as obriga a implementar o mï¿½
+l.104 ...rido}, que as obriga a implementar o mï¿½
                                                   todo \textit{int getPotenc...
 
 ? 
@@ -1419,7 +1380,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.91 ...ciaMotorElectrico()}, que retorna a potï¿½
+l.104 ...iaMotorElectrico()}, que retorna a potï¿½
                                                   ncia do motor elï¿½ctrico ...
 
 ? 
@@ -1430,7 +1391,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.91 ...}, que retorna a potï¿½ncia do motor elï¿½
+l.104 ..., que retorna a potï¿½ncia do motor elï¿½
                                                   ctrico em KW. Isto nï¿½o f...
 
 ? 
@@ -1441,7 +1402,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.91 ...ncia do motor elï¿½ctrico em KW. Isto nï¿½
+l.104 ...cia do motor elï¿½ctrico em KW. Isto nï¿½
                                                   o faz com estas classes se...
 
 ? 
@@ -1452,7 +1413,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.91 ... classes sejam obrigadas a ter uma variï¿½
+l.104 ...classes sejam obrigadas a ter uma variï¿½
                                                   vel de instï¿½ncia para o ...
 
 ? 
@@ -1463,7 +1424,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.91 ... obrigadas a ter uma variï¿½vel de instï¿½
+l.104 ...obrigadas a ter uma variï¿½vel de instï¿½
                                                   ncia para o motor hï¿½brid...
 
 ? 
@@ -1474,7 +1435,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.91 ...ariï¿½vel de instï¿½ncia para o motor hï¿½
+l.104 ...riï¿½vel de instï¿½ncia para o motor hï¿½
                                                   brido mas, como nï¿½o ï¿½ ...
 
 ? 
@@ -1485,7 +1446,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.91 ...ncia para o motor hï¿½brido mas, como nï¿½
+l.104 ...cia para o motor hï¿½brido mas, como nï¿½
                                                   o ï¿½ permitida heranï¿½a ...
 
 ? 
@@ -1496,7 +1457,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.91 ...para o motor hï¿½brido mas, como nï¿½o ï¿½
+l.104 ...ara o motor hï¿½brido mas, como nï¿½o ï¿½
                                                    permitida heranï¿½a mï¿½l...
 
 ? 
@@ -1507,7 +1468,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.91 ...ido mas, como nï¿½o ï¿½ permitida heranï¿½
+l.104 ...do mas, como nï¿½o ï¿½ permitida heranï¿½
                                                   a mï¿½ltipla de classes, n...
 
 ? 
@@ -1518,7 +1479,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.91 ...s, como nï¿½o ï¿½ permitida heranï¿½a mï¿½
+l.104 ..., como nï¿½o ï¿½ permitida heranï¿½a mï¿½
                                                   ltipla de classes, nï¿½o s...
 
 ? 
@@ -1529,12 +1490,12 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.91 ...tida heranï¿½a mï¿½ltipla de classes, nï¿½
+l.104 ...ida heranï¿½a mï¿½ltipla de classes, nï¿½
                                                   o se pode criar uma superc...
 
 ? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
 
  []
 
@@ -1545,8 +1506,8 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.97 Para alï¿½
-               m das variï¿½veis de instï¿½ncia pedidas no enunciado, esta c...
+l.110 Para alï¿½
+                m das variï¿½veis de instï¿½ncia pedidas no enunciado, esta ...
 
 ? 
 
@@ -1556,8 +1517,8 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.97 Para alï¿½m das variï¿½
-                            veis de instï¿½ncia pedidas no enunciado, esta c...
+l.110 Para alï¿½m das variï¿½
+                             veis de instï¿½ncia pedidas no enunciado, esta ...
 
 ? 
 
@@ -1567,8 +1528,8 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.97 Para alï¿½m das variï¿½veis de instï¿½
-                                           ncia pedidas no enunciado, esta c...
+l.110 Para alï¿½m das variï¿½veis de instï¿½
+                                            ncia pedidas no enunciado, esta ...
 
 ? 
 
@@ -1578,7 +1539,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.97 ...omo identidade e ordem dentro da aplicaï¿½
+l.110 ...mo identidade e ordem dentro da aplicaï¿½
                                                   ï¿½o e um \textit{String n...
 
 ? 
@@ -1589,7 +1550,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.97 ... identidade e ordem dentro da aplicaï¿½ï¿½
+l.110 ...identidade e ordem dentro da aplicaï¿½ï¿½
                                                   o e um \textit{String nome...
 
 ? 
@@ -1600,7 +1561,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.97 ... nome} do circuito. Todos os tempos estï¿½
+l.110 ...nome} do circuito. Todos os tempos estï¿½
                                                   o em milisegundos, a resol...
 
 ? 
@@ -1611,7 +1572,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.97 ...empos estï¿½o em milisegundos, a resoluï¿½
+l.110 ...mpos estï¿½o em milisegundos, a resoluï¿½
                                                   ï¿½o dos tempos na aplicaï...
 
 ? 
@@ -1622,7 +1583,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.97 ...os estï¿½o em milisegundos, a resoluï¿½ï¿½
+l.110 ...s estï¿½o em milisegundos, a resoluï¿½ï¿½
                                                   o dos tempos na aplicaï¿½ï...
 
 ? 
@@ -1633,7 +1594,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.97 ...s, a resoluï¿½ï¿½o dos tempos na aplicaï¿½
+l.110 ..., a resoluï¿½ï¿½o dos tempos na aplicaï¿½
                                                   ï¿½o. \\
 ? 
 
@@ -1643,11 +1604,11 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.97 ...a resoluï¿½ï¿½o dos tempos na aplicaï¿½ï¿½
+l.110 ... resoluï¿½ï¿½o dos tempos na aplicaï¿½ï¿½
                                                   o. \\
 ? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--98
+Underfull \hbox (badness 10000) in paragraph at lines 110--111
 
  []
 
@@ -1658,8 +1619,8 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.99 Para alï¿½
-               m dos construtores, \textit{getters}, \textit{setters}, \text...
+l.112 Para alï¿½
+                m dos construtores, \textit{getters}, \textit{setters}, \tex...
 
 ? 
 
@@ -1669,7 +1630,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.99 ... e \textit{toString()}, implementa os mï¿½
+l.112 ...e \textit{toString()}, implementa os mï¿½
                                                   todos \textit{void printCi...
 
 ? 
@@ -1680,7 +1641,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.99 ... printCircuito()}, que imprime a informï¿½
+l.112 ...printCircuito()}, que imprime a informï¿½
                                                   ï¿½o do circuito e \textit...
 
 ? 
@@ -1691,106 +1652,9 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.99 ...intCircuito()}, que imprime a informï¿½ï¿½
+l.112 ...ntCircuito()}, que imprime a informï¿½ï¿½
                                                   o do circuito e \textit{St...
 
-? 
-
-Underfull \hbox (badness 10000) in paragraph at lines 99--100
-
- []
-
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.101 Os tempos mï¿½
-                    dios por volta das categorias PC1, PC2, GT e SC sï¿½o re...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.101 ...lta das categorias PC1, PC2, GT e SC sï¿½
-                                                  o respectivamente, +2s, +3...
-
-? 
-[4] <corrida.png, id=31, 503.8825pt x 298.11375pt>
-File: corrida.png Graphic file (type png)
- <use corrida.png>
-Package pdftex.def Info: corrida.png used on input line 109.
-(pdftex.def)             Requested size: 302.33183pt x 178.86963pt.
-
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.112 Tem como variï¿½
-                      veis de instï¿½ncia uma \textit{String idCorrida}, que...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.112 Tem como variï¿½veis de instï¿½
-                                     ncia uma \textit{String idCorrida}, que...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.112 ...mo identidade e ordem dentro da aplicaï¿½
-                                                  ï¿½o, um \textit{Circuito ...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.112 ...identidade e ordem dentro da aplicaï¿½ï¿½
-                                                  o, um \textit{Circuito cir...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.112 ...ist$<$Classificaï¿½ï¿½o$>$classificacoes}
-                                                  . \\
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.112 ...ist$<$Classificaï¿½ï¿½o$>$classificacoes}
-                                                  . \\
 ? 
 
 Underfull \hbox (badness 10000) in paragraph at lines 112--113
@@ -1804,8 +1668,8 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.114 Os veï¿½
-              culos do campeonato sï¿½o replicados para cada corrida para nï...
+l.114 Os tempos mï¿½
+                    dios por volta das categorias PC1, PC2, GT e SC sï¿½o re...
 
 ? 
 
@@ -1815,111 +1679,15 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.114 Os veï¿½culos do campeonato sï¿½
-                                      o replicados para cada corrida para nï...
+l.114 ...lta das categorias PC1, PC2, GT e SC sï¿½
+                                                  o respectivamente, +2s, +3...
 
 ? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.114 ...½o replicados para cada corrida para nï¿½
-                                                  o terem de ser passados co...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.114 ...a nï¿½o terem de ser passados como parï¿½
-                                                  metro na aplicaï¿½ï¿½o. Co...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.114 ...er passados como parï¿½metro na aplicaï¿½
-                                                  ï¿½o. Como a dimensï¿½o do...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.114 ...passados como parï¿½metro na aplicaï¿½ï¿½
-                                                  o. Como a dimensï¿½o dos d...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.114 ...½metro na aplicaï¿½ï¿½o. Como a dimensï¿½
-                                                  o dos dados ï¿½ relativame...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.114 ...aï¿½ï¿½o. Como a dimensï¿½o dos dados ï¿½
-                                                   relativamente pequena ist...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.114 ...dados ï¿½ relativamente pequena isto nï¿½
-                                                  o tem impacto no tempo de ...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.114 ...to nï¿½o tem impacto no tempo de execuï¿½
-                                                  ï¿½o do programa. \\
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.114 ...nï¿½o tem impacto no tempo de execuï¿½ï¿½
-                                                  o do programa. \\
-? 
-
-Underfull \hbox (badness 10000) in paragraph at lines 114--115
-
- []
+[5] <corrida.png, id=37, 503.8825pt x 298.11375pt>
+File: corrida.png Graphic file (type png)
+ <use corrida.png>
+Package pdftex.def Info: corrida.png used on input line 122.
+(pdftex.def)             Requested size: 302.33183pt x 178.86963pt.
 
 
 ! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
@@ -1928,403 +1696,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.116 Em relaï¿½
-                ï¿½o ï¿½s classificaï¿½ï¿½es, optou-se por um List por forma...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.116 Em relaï¿½ï¿½
-                   o ï¿½s classificaï¿½ï¿½es, optou-se por um List por forma...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.116 Em relaï¿½ï¿½o ï¿½
-                        s classificaï¿½ï¿½es, optou-se por um List por forma...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.116 Em relaï¿½ï¿½o ï¿½s classificaï¿½
-                                       ï¿½es, optou-se por um List por forma...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.116 Em relaï¿½ï¿½o ï¿½s classificaï¿½ï¿½
-                                          es, optou-se por um List por forma...
-
-? 
-
-Underfull \hbox (badness 10000) in paragraph at lines 116--117
-
- []
-
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.118 Para alï¿½
-                m dos construtores, \textit{getters}, \textit{setters}, \tex...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.118 ...e \textit{toString()}, implementa os mï¿½
-                                                  todos \textit{void efectua...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.118 ...sificacao()}, que imprime a classificaï¿½
-                                                  ï¿½o da corrida, \textit{S...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.118 ...icacao()}, que imprime a classificaï¿½ï¿½
-                                                  o da corrida, \textit{Stri...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.120 \subsection{Classe Classificaï¿½ï¿½o}
-                                           
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.120 \subsection{Classe Classificaï¿½ï¿½o}
-                                           
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.122 Como a aplicaï¿½
-                      ï¿½o sï¿½ tem uma classificaï¿½ï¿½o geral, optou-se po...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.122 Como a aplicaï¿½ï¿½
-                         o sï¿½ tem uma classificaï¿½ï¿½o geral, optou-se po...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.122 Como a aplicaï¿½ï¿½o sï¿½
-                                tem uma classificaï¿½ï¿½o geral, optou-se po...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.122 ... aplicaï¿½ï¿½o sï¿½ tem uma classificaï¿½
-                                                  ï¿½o geral, optou-se por a...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.122 ...licaï¿½ï¿½o sï¿½ tem uma classificaï¿½ï¿½
-                                                  o geral, optou-se por adic...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.122 ...geral, optou-se por adicionar uma variï¿½
-                                                  vel para guradar os pontos...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.122 ...riï¿½vel para guradar os pontos dos veï¿½
-                                                  culos em vez de fazer uma ...
-
-? 
-
-Underfull \hbox (badness 10000) in paragraph at lines 122--123
-
- []
-
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.124 Tem como variï¿½
-                      veis de instï¿½ncia um \textit{Veiculo veiculo}, um \t...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.124 Tem como variï¿½veis de instï¿½
-                                     ncia um \textit{Veiculo veiculo}, um \t...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.124 ...textit{int voltaDnf} que, em caso de nï¿½
-                                                  o terminaï¿½ï¿½o da corrid...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.124 ...oltaDnf} que, em caso de nï¿½o terminaï¿½
-                                                  ï¿½o da corrida, guarda a ...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.124 ...aDnf} que, em caso de nï¿½o terminaï¿½ï¿½
-                                                  o da corrida, guarda a vol...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.124 ...o da corrida, guarda a volta de desistï¿½
-                                                  ncia e um \textit{int pont...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.124 ... pontos}, para guardar os pontos do veï¿½
-                                                  culo. \\
-? 
-
-Underfull \hbox (badness 10000) in paragraph at lines 124--125
-
- []
-
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.126 Para alï¿½
-                m dos construtores, \textit{getters}, \textit{setters}, \tex...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.126 ...tit{toString()}, implementa apenas o mï¿½
-                                                  todo \textit{void incremen...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.126 ... serve para ir somando os pontos do veï¿½
-                                                  culo ao longo do programa. \\
-
-? 
-
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
-
- []
-
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.128 Como esta classe serve dois propï¿½
-                                         sitos, classificar dentro de uma co...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.128 ...ssificar dentro de uma corrida, em funï¿½
-                                                  ï¿½o do tempo, e classific...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.128 ...ficar dentro de uma corrida, em funï¿½ï¿½
-                                                  o do tempo, e classificar ...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.128 ...o, e classificar no campeonato, em funï¿½
-                                                  ï¿½o dos pontos, sï¿½o imp...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.128 ...e classificar no campeonato, em funï¿½ï¿½
-                                                  o dos pontos, sï¿½o implem...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.128 ...ampeonato, em funï¿½ï¿½o dos pontos, sï¿½
-                                                  o implementados dois \text...
-
-? 
-
-Underfull \hbox (badness 10000) in paragraph at lines 128--129
-
- []
-
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.132 Tem como variï¿½
+l.125 Tem como variï¿½
                       veis de instï¿½ncia uma \textit{String idCorrida}, que...
 
 ? 
@@ -2335,7 +1707,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.132 Tem como variï¿½veis de instï¿½
+l.125 Tem como variï¿½veis de instï¿½
                                      ncia uma \textit{String idCorrida}, que...
 
 ? 
@@ -2346,7 +1718,596 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.132 ...mo identidade e ordem dentro da aplicaï¿½
+l.125 ...mo identidade e ordem dentro da aplicaï¿½
+                                                  ï¿½o, um \textit{Circuito ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.125 ...identidade e ordem dentro da aplicaï¿½ï¿½
+                                                  o, um \textit{Circuito cir...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.125 ...ist$<$Classificaï¿½ï¿½o$>$classificacoes}
+                                                  . \\
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.125 ...ist$<$Classificaï¿½ï¿½o$>$classificacoes}
+                                                  . \\
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--126
+
+ []
+
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.127 Os veï¿½
+              culos do campeonato sï¿½o replicados para cada corrida para nï...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.127 Os veï¿½culos do campeonato sï¿½
+                                      o replicados para cada corrida para nï...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.127 ...½o replicados para cada corrida para nï¿½
+                                                  o terem de ser passados co...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.127 ...a nï¿½o terem de ser passados como parï¿½
+                                                  metro na aplicaï¿½ï¿½o. Co...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.127 ...er passados como parï¿½metro na aplicaï¿½
+                                                  ï¿½o. Como a dimensï¿½o do...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.127 ...passados como parï¿½metro na aplicaï¿½ï¿½
+                                                  o. Como a dimensï¿½o dos d...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.127 ...½metro na aplicaï¿½ï¿½o. Como a dimensï¿½
+                                                  o dos dados ï¿½ relativame...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.127 ...aï¿½ï¿½o. Como a dimensï¿½o dos dados ï¿½
+                                                   relativamente pequena ist...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.127 ...dados ï¿½ relativamente pequena isto nï¿½
+                                                  o tem impacto no tempo de ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.127 ...to nï¿½o tem impacto no tempo de execuï¿½
+                                                  ï¿½o do programa. \\
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.127 ...nï¿½o tem impacto no tempo de execuï¿½ï¿½
+                                                  o do programa. \\
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
+
+ []
+
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.129 Em relaï¿½
+                ï¿½o ï¿½s classificaï¿½ï¿½es, optou-se por um List por forma...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.129 Em relaï¿½ï¿½
+                   o ï¿½s classificaï¿½ï¿½es, optou-se por um List por forma...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.129 Em relaï¿½ï¿½o ï¿½
+                        s classificaï¿½ï¿½es, optou-se por um List por forma...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.129 Em relaï¿½ï¿½o ï¿½s classificaï¿½
+                                       ï¿½es, optou-se por um List por forma...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.129 Em relaï¿½ï¿½o ï¿½s classificaï¿½ï¿½
+                                          es, optou-se por um List por forma...
+
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
+
+ []
+
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.131 Para alï¿½
+                m dos construtores, \textit{getters}, \textit{setters}, \tex...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.131 ...e \textit{toString()}, implementa os mï¿½
+                                                  todos \textit{void efectua...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.131 ...sificacao()}, que imprime a classificaï¿½
+                                                  ï¿½o da corrida, \textit{S...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.131 ...icacao()}, que imprime a classificaï¿½ï¿½
+                                                  o da corrida, \textit{Stri...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.133 \subsection{Classe Classificaï¿½ï¿½o}
+                                           
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.133 \subsection{Classe Classificaï¿½ï¿½o}
+                                           
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.135 Como a aplicaï¿½
+                      ï¿½o sï¿½ tem uma classificaï¿½ï¿½o geral, optou-se po...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.135 Como a aplicaï¿½ï¿½
+                         o sï¿½ tem uma classificaï¿½ï¿½o geral, optou-se po...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.135 Como a aplicaï¿½ï¿½o sï¿½
+                                tem uma classificaï¿½ï¿½o geral, optou-se po...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.135 ... aplicaï¿½ï¿½o sï¿½ tem uma classificaï¿½
+                                                  ï¿½o geral, optou-se por a...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.135 ...licaï¿½ï¿½o sï¿½ tem uma classificaï¿½ï¿½
+                                                  o geral, optou-se por adic...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.135 ...geral, optou-se por adicionar uma variï¿½
+                                                  vel para guradar os pontos...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.135 ...riï¿½vel para guradar os pontos dos veï¿½
+                                                  culos em vez de fazer uma ...
+
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
+
+ []
+
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.137 Tem como variï¿½
+                      veis de instï¿½ncia um \textit{Veiculo veiculo}, um \t...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.137 Tem como variï¿½veis de instï¿½
+                                     ncia um \textit{Veiculo veiculo}, um \t...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.137 ...textit{int voltaDnf} que, em caso de nï¿½
+                                                  o terminaï¿½ï¿½o da corrid...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.137 ...oltaDnf} que, em caso de nï¿½o terminaï¿½
+                                                  ï¿½o da corrida, guarda a ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.137 ...aDnf} que, em caso de nï¿½o terminaï¿½ï¿½
+                                                  o da corrida, guarda a vol...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.137 ...o da corrida, guarda a volta de desistï¿½
+                                                  ncia e um \textit{int pont...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.137 ... pontos}, para guardar os pontos do veï¿½
+                                                  culo. \\
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
+
+ []
+
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.139 Para alï¿½
+                m dos construtores, \textit{getters}, \textit{setters}, \tex...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.139 ...tit{toString()}, implementa apenas o mï¿½
+                                                  todo \textit{void incremen...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.139 ... serve para ir somando os pontos do veï¿½
+                                                  culo ao longo do programa. \\
+
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
+
+ []
+
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.141 Como esta classe serve dois propï¿½
+                                         sitos, classificar dentro de uma co...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.141 ...ssificar dentro de uma corrida, em funï¿½
+                                                  ï¿½o do tempo, e classific...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.141 ...ficar dentro de uma corrida, em funï¿½ï¿½
+                                                  o do tempo, e classificar ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.141 ...o, e classificar no campeonato, em funï¿½
+                                                  ï¿½o dos pontos, sï¿½o imp...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.141 ...e classificar no campeonato, em funï¿½ï¿½
+                                                  o dos pontos, sï¿½o implem...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.141 ...ampeonato, em funï¿½ï¿½o dos pontos, sï¿½
+                                                  o implementados dois \text...
+
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
+
+ []
+
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.145 Tem como variï¿½
+                      veis de instï¿½ncia uma \textit{String idCorrida}, que...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.145 Tem como variï¿½veis de instï¿½
+                                     ncia uma \textit{String idCorrida}, que...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.145 ...mo identidade e ordem dentro da aplicaï¿½
                                                   ï¿½o, um \textit{double mo...
 
 ? 
@@ -2357,7 +2318,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.132 ...identidade e ordem dentro da aplicaï¿½ï¿½
+l.145 ...identidade e ordem dentro da aplicaï¿½ï¿½
                                                   o, um \textit{double monta...
 
 ? 
@@ -2368,12 +2329,12 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.132 ...½ï¿½o, um \textit{double montante}, trï¿½
+l.145 ...½ï¿½o, um \textit{double montante}, trï¿½
                                                   s \textit{Veiculo ouro, pr...
 
 ? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 132--133
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
 
  []
 
@@ -2384,7 +2345,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.134 Para alï¿½
+l.147 Para alï¿½
                 m dos construtores, \textit{getters}, \textit{setters}, \tex...
 
 ? 
@@ -2395,7 +2356,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.134 ...tit{toString()}, implementa apenas o mï¿½
+l.147 ...tit{toString()}, implementa apenas o mï¿½
                                                   todo \textit{double calcul...
 
 ? 
@@ -2406,15 +2367,15 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.134 ... aposta deve ter de acordo com seus veï¿½
+l.147 ... aposta deve ter de acordo com seus veï¿½
                                                   culos. \\
 ? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
+Underfull \hbox (badness 10000) in paragraph at lines 147--148
 
  []
 
-[5 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/Relatorio/RelatoÌrio/corr
+[6 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/Relatorio/RelatoÌrio/corr
 ida.png>]
 
 ! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
@@ -2423,7 +2384,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.136 O mï¿½
+l.149 O mï¿½
             todo \textit{calculaOdd()} ï¿½ chamado dentro do construtor da a...
 
 ? 
@@ -2434,7 +2395,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.136 O mï¿½todo \textit{calculaOdd()} ï¿½
+l.149 O mï¿½todo \textit{calculaOdd()} ï¿½
                                            chamado dentro do construtor da a...
 
 ? 
@@ -2445,7 +2406,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.136 ...logo definida a odd no momento da criaï¿½
+l.149 ...logo definida a odd no momento da criaï¿½
                                                   ï¿½o da aposta.
 ? 
 
@@ -2455,18 +2416,18 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.136 ...o definida a odd no momento da criaï¿½ï¿½
+l.149 ...o definida a odd no momento da criaï¿½ï¿½
                                                   o da aposta.
 ? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--139
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
 
  []
 
-<jogador.png, id=35, 311.1625pt x 261.97874pt>
+<jogador.png, id=41, 311.1625pt x 261.97874pt>
 File: jogador.png Graphic file (type png)
  <use jogador.png>
-Package pdftex.def Info: jogador.png used on input line 144.
+Package pdftex.def Info: jogador.png used on input line 157.
 (pdftex.def)             Requested size: 186.69894pt x 157.18845pt.
 
 
@@ -2476,7 +2437,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.147 Para alï¿½
+l.160 Para alï¿½
                 m das variï¿½veis de instï¿½ncia pedidas no enunciado, esta ...
 
 ? 
@@ -2487,7 +2448,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.147 Para alï¿½m das variï¿½
+l.160 Para alï¿½m das variï¿½
                              veis de instï¿½ncia pedidas no enunciado, esta ...
 
 ? 
@@ -2498,7 +2459,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.147 Para alï¿½m das variï¿½veis de instï¿½
+l.160 Para alï¿½m das variï¿½veis de instï¿½
                                             ncia pedidas no enunciado, esta ...
 
 ? 
@@ -2509,7 +2470,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.147 ...mo identidade e ordem dentro da aplicaï¿½
+l.160 ...mo identidade e ordem dentro da aplicaï¿½
                                                   ï¿½o. \\
 ? 
 
@@ -2519,11 +2480,11 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.147 ...identidade e ordem dentro da aplicaï¿½ï¿½
+l.160 ...identidade e ordem dentro da aplicaï¿½ï¿½
                                                   o. \\
 ? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--148
+Underfull \hbox (badness 10000) in paragraph at lines 160--161
 
  []
 
@@ -2534,7 +2495,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.149 Para alï¿½
+l.162 Para alï¿½
                 m dos construtores, \textit{getters}, \textit{setters}, \tex...
 
 ? 
@@ -2545,7 +2506,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.149 ...tit{toString()}, implementa apenas o mï¿½
+l.162 ...tit{toString()}, implementa apenas o mï¿½
                                                   todo \textit{void fazApost...
 
 ? 
@@ -2556,12 +2517,12 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.149 ...sta nas apostas correntes, desde que nï¿½
+l.162 ...sta nas apostas correntes, desde que nï¿½
                                                   o haja uma aposta na mesma...
 
 ? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--150
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
 
  []
 
@@ -2572,12 +2533,12 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.151 Implementa ainda o mï¿½
+l.164 Implementa ainda o mï¿½
                              todo \textit{actualizaAposta(String idCorrida, ...
 
 ? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--152
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
 
  []
 
@@ -2588,7 +2549,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.153 Como a aplicaï¿½
+l.166 Como a aplicaï¿½
                       ï¿½o deve registar um \textit{scoreboard} de apostador...
 
 ? 
@@ -2599,11 +2560,11 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.153 Como a aplicaï¿½ï¿½
+l.166 Como a aplicaï¿½ï¿½
                          o deve registar um \textit{scoreboard} de apostador...
 
 ? 
-[6 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/Relatorio/RelatoÌrio/joga
+[7 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/Relatorio/RelatoÌrio/joga
 dor.png>]
 
 ! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
@@ -2612,7 +2573,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.159 Tem como variï¿½
+l.172 Tem como variï¿½
                       veis de instï¿½ncia uma \textit{String corridaActual},...
 
 ? 
@@ -2623,7 +2584,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.159 Tem como variï¿½veis de instï¿½
+l.172 Tem como variï¿½veis de instï¿½
                                      ncia uma \textit{String corridaActual},...
 
 ? 
@@ -2634,12 +2595,12 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.159 ...ma \textit{String corridaActual}, que ï¿½
+l.172 ...ma \textit{String corridaActual}, que ï¿½
                                                    a idCorrida de uma das co...
 
 ? 
 
-Overfull \hbox (18.32098pt too wide) in paragraph at lines 159--160
+Overfull \hbox (18.32098pt too wide) in paragraph at lines 172--173
 \OT1/cmr/m/n/10 Tem como va-ri-veis de instn-cia uma \OT1/cmr/m/it/10 String co
 r-ri-da-Ac-tual\OT1/cmr/m/n/10 , que  a id-Cor-rida de uma das cor-ri-das, um \
 OT1/cmr/m/it/10 Map$\OML/cmm/m/it/10 <$\OT1/cmr/m/it/10 String,Corrida$\OML/cmm
@@ -2647,7 +2608,7 @@ OT1/cmr/m/it/10 Map$\OML/cmm/m/it/10 <$\OT1/cmr/m/it/10 String,Corrida$\OML/cmm
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--160
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
 
  []
 
@@ -2658,7 +2619,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.161 Para alï¿½
+l.174 Para alï¿½
                 m dos construtores, \textit{getters}, \textit{setters}, \tex...
 
 ? 
@@ -2669,7 +2630,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.161 ...e \textit{toString()}, implementa os mï¿½
+l.174 ...e \textit{toString()}, implementa os mï¿½
                                                   todos:
 ? 
 
@@ -2679,7 +2640,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.166 ...do campeonato, mas apenas dos carros hï¿½
+l.179 ...do campeonato, mas apenas dos carros hï¿½
                                                   bridos;
 ? 
 
@@ -2689,7 +2650,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.167 ... printScoreBoard()}, que imprime os trï¿½
+l.180 ... printScoreBoard()}, que imprime os trï¿½
                                                   s apostadores com mais gan...
 
 ? 
@@ -2700,7 +2661,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.171 A estrutura de dados das corridas ï¿½
+l.184 A estrutura de dados das corridas ï¿½
                                             um TreeMap, pois ï¿½ necessï¿½ri...
 
 ? 
@@ -2711,7 +2672,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.171 ...dos das corridas ï¿½ um TreeMap, pois ï¿½
+l.184 ...dos das corridas ï¿½ um TreeMap, pois ï¿½
                                                    necessï¿½rio unicidade e ...
 
 ? 
@@ -2722,7 +2683,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.171 ...rridas ï¿½ um TreeMap, pois ï¿½ necessï¿½
+l.184 ...rridas ï¿½ um TreeMap, pois ï¿½ necessï¿½
                                                   rio unicidade e ordem. A o...
 
 ? 
@@ -2733,7 +2694,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.171 ...cessï¿½rio unicidade e ordem. A ordem ï¿½
+l.184 ...cessï¿½rio unicidade e ordem. A ordem ï¿½
                                                    dada pela identidade da c...
 
 ? 
@@ -2744,7 +2705,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.173 \subsection{Classe Simulaï¿½ï¿½o}
+l.186 \subsection{Classe Simulaï¿½ï¿½o}
                                        
 ? 
 
@@ -2754,7 +2715,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.173 \subsection{Classe Simulaï¿½ï¿½o}
+l.186 \subsection{Classe Simulaï¿½ï¿½o}
                                        
 ? 
 
@@ -2764,7 +2725,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.175 Tem como variï¿½
+l.188 Tem como variï¿½
                       veis de instï¿½ncia um \textit{Campeonato campeonato},...
 
 ? 
@@ -2775,12 +2736,12 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.175 Tem como variï¿½veis de instï¿½
+l.188 Tem como variï¿½veis de instï¿½
                                      ncia um \textit{Campeonato campeonato},...
 
 ? 
 
-Overfull \hbox (11.54785pt too wide) in paragraph at lines 175--176
+Overfull \hbox (11.54785pt too wide) in paragraph at lines 188--189
 \OT1/cmr/m/n/10 Tem como va-ri-veis de instn-cia um \OT1/cmr/m/it/10 Cam-pe-o-n
 ato cam-pe-o-nato\OT1/cmr/m/n/10 , um \OT1/cmr/m/it/10 Map$\OML/cmm/m/it/10 <$\
 OT1/cmr/m/it/10 String,Piloto$\OML/cmm/m/it/10 >$ \OT1/cmr/m/it/10 pi-lo-tos\OT
@@ -2789,7 +2750,7 @@ ng,Veiculo$\OML/cmm/m/it/10 >$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--176
+Underfull \hbox (badness 10000) in paragraph at lines 188--189
 
  []
 
@@ -2800,7 +2761,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.177 Os menus tï¿½
+l.190 Os menus tï¿½
                    m todos o formato [n] $<$opï¿½ï¿½o$>$, tendo o utilizador...
 
 ? 
@@ -2811,7 +2772,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.177 Os menus tï¿½m todos o formato [n] $<$opï¿½
+l.190 Os menus tï¿½m todos o formato [n] $<$opï¿½
                                                  ï¿½o$>$, tendo o utilizador...
 
 ? 
@@ -2822,7 +2783,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.177 ...nus tï¿½m todos o formato [n] $<$opï¿½ï¿½
+l.190 ...nus tï¿½m todos o formato [n] $<$opï¿½ï¿½
                                                   o$>$, tendo o utilizador q...
 
 ? 
@@ -2833,7 +2794,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.177 ...$>$, tendo o utilizador que premir o nï¿½
+l.190 ...$>$, tendo o utilizador que premir o nï¿½
                                                   mero da opï¿½ï¿½o que pret...
 
 ? 
@@ -2844,7 +2805,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.177 ...utilizador que premir o nï¿½mero da opï¿½
+l.190 ...utilizador que premir o nï¿½mero da opï¿½
                                                   ï¿½o que pretende escolher...
 
 ? 
@@ -2855,7 +2816,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.177 ...lizador que premir o nï¿½mero da opï¿½ï¿½
+l.190 ...lizador que premir o nï¿½mero da opï¿½ï¿½
                                                   o que pretende escolher. O...
 
 ? 
@@ -2866,7 +2827,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.177 ...½ï¿½o que pretende escolher. O menus sï¿½
+l.190 ...½ï¿½o que pretende escolher. O menus sï¿½
                                                   o muito interactivos pois ...
 
 ? 
@@ -2877,22 +2838,22 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.177 ...e sempre voltar a um menu anterior e tï¿½
+l.190 ...e sempre voltar a um menu anterior e tï¿½
                                                   m uma interface muito simp...
 
 ? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 177--178
+Underfull \hbox (badness 10000) in paragraph at lines 190--191
 
  []
 
-<menu1.png, id=39, 676.5275pt x 365.365pt>
+<menu1.png, id=46, 676.5275pt x 365.365pt>
 File: menu1.png Graphic file (type png)
  <use menu1.png>
-Package pdftex.def Info: menu1.png used on input line 183.
+Package pdftex.def Info: menu1.png used on input line 196.
 (pdftex.def)             Requested size: 405.91962pt x 219.22069pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 186--188
+Underfull \hbox (badness 10000) in paragraph at lines 199--201
 
  []
 
@@ -2903,7 +2864,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.189 Execuï¿½
+l.202 Execuï¿½
               ï¿½o de uma corrida, aqui sem o primeiro classificado e desist...
 
 ? 
@@ -2914,7 +2875,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.189 Execuï¿½ï¿½
+l.202 Execuï¿½ï¿½
                  o de uma corrida, aqui sem o primeiro classificado e desist...
 
 ? 
@@ -2925,13 +2886,13 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.189 ...i sem o primeiro classificado e desistï¿½
+l.202 ...i sem o primeiro classificado e desistï¿½
                                                   ncias de cada volta:
 ? 
-<menu2.png, id=41, 768.8725pt x 570.13pt>
+<menu2.png, id=47, 768.8725pt x 570.13pt>
 File: menu2.png Graphic file (type png)
  <use menu2.png>
-Package pdftex.def Info: menu2.png used on input line 193.
+Package pdftex.def Info: menu2.png used on input line 206.
 (pdftex.def)             Requested size: 461.32706pt x 342.08064pt.
 
 
@@ -2944,7 +2905,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.198 Apenas cria uma simulaï¿½
+l.211 Apenas cria uma simulaï¿½
                                ï¿½o e chama o menu principal da aplicaï¿½ï¿½...
 
 ? 
@@ -2955,7 +2916,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.198 Apenas cria uma simulaï¿½ï¿½
+l.211 Apenas cria uma simulaï¿½ï¿½
                                   o e chama o menu principal da aplicaï¿½ï¿½...
 
 ? 
@@ -2966,7 +2927,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.198 ...¿½o e chama o menu principal da aplicaï¿½
+l.211 ...¿½o e chama o menu principal da aplicaï¿½
                                                   ï¿½o. \\
 ? 
 
@@ -2976,21 +2937,21 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.198 ... e chama o menu principal da aplicaï¿½ï¿½
+l.211 ... e chama o menu principal da aplicaï¿½ï¿½
                                                   o. \\
 ? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--199
+Underfull \hbox (badness 10000) in paragraph at lines 211--212
 
  []
 
-<main.png, id=42, 280.04625pt x 214.8025pt>
+<main.png, id=48, 280.04625pt x 214.8025pt>
 File: main.png Graphic file (type png)
  <use main.png>
-Package pdftex.def Info: main.png used on input line 202.
+Package pdftex.def Info: main.png used on input line 215.
 (pdftex.def)             Requested size: 168.02904pt x 128.88249pt.
- [7 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/Relatorio/RelatoÌrio/men
-u1.png>] [8 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/Relatorio/RelatoÌ
+ [8 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/Relatorio/RelatoÌrio/men
+u1.png>] [9 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/Relatorio/RelatoÌ
 rio/menu2.png> <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/Relatorio/Rel
 atoÌrio/main.png>]
 
@@ -3000,11 +2961,11 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.207 \section{Decisï¿½es a Destacar}
+l.220 \section{Decisï¿½es a Destacar}
                                      
 ? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 209--210
+Underfull \hbox (badness 10000) in paragraph at lines 222--223
 
  []
 
@@ -3015,7 +2976,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.213 ...as, o que resultava em corridas com trï¿½
+l.226 ...as, o que resultava em corridas com trï¿½
                                                   s ou quatro finalistas. As...
 
 ? 
@@ -3026,7 +2987,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.213 ...stas. Assim sendo, tiveram um aumento ï¿½
+l.226 ...stas. Assim sendo, tiveram um aumento ï¿½
                                                    volta dos 10\%.
 ? 
 
@@ -3036,7 +2997,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.216 \item[PC1] - 95\% e, se tiver um motor hï¿½
+l.229 \item[PC1] - 95\% e, se tiver um motor hï¿½
                                                  brido, 90\%.
 ? 
 
@@ -3046,7 +3007,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.217 \item[PC2] - 85\% a 95\% em funï¿½
+l.230 \item[PC2] - 85\% a 95\% em funï¿½
                                         ï¿½o da cilindrada e da preparaï¿½ï¿...
 
 ? 
@@ -3057,7 +3018,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.217 \item[PC2] - 85\% a 95\% em funï¿½ï¿½
+l.230 \item[PC2] - 85\% a 95\% em funï¿½ï¿½
                                            o da cilindrada e da preparaï¿½ï¿...
 
 ? 
@@ -3068,7 +3029,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.217 ... funï¿½ï¿½o da cilindrada e da preparaï¿½
+l.230 ... funï¿½ï¿½o da cilindrada e da preparaï¿½
                                                   ï¿½o mecï¿½nica do carro. ...
 
 ? 
@@ -3079,7 +3040,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.217 ...nï¿½ï¿½o da cilindrada e da preparaï¿½ï¿½
+l.230 ...nï¿½ï¿½o da cilindrada e da preparaï¿½ï¿½
                                                   o mecï¿½nica do carro. Se ...
 
 ? 
@@ -3090,7 +3051,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.217 ... da cilindrada e da preparaï¿½ï¿½o mecï¿½
+l.230 ... da cilindrada e da preparaï¿½ï¿½o mecï¿½
                                                   nica do carro. Se tiver um...
 
 ? 
@@ -3101,7 +3062,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.217 ...cï¿½nica do carro. Se tiver um motor hï¿½
+l.230 ...cï¿½nica do carro. Se tiver um motor hï¿½
                                                   brido, 80\% a 90\%.
 ? 
 
@@ -3111,7 +3072,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.218 ...a pelo utilizador. Se tiver um motor hï¿½
+l.231 ...a pelo utilizador. Se tiver um motor hï¿½
                                                   brido, a fiabilidade inici...
 
 ? 
@@ -3122,7 +3083,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.222 \subsection{Motores hï¿½bridos}
+l.235 \subsection{Motores hï¿½bridos}
                                      
 ? 
 
@@ -3132,7 +3093,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.224 ... nos motores hibridos de 300 CV. A razï¿½
+l.237 ... nos motores hibridos de 300 CV. A razï¿½
                                                   o desta escolha deve-se a ...
 
 ? 
@@ -3143,7 +3104,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.224 ...tipo de motores, que revelou valores mï¿½
+l.237 ...tipo de motores, que revelou valores mï¿½
                                                   ximos prï¿½ximos deste valor.
 
 ? 
@@ -3154,7 +3115,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.224 ...ores, que revelou valores mï¿½ximos prï¿½
+l.237 ...ores, que revelou valores mï¿½ximos prï¿½
                                                   ximos deste valor.
 ? 
 
@@ -3164,7 +3125,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.228 ...alidade do condutor - influencie em atï¿½
+l.241 ...alidade do condutor - influencie em atï¿½
                                                    1s no desvio resultante. ...
 
 ? 
@@ -3175,7 +3136,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.228 ...sto soma-se 1s e ainda um factor aleatï¿½
+l.241 ...sto soma-se 1s e ainda um factor aleatï¿½
                                                   rio que aumenta/diminui es...
 
 ? 
@@ -3186,11 +3147,11 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.228 ...rio que aumenta/diminui estes 5s em atï¿½
+l.241 ...rio que aumenta/diminui estes 5s em atï¿½
                                                    20\%.\\
 ? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--229
+Underfull \hbox (badness 10000) in paragraph at lines 241--242
 
  []
 
@@ -3201,7 +3162,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.230 O desvio ao tempo mï¿½
+l.243 O desvio ao tempo mï¿½
                             dio retornado pelo mï¿½todo \textit{tempoProxima...
 
 ? 
@@ -3212,7 +3173,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.230 ...svio ao tempo mï¿½dio retornado pelo mï¿½
+l.243 ...svio ao tempo mï¿½dio retornado pelo mï¿½
                                                   todo \textit{tempoProximaV...
 
 ? 
@@ -3223,7 +3184,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.230 ...{tempoProximaVolta(boolean chuva)} estï¿½
+l.243 ...{tempoProximaVolta(boolean chuva)} estï¿½
                                                    no intervalo [-6,6] segun...
 
 ? 
@@ -3234,7 +3195,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.230 ...6,6] segundos, sem contar com uma possï¿½
+l.243 ...6,6] segundos, sem contar com uma possï¿½
                                                   vel reduï¿½ï¿½o do tempo c...
 
 ? 
@@ -3245,7 +3206,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.230 ...os, sem contar com uma possï¿½vel reduï¿½
+l.243 ...os, sem contar com uma possï¿½vel reduï¿½
                                                   ï¿½o do tempo causada pelo...
 
 ? 
@@ -3256,7 +3217,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.230 ... sem contar com uma possï¿½vel reduï¿½ï¿½
+l.243 ... sem contar com uma possï¿½vel reduï¿½ï¿½
                                                   o do tempo causada pelos m...
 
 ? 
@@ -3267,12 +3228,12 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.230 ...½ï¿½o do tempo causada pelos motores hï¿½
+l.243 ...½ï¿½o do tempo causada pelos motores hï¿½
                                                   bridos, na ordem dos 10\%....
 
 ? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 230--231
+Underfull \hbox (badness 10000) in paragraph at lines 243--244
 
  []
 
@@ -3283,7 +3244,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.232 Para determinar se o desvio ao tempo mï¿½
+l.245 Para determinar se o desvio ao tempo mï¿½
                                                dio ï¿½ positivo ou negativo,...
 
 ? 
@@ -3294,7 +3255,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.232 ...terminar se o desvio ao tempo mï¿½dio ï¿½
+l.245 ...terminar se o desvio ao tempo mï¿½dio ï¿½
                                                    positivo ou negativo, olh...
 
 ? 
@@ -3305,7 +3266,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.232 ...s atributos for maior do que o ponto mï¿½
+l.245 ...s atributos for maior do que o ponto mï¿½
                                                   dio dos valores possï¿½vei...
 
 ? 
@@ -3316,7 +3277,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.232 ...o que o ponto mï¿½dio dos valores possï¿½
+l.245 ...o que o ponto mï¿½dio dos valores possï¿½
                                                   veis destes atributos, ent...
 
 ? 
@@ -3327,7 +3288,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.232 ...ores possï¿½veis destes atributos, entï¿½
+l.245 ...ores possï¿½veis destes atributos, entï¿½
                                                   o o desvio serï¿½ negativo...
 
 ? 
@@ -3338,7 +3299,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.232 ...destes atributos, entï¿½o o desvio serï¿½
+l.245 ...destes atributos, entï¿½o o desvio serï¿½
                                                    negativo. Casso contrï¿½r...
 
 ? 
@@ -3349,7 +3310,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.232 ... o desvio serï¿½ negativo. Casso contrï¿½
+l.245 ... o desvio serï¿½ negativo. Casso contrï¿½
                                                   rio, serï¿½ positivo. \\
 ? 
 
@@ -3359,15 +3320,15 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.232 ...erï¿½ negativo. Casso contrï¿½rio, serï¿½
+l.245 ...erï¿½ negativo. Casso contrï¿½rio, serï¿½
                                                    positivo. \\
 ? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--233
+Underfull \hbox (badness 10000) in paragraph at lines 245--246
 
  []
 
-[9]
+[10]
 
 ! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
 
@@ -3375,7 +3336,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.240 O cï¿½
+l.253 O cï¿½
             lculo da odd de uma aposta ï¿½ feito no momento da sua criaï¿½ï¿...
 
 ? 
@@ -3386,7 +3347,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.240 O cï¿½lculo da odd de uma aposta ï¿½
+l.253 O cï¿½lculo da odd de uma aposta ï¿½
                                            feito no momento da sua criaï¿½ï¿...
 
 ? 
@@ -3397,7 +3358,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.240 ...posta ï¿½ feito no momento da sua criaï¿½
+l.253 ...posta ï¿½ feito no momento da sua criaï¿½
                                                   ï¿½o. Os atributos que con...
 
 ? 
@@ -3408,7 +3369,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.240 ...ta ï¿½ feito no momento da sua criaï¿½ï¿½
+l.253 ...ta ï¿½ feito no momento da sua criaï¿½ï¿½
                                                   o. Os atributos que contri...
 
 ? 
@@ -3419,7 +3380,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.240 ... atributos que contribuem para a odd sï¿½
+l.253 ... atributos que contribuem para a odd sï¿½
                                                   o: a mï¿½dia das qualidade...
 
 ? 
@@ -3430,7 +3391,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.240 ...s que contribuem para a odd sï¿½o: a mï¿½
+l.253 ...s que contribuem para a odd sï¿½o: a mï¿½
                                                   dia das qualidades dos pil...
 
 ? 
@@ -3441,7 +3402,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.240 ...ï¿½dia das qualidades dos pilotos, a mï¿½
+l.253 ...ï¿½dia das qualidades dos pilotos, a mï¿½
                                                   dia das fiabilidades dos v...
 
 ? 
@@ -3452,7 +3413,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.240 ...tos, a mï¿½dia das fiabilidades dos veï¿½
+l.253 ...tos, a mï¿½dia das fiabilidades dos veï¿½
                                                   culos, a mï¿½dia das cilin...
 
 ? 
@@ -3463,7 +3424,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.240 ...a das fiabilidades dos veï¿½culos, a mï¿½
+l.253 ...a das fiabilidades dos veï¿½culos, a mï¿½
                                                   dia das cilindradas e a mï...
 
 ? 
@@ -3474,11 +3435,11 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.240 ...culos, a mï¿½dia das cilindradas e a mï¿½
+l.253 ...culos, a mï¿½dia das cilindradas e a mï¿½
                                                   dia das cavalagens. \\
 ? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 240--241
+Underfull \hbox (badness 10000) in paragraph at lines 253--254
 
  []
 
@@ -3489,7 +3450,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.242 ... um destes atributos tem um peso de atï¿½
+l.255 ... um destes atributos tem um peso de atï¿½
                                                    2.5 e as odds ficam assim...
 
 ? 
@@ -3500,7 +3461,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.244 \subsection{Limitaï¿½ï¿½es}
+l.257 \subsection{Limitaï¿½ï¿½es}
                                  
 ? 
 
@@ -3510,7 +3471,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.244 \subsection{Limitaï¿½ï¿½es}
+l.257 \subsection{Limitaï¿½ï¿½es}
                                  
 ? 
 
@@ -3520,7 +3481,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.246 Limitaram-se certas variï¿½
+l.259 Limitaram-se certas variï¿½
                                  veis de instï¿½ncia a gamas de valores real...
 
 ? 
@@ -3531,7 +3492,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.246 Limitaram-se certas variï¿½veis de instï¿½
+l.259 Limitaram-se certas variï¿½veis de instï¿½
                                                 ncia a gamas de valores real...
 
 ? 
@@ -3542,7 +3503,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.246 ... realistas e que, ao serem usados em mï¿½
+l.259 ... realistas e que, ao serem usados em mï¿½
                                                   todos da aplicaï¿½ï¿½o, pr...
 
 ? 
@@ -3553,7 +3514,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.246 ...ao serem usados em mï¿½todos da aplicaï¿½
+l.259 ...ao serem usados em mï¿½todos da aplicaï¿½
                                                   ï¿½o, produzirem valores c...
 
 ? 
@@ -3564,7 +3525,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.246 ...serem usados em mï¿½todos da aplicaï¿½ï¿½
+l.259 ...serem usados em mï¿½todos da aplicaï¿½ï¿½
                                                   o, produzirem valores com ...
 
 ? 
@@ -3575,7 +3536,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.246 ...sentido. Por isso, grandezas como distï¿½
+l.259 ...sentido. Por isso, grandezas como distï¿½
                                                   ncias e tempos tï¿½m que s...
 
 ? 
@@ -3586,7 +3547,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.246 ...grandezas como distï¿½ncias e tempos tï¿½
+l.259 ...grandezas como distï¿½ncias e tempos tï¿½
                                                   m que ser nï¿½o-negativos....
 
 ? 
@@ -3597,386 +3558,8 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.246 ... distï¿½ncias e tempos tï¿½m que ser nï¿½
+l.259 ... distï¿½ncias e tempos tï¿½m que ser nï¿½
                                                   o-negativos.  \\
-? 
-
-Underfull \hbox (badness 10000) in paragraph at lines 246--247
-
- []
-
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.248 Um exemplo ï¿½
-                     o da cavalagem, que estï¿½ compreendida entre 0 e 1200 ...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.248 Um exemplo ï¿½ o da cavalagem, que estï¿½
-                                                compreendida entre 0 e 1200 ...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.248 ...\textit{CV}. Isto tem o objectivo de nï¿½
-                                                  o deixar o utilizador inse...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.248 ...zador inserir valor absurdos na aplicaï¿½
-                                                  ï¿½o. \\
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.248 ...or inserir valor absurdos na aplicaï¿½ï¿½
-                                                  o. \\
-? 
-
-Underfull \hbox (badness 10000) in paragraph at lines 248--249
-
- []
-
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.250 ...mo sentido foi o de fazer com a simulaï¿½
-                                                  ï¿½o fosse "ï¿½ prova de b...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.250 ...sentido foi o de fazer com a simulaï¿½ï¿½
-                                                  o fosse "ï¿½ prova de bala...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.250 ...o de fazer com a simulaï¿½ï¿½o fosse "ï¿½
-                                                   prova de bala" - embora o...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.250 ...- embora os menus tenham todos como opï¿½
-                                                  ï¿½es valores inteiros, a ...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.250 ...mbora os menus tenham todos como opï¿½ï¿½
-                                                  es valores inteiros, a apl...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.250 ... opï¿½ï¿½es valores inteiros, a aplicaï¿½
-                                                  ï¿½o recebe uma \textit{St...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.250 ...ï¿½ï¿½es valores inteiros, a aplicaï¿½ï¿½
-                                                  o recebe uma \textit{Strin...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.250 ... diferentes dos pretendidos e a aplicaï¿½
-                                                  ï¿½o nï¿½o gerar erro.
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.250 ...ferentes dos pretendidos e a aplicaï¿½ï¿½
-                                                  o nï¿½o gerar erro.
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.250 ...es dos pretendidos e a aplicaï¿½ï¿½o nï¿½
-                                                  o gerar erro.
-? 
-
-Underfull \hbox (badness 10000) in paragraph at lines 252--254
-
- []
-
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.257 ...se abstracta \textit{Veiculo} a aplicaï¿½
-                                                  ï¿½o ï¿½ extensï¿½vel a ou...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.257 ...abstracta \textit{Veiculo} a aplicaï¿½ï¿½
-                                                  o ï¿½ extensï¿½vel a outro...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.257 ...acta \textit{Veiculo} a aplicaï¿½ï¿½o ï¿½
-                                                   extensï¿½vel a outro tipo...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.257 ...it{Veiculo} a aplicaï¿½ï¿½o ï¿½ extensï¿½
-                                                  vel a outro tipo de veï¿½c...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.257 ...½o ï¿½ extensï¿½vel a outro tipo de veï¿½
-                                                  culos. Mas na prï¿½tica nï...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.257 ... a outro tipo de veï¿½culos. Mas na prï¿½
-                                                  tica nï¿½o ï¿½ extensï¿½ve...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.257 ...tipo de veï¿½culos. Mas na prï¿½tica nï¿½
-                                                  o ï¿½ extensï¿½vel, pelo m...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.257 ...de veï¿½culos. Mas na prï¿½tica nï¿½o ï¿½
-                                                   extensï¿½vel, pelo menos ...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.257 ...los. Mas na prï¿½tica nï¿½o ï¿½ extensï¿½
-                                                  vel, pelo menos totalmente...
-
-? 
-
-Underfull \hbox (badness 10000) in paragraph at lines 257--258
-
- []
-
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.259 ...er criar um campeonato, ao criar um veï¿½
-                                                  culo ï¿½ preciso especific...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.259 ... um campeonato, ao criar um veï¿½culo ï¿½
-                                                   preciso especificar a sua...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.259 ... chamar o seu construtor. Ora, se alguï¿½
-                                                  m que nï¿½o tenha acesso a...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.259 ...seu construtor. Ora, se alguï¿½m que nï¿½
-                                                  o tenha acesso ao mï¿½dulo...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.259 ...e alguï¿½m que nï¿½o tenha acesso ao mï¿½
-                                                  dulo \textit{Simulaï¿½ï¿½o...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.259 ...acesso ao mï¿½dulo \textit{Simulaï¿½ï¿½o}
-                                                   quiser uma nova classe de...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.259 ...acesso ao mï¿½dulo \textit{Simulaï¿½ï¿½o}
-                                                   quiser uma nova classe de...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.259 ...aï¿½ï¿½o} quiser uma nova classe de veï¿½
-                                                  culo, nï¿½o a pode constru...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.259 ...quiser uma nova classe de veï¿½culo, nï¿½
-                                                  o a pode construir em ambi...
-
 ? 
 
 Underfull \hbox (badness 10000) in paragraph at lines 259--260
@@ -3990,8 +3573,8 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.261 Outro caso estï¿½
-                        na classe \textit{Circuito}: no enunciado foi pedido...
+l.261 Um exemplo ï¿½
+                     o da cavalagem, que estï¿½ compreendida entre 0 e 1200 ...
 
 ? 
 
@@ -4001,8 +3584,8 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.261 ...o}: no enunciado foi pedido um tempo mï¿½
-                                                  dio para cada classe de ca...
+l.261 Um exemplo ï¿½ o da cavalagem, que estï¿½
+                                                compreendida entre 0 e 1200 ...
 
 ? 
 
@@ -4012,8 +3595,8 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.261 ...ï¿½dio para cada classe de carro, que ï¿½
-                                                   usado no mï¿½todo \textit...
+l.261 ...\textit{CV}. Isto tem o objectivo de nï¿½
+                                                  o deixar o utilizador inse...
 
 ? 
 
@@ -4023,9 +3606,18 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.261 ...da classe de carro, que ï¿½ usado no mï¿½
-                                                  todo \textit{efectuaCorrid...
+l.261 ...ador inserir valor absurdos na aplica ï¿½
+                                                  ï¿½o. \\
+? 
 
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.261 ...r inserir valor absurdos na aplica ï¿½ï¿½
+                                                  o. \\
 ? 
 
 Underfull \hbox (badness 10000) in paragraph at lines 261--262
@@ -4039,7 +3631,376 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.263 ... vez, se um utilizador sem acesso ao mï¿½
+l.263 ...mo sentido foi o de fazer com a simulaï¿½
+                                                  ï¿½o fosse "ï¿½ prova de b...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.263 ...sentido foi o de fazer com a simulaï¿½ï¿½
+                                                  o fosse "ï¿½ prova de bala...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.263 ...o de fazer com a simulaï¿½ï¿½o fosse "ï¿½
+                                                   prova de bala" - embora o...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.263 ...- embora os menus tenham todos como opï¿½
+                                                  ï¿½es valores inteiros, a ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.263 ...mbora os menus tenham todos como opï¿½ï¿½
+                                                  es valores inteiros, a apl...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.263 ... opï¿½ï¿½es valores inteiros, a aplicaï¿½
+                                                  ï¿½o recebe uma \textit{St...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.263 ...ï¿½ï¿½es valores inteiros, a aplicaï¿½ï¿½
+                                                  o recebe uma \textit{Strin...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.263 ... diferentes dos pretendidos e a aplicaï¿½
+                                                  ï¿½o nï¿½o gerar erro.
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.263 ...ferentes dos pretendidos e a aplicaï¿½ï¿½
+                                                  o nï¿½o gerar erro.
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.263 ...es dos pretendidos e a aplicaï¿½ï¿½o nï¿½
+                                                  o gerar erro.
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 265--267
+
+ []
+
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.270 ...se abstracta \textit{Veiculo} a aplicaï¿½
+                                                  ï¿½o ï¿½ extensï¿½vel a ou...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.270 ...abstracta \textit{Veiculo} a aplicaï¿½ï¿½
+                                                  o ï¿½ extensï¿½vel a outro...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.270 ...acta \textit{Veiculo} a aplicaï¿½ï¿½o ï¿½
+                                                   extensï¿½vel a outro tipo...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.270 ...it{Veiculo} a aplicaï¿½ï¿½o ï¿½ extensï¿½
+                                                  vel a outro tipo de veï¿½c...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.270 ...½o ï¿½ extensï¿½vel a outro tipo de veï¿½
+                                                  culos. Mas na prï¿½tica nï...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.270 ... a outro tipo de veï¿½culos. Mas na prï¿½
+                                                  tica nï¿½o ï¿½ extensï¿½ve...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.270 ...tipo de veï¿½culos. Mas na prï¿½tica nï¿½
+                                                  o ï¿½ extensï¿½vel, pelo m...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.270 ...de veï¿½culos. Mas na prï¿½tica nï¿½o ï¿½
+                                                   extensï¿½vel, pelo menos ...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.270 ...los. Mas na prï¿½tica nï¿½o ï¿½ extensï¿½
+                                                  vel, pelo menos totalmente...
+
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
+
+ []
+
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.272 ...er criar um campeonato, ao criar um veï¿½
+                                                  culo ï¿½ preciso especific...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.272 ... um campeonato, ao criar um veï¿½culo ï¿½
+                                                   preciso especificar a sua...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.272 ... chamar o seu construtor. Ora, se alguï¿½
+                                                  m que nï¿½o tenha acesso a...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.272 ...seu construtor. Ora, se alguï¿½m que nï¿½
+                                                  o tenha acesso ao mï¿½dulo...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.272 ...e alguï¿½m que nï¿½o tenha acesso ao mï¿½
+                                                  dulo \textit{Simulaï¿½ï¿½o...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.272 ...acesso ao mï¿½dulo \textit{Simulaï¿½ï¿½o}
+                                                   quiser uma nova classe de...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.272 ...acesso ao mï¿½dulo \textit{Simulaï¿½ï¿½o}
+                                                   quiser uma nova classe de...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.272 ...aï¿½ï¿½o} quiser uma nova classe de veï¿½
+                                                  culo, nï¿½o a pode constru...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.272 ...quiser uma nova classe de veï¿½culo, nï¿½
+                                                  o a pode construir em ambi...
+
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 272--273
+
+ []
+
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.274 Outro caso estï¿½
+                        na classe \textit{Circuito}: no enunciado foi pedido...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.274 ...o}: no enunciado foi pedido um tempo mï¿½
+                                                  dio para cada classe de ca...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.274 ...ï¿½dio para cada classe de carro, que ï¿½
+                                                   usado no mï¿½todo \textit...
+
+? 
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.274 ...da classe de carro, que ï¿½ usado no mï¿½
+                                                  todo \textit{efectuaCorrid...
+
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
+
+ []
+
+
+! Package inputenc Error: Unicode char \u8:ï¿½ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.276 ... vez, se um utilizador sem acesso ao mï¿½
                                                   dulo \textit{Circuito} qui...
 
 ? 
@@ -4050,7 +4011,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.263 ...rcuito} quisesse uma nova classe de veï¿½
+l.276 ...rcuito} quisesse uma nova classe de veï¿½
                                                   culos, nï¿½o poderia espec...
 
 ? 
@@ -4061,7 +4022,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.263 ...sesse uma nova classe de veï¿½culos, nï¿½
+l.276 ...sesse uma nova classe de veï¿½culos, nï¿½
                                                   o poderia especificar o se...
 
 ? 
@@ -4072,34 +4033,35 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.263 ...ï¿½o poderia especificar o seu tempo mï¿½
+l.276 ...ï¿½o poderia especificar o seu tempo mï¿½
                                                   dio nos circuitos. \\
 ? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 263--264
+Underfull \hbox (badness 10000) in paragraph at lines 276--277
 
  []
 
-[10]
+[11]
 ("C:\Users\Bruno\Documents\GitHub\Li3\Projecto POO\Relatorio\RelatoÌrio\Relato
 rio.aux") ) 
 Here is how much of TeX's memory you used:
- 2232 strings out of 493921
- 29858 string characters out of 3144877
- 93085 words of memory out of 3000000
- 5506 multiletter control sequences out of 15000+200000
- 5504 words of font info for 20 fonts, out of 3000000 for 9000
+ 2227 strings out of 493921
+ 29852 string characters out of 3144877
+ 94085 words of memory out of 3000000
+ 5509 multiletter control sequences out of 15000+200000
+ 5672 words of font info for 21 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 27i,6n,31p,855b,222s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,7n,31p,784b,283s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
 bx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx
 12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10
 .pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pf
 b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Relatorio.pdf (10 pages, 305136 bytes).
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on .pdf (11 pages, 483901 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
+ 85 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

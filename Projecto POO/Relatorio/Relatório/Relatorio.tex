@@ -1,7 +1,7 @@
 \documentclass[10pt,notitlepage]{article}
-\usepackage{graphicx} 
-\usepackage{verbatim} 
-\usepackage[portuguese]{babel} 
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage[portuguese]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[hmargin=2cm,vmargin=3.5cm,bmargin=2cm]{geometry}
 
@@ -23,9 +23,8 @@ $\\$
 Escola de Engenharia \\~ \\~ \\~  Departamento de Informática \\~ \\ ~ \\~ Licenciatura em Engenharia Informática \\~ \\~ \\~ Programação Orientada aos Objectos \\~ \\~ \\~ \\~ \\~ \\~ \\~  Projecto Java - FitnesUM \\~ \\~ \\~ \\~ \\~ \\~ \\~
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.6]{} 
-\includegraphics[scale=0.183]{}
-\includegraphics[scale=0.339]{}
+\includegraphics[scale=0.6]{autores.png}
+\caption{Autores (a),(b),(c)}
 \end{figure}
 
 A69854 ~~~~~~~~~~~~~~~~~~ A66822 ~~~~~~~~~~~~~~~~~~ A   \\~  João Mano ~~~~~~~~ Miguel Guimarães ~~~~~~~~ Bruno Torres  \\~ \\~ \\~ \\~ \\~ \\~ Braga, Junho de 2014
@@ -33,11 +32,11 @@ A69854 ~~~~~~~~~~~~~~~~~~ A66822 ~~~~~~~~~~~~~~~~~~ A   \\~  João Mano ~~~~~~~~
 
 \newpage
 
+
 \tableofcontents
 
 \newpage
 
-%%%Estrutura%%%
 
 \section{Estrutura da aplicação}
 
@@ -51,231 +50,6 @@ Esta é a classe mais abstrata, que tem a fundação de todas as actividadades d
 \end{figure}
 
 
-\subsection{Classe Abstracta Person}
-
-Aqui usámos mais uma classe abstracta para definir todas as pessoas que usam a aplicação (Administradores ou utilizadores normais). As variáveis comuns aos todos os tipos de pessoas são \textit{email}, \textit{password}, \textit{name}, \textit{gender}, e \textit{dateOfBirth}. Para além de 
-construtores, \textit{getters} e \textit{setters} esta classe não tem métodos auxiliares.
-
-
-
-
-
-\subsection{Classe abstracta Event}
-
-Classe com o conceito mais abstracto de Evento, contém as variáveis \textit{name}, \textit{tipoActivity}, \textit{location}, \textit{maxParticipants}, \textit{participants}, \textit{deadline}, \textit{date}, \textit{duration}, \textit{participantsList}, \textit{ranking}, \textit{desistentes} e \textit{simula}, respetivos \textit{getters} e \textit{setters} e os vários contrutores. Ainda tem métodos auxiliares para adicionar um \textit{User}, \textit{ranking}, 
-
-
-\subsection{Classe Abstracta Veiculo}
-
-Optou-se por uma classe abstracta pois, para al�m de permitir criar um ``esqueleto'' para as suas subclasses, reutilizando c�digo, permite tamb�m obrigar as suas subclasses a implementar v�rios m�todos necess�rios ao funcionamento da aplica��o. Isto faz com que a aplica��o seja desde logo extens�vel no toca a novas classes de ve�culos. \\
-
-Se a op��o fosse uma interface, as vari�veis e m�todos de inst�ncia de \textit{Ve�culo} n�o podiam ser reutilizadas. Se n�o fosse uma classe abstracta, n�o obrigava as subclasses a implementar os m�todos pretendidos.
-
-Para al�m das vari�veis de inst�ncia pedidas no enunciado, tem uma \textit{String idVeiculo}, que serve como identidade e ordem dentro da aplica��o, um \textit{Piloto condutor} e um \textit{int voltas} que representam o condutor actual do ve�culo e o n�mero de voltas que esse condutor ir� fazer numa dada corrida. \\
-
-Para al�m dos construtores, \textit{getters}, \textit{setters} e \textit{equals()}, obriga as suas subclasses a implementar os m�todos:
-
-\begin{itemize}
-\item[-] \textit{clone()} e \textit{toString()};
-\item[-] \textit{int tempoProximaVolta()}, que calcula um desvio ao tempo m�dio por volta, em milisegundos;
-\item[-] \textit{boolean terminouVolta()}, que determina se um carro termina, ou n�o, uma dada volta de acordo com a sua fiabilidade e um factor aleat�rio;
-\item[-] \textit{int quantasVoltas()}, que determina o n�mero de voltas a fazer pelo primeiro condutor do veiculo, de acordo com a qualidade dos dois pilotos;
-\item[-] \textit{void trocaCondutor()}, que troca para o segundo piloto, somando o tempo de paragem ao tempo da volta.
-\end{itemize}
-
-\subsubsection{Classe PC1}
-
-Para al�m das vari�veis e m�todos herdados de \textit{Veiculo}, tem um \textit{static final int cilindrada = 6000}, pois os PC1 t�m sempre 6000$cm^{3}$ de cilindrada, um \textit{int hibridoCv} para o motor h�brido (= 0 caso n�o tenha) e um \textit{Random rand} para uniformizar a distribui��o de probabilidade em \textit{terminouVolta()}.
-
-\subsubsection{Classe PC2}
-
-Para al�m das vari�veis e m�todos herdados de \textit{Veiculo}, tem um \textit{int hibridoCv} para o motor h�brido (= 0 caso n�o tenha), um \textit{int preparacao} que � a prepara��o mec�nica do carro e que afecta a sua fiabilidade, e um \textit{Random rand} para uniformizar a distribui��o de probabilidade em \textit{terminouVolta()}.
-
-\subsubsection{Classe GT}
-
-Para al�m das vari�veis e m�todos herdados de \textit{Veiculo}, tem um \textit{static final int fiabilidadeInicial = 100} que � a fiabilidade no in�cio de cada corrida, um \textit{int hibridoCv} para o motor h�brido (= 0 caso n�o tenha), uma \textit{double taxaDecrescimo} que � a taxa a que a fiabilidade desce em cada volta, e um \textit{Random rand} para uniformizar a distribui��o de probabilidade em \textit{terminouVolta()}.
-
-\subsubsection{Classe SC}
-
-Para al�m das vari�veis e m�todos herdados de \textit{Veiculo}, tem um \textit{static final int cilindrada = 2500}, pois os SC t�m sempre 2500$cm^{3}$ de cilindrada,  e um \textit{Random rand} para uniformizar a distribui��o de probabilidade em \textit{terminouVolta()}.
-
-$\\$
-
-\subsection{Interface Hibrido}
-
-As classes PC1, PC2 e GT implementam a interface  \textit{Hibrido}, que as obriga a implementar o m�todo \textit{int getPotenciaMotorElectrico()}, que retorna a pot�ncia do motor el�ctrico em KW. Isto n�o faz com estas classes sejam obrigadas a ter uma vari�vel de inst�ncia para o motor h�brido mas, como n�o � permitida heran�a m�ltipla de classes, n�o se pode criar uma superclasse \textit{Hibrido}.
-
-$\\$
-
-\subsection{Classe Circuito}
-
-Para al�m das vari�veis de inst�ncia pedidas no enunciado, esta classe apenas tem uma \textit{String idCircuito}, que serve como identidade e ordem dentro da aplica��o e um \textit{String nome} do circuito. Todos os tempos est�o em milisegundos, a resolu��o dos tempos na aplica��o. \\
-
-Para al�m dos construtores, \textit{getters}, \textit{setters}, \textit{equals()}, \textit{clone()} e \textit{toString()}, implementa os m�todos \textit{void printCircuito()}, que imprime a inform��o do circuito e \textit{String toTime(int millis)}, que recebe um tempo em milisegundos e retorna uma \textit{String} em formato mins:segs:milis. \\
-
-Os tempos m�dios por volta das categorias PC1, PC2, GT e SC s�o respectivamente, +2s, +3.5s, +5s e +6s do que o tempo record da pista.
-
-\newpage
-
-\subsection{Classe Corrida}
-
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.6]{corrida}
-\end{figure}
-
-Tem como vari�veis de inst�ncia uma \textit{String idCorrida}, que serve como identidade e ordem dentro da aplica��o, um \textit{Circuito circuito}, um \textit{Map$<$String,Veiculo$>$ veiculos} e uma \textit{List$<$Classifica��o$>$classificacoes}. \\
-
-Os ve�culos do campeonato s�o replicados para cada corrida para n�o terem de ser passados como par�metro na aplica��o. Como a dimens�o dos dados � relativamente pequena isto n�o tem impacto no tempo de execu��o do programa. \\
-
-Em rela��o �s classifica��es, optou-se por um List por forma a usar o \textit{sort}, utilizando um \textit{Comparator}.  \\
-
-Para al�m dos construtores, \textit{getters}, \textit{setters}, \textit{equals()}, \textit{clone()} e \textit{toString()}, implementa os m�todos \textit{void efectuaCorrida(boolean chuva)}, que efectua a corrida, \textit{void printClassificacao()}, que imprime a classifica��o da corrida, \textit{String toTime(int millis)}, que recebe um tempo em milisegundos e retorna uma \textit{String} em formato mins:segs:milis e \textit{void reiniciarCorrida()}, que faz \textit{reset} da corrida.
-
-\subsection{Classe Classifica��o}
-
-Como a aplica��o s� tem uma classifica��o geral, optou-se por adicionar uma vari�vel para guradar os pontos dos ve�culos em vez de fazer uma nova classe para o efeito. \\
-
-Tem como vari�veis de inst�ncia um \textit{Veiculo veiculo}, um \textit{int tempo}, em milisegundos, um \textit{boolean dnf}, que indica se terminou a corrida, um \textit{int voltaDnf} que, em caso de n�o termina��o da corrida, guarda a volta de desist�ncia e um \textit{int pontos}, para guardar os pontos do ve�culo. \\
-
-Para al�m dos construtores, \textit{getters}, \textit{setters}, \textit{equals()}, \textit{clone()} e \textit{toString()}, implementa apenas o m�todo \textit{void incrementaPontos(int  pontos)}, que serve para ir somando os pontos do ve�culo ao longo do programa. \\
-
-Como esta classe serve dois prop�sitos, classificar dentro de uma corrida, em fun��o do tempo, e classificar no campeonato, em fun��o dos pontos, s�o implementados dois \textit{Comparators}, \textit{ClassificacaoTempoComparator}, que ordena por ordem ascendente de tempo, e \textit{ClassificacaoPontosComparator}, que ordena por ordem descendente de pontos. \\
-
-\subsection{Classe Aposta}
-
-Tem como vari�veis de inst�ncia uma \textit{String idCorrida}, que serve como identidade e ordem dentro da aplica��o, um \textit{double montante}, tr�s \textit{Veiculo ouro, prata, bronze}, uma \textit{double odd} e um \textit{double ganho}. \\
-
-Para al�m dos construtores, \textit{getters}, \textit{setters}, \textit{equals()}, \textit{clone()} e \textit{toString()}, implementa apenas o m�todo \textit{double calculaOdd()}, que calcula a odd que a aposta deve ter de acordo com seus ve�culos. \\
-
-O m�todo \textit{calculaOdd()} � chamado dentro do construtor da aposta, ficando logo definida a odd no momento da cria��o da aposta.
-
-$\\$
-
-\subsection{Classe Jogador}
-
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.6]{jogador}
-\end{figure}
-
-Para al�m das vari�veis de inst�ncia pedidas no enunciado, esta classe apenas tem uma \textit{String idJogador}, que serve como identidade e ordem dentro da aplica��o. \\
-
-Para al�m dos construtores, \textit{getters}, \textit{setters}, \textit{equals()}, \textit{clone()} e \textit{toString()}, implementa apenas o m�todo \textit{void fazAposta(Aposta a)}, que coloca a aposta nas apostas correntes, desde que n�o haja uma aposta na mesma corrida nas apostas correntes ou nas apostas passadas. \\
-
-Implementa ainda o m�todo \textit{actualizaAposta(String idCorrida, Veiculo ouro, Veiculo prata, Veiculo bronze)}, que processa a aposta. \\
-
-Como a aplica��o deve registar um \textit{scoreboard} de apostadores, foi implementado um \textit{JogadorGanhosComparator}, que ordena por ordem descendente de ganhos.
-
-\newpage
-
-\subsection{Classe Campeonato}
-
-Tem como vari�veis de inst�ncia uma \textit{String corridaActual}, que � a idCorrida de uma das corridas, um \textit{Map$<$String,Corrida$>$ corridas}, um \textit{Map$<$String,Jogador$>$ jogadores} e um \textit{List$<$Classificacao$>$ classificacaoGeral}. \\
-
-Para al�m dos construtores, \textit{getters}, \textit{setters}, \textit{equals()}, \textit{clone()} e \textit{toString()}, implementa os m�todos:
-
-\begin{itemize}
-\item[-] \textit{void actualizaApostas(String idCorrida)}, que actualiza as apostas de uma corrida;
-\item[-] \textit{void printClassificacaoGeral()}, que imprime a classificacao geral do campeonato;
-\item[-] \textit{void printClassificacaoHibrido()},  que imprime a classificacao geral do campeonato, mas apenas dos carros h�bridos;
-\item[-] \textit{void printScoreBoard()}, que imprime os tr�s apostadores com mais ganhos no campeonato;
-\item[-] \textit{void reiniciarCampeonato()}, que faz \textit{reset} do campeonat.
-\end{itemize}
-
-A estrutura de dados das corridas � um TreeMap, pois � necess�rio unicidade e ordem. A ordem � dada pela identidade da corrida.
-
-\subsection{Classe Simula��o}
-
-Tem como vari�veis de inst�ncia um \textit{Campeonato campeonato}, um \textit{Map$<$String,Piloto$>$ pilotos}, um \textit{Map$<$String,Veiculo$>$ veiculos}, um \textit{Map$<$String,Circuito$>$ circuitos} e um \textit{Map$<$String,Jogador$>$ jogadores}. \\
-
-Os menus t�m todos o formato [n] $<$op��o$>$, tendo o utilizador que premir o n�mero da op��o que pretende escolher. O menus s�o muito interactivos pois pode-se sempre voltar a um menu anterior e t�m uma interface muito simples. \\
-
-Por exemplo, Carregar Campeonto -$>$ Retomar Campeonato -$>$ Menu Principal -$>$ Sair:
-
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.6]{menu1}
-\end{figure}
-
-$\\$
-$\\$
-
-Execu��o de uma corrida, aqui sem o primeiro classificado e desist�ncias de cada volta:
-
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.6]{menu2}
-\end{figure}
-
-\subsection{Classe Main}
-
-Apenas cria uma simula��o e chama o menu principal da aplica��o. \\
-
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.6]{main}
-\end{figure}
-
-\newpage
-
-\section{Decis�es a Destacar}
-
-$\\$
-
-\subsection{Fiabilidades}
-
-As fiabilidades inicialmente propostas eram, de facto, baixas, o que resultava em corridas com tr�s ou quatro finalistas. Assim sendo, tiveram um aumento � volta dos 10\%.
-
-\begin{itemize}
-\item[PC1] - 95\% e, se tiver um motor h�brido, 90\%.
-\item[PC2] - 85\% a 95\% em fun��o da cilindrada e da prepara��o mec�nica do carro. Se tiver um motor h�brido, 80\% a 90\%.
-\item[GT] - 100\% de fiabilidade inicial, que decresce em cada volta de acordo com uma taxa definida pelo utilizador. Se tiver um motor h�brido, a fiabilidade inicial passa a ser 95\%.
-\item[SC] - 80\% a 95\%, influenciada em 25\% pela cilindrada (constante, igual a 2500$cm^3$) e em 75\% pela qualidade dos pilotos.
-\end{itemize}
-
-\subsection{Motores h�bridos}
-
-Optou-se por um limite de cavalagem nos motores hibridos de 300 CV. A raz�o desta escolha deve-se a uma pesquisa sobre este tipo de motores, que revelou valores m�ximos pr�ximos deste valor.
-
-\subsection{Tempos de Voltas}
-
-Optou-se por fazer com que cada um de 4 atributos - cilindrada, cavalagem, fiabilidade e qualidade do condutor - influencie em at� 1s no desvio resultante. A isto soma-se 1s e ainda um factor aleat�rio que aumenta/diminui estes 5s em at� 20\%.\\
-
-O desvio ao tempo m�dio retornado pelo m�todo \textit{tempoProximaVolta(boolean chuva)} est� no intervalo [-6,6] segundos, sem contar com uma poss�vel redu��o do tempo causada pelos motores h�bridos, na ordem dos 10\%.  \\
-
-Para determinar se o desvio ao tempo m�dio � positivo ou negativo, olha-se para a cilindrada, cavalagem e qualidade do condutor: se mais metade destes atributos for maior do que o ponto m�dio dos valores poss�veis destes atributos, ent�o o desvio ser� negativo. Casso contr�rio, ser� positivo. \\
-
-O facto de os desvio estarem neste intervalo faz com que todas as classes possam bater o record das pistas.
-
-\newpage
-
-\subsection{Odds}
-
-O c�lculo da odd de uma aposta � feito no momento da sua cria��o. Os atributos que contribuem para a odd s�o: a m�dia das qualidades dos pilotos, a m�dia das fiabilidades dos ve�culos, a m�dia das cilindradas e a m�dia das cavalagens. \\
-
-Cada um destes atributos tem um peso de at� 2.5 e as odds ficam assim compreendidas no intervalo [1.15,10].
-
-\subsection{Limita��es}
-
-Limitaram-se certas vari�veis de inst�ncia a gamas de valores realistas e que, ao serem usados em m�todos da aplica��o, produzirem valores com sentido. Por isso, grandezas como dist�ncias e tempos t�m que ser n�o-negativos.  \\
-
-Um exemplo � o da cavalagem, que est� compreendida entre 0 e 1200 \textit{CV}. Isto tem o objectivo de n�o deixar o utilizador inserir valor absurdos na aplica��o. \\
-
-Outra medida com o mesmo sentido foi o de fazer com a simula��o fosse "� prova de bala" - embora os menus tenham todos como op��es valores inteiros, a aplica��o recebe uma \textit{String}. Assim, o utilizador pode escrever valores diferentes dos pretendidos e a aplica��o n�o gerar erro.
-
-$\\$
-$\\$
-
-\section{Extensionabilidade}
-
-Com a classe abstracta \textit{Veiculo} a aplica��o � extens�vel a outro tipo de ve�culos. Mas na pr�tica n�o � extens�vel, pelo menos totalmente. \\
-
-Quando se quer criar um campeonato, ao criar um ve�culo � preciso especificar a sua classe por forma a chamar o seu construtor. Ora, se algu�m que n�o tenha acesso ao m�dulo \textit{Simula��o} quiser uma nova classe de ve�culo, n�o a pode construir em ambiente de consola. \\
-
-Outro caso est� na classe \textit{Circuito}: no enunciado foi pedido um tempo m�dio para cada classe de carro, que � usado no m�todo \textit{efectuaCorrida()} para somar, em cada volta, ao desvio dado por \textit{tempoProximaVolta()}. \\
-
-Mais uma vez, se um utilizador sem acesso ao m�dulo \textit{Circuito} quisesse uma nova classe de ve�culos, n�o poderia especificar o seu tempo m�dio nos circuitos. \\
 
 \end{document}
 
