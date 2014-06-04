@@ -3,29 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/FitnessUM.java</file>
-            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/CompareActivityByTime.java</file>
-            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/Admin.java</file>
-            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/Badminton.java</file>
-            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/Outdoor.java</file>
-            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/Record.java</file>
-            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/CompareRankingByTime.java</file>
-            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/CompareRankingByKm.java</file>
-            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/CompareStatsPerYearAndMonth.java</file>
-            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/ComparePersonByName.java</file>
-            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/Simulacao.java</file>
-            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/RecordsActivity.java</file>
-            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/Person.java</file>
-            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/User.java</file>
-            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/CompareActivity.java</file>
-            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/Ranking.java</file>
-            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/CompareSimulacao.java</file>
-            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/VerticalDistance.java</file>
-            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/RegistarUserForm.java</file>
-            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/TimePerDistance.java</file>
-            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/CompareUserByName.java</file>
-            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/Statistics.java</file>
-            <file>file:/C:/Users/Bruno/Documents/GitHub/Li3/Projecto%20POO/Fitness/src/Fitness/UserVs.java</file>
+            <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/Main.java</file>
+            <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/Polo.java</file>
+            <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/FitnessUM.java</file>
+            <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/Indoor.java</file>
+            <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/ListRecords.java</file>
+            <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/Event.java</file>
+            <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/Statistics.java</file>
+            <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/User.java</file>
+            <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/TimePerDistance.java</file>
+            <file>file:/home/bruno/Documentos/git2/Li3/Projecto%20POO/Fitness/src/Fitness/Outdoor.java</file>
         </group>
     </open-files>
 </project-private>
