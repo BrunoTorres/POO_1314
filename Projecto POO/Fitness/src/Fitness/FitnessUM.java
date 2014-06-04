@@ -2,9 +2,11 @@ package Fitness;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
@@ -39,7 +41,7 @@ public class FitnessUM implements Serializable {
      * @param um instância de FitnessUm.
      */
     public FitnessUM(FitnessUM um) {
-        this.p = um.getPerson();
+        this.p = um.getActivePerson();
         this.userList = (TreeSet<Person>) um.getUserList();
         this.events = (ArrayList<Event>) um.getEvents();
     }
@@ -49,9 +51,21 @@ public class FitnessUM implements Serializable {
      *
      * @return
      */
-    public Person getPerson() {
-        return this.p.clone();
+    public Admin getAdminByEmail (String email) {
+        boolean found = false;
+        Admin a = new Admin();
+        Iterator<Person> it = this.userList.iterator();
+        while (it.hasNext() && !found) {
+            Person per = it.next();
+            if ((per.getEmail().equals(email)) && (per instanceof Admin)) {
+                a = (Admin) per;
+                found = true;
+            }
+        }
+        return a;
     }
+	
+	
 
     /**
      * Método que devolve a lista de eventos.
@@ -77,23 +91,7 @@ public class FitnessUM implements Serializable {
             aux.add(p.clone());
         }
         return aux;
-    }
-
-    private User getUser(String email) {
-
-        boolean found = false;
-        User u = new User();
-        Iterator<Person> it = this.userList.iterator();
-        while (it.hasNext() && !found) {
-            Person per = it.next();
-            if ((per.getEmail().equals(email)) && (per instanceof User)) {
-                u = (User) per;
-                found = true;
-            }
-        }
-        return u;
-
-    }
+	}
 
     /**
      * Método que adiciona um user a lista de user e administradores.
@@ -392,8 +390,16 @@ public class FitnessUM implements Serializable {
      * @return User.
      */
     public User getUserByEmail(String email) {
-        User u;
-        u = this.getUser(email);
+        boolean found = false;
+        User u = new User();
+        Iterator<Person> it = this.userList.iterator();
+        while (it.hasNext() && !found) {
+            Person per = it.next();
+            if ((per.getEmail().equals(email)) && (per instanceof User)) {
+                u = (User) per;
+                found = true;
+            }
+        }
         return u;
     }
 
@@ -509,70 +515,6 @@ public class FitnessUM implements Serializable {
     }
 
     /////////////////////////////////////////////////Propriedade dos Utilizadores//////////////////////////////////////
-    //Aceder as estatisticas(mensais anuais) STATISTICS by distancia tempo e\calorias
-    /**
-     * Método que imprime as estatísticas mensais do utilizador.
-     *
-     * @param u User.
-     * @param tipo tipo de estatísticas a pesquisar.
-     * @param mes mês a pesquisar.
-     * @param ano ano a pesquisar.
-     */
-    public void searchStatisticsMONTH(User u, int tipo, int mes, int ano) {
-        TreeMap<GregorianCalendar, Statistics> aux = (TreeMap<GregorianCalendar, Statistics>) u.getStats();
-
-        GregorianCalendar data = new GregorianCalendar(ano, mes, 0);
-        Statistics stats = aux.get(data);
-        String s;
-
-        switch (tipo) {
-            case 1:
-                System.out.println(stats.toStringDistance());
-                break;
-            case 2:
-                System.out.println(stats.toStringTimeSpend());
-                break;
-            case 3:
-                System.out.println(stats.toStringCalories());
-                break;
-            default:
-                break;
-        }
-    }
-
-    /**
-     * Método que imprime as estatísticas anuais do utilizador.
-     *
-     * @param u User.
-     * @param tipo tipo de estatísticas a pesquisar.
-     * @param ano ano a pesquisar.
-     */
-    public void searchStatisticsYear(User u, int tipo, int ano) {
-        TreeMap<GregorianCalendar, Statistics> aux = (TreeMap<GregorianCalendar, Statistics>) u.getStats();
-        Statistics nova = new Statistics();
-        String s;
-        for (int i = 1; i <= 12; i++) {
-            GregorianCalendar date = new GregorianCalendar(ano, i, 0);
-            if (aux.containsKey(date)) {
-                nova.incrementsTimeDistanceCalories(aux.get(date).getTimeSpend(), aux.get(date).getDistance(), aux.get(date).getCalories());
-            }
-
-        }
-
-        switch (tipo) {
-            case 1:
-                System.out.println(nova.toStringDistance());
-                break;
-            case 2:
-                System.out.println(nova.toStringTimeSpend());
-                break;
-            case 3:
-                System.out.println(nova.toStringCalories());
-                break;
-            default:
-                break;
-        }
-    }
 
     ////////////////////////////////!!!FRIEND!!!//////////////////////////////////////////////////
     /**

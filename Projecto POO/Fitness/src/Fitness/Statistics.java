@@ -71,8 +71,8 @@ public class Statistics implements Serializable {
      * Método que devolve o número de calorias gastas.
      * @return Calorias, double.
      */
-    public double getCalories() {
-        return this.calories;
+    public int getCalories() {
+        return (int) this.calories;
     }
 
     /**
@@ -113,7 +113,7 @@ public class Statistics implements Serializable {
     public String toStringCalories() {
         StringBuilder sb = new StringBuilder();
         sb.append("Calories: ");
-        sb.append(this.calories).append("\n");
+        sb.append((int) this.calories).append("\n");
         return sb.toString();
     }
 
