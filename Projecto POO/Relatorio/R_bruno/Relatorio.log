@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.4.24)  4 JUN 2014 21:35
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.4.24)  4 JUN 2014 22:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -449,48 +449,53 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \openout3 = `Relatorio.toc'.
 
  [1]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 57.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 58.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 57.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 58.
 
 [2] <Activity2.jpg, id=30, 752.8125pt x 414.04688pt>
 File: Activity2.jpg Graphic file (type jpg)
  <use Activity2.jpg>
-Package pdftex.def Info: Activity2.jpg used on input line 88.
+Package pdftex.def Info: Activity2.jpg used on input line 93.
 (pdftex.def)             Requested size: 376.40532pt x 207.02292pt.
 
 <ComparadorActivity.png, id=31, 301.125pt x 225.84375pt>
 File: ComparadorActivity.png Graphic file (type png)
 
 <use ComparadorActivity.png>
-Package pdftex.def Info: ComparadorActivity.png used on input line 118.
+Package pdftex.def Info: ComparadorActivity.png used on input line 130.
 (pdftex.def)             Requested size: 301.12425pt x 225.84319pt.
- <Person.jpg, id=32, 331.2375pt x 248.42813pt>
-File: Person.jpg Graphic file (type jpg)
 
-<use Person.jpg>
-Package pdftex.def Info: Person.jpg used on input line 127.
-(pdftex.def)             Requested size: 331.23668pt x 248.42752pt.
- [3 <./Activity2.jpg>] [4 <./ComparadorActivity.png (PNG copy)>] [5 <./Person.j
-pg>] (./Relatorio.aux) ) 
+Underfull \hbox (badness 10000) in paragraph at lines 134--136
+
+ []
+
+<Person.jpg, id=32, 331.2375pt x 248.42813pt>
+File: Person.jpg Graphic file (type jpg)
+ <use Person.jpg>
+Package pdftex.def Info: Person.jpg used on input line 144.
+(pdftex.def)             Requested size: 264.99034pt x 198.74277pt.
+ [3 <./Activity2.jpg>] [4 <./ComparadorActivity.png (PNG copy)> <./Person.jpg>]
+ [5]
+(./Relatorio.aux) ) 
 Here is how much of TeX's memory you used:
- 2636 strings out of 495007
- 36277 string characters out of 6180696
+ 2638 strings out of 495007
+ 36294 string characters out of 6180696
  104118 words of memory out of 5000000
- 5815 multiletter control sequences out of 15000+600000
+ 5817 multiletter control sequences out of 15000+600000
  5803 words of font info for 21 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 38i,6n,31p,499b,287s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Relatorio.pdf (6 pages, 546929 bytes).
+ 38i,7n,31p,499b,287s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
+12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on Relatorio.pdf (6 pages, 550916 bytes).
 PDF statistics:
  63 PDF objects out of 1000 (max. 8388607)
  40 compressed objects within 1 object stream

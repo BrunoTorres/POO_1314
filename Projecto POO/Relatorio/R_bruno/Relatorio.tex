@@ -37,7 +37,7 @@ Programação Orientada aos Objectos
 \includegraphics[scale=0.6]{autores.png}
 \end{figure}
 
-69854 ~~~~~~~~~~~~~~~~~~ 66822 ~~~~~~~~~~~~~~~~~~ 69303   \\~  João Mano ~~~~~~~~ Miguel Guimarães ~~~~~~~~ Bruno Torres  \\~ \\~ \\~ \\~ \\~ \\~ Braga, Junho de 2014
+69303 ~~~~~~~~~~~~~~~~~~ 66822 ~~~~~~~~~~~~~~~~~~~~~ 69854   \\~ Bruno Pereira  ~~~~~~~~ Miguel Guimarães ~~~~~~~João Mano  \\~ \\~ \\~ \\~ \\~ \\~ Braga, Junho de 2014
 \end{center}
 \end{titlepage}
 
@@ -53,8 +53,9 @@ Programação Orientada aos Objectos
 
 \subsection{Actividades}
 Foram definidas as seguindes actividades desportivas para a nossa aplicação:
+
 \begin{itemize}
-\item Yoga
+\item Yoga 
 \item Aerobics
 \item Swimming
 \item IndoorCycling
@@ -65,6 +66,10 @@ Foram definidas as seguindes actividades desportivas para a nossa aplicação:
 \item Badminton
 \item VolleyBallIndoor
 \item Football
+\end{itemize}
+
+
+\begin{itemize}
 \item VolleyBallBeach
 \item Running
 \item Skating
@@ -77,8 +82,8 @@ Foram definidas as seguindes actividades desportivas para a nossa aplicação:
 \item Orienteering
 \item Snowboarding
 \item Polo
-
 \end{itemize}
+
 
 \newpage
 Para a implementação destas actividades foi usada a seguinte estrutura:
@@ -93,9 +98,15 @@ Para a implementação destas actividades foi usada a seguinte estrutura:
 
 \subsubsection{Classe abstracta Activity}
 
-Esta é a classe mais abstrata, que tem a fundação de todas as actividadades desta aplicação. Contém variáveis comuns a todas as actividades:
+Esta é a classe mais abstracta que contem o conceito de actividade. Contém variáveis comuns a todas as actividades:
+\begin{itemize}
+\item \textit{String name}, nome da actividade criada.
+\item \textit{GregorianCalendar date}, data de quando se realizou a actividade.
+\item \textit{double timeSpent}, tempo gasto na actividade.
+\item \textit{double calories}, campo preenchido pela aplicaçao de uma fórmula.
+\end{itemize}
+tal como os construtores, \textit{getters} e \textit{setters}.
 
- \textit{name}, \textit{date}, \textit{timeSpent} e \textit{calories} tal como os construtores, \textit{getters} e  \textit{setters}.
 
 \subsubsection{Indoor,Outdoor e actividades desportivas}
 Todas as actividades desportivas tem um aspecto importante,o clima caso sejam praticadas ao ar livre.\\
@@ -105,8 +116,9 @@ Devido a este aspecto foram criadas duas classes abstractas,subclasses de \texti
 \item Indoor
 \end{itemize}
 
-Todas as actividades desportivas são subclasses de \textit{Indoor} ou \textit{Outdoor} como exemplicado na figura ~\ref{fig:actividades}. 
-\subsubsection{Comparadores}
+Todas as actividades desportivas são subclasses de \textit{Indoor} ou \textit{Outdoor} como exemplicado na figura ~\ref{fig:actividades}.
+ 
+\subsubsection{Comparadores e Iterfaces}
 Para organizar as actividades criaram-se dois tipo de comparadores:
 \begin{itemize}
 \item CompareActivity- Compara a actividade pela data da realização da mesma.
@@ -119,20 +131,54 @@ Para organizar as actividades criaram-se dois tipo de comparadores:
 \caption{Comparador Activity}
 \end{figure}
 
+~\\~\\
+Como certos desportos usam
+
+
 
 \subsection{Utilizadores}
-
-\begin{figure}[ht]
+Para destiguir utilizadores regulares de administradores criou-se a seguinte estrutura:
+~\\
+\begin{figure}[htb]
 \centering
-\includegraphics[scale=1]{Person.jpg}
+\includegraphics[scale=0.8]{Person.jpg}
 \caption{Estrutura das classes User e Admin}
 \end{figure}
 
-\subsection{Classe Abstracta Person}
 
-Aqui usámos mais uma classe abstracta para definir todas as pessoas que usam a aplicação (Administradores ou utilizadores normais). As variáveis comuns aos todos os tipos de pessoas são \textit{email}, \textit{password}, \textit{name}, \textit{gender}, e \textit{dateOfBirth}. Para além de 
-construtores, \textit{getters} e \textit{setters} esta classe não tem métodos auxiliares.
+\subsubsection{Classe abstracta Person}
 
+~\\~
+Classe geral para todo tipo de utilizador. As suas variáveis são:
+\begin{itemize}
+\item \textit{String email};
+\item \textit{String password};
+\item \textit{String name};
+\item \textit{char gender};
+\item \textit{GregorianCalendar dateOfBirth};
+\end{itemize}
+
+\subsubsection{Classes User e Admin}
+
+As subclasses de Person referem-se a dois possíveis tipos de utilizador, utilizador normal ou utilizador com privilégios de administrador.\\
+A classe Admin não tem métodos ou variáveis adicionais, visto que este tipo de utilizador apenas opera sobre a base de dados da aplicação.\\
+A classe User adiciona as seguintes variáveis:
+\begin{itemize}
+\item \textit{int height};
+\item \textit{double weight};
+\item \textit{String favoriteActivity};
+\item \textit{TreeSet<Activity> userActivities};
+\item \textit{TreeSet<String> friendsList};
+\item \textit{TreeMap<String, ListRecords> records};
+\item \textit{TreeSet<String> messageFriend};
+\end{itemize}
+Respectivos métodos \textit{getters} e \textit{setters}, construtores e métodos auxiliares para a gestão de amigos/pedidos de amizade, recordes pessoais, das suas actividades e estatísticas relevantes. Ainda contém funções auxiliares para a simulação de eventos.
+
+\subsubsection{Comparators}
+O tipo Person tem apenas um comparator:
+\begin{itemize}
+\item ComparePersonByName - que ordena por ordem alfabética do seu nome.
+\end{itemize}
 
 
 
