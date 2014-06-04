@@ -75,7 +75,7 @@ public class Swimming extends Indoor implements Distance, RecordsActivity, Seria
      * @return Devolve uma ListRecords.
      */
     private ListRecords createRecord() {
-        ListRecords list = new ListRecords("Running");
+        ListRecords list = new ListRecords("Swimming");
 
         Record rec50m = new TimePerDistance("50 m", 50, this.distance, this.getTimeSpent());
         Record rec100m = new TimePerDistance("100 m", 100, this.distance, this.getTimeSpent());
