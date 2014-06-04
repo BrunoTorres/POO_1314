@@ -41,7 +41,7 @@ public class FitnessUM implements Serializable {
      * @param um instância de FitnessUm.
      */
     public FitnessUM(FitnessUM um) {
-        this.p = um.getPerson();
+        this.p = um.getActivePerson();
         this.userList = (TreeSet<Person>) um.getUserList();
         this.events = (ArrayList<Event>) um.getEvents();
     }
@@ -51,9 +51,21 @@ public class FitnessUM implements Serializable {
      *
      * @return
      */
-    public Person getPerson() {
-        return this.p.clone();
+    public Admin getAdminByEmail (String email) {
+        boolean found = false;
+        Admin a = new Admin();
+        Iterator<Person> it = this.userList.iterator();
+        while (it.hasNext() && !found) {
+            Person per = it.next();
+            if ((per.getEmail().equals(email)) && (per instanceof Admin)) {
+                a = (Admin) per;
+                found = true;
+            }
+        }
+        return a;
     }
+	
+	
 
     /**
      * Método que devolve a lista de eventos.
@@ -79,23 +91,7 @@ public class FitnessUM implements Serializable {
             aux.add(p.clone());
         }
         return aux;
-    }
-
-    private User getUser(String email) {
-
-        boolean found = false;
-        User u = new User();
-        Iterator<Person> it = this.userList.iterator();
-        while (it.hasNext() && !found) {
-            Person per = it.next();
-            if ((per.getEmail().equals(email)) && (per instanceof User)) {
-                u = (User) per;
-                found = true;
-            }
-        }
-        return u;
-
-    }
+	}
 
     /**
      * Método que adiciona um user a lista de user e administradores.
@@ -394,8 +390,16 @@ public class FitnessUM implements Serializable {
      * @return User.
      */
     public User getUserByEmail(String email) {
-        User u;
-        u = this.getUser(email);
+        boolean found = false;
+        User u = new User();
+        Iterator<Person> it = this.userList.iterator();
+        while (it.hasNext() && !found) {
+            Person per = it.next();
+            if ((per.getEmail().equals(email)) && (per instanceof User)) {
+                u = (User) per;
+                found = true;
+            }
+        }
         return u;
     }
 

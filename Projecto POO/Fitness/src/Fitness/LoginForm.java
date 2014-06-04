@@ -35,16 +35,17 @@ public class LoginForm extends javax.swing.JFrame {
 			User u2 = new User("2", "2", "user2", 'M', new GregorianCalendar(), 160, 70.0, "Running");
 			User u3 = new User("3", "3", "user3", 'F', new GregorianCalendar(), 155, 50.0, "Tenis");
 			User u4 = new User("4", "4", "user4", 'F', new GregorianCalendar(), 161, 52.0, "Yoga");
+			Admin a1 = new Admin("admin", "admin", "admin", 'M', new GregorianCalendar(1991, 10, 15));
 			fitness.addUser(u1.getEmail(), u1.getPassword(), u1.getName(), u1.getGender(), u1.getDate(), u1.getHeight(), u1.getWeight(), u1.getFavoriteActivity());
 			fitness.addUser(u2.getEmail(), u2.getPassword(), u2.getName(), u2.getGender(), u2.getDate(), u2.getHeight(), u2.getWeight(), u2.getFavoriteActivity());
 			fitness.addUser(u3.getEmail(), u3.getPassword(), u3.getName(), u3.getGender(), u3.getDate(), u3.getHeight(), u3.getWeight(), u3.getFavoriteActivity());
 			fitness.addUser(u4.getEmail(), u4.getPassword(), u4.getName(), u4.getGender(), u4.getDate(), u4.getHeight(), u4.getWeight(), u4.getFavoriteActivity());
-			//fitness.getUserByEmail("1").addActivity(new Yoga("YOGA com os amigos", new GregorianCalendar(), 120), "Yoga");
-			//fitness.getUserByEmail("1").addActivity(new Yoga("YOGA2222 com os amigos", new GregorianCalendar(), 110), "Yoga");
+			fitness.addAdmin(a1.getEmail(), a1.getPassword(), a1.getName(), a1.getGender(), a1.getDate());
 			fitness.sendFriendRequest(fitness.getUserByEmail("1"), fitness.getUserByEmail("4"));
 			fitness.sendFriendRequest(fitness.getUserByEmail("1"), fitness.getUserByEmail("3"));
 			fitness.sendFriendRequest(fitness.getUserByEmail("2"), fitness.getUserByEmail("3"));
 			fitness.sendFriendRequest(fitness.getUserByEmail("3"), fitness.getUserByEmail("4"));
+			fitness.setFitnessPerson(a1);
 		} catch (ClassCastException | ClassNotFoundException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
@@ -213,15 +214,20 @@ public class LoginForm extends javax.swing.JFrame {
 		String email = this.textEmail.getText();
 		String pw = String.copyValueOf(this.textPw.getPassword());
 		if (fitness.existPassAndUser(email, pw)) {
+			//Person p = fitness.getPersonByEmail(email);
 			if (!fitness.isAdmin(email)) {
 				fitness.setFitnessPerson(fitness.getUserByEmail(email));
 				UserForm userForm = new UserForm(this, this.fitness, fitness.getUserByEmail(email));
 				userForm.setVisible(true);
 				this.dispose();
+			} else {
+				fitness.setFitnessPerson(fitness.getAdminByEmail(email));
+				AdminForm adminForm = new AdminForm(this, this.fitness, fitness.getAdminByEmail(email));
+				adminForm.setVisible(true);
+				this.dispose();
 			}
 		} else {
 			JOptionPane.showMessageDialog(this, "Login incorreto...", "Login", JOptionPane.ERROR_MESSAGE);
-			//menuLogin();
 		}
     }//GEN-LAST:event_butOKActionPerformed
 
