@@ -166,7 +166,7 @@ public class Main {
        e1.addUser(u2);
        e1.addUser(u3);
        //um.simulaEvent(e1, "Chuva com ventos fortes", 29);
-    } 
+
        //Event e= um.getEventByName("calhaus corrida");
        
        
@@ -238,17 +238,17 @@ public class Main {
     //  System.out.println("novo\n");
             
       
-  /*     for(Statistics s :u2.getStats().values()){
-         System.out.println(s.toStringDistance());
-         System.out.println(s.toStringCalories());
-         System.out.println(s.toStringTimeSpend()); 
+  //for(Statistics s :u2.getStats().values()){
+      //   System.out.println(s.toStringDistance());
+      //   System.out.println(s.toStringCalories());
+      //   System.out.println(s.toStringTimeSpend()); 
          
-      }
-         System.out.println(".......................\n");
-       System.out.println(run22.getCalories());
-        System.out.println(".......................\n");
+      
+        // System.out.println(".......................\n");
+      // System.out.println(run22.getCalories());
+      //  System.out.println(".......................\n");
        // date33 =new GregorianCalendar(1900,2,12);
-       um.searchStatisticsYear(u3, 3, 1100);
+       //um.searchStatisticsYear(u3, 3, 1100);
        //System.out.println(um.getUserByEmail("cois@gmail.com").toString());
       //System.out.println( act.toString());
       
@@ -258,6 +258,6 @@ public class Main {
        
     }
     
-    */
-  
 
+  
+    } 

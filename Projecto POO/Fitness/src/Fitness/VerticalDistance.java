@@ -20,7 +20,7 @@ public interface VerticalDistance {
     /**
      * Método para alterar a distancia vertical da actividade.
      *
-     * @param verticaldistance
+     * @param verticaldistance Distancia percorrida verticalmente(altitude)
      */
     void setVerticalDistance(double verticaldistance);
 }

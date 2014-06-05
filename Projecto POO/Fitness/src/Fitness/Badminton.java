@@ -26,11 +26,11 @@ public class Badminton extends Indoor implements UserVs, Serializable {
     /**
      * Construtor parametrizado.
      *
-     * @param name- Nome da actividade
-     * @param date- Data da realização da actividade
-     * @param timeSpent- Tempo gasto em minutos
-     * @param myScore- Pontos feitos
-     * @param opScore- Pontos recebidos
+     * @param name Nome da actividade.
+     * @param date Data da realização da actividade.
+     * @param timeSpent Tempo gasto em minutos.
+     * @param myScore Pontos feitos.
+     * @param opScore Pontos recebidos.
      *
      */
     public Badminton(String name, GregorianCalendar date, double timeSpent, int myScore, int opScore) {
