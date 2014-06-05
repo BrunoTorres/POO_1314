@@ -1,6 +1,6 @@
 \documentclass[10pt,notitlepage]{article}
-\usepackage{graphicx} 
-\usepackage{verbatim} 
+\usepackage{graphicx}
+\usepackage{verbatim}
 \usepackage[portuguese]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[hmargin=2cm,vmargin=3.5cm,bmargin=2cm]{geometry}
@@ -20,7 +20,7 @@
 
 \begin{center}
 
-Escola de Engenharia \\~  Departamento de Informática \\~ \\~ Licenciatura em Engenharia Informática \\~ \\~ \\~  \\~ \\~ \\~ \\~ \\~ \\~ \\~  
+Escola de Engenharia \\~  Departamento de Informática \\~ \\~ Licenciatura em Engenharia Informática \\~ \\~ \\~  \\~ \\~ \\~ \\~ \\~ \\~ \\~
 
 
 {\Huge Projecto Java - FitnessUM }
@@ -54,9 +54,9 @@ Programação Orientada aos Objectos
 
 \subsection{Actividades}
 Foram definidas as seguindes actividades desportivas para a nossa aplicação:
-\begin{multicols}{2} 
+\begin{multicols}{2}
 \begin{itemize}
-\item Yoga 
+\item Yoga
 \item Aerobics
 \item Swimming
 \item IndoorCycling
@@ -108,15 +108,15 @@ tal como os construtores, \textit{getters} e \textit{setters}.
 
 \subsubsection{Indoor,Outdoor e actividades desportivas}
 Todas as actividades desportivas tem um aspecto importante,o clima caso sejam praticadas ao ar livre.\\
-Devido a este aspecto foram criadas duas classes abstractas,subclasses de \textit{Activity},para essa distinção.  
+Devido a este aspecto foram criadas duas classes abstractas,subclasses de \textit{Activity},para essa distinção.
 \begin{itemize}
-\item Outdoor,contém a variável: \textit{String weather}  
+\item Outdoor,contém a variável: \textit{String weather}
 \item Indoor
 \end{itemize}
 
 Todas as actividades desportivas são subclasses de \textit{Indoor} ou \textit{Outdoor} como exemplicado na figura ~\ref{fig:actividades}.
- 
-\subsubsection{Comparadores e Iterfaces}
+
+\subsubsection{Comparadores e Interfaces}
 Para organizar as actividades criaram-se dois tipo de comparadores:
 \begin{itemize}
 \item CompareActivity- Compara a actividade pela data da realização da mesma.
@@ -144,11 +144,11 @@ Depois de uma análise às actividades desportivas, ficou claro que para certas 
 \begin{figure}[h]
 \includegraphics[scale=0.5]{interfaceAct.jpg}
 \caption{Exemplo de algumas actividades que implementam as interfaces}
-\end{figure}  
+\end{figure}
 
 
 \subsection{Utilizadores}
-Para destiguir utilizadores regulares de administradores criou-se a seguinte estrutura:
+Para distinguir utilizadores regulares de administradores criou-se a seguinte estrutura:
 ~\\
 \begin{figure}[htb]
 \centering
@@ -219,7 +219,7 @@ Como se pode verificar na figura ~\ref{fig:recordes}, apenas as seguintes activi
 \item Walking
 \item MountainBiking
 \item Swimming
-\end{itemize} 
+\end{itemize}
 
 
 \subsubsection{Classe abstracta Record}
@@ -234,7 +234,7 @@ métodos construtores, \textit{getName()} e \textit{isEmpty()} que verifica se e
 \subsubsection{DistancePerTime e TimePerDistance}
 Estas classes simboliza os dois diferentes tipos de recordes.\\
 
-DistancePerTime é um recorde em que o objectivo é fazer a maior distância para um dado tempo.  
+DistancePerTime é um recorde em que o objectivo é fazer a maior distância para um dado tempo.
 As suas variáveis são:
 \begin{itemize}
 \item \textit{double recordTime} - Tempo do recorde;
