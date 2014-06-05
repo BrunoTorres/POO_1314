@@ -7,6 +7,7 @@
 package Fitness;
 
 import java.awt.event.ItemEvent;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
 
@@ -24,6 +25,13 @@ public class AddEventForm extends javax.swing.JFrame {
 		this.setLocationRelativeTo(parent);
 		this.parent = parent;
 		this.fit = fit;
+		GregorianCalendar now = new GregorianCalendar();
+		this.cboxDia.setSelectedItem(now.get(Calendar.DAY_OF_MONTH));
+		this.cboxMes.setSelectedIndex(now.get(Calendar.MONTH));
+		this.cboxAno.setSelectedItem(now.get(Calendar.YEAR));
+		this.cboxDia1.setSelectedItem(now.get(Calendar.DAY_OF_MONTH));
+		this.cboxMes1.setSelectedIndex(now.get(Calendar.MONTH));
+		this.cboxAno1.setSelectedItem(now.get(Calendar.YEAR));
 	}
 
 	/**

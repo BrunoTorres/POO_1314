@@ -9,6 +9,7 @@ package Fitness;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.util.GregorianCalendar;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -28,6 +29,7 @@ public class AdminForm extends javax.swing.JFrame {
 		this.fit = fit;
 		this.admin = admin;
 		this.setStats();
+		this.checkEvents();
 	}
 
 	/**
@@ -166,7 +168,16 @@ public class AdminForm extends javax.swing.JFrame {
 	    LoginForm login = new LoginForm();
         login.setVisible(true);
     }//GEN-LAST:event_butLogoutActionPerformed
-
+	
+	private void checkEvents() {
+		GregorianCalendar now = new GregorianCalendar();
+		for (Event e : this.fit.getEvents()) {
+			if (e.getDate().before(now) && e.getSimulacao().isEmpty()) {
+				JOptionPane.showMessageDialog(this, "Existem eventos que devem ser simulados. Por favor simule-os...");
+			}
+		}
+	}
+	
     private void butAddEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAddEventoActionPerformed
         AddEventForm addEvent = new AddEventForm(this, this.fit);
 		this.setVisible(false);

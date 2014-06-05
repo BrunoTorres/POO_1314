@@ -13,9 +13,9 @@ import java.util.Objects;
  */
 public class Ranking implements Serializable {
 
-    public double time;
-    public int km;
-    public User athlete;
+    private double time;
+    private int km;
+    private User athlete;
 
     /**
      * Construtor vazio.

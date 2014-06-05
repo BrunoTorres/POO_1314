@@ -12,6 +12,7 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Iterator;
 import java.util.TreeMap;
 import java.util.TreeSet;
 import javax.swing.JFrame;
@@ -1606,13 +1607,13 @@ public class UserForm extends javax.swing.JFrame {
     }//GEN-LAST:event_butLogoutActionPerformed
 
     private void butAddEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAddEventoActionPerformed
-        RegistarEmEventoForm reg = new RegistarEmEventoForm(this, this.fit, this.u);
+		RegistarEmEventoForm reg = new RegistarEmEventoForm(this, this.fit, this.u);
 		reg.setVisible(true);
 		this.setVisible(false);
     }//GEN-LAST:event_butAddEventoActionPerformed
 
     private void butRemoveEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butRemoveEventoActionPerformed
-        if (this.tableEventsInscritos.getSelectedRowCount() > 0) {
+		if (this.tableEventsInscritos.getSelectedRowCount() > 0) {
 			ArrayList<Event> eventos = new ArrayList<>();
 			for (Event e : this.fit.getOpenEvents()) {
 				if (e.getParticipantsList().contains(this.u)) {
@@ -1626,243 +1627,242 @@ public class UserForm extends javax.swing.JFrame {
     }//GEN-LAST:event_butRemoveEventoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (this.tableAmigos.getSelectedRowCount() > 0) {
-            ViewFriendForm viewFriend;
-            int row = this.tableAmigos.getSelectedRow();
-            User friend = this.fit.getUserByEmail((String) this.tableAmigos.getValueAt(row, 2)).clone();
-            viewFriend = new ViewFriendForm(this, this.fit, friend);
-            viewFriend.setVisible(true);
-            this.setVisible(false);
-        }
+		if (this.tableAmigos.getSelectedRowCount() > 0) {
+			ViewFriendForm viewFriend;
+			int row = this.tableAmigos.getSelectedRow();
+			User friend = this.fit.getUserByEmail((String) this.tableAmigos.getValueAt(row, 2)).clone();
+			viewFriend = new ViewFriendForm(this, this.fit, friend);
+			viewFriend.setVisible(true);
+			this.setVisible(false);
+		}
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void cboxRecordSportItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboxRecordSportItemStateChanged
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
-            for (int i = 0; i < this.tableRecords.getRowCount(); i++) {
-                for (int j = 0; j < this.tableRecords.getColumnCount(); j++) {
-                    this.tableRecords.setValueAt(null, i, j);
-                }
-            }
+		if (evt.getStateChange() == ItemEvent.SELECTED) {
+			for (int i = 0; i < this.tableRecords.getRowCount(); i++) {
+				for (int j = 0; j < this.tableRecords.getColumnCount(); j++) {
+					this.tableRecords.setValueAt(null, i, j);
+				}
+			}
 
-            String sport = this.cboxRecordSport.getSelectedItem().toString();
+			String sport = this.cboxRecordSport.getSelectedItem().toString();
 
-            switch (sport) {
-                case "Running":
-                this.preencheRunRecords();
-                break;
-                case "Walking":
-                this.preencheWalkRecords();
-                break;
-                case "Mountain Biking":
-                this.preencheMountainRecords();
-                break;
-                case "Cycling":
-                this.preencheCyclingRecords();
-                break;
-                default:
-                this.preencheSwimRecords();
-                break;
-            }
-        }
+			switch (sport) {
+				case "Running":
+					this.preencheRunRecords();
+					break;
+				case "Walking":
+					this.preencheWalkRecords();
+					break;
+				case "Mountain Biking":
+					this.preencheMountainRecords();
+					break;
+				case "Cycling":
+					this.preencheCyclingRecords();
+					break;
+				default:
+					this.preencheSwimRecords();
+					break;
+			}
+		}
     }//GEN-LAST:event_cboxRecordSportItemStateChanged
 
     private void butRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butRemoveActionPerformed
-        Activity a;
-        if (this.but10.isSelected()) {
-            a = this.acts10.get(this.currAct - 1);
-        } else {
-            a = this.allActs.get(this.allActsCurr - 1);
-        }
-        boolean rem = this.u.removeActivity(a.getName());
-        if (rem) {
-            JOptionPane.showMessageDialog(this, "Atividade removida com sucesso...");
-            this.changeActivities("remove");
-        } else {
-            JOptionPane.showMessageDialog(this, "Atividade não removida...");
-        }
+		Activity a;
+		if (this.but10.isSelected()) {
+			a = this.acts10.get(this.currAct - 1);
+		} else {
+			a = this.allActs.get(this.allActsCurr - 1);
+		}
+		boolean rem = this.u.removeActivity(a.getName());
+		if (rem) {
+			JOptionPane.showMessageDialog(this, "Atividade removida com sucesso...");
+			this.changeActivities("remove");
+		} else {
+			JOptionPane.showMessageDialog(this, "Atividade não removida...");
+		}
     }//GEN-LAST:event_butRemoveActionPerformed
 
     private void butLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butLastActionPerformed
-        if (this.but10.isSelected()) {
-            this.currAct = this.acts10.size();
-        } else {
-            this.allActsCurr = this.allActs.size();
-        }
-        this.changeActivities("last");
+		if (this.but10.isSelected()) {
+			this.currAct = this.acts10.size();
+		} else {
+			this.allActsCurr = this.allActs.size();
+		}
+		this.changeActivities("last");
     }//GEN-LAST:event_butLastActionPerformed
 
     private void butNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNextActionPerformed
-        if (this.but10.isSelected()) {
-            if (this.currAct < this.acts10.size()) {
-                this.currAct++;
-                this.changeActivities("next");
-            }
-        } else {
-            if (this.allActsCurr < this.allActs.size()) {
-                this.allActsCurr++;
-                this.changeActivities("next");
-            }
-        }
+		if (this.but10.isSelected()) {
+			if (this.currAct < this.acts10.size()) {
+				this.currAct++;
+				this.changeActivities("next");
+			}
+		} else {
+			if (this.allActsCurr < this.allActs.size()) {
+				this.allActsCurr++;
+				this.changeActivities("next");
+			}
+		}
     }//GEN-LAST:event_butNextActionPerformed
 
     private void butPrevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butPrevActionPerformed
-        if (this.but10.isSelected()) {
-            if (this.currAct > 1) {
-                this.currAct--;
-                this.changeActivities("prev");
-            }
-        } else {
-            if (this.allActsCurr > 1) {
-                this.allActsCurr--;
-                this.changeActivities("prev");
-            }
-        }
+		if (this.but10.isSelected()) {
+			if (this.currAct > 1) {
+				this.currAct--;
+				this.changeActivities("prev");
+			}
+		} else {
+			if (this.allActsCurr > 1) {
+				this.allActsCurr--;
+				this.changeActivities("prev");
+			}
+		}
     }//GEN-LAST:event_butPrevActionPerformed
 
     private void butFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butFirstActionPerformed
-        if (this.but10.isSelected()) {
-            this.currAct = 1;
-        } else {
-            this.allActsCurr = 1;
-        }
-        this.changeActivities("first");
+		if (this.but10.isSelected()) {
+			this.currAct = 1;
+		} else {
+			this.allActsCurr = 1;
+		}
+		this.changeActivities("first");
     }//GEN-LAST:event_butFirstActionPerformed
 
     private void butAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAllActionPerformed
-        this.but10.setSelected(false);
-        this.butAll.setSelected(true);
-        this.textNAct.setText(this.allActsCurr + "/" + this.allActs.size());
-        this.changeActivities("all");
+		this.but10.setSelected(false);
+		this.butAll.setSelected(true);
+		this.textNAct.setText(this.allActsCurr + "/" + this.allActs.size());
+		this.changeActivities("all");
     }//GEN-LAST:event_butAllActionPerformed
 
     private void but10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but10ActionPerformed
-        this.butAll.setSelected(false);
-        this.but10.setSelected(true);
-        this.textNAct.setText(this.currAct + "/" + this.acts10.size());
-        this.changeActivities("10");
+		this.butAll.setSelected(false);
+		this.but10.setSelected(true);
+		this.textNAct.setText(this.currAct + "/" + this.acts10.size());
+		this.changeActivities("10");
     }//GEN-LAST:event_but10ActionPerformed
 
     private void cboxSportsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboxSportsItemStateChanged
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
-            String sport = this.cboxSports.getSelectedItem().toString();
-            switch (sport) {
-                case "Running":
-                case "Cycling":
-                case "Walking":
-                case "Sailing":
-                case "Skating":
-                case "Orienteering":
-                this.textClima.setEnabled(true);
-                this.textDistanciaH.setEnabled(true);
-                this.textDistanciaV.setEnabled(false);
-                this.spinnerAdversario.setEnabled(false);
-                this.spinnerPessoal.setEnabled(false);
-                break;
-                case "Snowboarding":
-                case "Mountain Biking":
-                case "Skiing":
-                this.textClima.setEnabled(true);
-                this.textDistanciaH.setEnabled(true);
-                this.textDistanciaV.setEnabled(true);
-                this.spinnerAdversario.setEnabled(false);
-                this.spinnerPessoal.setEnabled(false);
-                break;
-                case "Swimming":
-                case "Indoor Cycling":
-                this.textClima.setEnabled(false);
-                this.textDistanciaH.setEnabled(true);
-                this.textDistanciaV.setEnabled(false);
-                this.spinnerAdversario.setEnabled(false);
-                this.spinnerPessoal.setEnabled(false);
-                break;
-                case "Football":
-                case "Polo":
-                case "Beach Volleyball":
-                case "Tennis":
-                this.textClima.setEnabled(true);
-                this.textDistanciaH.setEnabled(false);
-                this.textDistanciaV.setEnabled(false);
-                this.spinnerAdversario.setEnabled(true);
-                this.spinnerPessoal.setEnabled(true);
-                break;
-                case "Handball":
-                case "Basketball":
-                case "Table Tennis":
-                case "Boxing":
-                case "Badminton":
-                case "Volleyball":
-                this.textClima.setEnabled(false);
-                this.textDistanciaH.setEnabled(false);
-                this.textDistanciaV.setEnabled(false);
-                this.spinnerAdversario.setEnabled(true);
-                this.spinnerPessoal.setEnabled(true);
-                break;
-                default:
-                this.textClima.setEnabled(false);
-                this.textDistanciaH.setEnabled(false);
-                this.textDistanciaV.setEnabled(false);
-                this.spinnerAdversario.setEnabled(false);
-                this.spinnerPessoal.setEnabled(false);
-                break;
-            }
-        }
+		if (evt.getStateChange() == ItemEvent.SELECTED) {
+			String sport = this.cboxSports.getSelectedItem().toString();
+			switch (sport) {
+				case "Running":
+				case "Cycling":
+				case "Walking":
+				case "Sailing":
+				case "Skating":
+				case "Orienteering":
+					this.textClima.setEnabled(true);
+					this.textDistanciaH.setEnabled(true);
+					this.textDistanciaV.setEnabled(false);
+					this.spinnerAdversario.setEnabled(false);
+					this.spinnerPessoal.setEnabled(false);
+					break;
+				case "Snowboarding":
+				case "Mountain Biking":
+				case "Skiing":
+					this.textClima.setEnabled(true);
+					this.textDistanciaH.setEnabled(true);
+					this.textDistanciaV.setEnabled(true);
+					this.spinnerAdversario.setEnabled(false);
+					this.spinnerPessoal.setEnabled(false);
+					break;
+				case "Swimming":
+				case "Indoor Cycling":
+					this.textClima.setEnabled(false);
+					this.textDistanciaH.setEnabled(true);
+					this.textDistanciaV.setEnabled(false);
+					this.spinnerAdversario.setEnabled(false);
+					this.spinnerPessoal.setEnabled(false);
+					break;
+				case "Football":
+				case "Polo":
+				case "Beach Volleyball":
+				case "Tennis":
+					this.textClima.setEnabled(true);
+					this.textDistanciaH.setEnabled(false);
+					this.textDistanciaV.setEnabled(false);
+					this.spinnerAdversario.setEnabled(true);
+					this.spinnerPessoal.setEnabled(true);
+					break;
+				case "Handball":
+				case "Basketball":
+				case "Table Tennis":
+				case "Boxing":
+				case "Badminton":
+				case "Volleyball":
+					this.textClima.setEnabled(false);
+					this.textDistanciaH.setEnabled(false);
+					this.textDistanciaV.setEnabled(false);
+					this.spinnerAdversario.setEnabled(true);
+					this.spinnerPessoal.setEnabled(true);
+					break;
+				default:
+					this.textClima.setEnabled(false);
+					this.textDistanciaH.setEnabled(false);
+					this.textDistanciaV.setEnabled(false);
+					this.spinnerAdversario.setEnabled(false);
+					this.spinnerPessoal.setEnabled(false);
+					break;
+			}
+		}
     }//GEN-LAST:event_cboxSportsItemStateChanged
 
     private void butNextMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNextMonthActionPerformed
-        if (this.butMensais.isSelected()) {
-            if (this.currMes == 11) {
-                this.currMes = 0;
-                this.currAno++;
-            } else {
-                this.currMes++;
-            }
-        } else {
-            this.currAno++;
-        }
-        this.preencheStats();
+		if (this.butMensais.isSelected()) {
+			if (this.currMes == 11) {
+				this.currMes = 0;
+				this.currAno++;
+			} else {
+				this.currMes++;
+			}
+		} else {
+			this.currAno++;
+		}
+		this.preencheStats();
     }//GEN-LAST:event_butNextMonthActionPerformed
 
     private void butPrevMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butPrevMonthActionPerformed
-        if (this.butMensais.isSelected()) {
-            if (this.currMes == 0) {
-                this.currMes = 11;
-                this.currAno--;
-            } else {
-                this.currMes--;
-            }
-        } else {
-            this.currAno--;
-        }
-        this.preencheStats();
+		if (this.butMensais.isSelected()) {
+			if (this.currMes == 0) {
+				this.currMes = 11;
+				this.currAno--;
+			} else {
+				this.currMes--;
+			}
+		} else {
+			this.currAno--;
+		}
+		this.preencheStats();
     }//GEN-LAST:event_butPrevMonthActionPerformed
 
     private void butAnuaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAnuaisActionPerformed
-        this.butAnuais.setSelected(true);
-        this.butMensais.setSelected(false);
-        this.butNextMonth.setText("Ano >");
-        this.butPrevMonth.setText("< Ano");
-        this.preencheStats();
+		this.butAnuais.setSelected(true);
+		this.butMensais.setSelected(false);
+		this.butNextMonth.setText("Ano >");
+		this.butPrevMonth.setText("< Ano");
+		this.preencheStats();
     }//GEN-LAST:event_butAnuaisActionPerformed
 
     private void butMensaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butMensaisActionPerformed
-        this.butAnuais.setSelected(false);
-        this.butMensais.setSelected(true);
-        this.butNextMonth.setText("Mês >");
-        this.butPrevMonth.setText("< Mês");
-        this.preencheStats();
+		this.butAnuais.setSelected(false);
+		this.butMensais.setSelected(true);
+		this.butNextMonth.setText("Mês >");
+		this.butPrevMonth.setText("< Mês");
+		this.preencheStats();
     }//GEN-LAST:event_butMensaisActionPerformed
 
     private void butVerEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butVerEventoActionPerformed
-        if(this.tableEventsFeitos.getSelectedRowCount() > 0){
-			try{
+		if (this.tableEventsFeitos.getSelectedRowCount() > 0) {
+			try {
 				Event e = this.fit.getEventByName((String) this.tableEventsFeitos.getValueAt(this.tableEventsFeitos.getSelectedRow(), 0));
-				if (e.getParticipantsList().contains(this.u)){
+				if (e.getParticipantsList().contains(this.u)) {
 					ViewEventForm viewEvent = new ViewEventForm(this, e);
 					viewEvent.setVisible(true);
 					this.setVisible(false);
 				}
-			}
-			catch (EventNotFoundException e){
+			} catch (EventNotFoundException e) {
 				JOptionPane.showMessageDialog(this, "ERRO: EVENTO INEXISTENTE");
 			}
 		}
@@ -2192,7 +2192,30 @@ public class UserForm extends javax.swing.JFrame {
 			this.tableEventsFeitos.setValueAt(e.getTipoActivity(), i, 1);
 			this.tableEventsFeitos.setValueAt(e.getLocation(), i, 2);
 			this.tableEventsFeitos.setValueAt(String.valueOf(diaE) + "/" + String.valueOf(mesE + 1) + "/" + String.valueOf(anoE), i, 3);
-			this.tableEventsFeitos.setValueAt("CLASS", i, 4);
+			boolean desist = false;
+			boolean found = false;
+			int pos = 1;
+			Iterator<Ranking> it = e.getRanking().iterator();
+			while (it.hasNext() && !found) {
+				User at = it.next().getAthlete();
+				if (this.u.getName().equals(at.getName()) && this.u.getEmail().equals(at.getEmail())) {
+					found = true;
+				} else {
+					pos++;
+				}
+			}
+			if (!found) {
+				it = e.getDesistentes().iterator();
+				while (it.hasNext() && !found) {
+					User at = it.next().getAthlete();
+					if (this.u.getName().equals(at.getName()) && this.u.getEmail().equals(at.getEmail())) {
+						found = true;
+					} else {
+						pos++;
+					}
+				}
+			}
+			this.tableEventsFeitos.setValueAt(pos, i, 4);
 			i++;
 		}
 	}
