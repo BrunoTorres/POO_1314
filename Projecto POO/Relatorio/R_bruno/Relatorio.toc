@@ -1,15 +1,19 @@
 \select@language {portuguese}
-\contentsline {section}{\numberline {1}Estrutura da aplica\IeC {\c c}\IeC {\~a}o}{2}
-\contentsline {subsection}{\numberline {1.1}Actividades}{2}
-\contentsline {subsubsection}{\numberline {1.1.1}Classe abstracta Activity}{2}
-\contentsline {subsubsection}{\numberline {1.1.2}Indoor,Outdoor e actividades desportivas}{3}
-\contentsline {subsubsection}{\numberline {1.1.3}Comparadores e Iterfaces}{3}
-\contentsline {subsection}{\numberline {1.2}Utilizadores}{4}
-\contentsline {subsubsection}{\numberline {1.2.1}Classe abstracta Person}{4}
-\contentsline {subsubsection}{\numberline {1.2.2}Classes User e Admin}{4}
-\contentsline {subsubsection}{\numberline {1.2.3}Comparators}{5}
-\contentsline {subsubsection}{\numberline {1.2.4}Statistics}{5}
-\contentsline {subsection}{\numberline {1.3}Recordes Pessoais}{6}
-\contentsline {subsubsection}{\numberline {1.3.1}Classe abstracta Record}{6}
-\contentsline {subsubsection}{\numberline {1.3.2}DistancePerTime e TimePerDistance}{6}
-\contentsline {subsubsection}{\numberline {1.3.3}ListRecords}{7}
+\contentsline {section}{\numberline {1}Estrutura da aplica\IeC {\c c}\IeC {\~a}o}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}Actividades}{2}{subsection.1.1}
+\contentsline {subsubsection}{\numberline {1.1.1}Classe abstracta Activity}{2}{subsubsection.1.1.1}
+\contentsline {subsubsection}{\numberline {1.1.2}Indoor,Outdoor e actividades desportivas}{3}{subsubsection.1.1.2}
+\contentsline {subsubsection}{\numberline {1.1.3}Comparadores e Interfaces}{3}{subsubsection.1.1.3}
+\contentsline {subsection}{\numberline {1.2}Utilizadores}{4}{subsection.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Classe abstracta Person}{4}{subsubsection.1.2.1}
+\contentsline {subsubsection}{\numberline {1.2.2}Classes User e Admin}{4}{subsubsection.1.2.2}
+\contentsline {subsubsection}{\numberline {1.2.3}Comparators}{5}{subsubsection.1.2.3}
+\contentsline {subsubsection}{\numberline {1.2.4}Statistics}{5}{subsubsection.1.2.4}
+\contentsline {subsection}{\numberline {1.3}Recordes Pessoais}{6}{subsection.1.3}
+\contentsline {subsubsection}{\numberline {1.3.1}Classe abstracta Record}{6}{subsubsection.1.3.1}
+\contentsline {subsubsection}{\numberline {1.3.2}DistancePerTime e TimePerDistance}{6}{subsubsection.1.3.2}
+\contentsline {subsubsection}{\numberline {1.3.3}ListRecords}{7}{subsubsection.1.3.3}
+\contentsline {subsubsection}{\numberline {1.3.4}Interfaces}{7}{subsubsection.1.3.4}
+\contentsline {subsection}{\numberline {1.4}F\IeC {\'o}rmulas}{7}{subsection.1.4}
+\contentsline {subsubsection}{\numberline {1.4.1}F\IeC {\'o}rmula das Calorias}{7}{subsubsection.1.4.1}
+\contentsline {subsubsection}{\numberline {1.4.2}F\IeC {\'o}rmula para a Simula\IeC {\c c}\IeC {\~a}o}{7}{subsubsection.1.4.2}

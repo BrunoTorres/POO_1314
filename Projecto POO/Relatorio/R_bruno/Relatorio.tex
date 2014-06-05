@@ -5,6 +5,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[hmargin=2cm,vmargin=3.5cm,bmargin=2cm]{geometry}
 \usepackage{multicol}
+\usepackage{hyperref}
+
 
 
 \begin{document}
@@ -232,7 +234,7 @@ métodos construtores, \textit{getName()} e \textit{isEmpty()} que verifica se e
 
 
 \subsubsection{DistancePerTime e TimePerDistance}
-Estas classes simboliza os dois diferentes tipos de recordes.\\
+Estas classes simbolizam os dois diferentes tipos de recordes.\\
 
 DistancePerTime é um recorde em que o objectivo é fazer a maior distância para um dado tempo.
 As suas variáveis são:
@@ -258,7 +260,38 @@ Classe que agrupa todos os recordes de uma actividade. Tem como variáveis:
 \item \textit{ArrayList$<$Record$>$ recs} - Lista dos recordes;
 \end{itemize}
 Tem implementado métodos construtores, \textit{getters}, \textit{setters} e ainda um método \textit{updateList()} que aplica a função \textit{update()} a todos os objectos \textit{Record} da lista. (Subsitui na lista original caso recorde da segunda lista seja melhor).
+\subsubsection{Interfaces}
+Nesta fase,visto que nem todas as actividades desportivas implementarem recordes, chegou-se então à conclusão que estas actividades precisam sempre de devolver a lista de recordes registados,então implementou-se a seguinte interface:
+\begin{itemize}
+\item \textit{RecordsActivity};
+\end{itemize}
+Que contém o seguinte método:
+\begin{itemize}
+\item \textit{getListRecords};
+\end{itemize}
 
+\subsection{Fórmulas}
+Em certos momentos do trabalho surgiu a necessidade de codificar fórmulas.\\
+Tal aconteceu para calcular as calorias gastas em cada actividade e para a simulação dos eventos.
+
+\subsubsection{Fórmula das Calorias}
+
+
+
+Sabendo que:\\ \textbf{MET(Metabolic Equivalent of Task)}- Medida fisiológica que expressa o custo energético de cada actividade física.
+
+
+E usando o seguinte quadro: \url{http://www.cdof.com.br/MET_compendium.pdf}\\
+Criou-se a seguinte fórmula:\\
+
+\begin{tabular}{|r|}
+  \hline
+ \textbf{Calorias}$=mets * pesoDoUtilizador * (tempoGasto(min) / 60)$\\
+ \hline \hline
+\end{tabular}
+
+
+\subsubsection{Fórmula para a Simulação}
 \end{document}
 
 
