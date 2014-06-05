@@ -160,11 +160,11 @@ public class Main {
        
        um.addMarathonBTT("serra", "barcelos", 40, datacome,limite, 155);
        um.addMarathon("corridaNarua", "barcelos", 40, datacome,limite);
-        Event e1= um.getEventByName("corridaNarua");
-       Event e= um.getEventByName("serra");
-       e1.addUser(u1);
-       e1.addUser(u2);
-       e1.addUser(u3);
+      //  Event e1= um.getEventByName("corridaNarua");
+      // Event e= um.getEventByName("serra");
+      // e1.addUser(u1);
+      // e1.addUser(u2);
+      // e1.addUser(u3);
        //um.simulaEvent(e1, "Chuva com ventos fortes", 29);
 
        //Event e= um.getEventByName("calhaus corrida");
