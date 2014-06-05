@@ -2,13 +2,10 @@ package Fitness;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Locale;
 import java.util.Set;
-import java.util.TreeMap;
 import java.util.TreeSet;
 
 /**
@@ -152,6 +149,21 @@ public class FitnessUM implements Serializable {
 		ArrayList<Person> persons = new ArrayList<>(this.getUserList());
 		for(Person p : persons)
 			if (p instanceof User)
+				num++;
+		
+		return num;
+	}
+	
+	/**
+     * Método que devolve quantos Evetns precisam de ser simulados.
+     *
+     * @return número de Events a ser simulados.
+     */
+	public int getSimulaEvents(){
+		int num = 0;
+		GregorianCalendar now = new GregorianCalendar();
+		for(Event e : this.events)
+			if (e.getDate().before(now))
 				num++;
 		
 		return num;
