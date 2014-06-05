@@ -26,3 +26,5 @@
 \contentsline {subsection}{\numberline {2.1}Construtores}{13}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Vari\IeC {\'a}veis inutilizadas}{13}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}Actualiza\IeC {\c c}\IeC {\~a}o de estados}{13}{subsection.2.3}
+\contentsline {section}{\numberline {3}Anexos}{13}{section.3}
+\contentsline {subsection}{\numberline {3.1}Menus}{14}{subsection.3.1}
