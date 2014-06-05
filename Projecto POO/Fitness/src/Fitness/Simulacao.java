@@ -93,7 +93,7 @@ public class Simulacao implements Serializable {
     /**
      * Método que incrementa o tempo geral de acordo com o tempo médio (para um km).
      *
-     * @param intrevalo
+     * @param intervalo
      */
     public void actualiza(double intervalo) {
         double tempo = this.tempoMedio * (Math.random() + 0.5);

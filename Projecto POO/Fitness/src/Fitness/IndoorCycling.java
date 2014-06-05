@@ -4,17 +4,19 @@ import java.util.GregorianCalendar;
 import java.io.Serializable;
 
 /**
- * Write a description of class IndoorCycling here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Actividade IndoorCycling
+ *
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public class IndoorCycling extends Indoor implements Distance, Serializable
 {
     private double distance;
 
     /**
-     *
+     *Construtor vazio
      */
     public IndoorCycling(){
         super();
@@ -22,10 +24,11 @@ public class IndoorCycling extends Indoor implements Distance, Serializable
 
     /**
      *
-     * @param name
-     * @param date
-     * @param timeSpent
-     * @param distance
+     * @param name Nome da actividade.
+     * @param date Data da realização da actividade.
+     * @param timeSpent Tempo gasto em minutos.
+     * @param distance Distancia feita.
+     * 
      */
     public IndoorCycling(String name, GregorianCalendar date, double timeSpent,double distance){
         super(name,date,timeSpent);
@@ -34,8 +37,8 @@ public class IndoorCycling extends Indoor implements Distance, Serializable
     }
 
     /**
-     *
-     * @param tb
+     *Construtor de cópia.
+     * @param tb instância de IndoorCycling.
      */
     public IndoorCycling(IndoorCycling tb){
         super(tb);
@@ -43,19 +46,13 @@ public class IndoorCycling extends Indoor implements Distance, Serializable
         
     }
 
-    /**
-     *
-     * @return
-     */
+    
     @Override
     public double getDistance() {
        return this.distance;
     }
 
-    /**
-     *
-     * @param distance
-     */
+ 
     @Override
     public void setDistance(double distance) {
        this.distance=distance;
@@ -74,6 +71,7 @@ public class IndoorCycling extends Indoor implements Distance, Serializable
      ////////////toString equals clone
     
     
+    @Override
      public String toString(){
         StringBuilder sb=new StringBuilder();
         sb.append(super.toString());
@@ -92,6 +90,13 @@ public class IndoorCycling extends Indoor implements Distance, Serializable
         return  ( super.equals(act)
                 && this.distance==act.getDistance());
         
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 23 * hash + (int) (Double.doubleToLongBits(this.distance) ^ (Double.doubleToLongBits(this.distance) >>> 32));
+        return hash;
     }
 
     @Override
