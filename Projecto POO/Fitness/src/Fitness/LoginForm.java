@@ -240,7 +240,12 @@ public class LoginForm extends javax.swing.JFrame {
 	}
 	
 	private void checkEvents (){
-		
+		GregorianCalendar now = new GregorianCalendar();
+		for (Event e : this.fitness.getEvents()){
+			if(e.getDate().before(now) && e.getRanking().isEmpty()){
+				this.fitness.simulaEvent(e, "Sol", 23);
+			}
+		}
 	}
 
 	/**

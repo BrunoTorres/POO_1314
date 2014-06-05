@@ -7,7 +7,6 @@ package Fitness;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -150,7 +149,8 @@ public class RegistarEmEventoForm extends javax.swing.JFrame {
     private void butAddEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAddEventoActionPerformed
 		if (this.tableEvents.getSelectedRowCount() > 0) {
 			ArrayList<Event> eventos = new ArrayList<>();
-			for (Event e : this.fit.getOpenEvents()) {
+			//for (Event e : this.fit.getOpenEvents()) {
+			for (Event e : this.fit.getEvents()) {
 				if (!e.getParticipantsList().contains(this.u)) {
 					eventos.add(e);
 				}
@@ -176,7 +176,8 @@ public class RegistarEmEventoForm extends javax.swing.JFrame {
 			for(int i = 0; i < dtm.getRowCount(); i++)
 				dtm.removeRow(i);
 		}
-		for (Event e : this.fit.getOpenEvents()) {
+		//for (Event e : this.fit.getOpenEvents()) {
+		for (Event e : this.fit.getEvents()) {
 			if (!e.getParticipantsList().contains(this.u)) {
 				eventos.add(e);
 			}
