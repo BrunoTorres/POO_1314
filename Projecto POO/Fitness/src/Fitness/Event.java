@@ -29,6 +29,7 @@ public abstract class Event implements Serializable {
     private TreeSet<Ranking> ranking;
     private TreeSet<Ranking> desistentes;
     private TreeSet<Simulacao> simula;
+	//private String 
 
     /**
      * Construtor vazio.
