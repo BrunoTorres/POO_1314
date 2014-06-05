@@ -51,10 +51,6 @@ public class LoginForm extends javax.swing.JFrame {
 			fitness.addUserByUser(u3);
 			fitness.addUserByUser(u4);
 			
-			//fitness.addUser(u1.getEmail(), u1.getPassword(), u1.getName(), u1.getGender(), u1.getDate(), u1.getHeight(), u1.getWeight(), u1.getFavoriteActivity());
-			//fitness.addUser(u2.getEmail(), u2.getPassword(), u2.getName(), u2.getGender(), u2.getDate(), u2.getHeight(), u2.getWeight(), u2.getFavoriteActivity());
-			//fitness.addUser(u3.getEmail(), u3.getPassword(), u3.getName(), u3.getGender(), u3.getDate(), u3.getHeight(), u3.getWeight(), u3.getFavoriteActivity());
-			//fitness.addUser(u4.getEmail(), u4.getPassword(), u4.getName(), u4.getGender(), u4.getDate(), u4.getHeight(), u4.getWeight(), u4.getFavoriteActivity());
 			fitness.addAdmin(a1.getEmail(), a1.getPassword(), a1.getName(), a1.getGender(), a1.getDate());
 			fitness.sendFriendRequest(fitness.getUserByEmail("1"), fitness.getUserByEmail("4"));
 			fitness.sendFriendRequest(fitness.getUserByEmail("1"), fitness.getUserByEmail("3"));
@@ -67,8 +63,8 @@ public class LoginForm extends javax.swing.JFrame {
 			m.addUser(u3);
 			fitness.addEvent(m);
 			fitness.simulaEvent(m, "Sol", 23);
-			ViewEventForm view = new ViewEventForm(this, m);
-			view.setVisible(true);
+			//ViewEventForm view = new ViewEventForm(this, m);
+			//view.setVisible(true);
 		} catch (ClassCastException | ClassNotFoundException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
@@ -246,15 +242,6 @@ public class LoginForm extends javax.swing.JFrame {
 	 */
 	public FitnessUM getFitness() {
 		return this.fitness;
-	}
-
-	private void checkEvents() {
-		GregorianCalendar now = new GregorianCalendar();
-		for (Event e : this.fitness.getEvents()) {
-			if (e.getDate().before(now) && e.getSimulacao().isEmpty()) {
-				this.fitness.simulaEvent(e, "Sol", 23);
-			}
-		}
 	}
 
 	/**
