@@ -51,6 +51,8 @@ public class AdminForm extends javax.swing.JFrame {
         labelActs = new javax.swing.JLabel();
         labelEvents = new javax.swing.JLabel();
         labelOpenEvents = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        labelSimula = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -89,24 +91,41 @@ public class AdminForm extends javax.swing.JFrame {
 
         labelOpenEvents.setText("events");
 
+        jLabel5.setText("Eventos a ser simulados");
+
+        labelSimula.setText("events");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelOpenEvents)
-                    .addComponent(labelEvents)
-                    .addComponent(labelActs)
-                    .addComponent(labelUsersReg))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelUsersReg)
+                                    .addComponent(labelActs))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(labelEvents))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addComponent(labelSimula))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(labelOpenEvents)))
+                .addContainerGap(155, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,13 +140,17 @@ public class AdminForm extends javax.swing.JFrame {
                     .addComponent(labelActs))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(labelSimula))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(labelEvents))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(labelOpenEvents))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -142,7 +165,7 @@ public class AdminForm extends javax.swing.JFrame {
                         .addComponent(butAddEvento)
                         .addGap(61, 61, 61)
                         .addComponent(butDelUser)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                         .addComponent(butLogout)))
                 .addContainerGap())
         );
@@ -199,6 +222,7 @@ public class AdminForm extends javax.swing.JFrame {
 	public void setStats(){
 		this.labelUsersReg.setText(String.valueOf(this.fit.getNumUsers()));
 		this.labelActs.setText(String.valueOf(this.fit.getNumActivities()));
+		this.labelSimula.setText(String.valueOf(this.fit.getSimulaEvents()));
 		this.labelEvents.setText(String.valueOf(this.fit.getOccurredEvents().size()));
 		this.labelOpenEvents.setText(String.valueOf(this.fit.getOpenEvents().size()));
 	}
@@ -211,10 +235,12 @@ public class AdminForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelActs;
     private javax.swing.JLabel labelEvents;
     private javax.swing.JLabel labelOpenEvents;
+    private javax.swing.JLabel labelSimula;
     private javax.swing.JLabel labelUsersReg;
     // End of variables declaration//GEN-END:variables
 	
