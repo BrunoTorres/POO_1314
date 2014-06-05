@@ -6,11 +6,9 @@
 package Fitness;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.TreeSet;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import sun.reflect.generics.tree.Tree;
 
 /**
  *

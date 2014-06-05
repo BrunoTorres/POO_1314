@@ -47,6 +47,7 @@ public class UserForm extends javax.swing.JFrame {
 		this.preencheTabAmigos();
 		this.preencheStats();
 		this.preencheDados();
+		this.preencheEventos();
 	}
 
 	/**
@@ -337,6 +338,16 @@ public class UserForm extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tableAmigos = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
+        jPanel12 = new javax.swing.JPanel();
+        jPanel13 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tableEventsFeitos = new javax.swing.JTable();
+        butVerEvento = new javax.swing.JButton();
+        jPanel14 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tableEventsInscritos = new javax.swing.JTable();
+        butRemoveEvento = new javax.swing.JButton();
+        butAddEvento = new javax.swing.JButton();
         butAddActivity = new javax.swing.JButton();
         butVerPedidos = new javax.swing.JButton();
         butAddAmigo = new javax.swing.JButton();
@@ -1255,6 +1266,157 @@ public class UserForm extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Amigos", jPanel8);
 
+        jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "EVENTOS PARTICIPANTES"));
+
+        tableEventsFeitos.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        tableEventsFeitos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nome", "Tipo", "Local", "Data", "Classificação"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableEventsFeitos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tableEventsFeitos.getTableHeader().setReorderingAllowed(false);
+        jScrollPane3.setViewportView(tableEventsFeitos);
+
+        butVerEvento.setText("VER EVENTO");
+        butVerEvento.setToolTipText("Ver detalhes do evento");
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(butVerEvento)))
+                .addContainerGap())
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(butVerEvento)
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+
+        jPanel14.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "EVENTOS INSCRITOS"));
+
+        tableEventsInscritos.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        tableEventsInscritos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nome", "Tipo", "Local", "Data", "Nº de inscritos"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableEventsInscritos.getTableHeader().setReorderingAllowed(false);
+        jScrollPane4.setViewportView(tableEventsInscritos);
+
+        butRemoveEvento.setText("- EVENTO");
+        butRemoveEvento.setToolTipText("Remover inscrição em evento");
+        butRemoveEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butRemoveEventoActionPerformed(evt);
+            }
+        });
+
+        butAddEvento.setText("+ EVENTO");
+        butAddEvento.setToolTipText("Ver eventos disponíveis para inscrição");
+        butAddEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butAddEventoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 485, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(butAddEvento)
+                        .addGap(18, 18, 18)
+                        .addComponent(butRemoveEvento)))
+                .addContainerGap())
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(butRemoveEvento)
+                    .addComponent(butAddEvento))
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(44, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Eventos", jPanel12);
+
         butAddActivity.setText("+ ATIVIDADE");
         butAddActivity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1574,7 +1736,7 @@ public class UserForm extends javax.swing.JFrame {
     }//GEN-LAST:event_butNextMonthActionPerformed
 
     private void butPrevMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butPrevMonthActionPerformed
-        if (this.butMensais.isSelected()) {
+		if (this.butMensais.isSelected()) {
 			if (this.currMes == 0) {
 				this.currMes = 11;
 				this.currAno--;
@@ -1587,9 +1749,35 @@ public class UserForm extends javax.swing.JFrame {
 		this.preencheStats();
     }//GEN-LAST:event_butPrevMonthActionPerformed
 
+    private void butAddEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAddEventoActionPerformed
+		RegistarEmEventoForm regist = new RegistarEmEventoForm(this, this.fit, this.u);
+		regist.setVisible(true);
+		this.setVisible(false);
+    }//GEN-LAST:event_butAddEventoActionPerformed
+
+    private void butRemoveEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butRemoveEventoActionPerformed
+		if (this.tableEventsInscritos.getSelectedRowCount() > 0) {
+			ArrayList<Event> eventos = new ArrayList<>();
+			for (Event e : this.fit.getOpenEvents()) {
+				if (e.getParticipantsList().contains(this.u)) {
+					eventos.add(e);
+				}
+			}
+			eventos.get(this.tableEventsInscritos.getSelectedRow()).removeUser(this.u);
+			JOptionPane.showMessageDialog(this, "Inscrição removida...");
+			this.preencheEventosInscritos();
+		}
+    }//GEN-LAST:event_butRemoveEventoActionPerformed
+
 	private void preencheRunRecords() {
 		TreeMap<String, ListRecords> rec = (TreeMap<String, ListRecords>) this.u.getRecords();
 		ArrayList<Record> run = new ArrayList<>();
+		DefaultTableModel dtm = (DefaultTableModel) this.tableRecords.getModel();
+		if (dtm.getRowCount() > 0) {
+			for (int i = 0; i < dtm.getRowCount(); i++) {
+				dtm.removeRow(i);
+			}
+		}
 
 		for (ListRecords l : rec.values()) {
 			switch (l.getName()) {
@@ -1600,6 +1788,11 @@ public class UserForm extends javax.swing.JFrame {
 					break;
 			}
 		}
+
+		for (int i = 0; i < run.size(); i++) {
+			dtm.addRow(new Object[]{null, null});
+		}
+		this.tableRecords.setModel(dtm);
 
 		for (int i = 0; i < run.size(); i++) {
 			Record r = run.get(i).clone();
@@ -1628,7 +1821,13 @@ public class UserForm extends javax.swing.JFrame {
 	private void preencheWalkRecords() {
 		TreeMap<String, ListRecords> rec = (TreeMap<String, ListRecords>) this.u.getRecords();
 		ArrayList<Record> run = new ArrayList<>();
-
+		DefaultTableModel dtm = (DefaultTableModel) this.tableRecords.getModel();
+		if (dtm.getRowCount() > 0) {
+			for (int i = 0; i < dtm.getRowCount(); i++) {
+				dtm.removeRow(i);
+			}
+		}
+		this.tableRecords.setModel(dtm);
 		for (ListRecords l : rec.values()) {
 			switch (l.getName()) {
 				case "Walking":
@@ -1638,7 +1837,11 @@ public class UserForm extends javax.swing.JFrame {
 					break;
 			}
 		}
-
+		for (int i = 0; i < run.size(); i++) {
+			dtm.addRow(new Object[]{null, null});
+		}
+		this.tableRecords.setModel(dtm);
+		this.tableRecords.setModel(dtm);
 		for (int i = 0; i < run.size(); i++) {
 			Record r = run.get(i).clone();
 			if (r instanceof DistancePerTime) {
@@ -1666,7 +1869,13 @@ public class UserForm extends javax.swing.JFrame {
 	private void preencheMountainRecords() {
 		TreeMap<String, ListRecords> rec = (TreeMap<String, ListRecords>) this.u.getRecords();
 		ArrayList<Record> bike = new ArrayList<>();
-
+		DefaultTableModel dtm = (DefaultTableModel) this.tableRecords.getModel();
+		if (dtm.getRowCount() > 0) {
+			for (int i = 0; i < dtm.getRowCount(); i++) {
+				dtm.removeRow(i);
+			}
+		}
+		this.tableRecords.setModel(dtm);
 		for (ListRecords l : rec.values()) {
 			switch (l.getName()) {
 				case "Mountain Biking":
@@ -1676,7 +1885,10 @@ public class UserForm extends javax.swing.JFrame {
 					break;
 			}
 		}
-
+		for (int i = 0; i < bike.size(); i++) {
+			dtm.addRow(new Object[]{null, null});
+		}
+		this.tableRecords.setModel(dtm);
 		for (int i = 0; i < bike.size(); i++) {
 			Record r = bike.get(i).clone();
 			if (r instanceof DistancePerTime) {
@@ -1704,7 +1916,13 @@ public class UserForm extends javax.swing.JFrame {
 	private void preencheCyclingRecords() {
 		TreeMap<String, ListRecords> rec = (TreeMap<String, ListRecords>) this.u.getRecords();
 		ArrayList<Record> bike = new ArrayList<>();
-
+		DefaultTableModel dtm = (DefaultTableModel) this.tableRecords.getModel();
+		if (dtm.getRowCount() > 0) {
+			for (int i = 0; i < dtm.getRowCount(); i++) {
+				dtm.removeRow(i);
+			}
+		}
+		this.tableRecords.setModel(dtm);
 		for (ListRecords l : rec.values()) {
 			switch (l.getName()) {
 				case "Cycling":
@@ -1714,7 +1932,10 @@ public class UserForm extends javax.swing.JFrame {
 					break;
 			}
 		}
-
+		for (int i = 0; i < bike.size(); i++) {
+			dtm.addRow(new Object[]{null, null});
+		}
+		this.tableRecords.setModel(dtm);
 		for (int i = 0; i < bike.size(); i++) {
 			Record r = bike.get(i).clone();
 			if (r instanceof DistancePerTime) {
@@ -1742,7 +1963,12 @@ public class UserForm extends javax.swing.JFrame {
 	private void preencheSwimRecords() {
 		TreeMap<String, ListRecords> rec = (TreeMap<String, ListRecords>) this.u.getRecords();
 		ArrayList<Record> swim = new ArrayList<>();
-
+		DefaultTableModel dtm = (DefaultTableModel) this.tableRecords.getModel();
+		if (dtm.getRowCount() > 0) {
+			for (int i = 0; i < dtm.getRowCount(); i++) {
+				dtm.removeRow(i);
+			}
+		}
 		for (ListRecords l : rec.values()) {
 			switch (l.getName()) {
 				case "Swimming":
@@ -1752,7 +1978,10 @@ public class UserForm extends javax.swing.JFrame {
 					break;
 			}
 		}
-
+		for (int i = 0; i < swim.size(); i++) {
+			dtm.addRow(new Object[]{null, null});
+		}
+		this.tableRecords.setModel(dtm);
 		for (int i = 0; i < swim.size(); i++) {
 			Record r = swim.get(i).clone();
 			if (r instanceof TimePerDistance) {
@@ -1794,6 +2023,77 @@ public class UserForm extends javax.swing.JFrame {
 			this.tableAmigos.setValueAt(u.getName(), i, 0);
 			this.tableAmigos.setValueAt((int) (u.getDate().getTimeInMillis() / 31536E6) + " anos", i, 1);
 			this.tableAmigos.setValueAt(u.getEmail(), i, 2);
+			i++;
+		}
+	}
+
+	public void preencheEventos() {
+		this.preencheEventosInscritos();
+		this.preencheEventosParticipantes();
+	}
+
+	private void preencheEventosInscritos() {
+		ArrayList<Event> eventos = new ArrayList<>();
+		DefaultTableModel dtm = (DefaultTableModel) this.tableEventsInscritos.getModel();
+		if (dtm.getRowCount() > 0) {
+			for (int i = 0; i < dtm.getRowCount(); i++) {
+				dtm.removeRow(i);
+			}
+		}
+
+		for (Event e : this.fit.getOpenEvents()) {
+			if (e.getParticipantsList().contains(this.u)) {
+				eventos.add(e);
+			}
+		}
+		if (eventos.size() > this.tableEventsInscritos.getRowCount()) {
+			for (int i = 0; i < eventos.size(); i++) {
+				dtm.addRow(new Object[]{null, null, null, null, null});
+			}
+			this.tableEventsInscritos.setModel(dtm);
+		}
+
+		int i = 0;
+		for (Event e : eventos) {
+			int diaE = e.getDate().get(Calendar.DAY_OF_MONTH);
+			int mesE = e.getDate().get(Calendar.MONTH);
+			int anoE = e.getDate().get(Calendar.YEAR);
+
+			this.tableEventsInscritos.setValueAt(e.getName(), i, 0);
+			this.tableEventsInscritos.setValueAt(e.getTipoActivity(), i, 1);
+			this.tableEventsInscritos.setValueAt(e.getLocation(), i, 2);
+			this.tableEventsInscritos.setValueAt(String.valueOf(diaE) + "/" + String.valueOf(mesE) + "/" + String.valueOf(anoE), i, 3);
+			this.tableEventsInscritos.setValueAt(e.getParticipants(), i, 4);
+			i++;
+		}
+	}
+
+	private void preencheEventosParticipantes() {
+		ArrayList<Event> eventos = new ArrayList<>();
+		DefaultTableModel dtm = (DefaultTableModel) this.tableEventsFeitos.getModel();
+		for (Event e : this.fit.getOccurredEvents()) {
+			if (e.getParticipantsList().contains(this.u)) {
+				eventos.add(e);
+			}
+		}
+		if (eventos.size() > this.tableEventsFeitos.getRowCount()) {
+			for (int i = 0; i < eventos.size(); i++) {
+				dtm.addRow(new Object[]{null, null, null, null, null});
+			}
+			this.tableEventsFeitos.setModel(dtm);
+		}
+
+		int i = 0;
+		for (Event e : eventos) {
+			int diaE = e.getDate().get(Calendar.DAY_OF_MONTH);
+			int mesE = e.getDate().get(Calendar.MONTH);
+			int anoE = e.getDate().get(Calendar.YEAR);
+
+			this.tableEventsFeitos.setValueAt(e.getName(), i, 0);
+			this.tableEventsFeitos.setValueAt(e.getTipoActivity(), i, 1);
+			this.tableEventsFeitos.setValueAt(e.getLocation(), i, 2);
+			this.tableEventsFeitos.setValueAt(String.valueOf(diaE) + "/" + String.valueOf(mesE) + "/" + String.valueOf(anoE), i, 3);
+			this.tableEventsFeitos.setValueAt("CLASS", i, 4);
 			i++;
 		}
 	}
@@ -1844,7 +2144,7 @@ public class UserForm extends javax.swing.JFrame {
 			}
 		} else {
 			stat = this.u.getStats(this.currAno);
-			
+
 		}
 		if (stat.getCalories() != 0 && stat.getDistance() != 0.0 && stat.getTimeSpend() != 0.0) {
 			String cals = stat.toStringCalories().split(":")[1].trim();
@@ -1853,18 +2153,20 @@ public class UserForm extends javax.swing.JFrame {
 			this.textCaloriasQueim.setText(cals);
 			this.textDistPercorrida.setText(dist);
 			this.textTempoGasto.setText(time);
-			if(this.butMensais.isSelected())
+			if (this.butMensais.isSelected()) {
 				this.textMesAno.setText(mes + " (" + this.currAno + ")");
-			else
+			} else {
 				this.textMesAno.setText(String.valueOf(this.currAno));
+			}
 		} else {
 			this.textCaloriasQueim.setText("N/A");
 			this.textTempoGasto.setText("N/A");
 			this.textDistPercorrida.setText("N/A");
-			if(this.butMensais.isSelected())
+			if (this.butMensais.isSelected()) {
 				this.textMesAno.setText(mes + " (" + this.currAno + ")");
-			else
+			} else {
 				this.textMesAno.setText(String.valueOf(this.currAno));
+			}
 		}
 	}
 
@@ -1886,6 +2188,7 @@ public class UserForm extends javax.swing.JFrame {
     private javax.swing.JRadioButton but10;
     private javax.swing.JButton butAddActivity;
     private javax.swing.JButton butAddAmigo;
+    private javax.swing.JButton butAddEvento;
     private javax.swing.JRadioButton butAll;
     private javax.swing.JRadioButton butAnuais;
     private javax.swing.JButton butFirst;
@@ -1897,6 +2200,8 @@ public class UserForm extends javax.swing.JFrame {
     private javax.swing.JButton butPrev;
     private javax.swing.JButton butPrevMonth;
     private javax.swing.JButton butRemove;
+    private javax.swing.JButton butRemoveEvento;
+    private javax.swing.JButton butVerEvento;
     private javax.swing.JButton butVerPedidos;
     private javax.swing.JComboBox cboxAno;
     private javax.swing.JComboBox cboxAnoNasc;
@@ -1934,6 +2239,9 @@ public class UserForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1944,6 +2252,8 @@ public class UserForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel labelDate;
     private javax.swing.JLabel labelDay;
@@ -1955,6 +2265,8 @@ public class UserForm extends javax.swing.JFrame {
     private javax.swing.JSpinner spinnerAdversario;
     private javax.swing.JSpinner spinnerPessoal;
     private javax.swing.JTable tableAmigos;
+    private javax.swing.JTable tableEventsFeitos;
+    private javax.swing.JTable tableEventsInscritos;
     private javax.swing.JTable tableRecords;
     private javax.swing.JTextField textAltura;
     private javax.swing.JTextField textCalorias;

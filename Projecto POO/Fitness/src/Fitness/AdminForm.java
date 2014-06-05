@@ -9,8 +9,6 @@ package Fitness;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.util.ArrayList;
-import java.util.TreeSet;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -26,6 +24,7 @@ public class AdminForm extends javax.swing.JFrame {
 	public AdminForm(JFrame parent, FitnessUM fit, Admin admin) {
 		initComponents();
 		this.setLocationRelativeTo(parent);
+		this.setName(admin.getName() + " - Administrador");
 		this.fit = fit;
 		this.admin = admin;
 		this.setStats();

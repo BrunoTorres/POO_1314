@@ -75,7 +75,7 @@ public class FitnessUM implements Serializable {
     public List<Event> getEvents() {
         ArrayList<Event> aux = new ArrayList<>();
         for (Event e : this.events) {
-            aux.add(e.clone());
+            aux.add(e);
         }
         return aux;
     }
@@ -90,7 +90,7 @@ public class FitnessUM implements Serializable {
 		GregorianCalendar now = new GregorianCalendar();
         for (Event e : this.events) {
 			if(e.getDate().after(now) && e.getParticipants() < e.getMaxParticipants())
-				aux.add(e.clone());
+				aux.add(e);
         }
         return aux;
     }
@@ -413,7 +413,7 @@ public class FitnessUM implements Serializable {
      * @param tipoEvento Tipo do evento
      * @return true se o user já particou o tipo de actividade do evento,false caso contrário.
      */
-    public boolean userRegistaEventoSeFezActivity(User u, String tipoEvento) {
+    private boolean userRegistaEventoSeFezActivity(User u, String tipoEvento) {
 
         boolean flag;
         switch (tipoEvento) {
@@ -427,6 +427,17 @@ public class FitnessUM implements Serializable {
                 return false;
         }
         return flag;
+    }
+	
+	/**
+     * Método que remove um user a de evento se pertencer à lista de participantes.
+     *
+     * @param u Utilizador a remover.
+     * @param e Evento onde de onde User será romivido.
+     * @return true se removeu o user, false caso contrário.
+     */
+	public boolean removeRegistEvent(User u, Event e) {
+         return e.removeUser(u);
     }
 
     //////////////////////////     Gerenciamento da aplicação /////////////////////////////////////////////////

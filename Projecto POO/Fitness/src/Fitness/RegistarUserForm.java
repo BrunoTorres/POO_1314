@@ -69,6 +69,11 @@ public class RegistarUserForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "REGISTAR UTILIZADOR"));
 
@@ -206,9 +211,7 @@ public class RegistarUserForm extends javax.swing.JFrame {
                                                         .addGap(12, 12, 12)
                                                         .addComponent(jLabel2)
                                                         .addGap(57, 57, 57))
-                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                        .addComponent(jLabel6)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))))
+                                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)))
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addComponent(textPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -389,6 +392,10 @@ public class RegistarUserForm extends javax.swing.JFrame {
 			
 		}
     }//GEN-LAST:event_butOKActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        this.parent.setVisible(true);
+    }//GEN-LAST:event_formWindowClosed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

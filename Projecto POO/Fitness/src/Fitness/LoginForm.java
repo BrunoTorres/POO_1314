@@ -77,7 +77,7 @@ public class LoginForm extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("LOGIN"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "LOGIN"));
 
         jLabel2.setText("Email");
 
@@ -237,6 +237,10 @@ public class LoginForm extends javax.swing.JFrame {
      */
     public FitnessUM getFitness() {
 		return this.fitness;
+	}
+	
+	private void checkEvents (){
+		
 	}
 
 	/**

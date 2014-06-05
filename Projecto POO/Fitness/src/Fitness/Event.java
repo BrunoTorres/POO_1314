@@ -371,6 +371,20 @@ public abstract class Event implements Serializable {
         this.participantsList.add(u.clone());
         this.participants += 1;
     }
+	
+	/**
+     * Método que remove um User ao evento.
+     *
+     * @param u- User a ser removido.
+	 * @return true caso utilizador seja removido do evento, false caso contrário
+     */
+    public boolean removeUser(User u) {
+        if (this.participantsList.remove(u)){
+			this.participants--;
+			return true;
+		} else
+			return false;
+    }
 
     /**
      * Método que adiciona um user à lista de classificações do evento. Cria um novo Ranking com a informação, e adiciona a lista.
