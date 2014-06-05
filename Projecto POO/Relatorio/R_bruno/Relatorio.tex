@@ -56,7 +56,7 @@ Programação Orientada aos Objectos
 \section{Estrutura da aplicação}
 
 \subsection{Actividades}
-Foram definidas as seguindes actividades desportivas para a nossa aplicação:
+Foram definidas as seguintes actividades desportivas para a nossa aplicação:
 \begin{multicols}{2}
 \begin{itemize}
 \item Yoga
@@ -101,29 +101,29 @@ Para a implementação destas actividades foi usada a seguinte estrutura:
 
 Esta é a classe mais abstracta que contem o conceito de actividade. Contém variáveis comuns a todas as actividades:
 \begin{itemize}
-\item \textit{String name}, nome da actividade criada.
-\item \textit{GregorianCalendar date}, data de quando se realizou a actividade.
-\item \textit{double timeSpent}, tempo gasto na actividade.
-\item \textit{double calories}, campo preenchido pela aplicaçao de uma fórmula.
+\item \textit{String name} - nome da actividade criada.
+\item \textit{GregorianCalendar date} - data de quando se realizou a actividade.
+\item \textit{double timeSpent} - tempo gasto na actividade.
+\item \textit{double calories} - campo preenchido pela aplicação de uma fórmula.
 \end{itemize}
 tal como os construtores, \textit{getters} e \textit{setters}.
 
 
 \subsubsection{Indoor,Outdoor e actividades desportivas}
-Todas as actividades desportivas tem um aspecto importante,o clima caso sejam praticadas ao ar livre.\\
-Devido a este aspecto foram criadas duas classes abstractas,subclasses de \textit{Activity},para essa distinção.
+Todas as actividades desportivas tem um aspecto importante, o clima caso sejam praticadas ao ar livre.\\
+Devido a este aspecto foram criadas duas classes abstractas, subclasses de \textit{Activity}, para essa distinção.
 \begin{itemize}
-\item Outdoor,contém a variável: \textit{String weather}
+\item Outdoor, contém a variável: \textit{String weather}
 \item Indoor
 \end{itemize}
 
-Todas as actividades desportivas são subclasses de \textit{Indoor} ou \textit{Outdoor} como exemplicado na figura ~\ref{fig:actividades}.
+Todas as actividades desportivas são subclasses de \textit{Indoor} ou \textit{Outdoor} como exemplificado na figura ~\ref{fig:actividades}.
 
 \subsubsection{Comparadores e Interfaces}
 Para organizar as actividades criaram-se dois tipo de comparadores:
 \begin{itemize}
-\item CompareActivity- Compara a actividade pela data da realização da mesma.
-\item CompareActivityByTime- Compara a actividade pelo tempo gasto na realização desta.
+\item CompareActivity - Compara a actividade pela data da realização da mesma.
+\item CompareActivityByTime - Compara a actividade pelo tempo gasto na realização desta.
 \end{itemize}
 
 \begin{figure}[ht]
@@ -134,14 +134,14 @@ Para organizar as actividades criaram-se dois tipo de comparadores:
 
 ~\\~\\
 
-Depois de uma análise às actividades desportivas, ficou claro que para certas actividades se deviam registar distancias e para outras registar pontuações,neste seguimento foram criadas as seguintes interfaces:
+Depois de uma análise às actividades desportivas, ficou claro que para certas actividades se deviam registar distancias e para outras registar pontuações, neste seguimento foram criadas as seguintes interfaces:
 
 
 
 \begin{itemize}
-\item UserVs-Interface de métodos relacionados com pontos(pontos próprios e pontos do adversário)
-\item Distance -Interface de métodos relacionados com actividades de distancia.
-\item VerticalDistance- Interface de métodos relacionados com actividades de distancia vertical
+\item UserVs - Interface de métodos relacionados com pontos(pontos próprios e pontos do adversário)
+\item Distance - Interface de métodos relacionados com actividades de distancia.
+\item VerticalDistance - Interface de métodos relacionados com actividades de distancia vertical
 
 \end{itemize}
 \begin{figure}[h]
