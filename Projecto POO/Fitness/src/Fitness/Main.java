@@ -166,7 +166,7 @@ public class Main {
        e1.addUser(u2);
        e1.addUser(u3);
        //um.simulaEvent(e1, "Chuva com ventos fortes", 29);
-       
+    } 
        //Event e= um.getEventByName("calhaus corrida");
        
        
@@ -225,20 +225,20 @@ public class Main {
       //System.out.println(u.getOneActivity("bike").toString());
       
       
-      for(Statistics s :u2.getStats().values()){
-         System.out.println(s.toStringDistance());
-         System.out.println(s.toStringCalories());
-         System.out.println(s.toStringTimeSpend()); 
+   //   for(Statistics s :u2.getStats().values()){
+ //        System.out.println(s.toStringDistance());
+  //       System.out.println(s.toStringCalories());
+   //      System.out.println(s.toStringTimeSpend()); 
          
-      }
+   //   }
       
-      u2.removeActivity("run2");
+     // u2.removeActivity("run2");
       
       
-      System.out.println("novo\n");
+    //  System.out.println("novo\n");
             
       
-       for(Statistics s :u2.getStats().values()){
+  /*     for(Statistics s :u2.getStats().values()){
          System.out.println(s.toStringDistance());
          System.out.println(s.toStringCalories());
          System.out.println(s.toStringTimeSpend()); 
@@ -258,6 +258,6 @@ public class Main {
        
     }
     
-    
+    */
   
-}
+
