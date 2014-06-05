@@ -53,6 +53,7 @@ public class AdminForm extends javax.swing.JFrame {
         labelOpenEvents = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         labelSimula = new javax.swing.JLabel();
+        butSimulaEvents = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -125,7 +126,7 @@ public class AdminForm extends javax.swing.JFrame {
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(labelOpenEvents)))
-                .addContainerGap(155, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,20 +154,30 @@ public class AdminForm extends javax.swing.JFrame {
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
+        butSimulaEvents.setText("SIM EVENTO");
+        butSimulaEvents.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butSimulaEventsActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(butAddEvento)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(butSimulaEvents)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(butDelUser)
-                        .addGap(18, 18, 18)
-                        .addComponent(butLogout)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(butLogout)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -176,7 +187,8 @@ public class AdminForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(butAddEvento)
                     .addComponent(butDelUser)
-                    .addComponent(butLogout))
+                    .addComponent(butLogout)
+                    .addComponent(butSimulaEvents))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -207,6 +219,12 @@ public class AdminForm extends javax.swing.JFrame {
 		addEvent.setVisible(true);
     }//GEN-LAST:event_butAddEventoActionPerformed
 
+    private void butSimulaEventsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butSimulaEventsActionPerformed
+        RegistarEmEventoForm sim = new RegistarEmEventoForm(this, fit, null, "simular");
+		sim.setVisible(true);
+		this.setVisible(false);
+    }//GEN-LAST:event_butSimulaEventsActionPerformed
+
 	private void guardaEstado() {
 		try {
 			FileOutputStream out = new FileOutputStream("data.obj");
@@ -222,7 +240,7 @@ public class AdminForm extends javax.swing.JFrame {
 	public void setStats(){
 		this.labelUsersReg.setText(String.valueOf(this.fit.getNumUsers()));
 		this.labelActs.setText(String.valueOf(this.fit.getNumActivities()));
-		this.labelSimula.setText(String.valueOf(this.fit.getSimulaEvents()));
+		this.labelSimula.setText(String.valueOf(this.fit.getNumSimulaEvents()));
 		this.labelEvents.setText(String.valueOf(this.fit.getOccurredEvents().size()));
 		this.labelOpenEvents.setText(String.valueOf(this.fit.getOpenEvents().size()));
 	}
@@ -231,6 +249,7 @@ public class AdminForm extends javax.swing.JFrame {
     private javax.swing.JButton butAddEvento;
     private javax.swing.JButton butDelUser;
     private javax.swing.JButton butLogout;
+    private javax.swing.JButton butSimulaEvents;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

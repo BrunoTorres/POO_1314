@@ -7,80 +7,27 @@ package Fitness;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.TreeSet;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
  * @author jmano
  */
-public class ViewEventForm extends javax.swing.JFrame {
+public class SimulaEventForm extends javax.swing.JFrame {
 
 	/**
-	 * Creates new form ViewEventForm
+	 * Creates new form SimulaEventForm
 	 */
-	public ViewEventForm(JFrame parent, Event e) {
+	public SimulaEventForm(JFrame parent, Event e, FitnessUM fit) {
 		initComponents();
 		this.setLocationRelativeTo(parent);
-		this.e = e;
 		this.parent = parent;
+		this.e = e;
+		this.fit = fit;
 		this.preencheEvento();
-	}
-
-	private void preencheEvento() {
-		this.textNome.setText(this.e.getName());
-		this.textDesporto.setText(this.e.getTipoActivity());
-		if (this.e instanceof Marathon) {
-			this.textTipo.setText("Maratona");
-			this.textDist.setEnabled(false);
-		} else if (this.e instanceof Halfmarathon) {
-			this.textTipo.setText("Meia Maratona");
-			this.textDist.setEnabled(false);
-		} else if (this.e instanceof MarathonBTT) {
-			this.textTipo.setText("Maratona BTT");
-			MarathonBTT m = (MarathonBTT) this.e;
-			this.textDist.setEnabled(true);
-			this.textDist.setText(String.valueOf(m.getDistance()));
-		} else {
-			this.textTipo.setText("Trail");
-			Trail m = (Trail) this.e;
-			this.textDist.setEnabled(true);
-			this.textDist.setText(String.valueOf(m.getDistance()));
-		}
-		this.textLocal.setText(this.e.getLocation());
-		GregorianCalendar date = this.e.getDate();
-		this.textData.setText(date.get(Calendar.DAY_OF_MONTH) + "/" + (date.get(Calendar.MONTH) + 1) + "/" + date.get(Calendar.YEAR));
-		int numParts = this.e.getParticipants();
-		this.textNumParticipantes.setText(String.valueOf(numParts));
-		DefaultTableModel dtm = (DefaultTableModel) this.tableClass.getModel();
-		//int numDesist = this.e.getDesistentes().size();
-		TreeSet<Ranking> rankFinal = new TreeSet<>(new CompareRankingByTime());
-		rankFinal = (TreeSet<Ranking>) this.e.getRanking();
-		TreeSet<Ranking> rankDesist = new TreeSet<>(new CompareRankingByKm());
-		rankDesist = (TreeSet<Ranking>) this.e.getDesistentes();
-
-		int part = 1;
-		for (Ranking r : rankFinal) {
-			double time = r.getTime();
-			int h, m;
-			double s;
-			h = (int) time / 60;
-			m = (int) time % 60;
-
-			s = time - ((int) time);
-			s = s * 60;
-
-			dtm.addRow(new Object[]{part, r.getAthlete().getName(), h + "h " + m + "m " + (int) s + "s"});
-			part++;
-		}
-
-		for (Ranking r : rankDesist) {
-			dtm.addRow(new Object[]{part, r.getAthlete().getName(), "Desistiu (KM: " + r.getKm() + ")"});
-			part++;
-		}
-
-		this.tableClass.setModel(dtm);
 	}
 
 	/**
@@ -102,12 +49,13 @@ public class ViewEventForm extends javax.swing.JFrame {
         textTipo = new javax.swing.JTextField();
         textLocal = new javax.swing.JTextField();
         textData = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tableClass = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
         textDesporto = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        textSimula = new javax.swing.JTextArea();
+        butStart = new javax.swing.JButton();
         textDist = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -117,7 +65,7 @@ public class ViewEventForm extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "EVENTO"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "SIMULAÇÃO DE EVENTO"));
 
         jLabel1.setText("Nome");
 
@@ -129,7 +77,7 @@ public class ViewEventForm extends javax.swing.JFrame {
 
         jLabel5.setText("Nº Participantes");
 
-        jLabel6.setText("Classificação");
+        jLabel6.setText("Simulação");
 
         textNumParticipantes.setEditable(false);
 
@@ -141,38 +89,24 @@ public class ViewEventForm extends javax.swing.JFrame {
 
         textData.setEditable(false);
 
-        tableClass.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Posição", "Nome", "Tempo"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(tableClass);
-
         jLabel7.setText("Desporto");
 
         textDesporto.setEditable(false);
 
-        jLabel8.setText("Distância");
+        textSimula.setColumns(20);
+        textSimula.setRows(5);
+        jScrollPane1.setViewportView(textSimula);
+
+        butStart.setText("COMEÇAR");
+        butStart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butStartActionPerformed(evt);
+            }
+        });
 
         textDist.setEditable(false);
+
+        jLabel8.setText("Distância");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -181,7 +115,6 @@ public class ViewEventForm extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
@@ -200,19 +133,22 @@ public class ViewEventForm extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(textNome, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(textNumParticipantes, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(textDist, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(butStart))
+                    .addComponent(jScrollPane1)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addGap(25, 25, 25)
                                 .addComponent(textData, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(textNumParticipantes, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(textDist, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel6))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -228,9 +164,8 @@ public class ViewEventForm extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(textTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel7)
-                        .addComponent(textDesporto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel7)
+                    .addComponent(textDesporto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -243,13 +178,14 @@ public class ViewEventForm extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(textNumParticipantes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(butStart)
                     .addComponent(jLabel8)
                     .addComponent(textDist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -272,12 +208,55 @@ public class ViewEventForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void butStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butStartActionPerformed
+		String[] weatherOps = new String[]{"Sol", "Sol intenso", "Sol intenso com ventos fortes", "Chuva", "Chuva com ventos fortes", "Chuva intensa", "Chuva intensa com ventos fortes", "Trovoada", "Trovoada com ventos fortes", "Nublado"};
+		JComboBox w = new JComboBox(weatherOps);
+		JTextField t = new JTextField();
+		Object[] dialog = new Object[]{"Clima", w, "Temperatura (Cº)", t};
+		int res = JOptionPane.showConfirmDialog(this, dialog, "Dados para simulação", JOptionPane.OK_CANCEL_OPTION);
+		if (res == JOptionPane.OK_OPTION) {
+			try {
+				String weather = w.getSelectedItem().toString();
+				int temp = Integer.parseInt(t.getText());
+				this.textSimula.setText(this.fit.simulaEvent(e, weather, temp));
+				this.butStart.setEnabled(false);
+			} catch (NumberFormatException e) {
+				JOptionPane.showMessageDialog(this, "Introduza a temperatura corretamente... (nº inteiro)");
+				this.butStart.setEnabled(true);
+			}
+
+		}
+    }//GEN-LAST:event_butStartActionPerformed
+
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         this.parent.setVisible(true);
     }//GEN-LAST:event_formWindowClosed
 
+	private void preencheEvento() {
+		this.textNome.setText(this.e.getName());
+		this.textDesporto.setText(this.e.getTipoActivity());
+		if (this.e instanceof Marathon) {
+			this.textTipo.setText("Maratona");
+		} else if (this.e instanceof Halfmarathon) {
+			this.textTipo.setText("Meia Maratona");
+		} else if (this.e instanceof MarathonBTT) {
+			this.textTipo.setText("Maratona BTT");
+			MarathonBTT m = (MarathonBTT) this.e;
+			this.textDist.setText(String.valueOf(m.getDistance()));
+		} else {
+			this.textTipo.setText("Trail");
+			Trail m = (Trail) this.e;
+			this.textDist.setText(String.valueOf(m.getDistance()));
+		}
+		this.textLocal.setText(this.e.getLocation());
+		GregorianCalendar date = this.e.getDate();
+		this.textData.setText(date.get(Calendar.DAY_OF_MONTH) + "/" + (date.get(Calendar.MONTH) + 1) + "/" + date.get(Calendar.YEAR));
+		int numParts = this.e.getParticipants();
+		this.textNumParticipantes.setText(String.valueOf(numParts));
+	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton butStart;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -288,17 +267,17 @@ public class ViewEventForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tableClass;
     private javax.swing.JTextField textData;
     private javax.swing.JTextField textDesporto;
     private javax.swing.JTextField textDist;
     private javax.swing.JTextField textLocal;
     private javax.swing.JTextField textNome;
     private javax.swing.JTextField textNumParticipantes;
+    private javax.swing.JTextArea textSimula;
     private javax.swing.JTextField textTipo;
     // End of variables declaration//GEN-END:variables
 
-	private Event e;
+	private FitnessUM fit;
 	private JFrame parent;
-
+	private Event e;
 }

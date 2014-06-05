@@ -1921,6 +1921,9 @@
                         <Property name="text" type="java.lang.String" value="VER EVENTO"/>
                         <Property name="toolTipText" type="java.lang.String" value="Ver detalhes do evento"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butVerEvento1ActionPerformed"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>

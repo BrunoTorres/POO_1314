@@ -7,6 +7,7 @@ package Fitness;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -19,13 +20,18 @@ public class RegistarEmEventoForm extends javax.swing.JFrame {
 	/**
 	 * Creates new form RegistarEmEvento
 	 */
-	public RegistarEmEventoForm(UserForm parent, FitnessUM fit, User u) {
+	public RegistarEmEventoForm(JFrame parent, FitnessUM fit, User u, String mode) {
 		initComponents();
 		this.setLocationRelativeTo(parent);
 		this.parent = parent;
 		this.fit = fit;
 		this.u = u;
+		this.mode = mode;
 		this.preencheOpenEvents();
+		if (mode.equals("simular")) {
+			this.butAddEvento.setText("SIMULAR");
+			this.preencheSimulaEvents();
+		}
 	}
 
 	/**
@@ -143,37 +149,76 @@ public class RegistarEmEventoForm extends javax.swing.JFrame {
     private void butCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butCancelActionPerformed
 		this.dispose();
 		this.parent.setVisible(true);
-		this.parent.preencheEventos();
+		if (this.parent instanceof UserForm) {
+			UserForm user = (UserForm) this.parent;
+			user.preencheEventos();
+		} else {
+			AdminForm adm = (AdminForm) this.parent;
+			adm.setStats();
+		}
     }//GEN-LAST:event_butCancelActionPerformed
 
     private void butAddEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAddEventoActionPerformed
 		if (this.tableEvents.getSelectedRowCount() > 0) {
-			ArrayList<Event> eventos = new ArrayList<>();
-			for (Event e : this.fit.getOpenEvents()) {
-				if (!e.getParticipantsList().contains(this.u)) {
+			if (!this.mode.equals("simular")) {
+				ArrayList<Event> eventos = new ArrayList<>();
+				for (Event e : this.fit.getOpenEvents()) {
+					if (!e.getParticipantsList().contains(this.u)) {
+						eventos.add(e);
+					}
+				}
+				Event sel = eventos.get(this.tableEvents.getSelectedRow());
+				if (this.fit.userRegistEvent(this.u, sel)) {
+					JOptionPane.showMessageDialog(this, "Inscreveu-se com sucesso no evento!");
+				} else {
+					JOptionPane.showMessageDialog(this, "Precisa de ter praticado este desporto pelo menos uma vez para se poder inscrever num evento...");
+				}
+				this.preencheOpenEvents();
+			} else {
+				ArrayList<Event> eventos = new ArrayList<>();
+				for (Event e : this.fit.getSimulaEvents()) {
 					eventos.add(e);
 				}
+
+				Event sel = eventos.get(this.tableEvents.getSelectedRow());
+				if (sel.getParticipants() > 0) {
+					if (eventos.size() > 1) {
+						SimulaEventForm sim = new SimulaEventForm(this, sel, this.fit);
+						sim.setVisible(true);
+						this.setVisible(false);
+					} else {
+						SimulaEventForm sim = new SimulaEventForm(this.parent, sel, this.fit);
+						sim.setVisible(true);
+						this.setVisible(false);
+					}
+				}
+				else{
+					sel.addSimulacao(new Simulacao());
+					JOptionPane.showMessageDialog(this, "Não existem utilizadores registados neste evento...");
+				}
+				this.preencheOpenEvents();
 			}
-			Event sel = eventos.get(this.tableEvents.getSelectedRow());
-			if (this.fit.userRegistEvent(this.u, sel))
-				JOptionPane.showMessageDialog(this, "Inscreveu-se com sucesso no evento!");
-			else
-				JOptionPane.showMessageDialog(this, "Precisa de ter praticado este desporto pelo menos uma vez para se poder inscrever num evento...");
-			this.preencheOpenEvents();
 		}
     }//GEN-LAST:event_butAddEventoActionPerformed
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
-        this.parent.preencheEventos();
+		if (this.parent instanceof UserForm) {
+			UserForm user = (UserForm) this.parent;
+			user.preencheEventos();
+		} else {
+			AdminForm adm = (AdminForm) this.parent;
+			adm.setStats();
+		}
 		this.parent.setVisible(true);
     }//GEN-LAST:event_formWindowClosed
 
 	private void preencheOpenEvents() {
 		ArrayList<Event> eventos = new ArrayList<>();
 		DefaultTableModel dtm = (DefaultTableModel) this.tableEvents.getModel();
-		if (dtm.getRowCount() > 0){
-			for(int i = 0; i < dtm.getRowCount(); i++)
+		if (dtm.getRowCount() > 0) {
+			for (int i = 0; i < dtm.getRowCount(); i++) {
 				dtm.removeRow(i);
+			}
 		}
 		for (Event e : this.fit.getOpenEvents()) {
 			if (!e.getParticipantsList().contains(this.u)) {
@@ -183,6 +228,39 @@ public class RegistarEmEventoForm extends javax.swing.JFrame {
 		for (int i = 0; i < eventos.size(); i++) {
 			dtm.addRow(new Object[]{null, null, null, null, null});
 		}
+		this.tableEvents.setModel(dtm);
+
+		int i = 0;
+		for (Event e : eventos) {
+			int diaE = e.getDate().get(Calendar.DAY_OF_MONTH);
+			int mesE = e.getDate().get(Calendar.MONTH);
+			int anoE = e.getDate().get(Calendar.YEAR);
+			int diaI = e.getDate().get(Calendar.DAY_OF_MONTH);
+			int mesI = e.getDate().get(Calendar.MONTH);
+			int anoI = e.getDate().get(Calendar.YEAR);
+
+			this.tableEvents.setValueAt(e.getName(), i, 0);
+			this.tableEvents.setValueAt(e.getTipoActivity(), i, 1);
+			this.tableEvents.setValueAt(e.getLocation(), i, 2);
+			this.tableEvents.setValueAt(String.valueOf(diaE) + "/" + String.valueOf(mesE) + "/" + String.valueOf(anoE), i, 3);
+			this.tableEvents.setValueAt(String.valueOf(diaI) + "/" + String.valueOf(mesI) + "/" + String.valueOf(anoI), i, 4);
+			i++;
+		}
+	}
+
+	private void preencheSimulaEvents() {
+		ArrayList<Event> eventos = new ArrayList<>();
+		DefaultTableModel dtm = (DefaultTableModel) this.tableEvents.getModel();
+		if (dtm.getRowCount() > 0) {
+			for (int i = 0; i < dtm.getRowCount(); i++) {
+				dtm.removeRow(i);
+			}
+		}
+		for (Event e : this.fit.getSimulaEvents()) {
+			eventos.add(e);
+			dtm.addRow(new Object[]{null, null, null, null, null});
+		}
+
 		this.tableEvents.setModel(dtm);
 
 		int i = 0;
@@ -213,5 +291,6 @@ public class RegistarEmEventoForm extends javax.swing.JFrame {
 
 	private FitnessUM fit;
 	private User u;
-	private UserForm parent;
+	private JFrame parent;
+	private String mode;
 }

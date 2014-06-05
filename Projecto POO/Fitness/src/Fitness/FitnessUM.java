@@ -101,8 +101,23 @@ public class FitnessUM implements Serializable {
         ArrayList<Event> aux = new ArrayList<>();
 		GregorianCalendar now = new GregorianCalendar();
         for (Event e : this.events) {
-			if(e.getDate().before(now))
+			if(e.getDate().before(now) && !e.getSimulacao().isEmpty())
 				aux.add(e.clone());
+        }
+        return aux;
+    }
+	
+	/**
+     * Método que devolve a lista de eventos que precisam de simulação.
+     *
+     * @return List de Event.
+     */
+    public List<Event> getSimulaEvents() {
+        ArrayList<Event> aux = new ArrayList<>();
+		GregorianCalendar now = new GregorianCalendar();
+        for (Event e : this.events) {
+			if(e.getDate().before(now) && e.getSimulacao().isEmpty())
+				aux.add(e);
         }
         return aux;
     }
@@ -155,15 +170,15 @@ public class FitnessUM implements Serializable {
 	}
 	
 	/**
-     * Método que devolve quantos Evetns precisam de ser simulados.
+     * Método que devolve quantos Events precisam de ser simulados.
      *
      * @return número de Events a ser simulados.
      */
-	public int getSimulaEvents(){
+	public int getNumSimulaEvents(){
 		int num = 0;
 		GregorianCalendar now = new GregorianCalendar();
 		for(Event e : this.events)
-			if (e.getDate().before(now))
+			if (e.getDate().before(now) && e.getSimulacao().isEmpty())
 				num++;
 		
 		return num;
@@ -192,7 +207,7 @@ public class FitnessUM implements Serializable {
      * @param weather Clima.
      * @param temperatura Temperatura no evento.
      */
-    public void simulaEvent(Event e, String weather, double temperatura) {
+    public String simulaEvent(Event e, String weather, double temperatura) {
         double distance = 0;
         String tipo = "";
         int tipoEvento = 0;
@@ -223,7 +238,8 @@ public class FitnessUM implements Serializable {
             Simulacao s = new Simulacao(u, tempo, km);
             e.addSimulacao(s);
         }
-
+		
+		StringBuilder sb = new StringBuilder();
         for (int i = 0; i <= (int) distance && !desistentes; i++) {
             for (Simulacao s : e.getSimulacao()) {
                 if (s.getKmDesiste() == i) {
@@ -237,7 +253,6 @@ public class FitnessUM implements Serializable {
                 }
             }
             int j = 1;
-            StringBuilder sb = new StringBuilder();
             sb.append("Km: ").append(i).append("\n");
             sb.append("Classificaçao: ").append("\n");
             for (Simulacao s : e.getSimulacao()) {
@@ -250,7 +265,6 @@ public class FitnessUM implements Serializable {
                 }
             }
 
-            System.out.println(sb.toString());
             if (e.getSimulacao().isEmpty()) {
                 desistentes = true;
             }
@@ -269,9 +283,9 @@ public class FitnessUM implements Serializable {
             }
 
         }
-
-        String s = e.getClassificacaoGeral();
-        System.out.println(s);
+		
+		sb.append(e.getClassificacaoGeral());
+        return sb.toString();
 
     }
 

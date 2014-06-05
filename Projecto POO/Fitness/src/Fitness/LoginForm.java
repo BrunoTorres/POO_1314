@@ -62,7 +62,7 @@ public class LoginForm extends javax.swing.JFrame {
 			m.addUser(u2);
 			m.addUser(u3);
 			fitness.addEvent(m);
-			fitness.simulaEvent(m, "Sol", 23);
+			//fitness.simulaEvent(m, "Sol", 23);
 			//ViewEventForm view = new ViewEventForm(this, m);
 			//view.setVisible(true);
 		} catch (ClassCastException | ClassNotFoundException e) {

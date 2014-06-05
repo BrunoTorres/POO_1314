@@ -1460,6 +1460,11 @@ public class UserForm extends javax.swing.JFrame {
 
         butVerEvento1.setText("VER EVENTO");
         butVerEvento1.setToolTipText("Ver detalhes do evento");
+        butVerEvento1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butVerEvento1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
@@ -1607,7 +1612,7 @@ public class UserForm extends javax.swing.JFrame {
     }//GEN-LAST:event_butLogoutActionPerformed
 
     private void butAddEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAddEventoActionPerformed
-		RegistarEmEventoForm reg = new RegistarEmEventoForm(this, this.fit, this.u);
+		RegistarEmEventoForm reg = new RegistarEmEventoForm(this, this.fit, this.u, "add");
 		reg.setVisible(true);
 		this.setVisible(false);
     }//GEN-LAST:event_butAddEventoActionPerformed
@@ -1867,6 +1872,21 @@ public class UserForm extends javax.swing.JFrame {
 			}
 		}
     }//GEN-LAST:event_butVerEventoActionPerformed
+
+    private void butVerEvento1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butVerEvento1ActionPerformed
+        if (this.tableEventsOcorridos.getSelectedRowCount() > 0) {
+			try {
+				Event e = this.fit.getEventByName((String) this.tableEventsOcorridos.getValueAt(this.tableEventsOcorridos.getSelectedRow(), 0));
+				if (e.getParticipantsList().contains(this.u)) {
+					ViewEventForm viewEvent = new ViewEventForm(this, e);
+					viewEvent.setVisible(true);
+					this.setVisible(false);
+				}
+			} catch (EventNotFoundException e) {
+				JOptionPane.showMessageDialog(this, "ERRO: EVENTO INEXISTENTE");
+			}
+		}
+    }//GEN-LAST:event_butVerEvento1ActionPerformed
 
 	private void preencheRunRecords() {
 		TreeMap<String, ListRecords> rec = (TreeMap<String, ListRecords>) this.u.getRecords();
@@ -2129,6 +2149,7 @@ public class UserForm extends javax.swing.JFrame {
 	public void preencheEventos() {
 		this.preencheEventosInscritos();
 		this.preencheEventosParticipantes();
+		this.preencheEventosOcorridos();
 	}
 
 	private void preencheEventosInscritos() {
@@ -2216,6 +2237,42 @@ public class UserForm extends javax.swing.JFrame {
 				}
 			}
 			this.tableEventsFeitos.setValueAt(pos, i, 4);
+			i++;
+		}
+	}
+	
+	private void preencheEventosOcorridos(){
+		ArrayList<Event> eventos = new ArrayList<>();
+		DefaultTableModel dtm = (DefaultTableModel) this.tableEventsOcorridos.getModel();
+		if (dtm.getRowCount() > 0) {
+			for (int i = 0; i < dtm.getRowCount(); i++) {
+				dtm.removeRow(i);
+			}
+		}
+
+		for (Event e : this.fit.getOccurredEvents()) {
+			if (e.getParticipantsList().contains(this.u)) {
+				eventos.add(e);
+			}
+		}
+		if (eventos.size() > this.tableEventsOcorridos.getRowCount()) {
+			for (int i = 0; i < eventos.size(); i++) {
+				dtm.addRow(new Object[]{null, null, null, null, null});
+			}
+			this.tableEventsOcorridos.setModel(dtm);
+		}
+
+		int i = 0;
+		for (Event e : eventos) {
+			int diaE = e.getDate().get(Calendar.DAY_OF_MONTH);
+			int mesE = e.getDate().get(Calendar.MONTH);
+			int anoE = e.getDate().get(Calendar.YEAR);
+
+			this.tableEventsOcorridos.setValueAt(e.getName(), i, 0);
+			this.tableEventsOcorridos.setValueAt(e.getTipoActivity(), i, 1);
+			this.tableEventsOcorridos.setValueAt(e.getLocation(), i, 2);
+			this.tableEventsOcorridos.setValueAt(String.valueOf(diaE) + "/" + String.valueOf(mesE + 1) + "/" + String.valueOf(anoE), i, 3);
+			this.tableEventsOcorridos.setValueAt(e.getParticipants(), i, 4);
 			i++;
 		}
 	}
