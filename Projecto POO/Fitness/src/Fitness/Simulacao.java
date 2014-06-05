@@ -95,9 +95,9 @@ public class Simulacao implements Serializable {
      *
      * @param intrevalo
      */
-    public void actualiza(double intrevalo) {
+    public void actualiza(double intervalo) {
         double tempo = this.tempoMedio * (Math.random() + 0.5);
-        this.tempoGeral += (intrevalo * tempo);
+        this.tempoGeral += (intervalo * tempo);
     }
 
     //toSting,equals,clone
