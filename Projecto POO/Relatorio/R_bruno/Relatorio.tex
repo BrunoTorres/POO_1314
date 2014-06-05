@@ -6,6 +6,7 @@
 \usepackage[hmargin=2cm,vmargin=3.5cm,bmargin=2cm]{geometry}
 \usepackage{multicol}
 \usepackage{hyperref}
+\usepackage{enumerate}
 
 
 
@@ -276,13 +277,13 @@ Tal aconteceu para calcular as calorias gastas em cada actividade e para a simul
 
 \subsubsection{Fórmula das Calorias}
 
+~\\~
+
+\textbf{MET(Metabolic Equivalent of Task)}- É  uma medida fisiológica que expressa o custo energético de cada actividade física.\\~\\
 
 
-Sabendo que:\\ \textbf{MET(Metabolic Equivalent of Task)}- Medida fisiológica que expressa o custo energético de cada actividade física.
-
-
-E usando o seguinte quadro: \url{http://www.cdof.com.br/MET_compendium.pdf}\\
-Criou-se a seguinte fórmula:\\
+Sabendo o que MET's representa, e retirando essa medida, para cada actividade ,pelo seguinte quadro: \url{http://www.cdof.com.br/MET_compendium.pdf}\\
+Criou-se a seguinte fórmula das calorias para cada actividade:\\
 
 \begin{tabular}{|r|}
   \hline
@@ -292,6 +293,62 @@ Criou-se a seguinte fórmula:\\
 
 
 \subsubsection{Fórmula para a Simulação}
+
+Para inferir um valor médio de minutos/km foi seguido o seguinte raciocínio:\\
+\begin{enumerate}
+\item Calculou-se um tempo médio em função do evento.
+\item Contou o número de actividades praticadas do tipo do evento(ex: evento-Marathon,tipo do evento-Running).
+\item Aplicou-se a fórmula idealizada. 
+\end{enumerate}
+~\\~
+Para calcular o tempo médio em função do evento,fez-se uma distinção entre MarathonBTT e os outros eventos.\\~\\
+Para o evento \textbf{MarathonBTT} percorreu-se todas as actividades do tipo "MountainBiking" e para cada uma delas:
+\begin{itemize}
+\item Calculou-se um factor, de 0 a 1, em função do parâmetro VerticalDistance(quanto maior,maior é o factor).
+\item Somou-se a distancia com o acumulado da mesma.
+\item Somou-se o acumulado do tempo com o tempo gasto$/$ distancia feita. 
+\end{itemize}
+
+No fim calcula-se o tempo médio total em função do tempo médio calculado com o factor médio e distancia média realizadas nas actividades. \\~
+
+Para os restantes eventos, a ideia foi a mesma,apenas não se usou o factor.\\~
+
+Tendo o tempo médio calculado(tm) a fórmula para o calculo do tempo médio final é a seguinte:\\~\\~
+\begin{tabular}{|r|}
+  \hline
+ \textbf{tempo }$= tm + (1 *tabWeather(weather)) + (1 * tabTemp(temperatura)) - (nº/ 100) + (age / 100)$\\
+ \hline \hline
+\end{tabular}
+~\\~\\
+
+tabWeather$->$ método que devolve um factor(de 0 a 1) em função dos seguintes climas:
+\begin{itemize}
+\item Sol
+\item Sol intenso
+\item Sol intenso com ventos fortes
+\item Chuva
+\item Chuva com ventos fortes
+\item Chuva intensa
+\item Chuva intensa com ventos fortes
+\item Trovoada
+\item Trovoada com ventos fortes
+\item Nublado
+\end{itemize}
+
+tabTemp$->$método que devolve um factor (de 0 a 1) em função da temperatura, em graus celsius.
+
+nº $->$ número de actividades praticadas do tipo do evento.
+~\\~\\
+
+Em \textbf{cada km} da simulação o usa-se este tempo calculado e multiplica-se por $(Math.random() + 0.5)$, factor aleatório. 
+~\\~\\
+Para a possibilidade de um participante do evento desistir num certo Km foi usada a seguinte estratégia:
+\begin{enumerate}
+\item Calculou-se a idade do participante.
+\item Calculou-se uma probabilidade.
+\item Calculou-se o possível km em que desiste.
+\end{enumerate}
+
 \end{document}
 
 

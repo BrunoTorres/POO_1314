@@ -16,4 +16,4 @@
 \contentsline {subsubsection}{\numberline {1.3.4}Interfaces}{7}{subsubsection.1.3.4}
 \contentsline {subsection}{\numberline {1.4}F\IeC {\'o}rmulas}{7}{subsection.1.4}
 \contentsline {subsubsection}{\numberline {1.4.1}F\IeC {\'o}rmula das Calorias}{7}{subsubsection.1.4.1}
-\contentsline {subsubsection}{\numberline {1.4.2}F\IeC {\'o}rmula para a Simula\IeC {\c c}\IeC {\~a}o}{7}{subsubsection.1.4.2}
+\contentsline {subsubsection}{\numberline {1.4.2}F\IeC {\'o}rmula para a Simula\IeC {\c c}\IeC {\~a}o}{8}{subsubsection.1.4.2}
