@@ -1,4 +1,4 @@
-\documentclass[10pt,notitlepage]{article}
+\documentclass[12pt,notitlepage]{article}
 \usepackage{graphicx}
 \usepackage{verbatim}
 \usepackage[portuguese]{babel}
@@ -117,38 +117,42 @@ Devido a este aspecto foram criadas duas classes abstractas,subclasses de \texti
 \item Indoor
 \end{itemize}
 
-Todas as actividades desportivas são subclasses de \textit{Indoor} ou \textit{Outdoor} como exemplificado na figura ~\ref{fig:actividades}.
+Todas as actividades desportivas são subclasses de \textit{Indoor} ou \textit{Outdoor} como exemplificado na figura \ref{fig:actividades}.
+
 
 \subsubsection{Comparadores e Interfaces}
-Para organizar as actividades criaram-se dois tipo de comparadores:
+Para organizar as actividades criaram-se dois tipo de comparadores,como exemplificado na figura \ref{fig:CompareActivity}
+
 \begin{itemize}
 \item CompareActivity- Compara a actividade pela data da realização da mesma.
 \item CompareActivityByTime- Compara a actividade pelo tempo gasto na realização desta.
 \end{itemize}
 
-\begin{figure}[ht]
-\centering
-\includegraphics[scale=1]{ComparadorActivity.png}
-\caption{Comparador CompareActivity}
-\end{figure}
-
-~\\~\\
-
 Depois de uma análise às actividades desportivas, ficou claro que para certas actividades se deviam registar distancias e para outras registar pontuações,neste seguimento foram criadas as seguintes interfaces:
-
-
 
 \begin{itemize}
 \item UserVs-Interface de métodos relacionados com pontos(pontos próprios e pontos do adversário)
 \item Distance -Interface de métodos relacionados com actividades de distancia.
 \item VerticalDistance- Interface de métodos relacionados com actividades de distancia vertical
-
 \end{itemize}
-\begin{figure}[h]
+
+\newpage
+\begin{figure}[ht]
 \centering
-\includegraphics[scale=0.5]{interfaceAct.jpg}
+\includegraphics[scale=0.7]{ComparadorActivity.png}
+\caption{Comparador CompareActivity}
+\label{fig:CompareActivity}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.4]{interfaceAct.jpg}
 \caption{Exemplo de actividades que implementam as interfaces Distance,VerticalDistance e UserVs}
 \end{figure}
+~\\~\\
+
+
+
 
 
 \subsection{Utilizadores}
@@ -265,7 +269,7 @@ Classe que agrupa todos os recordes de uma actividade. Tem como variáveis:
 \item \textit{String name} - Aqui o nome simboliza o tipo de actividade (Ex: Running, Walking...);
 \item \textit{ArrayList$<$Record$>$ recs} - Lista dos recordes;
 \end{itemize}
-Tem implementado métodos construtores, \textit{getters}, \textit{setters} e ainda um método \textit{updateList()} que aplica a função \textit{update()} a todos os objectos \textit{Record} da lista. (Subsitui na lista original caso recorde da segunda lista seja melhor).
+Tem implementado métodos construtores, \textit{getters}, \textit{setters} e ainda um método \textit{updateList()} que aplica a função \textit{update()} a todos os objectos \textit{Record} da lista. (Substitui na lista original caso recorde da segunda lista seja melhor).
 \subsubsection{Interfaces}
 Nesta fase,visto que nem todas as actividades desportivas implementarem recordes, chegou-se então à conclusão que estas actividades precisam sempre de devolver a lista de recordes registados,então implementou-se a seguinte interface:
 \begin{itemize}
@@ -275,6 +279,68 @@ Que contém o seguinte método:
 \begin{itemize}
 \item \textit{getListRecords};
 \end{itemize}
+
+\subsection{Eventos}
+A figura \ref{fig:eventos} representa a nossa estrutura para os eventos.
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{simula.jpg}
+\caption{Estrutura dos Eventos}
+\label{fig:eventos}
+\end{figure}
+
+
+\subsubsection{Classe abstracta \textit{Event}}
+Classe com o conceito mais abstracto de Evento, contém as variáveis:
+\begin{itemize}
+\item \textit{String name} - Nome do evento;
+\item \textit{String tipoActivity} - Tipo de actividade (Running, Walking, ...);
+\item \textit{String location} - Onde se realiza a prova;
+\item \textit{int maxParticipants} - Número máximo de participantes;
+\item \textit{int participants} - Número actual de participantes ;
+\item \textit{GregorianCalendar deadline} - Data limite de inscrição;
+\item \textit{GregorianCalendar date} - Data de realização;
+\item \textit{double duration} - Duração da prova;
+\item \textit{TreeSet$<$User$>$ participantsList} - Lista de participantes;
+\item \textit{TreeSet$<$Ranking$>$ ranking} - Classificação dos que acabaram a prova;
+\item \textit{TreeSet$<$Ranking$>$ desistentes} - Participantes que desistiram da prova;
+\item \textit{TreeSet$<$Simulacao$>$ simula} - Informação relevante para simular cada concorrente;
+\end{itemize}
+respectivos \textit{getters} e \textit{setters} e os vários construtores. Ainda tem métodos auxiliares para, adicionar um \textit{User}, \textit{Ranking} (desistente ou não) e \textit{Simulacao} aos respectivos \textit{Sets} e para mostrar a classificação geral do evento.
+
+
+\subsubsection{Tipo de Evento}
+
+Subclasses de Evento (\textit{Marathon}, \textit{HalfMarathon}, \textit{MarathonBTT} e \textit{Trail}), todas estas contem mais uma variável \textit{distance}, que nos casos de \textit{Marathon} e \textit{HalfMarathon} são variáveis \textit{final}, porque este tipo de eventos tem distâncias especificas. Não tem métodos auxiliares para além de \textit{getDistance()}.
+
+
+\subsubsection{Simulação}
+
+Para guardar dados relevantes à simulação de cada utilizador para um evento, foi criada a classe \textit{Simulacao}. A simulação de cada evento é feita actualizando os dados desta classe a cada km.
+
+\begin{itemize}
+\item \textit{double tempoGeral} - Tempo acumulado do utilizado na realização da prova.
+\item \textit{double tempoMedio} - Tempo médio por km.
+\item \textit{int kmDesiste} - Número de km que o utilizador aguenta durante a prova.
+\item \textit{User u} - Utilizador associado á simulação.
+\end{itemize}
+esta classe, para além dos métodos construtores e \textit{getters} e \textit{setters}, contém apenas um método \textit{actualiza}, que simula a passagem de uma distância (passada como argumento), usando o tempo médio por km e aplicando um factor aleatório (usando \textit{Math.random()}.
+
+
+
+\subsubsection{Ranking}
+
+Cada evento, para organizar a sua classificação, utiliza duas colecções de objectos da classe \textit{Ranking}. Uma delas, usada para organizar todos os participantes, que concluíram a prova, por ordem de chegada, a outra onde estão os aqueles que não terminaram, organizados por número de quilómetros realizados.
+
+Esta classe usa as seguintes variáveis:
+\begin{itemize}
+\item \textit{double time} - Tempo de realizado no evento;
+\item \textit{int km} - Número de quilómetros realizados;
+\item \textit{User athlete} - Utilizador;
+\end{itemize}
+Das variáveis \textit{time} e \textit{km}, apenas uma irá ter algum valor para cada utilizador, visto que esta classe é usada para ordenar classificações finais, cada pessoa tem ou um tempo de conclusão do evento ou o número do quilómetro em que desistiu. \textit{Ranking} contém os métodos \textit{getters} e \textit{setters} relevantes, construtores, e para além dos métodos essenciais, foram implementados dois métodos \textit{toString} alternativos, para os dois casos.
 
 \subsection{Fórmulas}
 Em certos momentos do trabalho surgiu a necessidade de codificar fórmulas.\\

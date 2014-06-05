@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.5.1)  5 JUN 2014 13:45
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.5.1)  5 JUN 2014 15:55
 entering extended mode
 **Relatorio.tex
 
@@ -17,8 +17,8 @@ an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size10.clo"
-File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size12.clo"
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -547,12 +547,12 @@ LaTeX Font Info:    ... okay on input line 13.
 * \topmargin=-9.68535pt
 * \headheight=12.0pt
 * \headsep=25.0pt
-* \topskip=10.0pt
+* \topskip=12.0pt
 * \footskip=30.0pt
-* \marginparwidth=65.0pt
-* \marginparsep=11.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -581,13 +581,13 @@ out")
 ("C:\Users\Bruno\Documents\GitHub\Li3\Projecto POO\Relatorio\R_bruno\Relatorio.
 out")
 \@outlinefile=\write3
- <logo.pdf, id=75, 318.18875pt x 159.59625pt>
+ <logo.pdf, id=95, 318.18875pt x 159.59625pt>
 File: logo.pdf Graphic file (type pdf)
  <use logo.pdf>
 Package pdftex.def Info: logo.pdf used on input line 19.
 (pdftex.def)             Requested size: 159.09398pt x 79.79791pt.
 
-<autores.png, id=76, 501.875pt x 160.6pt>
+<autores.png, id=96, 501.875pt x 160.6pt>
 File: autores.png Graphic file (type png)
  <use autores.png>
 Package pdftex.def Info: autores.png used on input line 41.
@@ -600,9 +600,11 @@ no/Documents/GitHub/Li3/Projecto POO/Relatorio/R_bruno/autores.png>]
 ("C:\Users\Bruno\Documents\GitHub\Li3\Projecto POO\Relatorio\R_bruno\Relatorio.
 toc"
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 3.
+(Font)              <12> on input line 3.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 3.
+(Font)              <8> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 3.
 )
 \tf@toc=\write4
 
@@ -619,182 +621,223 @@ LaTeX Font Info:    Try loading font information for OMS+cmr on input line 62.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 62.
- <Activity2.jpg, id=130, 752.8125pt x 414.04688pt>
+ <Activity2.jpg, id=158, 752.8125pt x 414.04688pt>
 File: Activity2.jpg Graphic file (type jpg)
  <use Activity2.jpg>
 Package pdftex.def Info: Activity2.jpg used on input line 94.
 (pdftex.def)             Requested size: 376.40532pt x 207.02292pt.
 
 [2 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/Relatorio/R_bruno/Activity
-2.jpg>] <ComparadorActivity.png, id=138, 301.125pt x 225.84375pt>
+2.jpg>]
+
+LaTeX Warning: Reference `fig:CompareActivity' on page 3 undefined on input lin
+e 124.
+
+
+Overfull \hbox (1.41913pt too wide) in paragraph at lines 134--135
+[]\OT1/cmr/m/n/12 UserVs-Interface de metodos re-la-ci-o-na-dos com pon-tos(po
+ntos proprios e pon-tos do ad-versario) 
+ []
+
+[3] <ComparadorActivity.png, id=169, 301.125pt x 225.84375pt>
 File: ComparadorActivity.png Graphic file (type png)
 
 <use ComparadorActivity.png>
-Package pdftex.def Info: ComparadorActivity.png used on input line 131.
-(pdftex.def)             Requested size: 301.12425pt x 225.84319pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
-
- []
-
-<interfaceAct.jpg, id=139, 602.25pt x 602.25pt>
+Package pdftex.def Info: ComparadorActivity.png used on input line 142.
+(pdftex.def)             Requested size: 210.78606pt x 158.08954pt.
+ <interfaceAct.jpg, id=170, 602.25pt x 602.25pt>
 File: interfaceAct.jpg Graphic file (type jpg)
- <use interfaceAct.jpg>
+
+<use interfaceAct.jpg>
 Package pdftex.def Info: interfaceAct.jpg used on input line 149.
-(pdftex.def)             Requested size: 301.12425pt x 301.12425pt.
+(pdftex.def)             Requested size: 240.89572pt x 240.89572pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
+
+ []
+
+<Statsfinalpngg.png, id=172, 198.7425pt x 261.22594pt>
+File: Statsfinalpngg.png Graphic file (type png)
+
+<use Statsfinalpngg.png>
+Package pdftex.def Info: Statsfinalpngg.png used on input line 163.
+(pdftex.def)             Requested size: 119.24641pt x 156.73676pt.
+ [4 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/Relatorio/R_bruno/Compara
+dorActivity.png (PNG copy)> <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/R
+elatorio/R_bruno/interfaceAct.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 183--185
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--185
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--185
+
+ []
+
+[5 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/Relatorio/R_bruno/Statsfin
+alpngg.png>] <Records.jpg, id=183, 622.57594pt x 403.5075pt>
+File: Records.jpg Graphic file (type jpg)
+ <use Records.jpg>
+Package pdftex.def Info: Records.jpg used on input line 221.
+(pdftex.def)             Requested size: 373.54845pt x 242.10637pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Statsfinalpngg.png, id=141, 198.7425pt x 261.22594pt>
-File: Statsfinalpngg.png Graphic file (type png)
 
-<use Statsfinalpngg.png>
-Package pdftex.def Info: Statsfinalpngg.png used on input line 159.
-(pdftex.def)             Requested size: 119.24641pt x 156.73676pt.
- [3 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/Relatorio/R_bruno/Compara
-dorActivity.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 179--181
+Underfull \hbox (badness 10000) in paragraph at lines 247--248
+
+ []
+
+[6] [7 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/Relatorio/R_bruno/Reco
+rds.jpg>] <simula.jpg, id=195, 603.75563pt x 380.92313pt>
+File: simula.jpg Graphic file (type jpg)
+ <use simula.jpg>
+Package pdftex.def Info: simula.jpg used on input line 289.
+(pdftex.def)             Requested size: 362.25616pt x 228.55562pt.
+
+[8 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/Relatorio/R_bruno/simula.j
+pg>] [9]
+Underfull \hbox (badness 10000) in paragraph at lines 350--353
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--181
+Underfull \hbox (badness 10000) in paragraph at lines 355--356
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--181
+Underfull \hbox (badness 10000) in paragraph at lines 368--370
 
  []
 
-[4 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/Relatorio/R_bruno/interfac
-eAct.jpg>] <Records.jpg, id=151, 622.57594pt x 403.5075pt>
-File: Records.jpg Graphic file (type jpg)
- <use Records.jpg>
-Package pdftex.def Info: Records.jpg used on input line 217.
-(pdftex.def)             Requested size: 373.54845pt x 242.10637pt.
-
-[5 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/Relatorio/R_bruno/Statsfin
-alpngg.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 243--244
-
- []
-
-[6 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/Relatorio/R_bruno/Records.
-jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 284--287
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 374--377
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 289--290
+Overfull \hbox (1.32747pt too wide) in paragraph at lines 378--379
+[]\OT1/cmr/m/n/12 Calculou-se um fac-tor, de 0 a 1, em func~ao do par^ametro V
+er-ti-cal-Dis-tance(quanto maior,maior
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 383--384
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 302--304
-
- []
-
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 308--311
+Underfull \hbox (badness 10000) in paragraph at lines 385--386
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 317--318
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 319--320
-
- []
-
-
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 325
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 391
 .
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 321--330
+Underfull \hbox (badness 10000) in paragraph at lines 387--396
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 321--330
+Overfull \hbox (19.65373pt too wide) in paragraph at lines 387--396
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--396
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 321--330
+Underfull \hbox (badness 10000) in paragraph at lines 387--396
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 347--349
+Underfull \hbox (badness 10000) in paragraph at lines 387--396
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 347--349
+Underfull \hbox (badness 10000) in paragraph at lines 413--415
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 351--353
+Underfull \hbox (badness 10000) in paragraph at lines 413--415
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 417--419
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 351--353
+Underfull \hbox (badness 10000) in paragraph at lines 417--419
 
  []
 
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 374--375
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 440--441
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 378.
-[9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 378.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 444.
+[13]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 444.
 
 ("C:\Users\Bruno\Documents\GitHub\Li3\Projecto POO\Relatorio\R_bruno\Relatorio.
 aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 378.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 378.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 444.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 444.
 Package rerunfilecheck Info: File `Relatorio.out' has not changed.
-(rerunfilecheck)             Checksum: 8514D8555CFB84FE8E3CC5A44A429B50;1391.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 378.
+(rerunfilecheck)             Checksum: 0EEF96174D13492DF61ECE2865410FE7;1751.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 444.
  ) 
 Here is how much of TeX's memory you used:
- 6167 strings out of 493921
- 90945 string characters out of 3144877
- 185200 words of memory out of 3000000
- 9355 multiletter control sequences out of 15000+200000
- 5971 words of font info for 22 fonts, out of 3000000 for 9000
+ 6207 strings out of 493921
+ 91473 string characters out of 3144877
+ 185268 words of memory out of 3000000
+ 9377 multiletter control sequences out of 15000+200000
+ 9068 words of font info for 32 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 29i,11n,31p,340b,418s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Pro
-gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files 
-(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Relatorio.pdf (10 pages, 854155 bytes).
+ 29i,11n,31p,518b,417s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on Relatorio.pdf (14 pages, 981899 bytes).
 PDF statistics:
- 226 PDF objects out of 1000 (max. 8388607)
- 41 named destinations out of 1000 (max. 500000)
- 180 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 274 PDF objects out of 1000 (max. 8388607)
+ 51 named destinations out of 1000 (max. 500000)
+ 225 words of extra memory for PDF output out of 10000 (max. 10000000)
 
