@@ -49,14 +49,14 @@ Programação Orientada aos Objectos
 
 
 \tableofcontents
-
+\listoffigures
 \newpage
 
 
 \section{Estrutura da aplicação}
 
 \subsection{Actividades}
-Foram definidas as seguindes actividades desportivas para a nossa aplicação:
+Foram definidas as seguintes actividades desportivas para a nossa aplicação:
 \begin{multicols}{2}
 \begin{itemize}
 \item Yoga
@@ -117,7 +117,7 @@ Devido a este aspecto foram criadas duas classes abstractas,subclasses de \texti
 \item Indoor
 \end{itemize}
 
-Todas as actividades desportivas são subclasses de \textit{Indoor} ou \textit{Outdoor} como exemplicado na figura ~\ref{fig:actividades}.
+Todas as actividades desportivas são subclasses de \textit{Indoor} ou \textit{Outdoor} como exemplificado na figura ~\ref{fig:actividades}.
 
 \subsubsection{Comparadores e Interfaces}
 Para organizar as actividades criaram-se dois tipo de comparadores:
@@ -129,7 +129,7 @@ Para organizar as actividades criaram-se dois tipo de comparadores:
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=1]{ComparadorActivity.png}
-\caption{Comparador Activity}
+\caption{Comparador CompareActivity}
 \end{figure}
 
 ~\\~\\
@@ -145,18 +145,20 @@ Depois de uma análise às actividades desportivas, ficou claro que para certas 
 
 \end{itemize}
 \begin{figure}[h]
+\centering
 \includegraphics[scale=0.5]{interfaceAct.jpg}
-\caption{Exemplo de algumas actividades que implementam as interfaces}
+\caption{Exemplo de actividades que implementam as interfaces Distance,VerticalDistance e UserVs}
 \end{figure}
 
 
 \subsection{Utilizadores}
-Para distinguir utilizadores regulares de administradores criou-se a seguinte estrutura:
-~\\
+Para distinguir utilizadores regulares de administradores criou-se a estrutura exemplificada na figura ~\ref{fig:utilizadores}
+
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=0.6]{Statsfinal.jpg}
+\includegraphics[scale=0.6]{Statsfinalpngg.png}
 \caption{Estrutura das classes User e Admin}
+\label{fig:utilizadores}
 \end{figure}
 
 
@@ -175,7 +177,10 @@ Classe geral para todo tipo de utilizador. As suas variáveis são:
 \subsubsection{Classes User e Admin}
 
 As subclasses de Person referem-se a dois possíveis tipos de utilizador, utilizador normal ou utilizador com privilégios de administrador.\\
-A classe Admin não tem métodos ou variáveis adicionais, visto que este tipo de utilizador apenas opera sobre a base de dados da aplicação.\\
+A classe Admin não tem métodos ou variáveis adicionais, visto que este tipo de utilizador apenas opera sobre a base de dados da aplicação.\\~\\~\\
+
+
+
 A classe User adiciona as seguintes variáveis:
 \begin{itemize}
 \item \textit{int height};
@@ -276,18 +281,18 @@ Em certos momentos do trabalho surgiu a necessidade de codificar fórmulas.\\
 Tal aconteceu para calcular as calorias gastas em cada actividade e para a simulação dos eventos.
 
 \subsubsection{Fórmula das Calorias}
-
 ~\\~
+\textbf{MET(Metabolic Equivalent of Task)}- É  uma medida fisiológica que expressa o custo energético de cada actividade física.\\
+  Sabendo o que MET's representa, e retirando essa medida, para cada actividade ,pelo seguinte quadro: \url{http://www.cdof.com.br/MET_compendium.pdf}\\
 
-\textbf{MET(Metabolic Equivalent of Task)}- É  uma medida fisiológica que expressa o custo energético de cada actividade física.\\~\\
 
-
-Sabendo o que MET's representa, e retirando essa medida, para cada actividade ,pelo seguinte quadro: \url{http://www.cdof.com.br/MET_compendium.pdf}\\
 Criou-se a seguinte fórmula das calorias para cada actividade:\\
 
 \begin{tabular}{|r|}
   \hline
+  \\
  \textbf{Calorias}$=mets * pesoDoUtilizador * (tempoGasto(min) / 60)$\\
+ \\
  \hline \hline
 \end{tabular}
 
@@ -316,7 +321,9 @@ Para os restantes eventos, a ideia foi a mesma,apenas não se usou o factor.\\~
 Tendo o tempo médio calculado(tm) a fórmula para o calculo do tempo médio final é a seguinte:\\~\\~
 \begin{tabular}{|r|}
   \hline
+  \\
  \textbf{tempo }$= tm + (1 *tabWeather(weather)) + (1 * tabTemp(temperatura)) - (nº/ 100) + (age / 100)$\\
+ \\
  \hline \hline
 \end{tabular}
 ~\\~\\
