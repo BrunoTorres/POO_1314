@@ -22,6 +22,9 @@ tal como os construtores, \textit{getters} e \textit{setters}.
 
 
 
+
+
+
 \subsection{Utilizadores}
 \subsubsection{Classe abstracta \textit{Person}}
 Classe geral para todo tipo de utilizador. As suas variáveis são:
@@ -124,7 +127,7 @@ Classe com o conceito mais abstracto de Evento, contém as variáveis:
 \item \textit{int participants} - Número actual de participantes ;
 \item \textit{GregorianCalendar deadline} - Data limite de inscrição;
 \item \textit{GregorianCalendar date} - Data de realização;
-\item \textit{double duration} - Duração da prova;  <--- NÃO ESQUECER DE FALAR DESTA VARIÁVEL
+\item \textit{double duration} - Duração da prova;  $<$--- NÃO ESQUECER DE FALAR DESTA VARIÁVEL
 \item \textit{TreeSet$<$User$>$ participantsList} - Lista de participantes;
 \item \textit{TreeSet$<$Ranking$>$ ranking} - Classificação dos que acabaram a prova;
 \item \textit{TreeSet$<$Ranking$>$ desistentes} - Participantes que desistiram da prova;
@@ -170,12 +173,18 @@ Das variáveis \textit{time} e \textit{km}, apenas uma irá ter algum valor para
 
 
     
+\section{Considerações finais}
 
+\subsection{Construtores}
+Determinadas classes desta aplicação contém construtores que não estão a ser utilizados por nós, foram sendo adicionados enquanto criávamos estas classes, no entanto, mesmo não sendo utilizados, podem ter utilidade futura fora desta aplicação. 
 
+\subsection{Variáveis inutilizadas}
+Na classe \textit{Event} a variável \textit{duration} nunca é usada, pois, na criação desta classe pensávamos que íamos precisar da duração do evento, como não demos conta da sua inutilidade até estarmos num estado mais avançado do projecto, decidimos simplesmente ignorar esta variável em vez de a remover. O utilizador nunca terá conhecimento da existência deste problema, pois nunca é pedido esta informação e apenas usamos um construtor que a põe a zero.
 
-
-
-
+\subsection{Actualização de estados}
+Durante os testes à funcionalidade da FitnessUM, deparamos com o problema de que, ao ser removida uma actividade, a sua informação continuava a ter relevância para as estatísticas e também para os recordes.
+Para melhorar a nossa aplicação foi mudada a implementação das estatísticas para apenas mostrar as actividades que ainda estão na aplicação, em vez de serem actualizadas na adição de uma nova actividade.\\
+Para os recordes, no entanto, não foi possível implementar uma funcionalidade equivalente por motivos de tempo, e assim os recordes mostrados ao utilizador são os de todas as suas actividades realizadas, mesmo as que foram removidas.
 
 
 

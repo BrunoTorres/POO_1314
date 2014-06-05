@@ -11,6 +11,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.GregorianCalendar;
+import java.util.Iterator;
 import java.util.Map;
 import javax.swing.JOptionPane;
 
@@ -31,21 +32,43 @@ public class LoginForm extends javax.swing.JFrame {
 			ObjectInputStream objInput = new ObjectInputStream(new FileInputStream("data.obj"));
 			fitness = new FitnessUM((FitnessUM) objInput.readObject());
 		} catch (IOException ex) {
-			User u1 = new User("1", "1", "user1", 'M', new GregorianCalendar(), 170, 70.0, "Futebol");
-			User u2 = new User("2", "2", "user2", 'M', new GregorianCalendar(), 160, 70.0, "Running");
-			User u3 = new User("3", "3", "user3", 'F', new GregorianCalendar(), 155, 50.0, "Tenis");
+			User u1 = new User("1", "1", "user1", 'M', new GregorianCalendar(1991, 10, 15), 170, 70.0, "Futebol");
+			User u2 = new User("2", "2", "user2", 'M', new GregorianCalendar(1994, 4, 11), 160, 70.0, "Running");
+			User u3 = new User("3", "3", "user3", 'F', new GregorianCalendar(1992, 7, 24), 155, 50.0, "Tenis");
 			User u4 = new User("4", "4", "user4", 'F', new GregorianCalendar(), 161, 52.0, "Yoga");
 			Admin a1 = new Admin("admin", "admin", "admin", 'M', new GregorianCalendar(1991, 10, 15));
-			fitness.addUser(u1.getEmail(), u1.getPassword(), u1.getName(), u1.getGender(), u1.getDate(), u1.getHeight(), u1.getWeight(), u1.getFavoriteActivity());
-			fitness.addUser(u2.getEmail(), u2.getPassword(), u2.getName(), u2.getGender(), u2.getDate(), u2.getHeight(), u2.getWeight(), u2.getFavoriteActivity());
-			fitness.addUser(u3.getEmail(), u3.getPassword(), u3.getName(), u3.getGender(), u3.getDate(), u3.getHeight(), u3.getWeight(), u3.getFavoriteActivity());
-			fitness.addUser(u4.getEmail(), u4.getPassword(), u4.getName(), u4.getGender(), u4.getDate(), u4.getHeight(), u4.getWeight(), u4.getFavoriteActivity());
+			u1.addActivity(new Running("Corrida1", new GregorianCalendar(), 120, 50, "Sol"), "Running");
+			u1.addActivity(new Running("Corrida2", new GregorianCalendar(), 50, 27, "Sol"), "Running");
+			u1.addActivity(new Running("Corrida3", new GregorianCalendar(), 109, 41, "Sol"), "Running");
+			u2.addActivity(new Running("Corrida4", new GregorianCalendar(), 29, 15, "Sol"), "Running");
+			u2.addActivity(new Running("Corrida5", new GregorianCalendar(), 24, 24, "Sol"), "Running");
+			u2.addActivity(new Running("Corrida6", new GregorianCalendar(), 80, 29, "Sol"), "Running");
+			u3.addActivity(new Running("Corrida7", new GregorianCalendar(), 120, 100, "Sol"), "Running");
+			u3.addActivity(new Running("Corrida8", new GregorianCalendar(), 100, 240, "Sol"), "Running");
+			u3.addActivity(new Running("Corrida9", new GregorianCalendar(), 90, 105, "Sol"), "Running");
+			fitness.addUserByUser(u1);
+			fitness.addUserByUser(u2);
+			fitness.addUserByUser(u3);
+			fitness.addUserByUser(u4);
+			
+			//fitness.addUser(u1.getEmail(), u1.getPassword(), u1.getName(), u1.getGender(), u1.getDate(), u1.getHeight(), u1.getWeight(), u1.getFavoriteActivity());
+			//fitness.addUser(u2.getEmail(), u2.getPassword(), u2.getName(), u2.getGender(), u2.getDate(), u2.getHeight(), u2.getWeight(), u2.getFavoriteActivity());
+			//fitness.addUser(u3.getEmail(), u3.getPassword(), u3.getName(), u3.getGender(), u3.getDate(), u3.getHeight(), u3.getWeight(), u3.getFavoriteActivity());
+			//fitness.addUser(u4.getEmail(), u4.getPassword(), u4.getName(), u4.getGender(), u4.getDate(), u4.getHeight(), u4.getWeight(), u4.getFavoriteActivity());
 			fitness.addAdmin(a1.getEmail(), a1.getPassword(), a1.getName(), a1.getGender(), a1.getDate());
 			fitness.sendFriendRequest(fitness.getUserByEmail("1"), fitness.getUserByEmail("4"));
 			fitness.sendFriendRequest(fitness.getUserByEmail("1"), fitness.getUserByEmail("3"));
 			fitness.sendFriendRequest(fitness.getUserByEmail("2"), fitness.getUserByEmail("3"));
 			fitness.sendFriendRequest(fitness.getUserByEmail("3"), fitness.getUserByEmail("4"));
 			fitness.setFitnessPerson(a1);
+			Marathon m = new Marathon("simula", "braga", 10, new GregorianCalendar(), new GregorianCalendar(2014, 5, 5));
+			m.addUser(u1);
+			m.addUser(u2);
+			m.addUser(u3);
+			fitness.addEvent(m);
+			fitness.simulaEvent(m, "Sol", 23);
+			ViewEventForm view = new ViewEventForm(this, m);
+			view.setVisible(true);
 		} catch (ClassCastException | ClassNotFoundException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
@@ -150,12 +173,6 @@ public class LoginForm extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 labelRegistarMouseClicked(evt);
             }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                labelRegistarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                labelRegistarMouseExited(evt);
-            }
         });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -195,14 +212,6 @@ public class LoginForm extends javax.swing.JFrame {
 		this.setVisible(false);
     }//GEN-LAST:event_labelRegistarMouseClicked
 
-    private void labelRegistarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelRegistarMouseEntered
-
-    }//GEN-LAST:event_labelRegistarMouseEntered
-
-    private void labelRegistarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelRegistarMouseExited
-
-    }//GEN-LAST:event_labelRegistarMouseExited
-
     private void formWindowGainedFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowGainedFocus
 		Font font = this.labelRegistar.getFont();
 		Map attributes = font.getAttributes();
@@ -231,18 +240,18 @@ public class LoginForm extends javax.swing.JFrame {
 		}
     }//GEN-LAST:event_butOKActionPerformed
 
-    /**
-     *
-     * @return
-     */
-    public FitnessUM getFitness() {
+	/**
+	 *
+	 * @return
+	 */
+	public FitnessUM getFitness() {
 		return this.fitness;
 	}
-	
-	private void checkEvents (){
+
+	private void checkEvents() {
 		GregorianCalendar now = new GregorianCalendar();
-		for (Event e : this.fitness.getEvents()){
-			if(e.getDate().before(now) && e.getRanking().isEmpty()){
+		for (Event e : this.fitness.getEvents()) {
+			if (e.getDate().before(now) && e.getSimulacao().isEmpty()) {
 				this.fitness.simulaEvent(e, "Sol", 23);
 			}
 		}

@@ -338,16 +338,22 @@ public class UserForm extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tableAmigos = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
-        jPanel12 = new javax.swing.JPanel();
-        jPanel13 = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tableEventsFeitos = new javax.swing.JTable();
-        butVerEvento = new javax.swing.JButton();
-        jPanel14 = new javax.swing.JPanel();
-        jScrollPane4 = new javax.swing.JScrollPane();
+        jPanel15 = new javax.swing.JPanel();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jPanel16 = new javax.swing.JPanel();
+        jPanel18 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
         tableEventsInscritos = new javax.swing.JTable();
         butRemoveEvento = new javax.swing.JButton();
         butAddEvento = new javax.swing.JButton();
+        jPanel19 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        tableEventsFeitos = new javax.swing.JTable();
+        butVerEvento = new javax.swing.JButton();
+        jPanel17 = new javax.swing.JPanel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        tableEventsOcorridos = new javax.swing.JTable();
+        butVerEvento1 = new javax.swing.JButton();
         butAddActivity = new javax.swing.JButton();
         butVerPedidos = new javax.swing.JButton();
         butAddAmigo = new javax.swing.JButton();
@@ -608,7 +614,7 @@ public class UserForm extends javax.swing.JFrame {
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Home", panelMensagens);
@@ -1074,7 +1080,7 @@ public class UserForm extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(412, Short.MAX_VALUE)
+                .addContainerGap(435, Short.MAX_VALUE)
                 .addComponent(butRemove)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1184,7 +1190,7 @@ public class UserForm extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(263, Short.MAX_VALUE))
+                .addContainerGap(286, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Recordes", jPanel1);
@@ -1261,12 +1267,85 @@ public class UserForm extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(293, Short.MAX_VALUE))
+                .addContainerGap(316, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Amigos", jPanel8);
 
-        jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "EVENTOS PARTICIPANTES"));
+        jPanel18.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "EVENTOS INSCRITOS"));
+
+        tableEventsInscritos.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        tableEventsInscritos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nome", "Tipo", "Local", "Data", "Nº de inscritos"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableEventsInscritos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tableEventsInscritos.getTableHeader().setReorderingAllowed(false);
+        jScrollPane5.setViewportView(tableEventsInscritos);
+
+        butRemoveEvento.setText("- EVENTO");
+        butRemoveEvento.setToolTipText("Remover inscrição em evento");
+        butRemoveEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butRemoveEventoActionPerformed(evt);
+            }
+        });
+
+        butAddEvento.setText("+ EVENTO");
+        butAddEvento.setToolTipText("Ver eventos disponíveis para inscrição");
+        butAddEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butAddEventoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
+        jPanel18.setLayout(jPanel18Layout);
+        jPanel18Layout.setHorizontalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(butAddEvento)
+                        .addGap(18, 18, 18)
+                        .addComponent(butRemoveEvento)))
+                .addContainerGap())
+        );
+        jPanel18Layout.setVerticalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(butRemoveEvento)
+                    .addComponent(butAddEvento))
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
+
+        jPanel19.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "EVENTOS PARTICIPANTES"));
 
         tableEventsFeitos.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         tableEventsFeitos.setModel(new javax.swing.table.DefaultTableModel(
@@ -1294,38 +1373,64 @@ public class UserForm extends javax.swing.JFrame {
         });
         tableEventsFeitos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         tableEventsFeitos.getTableHeader().setReorderingAllowed(false);
-        jScrollPane3.setViewportView(tableEventsFeitos);
+        jScrollPane6.setViewportView(tableEventsFeitos);
 
         butVerEvento.setText("VER EVENTO");
         butVerEvento.setToolTipText("Ver detalhes do evento");
+        butVerEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butVerEventoActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
+        jPanel19.setLayout(jPanel19Layout);
+        jPanel19Layout.setHorizontalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane6)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(butVerEvento)))
                 .addContainerGap())
         );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
+        jPanel19Layout.setVerticalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(butVerEvento)
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        jPanel14.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "EVENTOS INSCRITOS"));
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
 
-        tableEventsInscritos.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        tableEventsInscritos.setModel(new javax.swing.table.DefaultTableModel(
+        jTabbedPane2.addTab("Eventos Inscritos / Realizados", jPanel16);
+
+        tableEventsOcorridos.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        tableEventsOcorridos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -1348,74 +1453,52 @@ public class UserForm extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tableEventsInscritos.getTableHeader().setReorderingAllowed(false);
-        jScrollPane4.setViewportView(tableEventsInscritos);
+        tableEventsOcorridos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tableEventsOcorridos.getTableHeader().setReorderingAllowed(false);
+        jScrollPane7.setViewportView(tableEventsOcorridos);
 
-        butRemoveEvento.setText("- EVENTO");
-        butRemoveEvento.setToolTipText("Remover inscrição em evento");
-        butRemoveEvento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butRemoveEventoActionPerformed(evt);
-            }
-        });
+        butVerEvento1.setText("VER EVENTO");
+        butVerEvento1.setToolTipText("Ver detalhes do evento");
 
-        butAddEvento.setText("+ EVENTO");
-        butAddEvento.setToolTipText("Ver eventos disponíveis para inscrição");
-        butAddEvento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butAddEventoActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel14Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
+        jPanel17.setLayout(jPanel17Layout);
+        jPanel17Layout.setHorizontalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 485, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(butAddEvento)
-                        .addGap(18, 18, 18)
-                        .addComponent(butRemoveEvento)))
+                        .addComponent(butVerEvento1)))
                 .addContainerGap())
         );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel14Layout.createSequentialGroup()
+        jPanel17Layout.setVerticalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(butRemoveEvento)
-                    .addComponent(butAddEvento))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addComponent(butVerEvento1)
+                .addGap(115, 115, 115))
         );
 
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+        jTabbedPane2.addTab("Eventos ocorridos", jPanel17);
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane2)
         );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addComponent(jTabbedPane2))
         );
 
-        jTabbedPane1.addTab("Eventos", jPanel12);
+        jTabbedPane1.addTab("Eventos", jPanel15);
 
         butAddActivity.setText("+ ATIVIDADE");
         butAddActivity.addActionListener(new java.awt.event.ActionListener() {
@@ -1522,241 +1605,14 @@ public class UserForm extends javax.swing.JFrame {
 		login.setVisible(true);
     }//GEN-LAST:event_butLogoutActionPerformed
 
-    private void butRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butRemoveActionPerformed
-		Activity a;
-		if (this.but10.isSelected()) {
-			a = this.acts10.get(this.currAct - 1);
-		} else {
-			a = this.allActs.get(this.allActsCurr - 1);
-		}
-		boolean rem = this.u.removeActivity(a.getName());
-		if (rem) {
-			JOptionPane.showMessageDialog(this, "Atividade removida com sucesso...");
-			this.changeActivities("remove");
-		} else {
-			JOptionPane.showMessageDialog(this, "Atividade não removida...");
-		}
-    }//GEN-LAST:event_butRemoveActionPerformed
-
-    private void butLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butLastActionPerformed
-		if (this.but10.isSelected()) {
-			this.currAct = this.acts10.size();
-		} else {
-			this.allActsCurr = this.allActs.size();
-		}
-		this.changeActivities("last");
-    }//GEN-LAST:event_butLastActionPerformed
-
-    private void butNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNextActionPerformed
-		if (this.but10.isSelected()) {
-			if (this.currAct < this.acts10.size()) {
-				this.currAct++;
-				this.changeActivities("next");
-			}
-		} else {
-			if (this.allActsCurr < this.allActs.size()) {
-				this.allActsCurr++;
-				this.changeActivities("next");
-			}
-		}
-    }//GEN-LAST:event_butNextActionPerformed
-
-    private void butPrevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butPrevActionPerformed
-		if (this.but10.isSelected()) {
-			if (this.currAct > 1) {
-				this.currAct--;
-				this.changeActivities("prev");
-			}
-		} else {
-			if (this.allActsCurr > 1) {
-				this.allActsCurr--;
-				this.changeActivities("prev");
-			}
-		}
-    }//GEN-LAST:event_butPrevActionPerformed
-
-    private void butFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butFirstActionPerformed
-		if (this.but10.isSelected()) {
-			this.currAct = 1;
-		} else {
-			this.allActsCurr = 1;
-		}
-		this.changeActivities("first");
-    }//GEN-LAST:event_butFirstActionPerformed
-
-    private void butAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAllActionPerformed
-		this.but10.setSelected(false);
-		this.butAll.setSelected(true);
-		this.textNAct.setText(this.allActsCurr + "/" + this.allActs.size());
-		this.changeActivities("all");
-    }//GEN-LAST:event_butAllActionPerformed
-
-    private void but10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but10ActionPerformed
-		this.butAll.setSelected(false);
-		this.but10.setSelected(true);
-		this.textNAct.setText(this.currAct + "/" + this.acts10.size());
-		this.changeActivities("10");
-    }//GEN-LAST:event_but10ActionPerformed
-
-    private void cboxSportsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboxSportsItemStateChanged
-		if (evt.getStateChange() == ItemEvent.SELECTED) {
-			String sport = this.cboxSports.getSelectedItem().toString();
-			switch (sport) {
-				case "Running":
-				case "Cycling":
-				case "Walking":
-				case "Sailing":
-				case "Skating":
-				case "Orienteering":
-					this.textClima.setEnabled(true);
-					this.textDistanciaH.setEnabled(true);
-					this.textDistanciaV.setEnabled(false);
-					this.spinnerAdversario.setEnabled(false);
-					this.spinnerPessoal.setEnabled(false);
-					break;
-				case "Snowboarding":
-				case "Mountain Biking":
-				case "Skiing":
-					this.textClima.setEnabled(true);
-					this.textDistanciaH.setEnabled(true);
-					this.textDistanciaV.setEnabled(true);
-					this.spinnerAdversario.setEnabled(false);
-					this.spinnerPessoal.setEnabled(false);
-					break;
-				case "Swimming":
-				case "Indoor Cycling":
-					this.textClima.setEnabled(false);
-					this.textDistanciaH.setEnabled(true);
-					this.textDistanciaV.setEnabled(false);
-					this.spinnerAdversario.setEnabled(false);
-					this.spinnerPessoal.setEnabled(false);
-					break;
-				case "Football":
-				case "Polo":
-				case "Beach Volleyball":
-				case "Tennis":
-					this.textClima.setEnabled(true);
-					this.textDistanciaH.setEnabled(false);
-					this.textDistanciaV.setEnabled(false);
-					this.spinnerAdversario.setEnabled(true);
-					this.spinnerPessoal.setEnabled(true);
-					break;
-				case "Handball":
-				case "Basketball":
-				case "Table Tennis":
-				case "Boxing":
-				case "Badminton":
-				case "Volleyball":
-					this.textClima.setEnabled(false);
-					this.textDistanciaH.setEnabled(false);
-					this.textDistanciaV.setEnabled(false);
-					this.spinnerAdversario.setEnabled(true);
-					this.spinnerPessoal.setEnabled(true);
-					break;
-				default:
-					this.textClima.setEnabled(false);
-					this.textDistanciaH.setEnabled(false);
-					this.textDistanciaV.setEnabled(false);
-					this.spinnerAdversario.setEnabled(false);
-					this.spinnerPessoal.setEnabled(false);
-					break;
-			}
-		}
-    }//GEN-LAST:event_cboxSportsItemStateChanged
-
-    private void cboxRecordSportItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboxRecordSportItemStateChanged
-		if (evt.getStateChange() == ItemEvent.SELECTED) {
-			for (int i = 0; i < this.tableRecords.getRowCount(); i++) {
-				for (int j = 0; j < this.tableRecords.getColumnCount(); j++) {
-					this.tableRecords.setValueAt(null, i, j);
-				}
-			}
-
-			String sport = this.cboxRecordSport.getSelectedItem().toString();
-
-			switch (sport) {
-				case "Running":
-					this.preencheRunRecords();
-					break;
-				case "Walking":
-					this.preencheWalkRecords();
-					break;
-				case "Mountain Biking":
-					this.preencheMountainRecords();
-					break;
-				case "Cycling":
-					this.preencheCyclingRecords();
-					break;
-				default:
-					this.preencheSwimRecords();
-					break;
-			}
-		}
-    }//GEN-LAST:event_cboxRecordSportItemStateChanged
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-		if (this.tableAmigos.getSelectedRowCount() > 0) {
-			ViewFriendForm viewFriend;
-			int row = this.tableAmigos.getSelectedRow();
-			User friend = this.fit.getUserByEmail((String) this.tableAmigos.getValueAt(row, 2)).clone();
-			viewFriend = new ViewFriendForm(this, this.fit, friend);
-			viewFriend.setVisible(true);
-			this.setVisible(false);
-		}
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void butMensaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butMensaisActionPerformed
-		this.butAnuais.setSelected(false);
-		this.butMensais.setSelected(true);
-		this.butNextMonth.setText("Mês >");
-		this.butPrevMonth.setText("< Mês");
-		this.preencheStats();
-    }//GEN-LAST:event_butMensaisActionPerformed
-
-    private void butAnuaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAnuaisActionPerformed
-		this.butAnuais.setSelected(true);
-		this.butMensais.setSelected(false);
-		this.butNextMonth.setText("Ano >");
-		this.butPrevMonth.setText("< Ano");
-		this.preencheStats();
-    }//GEN-LAST:event_butAnuaisActionPerformed
-
-    private void butNextMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNextMonthActionPerformed
-		if (this.butMensais.isSelected()) {
-			if (this.currMes == 11) {
-				this.currMes = 0;
-				this.currAno++;
-			} else {
-				this.currMes++;
-			}
-		} else {
-			this.currAno++;
-		}
-		this.preencheStats();
-    }//GEN-LAST:event_butNextMonthActionPerformed
-
-    private void butPrevMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butPrevMonthActionPerformed
-		if (this.butMensais.isSelected()) {
-			if (this.currMes == 0) {
-				this.currMes = 11;
-				this.currAno--;
-			} else {
-				this.currMes--;
-			}
-		} else {
-			this.currAno--;
-		}
-		this.preencheStats();
-    }//GEN-LAST:event_butPrevMonthActionPerformed
-
     private void butAddEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAddEventoActionPerformed
-		RegistarEmEventoForm regist = new RegistarEmEventoForm(this, this.fit, this.u);
-		regist.setVisible(true);
+        RegistarEmEventoForm reg = new RegistarEmEventoForm(this, this.fit, this.u);
+		reg.setVisible(true);
 		this.setVisible(false);
     }//GEN-LAST:event_butAddEventoActionPerformed
 
     private void butRemoveEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butRemoveEventoActionPerformed
-		if (this.tableEventsInscritos.getSelectedRowCount() > 0) {
+        if (this.tableEventsInscritos.getSelectedRowCount() > 0) {
 			ArrayList<Event> eventos = new ArrayList<>();
 			for (Event e : this.fit.getOpenEvents()) {
 				if (e.getParticipantsList().contains(this.u)) {
@@ -1768,6 +1624,249 @@ public class UserForm extends javax.swing.JFrame {
 			this.preencheEventosInscritos();
 		}
     }//GEN-LAST:event_butRemoveEventoActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if (this.tableAmigos.getSelectedRowCount() > 0) {
+            ViewFriendForm viewFriend;
+            int row = this.tableAmigos.getSelectedRow();
+            User friend = this.fit.getUserByEmail((String) this.tableAmigos.getValueAt(row, 2)).clone();
+            viewFriend = new ViewFriendForm(this, this.fit, friend);
+            viewFriend.setVisible(true);
+            this.setVisible(false);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void cboxRecordSportItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboxRecordSportItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            for (int i = 0; i < this.tableRecords.getRowCount(); i++) {
+                for (int j = 0; j < this.tableRecords.getColumnCount(); j++) {
+                    this.tableRecords.setValueAt(null, i, j);
+                }
+            }
+
+            String sport = this.cboxRecordSport.getSelectedItem().toString();
+
+            switch (sport) {
+                case "Running":
+                this.preencheRunRecords();
+                break;
+                case "Walking":
+                this.preencheWalkRecords();
+                break;
+                case "Mountain Biking":
+                this.preencheMountainRecords();
+                break;
+                case "Cycling":
+                this.preencheCyclingRecords();
+                break;
+                default:
+                this.preencheSwimRecords();
+                break;
+            }
+        }
+    }//GEN-LAST:event_cboxRecordSportItemStateChanged
+
+    private void butRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butRemoveActionPerformed
+        Activity a;
+        if (this.but10.isSelected()) {
+            a = this.acts10.get(this.currAct - 1);
+        } else {
+            a = this.allActs.get(this.allActsCurr - 1);
+        }
+        boolean rem = this.u.removeActivity(a.getName());
+        if (rem) {
+            JOptionPane.showMessageDialog(this, "Atividade removida com sucesso...");
+            this.changeActivities("remove");
+        } else {
+            JOptionPane.showMessageDialog(this, "Atividade não removida...");
+        }
+    }//GEN-LAST:event_butRemoveActionPerformed
+
+    private void butLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butLastActionPerformed
+        if (this.but10.isSelected()) {
+            this.currAct = this.acts10.size();
+        } else {
+            this.allActsCurr = this.allActs.size();
+        }
+        this.changeActivities("last");
+    }//GEN-LAST:event_butLastActionPerformed
+
+    private void butNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNextActionPerformed
+        if (this.but10.isSelected()) {
+            if (this.currAct < this.acts10.size()) {
+                this.currAct++;
+                this.changeActivities("next");
+            }
+        } else {
+            if (this.allActsCurr < this.allActs.size()) {
+                this.allActsCurr++;
+                this.changeActivities("next");
+            }
+        }
+    }//GEN-LAST:event_butNextActionPerformed
+
+    private void butPrevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butPrevActionPerformed
+        if (this.but10.isSelected()) {
+            if (this.currAct > 1) {
+                this.currAct--;
+                this.changeActivities("prev");
+            }
+        } else {
+            if (this.allActsCurr > 1) {
+                this.allActsCurr--;
+                this.changeActivities("prev");
+            }
+        }
+    }//GEN-LAST:event_butPrevActionPerformed
+
+    private void butFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butFirstActionPerformed
+        if (this.but10.isSelected()) {
+            this.currAct = 1;
+        } else {
+            this.allActsCurr = 1;
+        }
+        this.changeActivities("first");
+    }//GEN-LAST:event_butFirstActionPerformed
+
+    private void butAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAllActionPerformed
+        this.but10.setSelected(false);
+        this.butAll.setSelected(true);
+        this.textNAct.setText(this.allActsCurr + "/" + this.allActs.size());
+        this.changeActivities("all");
+    }//GEN-LAST:event_butAllActionPerformed
+
+    private void but10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but10ActionPerformed
+        this.butAll.setSelected(false);
+        this.but10.setSelected(true);
+        this.textNAct.setText(this.currAct + "/" + this.acts10.size());
+        this.changeActivities("10");
+    }//GEN-LAST:event_but10ActionPerformed
+
+    private void cboxSportsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboxSportsItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            String sport = this.cboxSports.getSelectedItem().toString();
+            switch (sport) {
+                case "Running":
+                case "Cycling":
+                case "Walking":
+                case "Sailing":
+                case "Skating":
+                case "Orienteering":
+                this.textClima.setEnabled(true);
+                this.textDistanciaH.setEnabled(true);
+                this.textDistanciaV.setEnabled(false);
+                this.spinnerAdversario.setEnabled(false);
+                this.spinnerPessoal.setEnabled(false);
+                break;
+                case "Snowboarding":
+                case "Mountain Biking":
+                case "Skiing":
+                this.textClima.setEnabled(true);
+                this.textDistanciaH.setEnabled(true);
+                this.textDistanciaV.setEnabled(true);
+                this.spinnerAdversario.setEnabled(false);
+                this.spinnerPessoal.setEnabled(false);
+                break;
+                case "Swimming":
+                case "Indoor Cycling":
+                this.textClima.setEnabled(false);
+                this.textDistanciaH.setEnabled(true);
+                this.textDistanciaV.setEnabled(false);
+                this.spinnerAdversario.setEnabled(false);
+                this.spinnerPessoal.setEnabled(false);
+                break;
+                case "Football":
+                case "Polo":
+                case "Beach Volleyball":
+                case "Tennis":
+                this.textClima.setEnabled(true);
+                this.textDistanciaH.setEnabled(false);
+                this.textDistanciaV.setEnabled(false);
+                this.spinnerAdversario.setEnabled(true);
+                this.spinnerPessoal.setEnabled(true);
+                break;
+                case "Handball":
+                case "Basketball":
+                case "Table Tennis":
+                case "Boxing":
+                case "Badminton":
+                case "Volleyball":
+                this.textClima.setEnabled(false);
+                this.textDistanciaH.setEnabled(false);
+                this.textDistanciaV.setEnabled(false);
+                this.spinnerAdversario.setEnabled(true);
+                this.spinnerPessoal.setEnabled(true);
+                break;
+                default:
+                this.textClima.setEnabled(false);
+                this.textDistanciaH.setEnabled(false);
+                this.textDistanciaV.setEnabled(false);
+                this.spinnerAdversario.setEnabled(false);
+                this.spinnerPessoal.setEnabled(false);
+                break;
+            }
+        }
+    }//GEN-LAST:event_cboxSportsItemStateChanged
+
+    private void butNextMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNextMonthActionPerformed
+        if (this.butMensais.isSelected()) {
+            if (this.currMes == 11) {
+                this.currMes = 0;
+                this.currAno++;
+            } else {
+                this.currMes++;
+            }
+        } else {
+            this.currAno++;
+        }
+        this.preencheStats();
+    }//GEN-LAST:event_butNextMonthActionPerformed
+
+    private void butPrevMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butPrevMonthActionPerformed
+        if (this.butMensais.isSelected()) {
+            if (this.currMes == 0) {
+                this.currMes = 11;
+                this.currAno--;
+            } else {
+                this.currMes--;
+            }
+        } else {
+            this.currAno--;
+        }
+        this.preencheStats();
+    }//GEN-LAST:event_butPrevMonthActionPerformed
+
+    private void butAnuaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAnuaisActionPerformed
+        this.butAnuais.setSelected(true);
+        this.butMensais.setSelected(false);
+        this.butNextMonth.setText("Ano >");
+        this.butPrevMonth.setText("< Ano");
+        this.preencheStats();
+    }//GEN-LAST:event_butAnuaisActionPerformed
+
+    private void butMensaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butMensaisActionPerformed
+        this.butAnuais.setSelected(false);
+        this.butMensais.setSelected(true);
+        this.butNextMonth.setText("Mês >");
+        this.butPrevMonth.setText("< Mês");
+        this.preencheStats();
+    }//GEN-LAST:event_butMensaisActionPerformed
+
+    private void butVerEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butVerEventoActionPerformed
+        if(this.tableEventsFeitos.getSelectedRowCount() > 0){
+			try{
+				Event e = this.fit.getEventByName((String) this.tableEventsFeitos.getValueAt(this.tableEventsFeitos.getSelectedRow(), 0));
+				if (e.getParticipantsList().contains(this.u)){
+					ViewEventForm viewEvent = new ViewEventForm(this, e);
+					viewEvent.setVisible(true);
+					this.setVisible(false);
+				}
+			}
+			catch (EventNotFoundException e){
+				JOptionPane.showMessageDialog(this, "ERRO: EVENTO INEXISTENTE");
+			}
+		}
+    }//GEN-LAST:event_butVerEventoActionPerformed
 
 	private void preencheRunRecords() {
 		TreeMap<String, ListRecords> rec = (TreeMap<String, ListRecords>) this.u.getRecords();
@@ -1801,7 +1900,7 @@ public class UserForm extends javax.swing.JFrame {
 				this.tableRecords.setValueAt(dpt.getName(), i, 0);
 				float dist = (float) dpt.getDistance();
 				if (dist > 0.0) {
-					this.tableRecords.setValueAt(dpt.getDistance() + " KMs", i, 1);
+					this.tableRecords.setValueAt(dist + " KMs", i, 1);
 				} else {
 					this.tableRecords.setValueAt("N/A", i, 1);
 				}
@@ -1849,7 +1948,7 @@ public class UserForm extends javax.swing.JFrame {
 				this.tableRecords.setValueAt(dpt.getName(), i, 0);
 				float dist = (float) dpt.getDistance();
 				if (dist > 0.0) {
-					this.tableRecords.setValueAt(dpt.getDistance() + " KMs", i, 1);
+					this.tableRecords.setValueAt(dist + " KMs", i, 1);
 				} else {
 					this.tableRecords.setValueAt("N/A", i, 1);
 				}
@@ -2062,7 +2161,7 @@ public class UserForm extends javax.swing.JFrame {
 			this.tableEventsInscritos.setValueAt(e.getName(), i, 0);
 			this.tableEventsInscritos.setValueAt(e.getTipoActivity(), i, 1);
 			this.tableEventsInscritos.setValueAt(e.getLocation(), i, 2);
-			this.tableEventsInscritos.setValueAt(String.valueOf(diaE) + "/" + String.valueOf(mesE) + "/" + String.valueOf(anoE), i, 3);
+			this.tableEventsInscritos.setValueAt(String.valueOf(diaE) + "/" + String.valueOf(mesE + 1) + "/" + String.valueOf(anoE), i, 3);
 			this.tableEventsInscritos.setValueAt(e.getParticipants(), i, 4);
 			i++;
 		}
@@ -2092,7 +2191,7 @@ public class UserForm extends javax.swing.JFrame {
 			this.tableEventsFeitos.setValueAt(e.getName(), i, 0);
 			this.tableEventsFeitos.setValueAt(e.getTipoActivity(), i, 1);
 			this.tableEventsFeitos.setValueAt(e.getLocation(), i, 2);
-			this.tableEventsFeitos.setValueAt(String.valueOf(diaE) + "/" + String.valueOf(mesE) + "/" + String.valueOf(anoE), i, 3);
+			this.tableEventsFeitos.setValueAt(String.valueOf(diaE) + "/" + String.valueOf(mesE + 1) + "/" + String.valueOf(anoE), i, 3);
 			this.tableEventsFeitos.setValueAt("CLASS", i, 4);
 			i++;
 		}
@@ -2202,6 +2301,7 @@ public class UserForm extends javax.swing.JFrame {
     private javax.swing.JButton butRemove;
     private javax.swing.JButton butRemoveEvento;
     private javax.swing.JButton butVerEvento;
+    private javax.swing.JButton butVerEvento1;
     private javax.swing.JButton butVerPedidos;
     private javax.swing.JComboBox cboxAno;
     private javax.swing.JComboBox cboxAnoNasc;
@@ -2239,9 +2339,11 @@ public class UserForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -2252,9 +2354,11 @@ public class UserForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JLabel labelDate;
     private javax.swing.JLabel labelDay;
     private javax.swing.JLabel labelMonth;
@@ -2267,6 +2371,7 @@ public class UserForm extends javax.swing.JFrame {
     private javax.swing.JTable tableAmigos;
     private javax.swing.JTable tableEventsFeitos;
     private javax.swing.JTable tableEventsInscritos;
+    private javax.swing.JTable tableEventsOcorridos;
     private javax.swing.JTable tableRecords;
     private javax.swing.JTextField textAltura;
     private javax.swing.JTextField textCalorias;
