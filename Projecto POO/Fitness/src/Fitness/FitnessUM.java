@@ -346,15 +346,14 @@ public class FitnessUM implements Serializable {
      * @param name Nome do evento a procurar.
      * @return Event.
      */
-    public Event getEventByName(String name) {       // VER MELHOR!! SE NAO HOUVER O EVENTO RETORNAR O QUE?!
-        Event event = new Trail();
+	public Event getEventByName(String name) throws EventNotFoundException{       // VER MELHOR!! SE NAO HOUVER O EVENTO RETORNAR O QUE?!
         for (Event e : this.getEvents()) {
-            if (e.getName().equals(name)) {
+			if (e.getName().equals(name)) {
                 return e;
             }
         }
 
-        return event;
+        throw new EventNotFoundException (name);
     }
 
     private boolean findRunning(User u) {
