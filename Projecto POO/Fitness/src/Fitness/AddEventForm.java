@@ -385,7 +385,7 @@ public class AddEventForm extends javax.swing.JFrame {
 			
 			if(data.before(this.now) || dataInsc.before(this.now) || dataInsc.after(data)){
 				ok = false;
-				JOptionPane.showMessageDialog(this, "Datas incorretas...\n\nCertifique-se que:\n- O evento não ocorre antes das inscrições terminarem\n- O evento é criado com pelo menos um dia de antecedência");
+				JOptionPane.showMessageDialog(this, "Datas incorretas...\n\nCertifique-se que:\n- O evento não ocorre antes das inscrições terminarem\n- O evento é criado com pelo menos um dia de antecedência\n- A data limite de inscrição é de hoje a pelo menos um dia");
 			}
 				
 			if(ok){

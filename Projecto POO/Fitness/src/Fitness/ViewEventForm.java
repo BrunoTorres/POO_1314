@@ -54,7 +54,7 @@ public class ViewEventForm extends javax.swing.JFrame {
 		int numParts = this.e.getParticipants();
 		this.textNumParticipantes.setText(String.valueOf(numParts));
 		DefaultTableModel dtm = (DefaultTableModel) this.tableClass.getModel();
-		//int numDesist = this.e.getDesistentes().size();
+		dtm.setNumRows(0);
 		TreeSet<Ranking> rankFinal = new TreeSet<>(new CompareRankingByTime());
 		rankFinal = (TreeSet<Ranking>) this.e.getRanking();
 		TreeSet<Ranking> rankDesist = new TreeSet<>(new CompareRankingByKm());

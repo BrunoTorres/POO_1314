@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Fitness;
 
 import java.awt.event.ItemEvent;
@@ -104,7 +103,7 @@ public class ViewFriendForm extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         textDistanciaH = new javax.swing.JTextField();
         textDistanciaV = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
+        labelDistH = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
@@ -543,7 +542,7 @@ public class ViewFriendForm extends javax.swing.JFrame {
         textDistanciaV.setMinimumSize(new java.awt.Dimension(52, 28));
         textDistanciaV.setPreferredSize(new java.awt.Dimension(52, 28));
 
-        jLabel4.setText("KMs");
+        labelDistH.setText("KMs");
 
         jLabel8.setText("KMs");
 
@@ -559,7 +558,7 @@ public class ViewFriendForm extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(textDistanciaH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4))
+                        .addComponent(labelDistH))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(textDistanciaV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -573,7 +572,7 @@ public class ViewFriendForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textDistanciaH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(labelDistH))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1191,133 +1190,143 @@ public class ViewFriendForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cboxSportsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboxSportsItemStateChanged
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
-            String sport = this.cboxSports.getSelectedItem().toString();
-            switch (sport) {
-                case "Running":
-                case "Cycling":
-                case "Walking":
-                case "Sailing":
-                case "Skating":
-                case "Orienteering":
-                this.textClima.setEnabled(true);
-                this.textDistanciaH.setEnabled(true);
-                this.textDistanciaV.setEnabled(false);
-                this.spinnerAdversario.setEnabled(false);
-                this.spinnerPessoal.setEnabled(false);
-                break;
-                case "Snowboarding":
-                case "Mountain Biking":
-                case "Skiing":
-                this.textClima.setEnabled(true);
-                this.textDistanciaH.setEnabled(true);
-                this.textDistanciaV.setEnabled(true);
-                this.spinnerAdversario.setEnabled(false);
-                this.spinnerPessoal.setEnabled(false);
-                break;
-                case "Swimming":
-                case "Indoor Cycling":
-                this.textClima.setEnabled(false);
-                this.textDistanciaH.setEnabled(true);
-                this.textDistanciaV.setEnabled(false);
-                this.spinnerAdversario.setEnabled(false);
-                this.spinnerPessoal.setEnabled(false);
-                break;
-                case "Football":
-                case "Polo":
-                case "Beach Volleyball":
-                case "Tennis":
-                this.textClima.setEnabled(true);
-                this.textDistanciaH.setEnabled(false);
-                this.textDistanciaV.setEnabled(false);
-                this.spinnerAdversario.setEnabled(true);
-                this.spinnerPessoal.setEnabled(true);
-                break;
-                case "Handball":
-                case "Basketball":
-                case "Table Tennis":
-                case "Boxing":
-                case "Badminton":
-                case "Volleyball":
-                this.textClima.setEnabled(false);
-                this.textDistanciaH.setEnabled(false);
-                this.textDistanciaV.setEnabled(false);
-                this.spinnerAdversario.setEnabled(true);
-                this.spinnerPessoal.setEnabled(true);
-                break;
-                default:
-                this.textClima.setEnabled(false);
-                this.textDistanciaH.setEnabled(false);
-                this.textDistanciaV.setEnabled(false);
-                this.spinnerAdversario.setEnabled(false);
-                this.spinnerPessoal.setEnabled(false);
-                break;
-            }
-        }
+		if (evt.getStateChange() == ItemEvent.SELECTED) {
+			String sport = this.cboxSports.getSelectedItem().toString();
+			switch (sport) {
+				case "Running":
+				case "Cycling":
+				case "Walking":
+				case "Sailing":
+				case "Skating":
+				case "Orienteering":
+					this.textClima.setEnabled(true);
+					this.textDistanciaH.setEnabled(true);
+					this.textDistanciaV.setEnabled(false);
+					this.textDistanciaV.setText("");
+					this.spinnerAdversario.setValue(0);
+					this.spinnerPessoal.setValue(0);
+					break;
+				case "Snowboarding":
+				case "Mountain Biking":
+				case "Skiing":
+					this.textClima.setEnabled(true);
+					this.textDistanciaH.setEnabled(true);
+					this.textDistanciaV.setEnabled(true);
+					this.spinnerAdversario.setValue(0);
+					this.spinnerPessoal.setValue(0);
+					break;
+				case "Swimming":
+				case "Indoor Cycling":
+					this.textClima.setEnabled(false);
+					this.textDistanciaH.setEnabled(true);
+					this.textDistanciaV.setEnabled(false);
+					this.spinnerAdversario.setValue(0);
+					this.spinnerPessoal.setValue(0);
+					break;
+				case "Football":
+				case "Polo":
+				case "Beach Volleyball":
+				case "Tennis":
+					this.textClima.setEnabled(false);
+					this.textClima.setText("");
+					this.textDistanciaH.setEnabled(false);
+					this.textDistanciaH.setText("");
+					this.textDistanciaV.setEnabled(false);
+					this.textDistanciaV.setText("");
+					break;
+				case "Handball":
+				case "Basketball":
+				case "Table Tennis":
+				case "Boxing":
+				case "Badminton":
+				case "Volleyball":
+					this.textClima.setEnabled(false);
+					this.textClima.setText("");
+					this.textDistanciaH.setEnabled(false);
+					this.textDistanciaH.setText("");
+					this.textDistanciaV.setEnabled(false);
+					this.textDistanciaV.setText("");
+					break;
+				default:
+					this.textClima.setEnabled(false);
+					this.textClima.setText("");
+					this.textDistanciaH.setEnabled(false);
+					this.textDistanciaH.setText("");
+					this.textDistanciaV.setEnabled(false);
+					this.textDistanciaV.setText("");
+					this.spinnerAdversario.setValue(0);
+					this.spinnerPessoal.setValue(0);
+					break;
+			}
+			if(sport.equals("Swimming"))
+				this.labelDistH.setText("m");
+			else
+				this.labelDistH.setText("KMs");
+		}
     }//GEN-LAST:event_cboxSportsItemStateChanged
 
     private void but10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_but10ActionPerformed
-        this.butAll.setSelected(false);
-        this.but10.setSelected(true);
-        this.textNAct.setText(this.currAct + "/" + this.acts10.size());
-        this.changeActivities("10");
+		this.butAll.setSelected(false);
+		this.but10.setSelected(true);
+		this.textNAct.setText(this.currAct + "/" + this.acts10.size());
+		this.changeActivities("10");
     }//GEN-LAST:event_but10ActionPerformed
 
     private void butAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAllActionPerformed
-        this.but10.setSelected(false);
-        this.butAll.setSelected(true);
-        this.textNAct.setText(this.allActsCurr + "/" + this.allActs.size());
-        this.changeActivities("all");
+		this.but10.setSelected(false);
+		this.butAll.setSelected(true);
+		this.textNAct.setText(this.allActsCurr + "/" + this.allActs.size());
+		this.changeActivities("all");
     }//GEN-LAST:event_butAllActionPerformed
 
     private void butFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butFirstActionPerformed
-        if (this.but10.isSelected()) {
-            this.currAct = 1;
-        } else {
-            this.allActsCurr = 1;
-        }
-        this.changeActivities("first");
+		if (this.but10.isSelected()) {
+			this.currAct = 1;
+		} else {
+			this.allActsCurr = 1;
+		}
+		this.changeActivities("first");
     }//GEN-LAST:event_butFirstActionPerformed
 
     private void butPrevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butPrevActionPerformed
-        if (this.but10.isSelected()) {
-            if (this.currAct > 1) {
-                this.currAct--;
-                this.changeActivities("prev");
-            }
-        } else {
-            if (this.allActsCurr > 1) {
-                this.allActsCurr--;
-                this.changeActivities("prev");
-            }
-        }
+		if (this.but10.isSelected()) {
+			if (this.currAct > 1) {
+				this.currAct--;
+				this.changeActivities("prev");
+			}
+		} else {
+			if (this.allActsCurr > 1) {
+				this.allActsCurr--;
+				this.changeActivities("prev");
+			}
+		}
     }//GEN-LAST:event_butPrevActionPerformed
 
     private void butNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNextActionPerformed
-        if (this.but10.isSelected()) {
-            if (this.currAct < this.acts10.size()) {
-                this.currAct++;
-                this.changeActivities("next");
-            }
-        } else {
-            if (this.allActsCurr < this.allActs.size()) {
-                this.allActsCurr++;
-                this.changeActivities("next");
-            }
-        }
+		if (this.but10.isSelected()) {
+			if (this.currAct < this.acts10.size()) {
+				this.currAct++;
+				this.changeActivities("next");
+			}
+		} else {
+			if (this.allActsCurr < this.allActs.size()) {
+				this.allActsCurr++;
+				this.changeActivities("next");
+			}
+		}
     }//GEN-LAST:event_butNextActionPerformed
 
     private void butLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butLastActionPerformed
-        if (this.but10.isSelected()) {
-            this.currAct = this.acts10.size();
-        } else {
-            this.allActsCurr = this.allActs.size();
-        }
-        this.changeActivities("last");
+		if (this.but10.isSelected()) {
+			this.currAct = this.acts10.size();
+		} else {
+			this.allActsCurr = this.allActs.size();
+		}
+		this.changeActivities("last");
     }//GEN-LAST:event_butLastActionPerformed
 
     private void cboxRecordSportItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboxRecordSportItemStateChanged
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
+		if (evt.getStateChange() == ItemEvent.SELECTED) {
 			for (int i = 0; i < this.tableRecords.getRowCount(); i++) {
 				for (int j = 0; j < this.tableRecords.getColumnCount(); j++) {
 					this.tableRecords.setValueAt(null, i, j);
@@ -1345,10 +1354,12 @@ public class ViewFriendForm extends javax.swing.JFrame {
 			}
 		}
     }//GEN-LAST:event_cboxRecordSportItemStateChanged
-	
+
 	private void preencheRunRecords() {
 		TreeMap<String, ListRecords> rec = (TreeMap<String, ListRecords>) this.u.getRecords();
 		ArrayList<Record> run = new ArrayList<>();
+		DefaultTableModel dtm = (DefaultTableModel) this.tableRecords.getModel();
+		dtm.setNumRows(0);
 
 		for (ListRecords l : rec.values()) {
 			switch (l.getName()) {
@@ -1361,13 +1372,18 @@ public class ViewFriendForm extends javax.swing.JFrame {
 		}
 
 		for (int i = 0; i < run.size(); i++) {
+			dtm.addRow(new Object[]{null, null});
+		}
+		this.tableRecords.setModel(dtm);
+
+		for (int i = 0; i < run.size(); i++) {
 			Record r = run.get(i).clone();
 			if (r instanceof DistancePerTime) {
 				DistancePerTime dpt = (DistancePerTime) r;
 				this.tableRecords.setValueAt(dpt.getName(), i, 0);
 				float dist = (float) dpt.getDistance();
 				if (dist > 0.0) {
-					this.tableRecords.setValueAt(dpt.getDistance() + " KMs", i, 1);
+					this.tableRecords.setValueAt(dist + " KMs", i, 1);
 				} else {
 					this.tableRecords.setValueAt("N/A", i, 1);
 				}
@@ -1387,6 +1403,8 @@ public class ViewFriendForm extends javax.swing.JFrame {
 	private void preencheWalkRecords() {
 		TreeMap<String, ListRecords> rec = (TreeMap<String, ListRecords>) this.u.getRecords();
 		ArrayList<Record> run = new ArrayList<>();
+		DefaultTableModel dtm = (DefaultTableModel) this.tableRecords.getModel();
+		dtm.setNumRows(0);
 
 		for (ListRecords l : rec.values()) {
 			switch (l.getName()) {
@@ -1397,7 +1415,11 @@ public class ViewFriendForm extends javax.swing.JFrame {
 					break;
 			}
 		}
-
+		for (int i = 0; i < run.size(); i++) {
+			dtm.addRow(new Object[]{null, null});
+		}
+		this.tableRecords.setModel(dtm);
+		this.tableRecords.setModel(dtm);
 		for (int i = 0; i < run.size(); i++) {
 			Record r = run.get(i).clone();
 			if (r instanceof DistancePerTime) {
@@ -1405,7 +1427,7 @@ public class ViewFriendForm extends javax.swing.JFrame {
 				this.tableRecords.setValueAt(dpt.getName(), i, 0);
 				float dist = (float) dpt.getDistance();
 				if (dist > 0.0) {
-					this.tableRecords.setValueAt(dpt.getDistance() + " KMs", i, 1);
+					this.tableRecords.setValueAt(dist + " KMs", i, 1);
 				} else {
 					this.tableRecords.setValueAt("N/A", i, 1);
 				}
@@ -1425,6 +1447,8 @@ public class ViewFriendForm extends javax.swing.JFrame {
 	private void preencheMountainRecords() {
 		TreeMap<String, ListRecords> rec = (TreeMap<String, ListRecords>) this.u.getRecords();
 		ArrayList<Record> bike = new ArrayList<>();
+		DefaultTableModel dtm = (DefaultTableModel) this.tableRecords.getModel();
+		dtm.setNumRows(0);
 
 		for (ListRecords l : rec.values()) {
 			switch (l.getName()) {
@@ -1435,7 +1459,10 @@ public class ViewFriendForm extends javax.swing.JFrame {
 					break;
 			}
 		}
-
+		for (int i = 0; i < bike.size(); i++) {
+			dtm.addRow(new Object[]{null, null});
+		}
+		this.tableRecords.setModel(dtm);
 		for (int i = 0; i < bike.size(); i++) {
 			Record r = bike.get(i).clone();
 			if (r instanceof DistancePerTime) {
@@ -1463,6 +1490,8 @@ public class ViewFriendForm extends javax.swing.JFrame {
 	private void preencheCyclingRecords() {
 		TreeMap<String, ListRecords> rec = (TreeMap<String, ListRecords>) this.u.getRecords();
 		ArrayList<Record> bike = new ArrayList<>();
+		DefaultTableModel dtm = (DefaultTableModel) this.tableRecords.getModel();
+		dtm.setNumRows(0);
 
 		for (ListRecords l : rec.values()) {
 			switch (l.getName()) {
@@ -1473,7 +1502,10 @@ public class ViewFriendForm extends javax.swing.JFrame {
 					break;
 			}
 		}
-
+		for (int i = 0; i < bike.size(); i++) {
+			dtm.addRow(new Object[]{null, null});
+		}
+		this.tableRecords.setModel(dtm);
 		for (int i = 0; i < bike.size(); i++) {
 			Record r = bike.get(i).clone();
 			if (r instanceof DistancePerTime) {
@@ -1501,7 +1533,8 @@ public class ViewFriendForm extends javax.swing.JFrame {
 	private void preencheSwimRecords() {
 		TreeMap<String, ListRecords> rec = (TreeMap<String, ListRecords>) this.u.getRecords();
 		ArrayList<Record> swim = new ArrayList<>();
-
+		DefaultTableModel dtm = (DefaultTableModel) this.tableRecords.getModel();
+		dtm.setNumRows(0);
 		for (ListRecords l : rec.values()) {
 			switch (l.getName()) {
 				case "Swimming":
@@ -1511,7 +1544,10 @@ public class ViewFriendForm extends javax.swing.JFrame {
 					break;
 			}
 		}
-
+		for (int i = 0; i < swim.size(); i++) {
+			dtm.addRow(new Object[]{null, null});
+		}
+		this.tableRecords.setModel(dtm);
 		for (int i = 0; i < swim.size(); i++) {
 			Record r = swim.get(i).clone();
 			if (r instanceof TimePerDistance) {
@@ -1534,27 +1570,162 @@ public class ViewFriendForm extends javax.swing.JFrame {
 		this.preencheSwimRecords();
 		this.preencheRunRecords();
 	}
-	
-	private void preencheTabAmigos() {
+
+	public void preencheTabAmigos() {
 		TreeSet<String> emails = (TreeSet<String>) this.u.getFriendsList();
 		TreeSet<User> friends = new TreeSet<>(new ComparePersonByName());
-		for (String e : emails)
+		for (String e : emails) {
 			friends.add(this.fit.getUserByEmail(e));
-		
+		}
+
 		DefaultTableModel dtm = (DefaultTableModel) this.tableAmigos.getModel();
-		for(int i = 0; i < friends.size(); i++)
-			dtm.addRow(new Object[] { null, null, null});	
+		dtm.setRowCount(0);
+		for (User usr : friends) {
+			dtm.addRow(new Object[]{usr.getName(), usr.getEmail()});
+		}
 		this.tableAmigos.setModel(dtm);
-		
-		int i = 0;
-		for (User u : friends){
-			this.tableAmigos.setValueAt(u.getName(), i, 0);
-			this.tableAmigos.setValueAt((int) (u.getDate().getTimeInMillis() / 31536E6) + " anos", i, 1);
-			this.tableAmigos.setValueAt(u.getEmail(), i, 2);
-			i++;
+	}
+
+	public void preencheEventos() {
+		this.preencheEventosInscritos();
+		this.preencheEventosParticipantes();
+	}
+
+	private void preencheEventosInscritos() {
+		ArrayList<Event> eventos = new ArrayList<>();
+		DefaultTableModel dtm = (DefaultTableModel) this.tableEventsInscritos.getModel();
+		dtm.setRowCount(0);
+
+		for (Event e : this.fit.getOpenEvents()) {
+			if (e.getParticipantsList().contains(this.u)) {
+				eventos.add(e);
+			}
+		}
+
+		for (Event e : eventos) {
+			int diaE = e.getDate().get(Calendar.DAY_OF_MONTH);
+			int mesE = e.getDate().get(Calendar.MONTH);
+			int anoE = e.getDate().get(Calendar.YEAR);
+			dtm.addRow(new Object[]{e.getName(), e.getTipoActivity(), e.getLocation(), String.valueOf(diaE) + "/" + String.valueOf(mesE + 1) + "/" + String.valueOf(anoE), e.getParticipants()});
+		}
+		this.tableEventsInscritos.setModel(dtm);
+	}
+
+	private void preencheEventosParticipantes() {
+		ArrayList<Event> eventos = new ArrayList<>();
+		DefaultTableModel dtm = (DefaultTableModel) this.tableEventsFeitos.getModel();
+		dtm.setNumRows(0);
+
+		for (Event e : this.fit.getOccurredEvents()) {
+			if (e.getParticipantsList().contains(this.u)) {
+				eventos.add(e);
+			}
+		}
+
+		for (Event e : eventos) {
+			int diaE = e.getDate().get(Calendar.DAY_OF_MONTH);
+			int mesE = e.getDate().get(Calendar.MONTH);
+			int anoE = e.getDate().get(Calendar.YEAR);
+
+			boolean found = false;
+			int pos = 1;
+			Iterator<Ranking> it = e.getRanking().iterator();
+			while (it.hasNext() && !found) {
+				User at = it.next().getAthlete();
+				if (this.u.getName().equals(at.getName()) && this.u.getEmail().equals(at.getEmail())) {
+					found = true;
+				} else {
+					pos++;
+				}
+			}
+			if (!found) {
+				it = e.getDesistentes().iterator();
+				while (it.hasNext() && !found) {
+					User at = it.next().getAthlete();
+					if (this.u.getName().equals(at.getName()) && this.u.getEmail().equals(at.getEmail())) {
+						found = true;
+					} else {
+						pos++;
+					}
+				}
+			}
+			dtm.addRow(new Object[]{e.getName(), e.getTipoActivity(), e.getLocation(), String.valueOf(diaE) + "/" + String.valueOf(mesE + 1) + "/" + String.valueOf(anoE), pos});
+			this.tableEventsFeitos.setModel(dtm);
 		}
 	}
-	
+
+	private void preencheStats() {
+		Statistics stat = new Statistics();
+		GregorianCalendar dataAtual = new GregorianCalendar();
+		String mes = "";
+		if (this.butMensais.isSelected()) {
+			stat = this.u.getStats(this.currAno, this.currMes);
+			switch (this.currMes) {
+				case 0:
+					mes = "Janeiro";
+					break;
+				case 1:
+					mes = "Fevereiro";
+					break;
+				case 2:
+					mes = "Março";
+					break;
+				case 3:
+					mes = "Abril";
+					break;
+				case 4:
+					mes = "Maio";
+					break;
+				case 5:
+					mes = "Junho";
+					break;
+				case 6:
+					mes = "Julho";
+					break;
+				case 7:
+					mes = "Agosto";
+					break;
+				case 8:
+					mes = "Setembro";
+					break;
+				case 9:
+					mes = "Outubro";
+					break;
+				case 10:
+					mes = "Novembro";
+					break;
+				default:
+					mes = "Dezembro";
+					break;
+			}
+		} else {
+			stat = this.u.getStats(this.currAno);
+
+		}
+		if (stat.getCalories() != 0 && stat.getDistance() != 0.0 && stat.getTimeSpend() != 0.0) {
+			String cals = stat.toStringCalories().split(":")[1].trim();
+			String time = stat.toStringTimeSpend().split(":")[1].trim();
+			String dist = stat.toStringDistance().split(":")[1].trim();
+			this.textCaloriasQueim.setText(cals);
+			this.textDistPercorrida.setText(dist);
+			this.textTempoGasto.setText(time);
+			if (this.butMensais.isSelected()) {
+				this.textMesAno.setText(mes + " (" + this.currAno + ")");
+			} else {
+				this.textMesAno.setText(String.valueOf(this.currAno));
+			}
+		} else {
+			this.textCaloriasQueim.setText("N/A");
+			this.textTempoGasto.setText("N/A");
+			this.textDistPercorrida.setText("N/A");
+			if (this.butMensais.isSelected()) {
+				this.textMesAno.setText(mes + " (" + this.currAno + ")");
+			} else {
+				this.textMesAno.setText(String.valueOf(this.currAno));
+			}
+		}
+	}
+
 	private void preencheDados() {
 		this.textNomeUser.setText(this.u.getName());
 		this.textEmail.setText(this.u.getEmail());
@@ -1569,7 +1740,7 @@ public class ViewFriendForm extends javax.swing.JFrame {
 		this.cboxMesNasc.setSelectedIndex(mes);
 		this.cboxAnoNasc.setSelectedItem(ano);
 	}
-	
+
 	public final void changeActivities(String op) {
 		if (op.equals("remove")) {
 			if (this.currAct == this.acts10.size()) {
@@ -1740,7 +1911,7 @@ public class ViewFriendForm extends javax.swing.JFrame {
 			this.clearFields();
 		}
 	}
-	
+
 	private void clearFields() {
 		this.textCalorias.setText("");
 		this.textClima.setText("");
@@ -1759,234 +1930,70 @@ public class ViewFriendForm extends javax.swing.JFrame {
 		this.spinnerAdversario.setValue(0);
 		this.spinnerPessoal.setValue(0);
 	}
-	
+
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        this.dispose();
+		this.dispose();
 		this.parent.setVisible(true);
     }//GEN-LAST:event_formWindowClosing
 
     private void butMensaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butMensaisActionPerformed
-        this.butAnuais.setSelected(false);
-        this.butMensais.setSelected(true);
-        this.butNextMonth.setText("Mês >");
-        this.butPrevMonth.setText("< Mês");
+		this.butAnuais.setSelected(false);
+		this.butMensais.setSelected(true);
+		this.butNextMonth.setText("Mês >");
+		this.butPrevMonth.setText("< Mês");
 		this.preencheStats();
     }//GEN-LAST:event_butMensaisActionPerformed
 
     private void butAnuaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAnuaisActionPerformed
-        this.butAnuais.setSelected(true);
-        this.butMensais.setSelected(false);
-        this.butNextMonth.setText("Ano >");
-        this.butPrevMonth.setText("< Ano");
+		this.butAnuais.setSelected(true);
+		this.butMensais.setSelected(false);
+		this.butNextMonth.setText("Ano >");
+		this.butPrevMonth.setText("< Ano");
 		this.preencheStats();
     }//GEN-LAST:event_butAnuaisActionPerformed
 
     private void butPrevMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butPrevMonthActionPerformed
-        if (this.butMensais.isSelected()) {
-            if (this.currMes == 0) {
-                this.currMes = 11;
-                this.currAno--;
-            } else {
-                this.currMes--;
-            }
-        } else {
-            this.currAno--;
-        }
-        this.preencheStats();
+		if (this.butMensais.isSelected()) {
+			if (this.currMes == 0) {
+				this.currMes = 11;
+				this.currAno--;
+			} else {
+				this.currMes--;
+			}
+		} else {
+			this.currAno--;
+		}
+		this.preencheStats();
     }//GEN-LAST:event_butPrevMonthActionPerformed
 
     private void butNextMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNextMonthActionPerformed
-        if (this.butMensais.isSelected()) {
-            if (this.currMes == 11) {
-                this.currMes = 0;
-                this.currAno++;
-            } else {
-                this.currMes++;
-            }
-        } else {
-            this.currAno++;
-        }
-        this.preencheStats();
+		if (this.butMensais.isSelected()) {
+			if (this.currMes == 11) {
+				this.currMes = 0;
+				this.currAno++;
+			} else {
+				this.currMes++;
+			}
+		} else {
+			this.currAno++;
+		}
+		this.preencheStats();
     }//GEN-LAST:event_butNextMonthActionPerformed
 
     private void butVerEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butVerEventoActionPerformed
-        if (this.tableEventsFeitos.getSelectedRowCount() > 0) {
-            try {
-                Event e = this.fit.getEventByName((String) this.tableEventsFeitos.getValueAt(this.tableEventsFeitos.getSelectedRow(), 0));
-                if (e.getParticipantsList().contains(this.u)) {
-                    ViewEventForm viewEvent = new ViewEventForm(this, e);
-                    viewEvent.setVisible(true);
-                    this.setVisible(false);
-                }
-            } catch (EventNotFoundException e) {
-                JOptionPane.showMessageDialog(this, "ERRO: EVENTO INEXISTENTE");
-            }
-        }
+		if (this.tableEventsFeitos.getSelectedRowCount() > 0) {
+			try {
+				Event e = this.fit.getEventByName((String) this.tableEventsFeitos.getValueAt(this.tableEventsFeitos.getSelectedRow(), 0));
+				if (e.getParticipantsList().contains(this.u)) {
+					ViewEventForm viewEvent = new ViewEventForm(this, e);
+					viewEvent.setVisible(true);
+					this.setVisible(false);
+				}
+			} catch (EventNotFoundException e) {
+				JOptionPane.showMessageDialog(this, "ERRO: EVENTO INEXISTENTE");
+			}
+		}
     }//GEN-LAST:event_butVerEventoActionPerformed
-
-	private void preencheStats() {
-		Statistics stat = new Statistics();
-		GregorianCalendar dataAtual = new GregorianCalendar();
-		String mes = "";
-		if (this.butMensais.isSelected()) {
-			stat = this.u.getStats(this.currAno, this.currMes);
-			switch (this.currMes) {
-				case 0:
-					mes = "Janeiro";
-					break;
-				case 1:
-					mes = "Fevereiro";
-					break;
-				case 2:
-					mes = "Março";
-					break;
-				case 3:
-					mes = "Abril";
-					break;
-				case 4:
-					mes = "Maio";
-					break;
-				case 5:
-					mes = "Junho";
-					break;
-				case 6:
-					mes = "Julho";
-					break;
-				case 7:
-					mes = "Agosto";
-					break;
-				case 8:
-					mes = "Setembro";
-					break;
-				case 9:
-					mes = "Outubro";
-					break;
-				case 10:
-					mes = "Novembro";
-					break;
-				default:
-					mes = "Dezembro";
-					break;
-			}
-		} else {
-			stat = this.u.getStats(this.currAno);
-			
-		}
-		if (stat.getCalories() != 0 && stat.getDistance() != 0.0 && stat.getTimeSpend() != 0.0) {
-			String cals = stat.toStringCalories().split(":")[1].trim();
-			String time = stat.toStringTimeSpend().split(":")[1].trim();
-			String dist = stat.toStringDistance().split(":")[1].trim();
-			this.textCaloriasQueim.setText(cals);
-			this.textDistPercorrida.setText(dist);
-			this.textTempoGasto.setText(time);
-			if(this.butMensais.isSelected())
-				this.textMesAno.setText(mes + " (" + this.currAno + ")");
-			else
-				this.textMesAno.setText(String.valueOf(this.currAno));
-		} else {
-			this.textCaloriasQueim.setText("N/A");
-			this.textTempoGasto.setText("N/A");
-			this.textDistPercorrida.setText("N/A");
-			if(this.butMensais.isSelected())
-				this.textMesAno.setText(mes + " (" + this.currAno + ")");
-			else
-				this.textMesAno.setText(String.valueOf(this.currAno));
-		}
-	}
-	
-	public void preencheEventos() {
-		this.preencheEventosInscritos();
-		this.preencheEventosParticipantes();
-	}
-
-	private void preencheEventosInscritos() {
-		ArrayList<Event> eventos = new ArrayList<>();
-		DefaultTableModel dtm = (DefaultTableModel) this.tableEventsInscritos.getModel();
-		if (dtm.getRowCount() > 0) {
-			for (int i = 0; i < dtm.getRowCount(); i++) {
-				dtm.removeRow(i);
-			}
-		}
-
-		for (Event e : this.fit.getOpenEvents()) {
-			if (e.getParticipantsList().contains(this.u)) {
-				eventos.add(e);
-			}
-		}
-		if (eventos.size() > this.tableEventsInscritos.getRowCount()) {
-			for (int i = 0; i < eventos.size(); i++) {
-				dtm.addRow(new Object[]{null, null, null, null, null});
-			}
-			this.tableEventsInscritos.setModel(dtm);
-		}
-
-		int i = 0;
-		for (Event e : eventos) {
-			int diaE = e.getDate().get(Calendar.DAY_OF_MONTH);
-			int mesE = e.getDate().get(Calendar.MONTH);
-			int anoE = e.getDate().get(Calendar.YEAR);
-
-			this.tableEventsInscritos.setValueAt(e.getName(), i, 0);
-			this.tableEventsInscritos.setValueAt(e.getTipoActivity(), i, 1);
-			this.tableEventsInscritos.setValueAt(e.getLocation(), i, 2);
-			this.tableEventsInscritos.setValueAt(String.valueOf(diaE) + "/" + String.valueOf(mesE) + "/" + String.valueOf(anoE), i, 3);
-			this.tableEventsInscritos.setValueAt(e.getParticipants(), i, 4);
-			i++;
-		}
-	}
-
-	private void preencheEventosParticipantes() {
-		ArrayList<Event> eventos = new ArrayList<>();
-		DefaultTableModel dtm = (DefaultTableModel) this.tableEventsFeitos.getModel();
-		for (Event e : this.fit.getOccurredEvents()) {
-			if (e.getParticipantsList().contains(this.u)) {
-				eventos.add(e);
-			}
-		}
-		if (eventos.size() > this.tableEventsFeitos.getRowCount()) {
-			for (int i = 0; i < eventos.size(); i++) {
-				dtm.addRow(new Object[]{null, null, null, null, null});
-			}
-			this.tableEventsFeitos.setModel(dtm);
-		}
-
-		int i = 0;
-		for (Event e : eventos) {
-			int diaE = e.getDate().get(Calendar.DAY_OF_MONTH);
-			int mesE = e.getDate().get(Calendar.MONTH);
-			int anoE = e.getDate().get(Calendar.YEAR);
-
-			this.tableEventsFeitos.setValueAt(e.getName(), i, 0);
-			this.tableEventsFeitos.setValueAt(e.getTipoActivity(), i, 1);
-			this.tableEventsFeitos.setValueAt(e.getLocation(), i, 2);
-			this.tableEventsFeitos.setValueAt(String.valueOf(diaE) + "/" + String.valueOf(mesE + 1) + "/" + String.valueOf(anoE), i, 3);
-			boolean desist = false;
-			boolean found = false;
-			int pos = 1;
-			Iterator<Ranking> it = e.getRanking().iterator();
-			while (it.hasNext() && !found) {
-				User at = it.next().getAthlete();
-				if (this.u.getName().equals(at.getName()) && this.u.getEmail().equals(at.getEmail())) {
-					found = true;
-				} else {
-					pos++;
-				}
-			}
-			if (!found) {
-				it = e.getDesistentes().iterator();
-				while (it.hasNext() && !found) {
-					User at = it.next().getAthlete();
-					if (this.u.getName().equals(at.getName()) && this.u.getEmail().equals(at.getEmail())) {
-						found = true;
-					} else {
-						pos++;
-					}
-				}
-			}
-			this.tableEventsFeitos.setValueAt(pos, i, 4);
-			i++;
-		}
-	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton but10;
@@ -2026,7 +2033,6 @@ public class ViewFriendForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -2053,6 +2059,7 @@ public class ViewFriendForm extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel labelDate;
     private javax.swing.JLabel labelDay;
+    private javax.swing.JLabel labelDistH;
     private javax.swing.JLabel labelMonth;
     private javax.swing.JLabel labelName;
     private javax.swing.JLabel labelTime;
