@@ -1,5 +1,5 @@
 SyncTeX Version:1
-Input:1:C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\R_bruno\Relatorio.tex
+Input:1:C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\RelatorioFinal\Relatorio.tex
 Input:2:C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls
 Input:3:C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size12.clo
 Input:4:C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty
@@ -37,19 +37,19 @@ Input:35:C:\Users\Bruno\AppData\Roaming\MiKTeX\2.9\tex\latex\url\url.sty
 Input:36:C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def
 Input:37:C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty
 Input:38:C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\enumerate.sty
-Input:39:C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\R_bruno\Relatorio.aux
+Input:39:C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\RelatorioFinal\Relatorio.aux
 Input:40:C:\Users\Bruno\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 Input:41:C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty
 Input:42:C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty
-Input:43:C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\R_bruno\Relatorio.out
-Input:44:C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\R_bruno\Relatorio.out
+Input:43:C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\RelatorioFinal\Relatorio.out
+Input:44:C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\RelatorioFinal\Relatorio.out
 Output:pdf
 Magnification:1000
 Unit:1
 X Offset:0
 Y Offset:0
 Content:
-!3366
+!3394
 {1
 [1,46:4736286,50335874:31792792,45599588,0
 h1,46:4736286,4736286:0,0,0
@@ -422,8 +422,8 @@ h1,46:3729359,50335874:32799719,0,0
 ]
 !9261
 }1
-Input:45:C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\R_bruno\Relatorio.toc
-!89
+Input:45:C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\RelatorioFinal\Relatorio.toc
+!96
 {2
 [1,52:4736286,50335874:31792792,45599588,0
 [1,52:4736286,4736286:0,0,0
@@ -5514,8 +5514,8 @@ k1,52:36529079,50335874:16207350
 ]
 !112282
 }2
-Input:46:C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\R_bruno\Relatorio.lof
-!91
+Input:46:C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\RelatorioFinal\Relatorio.lof
+!98
 {3
 [1,54:4736286,50335874:31792792,45599588,0
 [1,54:4736286,4736286:0,0,0
@@ -15896,8 +15896,8 @@ x1,412:36529078,7312811
 k1,412:36529078,7312811:0
 )
 (1,413:3729359,8263083:32799719,546132,0
-x1,413:6090815,8263083
-k1,413:36529079,8263083:30438264
+x1,413:6304715,8263083
+k1,413:36529079,8263083:30224364
 g1,413:36529079,8263083
 )
 (1,416:3729359,9213355:32799719,546132,152916
@@ -18094,8 +18094,8 @@ k1,533:36529079,50335874:16014840
 ]
 !1624
 }23
-Input:48:C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\R_bruno\Relatorio.aux
-!90
+Input:48:C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\RelatorioFinal\Relatorio.aux
+!97
 Postamble:
 Count:12265
 !27
