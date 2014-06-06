@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.5.1)  6 JUN 2014 18:04
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.5.1)  6 JUN 2014 18:07
 entering extended mode
 **Relatorio.tex
 ("C:\Users\Bruno\Documents\GitHub\Li3\Projecto POO\RelatorioFinal\Relatorio.tex
@@ -595,7 +595,7 @@ Package pdftex.def Info: autores.png used on input line 42.
 
 {C:/Users/Bruno/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/Br
 uno/Documents/GitHub/Li3/Projecto POO/RelatorioFinal/logo.pdf> <C:/Users/Bruno/
-Documents/GitHub/Li3/Projecto POO/RelatorioFinal/autores.png>] [2]
+Documents/GitHub/Li3/Projecto POO/RelatorioFinal/autores.png>]
 ("C:\Users\Bruno\Documents\GitHub\Li3\Projecto POO\RelatorioFinal\Relatorio.toc
 "
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -615,38 +615,33 @@ l.53 \newpage
 ("C:\Users\Bruno\Documents\GitHub\Li3\Projecto POO\RelatorioFinal\Relatorio.lof
 ")
 \tf@lof=\write5
-pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.55 \newpage
-              [2]
+ [2]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 64.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 64.
- <Activity2.jpg, id=215, 752.8125pt x 414.04688pt>
+
+<Activity2.jpg, id=212, 752.8125pt x 414.04688pt>
 File: Activity2.jpg Graphic file (type jpg)
  <use Activity2.jpg>
 Package pdftex.def Info: Activity2.jpg used on input line 96.
 (pdftex.def)             Requested size: 376.40532pt x 207.02292pt.
-
-[3 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/RelatorioFinal/Activity2.j
-pg>]
+ [3 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/RelatorioFinal/Activity2.
+jpg>]
 Overfull \hbox (1.41913pt too wide) in paragraph at lines 136--137
 []\OT1/cmr/m/n/12 UserVs-Interface de metodos re-la-ci-o-na-dos com pon-tos(po
 ntos proprios e pon-tos do ad-versario) 
  []
 
-[4] <ComparadorActivity.png, id=227, 301.125pt x 225.84375pt>
+[4] <ComparadorActivity.png, id=224, 301.125pt x 225.84375pt>
 File: ComparadorActivity.png Graphic file (type png)
 
 <use ComparadorActivity.png>
 Package pdftex.def Info: ComparadorActivity.png used on input line 144.
 (pdftex.def)             Requested size: 210.78606pt x 158.08954pt.
- <interfaceAct.jpg, id=228, 602.25pt x 602.25pt>
+ <interfaceAct.jpg, id=225, 602.25pt x 602.25pt>
 File: interfaceAct.jpg Graphic file (type jpg)
 
 <use interfaceAct.jpg>
@@ -662,7 +657,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 154--155
 
  []
 
-<Statsfinalpngg.png, id=230, 198.7425pt x 261.22594pt>
+<Statsfinalpngg.png, id=227, 198.7425pt x 261.22594pt>
 File: Statsfinalpngg.png Graphic file (type png)
 
 <use Statsfinalpngg.png>
@@ -686,7 +681,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 185--187
  []
 
 [6 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/RelatorioFinal/Statsfinalp
-ngg.png>] <Records.jpg, id=242, 622.57594pt x 403.5075pt>
+ngg.png>] <Records.jpg, id=239, 622.57594pt x 403.5075pt>
 File: Records.jpg Graphic file (type jpg)
  <use Records.jpg>
 Package pdftex.def Info: Records.jpg used on input line 223.
@@ -701,7 +696,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 249--250
  []
 
 [7] [8 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/RelatorioFinal/Records
-.jpg>] <simula.jpg, id=253, 603.75563pt x 380.92313pt>
+.jpg>] <simula.jpg, id=250, 603.75563pt x 380.92313pt>
 File: simula.jpg Graphic file (type jpg)
  <use simula.jpg>
 Package pdftex.def Info: simula.jpg used on input line 291.
@@ -798,19 +793,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 442--443
 
  []
 
-[13] [14] <login.png, id=289, 267.24844pt x 134.00063pt>
+[13] [14] <login.png, id=286, 267.24844pt x 134.00063pt>
 File: login.png Graphic file (type png)
  <use login.png>
 Package pdftex.def Info: login.png used on input line 466.
 (pdftex.def)             Requested size: 187.07263pt x 93.79977pt.
 
-<registar.png, id=290, 207.77625pt x 380.92313pt>
+<registar.png, id=287, 207.77625pt x 380.92313pt>
 File: registar.png Graphic file (type png)
  <use registar.png>
 Package pdftex.def Info: registar.png used on input line 472.
 (pdftex.def)             Requested size: 166.2212pt x 304.73889pt.
 
-<home.png, id=291, 422.32782pt x 534.49687pt>
+<home.png, id=288, 422.32782pt x 534.49687pt>
 File: home.png Graphic file (type png)
  <use home.png>
 Package pdftex.def Info: home.png used on input line 480.
@@ -819,7 +814,7 @@ Package pdftex.def Info: home.png used on input line 480.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<addActividade.png, id=292, 393.72093pt x 388.45125pt>
+<addActividade.png, id=289, 393.72093pt x 388.45125pt>
 File: addActividade.png Graphic file (type png)
  <use addActividade.png>
 Package pdftex.def Info: addActividade.png used on input line 489.
@@ -828,7 +823,7 @@ Package pdftex.def Info: addActividade.png used on input line 489.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<verRecord.png, id=293, 422.32782pt x 534.49687pt>
+<verRecord.png, id=290, 422.32782pt x 534.49687pt>
 File: verRecord.png Graphic file (type png)
  <use verRecord.png>
 Package pdftex.def Info: verRecord.png used on input line 496.
@@ -837,7 +832,7 @@ Package pdftex.def Info: verRecord.png used on input line 496.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<verActividades.png, id=294, 422.32782pt x 534.49687pt>
+<verActividades.png, id=291, 422.32782pt x 534.49687pt>
 File: verActividades.png Graphic file (type png)
 
 <use verActividades.png>
@@ -847,7 +842,7 @@ Package pdftex.def Info: verActividades.png used on input line 504.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<admin.png, id=295, 298.11375pt x 198.7425pt>
+<admin.png, id=292, 298.11375pt x 198.7425pt>
 File: admin.png Graphic file (type png)
  <use admin.png>
 Package pdftex.def Info: admin.png used on input line 512.
@@ -856,7 +851,7 @@ Package pdftex.def Info: admin.png used on input line 512.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<simularEventosAdmin.png, id=296, 461.47406pt x 281.55188pt>
+<simularEventosAdmin.png, id=293, 461.47406pt x 281.55188pt>
 File: simularEventosAdmin.png Graphic file (type png)
 
 <use simularEventosAdmin.png>
@@ -866,7 +861,7 @@ Package pdftex.def Info: simularEventosAdmin.png used on input line 518.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<simTemp.png, id=297, 415.5525pt x 362.10281pt>
+<simTemp.png, id=294, 415.5525pt x 362.10281pt>
 File: simTemp.png Graphic file (type png)
  <use simTemp.png>
 Package pdftex.def Info: simTemp.png used on input line 524.
@@ -875,7 +870,7 @@ Package pdftex.def Info: simTemp.png used on input line 524.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<simulaFinal.png, id=298, 418.56375pt x 362.85562pt>
+<simulaFinal.png, id=295, 418.56375pt x 362.85562pt>
 File: simulaFinal.png Graphic file (type png)
  <use simulaFinal.png>
 Package pdftex.def Info: simulaFinal.png used on input line 530.
@@ -923,9 +918,9 @@ ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program
 Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Fi
 les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program File
 s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Relatorio.pdf (24 pages, 1345637 bytes).
+Output written on Relatorio.pdf (23 pages, 1345227 bytes).
 PDF statistics:
- 380 PDF objects out of 1000 (max. 8388607)
+ 377 PDF objects out of 1000 (max. 8388607)
  76 named destinations out of 1000 (max. 500000)
  323 words of extra memory for PDF output out of 10000 (max. 10000000)
 
