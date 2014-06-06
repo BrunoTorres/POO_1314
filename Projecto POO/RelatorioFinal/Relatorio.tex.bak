@@ -409,13 +409,13 @@ tabWeather$->$ método que devolve um factor(de 0 a 1) em função dos seguintes
 \item Nublado
 \end{itemize}
 
-tabTemp$->$método que devolve um factor (de 0 a 1) em função da temperatura, em graus celsius.
+tabTemp$->$método que devolve um factor (de 0 a 1) em função da temperatura, em graus Celsius.
 
 nº $->$ número de actividades praticadas do tipo do evento.
 ~\\~\\
 
 
-Em \textbf{cada km} da simulação o usa-se este tempo calculado e multiplica-se por $(Math.random() + 0.1)$, factor aleatório que aumenta ou diminui o tempo no km do participante.
+Em \textbf{cada km} da simulação o usa-se este tempo calculado e multiplica-se por $(Math.random() + 0.5)$, factor aleatório que aumenta ou diminui o tempo no km do participante.
 ~\\~\\
 
 Para a possibilidade de um participante do evento  \textbf{desistir num certo Km} foi usada a seguinte estratégia:
@@ -426,18 +426,18 @@ Para a possibilidade de um participante do evento  \textbf{desistir num certo Km
 \end{enumerate}~\\
 A probabilidade foi calculada em função da idade:
 \begin{itemize}
-\item age $<$ 15- factor = Math.random() + 0.1;
-\item age $<$ 20- factor = Math.random() + 0.5;
-\item age $<$ 25- factor = Math.random() + 0.7;
-\item age $<$ 30- factor = Math.random() + 0.85;
-\item age $<$ 35- factor = Math.random() + 0.9;
-\item age $<$ 40- factor = Math.random() + 0.6;
-\item age $<$ 45- factor = Math.random() + 0.5;
-\item age $<$ 50- factor = Math.random() + 0.4;
-\item age $<$ 55- factor = Math.random() + 0.3;
-\item age $<$ 60- factor = Math.random() + 0.2;
-\item age $<$ 65- factor = Math.random() + 0.1;
-\item age $>=$ 65- factor = Math.random() + 0.05;
+\item age $<$ 15- factor = Math.random()* 1.5 + 0.1;
+\item age $<$ 20- factor = Math.random()* 1.5 + 0.5;
+\item age $<$ 25- factor = Math.random()* 1.5 + 0.7;
+\item age $<$ 30- factor = Math.random()* 1.5 + 0.85;
+\item age $<$ 35- factor = Math.random()* 1.5 + 0.9;
+\item age $<$ 40- factor = Math.random()* 1.5 + 0.6;
+\item age $<$ 45- factor = Math.random()* 1.5 + 0.5;
+\item age $<$ 50- factor = Math.random()* 1.5 + 0.4;
+\item age $<$ 55- factor = Math.random()* 1.5 + 0.3;
+\item age $<$ 60- factor = Math.random()* 1.5 + 0.2;
+\item age $<$ 65- factor = Math.random()* 1.5 + 0.1;
+\item age $>=$ 65- factor = Math.random()* 1.5 + 0.05;
 \end{itemize}~\\~
 
 Finalmente multiplica-se este factor pela totalidade de km do evento, e se este km for menor que a distancia total do evento,então será o km de desistência do participante.

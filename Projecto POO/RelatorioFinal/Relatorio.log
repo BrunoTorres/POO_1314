@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.5.1)  6 JUN 2014 17:30
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.5.1)  6 JUN 2014 18:04
 entering extended mode
 **Relatorio.tex
-("C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\RelatorioFinal\Relatorio.tex
+("C:\Users\Bruno\Documents\GitHub\Li3\Projecto POO\RelatorioFinal\Relatorio.tex
 "
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
@@ -497,7 +497,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
 \@enLab=\toks20
 )
-("C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\RelatorioFinal\Relatorio.aux
+("C:\Users\Bruno\Documents\GitHub\Li3\Projecto POO\RelatorioFinal\Relatorio.aux
 ")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
@@ -575,9 +575,9 @@ LaTeX Info: Redefining \ref on input line 13.
 LaTeX Info: Redefining \pageref on input line 13.
 LaTeX Info: Redefining \nameref on input line 13.
 
-("C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\RelatorioFinal\Relatorio.out
+("C:\Users\Bruno\Documents\GitHub\Li3\Projecto POO\RelatorioFinal\Relatorio.out
 ")
-("C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\RelatorioFinal\Relatorio.out
+("C:\Users\Bruno\Documents\GitHub\Li3\Projecto POO\RelatorioFinal\Relatorio.out
 ")
 \@outlinefile=\write3
  <logo.pdf, id=119, 318.18875pt x 159.59625pt>
@@ -589,14 +589,14 @@ Package pdftex.def Info: logo.pdf used on input line 19.
 <autores.png, id=120, 501.875pt x 160.6pt>
 File: autores.png Graphic file (type png)
  <use autores.png>
-Package pdftex.def Info: autores.png used on input line 41.
+Package pdftex.def Info: autores.png used on input line 42.
 (pdftex.def)             Requested size: 301.12732pt x 96.36073pt.
  [1
 
 {C:/Users/Bruno/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/Br
-uno/Desktop/RELATORIO FINAL/Relatorio/RelatorioFinal/logo.pdf> <C:/Users/Bruno/
-Desktop/RELATORIO FINAL/Relatorio/RelatorioFinal/autores.png>]
-("C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\RelatorioFinal\Relatorio.toc
+uno/Documents/GitHub/Li3/Projecto POO/RelatorioFinal/logo.pdf> <C:/Users/Bruno/
+Documents/GitHub/Li3/Projecto POO/RelatorioFinal/autores.png>] [2]
+("C:\Users\Bruno\Documents\GitHub\Li3\Projecto POO\RelatorioFinal\Relatorio.toc
 "
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 3.
@@ -610,296 +610,301 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.52 \newpage
+l.53 \newpage
               [1]
-("C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\RelatorioFinal\Relatorio.lof
+("C:\Users\Bruno\Documents\GitHub\Li3\Projecto POO\RelatorioFinal\Relatorio.lof
 ")
 \tf@lof=\write5
- [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 63.
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.55 \newpage
+              [2]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 64.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 63.
-
-<Activity2.jpg, id=212, 752.8125pt x 414.04688pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 64.
+ <Activity2.jpg, id=215, 752.8125pt x 414.04688pt>
 File: Activity2.jpg Graphic file (type jpg)
  <use Activity2.jpg>
-Package pdftex.def Info: Activity2.jpg used on input line 95.
+Package pdftex.def Info: Activity2.jpg used on input line 96.
 (pdftex.def)             Requested size: 376.40532pt x 207.02292pt.
- [3 <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/RelatorioFinal/Activity2.
-jpg>]
-Overfull \hbox (1.41913pt too wide) in paragraph at lines 135--136
+
+[3 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/RelatorioFinal/Activity2.j
+pg>]
+Overfull \hbox (1.41913pt too wide) in paragraph at lines 136--137
 []\OT1/cmr/m/n/12 UserVs-Interface de metodos re-la-ci-o-na-dos com pon-tos(po
 ntos proprios e pon-tos do ad-versario) 
  []
 
-[4] <ComparadorActivity.png, id=224, 301.125pt x 225.84375pt>
+[4] <ComparadorActivity.png, id=227, 301.125pt x 225.84375pt>
 File: ComparadorActivity.png Graphic file (type png)
 
 <use ComparadorActivity.png>
-Package pdftex.def Info: ComparadorActivity.png used on input line 143.
+Package pdftex.def Info: ComparadorActivity.png used on input line 144.
 (pdftex.def)             Requested size: 210.78606pt x 158.08954pt.
- <interfaceAct.jpg, id=225, 602.25pt x 602.25pt>
+ <interfaceAct.jpg, id=228, 602.25pt x 602.25pt>
 File: interfaceAct.jpg Graphic file (type jpg)
 
 <use interfaceAct.jpg>
-Package pdftex.def Info: interfaceAct.jpg used on input line 150.
+Package pdftex.def Info: interfaceAct.jpg used on input line 151.
 (pdftex.def)             Requested size: 240.89572pt x 240.89572pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 153--154
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 153--154
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
 
  []
 
-<Statsfinalpngg.png, id=227, 198.7425pt x 261.22594pt>
+<Statsfinalpngg.png, id=230, 198.7425pt x 261.22594pt>
 File: Statsfinalpngg.png Graphic file (type png)
 
 <use Statsfinalpngg.png>
-Package pdftex.def Info: Statsfinalpngg.png used on input line 164.
+Package pdftex.def Info: Statsfinalpngg.png used on input line 165.
 (pdftex.def)             Requested size: 119.24641pt x 156.73676pt.
- [5 <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/RelatorioFinal/Comparador
-Activity.png (PNG copy)> <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/Rela
+ [5 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/RelatorioFinal/Comparador
+Activity.png (PNG copy)> <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/Rela
 torioFinal/interfaceAct.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 184--186
+Underfull \hbox (badness 10000) in paragraph at lines 185--187
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 184--186
+Underfull \hbox (badness 10000) in paragraph at lines 185--187
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 184--186
+Underfull \hbox (badness 10000) in paragraph at lines 185--187
 
  []
 
-[6 <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/RelatorioFinal/Statsfinalp
-ngg.png>] <Records.jpg, id=239, 622.57594pt x 403.5075pt>
+[6 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/RelatorioFinal/Statsfinalp
+ngg.png>] <Records.jpg, id=242, 622.57594pt x 403.5075pt>
 File: Records.jpg Graphic file (type jpg)
  <use Records.jpg>
-Package pdftex.def Info: Records.jpg used on input line 222.
+Package pdftex.def Info: Records.jpg used on input line 223.
 (pdftex.def)             Requested size: 373.54845pt x 242.10637pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 248--249
+Underfull \hbox (badness 10000) in paragraph at lines 249--250
 
  []
 
-[7] [8 <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/RelatorioFinal/Records
-.jpg>] <simula.jpg, id=250, 603.75563pt x 380.92313pt>
+[7] [8 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/RelatorioFinal/Records
+.jpg>] <simula.jpg, id=253, 603.75563pt x 380.92313pt>
 File: simula.jpg Graphic file (type jpg)
  <use simula.jpg>
-Package pdftex.def Info: simula.jpg used on input line 290.
+Package pdftex.def Info: simula.jpg used on input line 291.
 (pdftex.def)             Requested size: 362.25616pt x 228.55562pt.
 
-[9 <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/RelatorioFinal/simula.jpg>
+[9 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/RelatorioFinal/simula.jpg>
 ] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 351--354
+Underfull \hbox (badness 10000) in paragraph at lines 352--355
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 356--357
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 369--371
+Underfull \hbox (badness 10000) in paragraph at lines 370--372
 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 375--378
+Underfull \hbox (badness 10000) in paragraph at lines 376--379
 
  []
 
 
-Overfull \hbox (1.32747pt too wide) in paragraph at lines 379--380
+Overfull \hbox (1.32747pt too wide) in paragraph at lines 380--381
 []\OT1/cmr/m/n/12 Calculou-se um fac-tor, de 0 a 1, em func~ao do par^ametro V
 er-ti-cal-Dis-tance(quanto maior,maior
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 384--385
+Underfull \hbox (badness 10000) in paragraph at lines 385--386
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 386--387
+Underfull \hbox (badness 10000) in paragraph at lines 387--388
 
  []
 
 
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 392
+LaTeX Warning: Command \textordmasculine invalid in math mode on input line 393
 .
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 388--397
+Underfull \hbox (badness 10000) in paragraph at lines 389--398
 
  []
 
 
-Overfull \hbox (19.65373pt too wide) in paragraph at lines 388--397
+Overfull \hbox (19.65373pt too wide) in paragraph at lines 389--398
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 388--397
+Underfull \hbox (badness 10000) in paragraph at lines 389--398
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 388--397
+Underfull \hbox (badness 10000) in paragraph at lines 389--398
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 388--397
+Underfull \hbox (badness 10000) in paragraph at lines 389--398
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 414--416
+Underfull \hbox (badness 10000) in paragraph at lines 415--417
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 414--416
+Underfull \hbox (badness 10000) in paragraph at lines 415--417
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 418--420
+Underfull \hbox (badness 10000) in paragraph at lines 419--421
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 418--420
+Underfull \hbox (badness 10000) in paragraph at lines 419--421
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 441--442
+Underfull \hbox (badness 10000) in paragraph at lines 442--443
 
  []
 
-[13] [14] <login.png, id=286, 267.24844pt x 134.00063pt>
+[13] [14] <login.png, id=289, 267.24844pt x 134.00063pt>
 File: login.png Graphic file (type png)
  <use login.png>
-Package pdftex.def Info: login.png used on input line 465.
+Package pdftex.def Info: login.png used on input line 466.
 (pdftex.def)             Requested size: 187.07263pt x 93.79977pt.
 
-<registar.png, id=287, 207.77625pt x 380.92313pt>
+<registar.png, id=290, 207.77625pt x 380.92313pt>
 File: registar.png Graphic file (type png)
  <use registar.png>
-Package pdftex.def Info: registar.png used on input line 471.
+Package pdftex.def Info: registar.png used on input line 472.
 (pdftex.def)             Requested size: 166.2212pt x 304.73889pt.
 
-<home.png, id=288, 422.32782pt x 534.49687pt>
+<home.png, id=291, 422.32782pt x 534.49687pt>
 File: home.png Graphic file (type png)
  <use home.png>
-Package pdftex.def Info: home.png used on input line 479.
+Package pdftex.def Info: home.png used on input line 480.
 (pdftex.def)             Requested size: 422.32678pt x 534.49556pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<addActividade.png, id=289, 393.72093pt x 388.45125pt>
+<addActividade.png, id=292, 393.72093pt x 388.45125pt>
 File: addActividade.png Graphic file (type png)
  <use addActividade.png>
-Package pdftex.def Info: addActividade.png used on input line 488.
+Package pdftex.def Info: addActividade.png used on input line 489.
 (pdftex.def)             Requested size: 393.71997pt x 388.45029pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<verRecord.png, id=290, 422.32782pt x 534.49687pt>
+<verRecord.png, id=293, 422.32782pt x 534.49687pt>
 File: verRecord.png Graphic file (type png)
  <use verRecord.png>
-Package pdftex.def Info: verRecord.png used on input line 495.
+Package pdftex.def Info: verRecord.png used on input line 496.
 (pdftex.def)             Requested size: 422.32678pt x 534.49556pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<verActividades.png, id=291, 422.32782pt x 534.49687pt>
+<verActividades.png, id=294, 422.32782pt x 534.49687pt>
 File: verActividades.png Graphic file (type png)
 
 <use verActividades.png>
-Package pdftex.def Info: verActividades.png used on input line 503.
+Package pdftex.def Info: verActividades.png used on input line 504.
 (pdftex.def)             Requested size: 422.32678pt x 534.49556pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<admin.png, id=292, 298.11375pt x 198.7425pt>
+<admin.png, id=295, 298.11375pt x 198.7425pt>
 File: admin.png Graphic file (type png)
  <use admin.png>
-Package pdftex.def Info: admin.png used on input line 511.
+Package pdftex.def Info: admin.png used on input line 512.
 (pdftex.def)             Requested size: 298.11302pt x 198.742pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<simularEventosAdmin.png, id=293, 461.47406pt x 281.55188pt>
+<simularEventosAdmin.png, id=296, 461.47406pt x 281.55188pt>
 File: simularEventosAdmin.png Graphic file (type png)
 
 <use simularEventosAdmin.png>
-Package pdftex.def Info: simularEventosAdmin.png used on input line 517.
+Package pdftex.def Info: simularEventosAdmin.png used on input line 518.
 (pdftex.def)             Requested size: 461.47292pt x 281.55118pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<simTemp.png, id=294, 415.5525pt x 362.10281pt>
+<simTemp.png, id=297, 415.5525pt x 362.10281pt>
 File: simTemp.png Graphic file (type png)
  <use simTemp.png>
-Package pdftex.def Info: simTemp.png used on input line 523.
+Package pdftex.def Info: simTemp.png used on input line 524.
 (pdftex.def)             Requested size: 415.55148pt x 362.10191pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<simulaFinal.png, id=295, 418.56375pt x 362.85562pt>
+<simulaFinal.png, id=298, 418.56375pt x 362.85562pt>
 File: simulaFinal.png Graphic file (type png)
  <use simulaFinal.png>
-Package pdftex.def Info: simulaFinal.png used on input line 529.
+Package pdftex.def Info: simulaFinal.png used on input line 530.
 (pdftex.def)             Requested size: 418.56271pt x 362.85474pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 533.
-[15 <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/RelatorioFinal/login.png>
- <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/RelatorioFinal/registar.png>
-] [16 <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/RelatorioFinal/home.png
->] [17 <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/RelatorioFinal/addActi
-vidade.png>] [18 <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/RelatorioFin
-al/verRecord.png>] [19 <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/Relato
-rioFinal/verActividades.png>] [20 <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relat
-orio/RelatorioFinal/admin.png> <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatori
-o/RelatorioFinal/simularEventosAdmin.png>] [21 <C:/Users/Bruno/Desktop/RELATORI
-O FINAL/Relatorio/RelatorioFinal/simTemp.png>] [22 <C:/Users/Bruno/Desktop/RELA
-TORIO FINAL/Relatorio/RelatorioFinal/simulaFinal.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 533.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 534.
+[15 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/RelatorioFinal/login.png>
+ <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/RelatorioFinal/registar.png>
+] [16 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/RelatorioFinal/home.png
+>] [17 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/RelatorioFinal/addActi
+vidade.png>] [18 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/RelatorioFin
+al/verRecord.png>] [19 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto POO/Relato
+rioFinal/verActividades.png>] [20 <C:/Users/Bruno/Documents/GitHub/Li3/Projecto
+ POO/RelatorioFinal/admin.png> <C:/Users/Bruno/Documents/GitHub/Li3/Projecto PO
+O/RelatorioFinal/simularEventosAdmin.png>] [21 <C:/Users/Bruno/Documents/GitHub
+/Li3/Projecto POO/RelatorioFinal/simTemp.png>] [22 <C:/Users/Bruno/Documents/Gi
+tHub/Li3/Projecto POO/RelatorioFinal/simulaFinal.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 534.
 
-("C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\RelatorioFinal\Relatorio.aux
+("C:\Users\Bruno\Documents\GitHub\Li3\Projecto POO\RelatorioFinal\Relatorio.aux
 ")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 533.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 533.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 534.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 534.
 Package rerunfilecheck Info: File `Relatorio.out' has not changed.
 (rerunfilecheck)             Checksum: 2BDCC1BBA7E59167E68D0B31E474F479;2153.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 533.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 534.
  ) 
 Here is how much of TeX's memory you used:
  6288 strings out of 493921
@@ -918,9 +923,9 @@ ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program
 Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Fi
 les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program File
 s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Relatorio.pdf (23 pages, 1345211 bytes).
+Output written on Relatorio.pdf (24 pages, 1345637 bytes).
 PDF statistics:
- 377 PDF objects out of 1000 (max. 8388607)
+ 380 PDF objects out of 1000 (max. 8388607)
  76 named destinations out of 1000 (max. 500000)
  323 words of extra memory for PDF output out of 10000 (max. 10000000)
 
