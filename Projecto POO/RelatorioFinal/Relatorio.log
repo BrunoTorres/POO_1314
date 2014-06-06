@@ -1,7 +1,8 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.5.1)  6 JUN 2014 17:26
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.5.1)  6 JUN 2014 17:30
 entering extended mode
 **Relatorio.tex
-("C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\R_bruno\Relatorio.tex"
+("C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\RelatorioFinal\Relatorio.tex
+"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -496,7 +497,8 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
 \@enLab=\toks20
 )
-("C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\R_bruno\Relatorio.aux")
+("C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\RelatorioFinal\Relatorio.aux
+")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
@@ -511,8 +513,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
-
-(C:\Users\Bruno\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+ (C:\Users\Bruno\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count111
 \scratchdimen=\dimen126
@@ -574,11 +575,12 @@ LaTeX Info: Redefining \ref on input line 13.
 LaTeX Info: Redefining \pageref on input line 13.
 LaTeX Info: Redefining \nameref on input line 13.
 
-("C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\R_bruno\Relatorio.out")
-("C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\R_bruno\Relatorio.out")
+("C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\RelatorioFinal\Relatorio.out
+")
+("C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\RelatorioFinal\Relatorio.out
+")
 \@outlinefile=\write3
-
-<logo.pdf, id=119, 318.18875pt x 159.59625pt>
+ <logo.pdf, id=119, 318.18875pt x 159.59625pt>
 File: logo.pdf Graphic file (type pdf)
  <use logo.pdf>
 Package pdftex.def Info: logo.pdf used on input line 19.
@@ -592,9 +594,10 @@ Package pdftex.def Info: autores.png used on input line 41.
  [1
 
 {C:/Users/Bruno/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/Br
-uno/Desktop/RELATORIO FINAL/Relatorio/R_bruno/logo.pdf> <C:/Users/Bruno/Desktop
-/RELATORIO FINAL/Relatorio/R_bruno/autores.png>]
-("C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\R_bruno\Relatorio.toc"
+uno/Desktop/RELATORIO FINAL/Relatorio/RelatorioFinal/logo.pdf> <C:/Users/Bruno/
+Desktop/RELATORIO FINAL/Relatorio/RelatorioFinal/autores.png>]
+("C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\RelatorioFinal\Relatorio.toc
+"
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 3.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -609,10 +612,10 @@ been already used, duplicate ignored
                    \relax 
 l.52 \newpage
               [1]
-("C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\R_bruno\Relatorio.lof")
+("C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\RelatorioFinal\Relatorio.lof
+")
 \tf@lof=\write5
-
-[2]
+ [2]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 63.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
@@ -625,7 +628,8 @@ File: Activity2.jpg Graphic file (type jpg)
  <use Activity2.jpg>
 Package pdftex.def Info: Activity2.jpg used on input line 95.
 (pdftex.def)             Requested size: 376.40532pt x 207.02292pt.
- [3 <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/R_bruno/Activity2.jpg>]
+ [3 <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/RelatorioFinal/Activity2.
+jpg>]
 Overfull \hbox (1.41913pt too wide) in paragraph at lines 135--136
 []\OT1/cmr/m/n/12 UserVs-Interface de metodos re-la-ci-o-na-dos com pon-tos(po
 ntos proprios e pon-tos do ad-versario) 
@@ -659,9 +663,9 @@ File: Statsfinalpngg.png Graphic file (type png)
 <use Statsfinalpngg.png>
 Package pdftex.def Info: Statsfinalpngg.png used on input line 164.
 (pdftex.def)             Requested size: 119.24641pt x 156.73676pt.
- [5 <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/R_bruno/ComparadorActivit
-y.png (PNG copy)> <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/R_bruno/int
-erfaceAct.jpg>]
+ [5 <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/RelatorioFinal/Comparador
+Activity.png (PNG copy)> <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/Rela
+torioFinal/interfaceAct.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 184--186
 
  []
@@ -676,8 +680,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 184--186
 
  []
 
-[6 <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/R_bruno/Statsfinalpngg.png
->] <Records.jpg, id=239, 622.57594pt x 403.5075pt>
+[6 <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/RelatorioFinal/Statsfinalp
+ngg.png>] <Records.jpg, id=239, 622.57594pt x 403.5075pt>
 File: Records.jpg Graphic file (type jpg)
  <use Records.jpg>
 Package pdftex.def Info: Records.jpg used on input line 222.
@@ -691,14 +695,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 248--249
 
  []
 
-[7] [8 <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/R_bruno/Records.jpg>]
-<simula.jpg, id=250, 603.75563pt x 380.92313pt>
+[7] [8 <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/RelatorioFinal/Records
+.jpg>] <simula.jpg, id=250, 603.75563pt x 380.92313pt>
 File: simula.jpg Graphic file (type jpg)
  <use simula.jpg>
 Package pdftex.def Info: simula.jpg used on input line 290.
 (pdftex.def)             Requested size: 362.25616pt x 228.55562pt.
- [9 <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/R_bruno/simula.jpg>] [10]
 
+[9 <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/RelatorioFinal/simula.jpg>
+] [10]
 Underfull \hbox (badness 10000) in paragraph at lines 351--354
 
  []
@@ -875,19 +880,21 @@ Package pdftex.def Info: simulaFinal.png used on input line 529.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 533.
-[15 <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/R_bruno/login.png> <C:/Us
-ers/Bruno/Desktop/RELATORIO FINAL/Relatorio/R_bruno/registar.png>] [16 <C:/User
-s/Bruno/Desktop/RELATORIO FINAL/Relatorio/R_bruno/home.png>] [17 <C:/Users/Brun
-o/Desktop/RELATORIO FINAL/Relatorio/R_bruno/addActividade.png>] [18 <C:/Users/B
-runo/Desktop/RELATORIO FINAL/Relatorio/R_bruno/verRecord.png>] [19 <C:/Users/Br
-uno/Desktop/RELATORIO FINAL/Relatorio/R_bruno/verActividades.png>] [20 <C:/User
-s/Bruno/Desktop/RELATORIO FINAL/Relatorio/R_bruno/admin.png> <C:/Users/Bruno/De
-sktop/RELATORIO FINAL/Relatorio/R_bruno/simularEventosAdmin.png>] [21 <C:/Users
-/Bruno/Desktop/RELATORIO FINAL/Relatorio/R_bruno/simTemp.png>] [22 <C:/Users/Br
-uno/Desktop/RELATORIO FINAL/Relatorio/R_bruno/simulaFinal.png>]
+[15 <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/RelatorioFinal/login.png>
+ <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/RelatorioFinal/registar.png>
+] [16 <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/RelatorioFinal/home.png
+>] [17 <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/RelatorioFinal/addActi
+vidade.png>] [18 <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/RelatorioFin
+al/verRecord.png>] [19 <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatorio/Relato
+rioFinal/verActividades.png>] [20 <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relat
+orio/RelatorioFinal/admin.png> <C:/Users/Bruno/Desktop/RELATORIO FINAL/Relatori
+o/RelatorioFinal/simularEventosAdmin.png>] [21 <C:/Users/Bruno/Desktop/RELATORI
+O FINAL/Relatorio/RelatorioFinal/simTemp.png>] [22 <C:/Users/Bruno/Desktop/RELA
+TORIO FINAL/Relatorio/RelatorioFinal/simulaFinal.png>]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 533.
 
-("C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\R_bruno\Relatorio.aux")
+("C:\Users\Bruno\Desktop\RELATORIO FINAL\Relatorio\RelatorioFinal\Relatorio.aux
+")
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 533.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 533.
 Package rerunfilecheck Info: File `Relatorio.out' has not changed.
@@ -896,7 +903,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 533.
  ) 
 Here is how much of TeX's memory you used:
  6288 strings out of 493921
- 92498 string characters out of 3144877
+ 92603 string characters out of 3144877
  185316 words of memory out of 3000000
  9423 multiletter control sequences out of 15000+200000
  9068 words of font info for 32 fonts, out of 3000000 for 9000
@@ -911,7 +918,7 @@ ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program
 Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Fi
 les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program File
 s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Relatorio.pdf (23 pages, 1345203 bytes).
+Output written on Relatorio.pdf (23 pages, 1345211 bytes).
 PDF statistics:
  377 PDF objects out of 1000 (max. 8388607)
  76 named destinations out of 1000 (max. 500000)
