@@ -268,7 +268,10 @@ public class AdminForm extends javax.swing.JFrame {
 	public void setStats() {
 		this.labelUsersReg.setText(String.valueOf(this.fit.getNumUsers()));
 		this.labelActs.setText(String.valueOf(this.fit.getNumActivities()));
-		this.labelSimula.setText(String.valueOf(this.fit.getNumSimulaEvents()));
+		int numSim = this.fit.getNumSimulaEvents();
+		this.labelSimula.setText(String.valueOf(numSim));
+		if (numSim == 0)
+			this.butSimulaEvents.setEnabled(false);
 		this.labelEvents.setText(String.valueOf(this.fit.getOccurredEvents().size()));
 		this.labelOpenEvents.setText(String.valueOf(this.fit.getOpenEvents().size()));
 	}
