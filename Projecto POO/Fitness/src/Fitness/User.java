@@ -575,29 +575,29 @@ public class User extends Person implements Serializable {
 		int age = date.get(Calendar.YEAR) - this.getDate().get(Calendar.YEAR);
 		double probabilidade;
 		if (age < 15) {
-			factor = Math.random() + 0.1;
+			factor = Math.random()*1.5 + 0.1;
 		} else if (age < 20) {
-			factor = Math.random() + 0.5;
+			factor = Math.random()*1.5 + 0.5;
 		} else if (age < 25) {
-			factor = Math.random() + 0.7;
+			factor = Math.random()*1.5+ 0.7;
 		} else if (age < 30) {
-			factor = Math.random() + 0.85;
+			factor = Math.random()*1.5 + 0.85;
 		} else if (age < 35) {
-			factor = Math.random() + 0.9;
+			factor = Math.random()*1.5 + 0.9;
 		} else if (age < 40) {
-			factor = Math.random() + 0.6;
+			factor = Math.random()*1.5 + 0.6;
 		} else if (age < 45) {
-			factor = Math.random() + 0.5;
+			factor = Math.random()*1.5 + 0.5;
 		} else if (age < 50) {
-			factor = Math.random() + 0.4;
+			factor = Math.random()*1.5 + 0.4;
 		} else if (age < 55) {
-			factor = Math.random() + 0.3;
+			factor = Math.random()*1.5 + 0.3;
 		} else if (age < 60) {
-			factor = Math.random() + 0.2;
+			factor = Math.random()*1.5 + 0.2;
 		} else if (age < 65) {
-			factor = Math.random() + 0.1;
+			factor = Math.random()*1.5 + 0.1;
 		} else if (age >= 65) {
-			factor = Math.random() + 0.05;
+			factor = Math.random()*1.5 + 0.05;
 		}
 
 		kmTotal *= factor;

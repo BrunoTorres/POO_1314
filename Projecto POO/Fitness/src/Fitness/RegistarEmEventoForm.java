@@ -215,7 +215,6 @@ public class RegistarEmEventoForm extends javax.swing.JFrame {
 			user.preencheEventos();
 		} else {
 			AdminForm adm = (AdminForm) this.parent;
-			adm.checkEvents();
 			adm.setStats();
 		}
 		this.parent.setVisible(true);
@@ -257,7 +256,7 @@ public class RegistarEmEventoForm extends javax.swing.JFrame {
 		}
 	}
 
-	private void preencheSimulaEvents() {
+	public void preencheSimulaEvents() {
 		ArrayList<Event> eventos = new ArrayList<>();
 		DefaultTableModel dtm = (DefaultTableModel) this.tableEvents.getModel();
 		if (dtm.getRowCount() > 0) {
