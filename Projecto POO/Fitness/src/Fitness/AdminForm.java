@@ -24,7 +24,7 @@ public class AdminForm extends javax.swing.JFrame {
 	public AdminForm(JFrame parent, FitnessUM fit, Admin admin) {
 		initComponents();
 		this.setLocationRelativeTo(parent);
-		this.setName(admin.getName() + " - Administrador");
+		this.setTitle(admin.getName() + " - Administrador");
 		this.fit = fit;
 		this.admin = admin;
 		this.setStats();

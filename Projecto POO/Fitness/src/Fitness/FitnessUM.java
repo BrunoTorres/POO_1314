@@ -211,6 +211,7 @@ public class FitnessUM implements Serializable {
 	 * @param e Evento.
 	 * @param weather Clima.
 	 * @param temperatura Temperatura no evento.
+	 * @return string com a descrição da simulação do evento
 	 */
 	public String simulaEvent(Event e, String weather, double temperatura) {
 		double distance = 0;

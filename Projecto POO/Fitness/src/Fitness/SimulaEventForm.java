@@ -27,6 +27,7 @@ public class SimulaEventForm extends javax.swing.JFrame {
 		this.parent = parent;
 		this.e = e;
 		this.fit = fit;
+		this.setTitle("Simular evento");
 		this.preencheEvento();
 	}
 

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.TreeSet;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -38,11 +39,12 @@ public class SearchFriendForm extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         textNomeAmigo = new javax.swing.JTextField();
         butPesquisa = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        listAmigos = new javax.swing.JList();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tableUsers = new javax.swing.JTable();
         butAddAmigo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Pesquisar utilizadores");
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -63,8 +65,30 @@ public class SearchFriendForm extends javax.swing.JFrame {
             }
         });
 
-        listAmigos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane1.setViewportView(listAmigos);
+        tableUsers.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nome", "Email"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(tableUsers);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -72,17 +96,15 @@ public class SearchFriendForm extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(textNomeAmigo, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(butPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel1)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(textNomeAmigo, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(butPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,8 +115,8 @@ public class SearchFriendForm extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(butPesquisa)
                     .addComponent(textNomeAmigo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -115,19 +137,17 @@ public class SearchFriendForm extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(butAddAmigo)
-                .addGap(33, 33, 33))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(butAddAmigo)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(butAddAmigo)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -140,28 +160,16 @@ public class SearchFriendForm extends javax.swing.JFrame {
 		//ArrayList<User> friends = new ArrayList<>();
 		if (!nome.isEmpty()) {
 			TreeSet<Person> people = (TreeSet<Person>) this.fit.getUserList();
-			ArrayList<String> emails = new ArrayList<>();
-			ArrayList<String> users = new ArrayList<>();
-			ArrayList<String> res = new ArrayList<>();
+			DefaultTableModel dtm = (DefaultTableModel) this.tableUsers.getModel();
+			dtm.setRowCount(0);
 			for (Person p : people) {
 				if (p instanceof User) {
-					emails.add(p.getEmail());
-					users.add(p.getName() + " : " + (String.valueOf((int) (p.getDate().getTimeInMillis() / 31536E6))) + " anos : " + p.getEmail());
+					if (p.getName().startsWith(nome))
+						dtm.addRow(new Object[] {p.getName(), p.getEmail()});
 				}
 			}
-
-			for (String s : users) {
-				String name = s.split(":")[0].trim();
-				if (s.startsWith(nome) && !name.equals(this.u.getName())) {
-					res.add(s);
-				}
-			}
-
-			//ArrayList<String> friendsName = new ArrayList<>();
-			//for (User us : friends) {
-			//	friendsName.add(us.getName());
-			//}
-			this.listAmigos.setListData(res.toArray());
+			
+			this.tableUsers.setModel(dtm);
 		}
     }//GEN-LAST:event_butPesquisaActionPerformed
 
@@ -171,13 +179,12 @@ public class SearchFriendForm extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosing
 
     private void butAddAmigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAddAmigoActionPerformed
-		if (!this.listAmigos.isSelectionEmpty()) {
-			String[] split = ((String) this.listAmigos.getSelectedValue()).split(":");
-			User friend = this.fit.getUserByEmail(split[2].trim());
+		if (this.tableUsers.getSelectedRowCount() > 0) {
+			User friend = this.fit.getUserByEmail((String) this.tableUsers.getValueAt(this.tableUsers.getSelectedRow(), 1));
 			String email = friend.getEmail();
 			if (!this.u.getFriendsList().contains(email)) {
 				friend.addFriendToMessage(this.u.getEmail());
-				JOptionPane.showMessageDialog(this, "Pedido de amizade enviado.\nSe o seu pedido for aceite, " + split[0] + "será adicionado à sua lista de amigos!");
+				JOptionPane.showMessageDialog(this, "Pedido de amizade enviado.\nSe o seu pedido for aceite, " + this.tableUsers.getValueAt(this.tableUsers.getSelectedRow(), 0) + "será adicionado à sua lista de amigos!");
 			}
 			else{
 				JOptionPane.showMessageDialog(this, "Este utilizador já faz parte da sua lista de amigos...");
@@ -191,8 +198,8 @@ public class SearchFriendForm extends javax.swing.JFrame {
     private javax.swing.JButton butPesquisa;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JList listAmigos;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable tableUsers;
     private javax.swing.JTextField textNomeAmigo;
     // End of variables declaration//GEN-END:variables
 	private JFrame parent;

@@ -29,9 +29,12 @@ public class RegistarEmEventoForm extends javax.swing.JFrame {
 		this.mode = mode;
 		if (mode.equals("simular")) {
 			this.butAddEvento.setText("SIMULAR");
+			this.setTitle("Simular evento");
 			this.preencheSimulaEvents();
-		} else
+		} else{
 			this.preencheOpenEvents();
+			this.setTitle("Inscrição em evento");
+		}
 	}
 
 	/**

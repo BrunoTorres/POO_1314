@@ -36,6 +36,7 @@ public class AddViewActivityForm extends javax.swing.JFrame {
 		this.fit = fit;
 		this.u = u;
 		this.setName("add");
+		this.setTitle("Adicionar novo evento");
 		this.setLocationRelativeTo(parent);
 		this.cboxSports.setSelectedIndex(12);
 		int dia = new GregorianCalendar().get(Calendar.DAY_OF_MONTH);
