@@ -10,6 +10,7 @@ import java.awt.event.ItemEvent;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Iterator;
 import java.util.TreeMap;
 import java.util.TreeSet;
 import javax.swing.JOptionPane;
@@ -142,6 +143,7 @@ public class ViewFriendForm extends javax.swing.JFrame {
         jPanel13 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tableEventsFeitos = new javax.swing.JTable();
+        butVerEvento = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -303,14 +305,19 @@ public class ViewFriendForm extends javax.swing.JFrame {
         textCaloriasQueim.setEditable(false);
         textCaloriasQueim.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        butPrevMonth.setText("< Mês");
+        butPrevMonth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/prev.png"))); // NOI18N
+        butPrevMonth.setText("Mês");
+        butPrevMonth.setIconTextGap(10);
         butPrevMonth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butPrevMonthActionPerformed(evt);
             }
         });
 
-        butNextMonth.setText("Mês >");
+        butNextMonth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/next.png"))); // NOI18N
+        butNextMonth.setText("Mês");
+        butNextMonth.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        butNextMonth.setIconTextGap(10);
         butNextMonth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butNextMonthActionPerformed(evt);
@@ -396,7 +403,7 @@ public class ViewFriendForm extends javax.swing.JFrame {
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Home", panelMensagens);
@@ -794,14 +801,18 @@ public class ViewFriendForm extends javax.swing.JFrame {
                 .addGap(0, 0, 0))
         );
 
-        butFirst.setText("<<");
+        butFirst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/first.png"))); // NOI18N
+        butFirst.setToolTipText("Ver atividade mais recente");
+        butFirst.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butFirst.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butFirstActionPerformed(evt);
             }
         });
 
-        butPrev.setText("<");
+        butPrev.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/prev.png"))); // NOI18N
+        butPrev.setToolTipText("Ver atividade anterior");
+        butPrev.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butPrev.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butPrevActionPerformed(evt);
@@ -811,14 +822,18 @@ public class ViewFriendForm extends javax.swing.JFrame {
         textNAct.setEditable(false);
         textNAct.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        butNext.setText(">");
+        butNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/next.png"))); // NOI18N
+        butNext.setToolTipText("Ver atividade seguinte");
+        butNext.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butNext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butNextActionPerformed(evt);
             }
         });
 
-        butLast.setText(">>");
+        butLast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/last.png"))); // NOI18N
+        butLast.setToolTipText("Ver atividade mais antiga");
+        butLast.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butLast.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butLastActionPerformed(evt);
@@ -840,7 +855,7 @@ public class ViewFriendForm extends javax.swing.JFrame {
                 .addComponent(butNext)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(butLast)
-                .addContainerGap(132, Short.MAX_VALUE))
+                .addContainerGap(130, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(27, 27, 27)
@@ -850,13 +865,13 @@ public class ViewFriendForm extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(435, Short.MAX_VALUE)
+                .addContainerGap(425, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(butFirst)
                     .addComponent(butPrev)
                     .addComponent(butNext)
                     .addComponent(butLast)
-                    .addComponent(textNAct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textNAct, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(74, 74, 74))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
@@ -1098,13 +1113,28 @@ public class ViewFriendForm extends javax.swing.JFrame {
         tableEventsFeitos.getTableHeader().setReorderingAllowed(false);
         jScrollPane3.setViewportView(tableEventsFeitos);
 
+        butVerEvento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/search.png"))); // NOI18N
+        butVerEvento.setText("VER EVENTO");
+        butVerEvento.setToolTipText("Ver detalhes do evento");
+        butVerEvento.setIconTextGap(10);
+        butVerEvento.setMargin(new java.awt.Insets(2, 9, 2, 9));
+        butVerEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butVerEventoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(butVerEvento)))
                 .addContainerGap())
         );
         jPanel13Layout.setVerticalGroup(
@@ -1112,7 +1142,9 @@ public class ViewFriendForm extends javax.swing.JFrame {
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addComponent(butVerEvento)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
@@ -1142,21 +1174,17 @@ public class ViewFriendForm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 559, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jTabbedPane1)
-                    .addContainerGap()))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 583, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jTabbedPane1)
-                    .addContainerGap()))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
 
         pack();
@@ -1781,6 +1809,21 @@ public class ViewFriendForm extends javax.swing.JFrame {
         this.preencheStats();
     }//GEN-LAST:event_butNextMonthActionPerformed
 
+    private void butVerEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butVerEventoActionPerformed
+        if (this.tableEventsFeitos.getSelectedRowCount() > 0) {
+            try {
+                Event e = this.fit.getEventByName((String) this.tableEventsFeitos.getValueAt(this.tableEventsFeitos.getSelectedRow(), 0));
+                if (e.getParticipantsList().contains(this.u)) {
+                    ViewEventForm viewEvent = new ViewEventForm(this, e);
+                    viewEvent.setVisible(true);
+                    this.setVisible(false);
+                }
+            } catch (EventNotFoundException e) {
+                JOptionPane.showMessageDialog(this, "ERRO: EVENTO INEXISTENTE");
+            }
+        }
+    }//GEN-LAST:event_butVerEventoActionPerformed
+
 	private void preencheStats() {
 		Statistics stat = new Statistics();
 		GregorianCalendar dataAtual = new GregorianCalendar();
@@ -1916,8 +1959,31 @@ public class ViewFriendForm extends javax.swing.JFrame {
 			this.tableEventsFeitos.setValueAt(e.getName(), i, 0);
 			this.tableEventsFeitos.setValueAt(e.getTipoActivity(), i, 1);
 			this.tableEventsFeitos.setValueAt(e.getLocation(), i, 2);
-			this.tableEventsFeitos.setValueAt(String.valueOf(diaE) + "/" + String.valueOf(mesE) + "/" + String.valueOf(anoE), i, 3);
-			this.tableEventsFeitos.setValueAt("CLASS", i, 4);
+			this.tableEventsFeitos.setValueAt(String.valueOf(diaE) + "/" + String.valueOf(mesE + 1) + "/" + String.valueOf(anoE), i, 3);
+			boolean desist = false;
+			boolean found = false;
+			int pos = 1;
+			Iterator<Ranking> it = e.getRanking().iterator();
+			while (it.hasNext() && !found) {
+				User at = it.next().getAthlete();
+				if (this.u.getName().equals(at.getName()) && this.u.getEmail().equals(at.getEmail())) {
+					found = true;
+				} else {
+					pos++;
+				}
+			}
+			if (!found) {
+				it = e.getDesistentes().iterator();
+				while (it.hasNext() && !found) {
+					User at = it.next().getAthlete();
+					if (this.u.getName().equals(at.getName()) && this.u.getEmail().equals(at.getEmail())) {
+						found = true;
+					} else {
+						pos++;
+					}
+				}
+			}
+			this.tableEventsFeitos.setValueAt(pos, i, 4);
 			i++;
 		}
 	}
@@ -1933,6 +1999,7 @@ public class ViewFriendForm extends javax.swing.JFrame {
     private javax.swing.JButton butNextMonth;
     private javax.swing.JButton butPrev;
     private javax.swing.JButton butPrevMonth;
+    private javax.swing.JButton butVerEvento;
     private javax.swing.JComboBox cboxAno;
     private javax.swing.JComboBox cboxAnoNasc;
     private javax.swing.JComboBox cboxDia;

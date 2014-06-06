@@ -451,7 +451,7 @@ public class UserForm extends javax.swing.JFrame {
                         .addComponent(cboxAnoNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(50, 50, 50)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                    .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
                     .addComponent(textDespFav)
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -523,14 +523,21 @@ public class UserForm extends javax.swing.JFrame {
 
         textCaloriasQueim.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        butPrevMonth.setText("< Mês");
+        butPrevMonth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/prev.png"))); // NOI18N
+        butPrevMonth.setText("Mês");
+        butPrevMonth.setIconTextGap(10);
+        butPrevMonth.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butPrevMonth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butPrevMonthActionPerformed(evt);
             }
         });
 
-        butNextMonth.setText("Mês >");
+        butNextMonth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/next.png"))); // NOI18N
+        butNextMonth.setText("Mês");
+        butNextMonth.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        butNextMonth.setIconTextGap(10);
+        butNextMonth.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butNextMonth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butNextMonthActionPerformed(evt);
@@ -562,15 +569,15 @@ public class UserForm extends javax.swing.JFrame {
                     .addComponent(textCaloriasQueim))
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(butNextMonth)
+                        .addContainerGap(194, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(butMensais)
                             .addComponent(butAnuais))
-                        .addContainerGap())
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(butNextMonth)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(63, 63, 63))))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -615,7 +622,7 @@ public class UserForm extends javax.swing.JFrame {
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Home", panelMensagens);
@@ -1013,14 +1020,20 @@ public class UserForm extends javax.swing.JFrame {
                 .addGap(0, 0, 0))
         );
 
-        butFirst.setText("<<");
+        butFirst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/first.png"))); // NOI18N
+        butFirst.setToolTipText("Ver atividade mais recente");
+        butFirst.setIconTextGap(10);
+        butFirst.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butFirst.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butFirstActionPerformed(evt);
             }
         });
 
-        butPrev.setText("<");
+        butPrev.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/prev.png"))); // NOI18N
+        butPrev.setToolTipText("Ver atividade anterior");
+        butPrev.setIconTextGap(10);
+        butPrev.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butPrev.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butPrevActionPerformed(evt);
@@ -1030,21 +1043,31 @@ public class UserForm extends javax.swing.JFrame {
         textNAct.setEditable(false);
         textNAct.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        butNext.setText(">");
+        butNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/next.png"))); // NOI18N
+        butNext.setToolTipText("Ver atividade seguinte");
+        butNext.setIconTextGap(10);
+        butNext.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butNext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butNextActionPerformed(evt);
             }
         });
 
-        butLast.setText(">>");
+        butLast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/last.png"))); // NOI18N
+        butLast.setToolTipText("Ver atividade mais antiga");
+        butLast.setIconTextGap(10);
+        butLast.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butLast.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butLastActionPerformed(evt);
             }
         });
 
+        butRemove.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/remove.png"))); // NOI18N
         butRemove.setText("REMOVER");
+        butRemove.setToolTipText("Remover atividade seleccionada");
+        butRemove.setIconTextGap(10);
+        butRemove.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butRemove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butRemoveActionPerformed(evt);
@@ -1058,7 +1081,13 @@ public class UserForm extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(130, 130, 130)
+                        .addGap(56, 56, 56)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(231, 231, 231)
+                        .addComponent(butRemove))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(152, 152, 152)
                         .addComponent(butFirst)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(butPrev)
@@ -1067,35 +1096,24 @@ public class UserForm extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(butNext)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(butLast))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(222, 222, 222)
-                        .addComponent(butRemove)))
-                .addContainerGap(148, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(27, 27, 27)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(27, Short.MAX_VALUE)))
+                        .addComponent(butLast)))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(435, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(butRemove)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(butFirst)
                     .addComponent(butPrev)
                     .addComponent(butNext)
                     .addComponent(butLast)
-                    .addComponent(textNAct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(48, 48, 48))
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(2, 2, 2)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(textNAct, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Ver Atividades", jPanel2);
@@ -1157,7 +1175,7 @@ public class UserForm extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 485, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jLabel13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1191,7 +1209,7 @@ public class UserForm extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(286, Short.MAX_VALUE))
+                .addContainerGap(281, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Recordes", jPanel1);
@@ -1224,7 +1242,11 @@ public class UserForm extends javax.swing.JFrame {
         tableAmigos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane2.setViewportView(tableAmigos);
 
-        jButton1.setText("Ver amigo");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/search.png"))); // NOI18N
+        jButton1.setText("VER AMIGO");
+        jButton1.setToolTipText("Ver detalhes do amigo seleccionado");
+        jButton1.setIconTextGap(10);
+        jButton1.setMargin(new java.awt.Insets(2, 9, 2, 9));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -1238,7 +1260,7 @@ public class UserForm extends javax.swing.JFrame {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 485, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton1)))
@@ -1268,7 +1290,7 @@ public class UserForm extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(316, Short.MAX_VALUE))
+                .addContainerGap(301, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Amigos", jPanel8);
@@ -1303,16 +1325,22 @@ public class UserForm extends javax.swing.JFrame {
         tableEventsInscritos.getTableHeader().setReorderingAllowed(false);
         jScrollPane5.setViewportView(tableEventsInscritos);
 
-        butRemoveEvento.setText("- EVENTO");
+        butRemoveEvento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/remove.png"))); // NOI18N
         butRemoveEvento.setToolTipText("Remover inscrição em evento");
+        butRemoveEvento.setIconTextGap(10);
+        butRemoveEvento.setLabel("EVENTO");
+        butRemoveEvento.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butRemoveEvento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butRemoveEventoActionPerformed(evt);
             }
         });
 
-        butAddEvento.setText("+ EVENTO");
+        butAddEvento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/add.png"))); // NOI18N
+        butAddEvento.setText("EVENTO");
         butAddEvento.setToolTipText("Ver eventos disponíveis para inscrição");
+        butAddEvento.setIconTextGap(10);
+        butAddEvento.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butAddEvento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butAddEventoActionPerformed(evt);
@@ -1326,7 +1354,7 @@ public class UserForm extends javax.swing.JFrame {
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(butAddEvento)
@@ -1343,7 +1371,7 @@ public class UserForm extends javax.swing.JFrame {
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(butRemoveEvento)
                     .addComponent(butAddEvento))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel19.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "EVENTOS PARTICIPANTES"));
@@ -1376,8 +1404,11 @@ public class UserForm extends javax.swing.JFrame {
         tableEventsFeitos.getTableHeader().setReorderingAllowed(false);
         jScrollPane6.setViewportView(tableEventsFeitos);
 
+        butVerEvento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/search.png"))); // NOI18N
         butVerEvento.setText("VER EVENTO");
         butVerEvento.setToolTipText("Ver detalhes do evento");
+        butVerEvento.setIconTextGap(10);
+        butVerEvento.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butVerEvento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butVerEventoActionPerformed(evt);
@@ -1404,7 +1435,7 @@ public class UserForm extends javax.swing.JFrame {
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(butVerEvento)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
@@ -1458,8 +1489,10 @@ public class UserForm extends javax.swing.JFrame {
         tableEventsOcorridos.getTableHeader().setReorderingAllowed(false);
         jScrollPane7.setViewportView(tableEventsOcorridos);
 
+        butVerEvento1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/search.png"))); // NOI18N
         butVerEvento1.setText("VER EVENTO");
         butVerEvento1.setToolTipText("Ver detalhes do evento");
+        butVerEvento1.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butVerEvento1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butVerEvento1ActionPerformed(evt);
@@ -1473,7 +1506,7 @@ public class UserForm extends javax.swing.JFrame {
             .addGroup(jPanel17Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 576, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(butVerEvento1)))
@@ -1483,7 +1516,7 @@ public class UserForm extends javax.swing.JFrame {
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 345, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(butVerEvento1)
                 .addGap(115, 115, 115))
@@ -1506,28 +1539,46 @@ public class UserForm extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Eventos", jPanel15);
 
-        butAddActivity.setText("+ ATIVIDADE");
+        butAddActivity.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/add.png"))); // NOI18N
+        butAddActivity.setText("ATIVIDADE");
+        butAddActivity.setToolTipText("Adicionar nova atividade");
+        butAddActivity.setDefaultCapable(false);
+        butAddActivity.setDisabledIcon(null);
+        butAddActivity.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        butAddActivity.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        butAddActivity.setIconTextGap(10);
+        butAddActivity.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butAddActivity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butAddActivityActionPerformed(evt);
             }
         });
 
-        butVerPedidos.setText("Ver pedidos de amizade");
+        butVerPedidos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/friends.png"))); // NOI18N
+        butVerPedidos.setText("PEDIDOS DE AMIZADE");
+        butVerPedidos.setIconTextGap(10);
+        butVerPedidos.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butVerPedidos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butVerPedidosActionPerformed(evt);
             }
         });
 
-        butAddAmigo.setText("+ AMIGO");
+        butAddAmigo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/add.png"))); // NOI18N
+        butAddAmigo.setText("AMIGO");
+        butAddAmigo.setIconTextGap(10);
+        butAddAmigo.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butAddAmigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butAddAmigoActionPerformed(evt);
             }
         });
 
+        butLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/close.png"))); // NOI18N
         butLogout.setText("LOGOUT");
+        butLogout.setToolTipText("Sair da aplicaçao");
+        butLogout.setIconTextGap(10);
+        butLogout.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butLogoutActionPerformed(evt);
@@ -1540,13 +1591,13 @@ public class UserForm extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jTabbedPane1)
             .addGroup(layout.createSequentialGroup()
-                .addGap(55, 55, 55)
+                .addGap(29, 29, 29)
                 .addComponent(butAddActivity)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(butVerPedidos)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(butAddAmigo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
+                .addComponent(butVerPedidos)
+                .addGap(18, 18, 18)
                 .addComponent(butLogout)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1560,7 +1611,7 @@ public class UserForm extends javax.swing.JFrame {
                     .addComponent(butAddAmigo)
                     .addComponent(butLogout))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTabbedPane1))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 570, Short.MAX_VALUE))
         );
 
         pack();
@@ -1569,6 +1620,7 @@ public class UserForm extends javax.swing.JFrame {
     private void butVerPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butVerPedidosActionPerformed
 		FriendRequestListForm pedidos = new FriendRequestListForm(this, fit);
 		pedidos.setVisible(true);
+		this.setVisible(false);
     }//GEN-LAST:event_butVerPedidosActionPerformed
 
     private void butAddActivityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAddActivityActionPerformed
@@ -1625,9 +1677,11 @@ public class UserForm extends javax.swing.JFrame {
 					eventos.add(e);
 				}
 			}
-			eventos.get(this.tableEventsInscritos.getSelectedRow()).removeUser(this.u);
-			JOptionPane.showMessageDialog(this, "Inscrição removida...");
-			this.preencheEventosInscritos();
+			Event sel = eventos.get(this.tableEventsInscritos.getSelectedRow());
+			if (this.fit.removeRegistEvent(this.u, sel)){
+				JOptionPane.showMessageDialog(this, "Inscrição removida...");
+				this.preencheEventosInscritos();
+			}
 		}
     }//GEN-LAST:event_butRemoveEventoActionPerformed
 
@@ -1845,16 +1899,16 @@ public class UserForm extends javax.swing.JFrame {
     private void butAnuaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAnuaisActionPerformed
 		this.butAnuais.setSelected(true);
 		this.butMensais.setSelected(false);
-		this.butNextMonth.setText("Ano >");
-		this.butPrevMonth.setText("< Ano");
+		this.butNextMonth.setText("Ano");
+		this.butPrevMonth.setText("Ano");
 		this.preencheStats();
     }//GEN-LAST:event_butAnuaisActionPerformed
 
     private void butMensaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butMensaisActionPerformed
 		this.butAnuais.setSelected(false);
 		this.butMensais.setSelected(true);
-		this.butNextMonth.setText("Mês >");
-		this.butPrevMonth.setText("< Mês");
+		this.butNextMonth.setText("Mês");
+		this.butPrevMonth.setText("Mês");
 		this.preencheStats();
     }//GEN-LAST:event_butMensaisActionPerformed
 

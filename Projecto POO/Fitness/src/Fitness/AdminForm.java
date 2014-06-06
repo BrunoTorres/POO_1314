@@ -58,16 +58,33 @@ public class AdminForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        butAddEvento.setText("+ EVENTO");
+        butAddEvento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/add.png"))); // NOI18N
+        butAddEvento.setText("EVENTO");
+        butAddEvento.setToolTipText("Adicionar novo evento");
+        butAddEvento.setIconTextGap(10);
+        butAddEvento.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butAddEvento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butAddEventoActionPerformed(evt);
             }
         });
 
-        butDelUser.setText("- USER");
+        butDelUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/remove.png"))); // NOI18N
+        butDelUser.setText("USER");
+        butDelUser.setToolTipText("Remover utilizador da aplicação");
+        butDelUser.setIconTextGap(10);
+        butDelUser.setMargin(new java.awt.Insets(2, 9, 2, 9));
+        butDelUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butDelUserActionPerformed(evt);
+            }
+        });
 
+        butLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/close.png"))); // NOI18N
         butLogout.setText("LOGOUT");
+        butLogout.setToolTipText("Sair da aplicaçao");
+        butLogout.setIconTextGap(10);
+        butLogout.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butLogoutActionPerformed(evt);
@@ -101,31 +118,21 @@ public class AdminForm extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(89, 89, 89)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(29, 29, 29)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(labelUsersReg)
-                                    .addComponent(labelActs))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(labelEvents))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(18, 18, 18)
-                        .addComponent(labelSimula))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(labelOpenEvents)))
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel4))
+                .addGap(60, 60, 60)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelUsersReg)
+                    .addComponent(labelActs)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(labelEvents)
+                        .addComponent(labelOpenEvents))
+                    .addComponent(labelSimula))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -154,7 +161,11 @@ public class AdminForm extends javax.swing.JFrame {
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
+        butSimulaEvents.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/sim.png"))); // NOI18N
         butSimulaEvents.setText("SIM EVENTO");
+        butSimulaEvents.setToolTipText("Simular evento");
+        butSimulaEvents.setIconTextGap(10);
+        butSimulaEvents.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butSimulaEvents.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butSimulaEventsActionPerformed(evt);
@@ -224,6 +235,12 @@ public class AdminForm extends javax.swing.JFrame {
 		sim.setVisible(true);
 		this.setVisible(false);
     }//GEN-LAST:event_butSimulaEventsActionPerformed
+
+    private void butDelUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butDelUserActionPerformed
+        FriendRequestListForm del = new FriendRequestListForm(this, this.fit);
+		del.setVisible(true);
+		this.setVisible(false);
+    }//GEN-LAST:event_butDelUserActionPerformed
 
 	private void guardaEstado() {
 		try {

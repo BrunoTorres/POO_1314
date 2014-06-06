@@ -27,6 +27,7 @@ public class LoginForm extends javax.swing.JFrame {
 	public LoginForm() {
 		initComponents();
 		this.setLocationRelativeTo(null);
+		this.textEmail.grabFocus();
 		fitness = new FitnessUM();
 		try {
 			ObjectInputStream objInput = new ObjectInputStream(new FileInputStream("data.obj"));
@@ -107,7 +108,11 @@ public class LoginForm extends javax.swing.JFrame {
         textEmail.setNextFocusableComponent(textPw);
         textEmail.setPreferredSize(new java.awt.Dimension(156, 25));
 
+        butOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/group.png"))); // NOI18N
         butOK.setText("Entrar");
+        butOK.setToolTipText("Entrar na aplicação");
+        butOK.setIconTextGap(10);
+        butOK.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butOK.setNextFocusableComponent(butLimpar);
         butOK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,6 +121,9 @@ public class LoginForm extends javax.swing.JFrame {
         });
 
         butLimpar.setText("Limpar");
+        butLimpar.setToolTipText("Limpar campos");
+        butLimpar.setIconTextGap(10);
+        butLimpar.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butLimpar.setNextFocusableComponent(textEmail);
         butLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,14 +164,16 @@ public class LoginForm extends javax.swing.JFrame {
                     .addComponent(textEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(butOK))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(butLimpar)
-                    .addComponent(textPw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(butLimpar, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel3)
+                        .addComponent(textPw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
 
         labelRegistar.setText("Registar");
+        labelRegistar.setToolTipText("Criar nova conta na aplicação");
         labelRegistar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         labelRegistar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

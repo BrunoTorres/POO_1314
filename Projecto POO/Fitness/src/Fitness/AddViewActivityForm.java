@@ -76,7 +76,7 @@ public class AddViewActivityForm extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         textDistanciaH = new javax.swing.JTextField();
         textDistanciaV = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
+        labelDistH = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -229,7 +229,7 @@ public class AddViewActivityForm extends javax.swing.JFrame {
         textDistanciaV.setMinimumSize(new java.awt.Dimension(52, 28));
         textDistanciaV.setPreferredSize(new java.awt.Dimension(52, 28));
 
-        jLabel4.setText("KMs");
+        labelDistH.setText("KMs");
 
         jLabel8.setText("KMs");
 
@@ -245,7 +245,7 @@ public class AddViewActivityForm extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(textDistanciaH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4))
+                        .addComponent(labelDistH))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(textDistanciaV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -259,7 +259,7 @@ public class AddViewActivityForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textDistanciaH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(labelDistH))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -453,14 +453,19 @@ public class AddViewActivityForm extends javax.swing.JFrame {
                 .addGap(0, 0, 0))
         );
 
-        butOKAddAct.setText("ADICIONAR");
+        butOKAddAct.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/ok2.png"))); // NOI18N
+        butOKAddAct.setToolTipText("Adicionar nova atividade");
+        butOKAddAct.setIconTextGap(10);
+        butOKAddAct.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butOKAddAct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butOKAddActActionPerformed(evt);
             }
         });
 
-        butCancelAddAct.setText("CANCELAR");
+        butCancelAddAct.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/close.png"))); // NOI18N
+        butCancelAddAct.setIconTextGap(10);
+        butCancelAddAct.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butCancelAddAct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butCancelAddActActionPerformed(evt);
@@ -472,27 +477,26 @@ public class AddViewActivityForm extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(142, 142, 142)
-                        .addComponent(butCancelAddAct)
-                        .addGap(18, 18, 18)
-                        .addComponent(butOKAddAct)))
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(butCancelAddAct)
+                .addGap(18, 18, 18)
+                .addComponent(butOKAddAct)
+                .addGap(196, 196, 196))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(butOKAddAct)
-                    .addComponent(butCancelAddAct))
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(butCancelAddAct)
+                    .addComponent(butOKAddAct))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -746,6 +750,10 @@ public class AddViewActivityForm extends javax.swing.JFrame {
 				this.spinnerAdversario.setEnabled(false);
 				this.spinnerPessoal.setEnabled(false);
 			}
+			if (sport.equals("Swimming"))
+				this.labelDistH.setText("m");
+			else
+				this.labelDistH.setText("KMs");
 		}
     }//GEN-LAST:event_cboxSportsItemStateChanged
 
@@ -790,7 +798,6 @@ public class AddViewActivityForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -802,6 +809,7 @@ public class AddViewActivityForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel labelDate;
     private javax.swing.JLabel labelDay;
+    private javax.swing.JLabel labelDistH;
     private javax.swing.JLabel labelMonth;
     private javax.swing.JLabel labelName;
     private javax.swing.JLabel labelTime;

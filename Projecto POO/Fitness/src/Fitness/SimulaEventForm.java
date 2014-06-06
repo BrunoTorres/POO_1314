@@ -97,7 +97,10 @@ public class SimulaEventForm extends javax.swing.JFrame {
         textSimula.setRows(5);
         jScrollPane1.setViewportView(textSimula);
 
-        butStart.setText("COMEÇAR");
+        butStart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/sim.png"))); // NOI18N
+        butStart.setText("SIMULAR");
+        butStart.setIconTextGap(10);
+        butStart.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butStart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butStartActionPerformed(evt);
@@ -184,7 +187,7 @@ public class SimulaEventForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
                 .addContainerGap())
         );
 

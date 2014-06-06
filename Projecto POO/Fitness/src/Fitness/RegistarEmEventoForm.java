@@ -85,14 +85,22 @@ public class RegistarEmEventoForm extends javax.swing.JFrame {
         tableEvents.getTableHeader().setReorderingAllowed(false);
         jScrollPane4.setViewportView(tableEvents);
 
-        butAddEvento.setText("+ EVENTO");
+        butAddEvento.setIcon(new javax.swing.ImageIcon("/home/jmano/Transferências/Icons/ok.png")); // NOI18N
+        butAddEvento.setText("EVENTO");
+        butAddEvento.setToolTipText("Inscrever-se no evento seleccionado");
+        butAddEvento.setIconTextGap(10);
+        butAddEvento.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butAddEvento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butAddEventoActionPerformed(evt);
             }
         });
 
+        butCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/close.png"))); // NOI18N
         butCancel.setText("CANCEL");
+        butCancel.setToolTipText("Fechar janela");
+        butCancel.setIconTextGap(10);
+        butCancel.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butCancelActionPerformed(evt);
@@ -242,8 +250,8 @@ public class RegistarEmEventoForm extends javax.swing.JFrame {
 			this.tableEvents.setValueAt(e.getName(), i, 0);
 			this.tableEvents.setValueAt(e.getTipoActivity(), i, 1);
 			this.tableEvents.setValueAt(e.getLocation(), i, 2);
-			this.tableEvents.setValueAt(String.valueOf(diaE) + "/" + String.valueOf(mesE) + "/" + String.valueOf(anoE), i, 3);
-			this.tableEvents.setValueAt(String.valueOf(diaI) + "/" + String.valueOf(mesI) + "/" + String.valueOf(anoI), i, 4);
+			this.tableEvents.setValueAt(String.valueOf(diaE) + "/" + String.valueOf(mesE+1) + "/" + String.valueOf(anoE), i, 3);
+			this.tableEvents.setValueAt(String.valueOf(diaI) + "/" + String.valueOf(mesI+1) + "/" + String.valueOf(anoI), i, 4);
 			i++;
 		}
 	}

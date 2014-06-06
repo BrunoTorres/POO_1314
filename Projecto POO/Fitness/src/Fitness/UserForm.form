@@ -31,13 +31,13 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="jTabbedPane1" alignment="0" max="32767" attributes="0"/>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
               <Component id="butAddActivity" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="butVerPedidos" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="butAddAmigo" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="butVerPedidos" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="butLogout" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -54,7 +54,7 @@
                   <Component id="butLogout" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jTabbedPane1" max="32767" attributes="0"/>
+              <Component id="jTabbedPane1" pref="570" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -98,7 +98,7 @@
                       <Component id="jPanel10" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jPanel11" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="81" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -146,7 +146,7 @@
                           </Group>
                           <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel19" pref="164" max="32767" attributes="0"/>
+                              <Component id="jLabel19" pref="224" max="32767" attributes="0"/>
                               <Component id="textDespFav" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -365,17 +365,17 @@
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace pref="147" max="32767" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="butNextMonth" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="194" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="butMensais" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="butAnuais" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="butNextMonth" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -462,7 +462,14 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="butPrevMonth">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="&lt; M&#xea;s"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Fitness/prev.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="M&#xea;s"/>
+                    <Property name="iconTextGap" type="int" value="10"/>
+                    <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+                      <Insets value="[2, 9, 2, 9]"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butPrevMonthActionPerformed"/>
@@ -470,7 +477,15 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="butNextMonth">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="M&#xea;s &gt;"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Fitness/next.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="M&#xea;s"/>
+                    <Property name="horizontalTextPosition" type="int" value="2"/>
+                    <Property name="iconTextGap" type="int" value="10"/>
+                    <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+                      <Insets value="[2, 9, 2, 9]"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butNextMonthActionPerformed"/>
@@ -500,7 +515,15 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                              <Component id="jPanel3" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="231" max="-2" attributes="0"/>
+                              <Component id="butRemove" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="152" max="-2" attributes="0"/>
                               <Component id="butFirst" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="butPrev" min="-2" max="-2" attributes="0"/>
@@ -511,43 +534,27 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="butLast" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="222" max="-2" attributes="0"/>
-                              <Component id="butRemove" min="-2" max="-2" attributes="0"/>
-                          </Group>
                       </Group>
-                      <EmptySpace pref="148" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                          <Component id="jPanel3" max="-2" attributes="0"/>
-                          <EmptySpace pref="27" max="32767" attributes="0"/>
-                      </Group>
+                      <EmptySpace pref="58" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="435" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="butRemove" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="butFirst" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="butPrev" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="butNext" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="butLast" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="textNAct" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="textNAct" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                          <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1310,7 +1317,14 @@
             </Container>
             <Component class="javax.swing.JButton" name="butFirst">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&lt;&lt;"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Fitness/first.png"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Ver atividade mais recente"/>
+                <Property name="iconTextGap" type="int" value="10"/>
+                <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+                  <Insets value="[2, 9, 2, 9]"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butFirstActionPerformed"/>
@@ -1318,7 +1332,14 @@
             </Component>
             <Component class="javax.swing.JButton" name="butPrev">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&lt;"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Fitness/prev.png"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Ver atividade anterior"/>
+                <Property name="iconTextGap" type="int" value="10"/>
+                <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+                  <Insets value="[2, 9, 2, 9]"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butPrevActionPerformed"/>
@@ -1332,7 +1353,14 @@
             </Component>
             <Component class="javax.swing.JButton" name="butNext">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&gt;"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Fitness/next.png"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Ver atividade seguinte"/>
+                <Property name="iconTextGap" type="int" value="10"/>
+                <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+                  <Insets value="[2, 9, 2, 9]"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butNextActionPerformed"/>
@@ -1340,7 +1368,14 @@
             </Component>
             <Component class="javax.swing.JButton" name="butLast">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&gt;&gt;"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Fitness/last.png"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Ver atividade mais antiga"/>
+                <Property name="iconTextGap" type="int" value="10"/>
+                <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+                  <Insets value="[2, 9, 2, 9]"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butLastActionPerformed"/>
@@ -1348,7 +1383,15 @@
             </Component>
             <Component class="javax.swing.JButton" name="butRemove">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Fitness/remove.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="REMOVER"/>
+                <Property name="toolTipText" type="java.lang.String" value="Remover atividade seleccionada"/>
+                <Property name="iconTextGap" type="int" value="10"/>
+                <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+                  <Insets value="[2, 9, 2, 9]"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butRemoveActionPerformed"/>
@@ -1380,7 +1423,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="286" max="32767" attributes="0"/>
+                      <EmptySpace pref="281" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1405,7 +1448,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane1" pref="485" max="32767" attributes="0"/>
+                              <Component id="jScrollPane1" pref="545" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -1516,7 +1559,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="316" max="32767" attributes="0"/>
+                      <EmptySpace pref="301" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1541,7 +1584,7 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane2" pref="485" max="32767" attributes="0"/>
+                              <Component id="jScrollPane2" pref="545" max="32767" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
@@ -1589,7 +1632,15 @@
                 </Container>
                 <Component class="javax.swing.JButton" name="jButton1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Ver amigo"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Fitness/search.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="VER AMIGO"/>
+                    <Property name="toolTipText" type="java.lang.String" value="Ver detalhes do amigo seleccionado"/>
+                    <Property name="iconTextGap" type="int" value="10"/>
+                    <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+                      <Insets value="[2, 9, 2, 9]"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
@@ -1682,7 +1733,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jScrollPane5" alignment="0" pref="480" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane5" alignment="0" pref="540" max="32767" attributes="0"/>
                                       <Group type="102" alignment="1" attributes="0">
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           <Component id="butAddEvento" min="-2" max="-2" attributes="0"/>
@@ -1704,7 +1755,7 @@
                                       <Component id="butRemoveEvento" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="butAddEvento" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="19" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1743,8 +1794,15 @@
                         </Container>
                         <Component class="javax.swing.JButton" name="butRemoveEvento">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="- EVENTO"/>
+                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                              <Image iconType="3" name="/Fitness/remove.png"/>
+                            </Property>
                             <Property name="toolTipText" type="java.lang.String" value="Remover inscri&#xe7;&#xe3;o em evento"/>
+                            <Property name="iconTextGap" type="int" value="10"/>
+                            <Property name="label" type="java.lang.String" value="EVENTO"/>
+                            <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+                              <Insets value="[2, 9, 2, 9]"/>
+                            </Property>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butRemoveEventoActionPerformed"/>
@@ -1752,8 +1810,15 @@
                         </Component>
                         <Component class="javax.swing.JButton" name="butAddEvento">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="+ EVENTO"/>
+                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                              <Image iconType="3" name="/Fitness/add.png"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="EVENTO"/>
                             <Property name="toolTipText" type="java.lang.String" value="Ver eventos dispon&#xed;veis para inscri&#xe7;&#xe3;o"/>
+                            <Property name="iconTextGap" type="int" value="10"/>
+                            <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+                              <Insets value="[2, 9, 2, 9]"/>
+                            </Property>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butAddEventoActionPerformed"/>
@@ -1797,7 +1862,7 @@
                                   <Component id="jScrollPane6" min="-2" pref="143" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="butVerEvento" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="16" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1836,8 +1901,15 @@
                         </Container>
                         <Component class="javax.swing.JButton" name="butVerEvento">
                           <Properties>
+                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                              <Image iconType="3" name="/Fitness/search.png"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="VER EVENTO"/>
                             <Property name="toolTipText" type="java.lang.String" value="Ver detalhes do evento"/>
+                            <Property name="iconTextGap" type="int" value="10"/>
+                            <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+                              <Insets value="[2, 9, 2, 9]"/>
+                            </Property>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butVerEventoActionPerformed"/>
@@ -1862,7 +1934,7 @@
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jScrollPane7" pref="516" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane7" pref="576" max="32767" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       <Component id="butVerEvento1" min="-2" max="-2" attributes="0"/>
@@ -1876,7 +1948,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane7" pref="348" max="32767" attributes="0"/>
+                              <Component id="jScrollPane7" pref="345" max="32767" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="butVerEvento1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
@@ -1918,8 +1990,14 @@
                     </Container>
                     <Component class="javax.swing.JButton" name="butVerEvento1">
                       <Properties>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/Fitness/search.png"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="VER EVENTO"/>
                         <Property name="toolTipText" type="java.lang.String" value="Ver detalhes do evento"/>
+                        <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+                          <Insets value="[2, 9, 2, 9]"/>
+                        </Property>
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butVerEvento1ActionPerformed"/>
@@ -1935,7 +2013,21 @@
     </Container>
     <Component class="javax.swing.JButton" name="butAddActivity">
       <Properties>
-        <Property name="text" type="java.lang.String" value="+ ATIVIDADE"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Fitness/add.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="ATIVIDADE"/>
+        <Property name="toolTipText" type="java.lang.String" value="Adicionar nova atividade"/>
+        <Property name="defaultCapable" type="boolean" value="false"/>
+        <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="0" name="null"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="horizontalTextPosition" type="int" value="4"/>
+        <Property name="iconTextGap" type="int" value="10"/>
+        <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+          <Insets value="[2, 9, 2, 9]"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butAddActivityActionPerformed"/>
@@ -1943,7 +2035,14 @@
     </Component>
     <Component class="javax.swing.JButton" name="butVerPedidos">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Ver pedidos de amizade"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Fitness/friends.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="PEDIDOS DE AMIZADE"/>
+        <Property name="iconTextGap" type="int" value="10"/>
+        <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+          <Insets value="[2, 9, 2, 9]"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butVerPedidosActionPerformed"/>
@@ -1951,7 +2050,14 @@
     </Component>
     <Component class="javax.swing.JButton" name="butAddAmigo">
       <Properties>
-        <Property name="text" type="java.lang.String" value="+ AMIGO"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Fitness/add.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="AMIGO"/>
+        <Property name="iconTextGap" type="int" value="10"/>
+        <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+          <Insets value="[2, 9, 2, 9]"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butAddAmigoActionPerformed"/>
@@ -1959,7 +2065,15 @@
     </Component>
     <Component class="javax.swing.JButton" name="butLogout">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Fitness/close.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="LOGOUT"/>
+        <Property name="toolTipText" type="java.lang.String" value="Sair da aplica&#xe7;ao"/>
+        <Property name="iconTextGap" type="int" value="10"/>
+        <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+          <Insets value="[2, 9, 2, 9]"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butLogoutActionPerformed"/>

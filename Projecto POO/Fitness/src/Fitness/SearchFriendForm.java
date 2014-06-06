@@ -50,12 +50,13 @@ public class SearchFriendForm extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("PESQUISAR AMIGO"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "PESQUISAR AMIGO"));
 
         jLabel1.setText("Nome");
 
-        butPesquisa.setText("OK");
-        butPesquisa.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        butPesquisa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/search.png"))); // NOI18N
+        butPesquisa.setToolTipText("Pesquisar utilizadores");
+        butPesquisa.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butPesquisa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butPesquisaActionPerformed(evt);
@@ -89,15 +90,19 @@ public class SearchFriendForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textNomeAmigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(butPesquisa))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(butPesquisa)
+                    .addComponent(textNomeAmigo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
-        butAddAmigo.setText("+ AMIGO");
+        butAddAmigo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/add.png"))); // NOI18N
+        butAddAmigo.setText("AMIGO");
+        butAddAmigo.setToolTipText("Enviar pedido de amizade ao utilizador seleccionado");
+        butAddAmigo.setIconTextGap(10);
+        butAddAmigo.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butAddAmigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butAddAmigoActionPerformed(evt);
@@ -124,7 +129,7 @@ public class SearchFriendForm extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(butAddAmigo)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();

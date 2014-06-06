@@ -98,12 +98,14 @@
                       <Component id="butOK" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="butLimpar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="textPw" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="butLimpar" alignment="0" pref="26" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="textPw" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -137,7 +139,15 @@
         </Component>
         <Component class="javax.swing.JButton" name="butOK">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Fitness/group.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Entrar"/>
+            <Property name="toolTipText" type="java.lang.String" value="Entrar na aplica&#xe7;&#xe3;o"/>
+            <Property name="iconTextGap" type="int" value="10"/>
+            <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+              <Insets value="[2, 9, 2, 9]"/>
+            </Property>
             <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
               <ComponentRef name="butLimpar"/>
             </Property>
@@ -149,6 +159,11 @@
         <Component class="javax.swing.JButton" name="butLimpar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Limpar"/>
+            <Property name="toolTipText" type="java.lang.String" value="Limpar campos"/>
+            <Property name="iconTextGap" type="int" value="10"/>
+            <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+              <Insets value="[2, 9, 2, 9]"/>
+            </Property>
             <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
               <ComponentRef name="textEmail"/>
             </Property>
@@ -178,6 +193,7 @@
     <Component class="javax.swing.JLabel" name="labelRegistar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Registar"/>
+        <Property name="toolTipText" type="java.lang.String" value="Criar nova conta na aplica&#xe7;&#xe3;o"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
