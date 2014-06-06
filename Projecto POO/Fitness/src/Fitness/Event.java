@@ -156,7 +156,7 @@ public abstract class Event implements Serializable {
         this.date = (GregorianCalendar) date.clone();
         this.deadline = (GregorianCalendar) deadline.clone();
         this.duration = 0;
-        this.participantsList = new TreeSet<User>(new ComparePersonByName());
+        this.participantsList = new TreeSet<>(new ComparePersonByName());
         this.ranking = new TreeSet<>(new CompareRankingByTime());
         this.desistentes = new TreeSet<>(new CompareRankingByKm());
         this.simula = new TreeSet<>(new CompareSimulacao());

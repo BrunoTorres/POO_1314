@@ -56,6 +56,11 @@ public class AdminForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         butAddEvento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/add.png"))); // NOI18N
         butAddEvento.setText("EVENTO");
@@ -243,6 +248,10 @@ public class AdminForm extends javax.swing.JFrame {
 		del.setVisible(true);
 		this.setVisible(false);
     }//GEN-LAST:event_butDelUserActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        this.guardaEstado();
+    }//GEN-LAST:event_formWindowClosing
 
 	private void guardaEstado() {
 		try {
