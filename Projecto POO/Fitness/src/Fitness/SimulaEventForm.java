@@ -232,7 +232,11 @@ public class SimulaEventForm extends javax.swing.JFrame {
     }//GEN-LAST:event_butStartActionPerformed
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
-        this.parent.setVisible(true);
+        if(this.parent instanceof AdminForm){
+			AdminForm adm = (AdminForm) this.parent;
+			adm.setStats();
+		}	
+		this.parent.setVisible(true);
     }//GEN-LAST:event_formWindowClosed
 
 	private void preencheEvento() {

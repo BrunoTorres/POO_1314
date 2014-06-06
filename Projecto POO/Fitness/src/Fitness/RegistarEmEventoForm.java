@@ -27,11 +27,11 @@ public class RegistarEmEventoForm extends javax.swing.JFrame {
 		this.fit = fit;
 		this.u = u;
 		this.mode = mode;
-		this.preencheOpenEvents();
 		if (mode.equals("simular")) {
 			this.butAddEvento.setText("SIMULAR");
 			this.preencheSimulaEvents();
-		}
+		} else
+			this.preencheOpenEvents();
 	}
 
 	/**
@@ -215,6 +215,7 @@ public class RegistarEmEventoForm extends javax.swing.JFrame {
 			user.preencheEventos();
 		} else {
 			AdminForm adm = (AdminForm) this.parent;
+			adm.checkEvents();
 			adm.setStats();
 		}
 		this.parent.setVisible(true);

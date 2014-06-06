@@ -142,7 +142,7 @@ public class Simulacao implements Serializable {
         s = this.tempoGeral - ((int) this.tempoGeral);
         s = s * 60;
         sb.append("Nome: ").append(u.getName());
-        sb.append(" || Tempo: ");
+        sb.append("\tTempo: ");
         if (h > 0) {
             sb.append(h).append("(h):");
         }

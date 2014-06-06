@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Fitness;
 
 import java.io.FileOutputStream;
@@ -129,9 +128,8 @@ public class AdminForm extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelUsersReg)
                     .addComponent(labelActs)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(labelEvents)
-                        .addComponent(labelOpenEvents))
+                    .addComponent(labelEvents)
+                    .addComponent(labelOpenEvents)
                     .addComponent(labelSimula))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -164,6 +162,7 @@ public class AdminForm extends javax.swing.JFrame {
         butSimulaEvents.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fitness/sim.png"))); // NOI18N
         butSimulaEvents.setText("SIM EVENTO");
         butSimulaEvents.setToolTipText("Simular evento");
+        butSimulaEvents.setEnabled(false);
         butSimulaEvents.setIconTextGap(10);
         butSimulaEvents.setMargin(new java.awt.Insets(2, 9, 2, 9));
         butSimulaEvents.addActionListener(new java.awt.event.ActionListener() {
@@ -209,35 +208,38 @@ public class AdminForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void butLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butLogoutActionPerformed
-        this.dispose();
-        this.guardaEstado();
-	    LoginForm login = new LoginForm();
-        login.setVisible(true);
+		this.dispose();
+		this.guardaEstado();
+		LoginForm login = new LoginForm();
+		login.setVisible(true);
     }//GEN-LAST:event_butLogoutActionPerformed
-	
-	private void checkEvents() {
+
+	public void checkEvents() {
 		GregorianCalendar now = new GregorianCalendar();
-		for (Event e : this.fit.getEvents()) {
-			if (e.getDate().before(now) && e.getSimulacao().isEmpty()) {
-				JOptionPane.showMessageDialog(this, "Existem eventos que devem ser simulados. Por favor simule-os...");
-			}
+		if (this.fit.getNumSimulaEvents() > 0) {
+			JOptionPane.showMessageDialog(this, "Existem eventos que devem ser simulados. Por favor simule-os...");
+			this.butSimulaEvents.setEnabled(true);
+		}
+		else{
+			this.butSimulaEvents.setEnabled(false);
+			this.labelSimula.setText("0");
 		}
 	}
-	
+
     private void butAddEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAddEventoActionPerformed
-        AddEventForm addEvent = new AddEventForm(this, this.fit);
+		AddEventForm addEvent = new AddEventForm(this, this.fit);
 		this.setVisible(false);
 		addEvent.setVisible(true);
     }//GEN-LAST:event_butAddEventoActionPerformed
 
     private void butSimulaEventsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butSimulaEventsActionPerformed
-        RegistarEmEventoForm sim = new RegistarEmEventoForm(this, fit, null, "simular");
+		RegistarEmEventoForm sim = new RegistarEmEventoForm(this, fit, null, "simular");
 		sim.setVisible(true);
 		this.setVisible(false);
     }//GEN-LAST:event_butSimulaEventsActionPerformed
 
     private void butDelUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butDelUserActionPerformed
-        FriendRequestListForm del = new FriendRequestListForm(this, this.fit);
+		FriendRequestListForm del = new FriendRequestListForm(this, this.fit);
 		del.setVisible(true);
 		this.setVisible(false);
     }//GEN-LAST:event_butDelUserActionPerformed
@@ -253,15 +255,15 @@ public class AdminForm extends javax.swing.JFrame {
 			JOptionPane.showMessageDialog(this, ex.getMessage() + " | " + ex.getLocalizedMessage());
 		}
 	}
-	
-	public void setStats(){
+
+	public void setStats() {
 		this.labelUsersReg.setText(String.valueOf(this.fit.getNumUsers()));
 		this.labelActs.setText(String.valueOf(this.fit.getNumActivities()));
 		this.labelSimula.setText(String.valueOf(this.fit.getNumSimulaEvents()));
 		this.labelEvents.setText(String.valueOf(this.fit.getOccurredEvents().size()));
 		this.labelOpenEvents.setText(String.valueOf(this.fit.getOpenEvents().size()));
 	}
-	
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton butAddEvento;
     private javax.swing.JButton butDelUser;
@@ -279,7 +281,7 @@ public class AdminForm extends javax.swing.JFrame {
     private javax.swing.JLabel labelSimula;
     private javax.swing.JLabel labelUsersReg;
     // End of variables declaration//GEN-END:variables
-	
+
 	private FitnessUM fit;
 	private Admin admin;
 }

@@ -792,6 +792,7 @@ public class FitnessUM implements Serializable {
 				User u = (User) per;
 				if (email.equals(u.getEmail())) {
 					it.remove();
+					flag = true;
 				} else if (u.getFriendsList().contains(email)) //Remover user todas as ligas de amigos
 				{
 					flag = u.getFriendsListAdmin().remove(email);

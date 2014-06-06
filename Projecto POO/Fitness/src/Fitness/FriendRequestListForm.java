@@ -32,6 +32,8 @@ public class FriendRequestListForm extends javax.swing.JFrame {
 			TitledBorder bord = (TitledBorder) this.jPanel1.getBorder();
 			bord.setTitle("REMOVER UTILIZADOR");
 			this.jPanel1.setBorder(bord);
+			this.butAddAmigo.setToolTipText("Remover utilizador seleccionado");
+			this.butRejeitaAmigo.setToolTipText("Cancelar");
 			this.preencheUsers();
 		} else {
 			this.preenchePedidos();
@@ -172,10 +174,10 @@ public class FriendRequestListForm extends javax.swing.JFrame {
 				UserForm usr = (UserForm) this.parent;
 				String mailUser = ((User) this.fit.getActivePerson()).getEmail();
 				String mail = this.tableUsers.getValueAt(this.tableUsers.getSelectedRow(), 1).toString();
-				this.removePedido(mailUser, mail);
 				this.fit.acceptFriend(this.fit.getUserByEmail(mailUser), mail);
+				this.removePedido(mailUser, mail);
 				usr.preencheTabAmigos();
-				this.preenchePedidos();
+				//this.preenchePedidos();
 			} else {
 				int res = JOptionPane.showConfirmDialog(this, "Deseja remover o utilizador? Será removido definitivamente...", "Remover?", JOptionPane.YES_NO_OPTION);
 				if (res == JOptionPane.YES_OPTION) {
@@ -219,21 +221,18 @@ public class FriendRequestListForm extends javax.swing.JFrame {
 		User u = this.fit.getUserByEmail(this.fit.getActivePerson().getEmail());
 		ArrayList<String> msgsUser = new ArrayList<>(u.getMessage());
 		DefaultTableModel dtm = (DefaultTableModel) this.tableUsers.getModel();
-		for (int i = 0; i < dtm.getRowCount(); i++) {
-			dtm.removeRow(i);
-		}
+		dtm.setRowCount(0);
 
 		for (String s : msgsUser) {
-			dtm.addRow(new Object[]{this.fit.getUserByEmail(s).getName(), s});
+			dtm.addRow(new Object[] {this.fit.getUserByEmail(s).getName(), s});
 		}
 		this.tableUsers.setModel(dtm);
 	}
 
 	private void preencheUsers() {
 		DefaultTableModel dtm = (DefaultTableModel) this.tableUsers.getModel();
-		for (int i = 0; i < dtm.getRowCount(); i++) {
-			dtm.removeRow(i);
-		}
+		dtm.setRowCount(0);
+		
 		for (Person p : this.fit.getUserList()) {
 			if (p instanceof User) {
 				dtm.addRow(new Object[]{p.getName(), p.getEmail()});
