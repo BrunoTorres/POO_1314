@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Fitness;
 
 import java.util.Calendar;
@@ -12,13 +8,19 @@ import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 
 /**
+ * Classe para a criação de janelas
  *
- * @author jmano
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public class ViewEventForm extends javax.swing.JFrame {
 
 	/**
 	 * Creates new form ViewEventForm
+     * @param parent
+     * @param e
 	 */
 	public ViewEventForm(JFrame parent, Event e) {
 		initComponents();
@@ -54,7 +56,7 @@ public class ViewEventForm extends javax.swing.JFrame {
 		int numParts = this.e.getParticipants();
 		this.textNumParticipantes.setText(String.valueOf(numParts));
 		DefaultTableModel dtm = (DefaultTableModel) this.tableClass.getModel();
-		//int numDesist = this.e.getDesistentes().size();
+		dtm.setNumRows(0);
 		TreeSet<Ranking> rankFinal = new TreeSet<>(new CompareRankingByTime());
 		rankFinal = (TreeSet<Ranking>) this.e.getRanking();
 		TreeSet<Ranking> rankDesist = new TreeSet<>(new CompareRankingByKm());

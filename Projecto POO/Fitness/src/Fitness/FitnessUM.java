@@ -44,9 +44,10 @@ public class FitnessUM implements Serializable {
 	}
 
 	/**
-	 * Método que devolve uma pessoa,(pessoa que está logada na aplicação)
+	 * Método que devolve um administrador.
 	 *
-	 * @return
+     * @param email
+	 * @return Administrador procurado.
 	 */
 	public Admin getAdminByEmail(String email) {
 		boolean found = false;
@@ -377,6 +378,7 @@ public class FitnessUM implements Serializable {
 	 *
 	 * @param name Nome do evento a procurar.
 	 * @return Event.
+     * @throws Fitness.EventNotFoundException lança exceção se o evento não existe.
 	 */
 	public Event getEventByName(String name) throws EventNotFoundException {       // VER MELHOR!! SE NAO HOUVER O EVENTO RETORNAR O QUE?!
 		for (Event e : this.getEvents()) {
@@ -475,13 +477,17 @@ public class FitnessUM implements Serializable {
 	/**
 	 * Método que devolve a referencia de uma pessoa,(pessoa que está logada na aplicação)
 	 *
-	 * @return
+	 * @return Person logada.
 	 */
 	public Person getActivePerson() {
 		return this.p;
 	}
 
-	public void setFitnessPerson(Person p) {
+    /**
+     * Método para alterar o utilizador logado.
+     * @param p Pessoa nova a ser logada.
+     */
+    public void setFitnessPerson(Person p) {
 		if (p instanceof User) {
 			this.p = (User) p;
 		} else {
@@ -677,8 +683,8 @@ public class FitnessUM implements Serializable {
 	/**
 	 * Método que devolve o nome das últimas 10 actividades de um user.
 	 *
-	 * @param u
-	 * @return
+	 * @param u Utilizador a qual se vai pesquisar as ultimas 10 actividades.
+	 * @return Set de string com o nome das actividades.
 	 */
 	public Set<String> getLast10Activities(User u) {
 		TreeSet<String> aux = new TreeSet<>();
@@ -711,7 +717,12 @@ public class FitnessUM implements Serializable {
 		return sb.toString();
 	}
 
-	public String seeAllFriend(User u) {
+    /**
+     * Método para procurar por todos os amigos do utilizador.
+     * @param u Utilizador a qual se vai pesquisar os amigos.
+     * @return String com todos os amigos.
+     */
+    public String seeAllFriend(User u) {
 		TreeSet<Person> dbUsers = (TreeSet<Person>) this.getUserList();
 		TreeSet<User> users = new TreeSet<>();
 

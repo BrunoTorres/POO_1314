@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Fitness;
 
 import java.util.Calendar;
@@ -11,15 +7,21 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-
 /**
+ * Classe para a criação de janelas
  *
- * @author jmano
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public class SimulaEventForm extends javax.swing.JFrame {
 
 	/**
 	 * Creates new form SimulaEventForm
+     * @param parent
+     * @param e
+     * @param fit
 	 */
 	public SimulaEventForm(JFrame parent, Event e, FitnessUM fit) {
 		initComponents();

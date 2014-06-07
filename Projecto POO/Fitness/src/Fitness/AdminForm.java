@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Fitness;
 
 import java.io.FileOutputStream;
@@ -11,15 +7,21 @@ import java.io.ObjectOutputStream;
 import java.util.GregorianCalendar;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-
 /**
+ * Classe para a criação de janelas
  *
- * @author jmano
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public class AdminForm extends javax.swing.JFrame {
 
 	/**
 	 * Creates new form AdminForm
+     * @param parent
+     * @param fit
+     * @param admin
 	 */
 	public AdminForm(JFrame parent, FitnessUM fit, Admin admin) {
 		initComponents();
@@ -219,7 +221,10 @@ public class AdminForm extends javax.swing.JFrame {
 		login.setVisible(true);
     }//GEN-LAST:event_butLogoutActionPerformed
 
-	public void checkEvents() {
+    /**
+     *
+     */
+    public void checkEvents() {
 		GregorianCalendar now = new GregorianCalendar();
 		if (this.fit.getNumSimulaEvents() > 0) {
 			JOptionPane.showMessageDialog(this, "Existem eventos que devem ser simulados. Por favor simule-os...");
@@ -265,10 +270,16 @@ public class AdminForm extends javax.swing.JFrame {
 		}
 	}
 
-	public void setStats() {
+    /**
+     *
+     */
+    public void setStats() {
 		this.labelUsersReg.setText(String.valueOf(this.fit.getNumUsers()));
 		this.labelActs.setText(String.valueOf(this.fit.getNumActivities()));
-		this.labelSimula.setText(String.valueOf(this.fit.getNumSimulaEvents()));
+		int numSim = this.fit.getNumSimulaEvents();
+		this.labelSimula.setText(String.valueOf(numSim));
+		if (numSim == 0)
+			this.butSimulaEvents.setEnabled(false);
 		this.labelEvents.setText(String.valueOf(this.fit.getOccurredEvents().size()));
 		this.labelOpenEvents.setText(String.valueOf(this.fit.getOpenEvents().size()));
 	}

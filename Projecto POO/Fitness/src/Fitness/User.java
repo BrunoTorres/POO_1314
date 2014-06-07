@@ -251,6 +251,14 @@ public class User extends Person implements Serializable {
 
 //////////////////////////////TO STATS                              compor NAO esta POR MES!!!!!||||||||||||||||||||||||||||||||||||\\
 
+    /**
+     *
+     * Método que devolve as estatísticas do utilizador de um dado ano e mês.
+     * @param ano Ano no qual se vai pesquisar.
+     * @param mes Mês no qual se vai pesquisar.
+     * @return Statistics, com a as estatísticas do ano.
+     */
+    
 	public Statistics getStats(int ano, int mes) {
 		Iterator<Activity> it = this.userActivities.iterator();
 		Activity a;
@@ -280,7 +288,12 @@ public class User extends Person implements Serializable {
 		return stat;
 	}
 
-	public Statistics getStats(int ano) {
+    /**
+     * Método que devolve as estatísticas do utilizador de um dado ano.
+     * @param ano Ano no qual se vai pesquisar.
+     * @return Statistics, com a as estatísticas do ano.
+     */
+    public Statistics getStats(int ano) {
 		Iterator<Activity> it = this.userActivities.iterator();
 		Activity a;
 		Statistics stat = new Statistics();
@@ -565,7 +578,7 @@ public class User extends Person implements Serializable {
 	/**
 	 * Método que calcula o km em que o user pode desistir.
 	 *
-	 * @param kmTotal
+	 * @param kmTotal Total de km do evento.
 	 * @return double com o km de desistência.
 	 */
 	public double kmDesisteM(double kmTotal) {

@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Fitness;
 
 import java.awt.event.ItemEvent;
@@ -20,8 +16,12 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
+ * Classe para a criação de janelas
  *
- * @author jmano
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public class UserForm extends javax.swing.JFrame {
 
@@ -165,6 +165,8 @@ public class UserForm extends javax.swing.JFrame {
 				}
 				this.textDistanciaH.setEnabled(false);
 				this.textDistanciaV.setEnabled(false);
+				this.spinnerAdversario.setEnabled(false);
+				this.spinnerPessoal.setEnabled(false);
 
 				if (act instanceof Football) {
 					Football r = (Football) act;
@@ -222,6 +224,11 @@ public class UserForm extends javax.swing.JFrame {
 					this.cboxSports.setSelectedItem("Aerobics");
 				}
 			}
+			
+			if(act instanceof Swimming)
+				this.labelDistH.setText("m");
+			else
+				this.labelDistH.setText("KMs");
 		} else {
 			this.butRemove.setEnabled(false);
 			this.clearFields();
@@ -305,7 +312,7 @@ public class UserForm extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         textDistanciaH = new javax.swing.JTextField();
         textDistanciaV = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
+        labelDistH = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
@@ -762,7 +769,7 @@ public class UserForm extends javax.swing.JFrame {
         textDistanciaV.setMinimumSize(new java.awt.Dimension(52, 28));
         textDistanciaV.setPreferredSize(new java.awt.Dimension(52, 28));
 
-        jLabel4.setText("KMs");
+        labelDistH.setText("KMs");
 
         jLabel8.setText("KMs");
 
@@ -778,7 +785,7 @@ public class UserForm extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(textDistanciaH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4))
+                        .addComponent(labelDistH))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(textDistanciaV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -792,7 +799,7 @@ public class UserForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textDistanciaH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(labelDistH))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1131,16 +1138,7 @@ public class UserForm extends javax.swing.JFrame {
 
         tableRecords.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "Recorde", "Tempo / KMs"
@@ -1221,14 +1219,14 @@ public class UserForm extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome", "Idade", "Email"
+                "Nome", "Email"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -1689,7 +1687,7 @@ public class UserForm extends javax.swing.JFrame {
 		if (this.tableAmigos.getSelectedRowCount() > 0) {
 			ViewFriendForm viewFriend;
 			int row = this.tableAmigos.getSelectedRow();
-			User friend = this.fit.getUserByEmail((String) this.tableAmigos.getValueAt(row, 2)).clone();
+			User friend = this.fit.getUserByEmail((String) this.tableAmigos.getValueAt(row, 1)).clone();
 			viewFriend = new ViewFriendForm(this, this.fit, friend);
 			viewFriend.setVisible(true);
 			this.setVisible(false);
@@ -1815,8 +1813,9 @@ public class UserForm extends javax.swing.JFrame {
 					this.textClima.setEnabled(true);
 					this.textDistanciaH.setEnabled(true);
 					this.textDistanciaV.setEnabled(false);
-					this.spinnerAdversario.setEnabled(false);
-					this.spinnerPessoal.setEnabled(false);
+					this.textDistanciaV.setText("");
+					this.spinnerAdversario.setValue(0);
+					this.spinnerPessoal.setValue(0);
 					break;
 				case "Snowboarding":
 				case "Mountain Biking":
@@ -1824,26 +1823,27 @@ public class UserForm extends javax.swing.JFrame {
 					this.textClima.setEnabled(true);
 					this.textDistanciaH.setEnabled(true);
 					this.textDistanciaV.setEnabled(true);
-					this.spinnerAdversario.setEnabled(false);
-					this.spinnerPessoal.setEnabled(false);
+					this.spinnerAdversario.setValue(0);
+					this.spinnerPessoal.setValue(0);
 					break;
 				case "Swimming":
 				case "Indoor Cycling":
 					this.textClima.setEnabled(false);
 					this.textDistanciaH.setEnabled(true);
 					this.textDistanciaV.setEnabled(false);
-					this.spinnerAdversario.setEnabled(false);
-					this.spinnerPessoal.setEnabled(false);
+					this.spinnerAdversario.setValue(0);
+					this.spinnerPessoal.setValue(0);
 					break;
 				case "Football":
 				case "Polo":
 				case "Beach Volleyball":
 				case "Tennis":
-					this.textClima.setEnabled(true);
+					this.textClima.setEnabled(false);
+					this.textClima.setText("");
 					this.textDistanciaH.setEnabled(false);
+					this.textDistanciaH.setText("");
 					this.textDistanciaV.setEnabled(false);
-					this.spinnerAdversario.setEnabled(true);
-					this.spinnerPessoal.setEnabled(true);
+					this.textDistanciaV.setText("");
 					break;
 				case "Handball":
 				case "Basketball":
@@ -1852,17 +1852,21 @@ public class UserForm extends javax.swing.JFrame {
 				case "Badminton":
 				case "Volleyball":
 					this.textClima.setEnabled(false);
+					this.textClima.setText("");
 					this.textDistanciaH.setEnabled(false);
+					this.textDistanciaH.setText("");
 					this.textDistanciaV.setEnabled(false);
-					this.spinnerAdversario.setEnabled(true);
-					this.spinnerPessoal.setEnabled(true);
+					this.textDistanciaV.setText("");
 					break;
 				default:
 					this.textClima.setEnabled(false);
+					this.textClima.setText("");
 					this.textDistanciaH.setEnabled(false);
+					this.textDistanciaH.setText("");
 					this.textDistanciaV.setEnabled(false);
-					this.spinnerAdversario.setEnabled(false);
-					this.spinnerPessoal.setEnabled(false);
+					this.textDistanciaV.setText("");
+					this.spinnerAdversario.setValue(0);
+					this.spinnerPessoal.setValue(0);
 					break;
 			}
 		}
@@ -1946,11 +1950,7 @@ public class UserForm extends javax.swing.JFrame {
 		TreeMap<String, ListRecords> rec = (TreeMap<String, ListRecords>) this.u.getRecords();
 		ArrayList<Record> run = new ArrayList<>();
 		DefaultTableModel dtm = (DefaultTableModel) this.tableRecords.getModel();
-		if (dtm.getRowCount() > 0) {
-			for (int i = 0; i < dtm.getRowCount(); i++) {
-				dtm.removeRow(i);
-			}
-		}
+		dtm.setNumRows(0);
 
 		for (ListRecords l : rec.values()) {
 			switch (l.getName()) {
@@ -1995,12 +1995,8 @@ public class UserForm extends javax.swing.JFrame {
 		TreeMap<String, ListRecords> rec = (TreeMap<String, ListRecords>) this.u.getRecords();
 		ArrayList<Record> run = new ArrayList<>();
 		DefaultTableModel dtm = (DefaultTableModel) this.tableRecords.getModel();
-		if (dtm.getRowCount() > 0) {
-			for (int i = 0; i < dtm.getRowCount(); i++) {
-				dtm.removeRow(i);
-			}
-		}
-		this.tableRecords.setModel(dtm);
+		dtm.setNumRows(0);
+		
 		for (ListRecords l : rec.values()) {
 			switch (l.getName()) {
 				case "Walking":
@@ -2043,12 +2039,8 @@ public class UserForm extends javax.swing.JFrame {
 		TreeMap<String, ListRecords> rec = (TreeMap<String, ListRecords>) this.u.getRecords();
 		ArrayList<Record> bike = new ArrayList<>();
 		DefaultTableModel dtm = (DefaultTableModel) this.tableRecords.getModel();
-		if (dtm.getRowCount() > 0) {
-			for (int i = 0; i < dtm.getRowCount(); i++) {
-				dtm.removeRow(i);
-			}
-		}
-		this.tableRecords.setModel(dtm);
+		dtm.setNumRows(0);
+		
 		for (ListRecords l : rec.values()) {
 			switch (l.getName()) {
 				case "Mountain Biking":
@@ -2090,12 +2082,8 @@ public class UserForm extends javax.swing.JFrame {
 		TreeMap<String, ListRecords> rec = (TreeMap<String, ListRecords>) this.u.getRecords();
 		ArrayList<Record> bike = new ArrayList<>();
 		DefaultTableModel dtm = (DefaultTableModel) this.tableRecords.getModel();
-		if (dtm.getRowCount() > 0) {
-			for (int i = 0; i < dtm.getRowCount(); i++) {
-				dtm.removeRow(i);
-			}
-		}
-		this.tableRecords.setModel(dtm);
+		dtm.setNumRows(0);
+		
 		for (ListRecords l : rec.values()) {
 			switch (l.getName()) {
 				case "Cycling":
@@ -2137,11 +2125,7 @@ public class UserForm extends javax.swing.JFrame {
 		TreeMap<String, ListRecords> rec = (TreeMap<String, ListRecords>) this.u.getRecords();
 		ArrayList<Record> swim = new ArrayList<>();
 		DefaultTableModel dtm = (DefaultTableModel) this.tableRecords.getModel();
-		if (dtm.getRowCount() > 0) {
-			for (int i = 0; i < dtm.getRowCount(); i++) {
-				dtm.removeRow(i);
-			}
-		}
+		dtm.setNumRows(0);
 		for (ListRecords l : rec.values()) {
 			switch (l.getName()) {
 				case "Swimming":
@@ -2170,7 +2154,10 @@ public class UserForm extends javax.swing.JFrame {
 		}
 	}
 
-	public void preencheRecords() {
+    /**
+     *
+     */
+    public void preencheRecords() {
 		this.preencheWalkRecords();
 		this.preencheMountainRecords();
 		this.preencheCyclingRecords();
@@ -2178,7 +2165,10 @@ public class UserForm extends javax.swing.JFrame {
 		this.preencheRunRecords();
 	}
 
-	public void preencheTabAmigos() {
+    /**
+     *
+     */
+    public void preencheTabAmigos() {
 		TreeSet<String> emails = (TreeSet<String>) this.u.getFriendsList();
 		TreeSet<User> friends = new TreeSet<>(new ComparePersonByName());
 		for (String e : emails) {
@@ -2186,21 +2176,17 @@ public class UserForm extends javax.swing.JFrame {
 		}
 
 		DefaultTableModel dtm = (DefaultTableModel) this.tableAmigos.getModel();
-		for (int i = 0; i < friends.size(); i++) {
-			dtm.addRow(new Object[]{null, null, null});
+		dtm.setRowCount(0);
+		for (User usr : friends) {
+			dtm.addRow(new Object[]{usr.getName(), usr.getEmail()});
 		}
 		this.tableAmigos.setModel(dtm);
-
-		int i = 0;
-		for (User u : friends) {
-			this.tableAmigos.setValueAt(u.getName(), i, 0);
-			this.tableAmigos.setValueAt((int) (u.getDate().getTimeInMillis() / 31536E6) + " anos", i, 1);
-			this.tableAmigos.setValueAt(u.getEmail(), i, 2);
-			i++;
-		}
 	}
 
-	public void preencheEventos() {
+    /**
+     *
+     */
+    public void preencheEventos() {
 		this.preencheEventosInscritos();
 		this.preencheEventosParticipantes();
 		this.preencheEventosOcorridos();
@@ -2209,65 +2195,39 @@ public class UserForm extends javax.swing.JFrame {
 	private void preencheEventosInscritos() {
 		ArrayList<Event> eventos = new ArrayList<>();
 		DefaultTableModel dtm = (DefaultTableModel) this.tableEventsInscritos.getModel();
-		if (dtm.getRowCount() > 0) {
-			for (int i = 0; i < dtm.getRowCount(); i++) {
-				dtm.removeRow(i);
-			}
-		}
+		dtm.setRowCount(0);
 
 		for (Event e : this.fit.getOpenEvents()) {
 			if (e.getParticipantsList().contains(this.u)) {
 				eventos.add(e);
 			}
 		}
-		if (eventos.size() > this.tableEventsInscritos.getRowCount()) {
-			for (int i = 0; i < eventos.size(); i++) {
-				dtm.addRow(new Object[]{null, null, null, null, null});
-			}
-			this.tableEventsInscritos.setModel(dtm);
-		}
-
-		int i = 0;
+		
 		for (Event e : eventos) {
 			int diaE = e.getDate().get(Calendar.DAY_OF_MONTH);
 			int mesE = e.getDate().get(Calendar.MONTH);
 			int anoE = e.getDate().get(Calendar.YEAR);
-
-			this.tableEventsInscritos.setValueAt(e.getName(), i, 0);
-			this.tableEventsInscritos.setValueAt(e.getTipoActivity(), i, 1);
-			this.tableEventsInscritos.setValueAt(e.getLocation(), i, 2);
-			this.tableEventsInscritos.setValueAt(String.valueOf(diaE) + "/" + String.valueOf(mesE + 1) + "/" + String.valueOf(anoE), i, 3);
-			this.tableEventsInscritos.setValueAt(e.getParticipants(), i, 4);
-			i++;
+			dtm.addRow(new Object[]{e.getName(), e.getTipoActivity(), e.getLocation(), String.valueOf(diaE) + "/" + String.valueOf(mesE + 1) + "/" + String.valueOf(anoE), e.getParticipants()});
 		}
+		this.tableEventsInscritos.setModel(dtm);
 	}
 
 	private void preencheEventosParticipantes() {
 		ArrayList<Event> eventos = new ArrayList<>();
 		DefaultTableModel dtm = (DefaultTableModel) this.tableEventsFeitos.getModel();
+		dtm.setNumRows(0);
+		
 		for (Event e : this.fit.getOccurredEvents()) {
 			if (e.getParticipantsList().contains(this.u)) {
 				eventos.add(e);
 			}
 		}
-		if (eventos.size() > this.tableEventsFeitos.getRowCount()) {
-			for (int i = 0; i < eventos.size(); i++) {
-				dtm.addRow(new Object[]{null, null, null, null, null});
-			}
-			this.tableEventsFeitos.setModel(dtm);
-		}
 
-		int i = 0;
 		for (Event e : eventos) {
 			int diaE = e.getDate().get(Calendar.DAY_OF_MONTH);
 			int mesE = e.getDate().get(Calendar.MONTH);
 			int anoE = e.getDate().get(Calendar.YEAR);
 
-			this.tableEventsFeitos.setValueAt(e.getName(), i, 0);
-			this.tableEventsFeitos.setValueAt(e.getTipoActivity(), i, 1);
-			this.tableEventsFeitos.setValueAt(e.getLocation(), i, 2);
-			this.tableEventsFeitos.setValueAt(String.valueOf(diaE) + "/" + String.valueOf(mesE + 1) + "/" + String.valueOf(anoE), i, 3);
-			boolean desist = false;
 			boolean found = false;
 			int pos = 1;
 			Iterator<Ranking> it = e.getRanking().iterator();
@@ -2290,45 +2250,30 @@ public class UserForm extends javax.swing.JFrame {
 					}
 				}
 			}
-			this.tableEventsFeitos.setValueAt(pos, i, 4);
-			i++;
+			dtm.addRow(new Object[] { e.getName(), e.getTipoActivity(), e.getLocation(), String.valueOf(diaE) + "/" + String.valueOf(mesE + 1) + "/" + String.valueOf(anoE), pos });
+			this.tableEventsFeitos.setModel(dtm);
 		}
 	}
 	
 	private void preencheEventosOcorridos(){
 		ArrayList<Event> eventos = new ArrayList<>();
 		DefaultTableModel dtm = (DefaultTableModel) this.tableEventsOcorridos.getModel();
-		if (dtm.getRowCount() > 0) {
-			for (int i = 0; i < dtm.getRowCount(); i++) {
-				dtm.removeRow(i);
-			}
-		}
+		dtm.setNumRows(0);
 
 		for (Event e : this.fit.getOccurredEvents()) {
 			if (e.getParticipantsList().contains(this.u)) {
 				eventos.add(e);
 			}
 		}
-		if (eventos.size() > this.tableEventsOcorridos.getRowCount()) {
-			for (int i = 0; i < eventos.size(); i++) {
-				dtm.addRow(new Object[]{null, null, null, null, null});
-			}
-			this.tableEventsOcorridos.setModel(dtm);
-		}
-
-		int i = 0;
+		
 		for (Event e : eventos) {
 			int diaE = e.getDate().get(Calendar.DAY_OF_MONTH);
 			int mesE = e.getDate().get(Calendar.MONTH);
 			int anoE = e.getDate().get(Calendar.YEAR);
 
-			this.tableEventsOcorridos.setValueAt(e.getName(), i, 0);
-			this.tableEventsOcorridos.setValueAt(e.getTipoActivity(), i, 1);
-			this.tableEventsOcorridos.setValueAt(e.getLocation(), i, 2);
-			this.tableEventsOcorridos.setValueAt(String.valueOf(diaE) + "/" + String.valueOf(mesE + 1) + "/" + String.valueOf(anoE), i, 3);
-			this.tableEventsOcorridos.setValueAt(e.getParticipants(), i, 4);
-			i++;
+			dtm.addRow(new Object[] { e.getName(), e.getTipoActivity(), e.getLocation(), String.valueOf(diaE) + "/" + String.valueOf(mesE + 1) + "/" + String.valueOf(anoE), e.getParticipants() });
 		}
+		this.tableEventsOcorridos.setModel(dtm);
 	}
 
 	private void preencheStats() {
@@ -2464,7 +2409,6 @@ public class UserForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -2495,6 +2439,7 @@ public class UserForm extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JLabel labelDate;
     private javax.swing.JLabel labelDay;
+    private javax.swing.JLabel labelDistH;
     private javax.swing.JLabel labelMonth;
     private javax.swing.JLabel labelName;
     private javax.swing.JLabel labelTime;

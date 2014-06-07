@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Fitness;
 
 import java.util.ArrayList;
@@ -12,13 +8,21 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
+ * Classe para a criação de janelas
  *
- * @author jmano
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public class RegistarEmEventoForm extends javax.swing.JFrame {
 
 	/**
 	 * Creates new form RegistarEmEvento
+     * @param parent
+     * @param fit
+     * @param u
+     * @param mode
 	 */
 	public RegistarEmEventoForm(JFrame parent, FitnessUM fit, User u, String mode) {
 		initComponents();
@@ -31,7 +35,7 @@ public class RegistarEmEventoForm extends javax.swing.JFrame {
 			this.butAddEvento.setText("SIMULAR");
 			this.setTitle("Simular evento");
 			this.preencheSimulaEvents();
-		} else{
+		} else {
 			this.preencheOpenEvents();
 			this.setTitle("Inscrição em evento");
 		}
@@ -202,8 +206,7 @@ public class RegistarEmEventoForm extends javax.swing.JFrame {
 						sim.setVisible(true);
 						this.setVisible(false);
 					}
-				}
-				else{
+				} else {
 					sel.addSimulacao(new Simulacao());
 					JOptionPane.showMessageDialog(this, "Não existem utilizadores registados neste evento...");
 				}
@@ -226,70 +229,43 @@ public class RegistarEmEventoForm extends javax.swing.JFrame {
 	private void preencheOpenEvents() {
 		ArrayList<Event> eventos = new ArrayList<>();
 		DefaultTableModel dtm = (DefaultTableModel) this.tableEvents.getModel();
-		if (dtm.getRowCount() > 0) {
-			for (int i = 0; i < dtm.getRowCount(); i++) {
-				dtm.removeRow(i);
-			}
-		}
+		dtm.setNumRows(0);
+
 		for (Event e : this.fit.getOpenEvents()) {
 			if (!e.getParticipantsList().contains(this.u)) {
 				eventos.add(e);
 			}
 		}
-		for (int i = 0; i < eventos.size(); i++) {
-			dtm.addRow(new Object[]{null, null, null, null, null});
-		}
-		this.tableEvents.setModel(dtm);
 
-		int i = 0;
 		for (Event e : eventos) {
-			int diaE = e.getDate().get(Calendar.DAY_OF_MONTH);
-			int mesE = e.getDate().get(Calendar.MONTH);
-			int anoE = e.getDate().get(Calendar.YEAR);
 			int diaI = e.getDate().get(Calendar.DAY_OF_MONTH);
 			int mesI = e.getDate().get(Calendar.MONTH);
 			int anoI = e.getDate().get(Calendar.YEAR);
-
-			this.tableEvents.setValueAt(e.getName(), i, 0);
-			this.tableEvents.setValueAt(e.getTipoActivity(), i, 1);
-			this.tableEvents.setValueAt(e.getLocation(), i, 2);
-			this.tableEvents.setValueAt(String.valueOf(diaE) + "/" + String.valueOf(mesE+1) + "/" + String.valueOf(anoE), i, 3);
-			this.tableEvents.setValueAt(String.valueOf(diaI) + "/" + String.valueOf(mesI+1) + "/" + String.valueOf(anoI), i, 4);
-			i++;
+			int diaE = e.getDate().get(Calendar.DAY_OF_MONTH);
+			int mesE = e.getDate().get(Calendar.MONTH);
+			int anoE = e.getDate().get(Calendar.YEAR);
+			dtm.addRow(new Object[]{e.getName(), e.getTipoActivity(), e.getLocation(), String.valueOf(diaE) + "/" + String.valueOf(mesE + 1) + "/" + String.valueOf(anoE), String.valueOf(diaI) + "/" + String.valueOf(mesI + 1) + "/" + String.valueOf(anoI)});
 		}
+		this.tableEvents.setModel(dtm);
 	}
 
-	public void preencheSimulaEvents() {
-		ArrayList<Event> eventos = new ArrayList<>();
+    /**
+     *
+     */
+    public void preencheSimulaEvents() {
 		DefaultTableModel dtm = (DefaultTableModel) this.tableEvents.getModel();
-		if (dtm.getRowCount() > 0) {
-			for (int i = 0; i < dtm.getRowCount(); i++) {
-				dtm.removeRow(i);
-			}
-		}
+		dtm.setNumRows(0);
+		
 		for (Event e : this.fit.getSimulaEvents()) {
-			eventos.add(e);
-			dtm.addRow(new Object[]{null, null, null, null, null});
-		}
-
-		this.tableEvents.setModel(dtm);
-
-		int i = 0;
-		for (Event e : eventos) {
-			int diaE = e.getDate().get(Calendar.DAY_OF_MONTH);
-			int mesE = e.getDate().get(Calendar.MONTH);
-			int anoE = e.getDate().get(Calendar.YEAR);
 			int diaI = e.getDate().get(Calendar.DAY_OF_MONTH);
 			int mesI = e.getDate().get(Calendar.MONTH);
 			int anoI = e.getDate().get(Calendar.YEAR);
-
-			this.tableEvents.setValueAt(e.getName(), i, 0);
-			this.tableEvents.setValueAt(e.getTipoActivity(), i, 1);
-			this.tableEvents.setValueAt(e.getLocation(), i, 2);
-			this.tableEvents.setValueAt(String.valueOf(diaE) + "/" + String.valueOf(mesE) + "/" + String.valueOf(anoE), i, 3);
-			this.tableEvents.setValueAt(String.valueOf(diaI) + "/" + String.valueOf(mesI) + "/" + String.valueOf(anoI), i, 4);
-			i++;
+			int diaE = e.getDate().get(Calendar.DAY_OF_MONTH);
+			int mesE = e.getDate().get(Calendar.MONTH);
+			int anoE = e.getDate().get(Calendar.YEAR);
+			dtm.addRow(new Object[]{e.getName(), e.getTipoActivity(), e.getLocation(), String.valueOf(diaE) + "/" + String.valueOf(mesE + 1) + "/" + String.valueOf(anoE), String.valueOf(diaI) + "/" + String.valueOf(mesI + 1) + "/" + String.valueOf(anoI)});
 		}
+		this.tableEvents.setModel(dtm);
 	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

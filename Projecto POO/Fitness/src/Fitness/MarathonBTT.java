@@ -35,7 +35,8 @@ public class MarathonBTT extends Event implements Serializable {
      * @param date - Data do Evento.
      * @param duration - duração.
      * @param participantsList - Lista de participantes inscritos.
-     * @param ranking - classificação final do Evento.
+     * @param ranking - Classificação final do Evento.
+     * @param distance  Distancia do evento.
      */
     public MarathonBTT(String name, String location, int maxParticipants, int participants, GregorianCalendar deadline, GregorianCalendar date, double duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking, double distance) {
         super(name, "MountainBiking", location, maxParticipants, participants, deadline, date, duration, participantsList, ranking);
@@ -52,7 +53,8 @@ public class MarathonBTT extends Event implements Serializable {
      * @param date - Data do Evento.
      * @param duration - duração.
      * @param participantsList - Lista de participantes inscritos.
-     * @param ranking - classificação final do Evento.
+     * @param ranking - Classificação final do Evento.
+     * @param distance  Distancia do evento.
      */
     public MarathonBTT(String name, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date, double duration, TreeSet<User> participantsList, TreeSet<Ranking> ranking, double distance) {
         super(name, "MountainBiking", location, maxParticipants, deadline, date, duration, participantsList, ranking);
@@ -67,7 +69,8 @@ public class MarathonBTT extends Event implements Serializable {
      * @param maxParticipants - Numero de participantes máximo.
      * @param deadline - Data limite de inscrição.
      * @param date - Data do Evento.
-     * @param duration - duração.
+     * @param duration - Duração do evento.
+     * @param distance Distancia do evento.
      */
     public MarathonBTT(String name, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date, double duration, double distance) {
         super(name, "MountainBiking", location, maxParticipants, deadline, date, duration);
@@ -82,6 +85,7 @@ public class MarathonBTT extends Event implements Serializable {
      * @param maxParticipants - Numero de participantes máximo.
      * @param deadline - Data limite de inscrição.
      * @param date - Data do Evento.
+     * @param distance Distancia do evento.
      */
     public MarathonBTT(String name, String location, int maxParticipants, GregorianCalendar deadline, GregorianCalendar date, double distance) {
         super(name, "MountainBiking", location, maxParticipants, deadline, date);

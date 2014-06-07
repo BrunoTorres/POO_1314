@@ -654,10 +654,10 @@
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace pref="298" max="32767" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace pref="21" max="32767" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="but10" min="-2" max="-2" attributes="0"/>
                                           <Component id="butAll" min="-2" max="-2" attributes="0"/>
@@ -665,7 +665,7 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="10" max="32767" attributes="0"/>
+                          <EmptySpace pref="16" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -733,7 +733,7 @@
                           </Group>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jPanel6" alignment="0" max="-2" attributes="0"/>
-                              <Component id="jPanel4" alignment="0" pref="140" max="32767" attributes="0"/>
+                              <Component id="jPanel4" alignment="0" pref="142" max="32767" attributes="0"/>
                               <Component id="jPanel5" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
@@ -1039,7 +1039,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="textDistanciaH" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                      <Component id="labelDistH" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="textDistanciaV" min="-2" max="-2" attributes="0"/>
@@ -1048,7 +1048,7 @@
                                   </Group>
                                   <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="26" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1058,7 +1058,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="textDistanciaH" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="labelDistH" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
@@ -1105,7 +1105,7 @@
                         </Property>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel4">
+                    <Component class="javax.swing.JLabel" name="labelDistH">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="KMs"/>
                       </Properties>
@@ -1158,7 +1158,7 @@
                                   <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="19" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1501,7 +1501,7 @@
                     <Component class="javax.swing.JTable" name="tableRecords">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="2" rowCount="10">
+                          <Table columnCount="2" rowCount="0">
                             <Column editable="false" title="Recorde" type="java.lang.String"/>
                             <Column editable="false" title="Tempo / KMs" type="java.lang.String"/>
                           </Table>
@@ -1617,9 +1617,8 @@
                     <Component class="javax.swing.JTable" name="tableAmigos">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="3" rowCount="0">
+                          <Table columnCount="2" rowCount="0">
                             <Column editable="false" title="Nome" type="java.lang.String"/>
-                            <Column editable="false" title="Idade" type="java.lang.String"/>
                             <Column editable="false" title="Email" type="java.lang.String"/>
                           </Table>
                         </Property>

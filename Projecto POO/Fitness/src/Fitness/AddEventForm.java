@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package Fitness;
 
@@ -12,13 +7,19 @@ import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
 
 /**
+ * Classe para a criação de janelas
  *
- * @author jmano
+ * @author Bruno Pereira
+ * @author João Mano
+ * @author Miguel Guimarães
+ * @version 2014
  */
 public class AddEventForm extends javax.swing.JFrame {
 
 	/**
 	 * Creates new form EventForm
+     * @param parent
+     * @param fit
 	 */
 	public AddEventForm(AdminForm parent, FitnessUM fit) {
 		initComponents();
@@ -385,7 +386,7 @@ public class AddEventForm extends javax.swing.JFrame {
 			
 			if(data.before(this.now) || dataInsc.before(this.now) || dataInsc.after(data)){
 				ok = false;
-				JOptionPane.showMessageDialog(this, "Datas incorretas...\n\nCertifique-se que:\n- O evento não ocorre antes das inscrições terminarem\n- O evento é criado com pelo menos um dia de antecedência");
+				JOptionPane.showMessageDialog(this, "Datas incorretas...\n\nCertifique-se que:\n- O evento não ocorre antes das inscrições terminarem\n- O evento é criado com pelo menos um dia de antecedência\n- A data limite de inscrição é de hoje a pelo menos um dia");
 			}
 				
 			if(ok){
